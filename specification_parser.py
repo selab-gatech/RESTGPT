@@ -12,7 +12,12 @@ def parse_properties(properties, data = {}, layer = 2):
         }
     return data
 
-def determineParameterObject(parameter):
+def process_method_values(method_key, method_values, parameter_data):
+    parameter_data[method_key] = []
+    for parameter in method_values.get('parameters', {}):
+        parameter_data[method_key].append(determine_parameter_object(parameter))
+
+def determine_parameter_object(parameter):
     return {
         "name": parameter.get("name"),
         "type": parameter.get("schema", {}).get('type'),
@@ -39,12 +44,12 @@ def parse_parameters(file_path):
         for method_type, method_values in path_values.items(): # Determine HTTP method
             if method_type in valid_http_methods:
                 method_key = f"{method_type} {path}"
-                parameter_data[method_key] = []
-                for parameter in method_values.get('parameters', {}):
-                    parameter_data[method_key].append(determineParameterObject(parameter))
+                process_method_values(method_key, method_values, parameter_data)
+
+    return parameter_data
 
 if __name__ == "__main__":
     # Testing
-    parse_parameters("specifications/openapi_yaml/spotify.yaml")
+    print(parse_parameters("specifications/openapi_yaml/spotify.yaml"))
 
 
