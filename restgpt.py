@@ -182,7 +182,7 @@ def run_llm_chain(file_path, method_path, method_type):
     method_key = f"{method_path} {method_type}"
     parameters = parameters.get(method_key)
 
-    operational_constraints = operation_constraint(llm, parameters))
+    operational_constraints = operation_constraint(llm, parameters)
 
 
 if __name__ == "__main__":
