@@ -55,7 +55,7 @@ def parse_parameters(file_path):
 if __name__ == "__main__":
     # Testing
     result = parse_parameters("specifications/openapi_yaml/spotify.yaml")
-    with open("results.json", 'w') as file:
+    with open("test_files/results.json", 'w') as file:
         json.dump(result, file, indent=4)
 
 

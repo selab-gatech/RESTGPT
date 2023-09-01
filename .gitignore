@@ -3,6 +3,7 @@
 __pycache__/
 node_modules/
 venv/
+test_files/
 
 package.json
 package-lock.json

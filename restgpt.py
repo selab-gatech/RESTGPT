@@ -3,7 +3,46 @@ from langchain.prompts import PromptTemplate, FewShotPromptTemplate
 from langchain.llms import OpenAI
 from langchain.prompts.example_selector import LengthBasedExampleSelector
 from specification_parser import parse_parameters
+from examples import OPERATION_CONSTRAINT_EXAMPLES
 from config import API_KEY
+
+class FewShotModel:
+    def __init__(self, examples, prefix, suffix, llm):
+        self.examples = examples
+        self.prefix = prefix
+        self.suffix = suffix
+        self.llm = llm
+
+    def run_model(self, input_value):
+
+        print(input_value)
+
+        examples_format = PromptTemplate(
+            input_variables=["input", "output"],
+            template="Input: {input}\nOutput: {output}"
+        )
+
+        examples_selector = LengthBasedExampleSelector(
+            examples=self.examples,
+            example_prompt=examples_format,
+            max_length="5000"
+        )
+        fewshot_prompt = FewShotPromptTemplate(
+            example_prompt=examples_format,
+            example_selector=examples_selector,
+            example_separator="\n\n",
+            prefix=self.prefix,
+            suffix=self.suffix,
+            input_variables=["input"]
+        )
+
+        dependency_chain = LLMChain(prompt=fewshot_prompt, llm=self.llm)
+
+        if isinstance(input_value, list):
+            #print(fewshot_prompt.format(input=input_value[0]))
+            return dependency_chain.apply(input_value)
+        else:
+            return dependency_chain.run(input_value)
 
 def operation_constraint(llm, parameters=None):
 
@@ -15,48 +54,16 @@ def operation_constraint(llm, parameters=None):
         if not required:
             input_list.append({"input": f"""name: {name}\ndescription: {description}"""})
 
-    dependency_examples = [
-        {
-            "input": """
-name: text
-description: 'The text to be checked. This or 'data' is required.'""",
-            "output": "text|data"
-        },
-        {
-            "input": """
-name: bidSelectionMethod
-description: 'alid examples are Đấu thầu rộng rãi, Đấu thầu hạn chế, etc...'""",
-            "output": "None"
-        },
-        {
-            "input": """
-name: idea
-description: 'An idea for a project. This and 'rating' are required.'""",
-            "output": "idea&rating"
-        },
-        {
-            "input": """
-name: day
-description: 'The current day that the letter grade is being published'""",
-            "output": "None"
-        },
-        {
-            "input": """
-name: comment
-description: 'Use with 'username' to define a post.'""",
-            "output": "None"
-        },
+    operation_constraint_examples = OPERATION_CONSTRAINT_EXAMPLES
 
-    ]
-
-    dependency_prefix = """
+    operation_constraint_prefix = """
 Identify the API parameter objects by the grouping of its "name" and "description". Analyze the parameter description 
 and determine whether it falls under the following cases where assigned logical operators are applied. Evaluate each
-case and determine whether it applies. Assume Case 1 and output "None" if no other cases apply. Be strict with the description
-wording and make no inferences. Only consider the description as mentioning requirements when strong words like 
-"required" and "necessary" are used: 
+case and determine whether it applies. Be strict with the description wording and make no inferences. Only consider the 
+description as mentioning requirements when strong words like "required" and "necessary" are used. Assume Case 1 unless
+the other cases are obvious: 
 
-Case 1: The description mentions nothing definitive for parameter requirements for the API. Output "None".
+Case 1: The description isn't definitive about parameter requirements. Output "None".
 Case 2: The description says the parameter is not required. Output "![name]".
 Case 3: The description says the parameter is required. Output "name".
 Case 4: The description says the parameter and another parameter are required. Output "[name1] & [name2]".
@@ -68,33 +75,14 @@ operators.
 
 Here are examples of input and output pairs: """
 
-    dependency_suffix = """
+    operation_constraint_suffix = """
 Input:\n{input}
 Output:\n"""
 
-    dependency_format = PromptTemplate(
-        input_variables=["input", "output"],
-        template="Input: {input}\nOutput: {output}"
-    )
+    dependency_model = FewShotModel(operation_constraint_examples, operation_constraint_prefix,
+                                    operation_constraint_suffix, llm)
 
-    dependency_selector = LengthBasedExampleSelector(
-        examples=dependency_examples,
-        example_prompt=dependency_format,
-        max_length="5000"
-    )
-    dependency_fewshot_prompt = FewShotPromptTemplate(
-        example_prompt=dependency_format,
-        example_selector=dependency_selector,
-        example_separator="\n\n",
-        prefix=dependency_prefix,
-        suffix=dependency_suffix,
-        input_variables=["input"]
-    )
-
-    dependency_chain = LLMChain(prompt=dependency_fewshot_prompt, llm=llm)
-
-    #print(dependency_fewshot_prompt.format(input=input_list))
-    return dependency_chain.apply(input_list)
+    return dependency_model.run_model(input_list)
 
 #def parameter_type(llm, parameters):
 #
@@ -106,72 +94,7 @@ Output:\n"""
 #        if not required:
 #            input_list.append({"input": f"""name: {name}\ndescription: {description}"""})
 
-
-
-def parameter_constraint(llm, parameters):
-
-    rule_examples = [
-        {
-            "input": """
-    paths: /search:
-      get:
-        operationId: Web_Search 
-          parameters:
-          - name: Accept-Language
-            in: header
-            type: string
-            description: A comma-delimited list of one or more languages to use for user interface strings.
-          - name: count
-            in: query
-            type: integer
-            format: int32
-            description: The maximum value is 50.""",
-            "output": """
-    Name: Accept-Language
-    Rules: A list of strings containing at least one element representing languages.
-
-    Name: count
-    Rules: An integer of maximum value 50."""
-        },
-        {
-            "input": "test",
-            "output": "test"
-        }
-    ]
-
-    rule_prefix = """
-    You are attempting to decipher rules from the 'description' field for each parameter of a yaml file. The following 
-    are some examples of determining limitations on data types and values that you will imitate:
-        """
-
-    rule_suffix = """
-    input: {input}
-    output:
-        """
-
-    rule_example_format = PromptTemplate(
-        input_variables=["input", "output"],
-        template="Input: {input}\nOutput: {output}"
-    )
-
-    rule_example_selector = LengthBasedExampleSelector(
-        examples=rule_examples,
-        example_prompt=rule_example_format,
-        max_length="1000"
-    )
-
-    rule_fewshot_prompt = FewShotPromptTemplate(
-        example_prompt=rule_example_format,
-        example_selector=rule_example_selector,
-        example_separator="\n\n",
-        prefix=rule_prefix,
-        suffix=rule_suffix,
-        input_variables=["input"]
-    )
-
-    rule_chain = LLMChain(prompt=rule_fewshot_prompt, llm=llm)
-
-    # print(rule_fewshot_prompt.format(input="Test fewshot prompt input"))
+#def parameter_constraint(llm, parameters):
 
 def run_llm_chain(file_path, method_path, method_type):
 
@@ -183,7 +106,8 @@ def run_llm_chain(file_path, method_path, method_type):
     parameters = parameters.get(method_key)
 
     operational_constraints = operation_constraint(llm, parameters)
+    print(operational_constraints)
 
 
 if __name__ == "__main__":
-    run_llm_chain("specifications/openapi_yaml/spotify.yaml", "/search", "get")
+    run_llm_chain("specifications/openapi_yaml/spotify.yaml", "/playlists/{playlist_id}/tracks", "get")
