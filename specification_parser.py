@@ -1,5 +1,5 @@
 from prance import ResolvingParser
-
+import json
 
 def parse_properties(properties, data = {}, layer = 2):
     for property_name, property_value in properties.items():
@@ -35,21 +35,27 @@ def determine_parameter_object(parameter):
 
 # Assume OpenAPI v3.0 files
 def parse_parameters(file_path):
-    parser = ResolvingParser(file_path)
-    spec_paths = parser.specification.get('paths', {}) # Determine all API paths while ignoring extraneous keys
-    valid_http_methods = {'put', 'post', 'patch', 'get', 'delete'}
-    parameter_data = {}
+    try:
+        parser = ResolvingParser(file_path, strict=False)
+        spec_paths = parser.specification.get('paths', {}) # Determine all API paths while ignoring extraneous keys
+        valid_http_methods = {'put', 'post', 'patch', 'get', 'delete'}
+        parameter_data = {}
 
-    for path, path_values in spec_paths.items():
-        for method_type, method_values in path_values.items(): # Determine HTTP method
-            if method_type in valid_http_methods:
-                method_key = f"{method_type} {path}"
-                process_method_values(method_key, method_values, parameter_data)
+        for path, path_values in spec_paths.items():
+            for method_type, method_values in path_values.items(): # Determine HTTP method
+                if method_type in valid_http_methods:
+                    method_key = f"{path} {method_type}"
+                    process_method_values(method_key, method_values, parameter_data)
 
-    return parameter_data
+        return parameter_data
+    except Exception as e:
+        print(f"Exception: {e}")
+
 
 if __name__ == "__main__":
     # Testing
-    print(parse_parameters("specifications/openapi_yaml/spotify.yaml"))
+    result = parse_parameters("specifications/openapi_yaml/spotify.yaml")
+    with open("results.json", 'w') as file:
+        json.dump(result, file, indent=4)
 
 
