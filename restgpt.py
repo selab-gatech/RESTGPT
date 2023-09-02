@@ -8,6 +8,7 @@ from specification_parser import parse_parameters
 from model_properties.examples import *
 from model_properties.contexts import *
 from config import API_KEY
+import json
 
 class Classifications(BaseModel):
     check_operation_constraint: bool = Field(description="""
@@ -91,10 +92,9 @@ def operation_constraint(llm, parameters=None):
     operation_constraint_suffix = """
 Input:\n{input}
 Output:\n"""
-
     dependency_model = FewShotModel(operation_constraint_examples, operation_constraint_prefix,
                                     operation_constraint_suffix, llm)
-
+    input_list = json.dumps(input_list)
     return dependency_model.run_model(input_list)
 
 #def parameter_type(llm, parameters):
@@ -116,11 +116,11 @@ def run_llm_chain(file_path, method_path, method_type):
     method_key = f"{method_path} {method_type}"
     parameters = parse_parameters(file_path).get(method_key)
 
-    #operational_constraints = operation_constraint(llm, parameters)
-    #print(operational_constraints)
+    operational_constraints = operation_constraint(llm, parameters)
+    print(operational_constraints)
 
-    for parameter in parameters:
-        rule_classification(llm, parameter["description"])
+    # for parameter in parameters:
+    #     rule_classification(llm, parameter["description"])
 
 
 if __name__ == "__main__":

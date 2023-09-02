@@ -2,7 +2,7 @@ OPERATION_CONSTRAINT_CONTEXT = """
 Identify the API parameter objects by the grouping of its "name" and "description". Analyze the parameter description 
 and determine whether it falls under the following cases where assigned logical operators are applied. Evaluate each
 case and determine whether it applies. Be strict with the description wording and make no inferences. Only consider the 
-description as mentioning requirements when strong words like "required" and "necessary" are used. Assume Case 1 unless
+description as requirements when strong words like "required" and "necessary" are used. Interpret the description in the least constraining manner, and assume Case 1 unless
 the other cases are obvious: 
 
 Case 1: The description isn't definitive about parameter requirements. Output "None".
