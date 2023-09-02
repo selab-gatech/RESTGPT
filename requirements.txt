@@ -2,3 +2,4 @@ prance~=23.6.21.0
 openapi-spec-validator~=0.6.0
 langchain~=0.0.277
 openai~=0.27.10
+pydantic~=2.3.0

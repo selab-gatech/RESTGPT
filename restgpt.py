@@ -1,10 +1,25 @@
-from langchain.chains import LLMChain, SequentialChain
+from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate, FewShotPromptTemplate
 from langchain.llms import OpenAI
 from langchain.prompts.example_selector import LengthBasedExampleSelector
+from langchain.output_parsers import PydanticOutputParser
+from pydantic import BaseModel, Field
 from specification_parser import parse_parameters
-from examples import OPERATION_CONSTRAINT_EXAMPLES
+from model_properties.examples import *
+from model_properties.contexts import *
 from config import API_KEY
+
+class Classifications(BaseModel):
+    check_operation_constraint: bool = Field(description="""
+A boolean that returns True if the input definitively mentions parameters that required or not required.""")
+    check_parameter_format: bool = Field(description="""
+A boolean that returns True if the input mentions parameter data types or how the parameter is expected to 
+be formatted.""")
+    check_parameter_constraint: bool = Field(description="""
+A boolean that returns True if the input mentions a limitation of the value of the parameter, such as 
+a maximum, minimum, or length.""")
+    check_parameter_example: bool = Field(description="""
+A boolean that returns True if the input mentions values for the parameter which it should relate to.""")
 
 class FewShotModel:
     def __init__(self, examples, prefix, suffix, llm):
@@ -25,8 +40,9 @@ class FewShotModel:
         examples_selector = LengthBasedExampleSelector(
             examples=self.examples,
             example_prompt=examples_format,
-            max_length="5000"
+            max_length="5500" # based on words (~7000 word input limit)
         )
+
         fewshot_prompt = FewShotPromptTemplate(
             example_prompt=examples_format,
             example_selector=examples_selector,
@@ -44,6 +60,20 @@ class FewShotModel:
         else:
             return dependency_chain.run(input_value)
 
+def rule_classification(llm, description):
+
+    output_parser = PydanticOutputParser(pydantic_object=Classifications)
+    classification_prompt = PromptTemplate(
+        template=CLASSIFICATION_CONTEXT + "\n{instructions}\nInput: {description}\n",
+        input_variables=["description"],
+        partial_variables={"instructions": output_parser.get_format_instructions()}
+    )
+    rule_classifier = LLMChain(
+        llm=llm,
+        prompt=classification_prompt,
+    )
+    return rule_classifier.run(description)
+
 def operation_constraint(llm, parameters=None):
 
     input_list = []
@@ -56,24 +86,7 @@ def operation_constraint(llm, parameters=None):
 
     operation_constraint_examples = OPERATION_CONSTRAINT_EXAMPLES
 
-    operation_constraint_prefix = """
-Identify the API parameter objects by the grouping of its "name" and "description". Analyze the parameter description 
-and determine whether it falls under the following cases where assigned logical operators are applied. Evaluate each
-case and determine whether it applies. Be strict with the description wording and make no inferences. Only consider the 
-description as mentioning requirements when strong words like "required" and "necessary" are used. Assume Case 1 unless
-the other cases are obvious: 
-
-Case 1: The description isn't definitive about parameter requirements. Output "None".
-Case 2: The description says the parameter is not required. Output "![name]".
-Case 3: The description says the parameter is required. Output "name".
-Case 4: The description says the parameter and another parameter are required. Output "[name1] & [name2]".
-Case 5: The description says the parameter or another parameter are required (inclusive or). Output "[name1] | [name2]".
-Case 6: The description says either the parameter or another parameter are required (exclusive or). Output "[name1] ^ [name2]".
- 
-If there are multiple parameter dependencies in the description, use parantheses and combine them with the logical
-operators.
-
-Here are examples of input and output pairs: """
+    operation_constraint_prefix = OPERATION_CONSTRAINT_CONTEXT
 
     operation_constraint_suffix = """
 Input:\n{input}
@@ -98,15 +111,16 @@ Output:\n"""
 
 def run_llm_chain(file_path, method_path, method_type):
 
-    llm = OpenAI(openai_api_key = API_KEY, temperature=0)
-
-    parameters = parse_parameters(file_path)
+    llm = OpenAI(model_name="gpt-3.5-turbo", openai_api_key = API_KEY, temperature=0)
 
     method_key = f"{method_path} {method_type}"
-    parameters = parameters.get(method_key)
+    parameters = parse_parameters(file_path).get(method_key)
 
-    operational_constraints = operation_constraint(llm, parameters)
-    print(operational_constraints)
+    #operational_constraints = operation_constraint(llm, parameters)
+    #print(operational_constraints)
+
+    for parameter in parameters:
+        rule_classification(llm, parameter["description"])
 
 
 if __name__ == "__main__":
