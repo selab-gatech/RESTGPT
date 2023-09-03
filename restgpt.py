@@ -67,7 +67,7 @@ def rule_classification(llm, description):
     return rule_classifier.run(description)
 
 def operation_constraint(llm, input_value):
-    return FewShotModel(OPERATION_CONSTRAINT_EXAMPLES, OPERATION_CONSTRAINT_CONTEXT, MODEL_SUFFIX, llm).run_model(input_value)
+    return FewShotModel(IDL_OPERATION_CONSTRAINT_EXAMPLES, IDL_OPERATION_CONSTRAINT_CONTEXT, MODEL_SUFFIX, llm).run_model(input_value)
 
 def parameter_format(llm, input_value):
     return FewShotModel(PARAMETER_FORMAT_EXAMPLES, PARAMETER_FORMAT_CONTEXT, MODEL_SUFFIX, llm).run_model(input_value)
@@ -124,4 +124,4 @@ def run_llm_chain(file_path, method_path, method_type):
     return restriction_list
 
 if __name__ == "__main__":
-    print(str(run_llm_chain("specifications/openapi_yaml/fdic.yaml", "/history", "get")))
+    print(str(run_llm_chain("specifications/openapi_yaml/spotify.yaml", "/search", "get")))

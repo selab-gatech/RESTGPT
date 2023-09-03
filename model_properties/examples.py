@@ -114,3 +114,33 @@ VGB, VIR, WLF, ESH, YEM, ZMB, ZWE"""
     }
 
 ]
+
+IDL_OPERATION_CONSTRAINT_EXAMPLES = [
+    {
+        "input" : """
+name: text 
+description: The text to be checked. This or 'data' is required.""", 
+        "output": "Or(text, data);"
+    }, 
+    { "input": """ 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'""", 
+     "output": "OnlyOne(idea AND rating);"
+    }, 
+    {"input": """
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'""",
+      "output": "IF partModel THEN partID;"
+    }, 
+    {"input": """
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.""",
+       "output": "IF country-code!='USA' OR country-code=='CAN' THEN language;"
+    },
+    {
+        'input': """
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.""", 
+        'output': "cost - profit > 500;"
+    }
+]
