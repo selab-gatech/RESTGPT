@@ -80,6 +80,14 @@ PARAMETER_CONSTRAINT_EXAMPLES = [
     {
         "input": "'The input range. The smallest value possible is -120.8. The largest should be 179.652.'",
         "output": "min -120.8, max 179.652"
+    },
+    {
+        "input": "'The number of items to be investigated. The maximum is 9,999.99'",
+        "output": "min None, max 9999.99"
+    },
+    {
+        "input": "The stock quantity. The smallest possible value is 1,200. All the values should be less than 8,999.",
+        "output": "min 1200, max 8999"
     }
 ]
 

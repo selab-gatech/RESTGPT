@@ -25,7 +25,8 @@ Here are examples of inputs and expected outputs:
 CLASSIFICATION_CONTEXT = """
 Classify whether the provided parameter description for an API parameter matches the following categories defined as
 "check_operation_constraint", "check_parameter_format", "check_parameter_constraint", and "check_parameter_example",
-and return True or False accordingly. Ignore links as irrelevant.\n"""
+and return True or False accordingly. Ignore links as irrelevant. Be lenient with wording and ensure more 
+false positives than negatives.\n"""
 
 PARAMETER_FORMAT_CONTEXT = """
 Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
@@ -41,8 +42,9 @@ Here are some examples of inputs and expected outputs:
 
 PARAMETER_CONSTRAINT_CONTEXT = """
 Analyze the provided API parameter description and determine whether it describes a restriction of the parameter's 
-minimum, maximum possible values. If it does, output in the following format: "min [minimum], max [maximum]". If there  
-is no mention of the parameter's minimum and maximum possible values, output "min None, max None".
+minimum or maximum possible values. If it does, output in the following format: "min [minimum], max [maximum]". If there  
+is no mention of the parameter's minimum and maximum possible values, output "min None, max None". Include decimals 
+in number outputs if necessary but remove commas.
 
 Here are some examples of inputs and expected outputs:
 """
@@ -51,7 +53,8 @@ PARAMETER_EXAMPLE_CONTEXT = """
 Analyze the provided API parameter description and determine if there are example values for the parameter, such as 
 language codes or country codes. If there are, extrapolate the possible parameter values with the same pattern 
 and list them with commas separating them. If the parameter example is not specific or the scope is too large, such as 
-"any decimal number" for example, then output "None". If unable to determine any example values, output "None".
+"any decimal number" for example, then output "None". If unable to determine any example values, output "None". If the
+parameter examples are broad and have no clear relation, output "None".
 
 Here are some examples of inputs and expected outputs:  
 """

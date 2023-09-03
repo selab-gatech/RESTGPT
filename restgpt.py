@@ -12,7 +12,7 @@ import json
 
 class Classifications(BaseModel):
     check_operation_constraint: bool = Field(description="""
-A boolean that returns True if the input definitively mentions parameters that required or not required.""")
+A boolean that returns True if the input definitively mentions parameters that are required or not required.""")
     check_parameter_format: bool = Field(description="""
 A boolean that returns True if the input mentions parameter data types or how the parameter is expected to 
 be formatted. Data types and formatting can include lists, dates, numbers, emails, binary, ipv6, among others.""")
@@ -20,7 +20,8 @@ be formatted. Data types and formatting can include lists, dates, numbers, email
 A boolean that returns True if the input mentions a limitation of the value of the parameter, such as 
 a maximum, minimum, or length.""")
     check_parameter_example: bool = Field(description="""
-A boolean that returns True if the input mentions values for the parameter which it should relate to.""")
+A boolean that returns True if the input mentions any sample values for the parameter or patterns for the 
+parameter value to conform to.""")
 
 class FewShotModel:
     def __init__(self, examples, prefix, suffix, llm):
@@ -104,16 +105,12 @@ def run_llm_chain(file_path, method_path, method_type):
         #print(classifications)
         if classifications.get("check_operation_constraint"):
             input_value = f"name: {name}\ndescription: {description}"
-        #    print("Attempted once with " + str(parameter))
             operation_constraints = operation_constraint(llm, input_value)
         if classifications.get("check_parameter_constraint") and (minimum is None or maximum is None):
-        #    print("Attempted paramter constraint with " + str(parameter))
             parameter_constraints = parameter_constraint(llm, description)
         if classifications.get("check_parameter_format") and (format_value is None or type_value is None):
-        #    print("Attempted parameter format with " + str(parameter))
             parameter_formats = parameter_format(llm, description)
         if classifications.get("check_parameter_example") and (enum is None):
-        #    print("Attempted parameter example with " + str(parameter))
             parameter_examples = parameter_example(llm, description)
 
         restriction_list.append(
@@ -127,4 +124,4 @@ def run_llm_chain(file_path, method_path, method_type):
     return restriction_list
 
 if __name__ == "__main__":
-    print(run_llm_chain("specifications/openapi_yaml/spotify.yaml", "/me/playlists", "get"))
+    print(str(run_llm_chain("specifications/openapi_yaml/fdic.yaml", "/history", "get")))
