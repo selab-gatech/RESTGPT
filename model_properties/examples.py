@@ -142,17 +142,5 @@ description: The text to be checked. This or 'data' is required.""",
         name: cost
         description: The cost of the product, this - profit must be greater than 500.""", 
         'output': "cost - profit > 500;"
-    },
-    {
-        "input": """
-name: bidSelectionMethod
-description: 'Valid examples are Đấu thầu rộng rãi, Đấu thầu hạn chế, etc...'""",
-        "output": "None"
-    },
-    {
-        "input": """
-name: day
-description: 'This is the day that the 'letter grade' is published. The field is grades.letter_grade'""",
-        "output": "None"
     }
 ]

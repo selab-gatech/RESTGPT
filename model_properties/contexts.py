@@ -79,7 +79,8 @@ RelationalOperator:
 ArithmeticOperator:
     '+' | '-' | '*' | '/';
 
-If there are multiple dependency statements, return each one on a new line. Do not include any other text. Here are some examples of expected outputs:
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Here are some examples of expected outputs:
 """
 
 CLASSIFICATION_CONTEXT = """
