@@ -68,3 +68,17 @@ class IDP_PARSER:
         if file_path:
             self._export_to_yaml(parsed_logical, file_path)
         return parsed_logical
+class IDL_IPD_PARSER:
+    def __init__(self):
+        pass 
+    def _logical_blocks(self, logical_str): 
+        logical_str = logical_str.split("\n")
+        logical_blocks = [line for line in logical_str if line.lower() != "none"]
+        return logical_blocks
+    def _dict_output(self, logical_blocks):
+        return {"x-dependencies": logical_blocks}
+    def _yaml_output(self, logical_blocks): 
+        return yaml.dump(self._dict_output(logical_blocks))
+    def parse(self, logical_str, r_type):
+        return self._yaml_output(self._logical_blocks(logical_str)) if r_type == "yaml" else self._dict_output(self._logical_blocks(logical_str))
+    
