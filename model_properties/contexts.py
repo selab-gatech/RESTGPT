@@ -22,6 +22,66 @@ operators.
 Here are examples of inputs and expected outputs: 
 """
 
+IDL_OPERATION_CONSTRAINT_CONTEXT = """
+Identify the API parameter object by the grouping of its "name" and "description". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output "None".
+Case 2: The description states the parameter "name" is required. Output: "REQUIRED: name". 
+Case 3: The description states that parameter "name" or another parameter "name" is required. Output: "Or(name, name)"
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: "ZeroOrOne(name, name_2, ... name_n)"
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: "OnlyOne(name, name_2, ... name_n)"
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: "AllOrNone(name, name_2, ... name_n)"
+Case 7: The description states that there is a relational relationship between some parameters: Output: "name >= name_2", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: "name_1 + name_2 <= value", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: "IF name THEN name_2", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: "IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Here are some examples of expected outputs:
+"""
+
 CLASSIFICATION_CONTEXT = """
 Classify whether the provided parameter description for an API parameter matches the following categories defined as
 "check_operation_constraint", "check_parameter_format", "check_parameter_constraint", and "check_parameter_example",
