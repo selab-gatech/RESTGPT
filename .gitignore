@@ -7,4 +7,4 @@ test_files/
 .DS_Store
 package.json
 package-lock.json
-config.py
+*/config.py

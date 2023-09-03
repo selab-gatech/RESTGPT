@@ -68,6 +68,7 @@ class IDP_PARSER:
         if file_path:
             self._export_to_yaml(parsed_logical, file_path)
         return parsed_logical
+    
 class IDL_IPD_PARSER:
     def __init__(self):
         pass 
