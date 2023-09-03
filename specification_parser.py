@@ -18,16 +18,18 @@ def process_method_values(method_key, method_values, parameter_data):
         parameter_data[method_key].append(determine_parameter_object(parameter))
 
 def determine_parameter_object(parameter):
+    schema = parameter.get("schema", {})
     return {
         "name": parameter.get("name"),
-        "type": parameter.get("schema", {}).get('type'),
+        "type": schema.get('type'),
         "description": parameter.get("description"),
         "in": parameter.get("in"),
         "required": parameter.get("required"),
-        "enum": parameter.get("schema", {}).get('enum'),
-        "minimum": parameter.get("schema", {}).get("minimum"),
-        "maximum": parameter.get("schema", {}).get("maximum"),
-        "items": parameter.get("schema", {}).get("items", {}).get("type")
+        "enum": schema.get('enum'),
+        "minimum": schema.get("minimum"),
+        "maximum": schema.get("maximum"),
+        "items": schema.get("items", {}).get("type"),
+        "format": schema.get("format")
         if parameter.get("schema", {}).get("type") == "array" else None,
         "properties": parse_properties(parameter.get("schema", {}).get('properties', {}))
         if parameter.get("schema", {}).get("type") == "object" else None
@@ -55,7 +57,7 @@ def parse_parameters(file_path):
 if __name__ == "__main__":
     # Testing
     result = parse_parameters("specifications/openapi_yaml/spotify.yaml")
-    with open("test_files/results.json", 'w') as file:
+    with open("test_files/test_specification.json", 'w') as file:
         json.dump(result, file, indent=4)
 
 
