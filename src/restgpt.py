@@ -4,7 +4,7 @@ from langchain.llms import OpenAI
 from langchain.prompts.example_selector import LengthBasedExampleSelector
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
-from specification_parser import parse_parameters
+from parsers.specification_parser import parse_parameters
 from model_properties.examples import *
 from model_properties.contexts import *
 from config import API_KEY
