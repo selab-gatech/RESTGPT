@@ -15,61 +15,66 @@ def parse_properties(properties, data = {}, layer = 2):
 def process_method_values(method_key, method_values, parameter_data):
     parameter_data[method_key] = []
     for parameter in method_values.get('parameters', {}):
-        parameter_data[method_key].append(determine_parameter_object(parameter))
+        parameter_data[method_key].append(
+            determine_parameter_object(
+                parameter.get("schema", {}),
+                parameter.get("name"),
+                parameter.get("description"),
+                parameter.get("in"),
+                parameter.get("required"),
+                "parameter"
+            )
+        )
     if 'requestBody' in method_values:
-        request_body  = {}
-        request_body["specifier"] = "requestBody"
-        request_body["description"] = method_values.get("requestBody").get('description', '')
+        request_body  = {"specifier": "requestBody",
+                         "description": method_values.get("requestBody").get('description', '')}
         parameters = []
         required_parameters = []
-        for encoding in method_values.get("requestBody").get("content").keys():
-            request_body_schema = method_values.get("requestBody").get("content").get(encoding).get("schema")
-            parameters.append(request_body_schema.get("properties"))
-            if "required" in request_body_schema.keys(): 
+        for encoding, encoding_values in method_values.get("requestBody", {}).get("content", {}).items():
+            request_body_schema = encoding_values.get("schema", {})
+            parameters.append({"properties": request_body_schema.get("properties"), "encoding": encoding})
+            if "required" in request_body_schema.keys():
                 required_parameters.extend(request_body_schema.get("required"))
         required_parameters = set(required_parameters)
-        constructed_parameters = []
-        for parameter in parameters: 
-            for name in parameter.keys():
+        for parameter in parameters:
+            properties = parameter.get("properties", {})
+            encoding = parameter.get("encoding")
+            if properties is None: # CURRENTLY NOT HANDLING $ref
+                continue
+            for name in properties.keys():
                 if name in required_parameters:
-                    parameter[name]["required"] = True
+                    properties[name]["required"] = True
                 else:
-                    parameter[name]["required"] = False
-                constructed_parameters.append({
-                    "name" : name, 
-                    "type" : parameter[name].get("type"), 
-                    "description" : parameter[name].get("description"),
-                    "in" : "requestBody",
-                    "required" : parameter[name].get("required"),
-                    "enum" : parameter[name].get("enum"),
-                    "minimum" : parameter[name].get("minimum"),
-                    "maximum" : parameter[name].get("maximum"),
-                    "items" : parameter[name].get("items", {}).get("type"),
-                    "format" : parameter[name].get("format")
-                    if parameter[name].get("type") == "array" else None,
-                    "properties" : parse_properties(parameter[name].get("items", {}).get('properties', {})) if parameter.get("type") == "object" else None,
-                    "specifier" : "requestBody"
-                })
-        parameter_data[method_key].extend(constructed_parameters)
-    
+                    properties[name]["required"] = False
+                parameter_data[method_key].append(
+                    determine_parameter_object(
+                        value=properties[name],
+                        name=name,
+                        description=properties[name].get("description"),
+                        in_value="requestBody",
+                        required=properties[name].get("required"),
+                        specifier="requestBody",
+                        encoding=encoding
+                    )
+                )
 
-def determine_parameter_object(parameter):
-    schema = parameter.get("schema", {})
+def determine_parameter_object(value, name, description, in_value, required, specifier, encoding=None):
     return {
-        "name": parameter.get("name"),
-        "type": schema.get('type'),
-        "description": parameter.get("description"),
-        "in": parameter.get("in"),
-        "required": parameter.get("required"),
-        "enum": schema.get('enum'),
-        "minimum": schema.get("minimum"),
-        "maximum": schema.get("maximum"),
-        "items": schema.get("items", {}).get("type"),
-        "format": schema.get("format")
-        if parameter.get("schema", {}).get("type") == "array" else None,
-        "properties": parse_properties(parameter.get("schema", {}).get('properties', {}))
-        if parameter.get("schema", {}).get("type") == "object" else None,
-        "specifier" : "parameter"
+        "name": name,
+        "type": value.get('type'),
+        "description": description,
+        "in": in_value,
+        "required": required,
+        "enum": value.get('enum'),
+        "minimum": value.get("minimum"),
+        "maximum": value.get("maximum"),
+        "items": value.get("items", {}).get("type"),
+        "format": value.get("format")
+        if value.get("type") == "array" else None,
+        "properties": parse_properties(value.get('properties', {}))
+        if value.get("type") == "object" else None,
+        "specifier" : specifier,
+        "encoding" : encoding
     }
 
 # Assume OpenAPI v3.0 files
@@ -93,8 +98,8 @@ def parse_parameters(file_path):
 
 if __name__ == "__main__":
     # Testing
-    result = parse_parameters("../specifications/openapi_yaml/spotify.yaml")
-    with open("test_specification.json", 'w') as file:
+    result = parse_parameters("../specifications/openapi_yaml/ocvn.yaml")
+    with open("../../test_files/test_specification.json", 'w') as file:
         json.dump(result, file, indent=4)
 
 
