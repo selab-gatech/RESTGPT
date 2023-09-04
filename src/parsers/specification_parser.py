@@ -1,4 +1,4 @@
-from prance import ResolvingParser
+from prance import ResolvingParser, BaseParser
 import json
 
 def parse_properties(properties, data = {}, layer = 2):
@@ -12,7 +12,7 @@ def parse_properties(properties, data = {}, layer = 2):
         }
     return data
 
-def process_method_values(method_key, method_values, parameter_data):
+def process_method_values(method_key, method_values, parameter_data, parser):
     parameter_data[method_key] = []
     for parameter in method_values.get('parameters', {}):
         parameter_data[method_key].append(
@@ -39,8 +39,20 @@ def process_method_values(method_key, method_values, parameter_data):
         for parameter in parameters:
             properties = parameter.get("properties", {})
             encoding = parameter.get("encoding")
-            if properties is None: # CURRENTLY NOT HANDLING $ref
-                continue
+            if properties is None: #schema might refer to a component
+                parser_dict = spec_paths = parser.specification.get('paths', {})
+                request_body_base = parser_dict.get(method_key.split()[0], {}).get(method_key.split()[1], {}).get('requestBody', {})
+                ref_unresolved = request_body_base.get('content', {}).get(encoding, {}).get('schema', {})
+                ref_name = ref_unresolved.get('$ref', '').split('/')[-1]
+                properties = {
+                    ref_name: {
+                        "description": request_body_base.get("description"), 
+                        "in": "requestBody", 
+                        "required": request_body_base.get("required")
+                    }
+                }
+                for key, value in request_body_schema.items(): 
+                    properties[ref_name][key] = value
             for name in properties.keys():
                 if name in required_parameters:
                     properties[name]["required"] = True
@@ -81,6 +93,7 @@ def determine_parameter_object(value, name, description, in_value, required, spe
 def parse_parameters(file_path):
     try:
         parser = ResolvingParser(file_path, strict=False)
+        parser_extract_val = BaseParser(file_path, strict=False)
         spec_paths = parser.specification.get('paths', {}) # Determine all API paths while ignoring extraneous keys
         valid_http_methods = {'put', 'post', 'patch', 'get', 'delete', 'options', 'head', 'patch', 'trace'}
         parameter_data = {}
@@ -89,7 +102,7 @@ def parse_parameters(file_path):
             for method_type, method_values in path_values.items(): # Determine HTTP method
                 if method_type in valid_http_methods:
                     method_key = f"{path} {method_type}"
-                    process_method_values(method_key, method_values, parameter_data)
+                    process_method_values(method_key, method_values, parameter_data, parser_extract_val)
 
         return parameter_data
     except Exception as e:
@@ -99,7 +112,7 @@ def parse_parameters(file_path):
 if __name__ == "__main__":
     # Testing
     result = parse_parameters("../specifications/openapi_yaml/ocvn.yaml")
-    with open("../../test_files/test_specification.json", 'w') as file:
+    with open("test_specifications.json", 'w') as file:
         json.dump(result, file, indent=4)
 
 
