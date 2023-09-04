@@ -86,42 +86,47 @@ def run_llm_chain(file_path, method_path, method_type):
     parameters = parse_parameters(file_path).get(method_key)
 
     restriction_list = []
+    def run_parameter(parameter_list):
+        parameter_restrictions = []
+        for parameter in parameter_list:
+            operation_constraints = None
+            parameter_formats = None
+            parameter_constraints = None
+            parameter_examples = None
+            name = parameter.get("name")
+            description = parameter.get("description")
+            minimum = parameter.get("minimum")
+            maximum = parameter.get("maximum")
+            format_value = parameter.get("format")
+            type_value = parameter.get("type")
+            enum = parameter.get("enum")
 
-    for parameter in parameters:
-        operation_constraints = None
-        parameter_formats = None
-        parameter_constraints = None
-        parameter_examples = None
-        name = parameter.get("name")
-        description = parameter.get("description")
-        minimum = parameter.get("minimum")
-        maximum = parameter.get("maximum")
-        format_value = parameter.get("format")
-        type_value = parameter.get("type")
-        enum = parameter.get("enum")
-
-        classifications = json.loads(rule_classification(llm, description))
-        #print("Attempted for: " + str(parameter))
-        #print(classifications)
-        if classifications.get("check_operation_constraint"):
+            classifications = json.loads(rule_classification(llm, description))
+            #print("Attempted for: " + str(parameter))
+            #print(classifications)
+            # if classifications.get("check_operation_constraint"):
             input_value = f"name: {name}\ndescription: {description}"
             operation_constraints = operation_constraint(llm, input_value)
-        if classifications.get("check_parameter_constraint") and (minimum is None or maximum is None):
-            parameter_constraints = parameter_constraint(llm, description)
-        if classifications.get("check_parameter_format") and (format_value is None or type_value is None):
-            parameter_formats = parameter_format(llm, description)
-        if classifications.get("check_parameter_example") and (enum is None):
-            parameter_examples = parameter_example(llm, description)
-
-        restriction_list.append(
-            {"name": name,
-            "operational_constraints": operation_constraints,
-            "parameter_formats": parameter_formats,
-            "parameter_constraints": parameter_constraints,
-            "parameter_examples": parameter_examples}
-        )
+            if classifications.get("check_parameter_constraint") and (minimum is None or maximum is None):
+                parameter_constraints = parameter_constraint(llm, description)
+            if classifications.get("check_parameter_format") and (format_value is None or type_value is None):
+                parameter_formats = parameter_format(llm, description)
+            if classifications.get("check_parameter_example") and (enum is None):
+                parameter_examples = parameter_example(llm, description)
+            parameter_restrictions.append({"name": name,
+                "operational_constraints": operation_constraints,
+                "parameter_formats": parameter_formats,
+                "parameter_constraints": parameter_constraints,
+                "parameter_examples": parameter_examples
+                })
+        return parameter_restrictions
+    for parameter in parameters:
+        if parameter['specifier'] == 'parameter':
+            restriction_list.extend(run_parameter([parameter]))
+        else: 
+            restriction_list.extend(run_parameter(parameter.get("request_parameters")))
         #print({operation_constraints, parameter_formats, parameter_constraints, parameter_examples})
     return restriction_list
 
 if __name__ == "__main__":
-    print(str(run_llm_chain("specifications/openapi_yaml/spotify.yaml", "/search", "get")))
+    print(str(run_llm_chain("specifications/openapi_yaml/spotify.yaml", "/users/{user_id}/playlists", "post")))

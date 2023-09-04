@@ -1,0 +1,696 @@
+{
+    "/me get": [],
+    "/me/playlists get": [
+        {
+            "name": "limit",
+            "type": "integer",
+            "description": "'The maximum number of playlists to return. Default: 20. Minimum: 1. Maximum: 50.'",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "offset",
+            "type": "integer",
+            "description": "'The index of the first playlist to return. Default: 0 (the first object). Maximum offset: 100.000. Use with `limit` to get the next set of playlists.'",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        }
+    ],
+    "/playlists/{playlist_id} get": [
+        {
+            "name": "playlist_id",
+            "type": "string",
+            "description": "The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the playlist.",
+            "in": "path",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "market",
+            "type": "string",
+            "description": "An [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or the string `from_token`. Provide this parameter if you want to apply [Track\nRelinking](https://developer.spotify.com/documentation/general/guides/track-relinking-guide/). For episodes, if a valid user access token is specified in the request header, the country associated with the user account will take priority over this parameter.\n*Note: If neither market or user country are provided, the episode is considered unavailable for the client.*",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "fields",
+            "type": "string",
+            "description": "Filters for the query: a comma-separated list of the fields to return. If omitted, all fields are returned. For example, to get just the playlist''s description and URI: `fields=description,uri`. A dot separator can be used to specify non-reoccurring fields, while parentheses can be used to specify reoccurring fields within objects. For example, to get just the added date and user ID of the adder: `fields=tracks.items(added_at,added_by.id)`. Use multiple parentheses to drill down into nested objects, for example: `fields=tracks.items(track(name,href,album(name,href)))`. Fields can be excluded by prefixing them with an exclamation mark, for example: `fields=tracks.items(track(name,href,album(!name,href)))`",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "additional_types",
+            "type": "string",
+            "description": "A comma-separated list of item types that your client supports besides the default `track` type. Valid types are: `track` and `episode`. **Note** : This parameter was introduced to allow existing clients to maintain their current behaviour and might be deprecated in the future. In addition to providing this parameter, make sure that your client properly handles cases of new types in the future by checking against the `type` field of each object.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        }
+    ],
+    "/playlists/{playlist_id} put": [
+        {
+            "name": "playlist_id",
+            "type": "string",
+            "description": "The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the playlist.",
+            "in": "path",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "specifier": "requestBody",
+            "description": "",
+            "request_parameters": [
+                {
+                    "name": "collaborative",
+                    "type": "boolean",
+                    "description": "If `true` , the playlist will become collaborative and other users will be able to modify the playlist in their Spotify client. *Note: You can only set `collaborative` to `true` on non-public playlists.*",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "description": "Value for playlist description as displayed in Spotify Clients and in the Web API.",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The new name for the playlist, for example `\"My New Playlist Title\"`",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "public",
+                    "type": "boolean",
+                    "description": "If `true` the playlist will be public, if `false` it will be private.",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                }
+            ]
+        }
+    ],
+    "/playlists/{playlist_id}/images get": [
+        {
+            "name": "playlist_id",
+            "type": "string",
+            "description": "The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the playlist.",
+            "in": "path",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        }
+    ],
+    "/playlists/{playlist_id}/tracks delete": [
+        {
+            "name": "playlist_id",
+            "type": "string",
+            "description": "The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids)",
+            "in": "path",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "specifier": "requestBody",
+            "description": "",
+            "request_parameters": [
+                {
+                    "name": "snapshot_id",
+                    "type": "string",
+                    "description": "The playlist's snapshot ID against which you want to make the changes. The API will validate that the specified items exist and in the specified positions and make the changes, even if more recent changes have been made to the playlist.",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "tracks",
+                    "type": "array",
+                    "description": "An array of objects containing [Spotify URIs](https://developer.spotify.com/spotify-documentation/web-api/#spotify-uris-and-ids) of the tracks or episodes to remove. For example: `{ \"tracks\": [{ \"uri\": \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\" },{ \"uri\": \"spotify:track:1301WleyT98MSxVHPZCA6M\" }] }`. A maximum of 100 objects can be sent at once.",
+                    "in": "body",
+                    "required": true,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": "object",
+                    "format": null,
+                    "properties": null
+                }
+            ]
+        }
+    ],
+    "/playlists/{playlist_id}/tracks get": [
+        {
+            "name": "playlist_id",
+            "type": "string",
+            "description": "The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the playlist.",
+            "in": "path",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "market",
+            "type": "string",
+            "description": "An [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or the string `from_token`. Provide this parameter if you want to apply [Track\nRelinking](https://developer.spotify.com/documentation/general/guides/track-relinking-guide/). For episodes, if a valid user access token is specified in the request header, the country associated with the user account will take priority over this parameter.\n*Note: If neither market or user country are provided, the episode is considered unavailable for the client.*",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "fields",
+            "type": "string",
+            "description": "Filters for the query: a comma-separated list of the fields to return. If omitted, all fields are returned. For example, to get just the total number of items and the request limit:\n`fields=total,limit`\nA dot separator can be used to specify non-reoccurring fields, while parentheses can be used to specify reoccurring fields within objects. For example, to get just the added date and user ID of the adder:\n`fields=items(added_at,added_by.id)`\nUse multiple parentheses to drill down into nested objects, for example:\n`fields=items(track(name,href,album(name,href)))`\nFields can be excluded by prefixing them with an exclamation mark, for example:\n`fields=items.track.album(!external_urls,images)`",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "limit",
+            "type": "integer",
+            "description": "The maximum number of items to return. Default: 100. Minimum: 1. Maximum: 100.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "offset",
+            "type": "integer",
+            "description": "The index of the first item to return. Default: 0 (the first object).",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "additional_types",
+            "type": "string",
+            "description": "A comma-separated list of item types that your client supports besides the default `track` type. Valid types are: `track` and `episode`. **Note** : This parameter was introduced to allow existing clients to maintain their current behaviour and might be deprecated in the future. In addition to providing this parameter, make sure that your client properly handles cases of new types in the future by checking against the `type` field of each object.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        }
+    ],
+    "/playlists/{playlist_id}/tracks post": [
+        {
+            "name": "playlist_id",
+            "type": "string",
+            "description": "The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the playlist.",
+            "in": "path",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "position",
+            "type": "integer",
+            "description": "The position to insert the items, a zero-based index. For example, to insert the items in the first position: `position=0`; to insert the items in the third position: `position=2` . If omitted, the items will be appended to the playlist. Items are added in the order they are listed in the query string or request body.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "uris",
+            "type": "string",
+            "description": "A comma-separated list of [Spotify URIs](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) to add, can be track or episode URIs. For example:\n`uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh, spotify:track:1301WleyT98MSxVHPZCA6M, spotify:episode:512ojhOuo1ktJprKbVcKyQ`\nA maximum of 100 items can be added in one request. *Note: it is likely that passing a large number of item URIs as a query parameter will exceed the maximum length of the request URI. When adding a large number of items, it is recommended to pass them in the request body, see below.*",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "specifier": "requestBody",
+            "description": "",
+            "request_parameters": [
+                {
+                    "name": "position",
+                    "type": "integer",
+                    "description": "The position to insert the items, a zero-based index. For example, to insert the items in the first position: `position=0` ; to insert the items in the third position: `position=2`. If omitted, the items will be appended to the playlist. Items are added in the order they appear in the uris array. For example: `{\"uris\": [\"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\",\"spotify:track:1301WleyT98MSxVHPZCA6M\"], \"position\": 3}`",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "uris",
+                    "type": "array",
+                    "description": "A JSON array of the [Spotify URIs](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) to add. For example: `{\"uris\": [\"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\",\"spotify:track:1301WleyT98MSxVHPZCA6M\", \"spotify:episode:512ojhOuo1ktJprKbVcKyQ\"]}`\nA maximum of 100 items can be added in one request. *Note: if the `uris` parameter is present in the query string, any URIs listed here in the body will be ignored.*",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": "string",
+                    "format": null,
+                    "properties": null
+                }
+            ]
+        }
+    ],
+    "/playlists/{playlist_id}/tracks put": [
+        {
+            "name": "playlist_id",
+            "type": "string",
+            "description": "The [Spotify ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) for the playlist.",
+            "in": "path",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "uris",
+            "type": "string",
+            "description": "A comma-separated list of [Spotify URIs](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) to set, can be track or episode URIs. For example: `uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M,spotify:episode:512ojhOuo1ktJprKbVcKyQ`\nA maximum of 100 items can be set in one request.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "specifier": "requestBody",
+            "description": "",
+            "request_parameters": [
+                {
+                    "name": "insert_before",
+                    "type": "integer",
+                    "description": "The position where the items should be inserted.\nTo reorder the items to the end of the playlist, simply set *insert_before* to the position after the last item.\nExamples:\nTo reorder the first item to the last position in a playlist with 10 items, set *range_start* to 0, and *insert_before* to 10.\nTo reorder the last item in a playlist with 10 items to the start of the playlist, set *range_start* to 9, and *insert_before* to 0.",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "range_length",
+                    "type": "integer",
+                    "description": "The amount of items to be reordered. Defaults to 1 if not set.\nThe range of items to be reordered begins from the *range_start* position, and includes the *range_length* subsequent items.\nExample:\nTo move the items at index 9-10 to the start of the playlist, *range_start* is set to 9, and *range_length* is set to 2.",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "range_start",
+                    "type": "integer",
+                    "description": "The position of the first item to be reordered.",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "snapshot_id",
+                    "type": "string",
+                    "description": "The playlist's snapshot ID against which you want to make the changes.",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "uris",
+                    "type": "array",
+                    "description": "A comma-separated list of [Spotify URIs](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) to set, can be track or episode URIs. For example: `uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M,spotify:episode:512ojhOuo1ktJprKbVcKyQ`\nA maximum of 100 items can be set in one request.",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": "string",
+                    "format": null,
+                    "properties": null
+                }
+            ]
+        }
+    ],
+    "/search get": [
+        {
+            "name": "q",
+            "type": "string",
+            "description": "Search [query](#writing-a-query---guidelines) keywords and optional field filters and operators.\nFor example:\n`q=roadhouse%20blues`.",
+            "in": "query",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "type",
+            "type": "string",
+            "description": "A comma-separated list of item types to search across.\nValid types are: `album` , `artist`, `playlist`, `track`, `show` and `episode`.\nSearch results include hits from all the specified item types.\nFor example: `q=name:abacab&type=album,track` returns both albums ***and*** tracks with \"abacab\" included in their name.",
+            "in": "query",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "market",
+            "type": "string",
+            "description": "An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or the string `from_token`.\nIf a country code is specified, only content that is playable in that market is returned.\n**Note** :\n- Playlist results are not affected by the market parameter.\n- If market is set to `from_token`, and a valid access token is specified in the request header, only content playable in the country associated with the user account, is returned.\n- Users can view the country that is associated with their account in the [account settings](https://www.spotify.com/se/account/overview/). A user must grant access to the `user-read-private` scope prior to when the access token is issued.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "limit",
+            "type": "integer",
+            "description": "Maximum number of results to return.\nDefault: 20\nMinimum: 1\nMaximum: 50\n**Note** : The limit is applied within each type, not on the total response.\nFor example, if the limit value is 3 and the type is `artist,album`, the response contains 3 artists and 3 albums.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "offset",
+            "type": "integer",
+            "description": "The index of the first result to return.\nDefault: 0 (the first result).\nMaximum offset (including limit): 1,000.\nUse with limit to get the next page of search results.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "include_external",
+            "type": "string",
+            "description": "Possible values: *audio*\nIf *include_external=audio* is specified the response will include any relevant audio content that is hosted externally.\nBy default external content is filtered out from responses.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        }
+    ],
+    "/users/{user_id}/playlists get": [
+        {
+            "name": "user_id",
+            "type": "string",
+            "description": "The user's [Spotify user ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids).",
+            "in": "path",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "limit",
+            "type": "integer",
+            "description": "The maximum number of playlists to return. Default: 20. Minimum: 1. Maximum: 50.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "name": "offset",
+            "type": "integer",
+            "description": "The index of the first playlist to return. Default: 0 (the first object). Maximum offset: 100.000. Use with `limit` to get the next set of playlists.",
+            "in": "query",
+            "required": false,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        }
+    ],
+    "/users/{user_id}/playlists post": [
+        {
+            "name": "user_id",
+            "type": "string",
+            "description": "The user's [Spotify user ID](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids).",
+            "in": "path",
+            "required": true,
+            "enum": null,
+            "minimum": null,
+            "maximum": null,
+            "items": null,
+            "format": null,
+            "properties": null,
+            "specifier": "parameter"
+        },
+        {
+            "specifier": "requestBody",
+            "description": "",
+            "request_parameters": [
+                {
+                    "name": "collaborative",
+                    "type": "boolean",
+                    "description": "Defaults to `false` . If `true` the playlist will be collaborative. Note that to create a collaborative playlist you must also set `public` to `false` . To create collaborative playlists you must have granted `playlist-modify-private` and `playlist-modify-public` [scopes](https://developer.spotify.com/documentation/general/guides/authorization-guide/#list-of-scopes) .",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "description",
+                    "type": "string",
+                    "description": "value for playlist description as displayed in Spotify Clients and in the Web API.",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "description": "The name for the new playlist, for example `\"Your Coolest Playlist\"` . This name does not need to be unique; a user may have several playlists with the same name.",
+                    "in": "body",
+                    "required": true,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                },
+                {
+                    "name": "public",
+                    "type": "boolean",
+                    "description": "Defaults to `true` . If `true` the playlist will be public, if `false` it will be private. To be able to create private playlists, the user must have granted the `playlist-modify-private` [scope](https://developer.spotify.com/documentation/general/guides/authorization-guide/#list-of-scopes)",
+                    "in": "body",
+                    "required": false,
+                    "enum": null,
+                    "minimum": null,
+                    "maximum": null,
+                    "items": null,
+                    "format": null,
+                    "properties": null
+                }
+            ]
+        }
+    ]
+}

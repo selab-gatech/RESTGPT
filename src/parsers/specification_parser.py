@@ -16,6 +16,42 @@ def process_method_values(method_key, method_values, parameter_data):
     parameter_data[method_key] = []
     for parameter in method_values.get('parameters', {}):
         parameter_data[method_key].append(determine_parameter_object(parameter))
+    if 'requestBody' in method_values:
+        request_body  = {}
+        request_body["specifier"] = "requestBody"
+        request_body["description"] = method_values.get("requestBody").get('description', '')
+        parameters = []
+        required_parameters = []
+        for encoding in method_values.get("requestBody").get("content").keys():
+            request_body_schema = method_values.get("requestBody").get("content").get(encoding).get("schema")
+            parameters.append(request_body_schema.get("properties"))
+            if "required" in request_body_schema.keys(): 
+                required_parameters.extend(request_body_schema.get("required"))
+        required_parameters = set(required_parameters)
+        constructed_parameters = []
+        for parameter in parameters: 
+            for name in parameter.keys():
+                if name in required_parameters:
+                    parameter[name]["required"] = True
+                else:
+                    parameter[name]["required"] = False
+                constructed_parameters.append({
+                    "name" : name, 
+                    "type" : parameter[name].get("type"), 
+                    "description" : parameter[name].get("description"),
+                    "in" : "body",
+                    "required" : parameter[name].get("required"),
+                    "enum" : parameter[name].get("enum"),
+                    "minimum" : parameter[name].get("minimum"),
+                    "maximum" : parameter[name].get("maximum"),
+                    "items" : parameter[name].get("items", {}).get("type"),
+                    "format" : parameter[name].get("format")
+                    if parameter[name].get("type") == "array" else None,
+                    "properties" : parse_properties(parameter[name].get("items", {}).get('properties', {})) if parameter.get("type") == "object" else None,
+                })
+        request_body["request_parameters"] = constructed_parameters
+        parameter_data[method_key].append(request_body)
+    
 
 def determine_parameter_object(parameter):
     schema = parameter.get("schema", {})
@@ -32,7 +68,8 @@ def determine_parameter_object(parameter):
         "format": schema.get("format")
         if parameter.get("schema", {}).get("type") == "array" else None,
         "properties": parse_properties(parameter.get("schema", {}).get('properties', {}))
-        if parameter.get("schema", {}).get("type") == "object" else None
+        if parameter.get("schema", {}).get("type") == "object" else None,
+        "specifier" : "parameter"
     }
 
 # Assume OpenAPI v3.0 files
@@ -40,7 +77,7 @@ def parse_parameters(file_path):
     try:
         parser = ResolvingParser(file_path, strict=False)
         spec_paths = parser.specification.get('paths', {}) # Determine all API paths while ignoring extraneous keys
-        valid_http_methods = {'put', 'post', 'patch', 'get', 'delete'}
+        valid_http_methods = {'put', 'post', 'patch', 'get', 'delete', 'options', 'head', 'patch', 'trace'}
         parameter_data = {}
 
         for path, path_values in spec_paths.items():
@@ -56,8 +93,8 @@ def parse_parameters(file_path):
 
 if __name__ == "__main__":
     # Testing
-    result = parse_parameters("specifications/openapi_yaml/fdic.yaml")
-    with open("test_files/test_specification.json", 'w') as file:
+    result = parse_parameters("../specifications/openapi_yaml/spotify.yaml")
+    with open("test_specification.json", 'w') as file:
         json.dump(result, file, indent=4)
 
 
