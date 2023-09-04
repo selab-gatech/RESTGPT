@@ -90,8 +90,8 @@ PARAMETER_CONSTRAINT_EXAMPLES = [
         "output": "min 1200, max 8999"
     },
     {
-        "input": "'The name of the movie. The movie name cannot be longer than 20 characters.'",
-        "output": "min"
+        "input": "'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'",
+        "output": "minLength 10, maxLength 20"
     }
 ]
 
@@ -124,7 +124,11 @@ VGB, VIR, WLF, ESH, YEM, ZMB, ZWE"""
     {
         "input": "'The title of the book to be rated.'",
         "output":
-""""""
+"""To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer"""
     }
 
 ]
