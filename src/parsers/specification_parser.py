@@ -39,7 +39,7 @@ def process_method_values(method_key, method_values, parameter_data):
                     "name" : name, 
                     "type" : parameter[name].get("type"), 
                     "description" : parameter[name].get("description"),
-                    "in" : "body",
+                    "in" : "requestBody",
                     "required" : parameter[name].get("required"),
                     "enum" : parameter[name].get("enum"),
                     "minimum" : parameter[name].get("minimum"),
@@ -48,9 +48,9 @@ def process_method_values(method_key, method_values, parameter_data):
                     "format" : parameter[name].get("format")
                     if parameter[name].get("type") == "array" else None,
                     "properties" : parse_properties(parameter[name].get("items", {}).get('properties', {})) if parameter.get("type") == "object" else None,
+                    "specifier" : "requestBody"
                 })
-        request_body["request_parameters"] = constructed_parameters
-        parameter_data[method_key].append(request_body)
+        parameter_data[method_key].extend(constructed_parameters)
     
 
 def determine_parameter_object(parameter):
