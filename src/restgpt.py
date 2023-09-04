@@ -87,29 +87,25 @@ def run_llm_chain(file_path, method_path, method_type):
 
     restriction_list = []
     def run_parameter(parameter):
-        operation_constraints = None
         parameter_formats = None
-        parameter_constraints = None
         parameter_examples = None
         name = parameter.get("name")
         description = parameter.get("description")
-        minimum = parameter.get("minimum")
-        maximum = parameter.get("maximum")
         format_value = parameter.get("format")
         type_value = parameter.get("type")
         enum = parameter.get("enum")
 
-        classifications = json.loads(rule_classification(llm, description))
+        #classifications = json.loads(rule_classification(llm, description))
         #print("Attempted for: " + str(parameter))
         #print(classifications)
         # if classifications.get("check_operation_constraint"):
         input_value = f"name: {name}\ndescription: {description}"
         operation_constraints = operation_constraint(llm, input_value)
-        if classifications.get("check_parameter_constraint") and (minimum is None or maximum is None):
-            parameter_constraints = parameter_constraint(llm, description)
-        if classifications.get("check_parameter_format") and (format_value is None or type_value is None):
+        #if classifications.get("check_parameter_constraint") and (minimum is None or maximum is None):
+        parameter_constraints = parameter_constraint(llm, description)
+        if format_value is None or type_value is None:
             parameter_formats = parameter_format(llm, description)
-        if classifications.get("check_parameter_example") and (enum is None):
+        if enum is None:
             parameter_examples = parameter_example(llm, description)
         return {"name": name,
                 "operational_constraints": operation_constraints,
