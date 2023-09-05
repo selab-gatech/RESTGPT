@@ -102,20 +102,27 @@ Here are some examples of inputs and expected outputs:
 """
 
 PARAMETER_CONSTRAINT_CONTEXT = """
-Analyze the provided API parameter description and determine whether it describes a restriction of the parameter's 
-minimum or maximum possible values. If it does, output in the following format: "min [minimum], max [maximum]". If there  
-is no mention of the parameter's minimum and maximum possible values, output "min None, max None". Include decimals 
-in number outputs if necessary but remove commas.
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, 
+apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum or maximum possible values and output it in the 
+following format: "min [minimum], max [maximum]". 
+If it's a string or word, determine if the description mentions minimum or maximum possible input lengths, and output it in the 
+following format: "minLength [minimum], maxLength [maximum]". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths, and output it 
+in the following format: "minItems [minimum], maxItems [maximum]".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties, and 
+output it in the following format: "minProperties [minimum], maxProperties [maximum]".
+If you are unable to determine any minimum or maximum restrictions, output "None". If you are able to determine only one 
+either the minimum or maximum, output the undetermined value as "None".
 
 Here are some examples of inputs and expected outputs:
 """
 
 PARAMETER_EXAMPLE_CONTEXT = """
-Analyze the provided API parameter description and determine if there are example values for the parameter, such as 
-language codes or country codes. If there are, extrapolate the possible parameter values with the same pattern 
-and list them with commas separating them. If the parameter example is not specific or the scope is too large, such as 
-"any decimal number" for example, then output "None". If unable to determine any example values, output "None". If the
-parameter examples are broad and have no clear relation, output "None".
+Analyze the provided API parameter description and determine if there are explicit example values for the parameter, 
+such as language codes or country codes. If there are, extrapolate the possible parameter values with the same pattern 
+and output them in a comma-separated list. If there aren't explicit example values for the parameter, analyze the 
+description and infer examples for the parameter value to output as samples in a comma-separated list. If unable to 
+deduce any relevant examples, output "None".
 
-Here are some examples of inputs and expected outputs:  
-"""
+Here are some examples of inputs and expected outputs:"""

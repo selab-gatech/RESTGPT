@@ -88,6 +88,10 @@ PARAMETER_CONSTRAINT_EXAMPLES = [
     {
         "input": "The stock quantity. The smallest possible value is 1,200. All the values should be less than 8,999.",
         "output": "min 1200, max 8999"
+    },
+    {
+        "input": "'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'",
+        "output": "minLength 10, maxLength 20"
     }
 ]
 
@@ -109,8 +113,22 @@ THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, 
 VGB, VIR, WLF, ESH, YEM, ZMB, ZWE"""
     },
     {
-        "input": "'The numbers must values for the percent grades must be to one decimal place (such as 10.6).'",
-        "output": "None"
+        "input": "'The numbers for the percent grades must be to one decimal place (such as 10.6).'",
+        "output":
+"""0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 
+6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9.0, 
+9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9, 10.0, 99.9, 100.0"""
+    },
+    {
+        "input": "'The title of the book to be rated.'",
+        "output":
+"""To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer"""
     }
 
 ]

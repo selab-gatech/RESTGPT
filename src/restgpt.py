@@ -4,7 +4,7 @@ from langchain.llms import OpenAI
 from langchain.prompts.example_selector import LengthBasedExampleSelector
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
-from specification_parser import parse_parameters
+from parsers.specification_parser import parse_parameters
 from model_properties.examples import *
 from model_properties.contexts import *
 from config import API_KEY
@@ -86,42 +86,38 @@ def run_llm_chain(file_path, method_path, method_type):
     parameters = parse_parameters(file_path).get(method_key)
 
     restriction_list = []
-
-    for parameter in parameters:
-        operation_constraints = None
+    def run_parameter(parameter):
         parameter_formats = None
-        parameter_constraints = None
         parameter_examples = None
         name = parameter.get("name")
         description = parameter.get("description")
-        minimum = parameter.get("minimum")
-        maximum = parameter.get("maximum")
         format_value = parameter.get("format")
         type_value = parameter.get("type")
         enum = parameter.get("enum")
 
-        classifications = json.loads(rule_classification(llm, description))
+        #classifications = json.loads(rule_classification(llm, description))
         #print("Attempted for: " + str(parameter))
         #print(classifications)
-        if classifications.get("check_operation_constraint"):
-            input_value = f"name: {name}\ndescription: {description}"
-            operation_constraints = operation_constraint(llm, input_value)
-        if classifications.get("check_parameter_constraint") and (minimum is None or maximum is None):
-            parameter_constraints = parameter_constraint(llm, description)
-        if classifications.get("check_parameter_format") and (format_value is None or type_value is None):
+        # if classifications.get("check_operation_constraint"):
+        input_value = f"name: {name}\ndescription: {description}"
+        operation_constraints = operation_constraint(llm, input_value)
+        #if classifications.get("check_parameter_constraint") and (minimum is None or maximum is None):
+        parameter_constraints = parameter_constraint(llm, description)
+        if format_value is None or type_value is None:
             parameter_formats = parameter_format(llm, description)
-        if classifications.get("check_parameter_example") and (enum is None):
+        if enum is None:
             parameter_examples = parameter_example(llm, description)
-
-        restriction_list.append(
-            {"name": name,
-            "operational_constraints": operation_constraints,
-            "parameter_formats": parameter_formats,
-            "parameter_constraints": parameter_constraints,
-            "parameter_examples": parameter_examples}
-        )
+        return {"name": name,
+                "operational_constraints": operation_constraints,
+                "parameter_formats": parameter_formats,
+                "parameter_constraints": parameter_constraints,
+                "parameter_examples": parameter_examples
+                }
+    
+    for parameter in parameters:
+        restriction_list.append(run_parameter(parameter))
         #print({operation_constraints, parameter_formats, parameter_constraints, parameter_examples})
     return restriction_list
 
 if __name__ == "__main__":
-    print(str(run_llm_chain("specifications/openapi_yaml/spotify.yaml", "/search", "get")))
+    print(str(run_llm_chain("specifications/openapi_yaml/spotify.yaml", "/users/{user_id}/playlists", "post")))
