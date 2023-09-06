@@ -5,6 +5,7 @@ from parsers.parameter_constraint_parser import ParameterConstraintParser
 from parsers.example_parser import ExampleParser
 from parsers.parameter_format_parser import ParameterFormatParser
 from parsers.specification_parser import parse_parameters
+import json
 
 class SpecificationBuilder:
 
@@ -17,11 +18,21 @@ class SpecificationBuilder:
         self.read_path = read_path
         self.output_path = output_path
 
+    def add_parameter_constraint(self, parameter, parameter_constraint):
+        for min_max, value in parameter_constraint.items():
+            parameter[min_max] = value
+
     def build_constraint(self, method_path, parameter_name, operation_constraint, example_constraint, format_constraint, parameter_constraint):
         path_values = self.output_builder.get("paths", {}).get(method_path)
         for method_type, method_values in path_values.items():
             parameters = method_values.get("parameters", {})
-            print(parameters)
+            for parameter in parameters:
+                if parameter.get("name") == parameter_name:
+                    self.add_parameter_constraint(parameter.get("schema"), parameter_constraint)
+
+        with open("test_output.json", 'w') as file:
+            result = self.output_builder
+            json.dump(result, file, indent=4)
         #for path, path_values in self.output_builder.items():
             #for method_type, method_values in path_values.items(): # Determine HTTP method
                 #print(method_values)
@@ -52,5 +63,5 @@ class SpecificationBuilder:
 if __name__ == "__main__":
     specification_builder = SpecificationBuilder("specifications/openapi_yaml/spotify.yaml", "outputs/spotify.yaml")
     #print(str(specification_builder.find_constraints("/me/playlists", "get")))
-    print(str(specification_builder.build_constraint("/me/playlists", "get", None, None, None, None)))
+    print(str(specification_builder.build_constraint("/me/playlists", "limit", None, None, None, {"min": 100, "max": 1200})))
     #specification_builder.output_specifications()
