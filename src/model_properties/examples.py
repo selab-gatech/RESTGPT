@@ -99,7 +99,7 @@ PARAMETER_EXAMPLE_EXAMPLES = [
     {
         "input": "'The country code associated with the country. Examples are CAD, USD, etc...'",
         "output":
-"""AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+"""PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
 BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
 CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
 SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
@@ -115,7 +115,7 @@ VGB, VIR, WLF, ESH, YEM, ZMB, ZWE"""
     {
         "input": "'The numbers for the percent grades must be to one decimal place (such as 10.6).'",
         "output":
-"""0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+"""PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
 4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 
 6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9.0, 
@@ -124,13 +124,12 @@ VGB, VIR, WLF, ESH, YEM, ZMB, ZWE"""
     {
         "input": "'The title of the book to be rated.'",
         "output":
-"""To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+"""PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
 and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
 History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
 a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
 Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer"""
     }
-
 ]
 
 IDL_OPERATION_CONSTRAINT_EXAMPLES = [

@@ -119,10 +119,13 @@ Here are some examples of inputs and expected outputs:
 """
 
 PARAMETER_EXAMPLE_CONTEXT = """
-Analyze the provided API parameter description and determine if there are explicit example values for the parameter, 
-such as language codes or country codes. If there are, extrapolate the possible parameter values with the same pattern 
-and output them in a comma-separated list. If there aren't explicit example values for the parameter, analyze the 
-description and infer examples for the parameter value to output as samples in a comma-separated list. If unable to 
-deduce any relevant examples, output "None".
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, extrapolate and generate additional example values that correspond, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: "PROVIDED: USA, CAN, ZWE | GENERATED: BRA, FRA, GER ..."
+Case 2: The description does not explicitly mention example values: Output: "PROVIDED: None | GENERATED: BRA, FRA, GER, USA ..."
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: "None"
 
 Here are some examples of inputs and expected outputs:"""
