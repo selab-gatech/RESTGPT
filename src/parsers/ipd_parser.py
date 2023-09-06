@@ -81,7 +81,9 @@ class IDL_IPD_PARSER:
         return {"x-dependencies": logical_blocks}
     def _yaml_output(self, logical_blocks): 
         return yaml.dump(self._dict_output(logical_blocks))
-    def parse_parameter(self, logical_str, r_type):
+    def parse_parameter(self, logical_str, r_type=None):
+        if logical_str is None or logical_str.strip() == "None":
+            return
         return self._yaml_output(self._logical_blocks(logical_str)) if r_type == "yaml" else self._dict_output(self._logical_blocks(logical_str))
     def parse_operation(self, r_type):
         return self._yaml_output(self.rules) if r_type == "yaml" else self._dict_output(self.rules)

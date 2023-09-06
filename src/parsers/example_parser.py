@@ -1,7 +1,7 @@
 import yaml 
 import re
 
-class InputParser: 
+class ExampleParser:
     def __init__(self):
         pass
     def _split_values(self, llm_output):
@@ -25,10 +25,14 @@ class InputParser:
             if extracted_values[key] is not None:
                     enum.extend(extracted_values[key])
         return enum, enum[0] if enum else None
-    def parse_examples(self, llm_output, is_requestBody=False, parameter_name=None): 
+    def parse_examples(self, llm_output, is_requestBody=False, parameter_name=None):
+        if llm_output is None or llm_output.strip() == "None":
+            return
         extracted_values = self._split_values(llm_output)
         provided_examples = extracted_values["PROVIDED"]
         generated_examples = extracted_values["GENERATED"]
+        if provided_examples is None or generated_examples is None:
+            return
         if not is_requestBody: 
             if len(provided_examples) + len(generated_examples) == 1: 
                 return {

@@ -10,9 +10,9 @@ class ParameterFormatParser:
     def yaml_output(self, type_value, items_value, format_value):
         return yaml.dump(self.dictionary_output(type_value, items_value, format_value))
 
-    def parse(self, format_string, output_type):
-        if format_string is None:
-            pass
+    def parse(self, format_string, output_type=None):
+        if format_string is None or format_string.strip() == "None":
+            return
         values = format_string.split(", ")
         type_value = values[0].split(" ")
         items_value = values[1].split(" ") # REMEMBER TO CHECK TYPE VALUE WHEN ADDING ITEM IN OVERALL PARSER
