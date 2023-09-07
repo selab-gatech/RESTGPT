@@ -94,6 +94,7 @@ def run_llm_chain(file_path, method_path, method_type):
         format_value = parameter.get("format")
         type_value = parameter.get("type")
         enum = parameter.get("enum")
+        specifier = parameter.get("specifier")
 
         #classifications = json.loads(rule_classification(llm, description))
         #print("Attempted for: " + str(parameter))
@@ -108,6 +109,7 @@ def run_llm_chain(file_path, method_path, method_type):
         if enum is None:
             parameter_examples = parameter_example(llm, description)
         return {"name": name,
+                "specifier": specifier,
                 "operational_constraints": operation_constraints,
                 "parameter_formats": parameter_formats,
                 "parameter_constraints": parameter_constraints,
