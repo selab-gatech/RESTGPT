@@ -124,8 +124,8 @@ Then, extrapolate and generate additional example values that correspond, or are
 If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
 If generating example values is not possible, return None. Consider the following cases: 
 
-Case 1: The description contains example values USA, CAN, ZWE: Output: "PROVIDED: USA, CAN, ZWE | GENERATED: BRA, FRA, GER ..."
-Case 2: The description does not explicitly mention example values: Output: "PROVIDED: None | GENERATED: BRA, FRA, GER, USA ..."
+Case 1: The description contains example values USA, CAN, ZWE: Output: "PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ..."
+Case 2: The description does not explicitly mention example values: Output: "PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ..."
 Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: "None"
 
 Here are some examples of inputs and expected outputs:"""

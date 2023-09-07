@@ -16,3 +16,4 @@ class ParameterConstraintParser:
         min_restriction = restrictions[0].split(" ")
         max_restriction = restrictions[1].split(" ")
         return self.yaml_output(min_restriction, max_restriction) if output_type == "yaml" else self.dictionary_output(min_restriction, max_restriction)
+    

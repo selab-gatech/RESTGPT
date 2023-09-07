@@ -1,17 +1,16 @@
 from restgpt import run_llm_chain
-from parsers.ipd_parser import IDL_IPD_PARSER
+from parsers.ipd_parser import InterDependencyParser
 from prance import ResolvingParser, BaseParser
 from parsers.parameter_constraint_parser import ParameterConstraintParser
-from parsers.example_parser import ExampleParser
+from parsers.example_parser import InputParser
 from parsers.parameter_format_parser import ParameterFormatParser
 from parsers.specification_parser import parse_parameters
 import json
 
 class SpecificationBuilder:
-
     def __init__(self, read_path, output_path):
-        self.operation_constraint_parser = IDL_IPD_PARSER()
-        self.example_parser = ExampleParser()
+        self.operation_constraint_parser = InterDependencyParser()
+        self.example_parser = InputParser()
         self.parameter_format_parser = ParameterFormatParser()
         self.parameter_constraint_parser = ParameterConstraintParser()
         self.output_builder = BaseParser(read_path).specification
@@ -21,7 +20,7 @@ class SpecificationBuilder:
     def add_parameter_constraint(self, parameter, parameter_constraint):
         for min_max, value in parameter_constraint.items():
             parameter[min_max] = value
-
+    
     def build_constraint(self, method_path, parameter_name, operation_constraint, example_constraint, format_constraint, parameter_constraint):
         path_values = self.output_builder.get("paths", {}).get(method_path)
         for method_type, method_values in path_values.items():
@@ -43,7 +42,7 @@ class SpecificationBuilder:
             operation_constraint = self.operation_constraint_parser.parse_parameter(parameter.get("operation_constraints"))
             example_constraint = self.example_parser.parse_examples(parameter.get("parameter_examples"))
             format_constraint = self.parameter_format_parser.parse(parameter.get("parameter_formats"))
-            parameter_constraint = self.parameter_constraint_parser.parse(parameter.get("parameter_constraints"))
+            parameter_constraint = self.parameter_constraint_parser.parse(parameter.get("operational_constraints"))
             #print(str(operation_constraint))
             #print(str(example_constraint))
             #print(str(format_constraint))

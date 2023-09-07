@@ -1,11 +1,11 @@
 import yaml 
 import re
 
-class ExampleParser:
+class InputParser: 
     def __init__(self):
         pass
     def _split_values(self, llm_output):
-        if llm_output == "None" or "+++" not in llm_output:
+        if llm_output is None or llm_output == "None" or "+++" not in llm_output:
             return {
                 "PROVIDED" : None, 
                 "GENERATED" : None
@@ -25,45 +25,39 @@ class ExampleParser:
             if extracted_values[key] is not None:
                     enum.extend(extracted_values[key])
         return enum, enum[0] if enum else None
-    def parse_examples(self, llm_output, is_requestBody=False, parameter_name=None):
-        if llm_output is None or llm_output.strip() == "None":
-            return
+    def parse_examples(self, llm_output, is_requestBody=False, parameter_name=None): 
         extracted_values = self._split_values(llm_output)
         provided_examples = extracted_values["PROVIDED"]
         generated_examples = extracted_values["GENERATED"]
-        if provided_examples is None or generated_examples is None:
-            return
         if not is_requestBody: 
-            if len(provided_examples) + len(generated_examples) == 1: 
-                return {
-                    "example": provided_examples[0] if provided_examples else generated_examples[0] 
-                }
+            if provided_examples is None and generated_examples is None: 
+                return None
             else: 
                 example_dict = {"examples" : {}}
                 provided_base =  "PROVIDED"
                 generated_base = "GENERATED"
-                for i in range(len(provided_examples)):
-                    example_dict["examples"][f"{provided_base}_{i}"] = {}
-                    example_dict["examples"][f"{provided_base}_{i}"]["value"] = provided_examples[i]
-                for i in range(len(generated_examples)):
-                    example_dict["examples"][f"{generated_base}_{i}"] = {}
-                    example_dict["examples"][f"{generated_base}_{i}"]["value"] = generated_examples[i]
+                if provided_examples is not None: 
+                    for i in range(len(provided_examples)):
+                        example_dict["examples"][f"{provided_base}_{i}"] = {}
+                        example_dict["examples"][f"{provided_base}_{i}"]["value"] = provided_examples[i]
+                if generated_examples is not None:
+                    for i in range(len(generated_examples)):
+                        example_dict["examples"][f"{generated_base}_{i}"] = {}
+                        example_dict["examples"][f"{generated_base}_{i}"]["value"] = generated_examples[i]
                 return example_dict
         else:
             example_dict = {"examples" : {}}
             provided_base =  "PROVIDED_" + parameter_name 
             generated_base = "GENERATED_" + parameter_name
-            for i in range(len(provided_examples)):
-                example_dict["examples"][f"{provided_base}_{i}"] = {}
-                example_dict["examples"][f"{provided_base}_{i}"]["value"] = str({parameter_name: provided_examples[i]})
-            for i in range(len(generated_examples)):
-                example_dict["examples"][f"{generated_base}_{i}"] = {}
-                example_dict["examples"][f"{generated_base}_{i}"]["value"] = str({parameter_name: generated_examples[i]})
+            if provided_examples is not None:
+                for i in range(len(provided_examples)):
+                    example_dict["examples"][f"{provided_base}_{i}"] = {}
+                    example_dict["examples"][f"{provided_base}_{i}"]["value"] = str({parameter_name: provided_examples[i]})
+            if generated_examples is not None:
+                for i in range(len(generated_examples)):
+                    example_dict["examples"][f"{generated_base}_{i}"] = {}
+                    example_dict["examples"][f"{generated_base}_{i}"]["value"] = str({parameter_name: generated_examples[i]})
             return example_dict
-
-            
-
-        
 
         
 

@@ -69,7 +69,7 @@ class IDP_PARSER:
             self._export_to_yaml(parsed_logical, file_path)
         return parsed_logical
     
-class IDL_IPD_PARSER:
+class InterDependencyParser:
     def __init__(self):
         self.rules = [] 
     def _logical_blocks(self, logical_str): 
