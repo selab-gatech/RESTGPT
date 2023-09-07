@@ -79,12 +79,16 @@ class InterDependencyParser:
         return logical_blocks
     def _dict_output(self, logical_blocks):
         return {"x-dependencies": logical_blocks}
+
+    def _list_output(self, logical_blocks):
+        return logical_blocks
+
     def _yaml_output(self, logical_blocks): 
         return yaml.dump(self._dict_output(logical_blocks))
     def parse_parameter(self, logical_str, r_type=None):
         if logical_str is None or logical_str.strip() == "None":
             return
-        return self._yaml_output(self._logical_blocks(logical_str)) if r_type == "yaml" else self._dict_output(self._logical_blocks(logical_str))
+        return self._yaml_output(self._logical_blocks(logical_str)) if r_type == "yaml" else self._list_output(self._logical_blocks(logical_str))
     def parse_operation(self, r_type):
         return self._yaml_output(self.rules) if r_type == "yaml" else self._dict_output(self.rules)
     
