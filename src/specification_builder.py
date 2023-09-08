@@ -1,14 +1,15 @@
 from restgpt import run_llm_chain
-from parsers.ipd_parser import IDL_IPD_PARSER
 from prance import ResolvingParser, BaseParser
 from parsers.parameter_constraint_parser import ParameterConstraintParser
 from parsers.example_parser import ExampleParser
 from parsers.parameter_format_parser import ParameterFormatParser
 from parsers.specification_parser import parse_parameters
+from parsers.ipd_parser import InterDependencyParser
 import json
+
 class SpecificationBuilder:
     def __init__(self, read_path, output_path):
-        self.operation_constraint_parser = IDL_IPD_PARSER()
+        self.operation_constraint_parser = InterDependencyParser()
         self.example_parser = ExampleParser()
         self.parameter_format_parser = ParameterFormatParser()
         self.parameter_constraint_parser = ParameterConstraintParser()

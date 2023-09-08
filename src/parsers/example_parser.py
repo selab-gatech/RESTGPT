@@ -1,7 +1,7 @@
 import yaml 
 import re
 
-class InputParser: 
+class ExampleParser:
     def __init__(self):
         pass
     def _split_values(self, llm_output):
