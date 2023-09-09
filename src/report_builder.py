@@ -2,7 +2,7 @@ from restgpt import run_llm_chain
 from parsers.ipd_parser import InterDependencyParser
 from prance import ResolvingParser, BaseParser
 from parsers.parameter_constraint_parser import ParameterConstraintParser
-from parsers.example_parser import InputParser
+from parsers.example_parser import ExampleParser
 from parsers.parameter_format_parser import ParameterFormatParser
 from parsers.specification_parser import parse_parameters
 import json
@@ -13,7 +13,7 @@ from tqdm import tqdm
 class ReportBuilder: 
     def __init__(self, read_path, output_path): 
         self.ipd_parser = InterDependencyParser()
-        self.example_parser = InputParser()
+        self.example_parser = ExampleParser()
         self.parameter_constraint_parser = ParameterConstraintParser()
         self.parameter_format_parser = ParameterFormatParser()
         self.output_builder = ResolvingParser(read_path, strict=False).specification #reads in the specification as a dictionary
@@ -49,8 +49,8 @@ class ReportBuilder:
     def _add_ipd_constraint(self, build_parameter, ipd_constraint):
         if ipd_constraint is None:
             return
-        for constraint_key, constraint in ipd_constraint.items(): 
-            build_parameter[constraint_key] = constraint
+        for constraint in ipd_constraint:
+            build_parameter["x-dependencies"] = constraint
     def _add_example_values(self, build_parameter, model_examples):
         if model_examples is None: 
             return

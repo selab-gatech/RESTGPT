@@ -104,14 +104,11 @@ Here are some examples of inputs and expected outputs:
 PARAMETER_CONSTRAINT_CONTEXT = """
 Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, 
 apply the following to determine restrictions on the parameter input:
-If it is a number, determine if the description mentions minimum or maximum possible values and output it in the 
-following format: "min [minimum], max [maximum]". 
-If it's a string or word, determine if the description mentions minimum or maximum possible input lengths, and output it in the 
-following format: "minLength [minimum], maxLength [maximum]". 
-If it's an array or list, determine if the description mentions minimum or maximum possible list lengths, and output it 
-in the following format: "minItems [minimum], maxItems [maximum]".
+If it is a number, determine if the description mentions minimum or maximum possible values and output: "min [minimum], max [maximum]". 
+If it's a string or word, determine if the description mentions minimum or maximum possible input lengths, and output: "minLength [minimum], maxLength [maximum]". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths, and output: "minItems [minimum], maxItems [maximum]".
 If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties, and 
-output it in the following format: "minProperties [minimum], maxProperties [maximum]".
+output: "minProperties [minimum], maxProperties [maximum]".
 If you are unable to determine any minimum or maximum restrictions, output "None". If you are able to determine only one 
 either the minimum or maximum, output the undetermined value as "None".
 
@@ -122,7 +119,7 @@ PARAMETER_EXAMPLE_CONTEXT = """
 Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
 Then, extrapolate and generate additional example values that correspond, or are in the same category as the provided values.
 If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
-If generating example values is not possible, return None. Consider the following cases: 
+Limit the amount of examples generated to 70. If generating example values is not possible, return None. Consider the following cases: 
 
 Case 1: The description contains example values USA, CAN, ZWE: Output: "PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ..."
 Case 2: The description does not explicitly mention example values: Output: "PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ..."

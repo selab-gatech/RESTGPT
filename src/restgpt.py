@@ -79,6 +79,15 @@ def parameter_constraint(llm, input_value):
 def parameter_example(llm, input_value):
     return FewShotModel(PARAMETER_EXAMPLE_EXAMPLES, PARAMETER_EXAMPLE_CONTEXT, MODEL_SUFFIX, llm).run_model(input_value)
 
+def llm_output_formatting(name, specifier, operation_constraints, parameter_formats, parameter_constraints, parameter_examples):
+    return {"name": name,
+     "specifier": specifier,
+     "operational_constraints": operation_constraints,
+     "parameter_formats": parameter_formats,
+     "parameter_constraints": parameter_constraints,
+     "parameter_examples": parameter_examples
+     }
+
 def run_llm_chain(file_path, method_path, method_type):
 
     llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", openai_api_key = API_KEY, temperature=0, request_timeout=1200)
@@ -97,6 +106,15 @@ def run_llm_chain(file_path, method_path, method_type):
         enum = parameter.get("enum")
         specifier = parameter.get("specifier")
 
+        if description is None:
+            return llm_output_formatting(
+                name=name,
+                specifier=specifier,
+                operation_constraints="None",
+                parameter_formats="None",
+                parameter_constraints="None",
+                parameter_examples="None")
+
         #classifications = json.loads(rule_classification(llm, description))
         #print("Attempted for: " + str(parameter))
         #print(classifications)
@@ -109,13 +127,12 @@ def run_llm_chain(file_path, method_path, method_type):
             parameter_formats = parameter_format(llm, description)
         if enum is None:
             parameter_examples = parameter_example(llm, description)
-        return {"name": name,
-                "specifier": specifier,
-                "operational_constraints": operation_constraints,
-                "parameter_formats": parameter_formats,
-                "parameter_constraints": parameter_constraints,
-                "parameter_examples": parameter_examples
-                }
+        return llm_output_formatting(name=name,
+                                     specifier=specifier,
+                                     operation_constraints=operation_constraints,
+                                     parameter_formats=parameter_formats,
+                                     parameter_constraints=parameter_constraints,
+                                     parameter_examples=parameter_examples)
     
     for parameter in parameters:
         restriction_list.append(run_parameter(parameter))
