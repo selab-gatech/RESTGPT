@@ -1,3 +1,4 @@
+import openai.error
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate, FewShotPromptTemplate
 from langchain.llms import OpenAI
@@ -9,7 +10,7 @@ from parsers.specification_parser import parse_parameters
 from model_properties.examples import *
 from model_properties.contexts import *
 from config import API_KEY
-import json
+import time
 
 class Classifications(BaseModel):
     check_operation_constraint: bool = Field(description="""
@@ -30,27 +31,35 @@ class FewShotModel:
         self.prefix = prefix
         self.suffix = suffix
         self.llm = llm
-
-    def run_model(self, input_value):
-        examples_format = PromptTemplate(
+        self.examples_format = PromptTemplate(
             input_variables=["input", "output"],
             template="Input: {input}\nOutput: {output}"
         )
-        examples_selector = LengthBasedExampleSelector(
+        self.examples_selector = LengthBasedExampleSelector(
             examples=self.examples,
-            example_prompt=examples_format,
-            max_length="5500" # based on words (~7000 word input limit)
+            example_prompt=self.examples_format,
+            max_length="5500"  # based on words (~7000 word input limit)
         )
-        fewshot_prompt = FewShotPromptTemplate(
-            example_prompt=examples_format,
-            example_selector=examples_selector,
+        self.fewshot_prompt = FewShotPromptTemplate(
+            example_prompt=self.examples_format,
+            example_selector=self.examples_selector,
             example_separator="\n\n",
             prefix=self.prefix,
             suffix=self.suffix,
             input_variables=["input"]
         )
-        fewshot_chain = LLMChain(prompt=fewshot_prompt, llm=self.llm)
-        return fewshot_chain.run(input_value)
+        self.fewshot_chain = LLMChain(prompt=self.fewshot_prompt, llm=self.llm)
+
+    def run_model(self, input_value):
+        retries = 3
+        for i in range(retries):
+            try:
+                output = self.fewshot_chain.run(input_value)
+                return output
+            except openai.error.OpenAIError as e:
+                print(f"Received an API error. Will retry in 20 seconds.")
+                time.sleep(20)
+        return "None"
 
 def rule_classification(llm, description):
     output_parser = PydanticOutputParser(
@@ -115,13 +124,8 @@ def run_llm_chain(file_path, method_path, method_type):
                 parameter_constraints="None",
                 parameter_examples="None")
 
-        #classifications = json.loads(rule_classification(llm, description))
-        #print("Attempted for: " + str(parameter))
-        #print(classifications)
-        # if classifications.get("check_operation_constraint"):
         input_value = f"name: {name}\ndescription: {description}"
         operation_constraints = operation_constraint(llm, input_value)
-        #if classifications.get("check_parameter_constraint") and (minimum is None or maximum is None):
         parameter_constraints = parameter_constraint(llm, description)
         if format_value is None or type_value is None:
             parameter_formats = parameter_format(llm, description)
@@ -136,6 +140,7 @@ def run_llm_chain(file_path, method_path, method_type):
     
     for parameter in parameters:
         restriction_list.append(run_parameter(parameter))
+        #time.sleep(10)
         #print({operation_constraints, parameter_formats, parameter_constraints, parameter_examples})
     return restriction_list
 

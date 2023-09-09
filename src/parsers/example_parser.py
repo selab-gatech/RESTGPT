@@ -16,7 +16,7 @@ class ExampleParser:
             "GENERATED" : split[1].strip()
         }
         extracted["PROVIDED"] = extracted["PROVIDED"].split("PROVIDED:")[1].strip().split(", ") if extracted["PROVIDED"].split("PROVIDED:")[0].strip().lower() != "none" else None
-        extracted["GENERATED"] = extracted["GENERATED"].split("GENERATED:")[1].strip().split(", ") if extracted["GENERATED"].split("GENERATED:")[1].strip().lower() != "none" else None
+        extracted["GENERATED"] = extracted["GENERATED"].split("GENERATED:")[1].replace("\n", " ").strip().split(", ") if extracted["GENERATED"].split("GENERATED:")[1].strip().lower() != "none" else None
         return extracted
     def parse_enum(self, llm_output):
         extracted_values = self._split_values(llm_output)
