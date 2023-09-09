@@ -1,10 +1,13 @@
 import openai.error
+import langchain
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate, FewShotPromptTemplate
 from langchain.llms import OpenAI
 from langchain.chat_models import ChatOpenAI
 from langchain.prompts.example_selector import LengthBasedExampleSelector
 from langchain.output_parsers import PydanticOutputParser
+from langchain.cache import InMemoryCache
+from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from pydantic import BaseModel, Field
 from parsers.specification_parser import parse_parameters
 from model_properties.examples import *
@@ -38,7 +41,7 @@ class FewShotModel:
         self.examples_selector = LengthBasedExampleSelector(
             examples=self.examples,
             example_prompt=self.examples_format,
-            max_length="5500"  # based on words (~7000 word input limit)
+            max_length="2048"  # based on words (~7000 word input limit)
         )
         self.fewshot_prompt = FewShotPromptTemplate(
             example_prompt=self.examples_format,
@@ -50,11 +53,13 @@ class FewShotModel:
         )
         self.fewshot_chain = LLMChain(prompt=self.fewshot_prompt, llm=self.llm)
 
+
     def run_model(self, input_value):
         retries = 3
         for i in range(retries):
             try:
-                output = self.fewshot_chain.run(input_value)
+                #print(self.fewshot_prompt.format(input=input_value))
+                output = self.fewshot_chain.run(input=input_value)
                 return output
             except openai.error.OpenAIError as e:
                 print(f"Received an API error. Will retry in 20 seconds.")
@@ -99,7 +104,8 @@ def llm_output_formatting(name, specifier, operation_constraints, parameter_form
 
 def run_llm_chain(file_path, method_path, method_type):
 
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", openai_api_key = API_KEY, temperature=0, request_timeout=1200)
+    langchain.llm_cache = InMemoryCache()
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=2048, openai_api_key = API_KEY, temperature=0.2, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
 
     method_key = f"{method_path} {method_type}"
     parameters = parse_parameters(file_path).get(method_key)
@@ -125,12 +131,14 @@ def run_llm_chain(file_path, method_path, method_type):
                 parameter_examples="None")
 
         input_value = f"name: {name}\ndescription: {description}"
+        #print("Started operation and parameter constraints")
         operation_constraints = operation_constraint(llm, input_value)
         parameter_constraints = parameter_constraint(llm, description)
         if format_value is None or type_value is None:
             parameter_formats = parameter_format(llm, description)
         if enum is None:
             parameter_examples = parameter_example(llm, description)
+        #print("Constraints finished")
         return llm_output_formatting(name=name,
                                      specifier=specifier,
                                      operation_constraints=operation_constraints,
@@ -139,10 +147,12 @@ def run_llm_chain(file_path, method_path, method_type):
                                      parameter_examples=parameter_examples)
     
     for parameter in parameters:
+        print(f"Attempting to request from LLM for {parameter}")
         restriction_list.append(run_parameter(parameter))
+        print("Completed a restriction!")
         #time.sleep(10)
         #print({operation_constraints, parameter_formats, parameter_constraints, parameter_examples})
     return restriction_list
 
 if __name__ == "__main__":
-    print(str(run_llm_chain("specifications/openapi_yaml/spotify.yaml", "/users/{user_id}/playlists", "post")))
+    print(str(run_llm_chain("specifications/openapi_yaml/youtube.yaml", "/search", "get")))

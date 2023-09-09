@@ -2,7 +2,7 @@ from report_builder import ReportBuilder
 import os
 
 def run_all_reports():
-    files = ["spotify", "language-tool", "omdb", "youtube", "genome-nexus",
+    files = ["youtube", "genome-nexus",
              "ohsome", "fdic", "ocvn"]
     for file in files:
         print("Buidling specification for " + file)

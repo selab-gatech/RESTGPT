@@ -58,12 +58,15 @@ class ReportBuilder:
         build_parameter[example_key] = {} 
         build_parameter[example_key]["provided"] = []
         build_parameter[example_key]["generated"] = []
+        existing_examples = set()
         for key in model_examples.keys():
             for id, example in model_examples[key].items():
                 if id.split("_")[0] == "PROVIDED": 
                     build_parameter[example_key]["provided"].append(example["value"])
-                else: 
-                    build_parameter[example_key]["generated"].append(example["value"])
+                else:
+                    if example["value"] not in existing_examples:
+                        existing_examples.add(example["value"])
+                        build_parameter[example_key]["generated"].append(example["value"])
     def _add_parameter_type_values(self, build_parameter, parameter_types):
         if parameter_types is None: 
             return None
