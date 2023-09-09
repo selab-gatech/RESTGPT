@@ -127,6 +127,7 @@ class ReportBuilder:
     def path_builder(self): 
         spec = {}
         for path in self.paths:
+            print(path)
             route = path[0]
             method = path[1]
             request_body_id = "request-body"

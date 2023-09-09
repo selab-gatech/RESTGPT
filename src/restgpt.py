@@ -1,6 +1,7 @@
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate, FewShotPromptTemplate
 from langchain.llms import OpenAI
+from langchain.chat_models import ChatOpenAI
 from langchain.prompts.example_selector import LengthBasedExampleSelector
 from langchain.output_parsers import PydanticOutputParser
 from pydantic import BaseModel, Field
@@ -80,7 +81,7 @@ def parameter_example(llm, input_value):
 
 def run_llm_chain(file_path, method_path, method_type):
 
-    llm = OpenAI(model_name="gpt-3.5-turbo", openai_api_key = API_KEY, temperature=0)
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", openai_api_key = API_KEY, temperature=0, request_timeout=1200)
 
     method_key = f"{method_path} {method_type}"
     parameters = parse_parameters(file_path).get(method_key)

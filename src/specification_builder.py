@@ -21,43 +21,9 @@ class SpecificationBuilder:
         correct_mappings = {"min": "number", "max": "number", "minItems": "array", "maxItems": "array"}
         mapping_key = parameter.get("type") if parameter.get("type") != "integer" else "number"
         for min_max, value in parameter_constraint.items():
-<<<<<<< HEAD
             parameter[min_max] = value
     
     def build_constraint(self, method_path, parameter_name, operation_constraint, example_constraint, format_constraint, parameter_constraint):
-=======
-            if correct_mappings.get(min_max) == mapping_key:
-                if value.strip() is not "None":
-                    parameter.setdefault(min_max, value)
-            else:
-                return
-
-    def add_format_constraint(self, parameter, format_constraint):
-        parameter.setdefault("type", format_constraint.get("type"))
-        if parameter.get("type") == "array":
-            parameter.setdefault("items", {})
-            parameter.get("items", {}).setdefault("type", format_constraint.get("items"))
-            parameter.get("items", {}).setdefault("format", format_constraint.get("format"))
-        else:
-            parameter.setdefault("format", format_constraint.get("format"))
-
-    def process_parameters(self, method_values, parameter_name, example_constraint, format_constraint, parameter_constraint):
-        for parameter in method_values.get("parameters", []):
-            if parameter.get("name") == parameter_name:
-                if parameter_constraint is not None:
-                    self.add_parameter_constraint(parameter.get("schema", {}), parameter_constraint)
-                if format_constraint is not None:
-                    self.add_format_constraint(parameter.get("schema", {}), format_constraint)
-    def process_requestBody(self, method_values, parameter_name, example_constraint, format_constraint, parameter_constraint):
-        for encoding, encoding_values in method_values.get("requestBody", {}).get("content", {}).items():
-            for property_name, attributes in encoding_values.get("schema", {}).get("properties", {}).items():
-                if property_name == parameter_name:
-                    self.add_parameter_constraint(attributes, parameter_constraint)
-
-    # def add_operational_constraint(self, parameter, operation_constraint):
-
-    def build_constraint(self, method_path, parameter_name, specification, example_constraint, format_constraint, parameter_constraint):
->>>>>>> a324dad1336ba9c2852a4be1f08842378f7ccece
         path_values = self.output_builder.get("paths", {}).get(method_path)
         for method_type, method_values in path_values.items():
             if specification == "parameter":
@@ -76,12 +42,7 @@ class SpecificationBuilder:
             operation_constraint = self.operation_constraint_parser.parse_parameter(parameter.get("operation_constraints"))
             example_constraint = self.example_parser.parse_examples(parameter.get("parameter_examples"))
             format_constraint = self.parameter_format_parser.parse(parameter.get("parameter_formats"))
-<<<<<<< HEAD
             parameter_constraint = self.parameter_constraint_parser.parse(parameter.get("operational_constraints"))
-=======
-            parameter_constraint = self.parameter_constraint_parser.parse(parameter.get("parameter_constraints"))
-            self.build_constraint(method_path, specifier, parameter.get("name"), example_constraint, format_constraint, parameter_constraint)
->>>>>>> a324dad1336ba9c2852a4be1f08842378f7ccece
             #print(str(operation_constraint))
             #print(str(example_constraint))
             #print(str(format_constraint))
