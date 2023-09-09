@@ -133,6 +133,8 @@ class ReportBuilder:
             request_body_id = "request-body"
             if route not in spec.keys():
                 spec[route] = {method : {}}
+            else:
+                spec[route][method] = {}
             operation_constraints = self._save_run_ai(self.read_path, route, method)
             for parameter in operation_constraints: 
                 parameter_spec = {}
