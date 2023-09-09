@@ -39,28 +39,32 @@ description: 'This is the organization used for finding data. This is required.'
 
 PARAMETER_FORMAT_EXAMPLES = [
     {
-        "input": "'The list of percent grades corresponding to the student.'",
-        "output": "type array, items number, format None"
+        "input": "'A space-separated list of percent grades corresponding to the student.'",
+        "output": "type array, items number, format None, collectionFormat ssv"
     },
     {
         "input": "'This should contain the email of the sender.'",
-        "output": "type string, items None, format email"
+        "output": "type string, items None, format email, collectionFormat None"
     },
     {
         "input": "'This value should be true if the assignment is available for regrade.'",
-        "output": "type boolean, items None, format None"
+        "output": "type boolean, items None, format None, collectionFormat None"
     },
     {
         "input": "'A URL containing the website for evaluation.'",
-        "output": "type string, items None, format url"
+        "output": "type string, items None, format url, collectionFormat None"
     },
     {
         "input": "'The date of the contest. The date must be within the last three months.'",
-        "output": "type string, items None, format date"
+        "output": "type string, items None, format date, collectionFormat None"
     },
     {
         "input": "'The time that the project must be completed. Use Eastern Standard Timezone (EST).'",
-        "output": "type string, items None, format date-time"
+        "output": "type string, items None, format date-time, collectionFormat None"
+    },
+    {
+        "input": "'A list of region codes.'",
+        "output": "type array, items None, format None, collectionFormat None"
     }
 ]
 

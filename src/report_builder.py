@@ -71,7 +71,7 @@ class ReportBuilder:
         if parameter_types is None: 
             return None
         for type_key, extracted_type in parameter_types.items(): 
-            if type_key == "items":
+            if type_key == "items" or type_key == "collectionFormat":
                 if parameter_types["type"] == "array":
                     build_parameter[type_key] = extracted_type
             else:
