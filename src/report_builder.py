@@ -47,10 +47,13 @@ class ReportBuilder:
         for constraint_key, constraint in parameter_constriant.items(): 
             build_parameter[constraint_key] = constraint
     def _add_ipd_constraint(self, build_parameter, ipd_constraint):
+        print("ALERT")
+        print(ipd_constraint)
         if ipd_constraint is None:
             return
         for constraint in ipd_constraint:
-            build_parameter["x-dependencies"] = constraint
+            print(ipd_constraint[constraint])
+            build_parameter["x-dependencies"] = ipd_constraint[constraint]
     def _add_example_values(self, build_parameter, model_examples):
         if model_examples is None: 
             return
