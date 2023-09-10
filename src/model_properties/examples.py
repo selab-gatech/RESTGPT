@@ -131,6 +131,16 @@ and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, 
 History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
 a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
 Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer"""
+    },
+    {
+        "input": "'The value for the number of products to consume. It must be greater than 12 and less than 50.'",
+        "output":
+"""PROVIDED: None +++ GENERATED: None"""
+    },
+    {
+        "input": "'The number of bank accounts associated. Cannot be less than 0.'",
+        "output":
+"""PROVIDED: None +++ GENERATED: None"""
     }
 ]
 

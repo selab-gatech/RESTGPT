@@ -1,0 +1,1644 @@
+{
+    "/v2/all": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v2/alpha/{alphacode}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "alphacode": {
+                "minLength": "2",
+                "maxLength": "3",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "AFG",
+                        "ALA",
+                        "ALB",
+                        "DZA",
+                        "ASM",
+                        "AND",
+                        "AGO",
+                        "AIA",
+                        "ATA",
+                        "ATG",
+                        "ARG",
+                        "ARM",
+                        "ABW",
+                        "AUS",
+                        "AUT",
+                        "AZE",
+                        "BHS",
+                        "BHR",
+                        "BGD",
+                        "BRB",
+                        "BLR",
+                        "BEL",
+                        " BLZ",
+                        "BEN",
+                        "BMU",
+                        "BTN",
+                        "BOL",
+                        "BES",
+                        "BIH",
+                        "BWA",
+                        "BVT",
+                        "BRA",
+                        "IOT",
+                        "BRN",
+                        "BGR",
+                        "BFA",
+                        "BDI",
+                        "CPV",
+                        "KHM",
+                        "CMR",
+                        "CAN",
+                        "CYM",
+                        "CAF",
+                        "TCD",
+                        " CHL",
+                        "CHN",
+                        "CXR",
+                        "CCK",
+                        "COL",
+                        "COM",
+                        "COG",
+                        "COD",
+                        "COK",
+                        "CRI",
+                        "CIV",
+                        "HRV",
+                        "CUB",
+                        "CUW",
+                        "CYP",
+                        "CZE",
+                        "DNK",
+                        "DJI",
+                        "DMA",
+                        "DOM",
+                        "ECU",
+                        "EGY",
+                        " SLV",
+                        "GNQ",
+                        "ERI",
+                        "EST",
+                        "SWZ",
+                        "ETH",
+                        "FLK",
+                        "FRO",
+                        "FJI",
+                        "FIN",
+                        "FRA",
+                        "GUF",
+                        "PYF",
+                        "ATF",
+                        "GAB",
+                        "GMB",
+                        "GEO",
+                        "DEU",
+                        "GHA",
+                        "GIB",
+                        "GRC",
+                        "GRL",
+                        " GR"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v2/alpha": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "codes": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "USA",
+                        "CAN",
+                        "GBR",
+                        "AUS",
+                        "FRA",
+                        "DEU",
+                        "JPN",
+                        "CHN",
+                        "IND",
+                        "BRA",
+                        "RUS",
+                        "ITA",
+                        "ESP",
+                        "MEX",
+                        "KOR",
+                        "NLD",
+                        "CHE",
+                        "SWE",
+                        "NOR",
+                        "ARG",
+                        "SAU",
+                        "IDN",
+                        "TUR",
+                        "POL",
+                        "ZAF"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v2/currency/{currency}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "currency": {
+                "minLength": "3",
+                "maxLength": "3",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "AED",
+                        "AFN",
+                        "ALL",
+                        "AMD",
+                        "ANG",
+                        "AOA",
+                        "ARS",
+                        "AUD",
+                        "AWG",
+                        "AZN",
+                        "BAM",
+                        "BBD",
+                        "BDT",
+                        "BGN",
+                        "BHD",
+                        "BIF",
+                        "BMD",
+                        "BND",
+                        "BOB",
+                        "BRL",
+                        "BSD",
+                        "BTN",
+                        "BWP",
+                        "BYN",
+                        "BZD",
+                        "CAD",
+                        "CDF",
+                        "CHF",
+                        "CLP",
+                        "CNY",
+                        "COP",
+                        "CRC",
+                        "CUC",
+                        "CUP",
+                        "CVE",
+                        "CZK",
+                        "DJF",
+                        "DKK",
+                        "DOP",
+                        "DZD",
+                        "EGP",
+                        "ERN",
+                        "ETB",
+                        "EUR",
+                        "FJD",
+                        "FKP",
+                        "GBP",
+                        "GEL",
+                        "GGP",
+                        "GHS",
+                        "GIP",
+                        "GMD",
+                        "GNF",
+                        "GTQ",
+                        "GYD",
+                        "HKD",
+                        "HNL",
+                        "HRK",
+                        "HTG",
+                        "HUF",
+                        "IDR",
+                        "ILS",
+                        "IMP",
+                        "INR",
+                        "IQD",
+                        "IRR",
+                        "ISK",
+                        "JEP",
+                        "JMD",
+                        "JOD",
+                        "JPY",
+                        "KES",
+                        "KGS",
+                        "KHR",
+                        "KMF",
+                        "KPW",
+                        "KRW",
+                        "KWD",
+                        "KYD",
+                        "KZT",
+                        "LAK",
+                        "LBP",
+                        "LKR",
+                        "LRD",
+                        "LSL",
+                        "LYD,"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v2/name/{name}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "name": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "United States",
+                        "Canada",
+                        "Zimbabwe",
+                        "Brazil",
+                        "France",
+                        "Germany",
+                        "Australia",
+                        "Japan",
+                        "China",
+                        "India",
+                        "Mexico",
+                        "Spain",
+                        "Italy",
+                        " Russia",
+                        "South Africa",
+                        "Argentina",
+                        "Colombia",
+                        "Peru",
+                        "Egypt",
+                        "Turkey",
+                        "Indonesia",
+                        "Saudi Arabia",
+                        "Iran",
+                        "Nigeria",
+                        "Venezuela",
+                        " Pakistan",
+                        "Bangladesh",
+                        "Philippines",
+                        "Vietnam",
+                        "United Kingdom",
+                        " Mexico",
+                        "South Korea",
+                        "Netherlands",
+                        "Belgium",
+                        "Sweden",
+                        "Switzerland",
+                        "Norway",
+                        "Denmark",
+                        "Finland",
+                        "Poland",
+                        "Greece",
+                        "Portugal",
+                        " Austria",
+                        "Hungary",
+                        "Czech Republic",
+                        "Ireland",
+                        "New Zealand",
+                        "Singapore",
+                        "Malaysia",
+                        "Thailand",
+                        "Israel",
+                        "United Arab Emirates",
+                        " Qatar",
+                        "Kuwait",
+                        "Oman",
+                        "Bahrain",
+                        "Jordan",
+                        "Lebanon",
+                        "Iraq",
+                        "Syria",
+                        "Yemen",
+                        "Afghanistan",
+                        "Pakistan",
+                        "Nepal",
+                        "Sri Lanka",
+                        " Myanmar",
+                        "Cambodia",
+                        "Laos"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "fullText": {}
+        }
+    },
+    "/v2/callingcode/{callingcode}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "callingcode": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v2/capital/{capital}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "capital": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "London",
+                        "Paris",
+                        "Tokyo",
+                        "Beijing",
+                        "Moscow",
+                        "Berlin",
+                        "Rome",
+                        "Madrid",
+                        "Ottawa",
+                        "Washington",
+                        "D.C.",
+                        "Bras\u00edlia",
+                        " Canberra",
+                        "Wellington",
+                        "Cairo",
+                        "Nairobi",
+                        "Pretoria",
+                        "Buenos Aires",
+                        "Lima",
+                        "Mexico City",
+                        "New Delhi",
+                        "Jakarta",
+                        "Bangkok",
+                        " Hanoi",
+                        "Seoul",
+                        "Ankara",
+                        "Tehran",
+                        "Riyadh",
+                        "Abu Dhabi",
+                        "Jerusalem",
+                        "Athens",
+                        "Dublin",
+                        "Lisbon",
+                        "Stockholm",
+                        "Copenhagen",
+                        " Oslo",
+                        "Helsinki",
+                        "Reykjavik",
+                        "Bern",
+                        "Vienna",
+                        "Prague",
+                        "Budapest",
+                        "Warsaw",
+                        "Bucharest",
+                        "Sofia",
+                        "Belgrade",
+                        "Zagreb",
+                        " Ljubljana",
+                        "Skopje",
+                        "Tirana",
+                        "Podgorica",
+                        "Sarajevo",
+                        "Vilnius",
+                        "Riga",
+                        "Tallinn",
+                        "Valletta",
+                        "Nicosia",
+                        "Beirut",
+                        "Amman",
+                        " Damascus",
+                        "Baghdad",
+                        "Kuwait City",
+                        "Doha",
+                        "Muscat",
+                        "Manama",
+                        "Sana'a",
+                        "Addis Ababa",
+                        "Mogadishu",
+                        "Khartoum",
+                        "Kampala",
+                        " Kigali",
+                        "Bujumbura",
+                        "Dodoma",
+                        "Lusaka",
+                        "Harare",
+                        "Gaborone",
+                        "Windhoek",
+                        "Luanda",
+                        "Kinshasa",
+                        "Brazzaville",
+                        " Libreville",
+                        "Malabo,"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v2/region/{region}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "region": {
+                "minItems": "1",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "Africa",
+                        "Americas",
+                        "Asia",
+                        "Europe",
+                        "Oceania"
+                    ],
+                    "generated": [
+                        "Antarctica",
+                        "Arctic",
+                        "Caribbean",
+                        "Central America",
+                        "Eastern Africa",
+                        "Eastern Asia",
+                        "Eastern Europe",
+                        "Melanesia",
+                        "Micronesia",
+                        "Middle Africa",
+                        "Northern Africa",
+                        "Northern America",
+                        "Northern Europe",
+                        "Polynesia",
+                        "South America",
+                        "South-Eastern Asia",
+                        "Southern Africa",
+                        "Southern Asia",
+                        "Southern Europe",
+                        "Western Africa",
+                        "Western Asia",
+                        "Western Europe"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v2/lang/{lang}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "lang": {
+                "minLength": "2",
+                "maxLength": "2",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "eng",
+                        "spa",
+                        "fre",
+                        "ger",
+                        "ita",
+                        "rus",
+                        "chi",
+                        "jap",
+                        "kor",
+                        "ara",
+                        "hin",
+                        "por",
+                        "ben",
+                        "ind",
+                        "tur",
+                        "vie",
+                        "tel",
+                        "mar",
+                        "tam",
+                        "urd",
+                        "guj",
+                        "kan",
+                        "ori",
+                        "mal",
+                        "pan",
+                        " pus",
+                        "sun",
+                        "swa",
+                        "amh",
+                        "tat",
+                        "yor",
+                        "uzb",
+                        "jpn",
+                        "tha",
+                        "dut",
+                        "swe",
+                        "nor",
+                        "dan",
+                        "fin",
+                        " pol",
+                        "gre",
+                        "cze",
+                        "hun",
+                        "slo",
+                        "bul",
+                        "rom",
+                        "alb",
+                        "ser",
+                        "cro",
+                        "slv",
+                        "est",
+                        "lav",
+                        "lit",
+                        "mlt",
+                        " lit",
+                        "pol",
+                        " alb",
+                        "alb,"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v2/regionalbloc/{regionalbloc}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "regionalbloc": {
+                "minItems": "1",
+                "maxItems": "13",
+                "examples": {
+                    "provided": [
+                        "EU",
+                        "EFTA",
+                        "CARICOM",
+                        "PA",
+                        "AU",
+                        "USAN",
+                        "EEU",
+                        "AL",
+                        "ASEAN",
+                        "CAIS",
+                        "CEFTA",
+                        "NAFTA",
+                        "SAARC"
+                    ],
+                    "generated": [
+                        "GCC (Gulf Cooperation Council)",
+                        "MERCOSUR",
+                        "CIS (Commonwealth of Independent States)",
+                        "OPEC (Organization of the Petroleum Exporting Countries)",
+                        "OAS (Organization of American States)",
+                        "OIC (Organization of Islamic Cooperation)",
+                        "APEC (Asia-Pacific Economic Cooperation)",
+                        "SADC (Southern African Development Community)",
+                        "ECOWAS (Economic Community of West African States)",
+                        "CEMAC (Central African Economic and Monetary Community)",
+                        "CACM (Central American Common Market)",
+                        "MCCA (Mercado Com\u00fan Centroamericano)"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3/all": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3/alpha/{alphacode}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "alphacode": {
+                "minLength": "2",
+                "maxLength": "3",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "AFG",
+                        "ALA",
+                        "ALB",
+                        "DZA",
+                        "ASM",
+                        "AND",
+                        "AGO",
+                        "AIA",
+                        "ATA",
+                        "ATG",
+                        "ARG",
+                        "ARM",
+                        "ABW",
+                        "AUS",
+                        "AUT",
+                        "AZE",
+                        "BHS",
+                        "BHR",
+                        "BGD",
+                        "BRB",
+                        "BLR",
+                        "BEL",
+                        " BLZ",
+                        "BEN",
+                        "BMU",
+                        "BTN",
+                        "BOL",
+                        "BES",
+                        "BIH",
+                        "BWA",
+                        "BVT",
+                        "BRA",
+                        "IOT",
+                        "BRN",
+                        "BGR",
+                        "BFA",
+                        "BDI",
+                        "CPV",
+                        "KHM",
+                        "CMR",
+                        "CAN",
+                        "CYM",
+                        "CAF",
+                        "TCD",
+                        " CHL",
+                        "CHN",
+                        "CXR",
+                        "CCK",
+                        "COL",
+                        "COM",
+                        "COG",
+                        "COD",
+                        "COK",
+                        "CRI",
+                        "CIV",
+                        "HRV",
+                        "CUB",
+                        "CUW",
+                        "CYP",
+                        "CZE",
+                        "DNK",
+                        "DJI",
+                        "DMA",
+                        "DOM",
+                        "ECU",
+                        "EGY",
+                        " SLV",
+                        "GNQ",
+                        "ERI",
+                        "EST",
+                        "SWZ",
+                        "ETH",
+                        "FLK",
+                        "FRO",
+                        "FJI",
+                        "FIN",
+                        "FRA",
+                        "GUF",
+                        "PYF",
+                        "ATF",
+                        "GAB",
+                        "GMB",
+                        "GEO",
+                        "DEU",
+                        "GHA",
+                        "GIB",
+                        "GRC",
+                        "GRL",
+                        " GR"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3/alpha": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "codes": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "USA",
+                        "CAN",
+                        "GBR",
+                        "AUS",
+                        "FRA",
+                        "DEU",
+                        "JPN",
+                        "CHN",
+                        "IND",
+                        "BRA",
+                        "RUS",
+                        "ITA",
+                        "ESP",
+                        "MEX",
+                        "KOR",
+                        "NLD",
+                        "CHE",
+                        "SWE",
+                        "NOR",
+                        "ARG",
+                        "SAU",
+                        "IDN",
+                        "TUR",
+                        "POL",
+                        "ZAF"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3/currency/{currency}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "currency": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "USD",
+                        "EUR",
+                        "GBP",
+                        "JPY",
+                        "AUD",
+                        "CAD",
+                        "CHF",
+                        "CNY",
+                        "SEK",
+                        "NZD",
+                        "MXN",
+                        "SGD",
+                        "HKD",
+                        "NOK",
+                        "KRW",
+                        "TRY",
+                        "RUB",
+                        "INR",
+                        "BRL",
+                        "ZAR",
+                        "AED",
+                        "SAR",
+                        "QAR",
+                        "THB",
+                        "MYR",
+                        "IDR",
+                        "HUF",
+                        "CZK",
+                        "PLN",
+                        "DKK",
+                        "ILS",
+                        "CLP",
+                        "PHP",
+                        "TWD",
+                        "ARS",
+                        "COP",
+                        "VND",
+                        "EGP",
+                        "NGN",
+                        "ZMW",
+                        "BHD",
+                        "KWD",
+                        "OMR",
+                        "JOD",
+                        "LBP",
+                        "IQD",
+                        "LYD",
+                        "TND",
+                        "DZD",
+                        "MAD",
+                        "PKR",
+                        "LKR",
+                        "BDT",
+                        "NPR",
+                        "AFN",
+                        "ALL",
+                        "AMD",
+                        "ANG",
+                        "AOA",
+                        "AWG",
+                        "AZN",
+                        "BAM",
+                        "BBD",
+                        "BGN",
+                        "BIF",
+                        "BMD",
+                        "BND",
+                        "BOB",
+                        "BSD",
+                        "BTN",
+                        "BWP",
+                        "BYN",
+                        "BZD",
+                        "CDF",
+                        "CRC",
+                        "CUC",
+                        "CUP",
+                        "CVE",
+                        "DJF"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3/name/{name}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "name": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "Afghanistan",
+                        "Albania",
+                        "Algeria",
+                        "Andorra",
+                        "Angola",
+                        "Antigua and Barbuda",
+                        "Argentina",
+                        "Armenia",
+                        "Australia",
+                        "Austria",
+                        "Azerbaijan",
+                        " Bahamas",
+                        "Bahrain",
+                        "Bangladesh",
+                        "Barbados",
+                        "Belarus",
+                        "Belgium",
+                        "Belize",
+                        "Benin",
+                        "Bhutan",
+                        "Bolivia",
+                        "Bosnia and Herzegovina",
+                        "Botswana",
+                        "Brazil",
+                        "Brunei",
+                        "Bulgaria",
+                        "Burkina Faso",
+                        " Burundi",
+                        "Cabo Verde",
+                        "Cambodia",
+                        "Cameroon",
+                        "Canada",
+                        "Central African Republic",
+                        "Chad",
+                        "Chile",
+                        "China",
+                        "Colombia",
+                        "Comoros",
+                        "Congo (Congo-Brazzaville)",
+                        "Costa Rica",
+                        "Croatia",
+                        " Cuba",
+                        "Cyprus",
+                        "Czechia (Czech Republic)",
+                        "Democratic Republic of the Congo",
+                        "Denmark",
+                        "Djibouti",
+                        "Dominica",
+                        "Dominican Republic",
+                        "Ecuador",
+                        "Egypt",
+                        "El Salvador",
+                        "Equatorial Guinea",
+                        " Eritrea",
+                        "Estonia",
+                        "Eswatini (fmr. \"Swaziland\")",
+                        "Ethiopia",
+                        "Fiji",
+                        "Finland",
+                        "France",
+                        "Gabon",
+                        "Gambia",
+                        "Georgia",
+                        "Germany",
+                        "Ghana",
+                        "Greece",
+                        "Grenada",
+                        "Guatemala",
+                        "Guinea",
+                        "Guinea-Bissau",
+                        " Guyana",
+                        "Haiti",
+                        "Holy See",
+                        "Honduras",
+                        "Hungary",
+                        "Iceland",
+                        "India",
+                        "Indonesia",
+                        "Iran",
+                        "Iraq",
+                        "Ireland",
+                        "Israel",
+                        "Italy",
+                        "Jamaica",
+                        "Japan,"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "fullText": {}
+        }
+    },
+    "/v3/capital/{capital}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "capital": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "London",
+                        "Paris",
+                        "Tokyo",
+                        "Beijing",
+                        "Moscow",
+                        "Berlin",
+                        "Rome",
+                        "Madrid",
+                        "Ottawa",
+                        "Washington",
+                        "D.C.",
+                        "Bras\u00edlia",
+                        " Canberra",
+                        "Wellington",
+                        "Cairo",
+                        "Nairobi",
+                        "Pretoria",
+                        "Buenos Aires",
+                        "Lima",
+                        "Mexico City",
+                        "New Delhi",
+                        "Jakarta",
+                        "Bangkok",
+                        " Hanoi",
+                        "Seoul",
+                        "Ankara",
+                        "Tehran",
+                        "Riyadh",
+                        "Abu Dhabi",
+                        "Jerusalem",
+                        "Athens",
+                        "Dublin",
+                        "Lisbon",
+                        "Stockholm",
+                        "Copenhagen",
+                        " Oslo",
+                        "Helsinki",
+                        "Reykjavik",
+                        "Bern",
+                        "Vienna",
+                        "Prague",
+                        "Budapest",
+                        "Warsaw",
+                        "Bucharest",
+                        "Sofia",
+                        "Belgrade",
+                        "Zagreb",
+                        " Ljubljana",
+                        "Skopje",
+                        "Tirana",
+                        "Podgorica",
+                        "Sarajevo",
+                        "Vilnius",
+                        "Riga",
+                        "Tallinn",
+                        "Valletta",
+                        "Nicosia",
+                        "Beirut",
+                        "Amman",
+                        " Damascus",
+                        "Baghdad",
+                        "Kuwait City",
+                        "Doha",
+                        "Muscat",
+                        "Manama",
+                        "Sana'a",
+                        "Addis Ababa",
+                        "Mogadishu",
+                        "Khartoum",
+                        "Kampala",
+                        " Kigali",
+                        "Bujumbura",
+                        "Dodoma",
+                        "Lusaka",
+                        "Harare",
+                        "Gaborone",
+                        "Windhoek",
+                        "Luanda",
+                        "Kinshasa",
+                        "Brazzaville",
+                        " Libreville",
+                        "Malabo,"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3.1/region/{region}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "region": {
+                "minLength": "1",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "Africa",
+                        "Americas",
+                        "Asia",
+                        "Europe",
+                        "Oceania"
+                    ],
+                    "generated": [
+                        "North America",
+                        "South America",
+                        "Central America",
+                        "East Asia",
+                        "Southeast Asia",
+                        "South Asia",
+                        " West Asia",
+                        "Eastern Europe",
+                        "Western Europe",
+                        "Northern Europe",
+                        "Southern Europe",
+                        "Oceania"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3/subregion/{subregion}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "subregion": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "South America",
+                        "Southern Europe",
+                        "Central America",
+                        "Eastern Asia"
+                    ],
+                    "generated": [
+                        "North America",
+                        "Western Europe",
+                        "Northern Europe",
+                        "Eastern Europe",
+                        "Middle East",
+                        "Southeast Asia",
+                        "Western Asia",
+                        "Central Asia",
+                        "Oceania",
+                        "Sub-Saharan Africa",
+                        "North Africa"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3/lang/{lang}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "lang": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "English",
+                        "Spanish",
+                        "French",
+                        "German",
+                        "Chinese",
+                        "Japanese",
+                        "Korean",
+                        "Italian",
+                        "Portuguese",
+                        "Russian",
+                        "Arabic",
+                        "Dutch",
+                        "Swedish",
+                        "Norwegian",
+                        "Danish",
+                        "Finnish",
+                        "Polish",
+                        "Greek",
+                        "Turkish",
+                        "Hindi",
+                        "Bengali",
+                        "Punjabi",
+                        "Urdu",
+                        "Persian",
+                        "Swahili",
+                        "Indonesian",
+                        "Malay",
+                        "Thai",
+                        "Vietnamese",
+                        "Filipino",
+                        "Romanian",
+                        "Hungarian",
+                        "Czech",
+                        "Slovak",
+                        "Slovenian",
+                        "Croatian",
+                        "Serbian",
+                        "Bulgarian",
+                        "Ukrainian",
+                        "Georgian",
+                        "Armenian",
+                        "Hebrew",
+                        "Yiddish",
+                        "Afrikaans",
+                        "Zulu",
+                        "Xhosa",
+                        "Sotho",
+                        "Tswana",
+                        "Setswana",
+                        "Sesotho",
+                        "Ndebele",
+                        "Shona",
+                        "Hausa",
+                        "Igbo",
+                        "Yoruba",
+                        "Somali",
+                        "Amharic",
+                        "Oromo",
+                        "Tigrinya",
+                        "Malagasy",
+                        "Swazi",
+                        "Maltese",
+                        "Icelandic",
+                        "Irish",
+                        "Welsh",
+                        "Scottish Gaelic",
+                        "Maori",
+                        "Hawaiian",
+                        "Samoan",
+                        "Fijian",
+                        "Tahitian",
+                        "Tongan",
+                        "Marshallese",
+                        "Kiribati",
+                        "Nauruan",
+                        "Palauan",
+                        "Chamorro",
+                        "Pohnpeian",
+                        "Kosraean",
+                        "Chuukese",
+                        "Yapese",
+                        "Marshalle"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3/demonym/{demonym}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "demonym": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "John",
+                        "Mary",
+                        "David",
+                        "Sarah",
+                        "Michael",
+                        "Jessica",
+                        "Christopher",
+                        "Jennifer",
+                        "Matthew",
+                        "Elizabeth",
+                        "Andrew",
+                        " Emily",
+                        "Daniel",
+                        "Joshua",
+                        "Ashley",
+                        "Joseph",
+                        "Samantha",
+                        "Brian",
+                        "Amanda",
+                        "William",
+                        "Stephanie",
+                        "Jonathan",
+                        "Megan",
+                        "Nicholas",
+                        " Lauren",
+                        "Ryan",
+                        "Rachel",
+                        "Justin",
+                        "Heather",
+                        "Brandon",
+                        "Melissa",
+                        "Jason",
+                        "Nicole",
+                        "Kevin",
+                        "Amber",
+                        "Benjamin",
+                        "Danielle",
+                        "Samuel",
+                        " Erica",
+                        "Timothy",
+                        "Michelle",
+                        "Jacob",
+                        "Tiffany",
+                        "Zachary",
+                        "Emily",
+                        "Tyler",
+                        "Christina",
+                        "Cody",
+                        "Rebecca",
+                        "Nathan",
+                        "Amy",
+                        "Patrick",
+                        " Angela",
+                        "Sean",
+                        "Katherine",
+                        "Gregory",
+                        "Laura",
+                        "Travis",
+                        "Erin",
+                        "Dustin",
+                        "Sara",
+                        "Mark",
+                        "Courtney",
+                        "Stephen",
+                        "Shannon",
+                        "Aaron",
+                        " Kristen",
+                        "Jeffrey",
+                        "Brittany",
+                        "Scott",
+                        "Jamie",
+                        "Alexander",
+                        "Lindsey",
+                        "Jordan",
+                        "Kelly",
+                        "Phillip",
+                        "Caitlin",
+                        "Charles",
+                        "Whitney",
+                        " Bryan",
+                        "Kelsey",
+                        "Corey",
+                        "Vanessa",
+                        "Keith",
+                        "Allison",
+                        "Derek",
+                        "Chelsea",
+                        "Richard",
+                        "Kayla",
+                        "Jesse",
+                        "Adam",
+                        " Kyle",
+                        "Maria",
+                        "Juan",
+                        "Patricia",
+                        "Raymond",
+                        "Crystal",
+                        "Gary",
+                        "Antonio",
+                        "Kenneth",
+                        "April",
+                        " Steven",
+                        "Erica",
+                        "Larry",
+                        "Tara",
+                        "Ronald",
+                        "Marcus"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/v3/translation/{translation}": {
+        "get": {
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "translation": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "English",
+                        "Spanish",
+                        "French",
+                        "German",
+                        "Italian",
+                        "Portuguese",
+                        "Russian",
+                        "Chinese",
+                        "Japanese",
+                        "Korean"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    }
+}

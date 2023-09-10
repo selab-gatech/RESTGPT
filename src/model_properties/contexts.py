@@ -117,7 +117,7 @@ Here are some examples of inputs and expected outputs:
 
 PARAMETER_EXAMPLE_CONTEXT = """
 Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
-Then, generate a few additional example values that correspond, or are in the same category as the provided values.
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
 If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
 Do not generate examples of number ranges at all, and return None in that case. 
 If generating example values is not possible, return None. Consider the following cases: 
