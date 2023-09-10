@@ -2,8 +2,6 @@
     "/institutions": {
         "get": {
             "filters": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "STNAME:\"West Virginia\"",
@@ -17,15 +15,12 @@
                         "STNAME:(\"California\",\"New York\")",
                         "!(STNAME:\"Texas\")",
                         "DATEUPDT:[\"2021-01-01\" TO \"2021-12-31\"]",
-                        "DEP:[10000 TO 50000]"
+                        "DEP:[10000 TO *]"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "search": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "NAME: Island",
@@ -44,12 +39,9 @@
                         "NAME: Hotel"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -109,11 +101,9 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -127,8 +117,7 @@
                         "relevance"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
                 "examples": {
@@ -141,12 +130,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -239,12 +227,9 @@
                         "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -302,20 +287,15 @@
                         "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -328,16 +308,13 @@
                         "data.xlsx"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/locations": {
         "get": {
             "filters": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -351,12 +328,9 @@
                         "longitude"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -371,16 +345,54 @@
                         "field7",
                         "field8",
                         "field9",
-                        "field10"
+                        "field10",
+                        "field11",
+                        "field12",
+                        "field13",
+                        "field14",
+                        "field15",
+                        "field16",
+                        "field17",
+                        "field18",
+                        "field19",
+                        "field20",
+                        "field21",
+                        "field22",
+                        "field23",
+                        "field24",
+                        "field25",
+                        "field26",
+                        "field27",
+                        "field28",
+                        "field29",
+                        "field30",
+                        "field31",
+                        "field32",
+                        "field33",
+                        "field34",
+                        "field35",
+                        "field36",
+                        "field37",
+                        "field38",
+                        "field39",
+                        "field40",
+                        "field41",
+                        "field42",
+                        "field43",
+                        "field44",
+                        "field45",
+                        "field46",
+                        "field47",
+                        "field48",
+                        "field49",
+                        "field50"
                     ]
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -394,8 +406,7 @@
                         "relevance"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
                 "examples": {
@@ -408,12 +419,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -506,12 +516,9 @@
                         "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -569,20 +576,15 @@
                         "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -595,16 +597,13 @@
                         "data.xlsx"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/summary": {
         "get": {
             "filters": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "CB_SI:CB",
@@ -621,12 +620,9 @@
                         "YEAR:[\"2000\" TO \"2005\"]"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -663,11 +659,9 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -681,8 +675,7 @@
                         "relevance"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
                 "examples": {
@@ -695,12 +688,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -793,12 +785,9 @@
                         "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -856,8 +845,7 @@
                         "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "agg_by": {
                 "minItems": "1",
@@ -873,13 +861,9 @@
                     ],
                     "generated": []
                 },
-                "type": "array",
-                "items": "string",
-                "format": "None"
+                "type": "string"
             },
             "agg_term_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -887,12 +871,9 @@
                     "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_sum_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -912,11 +893,9 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "agg_limit": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -974,20 +953,15 @@
                         "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1000,16 +974,13 @@
                         "data.xlsx"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/failures": {
         "get": {
             "filters": {
-                "minItems": "1",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "CITYST:\"MEMPHIS",
@@ -1024,12 +995,9 @@
                         "FAILYR:[\"2017\" TO \"2018\"]"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1053,34 +1021,47 @@
                         "institution_type",
                         "institution_class",
                         "headquarters",
-                        "website",
+                        "active_branches",
+                        "inactive_branches",
                         "total_branches",
                         "total_employees",
                         "total_assets",
                         "total_deposits",
-                        "total_loans",
-                        "total_equity",
+                        "total_liabilities",
+                        "total_capital",
                         "total_income",
                         "total_expenses",
-                        "total_net_income",
-                        "total_net_interest_income",
-                        "total_noninterest_income",
-                        "total_noninterest_expenses",
-                        "total_provisions",
-                        "total_allowances",
-                        "total_chargeoffs",
-                        "total_recoveries",
-                        "total_noninterest_expense",
-                        "total"
+                        "net_income",
+                        "net_interest_income",
+                        "net_noninterest_income",
+                        "net_interest_margin",
+                        "net_interest_spread",
+                        "net_noninterest_margin",
+                        "net_noninterest_spread",
+                        "net_chargeoffs",
+                        "net_chargeoff_rate",
+                        "net_provision_for_loan_losses",
+                        "net_loan_loss_reserve",
+                        "net_loan_loss_reserve_to_loans",
+                        "net_loan_loss_reserve_to_assets",
+                        "net_loan_loss_reserve_to_deposits",
+                        "net_loan_loss_reserve_to_capital",
+                        "net_loan_loss_reserve_to_liabilities",
+                        "net_loan_loss_reserve_to_income",
+                        "net_loan_loss_reserve_to_expenses",
+                        "net_loan_loss_reserve_to_net_income",
+                        "net_loan_loss_reserve_to_net_interest_income",
+                        "net_loan_loss_reserve_to_net_noninterest_income",
+                        "net_loan_loss_reserve_to_net_interest_margin",
+                        "net_loan_loss_reserve_to_net_interest_spread",
+                        "net_loan_loss_reserve_to"
                     ]
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1094,8 +1075,7 @@
                         "relevance"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
                 "examples": {
@@ -1108,12 +1088,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -1206,12 +1185,9 @@
                         "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1269,12 +1245,9 @@
                         "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "total_fields": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1282,8 +1255,7 @@
                     "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "subtotal_by": {
                 "examples": {
@@ -1303,8 +1275,7 @@
                         "category10"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "agg_by": {
                 "minItems": "1",
@@ -1319,12 +1290,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "agg_term_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1332,12 +1300,9 @@
                     "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_sum_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1357,11 +1322,9 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "agg_limit": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1419,20 +1382,15 @@
                         "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1445,16 +1403,13 @@
                         "data.xlsx"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/history": {
         "get": {
             "filters": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "STATE:\"VIRGINIA\"",
@@ -1467,12 +1422,9 @@
                         "PROCDATE:[2020-02-02 TO 2020-03-01]"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "search": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "NAME: Island",
@@ -1485,12 +1437,9 @@
                         "STATE: NY"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1514,34 +1463,47 @@
                         "institution_type",
                         "institution_class",
                         "headquarters",
-                        "website",
+                        "active_branches",
+                        "inactive_branches",
                         "total_branches",
                         "total_employees",
                         "total_assets",
                         "total_deposits",
-                        "total_loans",
-                        "total_equity",
+                        "total_liabilities",
+                        "total_capital",
                         "total_income",
                         "total_expenses",
-                        "total_net_income",
-                        "total_net_interest_income",
-                        "total_noninterest_income",
-                        "total_noninterest_expenses",
-                        "total_provisions",
-                        "total_allowances",
-                        "total_chargeoffs",
-                        "total_recoveries",
-                        "total_noninterest_expense",
-                        "total"
+                        "net_income",
+                        "net_interest_income",
+                        "net_noninterest_income",
+                        "net_interest_margin",
+                        "net_interest_spread",
+                        "net_noninterest_margin",
+                        "net_noninterest_spread",
+                        "net_chargeoffs",
+                        "net_chargeoff_rate",
+                        "net_provision_for_loan_losses",
+                        "net_loan_loss_reserve",
+                        "net_loan_loss_reserve_to_loans",
+                        "net_loan_loss_reserve_to_assets",
+                        "net_loan_loss_reserve_to_deposits",
+                        "net_loan_loss_reserve_to_capital",
+                        "net_loan_loss_reserve_to_liabilities",
+                        "net_loan_loss_reserve_to_income",
+                        "net_loan_loss_reserve_to_expenses",
+                        "net_loan_loss_reserve_to_net_income",
+                        "net_loan_loss_reserve_to_net_interest_income",
+                        "net_loan_loss_reserve_to_net_noninterest_income",
+                        "net_loan_loss_reserve_to_net_interest_margin",
+                        "net_loan_loss_reserve_to_net_interest_spread",
+                        "net_loan_loss_reserve_to"
                     ]
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1555,8 +1517,7 @@
                         "relevance"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
                 "examples": {
@@ -1569,12 +1530,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -1667,12 +1627,9 @@
                         "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1730,12 +1687,9 @@
                         "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "agg_by": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1753,12 +1707,9 @@
                     ]
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_term_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1766,12 +1717,9 @@
                     "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_limit": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1829,20 +1777,15 @@
                         "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1855,16 +1798,13 @@
                         "data.xlsx"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/financials": {
         "get": {
             "filters": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "ASSET:[1000 TO 9999]"
@@ -1882,12 +1822,9 @@
                         "ASSET:[9000 TO 9999]"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1921,11 +1858,9 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1939,8 +1874,7 @@
                         "relevance"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
                 "examples": {
@@ -1953,12 +1887,12 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
                 "min": "10",
                 "max": "10000",
+                "default": "10",
                 "examples": {
                     "provided": [
                         "10,000"
@@ -2048,12 +1982,9 @@
                         "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2111,12 +2042,9 @@
                         "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "agg_by": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2134,12 +2062,9 @@
                     ]
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_term_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2147,12 +2072,9 @@
                     "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_sum_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2172,11 +2094,9 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "agg_limit": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2234,20 +2154,15 @@
                         "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2260,8 +2175,7 @@
                         "data.xlsx"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     }

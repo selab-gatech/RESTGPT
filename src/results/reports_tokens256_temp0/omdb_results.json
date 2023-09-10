@@ -2,8 +2,6 @@
     "/": {
         "get": {
             "t": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -35,8 +33,7 @@
                         "The Crown"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "i": {
                 "minLength": "9",
@@ -97,12 +94,9 @@
                         "tt0000050"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "s": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -134,12 +128,9 @@
                         "The Crown"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "page": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -197,12 +188,9 @@
                         "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "y": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -261,26 +249,18 @@
                         "2050"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "type": {
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "plot": {
-                "minLength": "None",
-                "maxLength": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "r": {
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "callback": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -338,8 +318,7 @@
                         "callback50"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     }

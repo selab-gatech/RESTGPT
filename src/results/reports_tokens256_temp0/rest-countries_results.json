@@ -8,8 +8,7 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -22,8 +21,7 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "alphacode": {
                 "minLength": "2",
@@ -124,8 +122,7 @@
                         " GR"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -138,12 +135,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "codes": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -178,7 +172,7 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         }
     },
@@ -191,12 +185,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "currency": {
-                "minLength": "3",
-                "maxLength": "3",
                 "examples": {
                     "provided": [
                         "None"
@@ -290,8 +281,7 @@
                         "LYD,"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -304,12 +294,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "name": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -335,58 +322,75 @@
                         "Peru",
                         "Egypt",
                         "Turkey",
-                        "Indonesia",
                         "Saudi Arabia",
-                        "Iran",
+                        "Indonesia",
+                        "Pakistan",
                         "Nigeria",
-                        "Venezuela",
-                        " Pakistan",
                         "Bangladesh",
-                        "Philippines",
+                        " Philippines",
                         "Vietnam",
+                        "Iran",
+                        "Thailand",
                         "United Kingdom",
-                        " Mexico",
                         "South Korea",
+                        "Ukraine",
+                        "Poland",
+                        " Australia",
                         "Netherlands",
                         "Belgium",
                         "Sweden",
                         "Switzerland",
                         "Norway",
-                        "Denmark",
-                        "Finland",
-                        "Poland",
+                        "Austria",
                         "Greece",
                         "Portugal",
-                        " Austria",
-                        "Hungary",
-                        "Czech Republic",
+                        "Denmark",
+                        "Finland",
                         "Ireland",
-                        "New Zealand",
+                        " New Zealand",
                         "Singapore",
                         "Malaysia",
-                        "Thailand",
                         "Israel",
                         "United Arab Emirates",
-                        " Qatar",
+                        "Qatar",
                         "Kuwait",
-                        "Oman",
-                        "Bahrain",
-                        "Jordan",
-                        "Lebanon",
-                        "Iraq",
-                        "Syria",
-                        "Yemen",
-                        "Afghanistan",
-                        "Pakistan",
-                        "Nepal",
-                        "Sri Lanka",
-                        " Myanmar",
-                        "Cambodia",
-                        "Laos"
+                        "Chile",
+                        " Venezuela",
+                        "Ecuador",
+                        "Bolivia",
+                        "Paraguay",
+                        "Uruguay",
+                        "Costa Rica",
+                        "Panama",
+                        "Honduras",
+                        "Guatemala",
+                        "El Salvador",
+                        "Nicaragua",
+                        " Cuba",
+                        "Dominican Republic",
+                        "Haiti",
+                        "Jamaica",
+                        "Bahamas",
+                        "Trinidad and Tobago",
+                        "Suriname",
+                        "Guyana",
+                        "Belize",
+                        "Barbados",
+                        "Saint Lucia",
+                        " Grenada",
+                        "Dominica",
+                        "Saint Kitts and Nevis",
+                        "Antigua and Barbuda",
+                        "Saint Vincent and the Grenadines",
+                        "Montserrat",
+                        "Anguilla",
+                        " Turks and Caicos Islands",
+                        "Bermuda",
+                        "Cayman Islands",
+                        "British Virgin Islands"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fullText": {}
         }
@@ -400,12 +404,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "callingcode": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -463,8 +464,7 @@
                         "50"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -477,12 +477,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "capital": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -504,76 +501,75 @@
                         "Wellington",
                         "Cairo",
                         "Nairobi",
-                        "Pretoria",
+                        "New Delhi",
+                        "Bangkok",
+                        "Jakarta",
+                        "Seoul",
                         "Buenos Aires",
                         "Lima",
                         "Mexico City",
-                        "New Delhi",
-                        "Jakarta",
-                        "Bangkok",
-                        " Hanoi",
-                        "Seoul",
-                        "Ankara",
-                        "Tehran",
+                        " Santiago",
+                        "Bogot\u00e1",
+                        "Caracas",
+                        "Havana",
                         "Riyadh",
                         "Abu Dhabi",
+                        "Tehran",
                         "Jerusalem",
                         "Athens",
                         "Dublin",
                         "Lisbon",
                         "Stockholm",
-                        "Copenhagen",
-                        " Oslo",
+                        " Copenhagen",
+                        "Oslo",
                         "Helsinki",
                         "Reykjavik",
-                        "Bern",
+                        "Amsterdam",
+                        "Brussels",
                         "Vienna",
+                        "Bern",
+                        "Warsaw",
                         "Prague",
                         "Budapest",
-                        "Warsaw",
                         "Bucharest",
+                        " Belgrade",
                         "Sofia",
-                        "Belgrade",
                         "Zagreb",
-                        " Ljubljana",
                         "Skopje",
                         "Tirana",
+                        "Ljubljana",
                         "Podgorica",
                         "Sarajevo",
-                        "Vilnius",
-                        "Riga",
-                        "Tallinn",
-                        "Valletta",
-                        "Nicosia",
-                        "Beirut",
-                        "Amman",
-                        " Damascus",
-                        "Baghdad",
-                        "Kuwait City",
-                        "Doha",
-                        "Muscat",
-                        "Manama",
-                        "Sana'a",
-                        "Addis Ababa",
-                        "Mogadishu",
-                        "Khartoum",
-                        "Kampala",
-                        " Kigali",
-                        "Bujumbura",
-                        "Dodoma",
-                        "Lusaka",
-                        "Harare",
-                        "Gaborone",
-                        "Windhoek",
-                        "Luanda",
-                        "Kinshasa",
-                        "Brazzaville",
-                        " Libreville",
-                        "Malabo,"
+                        "Chisinau",
+                        "Tbilisi",
+                        "Yerevan",
+                        "Baku",
+                        " Ashgabat",
+                        "Dushanbe",
+                        "Kabul",
+                        "Islamabad",
+                        "Kathmandu",
+                        "Thimphu",
+                        "Dhaka",
+                        "Naypyidaw",
+                        "Hanoi",
+                        "Vientiane",
+                        " Phnom Penh",
+                        "Kuala Lumpur",
+                        "Manila",
+                        "Singapore",
+                        "Bandar Seri Begawan",
+                        "Port Moresby",
+                        "Honiara",
+                        "Suva",
+                        " Wellington",
+                        "Canberra",
+                        "Port Vila",
+                        "Apia",
+                        "N"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -586,12 +582,10 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "region": {
                 "minItems": "1",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "Africa",
@@ -625,8 +619,7 @@
                         "Western Europe"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -639,8 +632,7 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "lang": {
                 "minLength": "2",
@@ -710,8 +702,7 @@
                         "alb,"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -724,12 +715,10 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "regionalbloc": {
                 "minItems": "1",
-                "maxItems": "13",
                 "examples": {
                     "provided": [
                         "EU",
@@ -761,8 +750,7 @@
                         "MCCA (Mercado Com\u00fan Centroamericano)"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -775,8 +763,7 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -789,8 +776,7 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "alphacode": {
                 "minLength": "2",
@@ -891,8 +877,7 @@
                         " GR"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -905,12 +890,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "codes": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -945,7 +927,7 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         }
     },
@@ -958,12 +940,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "currency": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1008,50 +987,28 @@
                         "VND",
                         "EGP",
                         "NGN",
-                        "ZMW",
-                        "BHD",
-                        "KWD",
-                        "OMR",
-                        "JOD",
-                        "LBP",
-                        "IQD",
-                        "LYD",
-                        "TND",
-                        "DZD",
-                        "MAD",
                         "PKR",
-                        "LKR",
+                        "UAH",
+                        "KZT",
                         "BDT",
-                        "NPR",
-                        "AFN",
-                        "ALL",
-                        "AMD",
-                        "ANG",
-                        "AOA",
-                        "AWG",
-                        "AZN",
-                        "BAM",
-                        "BBD",
-                        "BGN",
-                        "BIF",
-                        "BMD",
-                        "BND",
-                        "BOB",
-                        "BSD",
-                        "BTN",
-                        "BWP",
+                        "IQD",
+                        "KWD",
+                        "MAD",
+                        "PEN",
+                        "RON",
+                        "DZD",
+                        "UZS",
+                        "VEF",
                         "BYN",
-                        "BZD",
-                        "CDF",
-                        "CRC",
-                        "CUC",
-                        "CUP",
-                        "CVE",
-                        "DJF"
+                        "LKR",
+                        "TZS",
+                        "UGX",
+                        "XAF",
+                        "XOF",
+                        "ZMW"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1064,12 +1021,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "name": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1162,8 +1116,7 @@
                         "Japan,"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fullText": {}
         }
@@ -1177,12 +1130,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "capital": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1204,76 +1154,75 @@
                         "Wellington",
                         "Cairo",
                         "Nairobi",
-                        "Pretoria",
+                        "New Delhi",
+                        "Bangkok",
+                        "Jakarta",
+                        "Seoul",
                         "Buenos Aires",
                         "Lima",
                         "Mexico City",
-                        "New Delhi",
-                        "Jakarta",
-                        "Bangkok",
-                        " Hanoi",
-                        "Seoul",
-                        "Ankara",
-                        "Tehran",
+                        " Santiago",
+                        "Bogot\u00e1",
+                        "Caracas",
+                        "Havana",
                         "Riyadh",
                         "Abu Dhabi",
+                        "Tehran",
                         "Jerusalem",
                         "Athens",
                         "Dublin",
                         "Lisbon",
                         "Stockholm",
-                        "Copenhagen",
-                        " Oslo",
+                        " Copenhagen",
+                        "Oslo",
                         "Helsinki",
                         "Reykjavik",
-                        "Bern",
+                        "Amsterdam",
+                        "Brussels",
                         "Vienna",
+                        "Bern",
+                        "Warsaw",
                         "Prague",
                         "Budapest",
-                        "Warsaw",
                         "Bucharest",
+                        " Belgrade",
                         "Sofia",
-                        "Belgrade",
                         "Zagreb",
-                        " Ljubljana",
                         "Skopje",
                         "Tirana",
+                        "Ljubljana",
                         "Podgorica",
                         "Sarajevo",
-                        "Vilnius",
-                        "Riga",
-                        "Tallinn",
-                        "Valletta",
-                        "Nicosia",
-                        "Beirut",
-                        "Amman",
-                        " Damascus",
-                        "Baghdad",
-                        "Kuwait City",
-                        "Doha",
-                        "Muscat",
-                        "Manama",
-                        "Sana'a",
-                        "Addis Ababa",
-                        "Mogadishu",
-                        "Khartoum",
-                        "Kampala",
-                        " Kigali",
-                        "Bujumbura",
-                        "Dodoma",
-                        "Lusaka",
-                        "Harare",
-                        "Gaborone",
-                        "Windhoek",
-                        "Luanda",
-                        "Kinshasa",
-                        "Brazzaville",
-                        " Libreville",
-                        "Malabo,"
+                        "Chisinau",
+                        "Tbilisi",
+                        "Yerevan",
+                        "Baku",
+                        " Ashgabat",
+                        "Dushanbe",
+                        "Kabul",
+                        "Islamabad",
+                        "Kathmandu",
+                        "Thimphu",
+                        "Dhaka",
+                        "Naypyidaw",
+                        "Hanoi",
+                        "Vientiane",
+                        " Phnom Penh",
+                        "Kuala Lumpur",
+                        "Manila",
+                        "Singapore",
+                        "Bandar Seri Begawan",
+                        "Port Moresby",
+                        "Honiara",
+                        "Suva",
+                        " Wellington",
+                        "Canberra",
+                        "Port Vila",
+                        "Apia",
+                        "N"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1286,12 +1235,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "region": {
-                "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "Africa",
@@ -1315,8 +1261,7 @@
                         "Oceania"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1329,12 +1274,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "subregion": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "South America",
@@ -1350,14 +1292,15 @@
                         "Middle East",
                         "Southeast Asia",
                         "Western Asia",
-                        "Central Asia",
-                        "Oceania",
-                        "Sub-Saharan Africa",
-                        "North Africa"
+                        "Southern Africa",
+                        "Northern Africa",
+                        "Central Africa",
+                        "Eastern Africa",
+                        "Western Africa",
+                        "Oceania"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1370,12 +1313,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "lang": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1462,11 +1402,15 @@
                         "Kosraean",
                         "Chuukese",
                         "Yapese",
-                        "Marshalle"
+                        "Gilbertese",
+                        "Tuvaluan",
+                        "Uzbek",
+                        "Kazakh",
+                        "Kyrgyz",
+                        "Tajik,"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1479,12 +1423,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "demonym": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1515,92 +1456,94 @@
                         "Megan",
                         "Nicholas",
                         " Lauren",
+                        "Anthony",
+                        "Amber",
                         "Ryan",
-                        "Rachel",
+                        "Brittany",
                         "Justin",
                         "Heather",
                         "Brandon",
-                        "Melissa",
-                        "Jason",
-                        "Nicole",
-                        "Kevin",
-                        "Amber",
-                        "Benjamin",
-                        "Danielle",
-                        "Samuel",
-                        " Erica",
-                        "Timothy",
-                        "Michelle",
-                        "Jacob",
                         "Tiffany",
-                        "Zachary",
-                        "Emily",
+                        "Jacob",
+                        "Rachel",
                         "Tyler",
-                        "Christina",
-                        "Cody",
-                        "Rebecca",
+                        "Courtney",
+                        "Zachary",
+                        " Danielle",
+                        "Benjamin",
+                        "Emily",
+                        "Samuel",
+                        "Nicole",
                         "Nathan",
+                        "Kayla",
+                        "Kevin",
+                        "Melissa",
+                        "Eric",
+                        "Michelle",
+                        "Steven",
+                        "Christina",
+                        "Timothy",
+                        " Rebecca",
+                        "Adam",
+                        "Laura",
+                        "Charles",
                         "Amy",
                         "Patrick",
-                        " Angela",
-                        "Sean",
-                        "Katherine",
-                        "Gregory",
-                        "Laura",
-                        "Travis",
-                        "Erin",
-                        "Dustin",
-                        "Sara",
-                        "Mark",
-                        "Courtney",
-                        "Stephen",
-                        "Shannon",
-                        "Aaron",
-                        " Kristen",
-                        "Jeffrey",
-                        "Brittany",
-                        "Scott",
-                        "Jamie",
-                        "Alexander",
-                        "Lindsey",
-                        "Jordan",
-                        "Kelly",
-                        "Phillip",
-                        "Caitlin",
-                        "Charles",
-                        "Whitney",
-                        " Bryan",
-                        "Kelsey",
-                        "Corey",
-                        "Vanessa",
-                        "Keith",
-                        "Allison",
-                        "Derek",
-                        "Chelsea",
+                        "Kimberly",
                         "Richard",
-                        "Kayla",
-                        "Jesse",
-                        "Adam",
-                        " Kyle",
-                        "Maria",
-                        "Juan",
-                        "Patricia",
-                        "Raymond",
+                        "Lisa",
+                        "Jeremy",
+                        "Angela",
+                        "Jeffrey",
+                        "Erin",
+                        "Scott",
+                        "Shannon",
+                        " Stephen",
                         "Crystal",
+                        "Gregory",
+                        "Sean",
+                        "Kelly",
+                        "Jesse",
+                        "Jamie",
+                        "Travis",
+                        "Patricia",
+                        "Cody",
+                        "Katherine",
+                        "Dustin",
+                        "Andrea",
+                        " Aaron",
+                        "Keith",
+                        "Sara",
+                        "Bryan",
+                        "Julie",
+                        "Jordan",
+                        "Phillip",
+                        "Vanessa",
+                        "Kyle",
+                        "Maria",
                         "Gary",
                         "Antonio",
-                        "Kenneth",
+                        " Cassandra",
+                        "Douglas",
+                        "Monica",
+                        "Peter",
                         "April",
-                        " Steven",
-                        "Erica",
-                        "Larry",
-                        "Tara",
+                        "Raymond",
+                        "Anna",
+                        "Teresa",
+                        "Edward",
+                        "Leslie",
+                        "Juan",
+                        "Cynthia",
+                        " Kristen",
                         "Ronald",
-                        "Marcus"
+                        "Diana",
+                        "Logan",
+                        "Jacqueline",
+                        "Randy"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1613,12 +1556,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "translation": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1633,11 +1573,64 @@
                         "Russian",
                         "Chinese",
                         "Japanese",
-                        "Korean"
+                        "Korean",
+                        "Arabic",
+                        "Dutch",
+                        "Swedish",
+                        "Norwegian",
+                        "Danish",
+                        "Finnish",
+                        "Greek",
+                        "Turkish",
+                        "Polish",
+                        "Hungarian",
+                        "Czech",
+                        "Slovak",
+                        "Romanian",
+                        "Bulgarian",
+                        "Ukrainian",
+                        "Serbian",
+                        "Croatian",
+                        "Slovenian",
+                        "Macedonian",
+                        "Albanian",
+                        "Estonian",
+                        "Latvian",
+                        "Lithuanian",
+                        "Maltese",
+                        "Icelandic",
+                        "Irish",
+                        "Welsh",
+                        "Scottish Gaelic",
+                        "Catalan",
+                        "Basque",
+                        "Galician",
+                        "Corsican",
+                        "Luxembourgish",
+                        "Malagasy",
+                        "Swahili",
+                        "Hausa",
+                        "Yoruba",
+                        "Igbo",
+                        "Zulu",
+                        "Xhosa",
+                        "Afrikaans",
+                        "Amharic",
+                        "Somali",
+                        "Hebrew",
+                        "Hindi",
+                        "Bengali",
+                        "Tamil",
+                        "Telugu",
+                        "Kannada",
+                        "Malayalam",
+                        "Thai",
+                        "Vietnamese",
+                        "Indonesian",
+                        "Filipino"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     }

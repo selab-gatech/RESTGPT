@@ -104,13 +104,12 @@ Here are some examples of inputs and expected outputs:
 PARAMETER_CONSTRAINT_CONTEXT = """
 Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, 
 apply the following to determine restrictions on the parameter input:
-If it is a number, determine if the description mentions minimum or maximum possible values and output: "min [minimum], max [maximum]". 
-If it's a string or word, determine if the description mentions minimum or maximum possible input lengths, and output: "minLength [minimum], maxLength [maximum]". 
-If it's an array or list, determine if the description mentions minimum or maximum possible list lengths, and output: "minItems [minimum], maxItems [maximum]".
-If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties, and 
-output: "minProperties [minimum], maxProperties [maximum]".
-If you are unable to determine any minimum or maximum restrictions, output "None". If you are able to determine only one 
-either the minimum or maximum, output the undetermined value as "None".
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: "min [minimum], max [maximum], default [default]". 
+If it's a string or word, determine if the description mentions minimum or maximum possible input lenghts or a default value, and output: "minLength [minimum], maxLength [maximum], default [default]". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: "minItems [minimum], maxItems [maximum], default [default]".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: "minProperties [minimum], maxProperties [maximum], default [default]".
+If it is any other data type where there is a default value provided, output: "min None, max None, default [default]".
+If you are unable to determine any minimum, maximum, or default restrictions, output "None". If you are able to determine only one either the minimum or maximum, output the undetermined value as "None".
 
 Here are some examples of inputs and expected outputs:
 """

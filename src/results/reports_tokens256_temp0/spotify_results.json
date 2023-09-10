@@ -7,6 +7,7 @@
             "limit": {
                 "min": "1",
                 "max": "50",
+                "default": "20",
                 "x-dependencies": [
                     "REQUIRED: limit"
                 ],
@@ -69,12 +70,12 @@
                         "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
                 "min": "0",
                 "max": "100000",
+                "default": "0",
                 "x-dependencies": [
                     "offset >= 0 AND offset <= 100000"
                 ],
@@ -167,8 +168,7 @@
                         "82,"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             }
         }
     },
@@ -181,8 +181,7 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "market": {
                 "examples": {
@@ -280,8 +279,7 @@
                         "GRL,"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
                 "examples": {
@@ -306,8 +304,6 @@
                 "format": "csv"
             },
             "additional_types": {
-                "minItems": "2",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "track",
@@ -323,7 +319,7 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         },
         "put": {
@@ -334,8 +330,7 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "request-body": {
                 "collaborative": {
@@ -347,12 +342,9 @@
                             "false"
                         ]
                     },
-                    "type": "boolean",
-                    "format": "None"
+                    "type": "boolean"
                 },
                 "description": {
-                    "minLength": "None",
-                    "maxLength": "None",
                     "examples": {
                         "provided": [
                             "None"
@@ -380,12 +372,10 @@
                             "A playlist for country music"
                         ]
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 },
                 "name": {
-                    "minLength": "1",
-                    "maxLength": "None",
+                    "default": "\"My",
                     "examples": {
                         "provided": [
                             "\"My New Playlist Title\""
@@ -398,8 +388,7 @@
                             "\"Top Tracks\""
                         ]
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 },
                 "public": {
                     "examples": {
@@ -412,8 +401,7 @@
                             "false"
                         ]
                     },
-                    "type": "boolean",
-                    "format": "None"
+                    "type": "boolean"
                 }
             }
         }
@@ -427,8 +415,7 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -441,24 +428,19 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "request-body": {
                 "snapshot_id": {
-                    "minLength": "None",
-                    "maxLength": "None",
                     "examples": {
                         "provided": [
                             "None"
                         ],
                         "generated": []
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 },
                 "tracks": {
-                    "minItems": "None",
                     "maxItems": "100",
                     "examples": {
                         "provided": [
@@ -466,13 +448,12 @@
                         ],
                         "generated": [
                             "{ \"tracks\": [{ \"uri\": \"spotify:track:1Bc6K8X0FZ4Q4k6yjBZs9m\" },{ \"uri\": \"spotify:track:2CvOqDpQIMw69cCzWqr5yr\" }] }",
-                            "{ \"tracks\": [{ \"uri\": \"spotify:track:3D6Dv0xSlbqXxq1g3d8v6n\" },{ \"uri\": \"spotify:track:4E7L3zvYh3ZMz0j8b0x2Xx\" }] }",
-                            "{ \"tracks\": [{ \"uri\": \"spotify:track:5G5r3Z4zQ7v8x8Rq3X9yXx\" },{ \"uri\": \"spotify:track:6I9VzXrHxO9r"
+                            "{ \"tracks\": [{ \"uri\": \"spotify:track:3DcX3XzXN3r3O9v9Xvzv2I\" },{ \"uri\": \"spotify:track:4DcX4XzXN4r4O9v9Xvzv2I\" }] }",
+                            "{ \"tracks\": [{ \"uri\": \"spotify:track:5DcX5XzXN5r5O9v9Xvzv2I\" },{ \"uri\": \"spotify:track:6DcX6XzXN6r"
                         ]
                     },
                     "type": "array",
-                    "items": "object",
-                    "format": "None"
+                    "items": "object"
                 }
             }
         },
@@ -484,8 +465,7 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "market": {
                 "examples": {
@@ -583,8 +563,7 @@
                         "GRL,"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
                 "examples": {
@@ -604,6 +583,7 @@
             "limit": {
                 "min": "1",
                 "max": "100",
+                "default": "100",
                 "examples": {
                     "provided": [
                         "Default: 100"
@@ -661,12 +641,10 @@
                         "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "0",
-                "max": "None",
+                "default": "0",
                 "examples": {
                     "provided": [
                         "0"
@@ -724,12 +702,9 @@
                         "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "additional_types": {
-                "minItems": "2",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "track",
@@ -745,7 +720,7 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         },
         "post": {
@@ -756,12 +731,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "position": {
-                "min": "0",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "position=0",
@@ -818,11 +790,9 @@
                         "position=49"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "uris": {
-                "minItems": "None",
                 "maxItems": "100",
                 "examples": {
                     "provided": [
@@ -842,8 +812,7 @@
                         "spotify:episode:4p"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             }
         },
         "put": {
@@ -854,11 +823,9 @@
                     ],
                     "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "uris": {
-                "minItems": "None",
                 "maxItems": "100",
                 "examples": {
                     "provided": [
@@ -868,18 +835,17 @@
                     ],
                     "generated": [
                         "spotify:track:7xGfFoTpQ2E7fRF5lN10tr",
-                        "spotify:track:2VvzFZgX3K2FwQn1e3Vv8s",
-                        "spotify:episode:3X6XZV6X9jX6XZV6X9jX6XZV6X9j"
+                        "spotify:track:2VvzFZgXh6C7y4mXNz6X9z",
+                        "spotify:episode:3Xzvz0w9B4X0Z8X0z8X0z8"
                     ]
                 },
                 "type": "array",
                 "items": "string",
-                "format": "uri"
+                "format": "uri",
+                "collectionFormat": "csv"
             },
             "request-body": {
                 "insert_before": {
-                    "min": "None",
-                    "max": "None",
                     "examples": {
                         "provided": [
                             "0",
@@ -936,12 +902,11 @@
                             "49"
                         ]
                     },
-                    "type": "integer",
-                    "format": "None"
+                    "type": "integer"
                 },
                 "range_length": {
                     "min": "1",
-                    "max": "None",
+                    "default": "1",
                     "examples": {
                         "provided": [
                             "range_start=9",
@@ -956,12 +921,9 @@
                             "range_length=4"
                         ]
                     },
-                    "type": "number",
-                    "format": "None"
+                    "type": "number"
                 },
                 "range_start": {
-                    "min": "None",
-                    "max": "None",
                     "examples": {
                         "provided": [
                             "None"
@@ -1019,20 +981,21 @@
                             "49"
                         ]
                     },
-                    "type": "integer",
-                    "format": "None"
+                    "type": "integer"
                 },
                 "snapshot_id": {
-                    "minLength": "None",
-                    "maxLength": "None",
                     "examples": {
                         "provided": [
                             "None"
                         ],
-                        "generated": []
+                        "generated": [
+                            "1234567890",
+                            "abcdefghij",
+                            "playlist_snapshot_id",
+                            "snapshot123"
+                        ]
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 }
             }
         }
@@ -1040,8 +1003,6 @@
     "/search": {
         "get": {
             "q": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "roadhouse blues"
@@ -1059,12 +1020,10 @@
                         "sweet child o' mine"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "type": {
                 "minItems": "1",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "album",
@@ -1085,11 +1044,9 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "market": {
-                "minLength": "2",
-                "maxLength": "2",
                 "examples": {
                     "provided": [
                         "None"
@@ -1104,25 +1061,25 @@
                         "JPN",
                         "BRA",
                         "IND",
-                        "CHN",
-                        "RUS",
+                        "MEX",
                         "ITA",
                         "ESP",
-                        "MEX",
-                        "KOR",
-                        "IDN",
-                        "TUR",
-                        "SAU",
+                        "NLD",
+                        "SWE",
+                        "CHE",
+                        "NOR",
+                        "ARG",
+                        "COL",
                         "ZAF",
-                        "NLD"
+                        "KOR"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
                 "min": "1",
                 "max": "50",
+                "default": "20",
                 "examples": {
                     "provided": [
                         "20"
@@ -1179,12 +1136,12 @@
                         "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
                 "min": "0",
                 "max": "1000",
+                "default": "0",
                 "examples": {
                     "provided": [
                         "0"
@@ -1274,12 +1231,9 @@
                         "82,"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "include_external": {
-                "minLength": "5",
-                "maxLength": "5",
                 "examples": {
                     "provided": [
                         "audio"
@@ -1291,8 +1245,7 @@
                         "document"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1321,6 +1274,7 @@
             "limit": {
                 "min": "1",
                 "max": "50",
+                "default": "20",
                 "examples": {
                     "provided": [
                         "Default: 20",
@@ -1377,12 +1331,12 @@
                         "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
                 "min": "0",
                 "max": "100000",
+                "default": "0",
                 "x-dependencies": [
                     "offset >= 0 AND offset <= 100000"
                 ],
@@ -1475,8 +1429,7 @@
                         "82,"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             }
         },
         "post": {
@@ -1502,6 +1455,7 @@
             },
             "request-body": {
                 "collaborative": {
+                    "default": "false",
                     "x-dependencies": [
                         "IF collaborative==true THEN OnlyOne(public==false AND (playlist-modify-private OR playlist-modify-public));"
                     ],
@@ -1513,12 +1467,9 @@
                             "true"
                         ]
                     },
-                    "type": "boolean",
-                    "format": "None"
+                    "type": "boolean"
                 },
                 "description": {
-                    "minLength": "None",
-                    "maxLength": "None",
                     "examples": {
                         "provided": [
                             "None"
@@ -1536,22 +1487,21 @@
                             "A playlist for driving",
                             "A playlist for cooking",
                             "A playlist for sleeping",
-                            "A playlist for focus",
-                            "A playlist for motivation",
-                            "A playlist for chilling",
-                            "A playlist for running",
-                            "A playlist for gaming",
+                            "A playlist for morning commutes",
+                            "A playlist for dinner parties",
                             "A playlist for yoga",
-                            "A playlist for love songs",
-                            "A playlist for throwbacks"
+                            "A playlist for gaming",
+                            "A playlist for running",
+                            "A playlist for chilling",
+                            "A playlist for karaoke",
+                            "A playlist for date night"
                         ]
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 },
                 "name": {
                     "minLength": "1",
-                    "maxLength": "None",
+                    "default": "\"Your",
                     "examples": {
                         "provided": [
                             "\"Your Coolest Playlist\""
@@ -1564,10 +1514,13 @@
                             "\"Chill Vibes Playlist\""
                         ]
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 },
                 "public": {
+                    "default": "true",
+                    "x-dependencies": [
+                        "REQUIRED: public"
+                    ],
                     "examples": {
                         "provided": [
                             "true"
@@ -1577,8 +1530,7 @@
                             "false"
                         ]
                     },
-                    "type": "boolean",
-                    "format": "None"
+                    "type": "boolean"
                 }
             }
         }

@@ -3,8 +3,6 @@
         "post": {
             "request-body": {
                 "text": {
-                    "minLength": "None",
-                    "maxLength": "None",
                     "x-dependencies": [
                         "Or(text, data)"
                     ],
@@ -32,12 +30,9 @@
                             "cum soluta nobis est eligendi optio cumque nihil"
                         ]
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 },
                 "data": {
-                    "min": "None",
-                    "max": "None",
                     "examples": {
                         "provided": [
                             "{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}"
@@ -51,8 +46,7 @@
                             " {\"text\": \"demo\"}"
                         ]
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 },
                 "language": {
                     "minLength": "5",
@@ -80,12 +74,9 @@
                             "pt-PT"
                         ]
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 },
                 "altLanguages": {
-                    "minItems": "None",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "None"
@@ -112,11 +103,11 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 },
                 "motherTongue": {
-                    "minLength": "None",
-                    "maxLength": "None",
+                    "minLength": "2",
+                    "maxLength": "2",
                     "examples": {
                         "provided": [
                             "None"
@@ -168,27 +159,27 @@
                             "et",
                             "gl",
                             "ka",
+                            "ht",
+                            "is",
+                            "ga",
                             "lv",
                             "lt",
                             "mk",
                             "mt",
-                            "mn",
+                            " mn",
                             "ne",
-                            "pa",
+                            "ps",
+                            "sr",
                             "sk",
                             "sl",
-                            "so",
                             "tl",
                             "uk",
                             "uz"
                         ]
                     },
-                    "type": "string",
-                    "format": "None"
+                    "type": "string"
                 },
                 "preferredVariants": {
-                    "minItems": "None",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "en-GB",
@@ -262,11 +253,9 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 },
                 "enabledRules": {
-                    "minItems": "None",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "None"
@@ -326,11 +315,9 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 },
                 "disabledRules": {
-                    "minItems": "None",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "None"
@@ -390,11 +377,9 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 },
                 "enabledCategories": {
-                    "minItems": "None",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "None"
@@ -414,11 +399,9 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 },
                 "disabledCategories": {
-                    "minItems": "None",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "None"
@@ -438,9 +421,10 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 },
                 "enabledOnly": {
+                    "default": "true",
                     "examples": {
                         "provided": [
                             "None"
@@ -450,8 +434,7 @@
                             "False"
                         ]
                     },
-                    "type": "boolean",
-                    "format": "None"
+                    "type": "boolean"
                 }
             }
         }

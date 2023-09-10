@@ -2,8 +2,6 @@
     "/annotation": {
         "post": {
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
@@ -15,26 +13,70 @@
                         "ucsc"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
                 "minProperties": "2",
                 "maxProperties": "2",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token3",
+                        "token4",
+                        "token5",
+                        "token6",
+                        "token7",
+                        "token8",
+                        "token9",
+                        "token10",
+                        "token11",
+                        "token12",
+                        "token13",
+                        "token14",
+                        "token15",
+                        "token16",
+                        "token17",
+                        "token18",
+                        "token19",
+                        "token20",
+                        "token21",
+                        "token22",
+                        "token23",
+                        "token24",
+                        "token25",
+                        "token26",
+                        "token27",
+                        "token28",
+                        "token29",
+                        "token30",
+                        "token31",
+                        "token32",
+                        "token33",
+                        "token34",
+                        "token35",
+                        "token36",
+                        "token37",
+                        "token38",
+                        "token39",
+                        "token40",
+                        "token41",
+                        "token42",
+                        "token43",
+                        "token44",
+                        "token45",
+                        "token46",
+                        "token47",
+                        "token48",
+                        "token49",
+                        "token50"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "hotspots"
@@ -54,12 +96,10 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "request-body": {
                 "": {
-                    "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "X:g.66937331T>A",
@@ -75,7 +115,7 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 }
             }
         }
@@ -83,8 +123,6 @@
     "/annotation/dbsnp/": {
         "post": {
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
@@ -96,26 +134,70 @@
                         "ucsc"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
                 "minProperties": "2",
                 "maxProperties": "2",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token3",
+                        "token4",
+                        "token5",
+                        "token6",
+                        "token7",
+                        "token8",
+                        "token9",
+                        "token10",
+                        "token11",
+                        "token12",
+                        "token13",
+                        "token14",
+                        "token15",
+                        "token16",
+                        "token17",
+                        "token18",
+                        "token19",
+                        "token20",
+                        "token21",
+                        "token22",
+                        "token23",
+                        "token24",
+                        "token25",
+                        "token26",
+                        "token27",
+                        "token28",
+                        "token29",
+                        "token30",
+                        "token31",
+                        "token32",
+                        "token33",
+                        "token34",
+                        "token35",
+                        "token36",
+                        "token37",
+                        "token38",
+                        "token39",
+                        "token40",
+                        "token41",
+                        "token42",
+                        "token43",
+                        "token44",
+                        "token45",
+                        "token46",
+                        "token47",
+                        "token48",
+                        "token49",
+                        "token50"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "annotation_summary"
@@ -175,12 +257,11 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "request-body": {
                 "": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "[\"rs116035550\"]"
@@ -193,7 +274,7 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 }
             }
         }
@@ -202,7 +283,6 @@
         "get": {
             "variantId": {
                 "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "rs116035550"
@@ -211,16 +291,13 @@
                         "rs123456789",
                         "rs987654321",
                         "rs246813579",
-                        "rs135792468",
-                        "rs369258147"
+                        "rs369258147",
+                        "rs135792468"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
@@ -232,26 +309,70 @@
                         "ucsc"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
                 "minProperties": "2",
                 "maxProperties": "2",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token3",
+                        "token4",
+                        "token5",
+                        "token6",
+                        "token7",
+                        "token8",
+                        "token9",
+                        "token10",
+                        "token11",
+                        "token12",
+                        "token13",
+                        "token14",
+                        "token15",
+                        "token16",
+                        "token17",
+                        "token18",
+                        "token19",
+                        "token20",
+                        "token21",
+                        "token22",
+                        "token23",
+                        "token24",
+                        "token25",
+                        "token26",
+                        "token27",
+                        "token28",
+                        "token29",
+                        "token30",
+                        "token31",
+                        "token32",
+                        "token33",
+                        "token34",
+                        "token35",
+                        "token36",
+                        "token37",
+                        "token38",
+                        "token39",
+                        "token40",
+                        "token41",
+                        "token42",
+                        "token43",
+                        "token44",
+                        "token45",
+                        "token46",
+                        "token47",
+                        "token48",
+                        "token49",
+                        "token50"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "annotation_summary"
@@ -311,15 +432,13 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         }
     },
     "/annotation/genomic": {
         "post": {
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
@@ -331,26 +450,70 @@
                         "ucsc"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
                 "minProperties": "2",
                 "maxProperties": "2",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token3",
+                        "token4",
+                        "token5",
+                        "token6",
+                        "token7",
+                        "token8",
+                        "token9",
+                        "token10",
+                        "token11",
+                        "token12",
+                        "token13",
+                        "token14",
+                        "token15",
+                        "token16",
+                        "token17",
+                        "token18",
+                        "token19",
+                        "token20",
+                        "token21",
+                        "token22",
+                        "token23",
+                        "token24",
+                        "token25",
+                        "token26",
+                        "token27",
+                        "token28",
+                        "token29",
+                        "token30",
+                        "token31",
+                        "token32",
+                        "token33",
+                        "token34",
+                        "token35",
+                        "token36",
+                        "token37",
+                        "token38",
+                        "token39",
+                        "token40",
+                        "token41",
+                        "token42",
+                        "token43",
+                        "token44",
+                        "token45",
+                        "token46",
+                        "token47",
+                        "token48",
+                        "token49",
+                        "token50"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "hotspots"
@@ -370,12 +533,10 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "request-body": {
                 "": {
-                    "minItems": "None",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "None"
@@ -408,8 +569,7 @@
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -417,8 +577,6 @@
     "/annotation/genomic/{genomicLocation}": {
         "get": {
             "genomicLocation": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "7,140453136,140453136,A,T"
@@ -431,11 +589,9 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
@@ -447,26 +603,70 @@
                         "ucsc"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
                 "minProperties": "2",
                 "maxProperties": "2",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token3",
+                        "token4",
+                        "token5",
+                        "token6",
+                        "token7",
+                        "token8",
+                        "token9",
+                        "token10",
+                        "token11",
+                        "token12",
+                        "token13",
+                        "token14",
+                        "token15",
+                        "token16",
+                        "token17",
+                        "token18",
+                        "token19",
+                        "token20",
+                        "token21",
+                        "token22",
+                        "token23",
+                        "token24",
+                        "token25",
+                        "token26",
+                        "token27",
+                        "token28",
+                        "token29",
+                        "token30",
+                        "token31",
+                        "token32",
+                        "token33",
+                        "token34",
+                        "token35",
+                        "token36",
+                        "token37",
+                        "token38",
+                        "token39",
+                        "token40",
+                        "token41",
+                        "token42",
+                        "token43",
+                        "token44",
+                        "token45",
+                        "token46",
+                        "token47",
+                        "token48",
+                        "token49",
+                        "token50"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "hotspots"
@@ -486,38 +686,33 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         }
     },
     "/annotation/{variant}": {
         "get": {
             "variant": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "17:g.41242962_41242963insGA"
                     ],
                     "generated": [
+                        "17:g.41242962_41242963insAA",
                         "17:g.41242962_41242963insCT",
-                        "17:g.41242962_41242963insAG",
                         "17:g.41242962_41242963insTC",
-                        "17:g.41242962_41242963insAT",
+                        "17:g.41242962_41242963insAG",
+                        "17:g.41242962_41242963insGA",
+                        "17:g.41242962_41242963insTG",
                         "17:g.41242962_41242963insCG",
                         "17:g.41242962_41242963insGC",
-                        "17:g.41242962_41242963insTA",
-                        "17:g.41242962_41242963insAC",
-                        "17:g.41242962_41242963insTG",
-                        "17:g.41242962_41242963insCA"
+                        "17:g.41242962_41242963insAT",
+                        "17:g.41242962_41242963insTA"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
@@ -529,26 +724,70 @@
                         "ucsc"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
                 "minProperties": "2",
                 "maxProperties": "2",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token3",
+                        "token4",
+                        "token5",
+                        "token6",
+                        "token7",
+                        "token8",
+                        "token9",
+                        "token10",
+                        "token11",
+                        "token12",
+                        "token13",
+                        "token14",
+                        "token15",
+                        "token16",
+                        "token17",
+                        "token18",
+                        "token19",
+                        "token20",
+                        "token21",
+                        "token22",
+                        "token23",
+                        "token24",
+                        "token25",
+                        "token26",
+                        "token27",
+                        "token28",
+                        "token29",
+                        "token30",
+                        "token31",
+                        "token32",
+                        "token33",
+                        "token34",
+                        "token35",
+                        "token36",
+                        "token37",
+                        "token38",
+                        "token39",
+                        "token40",
+                        "token41",
+                        "token42",
+                        "token43",
+                        "token44",
+                        "token45",
+                        "token46",
+                        "token47",
+                        "token48",
+                        "token49",
+                        "token50"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "hotspots"
@@ -568,7 +807,7 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         }
     },
@@ -576,8 +815,7 @@
         "post": {
             "request-body": {
                 "": {
-                    "minItems": "3",
-                    "maxItems": "None",
+                    "minItems": "1",
                     "examples": {
                         "provided": [
                             "[\"23140\",\"26009\",\"100131879\"]"
@@ -588,7 +826,7 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 }
             }
         }
@@ -596,8 +834,6 @@
     "/ensembl/canonical-gene/entrez/{entrezGeneId}": {
         "get": {
             "entrezGeneId": {
-                "min": "23140",
-                "max": "23140",
                 "examples": {
                     "provided": [
                         "23140"
@@ -669,8 +905,7 @@
                         "6400"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             }
         }
     },
@@ -678,8 +913,7 @@
         "post": {
             "request-body": {
                 "": {
-                    "minItems": "1",
-                    "maxItems": "None",
+                    "minItems": "0",
                     "examples": {
                         "provided": [
                             "[\"TP53\",\"PIK3CA\",\"BRCA1\"]"
@@ -690,7 +924,7 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 }
             }
         }
@@ -698,8 +932,6 @@
     "/ensembl/canonical-gene/hgnc/{hugoSymbol}": {
         "get": {
             "hugoSymbol": {
-                "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "TP53"
@@ -720,16 +952,13 @@
                         "WXYZ"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/ensembl/canonical-transcript/hgnc": {
         "post": {
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
@@ -741,13 +970,11 @@
                         "ucsc"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "request-body": {
                 "": {
-                    "minItems": "1",
-                    "maxItems": "None",
+                    "minItems": "0",
                     "examples": {
                         "provided": [
                             "[\"TP53\",\"PIK3CA\",\"BRCA1\"]"
@@ -758,7 +985,7 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 }
             }
         }
@@ -766,8 +993,6 @@
     "/ensembl/canonical-transcript/hgnc/{hugoSymbol}": {
         "get": {
             "hugoSymbol": {
-                "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "TP53"
@@ -788,12 +1013,9 @@
                         "WXYZ"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
@@ -805,16 +1027,14 @@
                         "ucsc"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/ensembl/transcript": {
         "get": {
             "geneId": {
-                "minLength": "18",
-                "maxLength": "18",
+                "minLength": "1",
                 "examples": {
                     "provided": [
                         "ENSG00000136999"
@@ -832,12 +1052,10 @@
                         "ENSG00000121098"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "proteinId": {
-                "minLength": "18",
-                "maxLength": "18",
+                "minLength": "1",
                 "examples": {
                     "provided": [
                         "ENSP00000439985"
@@ -876,12 +1094,9 @@
                         "ENS"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "hugoSymbol": {
-                "minLength": "1",
-                "maxLength": "20",
                 "examples": {
                     "provided": [
                         "ARF5"
@@ -944,15 +1159,13 @@
                         "ARF60"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         },
         "post": {
             "request-body": {
                 "geneIds": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "ENSG00000136999",
@@ -969,11 +1182,10 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 },
                 "hugoSymbols": {
-                    "minItems": "1",
-                    "maxItems": "None",
+                    "minItems": "0",
                     "examples": {
                         "provided": [
                             "[\"TP53\"",
@@ -1013,11 +1225,10 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 },
                 "proteinIds": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "ENSP00000439985",
@@ -1033,11 +1244,10 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 },
                 "transcriptIds": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "ENST00000361390",
@@ -1082,7 +1292,7 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 }
             }
         }
@@ -1134,16 +1344,14 @@
                         "ENST000003614"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/ensembl/xrefs": {
         "get": {
             "accession": {
-                "minLength": "18",
-                "maxLength": "18",
+                "minLength": "1",
                 "examples": {
                     "provided": [
                         "ENSG00000169083"
@@ -1156,8 +1364,7 @@
                         "ENSG00000133333"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1166,7 +1373,6 @@
             "request-body": {
                 "": {
                     "minItems": "2",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "[\"1a37\",\"1a4o\"]"
@@ -1177,7 +1383,7 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 }
             }
         }
@@ -1243,8 +1449,7 @@
                         "1a86,"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1253,7 +1458,6 @@
             "request-body": {
                 "": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "PF02827",
@@ -1325,7 +1529,7 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 }
             }
         }
@@ -1333,8 +1537,6 @@
     "/pfam/domain/{pfamAccession}": {
         "get": {
             "pfamAccession": {
-                "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "PF02827"
@@ -1392,16 +1594,14 @@
                         "PF00050"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/ptm/experimental": {
         "get": {
             "ensemblTranscriptId": {
-                "minLength": "18",
-                "maxLength": "18",
+                "minLength": "1",
                 "examples": {
                     "provided": [
                         "ENST00000646891"
@@ -1444,15 +1644,13 @@
                         "ENST000003693"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         },
         "post": {
             "request-body": {
                 "transcriptIds": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "ENST00000361390",
@@ -1497,7 +1695,7 @@
                     },
                     "type": "array",
                     "items": "string",
-                    "format": "None"
+                    "collectionFormat": "csv"
                 }
             }
         }
