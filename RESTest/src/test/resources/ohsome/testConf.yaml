@@ -1,0 +1,1094 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /elements/area
+    operationId: area
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/area/density/groupBy/boundary/groupBy/tag
+    operationId: areaDensityGroupByBoundaryGroupByTag
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: groupByKey
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: groupByValues
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/area/groupBy/key
+    operationId: areaGroupByKey
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: groupByKeys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/area/ratio
+    operationId: areaRatio
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/area/ratio/groupBy/boundary
+    operationId: areaRatioGroupByBoundary
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/count/density/groupBy/boundary
+    operationId: countDensityGroupByBoundary
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/count/ratio
+    operationId: countRatio
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/length/density/groupBy/tag
+    operationId: lengthDensityGroupByTag
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: groupByKey
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: groupByValues
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/length/groupBy/key
+    operationId: lengthGroupByKey
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: groupByKeys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/length/ratio
+    operationId: lengthRatio
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /elements/perimeter/ratio
+    operationId: perimeterRatio
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bcircles
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bpolys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filter2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: keys2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: timeout
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: types2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: values2
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200

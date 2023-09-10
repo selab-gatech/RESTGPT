@@ -1,0 +1,230 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /check
+    operationId: <SET OPERATION ID>
+    method: post
+    testParameters:
+    - name: text
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_text.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/text
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: data
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_data.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/data
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: language
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_language.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/language
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: altLanguages
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_altLanguages.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/languages
+          - http://dbpedia.org/property/alt
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: motherTongue
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_motherTongue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mother
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: preferredVariants
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_preferredVariants.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/variants
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: enabledRules
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_enabledRules.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/rules
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: disabledRules
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_disabledRules.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/disabled
+          - http://dbpedia.org/property/rules
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: enabledCategories
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_enabledCategories.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/categories
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: disabledCategories
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/LanguageTool API/<SET OPERATION
+            ID>_disabledCategories.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/disabled
+          - http://dbpedia.org/property/categories
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: enabledOnly
+      in: formData
+      weight: 0.5
+      generators:
+      - type: RandomBoolean
+        genParameters: []
+        valid: true
+    expectedResponse: 200
+  - testPath: /languages
+    operationId: <SET OPERATION ID>
+    method: get
+    testParameters: null
+    expectedResponse: 200

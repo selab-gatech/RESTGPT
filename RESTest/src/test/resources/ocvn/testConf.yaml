@@ -1,0 +1,654 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /api/activeAwardsCount
+    operationId: activeAwardsCountUsingGET
+    method: get
+    testParameters:
+    - name: bidTypeId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: notBidTypeId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: notProcuringEntityId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: supplierId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bidSelectionMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: notBidSelectionMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: contrMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: planningLoc
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: tenderLoc
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procurementMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityCityId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityDepartmentId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityGroupId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: year
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: month
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: pageNumber
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: pageSize
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: minTenderValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: maxTenderValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: minAwardValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: maxAwardValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: electronicSubmission
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: flagged
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: monthly
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /api/costEffectivenessTenderAmount
+    operationId: costEffectivenessTenderAmountUsingGET
+    method: get
+    testParameters:
+    - name: bidTypeId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: notBidTypeId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: notProcuringEntityId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: supplierId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bidSelectionMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: notBidSelectionMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: contrMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: planningLoc
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: tenderLoc
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procurementMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityCityId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityDepartmentId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityGroupId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: year
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: month
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: pageNumber
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: pageSize
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: minTenderValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: maxTenderValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: minAwardValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: maxAwardValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: electronicSubmission
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: flagged
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: monthly
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: groupByCategory
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /api/frequentSuppliersTimeInterval
+    operationId: frequentSuppliersTimeIntervalUsingGET
+    method: get
+    testParameters:
+    - name: intervalDays
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: maxAwards
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: now
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomDate
+        genParameters:
+        - name: format
+          values:
+          - yyyy-MM-dd'T'HH:mm:ss'Z'
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /api/ocds/averageNumberBidsExcelChart
+    operationId: averageNumberBidsExcelChartUsingGET
+    method: get
+    testParameters:
+    - name: bidTypeId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: notBidTypeId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: notProcuringEntityId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: supplierId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: bidSelectionMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: notBidSelectionMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: contrMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: planningLoc
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: tenderLoc
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procurementMethod
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityCityId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityDepartmentId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: procuringEntityGroupId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: year
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: month
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: pageNumber
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: pageSize
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: minTenderValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: maxTenderValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: minAwardValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: maxAwardValue
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: electronicSubmission
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: flagged
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: monthly
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: language
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/api/ocds/organization/procuringEntity/id/{id}"
+    operationId: byIdUsingPOST_2
+    method: post
+    testParameters:
+    - name: id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /api/ocds/organization/supplier/all
+    operationId: searchTextUsingGET_3
+    method: get
+    testParameters:
+    - name: body
+      in: body
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/api/ocds/package/budgetProjectId/{projectId}"
+    operationId: packagedReleaseByProjectIdUsingGET
+    method: get
+    testParameters:
+    - name: projectId
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/api/ocds/package/ocid/{ocid}"
+    operationId: ocdsPackageByOcidUsingGET
+    method: get
+    testParameters:
+    - name: ocid
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/api/ocds/package/planningBidNo/{bidNo}"
+    operationId: packagedReleaseByPlanningBidNoUsingGET
+    method: get
+    testParameters:
+    - name: bidNo
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200

@@ -1,0 +1,78 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /
+    operationId: search
+    method: get
+    testParameters:
+    - name: t
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: i
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: s
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: page
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: "y"
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: type
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: plot
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: r
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: callback
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200

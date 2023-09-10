@@ -1,0 +1,1456 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /institutions
+    operationId: searchInstitutions
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_filters.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: search
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_search.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/search
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_sort_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_sort_order.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/order
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_download.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/download
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchInstitutions_filename.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filename
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /locations
+    operationId: searchLocations
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchLocations_filters.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchLocations_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchLocations_sort_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchLocations_sort_order.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/order
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchLocations_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchLocations_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchLocations_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchLocations_download.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/download
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/searchLocations_filename.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filename
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /summary
+    operationId: getHistorical
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_filters.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_sort_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_sort_order.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/order
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_agg_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_term_fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_agg_term_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          - http://dbpedia.org/property/term
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_sum_fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_agg_sum_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          - http://dbpedia.org/property/summer
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_agg_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/baggage
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_download.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/download
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistorical_filename.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filename
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /failures
+    operationId: getFailures
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_filters.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_sort_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_sort_order.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/order
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: total_fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_total_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          - http://dbpedia.org/property/total
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: subtotal_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_subtotal_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_agg_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_term_fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_agg_term_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          - http://dbpedia.org/property/term
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_sum_fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_agg_sum_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          - http://dbpedia.org/property/summer
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_agg_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/baggage
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_download.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/download
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFailures_filename.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filename
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /history
+    operationId: getHistory
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_filters.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: search
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_search.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/search
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_sort_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_sort_order.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/order
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_agg_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_term_fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_agg_term_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          - http://dbpedia.org/property/term
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_agg_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/baggage
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_download.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/download
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getHistory_filename.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filename
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /financials
+    operationId: getFinancials
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_filters.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_sort_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_sort_order.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/order
+          - http://dbpedia.org/property/sort
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_by
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_agg_by.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_term_fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_agg_term_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          - http://dbpedia.org/property/term
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_sum_fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_agg_sum_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          - http://dbpedia.org/property/summer
+          - http://dbpedia.org/property/baggage
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: agg_limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_agg_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/baggage
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_download.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/download
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/FDIC Bank Data API (Beta)/getFinancials_filename.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filename
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200

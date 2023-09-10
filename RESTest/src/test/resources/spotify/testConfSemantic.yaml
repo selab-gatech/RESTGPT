@@ -1,0 +1,743 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /me
+    operationId: endpoint-get-current-users-profile
+    method: get
+    testParameters: []
+    expectedResponse: 200
+  - testPath: /me/playlists
+    operationId: endpoint-get-a-list-of-current-users-playlists
+    method: get
+    testParameters:
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-a-list-of-current-users-playlists_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-a-list-of-current-users-playlists_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}"
+    operationId: endpoint-get-playlist
+    method: get
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlist_playlist_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/playlist
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: market
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlist_market.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/countryCode
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlist_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: additional_types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlist_additional_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/additionalInfo
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}"
+    operationId: endpoint-change-playlist-details
+    method: put
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-change-playlist-details_playlist_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/playlist
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: body
+      in: body
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-change-playlist-details_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/images"
+    operationId: endpoint-get-playlist-cover
+    method: get
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlist-cover_playlist_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/playlist
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/tracks"
+    operationId: endpoint-get-playlists-tracks
+    method: get
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlists-tracks_playlist_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/playlist
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: market
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlists-tracks_market.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/countryCode
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlists-tracks_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlists-tracks_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlists-tracks_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: additional_types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-playlists-tracks_additional_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/additionalInfo
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/tracks"
+    operationId: endpoint-reorder-or-replace-playlists-tracks
+    method: put
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-reorder-or-replace-playlists-tracks_playlist_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/playlist
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: uris
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-reorder-or-replace-playlists-tracks_uris.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tourist
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: body
+      in: body
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-reorder-or-replace-playlists-tracks_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/tracks"
+    operationId: endpoint-add-tracks-to-playlist
+    method: post
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-add-tracks-to-playlist_playlist_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/playlist
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: position
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-add-tracks-to-playlist_position.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/position
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: uris
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-add-tracks-to-playlist_uris.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tourist
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: body
+      in: body
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-add-tracks-to-playlist_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/tracks"
+    operationId: endpoint-remove-tracks-playlist
+    method: delete
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-remove-tracks-playlist_playlist_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/playlist
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-remove-tracks-playlist_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /search
+    operationId: endpoint-search
+    method: get
+    testParameters:
+    - name: q
+      in: query
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: values
+          values:
+          - "null"
+          - ""
+          - \0
+          - randomString
+          - one space
+          objectValues: null
+        valid: true
+    - name: type
+      in: query
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-search_type.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: market
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-search_market.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/countryCode
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-search_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-search_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: include_external
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-search_include_external.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/externalUrl
+          - http://dbpedia.org/property/includes
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/users/{user_id}/playlists"
+    operationId: endpoint-get-list-users-playlists
+    method: get
+    testParameters:
+    - name: user_id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-list-users-playlists_user_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/user
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-list-users-playlists_limit.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gLimits
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-get-list-users-playlists_offset.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/offset
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/users/{user_id}/playlists"
+    operationId: endpoint-create-playlist
+    method: post
+    testParameters:
+    - name: user_id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-create-playlist_user_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/user
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Spotify Web API/endpoint-create-playlist_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200

@@ -1,0 +1,1755 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /api/activeAwardsCount
+    operationId: activeAwardsCountUsingGET
+    method: get
+    testParameters:
+    - name: bidTypeId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_bidTypeId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: notBidTypeId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_notBidTypeId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          - http://dbpedia.org/property/note
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_procuringEntityId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: notProcuringEntityId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_notProcuringEntityId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/note
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: supplierId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_supplierId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/shirtsupplier
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bidSelectionMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_bidSelectionMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/method
+          - http://dbpedia.org/property/selection
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: notBidSelectionMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_notBidSelectionMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/note
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/method
+          - http://dbpedia.org/property/selection
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: contrMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_contrMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/control
+          - http://dbpedia.org/property/method
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: planningLoc
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_planningLoc.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/loc
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: tenderLoc
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_tenderLoc.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/loc
+          - http://dbpedia.org/property/tendercap
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procurementMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_procurementMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/method
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityCityId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_procuringEntityCityId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/city
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityDepartmentId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_procuringEntityDepartmentId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/department
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityGroupId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_procuringEntityGroupId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/group
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: year
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_year.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/year
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: month
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_month.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/month
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: pageNumber
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_pageNumber.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/pageNumbers
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: pageSize
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_pageSize.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/page
+          - http://dbpedia.org/property/size
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: minTenderValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_minTenderValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/min
+          - http://dbpedia.org/property/tendercap
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: maxTenderValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_maxTenderValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tendercap
+          - http://dbpedia.org/property/vmax
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: minAwardValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_minAwardValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/min
+          - http://dbpedia.org/property/award
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: maxAwardValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_maxAwardValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/vmax
+          - http://dbpedia.org/property/award
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: electronicSubmission
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_electronicSubmission.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/aircraftElectronic
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: flagged
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_flagged.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: monthly
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/activeAwardsCountUsingGET_monthly.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /api/costEffectivenessTenderAmount
+    operationId: costEffectivenessTenderAmountUsingGET
+    method: get
+    testParameters:
+    - name: bidTypeId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_bidTypeId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: notBidTypeId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_notBidTypeId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          - http://dbpedia.org/property/note
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_procuringEntityId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: notProcuringEntityId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_notProcuringEntityId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/note
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: supplierId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_supplierId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/shirtsupplier
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bidSelectionMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_bidSelectionMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/method
+          - http://dbpedia.org/property/selection
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: notBidSelectionMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_notBidSelectionMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/note
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/method
+          - http://dbpedia.org/property/selection
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: contrMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_contrMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/control
+          - http://dbpedia.org/property/method
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: planningLoc
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_planningLoc.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/loc
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: tenderLoc
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_tenderLoc.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/loc
+          - http://dbpedia.org/property/tendercap
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procurementMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_procurementMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/method
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityCityId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_procuringEntityCityId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/city
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityDepartmentId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_procuringEntityDepartmentId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/department
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityGroupId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_procuringEntityGroupId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/group
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: year
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_year.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/year
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: month
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_month.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/month
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: pageNumber
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_pageNumber.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/pageNumbers
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: pageSize
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_pageSize.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/page
+          - http://dbpedia.org/property/size
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: minTenderValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_minTenderValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/min
+          - http://dbpedia.org/property/tendercap
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: maxTenderValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_maxTenderValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tendercap
+          - http://dbpedia.org/property/vmax
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: minAwardValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_minAwardValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/min
+          - http://dbpedia.org/property/award
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: maxAwardValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_maxAwardValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/vmax
+          - http://dbpedia.org/property/award
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: electronicSubmission
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_electronicSubmission.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/aircraftElectronic
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: flagged
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_flagged.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: monthly
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_monthly.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: groupByCategory
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/costEffectivenessTenderAmountUsingGET_groupByCategory.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/group
+          - http://dbpedia.org/property/category
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /api/frequentSuppliersTimeInterval
+    operationId: frequentSuppliersTimeIntervalUsingGET
+    method: get
+    testParameters:
+    - name: intervalDays
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/frequentSuppliersTimeIntervalUsingGET_intervalDays.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/interval
+          - http://dbpedia.org/property/days
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: maxAwards
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/frequentSuppliersTimeIntervalUsingGET_maxAwards.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/awards
+          - http://dbpedia.org/property/vmax
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: now
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomDate
+        genParameters:
+        - name: format
+          values:
+          - yyyy-MM-dd'T'HH:mm:ss'Z'
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /api/ocds/averageNumberBidsExcelChart
+    operationId: averageNumberBidsExcelChartUsingGET
+    method: get
+    testParameters:
+    - name: bidTypeId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_bidTypeId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: notBidTypeId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_notBidTypeId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          - http://dbpedia.org/property/note
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_procuringEntityId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: notProcuringEntityId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_notProcuringEntityId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/note
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: supplierId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_supplierId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/shirtsupplier
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bidSelectionMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_bidSelectionMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/method
+          - http://dbpedia.org/property/selection
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: notBidSelectionMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_notBidSelectionMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/note
+          - http://dbpedia.org/property/mbid
+          - http://dbpedia.org/property/method
+          - http://dbpedia.org/property/selection
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: contrMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_contrMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/control
+          - http://dbpedia.org/property/method
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: planningLoc
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_planningLoc.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/loc
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: tenderLoc
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_tenderLoc.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/loc
+          - http://dbpedia.org/property/tendercap
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procurementMethod
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_procurementMethod.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/method
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityCityId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_procuringEntityCityId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/city
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityDepartmentId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_procuringEntityDepartmentId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/department
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: procuringEntityGroupId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_procuringEntityGroupId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mapEntity
+          - http://dbpedia.org/property/group
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: year
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_year.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/year
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: month
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_month.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/month
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: pageNumber
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_pageNumber.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/pageNumbers
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: pageSize
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_pageSize.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/page
+          - http://dbpedia.org/property/size
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: minTenderValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_minTenderValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/min
+          - http://dbpedia.org/property/tendercap
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: maxTenderValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_maxTenderValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tendercap
+          - http://dbpedia.org/property/vmax
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: minAwardValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_minAwardValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/min
+          - http://dbpedia.org/property/award
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: maxAwardValue
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_maxAwardValue.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/vmax
+          - http://dbpedia.org/property/award
+          - http://dbpedia.org/property/value
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: electronicSubmission
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_electronicSubmission.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/aircraftElectronic
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: flagged
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_flagged.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: monthly
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_monthly.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: language
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/averageNumberBidsExcelChartUsingGET_language.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/language
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/api/ocds/organization/procuringEntity/id/{id}"
+    operationId: byIdUsingPOST_2
+    method: post
+    testParameters:
+    - name: id
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/byIdUsingPOST_2_id.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /api/ocds/organization/supplier/all
+    operationId: searchTextUsingGET_3
+    method: get
+    testParameters:
+    - name: body
+      in: body
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/searchTextUsingGET_3_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/api/ocds/package/budgetProjectId/{projectId}"
+    operationId: packagedReleaseByProjectIdUsingGET
+    method: get
+    testParameters:
+    - name: projectId
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/packagedReleaseByProjectIdUsingGET_projectId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/project
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/api/ocds/package/ocid/{ocid}"
+    operationId: ocdsPackageByOcidUsingGET
+    method: get
+    testParameters:
+    - name: ocid
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/ocdsPackageByOcidUsingGET_ocid.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/docid
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/api/ocds/package/planningBidNo/{bidNo}"
+    operationId: packagedReleaseByPlanningBidNoUsingGET
+    method: get
+    testParameters:
+    - name: bidNo
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Open Contracting Dashboards API/packagedReleaseByPlanningBidNoUsingGET_bidNo.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/no
+          - http://dbpedia.org/property/mbid
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200

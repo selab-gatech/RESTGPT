@@ -1,0 +1,625 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /search
+    operationId: youtube.search.list
+    method: get
+    testParameters:
+    - name: channelId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_channelId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/channel
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: channelType
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_channelType.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          - http://dbpedia.org/property/channel
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: eventType
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_eventType.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/eventType
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: forContentOwner
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_forContentOwner.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/owner
+          - http://dbpedia.org/property/content
+          - http://dbpedia.org/property/for
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: forDeveloper
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_forDeveloper.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/developer
+          - http://dbpedia.org/property/for
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: forMine
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_forMine.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/mine
+          - http://dbpedia.org/property/for
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: location
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_location.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/ontology/location
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: locationRadius
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_locationRadius.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/radius
+          - http://dbpedia.org/ontology/location
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: maxResults
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_maxResults.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/results
+          - http://dbpedia.org/property/vmax
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: onBehalfOfContentOwner
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_onBehalfOfContentOwner.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/owner
+          - http://dbpedia.org/property/content
+          - http://dbpedia.org/property/on
+          - http://dbpedia.org/property/hof
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: order
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_order.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/order
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: pageToken
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_pageToken.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/page
+          - http://dbpedia.org/property/tokens
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: part
+      in: query
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: values
+          values:
+          - "null"
+          - ""
+          - \0
+          - randomString
+          - one space
+          objectValues: null
+        valid: true
+    - name: publishedAfter
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_publishedAfter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/published
+          - http://dbpedia.org/property/after
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: publishedBefore
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_publishedBefore.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/before
+          - http://dbpedia.org/property/published
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: q
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_q.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: regionCode
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_regionCode.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/countryCode
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: relatedToVideoId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_relatedToVideoId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/video
+          - http://dbpedia.org/property/to
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/related
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: relevanceLanguage
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_relevanceLanguage.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/language
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: safeSearch
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_safeSearch.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/safety
+          - http://dbpedia.org/property/search
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: topicId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_topicId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/topic
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: type
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_type.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: videoCaption
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_videoCaption.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/caption
+          - http://dbpedia.org/property/video
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: videoCategoryId
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_videoCategoryId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/video
+          - http://dbpedia.org/property/category
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: videoDefinition
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_videoDefinition.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/video
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: videoDimension
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_videoDimension.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/video
+          - http://dbpedia.org/property/dimension
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: videoDuration
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_videoDuration.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/video
+          - http://dbpedia.org/property/duration
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: videoEmbeddable
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_videoEmbeddable.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/video
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: videoLicense
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_videoLicense.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/license
+          - http://dbpedia.org/property/video
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: videoSyndicated
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_videoSyndicated.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/video
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: videoType
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/YouTube Data/youtube.search.list_videoType.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/type
+          - http://dbpedia.org/property/video
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200

@@ -1,0 +1,551 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /institutions
+    operationId: searchInstitutions
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: search
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /locations
+    operationId: searchLocations
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /summary
+    operationId: getHistorical
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_term_fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_sum_fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /failures
+    operationId: getFailures
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: total_fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: subtotal_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_term_fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_sum_fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /history
+    operationId: getHistory
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: search
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_term_fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /financials
+    operationId: getFinancials
+    method: get
+    testParameters:
+    - name: filters
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: sort_order
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_by
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_term_fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_sum_fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: agg_limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: download
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: filename
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200

@@ -1,0 +1,232 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /search
+    operationId: youtube.search.list
+    method: get
+    testParameters:
+    - name: channelId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: channelType
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: eventType
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: forContentOwner
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: forDeveloper
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: forMine
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: location
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: locationRadius
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: maxResults
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: onBehalfOfContentOwner
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: order
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: pageToken
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: part
+      in: query
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: publishedAfter
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: publishedBefore
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: q
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: regionCode
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: relatedToVideoId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: relevanceLanguage
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: safeSearch
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: topicId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: type
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: videoCaption
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: videoCategoryId
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: videoDefinition
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: videoDimension
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: videoDuration
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: videoEmbeddable
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: videoLicense
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: videoSyndicated
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: videoType
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200

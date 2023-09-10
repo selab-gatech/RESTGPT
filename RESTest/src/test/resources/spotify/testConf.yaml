@@ -1,0 +1,315 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /me
+    operationId: endpoint-get-current-users-profile
+    method: get
+    testParameters: []
+    expectedResponse: 200
+  - testPath: /me/playlists
+    operationId: endpoint-get-a-list-of-current-users-playlists
+    method: get
+    testParameters:
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}"
+    operationId: endpoint-get-playlist
+    method: get
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: market
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: additional_types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}"
+    operationId: endpoint-change-playlist-details
+    method: put
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: body
+      in: body
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/images"
+    operationId: endpoint-get-playlist-cover
+    method: get
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/tracks"
+    operationId: endpoint-get-playlists-tracks
+    method: get
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: market
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: additional_types
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/tracks"
+    operationId: endpoint-reorder-or-replace-playlists-tracks
+    method: put
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: uris
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: body
+      in: body
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/tracks"
+    operationId: endpoint-add-tracks-to-playlist
+    method: post
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: position
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: uris
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: body
+      in: body
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/playlists/{playlist_id}/tracks"
+    operationId: endpoint-remove-tracks-playlist
+    method: delete
+    testParameters:
+    - name: playlist_id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: body
+      in: body
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: /search
+    operationId: endpoint-search
+    method: get
+    testParameters:
+    - name: q
+      in: query
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: type
+      in: query
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: market
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: include_external
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/users/{user_id}/playlists"
+    operationId: endpoint-get-list-users-playlists
+    method: get
+    testParameters:
+    - name: user_id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: limit
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: offset
+      in: query
+      weight: 0.5
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200
+  - testPath: "/users/{user_id}/playlists"
+    operationId: endpoint-create-playlist
+    method: post
+    testParameters:
+    - name: user_id
+      in: path
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    - name: body
+      in: body
+      weight: null
+      generators:
+        - type: SemanticParameter
+          genParameters: [ ]
+          valid: true
+    expectedResponse: 200

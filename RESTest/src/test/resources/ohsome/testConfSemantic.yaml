@@ -1,0 +1,2793 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /elements/area
+    operationId: area
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/area_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/area/density/groupBy/boundary/groupBy/tag
+    operationId: areaDensityGroupByBoundaryGroupByTag
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: groupByKey
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_groupByKey.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/group
+          - http://dbpedia.org/property/key
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: groupByValues
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_groupByValues.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/group
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaDensityGroupByBoundaryGroupByTag_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/area/groupBy/key
+    operationId: areaGroupByKey
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: groupByKeys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_groupByKeys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/group
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaGroupByKey_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/area/ratio
+    operationId: areaRatio
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_filter2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_keys2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_types2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatio_values2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/area/ratio/groupBy/boundary
+    operationId: areaRatioGroupByBoundary
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_filter2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_keys2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_types2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/areaRatioGroupByBoundary_values2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/count/density/groupBy/boundary
+    operationId: countDensityGroupByBoundary
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countDensityGroupByBoundary_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/count/ratio
+    operationId: countRatio
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_filter2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_keys2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_types2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/countRatio_values2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/length/density/groupBy/tag
+    operationId: lengthDensityGroupByTag
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: groupByKey
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_groupByKey.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/group
+          - http://dbpedia.org/property/key
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: groupByValues
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_groupByValues.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/group
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthDensityGroupByTag_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/length/groupBy/key
+    operationId: lengthGroupByKey
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: groupByKeys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_groupByKeys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/by
+          - http://dbpedia.org/property/group
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthGroupByKey_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/length/ratio
+    operationId: lengthRatio
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_filter2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_keys2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_types2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/lengthRatio_values2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /elements/perimeter/ratio
+    operationId: perimeterRatio
+    method: get
+    testParameters:
+    - name: bboxes
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_bboxes.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bcircles
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_bcircles.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: bpolys
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_bpolys.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_filter.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/filter
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: filter2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_filter2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: format
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_format.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/format
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_keys.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/keys
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: keys2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_keys2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: showMetadata
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_showMetadata.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/show
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: time
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_time.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/time
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: timeout
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_timeout.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_types.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/types
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: types2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_types2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_values.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: values2
+      in: query
+      weight: 0.0
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/ohsome API/perimeterRatio_values2.csv
+          objectValues: null
+        - name: predicates
+          values: []
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200

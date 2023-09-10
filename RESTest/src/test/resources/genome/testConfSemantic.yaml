@@ -1,0 +1,987 @@
+---
+auth:
+  required: true
+  queryParams: {}
+  headerParams: {}
+  apiKeysPath: null
+  headersPath: null
+  oauthPath: null
+testConfiguration:
+  operations:
+  - testPath: /annotation
+    operationId: fetchVariantAnnotationPOST
+    method: post
+    testParameters:
+    - name: isoformOverrideSource
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationPOST_isoformOverrideSource.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/titleoverride
+          - http://dbpedia.org/property/isoform
+          - http://dbpedia.org/property/source
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: token
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationPOST_token.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tokens
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationPOST_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /annotation/dbsnp/
+    operationId: fetchVariantAnnotationByIdPOST
+    method: post
+    testParameters:
+    - name: isoformOverrideSource
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByIdPOST_isoformOverrideSource.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/titleoverride
+          - http://dbpedia.org/property/isoform
+          - http://dbpedia.org/property/source
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: token
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByIdPOST_token.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tokens
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByIdPOST_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByIdPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/annotation/dbsnp/{variantId}"
+    operationId: fetchVariantAnnotationByIdGET
+    method: get
+    testParameters:
+    - name: variantId
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByIdGET_variantId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/variant
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: isoformOverrideSource
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByIdGET_isoformOverrideSource.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/titleoverride
+          - http://dbpedia.org/property/isoform
+          - http://dbpedia.org/property/source
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: token
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByIdGET_token.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tokens
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByIdGET_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /annotation/genomic
+    operationId: fetchVariantAnnotationByGenomicLocationPOST
+    method: post
+    testParameters:
+    - name: isoformOverrideSource
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByGenomicLocationPOST_isoformOverrideSource.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/titleoverride
+          - http://dbpedia.org/property/isoform
+          - http://dbpedia.org/property/source
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: token
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByGenomicLocationPOST_token.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tokens
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByGenomicLocationPOST_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByGenomicLocationPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/annotation/genomic/{genomicLocation}"
+    operationId: fetchVariantAnnotationByGenomicLocationGET
+    method: get
+    testParameters:
+    - name: genomicLocation
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByGenomicLocationGET_genomicLocation.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/ontology/location
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: isoformOverrideSource
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByGenomicLocationGET_isoformOverrideSource.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/titleoverride
+          - http://dbpedia.org/property/isoform
+          - http://dbpedia.org/property/source
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: token
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByGenomicLocationGET_token.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tokens
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationByGenomicLocationGET_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/annotation/{variant}"
+    operationId: fetchVariantAnnotationGET
+    method: get
+    testParameters:
+    - name: variant
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationGET_variant.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/variant
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: isoformOverrideSource
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationGET_isoformOverrideSource.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/titleoverride
+          - http://dbpedia.org/property/isoform
+          - http://dbpedia.org/property/source
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: token
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationGET_token.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/tokens
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: fields
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchVariantAnnotationGET_fields.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/fields
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /ensembl/canonical-gene/entrez
+    operationId: fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST
+    method: post
+    testParameters:
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchCanonicalEnsemblGeneIdByEntrezGeneIdsPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/ensembl/canonical-gene/entrez/{entrezGeneId}"
+    operationId: fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET
+    method: get
+    testParameters:
+    - name: entrezGeneId
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchCanonicalEnsemblGeneIdByEntrezGeneIdGET_entrezGeneId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gene
+          - http://dbpedia.org/property/entrezId
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /ensembl/canonical-gene/hgnc
+    operationId: fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST
+    method: post
+    testParameters:
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchCanonicalEnsemblGeneIdByHugoSymbolsPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/ensembl/canonical-gene/hgnc/{hugoSymbol}"
+    operationId: fetchCanonicalEnsemblGeneIdByHugoSymbolGET
+    method: get
+    testParameters:
+    - name: hugoSymbol
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchCanonicalEnsemblGeneIdByHugoSymbolGET_hugoSymbol.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/symbol
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /ensembl/canonical-transcript/hgnc
+    operationId: fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST
+    method: post
+    testParameters:
+    - name: isoformOverrideSource
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST_isoformOverrideSource.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/titleoverride
+          - http://dbpedia.org/property/isoform
+          - http://dbpedia.org/property/source
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchCanonicalEnsemblTranscriptsByHugoSymbolsPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/ensembl/canonical-transcript/hgnc/{hugoSymbol}"
+    operationId: fetchCanonicalEnsemblTranscriptByHugoSymbolGET
+    method: get
+    testParameters:
+    - name: hugoSymbol
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchCanonicalEnsemblTranscriptByHugoSymbolGET_hugoSymbol.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/symbol
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: isoformOverrideSource
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchCanonicalEnsemblTranscriptByHugoSymbolGET_isoformOverrideSource.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/titleoverride
+          - http://dbpedia.org/property/isoform
+          - http://dbpedia.org/property/source
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /ensembl/transcript
+    operationId: fetchEnsemblTranscriptsGET
+    method: get
+    testParameters:
+    - name: geneId
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchEnsemblTranscriptsGET_geneId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/gene
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: proteinId
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchEnsemblTranscriptsGET_proteinId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/protein
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    - name: hugoSymbol
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchEnsemblTranscriptsGET_hugoSymbol.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/symbol
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /ensembl/transcript
+    operationId: fetchEnsemblTranscriptsByEnsemblFilterPOST
+    method: post
+    testParameters:
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchEnsemblTranscriptsByEnsemblFilterPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/ensembl/transcript/{transcriptId}"
+    operationId: fetchEnsemblTranscriptByTranscriptIdGET
+    method: get
+    testParameters:
+    - name: transcriptId
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchEnsemblTranscriptByTranscriptIdGET_transcriptId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/transcripts
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /ensembl/xrefs
+    operationId: fetchGeneXrefsGET
+    method: get
+    testParameters:
+    - name: accession
+      in: query
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchGeneXrefsGET_accession.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/accession
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /pdb/header
+    operationId: fetchPdbHeaderPOST
+    method: post
+    testParameters:
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchPdbHeaderPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/pdb/header/{pdbId}"
+    operationId: fetchPdbHeaderGET
+    method: get
+    testParameters:
+    - name: pdbId
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchPdbHeaderGET_pdbId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/id
+          - http://dbpedia.org/property/pdb
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /pfam/domain
+    operationId: fetchPfamDomainsByPfamAccessionPOST
+    method: post
+    testParameters:
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchPfamDomainsByPfamAccessionPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: "/pfam/domain/{pfamAccession}"
+    operationId: fetchPfamDomainsByAccessionGET
+    method: get
+    testParameters:
+    - name: pfamAccession
+      in: path
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchPfamDomainsByAccessionGET_pfamAccession.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/accession
+          - http://dbpedia.org/property/pfam
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /ptm/experimental
+    operationId: fetchPostTranslationalModificationsGET
+    method: get
+    testParameters:
+    - name: ensemblTranscriptId
+      in: query
+      weight: 0.5
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchPostTranslationalModificationsGET_ensemblTranscriptId.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/ensemblId
+          - http://dbpedia.org/property/transcripts
+          - http://dbpedia.org/property/id
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /ptm/experimental
+    operationId: fetchPostTranslationalModificationsByPtmFilterPOST
+    method: post
+    testParameters:
+    - name: body
+      in: body
+      weight: null
+      generators:
+      - type: RandomInputValue
+        genParameters:
+        - name: csv
+          values:
+          - src/main/resources/TestData/Generated/Genome Nexus API/fetchPostTranslationalModificationsByPtmFilterPOST_body.csv
+          objectValues: null
+        - name: predicates
+          values:
+          - http://dbpedia.org/property/body
+          objectValues: null
+        - name: numberOfTriesToGenerateRegex
+          values:
+          - 0
+          objectValues: null
+        valid: true
+    expectedResponse: 200
+  - testPath: /version
+    operationId: fetchVersionGET
+    method: get
+    testParameters: null
+    expectedResponse: 200
