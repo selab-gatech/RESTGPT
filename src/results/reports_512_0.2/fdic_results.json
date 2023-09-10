@@ -1,0 +1,2481 @@
+{
+    "/institutions": {
+        "get": {
+            "filters": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "STNAME:\"West Virginia\"",
+                        "STNAME:(\"West Virginia\",\"Delaware\")",
+                        "!(STNAME:\"Virginia\")",
+                        "DATEUPDT:[\"2010-01-01\" TO \"2010-12-31\"]",
+                        "DEP:[50000 TO *]"
+                    ],
+                    "generated": [
+                        "STNAME:\"California\"",
+                        "STNAME:(\"California\",\"New York\")",
+                        "!(STNAME:\"Texas\")",
+                        "DATEUPDT:[\"2015-01-01\" TO \"2015-12-31\"]",
+                        "DEP:[10000 TO *]"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "search": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "NAME: Island",
+                        "NAME: Iland"
+                    ],
+                    "generated": [
+                        "NAME: University",
+                        "NAME: College",
+                        "NAME: School",
+                        "NAME: Institute",
+                        "NAME: Academy",
+                        "NAME: Center",
+                        "NAME: Foundation",
+                        "NAME: Association",
+                        "NAME: Corporation",
+                        "NAME: Society",
+                        "NAME: Organization",
+                        "NAME: Agency",
+                        "NAME: Council",
+                        "NAME: Union",
+                        "NAME: Network",
+                        "NAME: Consortium",
+                        "NAME: Group",
+                        "NAME: Coalition",
+                        "NAME: Alliance"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "description",
+                        "category",
+                        "price",
+                        "rating",
+                        "brand",
+                        "color",
+                        "size",
+                        "weight",
+                        "quantity",
+                        "location"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "sort_by": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity",
+                        "size",
+                        "category",
+                        "author",
+                        "duration",
+                        "distance",
+                        "score"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "limit": {
+                "min": "10",
+                "max": "10000",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "100",
+                        "1000",
+                        "5000",
+                        "10000"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "offset": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81",
+                        "82",
+                        "83",
+                        "84",
+                        "85",
+                        "86",
+                        "87",
+                        "88",
+                        "89",
+                        "90",
+                        "91",
+                        "92",
+                        "93",
+                        "94",
+                        "95",
+                        "96",
+                        "97",
+                        "98",
+                        "99"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "format": {
+                "type": "string",
+                "format": "None"
+            },
+            "download": {
+                "type": "boolean",
+                "format": "None"
+            },
+            "filename": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "file.txt",
+                        "report.docx",
+                        "image.jpg",
+                        "log.txt",
+                        "spreadsheet.xlsx",
+                        "presentation.pptx"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/locations": {
+        "get": {
+            "filters": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "New York",
+                        "London",
+                        "Paris",
+                        "Tokyo",
+                        "Sydney",
+                        "Beijing",
+                        "Moscow",
+                        "Rome",
+                        "Berlin",
+                        "Madrid",
+                        " Toronto",
+                        "Mumbai",
+                        "Dubai",
+                        "Singapore",
+                        "Istanbul",
+                        "Cairo",
+                        "Rio de Janeiro",
+                        "Cape Town",
+                        "Buenos Aires",
+                        "Seoul"
+                    ]
+                },
+                "type": "object",
+                "format": "None"
+            },
+            "fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "id",
+                        "name",
+                        "email",
+                        "phone",
+                        "address",
+                        "city",
+                        "state",
+                        "country",
+                        "zip_code",
+                        "date_of_birth",
+                        "gender",
+                        "occupation",
+                        "education_level",
+                        "income_level",
+                        "interests",
+                        "favorite_color",
+                        "favorite_food",
+                        "favorite_movie",
+                        "favorite_sport",
+                        "favorite_music_genre"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "sort_by": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity",
+                        "size",
+                        "category",
+                        "author",
+                        "duration",
+                        "distance",
+                        "score"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "limit": {
+                "min": "10",
+                "max": "10000",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "100",
+                        "1000",
+                        "5000",
+                        "10000"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "offset": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81",
+                        "82",
+                        "83",
+                        "84",
+                        "85",
+                        "86",
+                        "87",
+                        "88",
+                        "89",
+                        "90",
+                        "91",
+                        "92",
+                        "93",
+                        "94",
+                        "95",
+                        "96",
+                        "97",
+                        "98",
+                        "99"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "format": {
+                "type": "string",
+                "format": "None"
+            },
+            "download": {
+                "type": "boolean",
+                "format": "None"
+            },
+            "filename": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "file.txt",
+                        "report.docx",
+                        "image.jpg",
+                        "log.txt",
+                        "spreadsheet.xlsx",
+                        "presentation.pptx"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/summary": {
+        "get": {
+            "filters": {
+                "examples": {
+                    "provided": [
+                        "CB_SI:CB",
+                        "STNAME:\"Virginia\"",
+                        "!(STNAME:\"Virginia\")",
+                        "STNAME:(\"West Virginia\",\"Delaware\")",
+                        "YEAR:[\"2015\" TO \"2017\"]"
+                    ],
+                    "generated": [
+                        "CB_SI:SI",
+                        "STNAME:\"Alabama\"",
+                        "!(STNAME:\"Alabama\")",
+                        "STNAME:(\"California\",\"New York\")",
+                        "YEAR:[\"2000\" TO \"2005\"]"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "net income",
+                        "total assets",
+                        "total liabilities",
+                        "operating income",
+                        "gross profit",
+                        " operating expenses",
+                        "cost of goods sold",
+                        "research and development expenses",
+                        "selling",
+                        "general and administrative expenses",
+                        " earnings per share",
+                        "dividends",
+                        "cash flow from operations",
+                        "cash flow from investing activities",
+                        "cash flow from financing activities"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "sort_by": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity",
+                        "size",
+                        "category",
+                        "author",
+                        "duration",
+                        "distance",
+                        "score"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "limit": {
+                "min": "10",
+                "max": "10000",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "100",
+                        "1000",
+                        "5000",
+                        "10000"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "offset": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81",
+                        "82",
+                        "83",
+                        "84",
+                        "85",
+                        "86",
+                        "87",
+                        "88",
+                        "89",
+                        "90",
+                        "91",
+                        "92",
+                        "93",
+                        "94",
+                        "95",
+                        "96",
+                        "97",
+                        "98",
+                        "99"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "agg_by": {
+                "minItems": "1",
+                "maxItems": "2",
+                "x-dependencies": [
+                    "OnlyOne(agg_by == 'YEAR' AND agg_by == 'YEAR,STNAME')"
+                ],
+                "examples": {
+                    "provided": [
+                        "YEAR",
+                        "YEAR,STNAME"
+                    ],
+                    "generated": [
+                        "MONTH",
+                        "MONTH,DAY",
+                        "MONTH,DAY,HOUR",
+                        "MONTH,DAY,HOUR,MINUTE",
+                        "MONTH,DAY,HOUR,MINUTE,SECOND",
+                        "DAY",
+                        "DAY,HOUR",
+                        "DAY,HOUR,MINUTE",
+                        "DAY,HOUR,MINUTE,SECOND",
+                        "HOUR",
+                        "HOUR,MINUTE",
+                        "HOUR,MINUTE,SECOND",
+                        "MINUTE",
+                        "MINUTE,SECOND",
+                        "SECOND"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_term_fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_sum_fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "sales",
+                        "quantity",
+                        "price",
+                        "cost",
+                        "profit",
+                        "expenses",
+                        "budget",
+                        "investment",
+                        "assets",
+                        "liabilities",
+                        "income",
+                        "expenditure",
+                        " revenue growth",
+                        "market share",
+                        "customer satisfaction",
+                        "employee productivity",
+                        "website traffic",
+                        "social media followers",
+                        " customer retention",
+                        "brand awareness",
+                        "customer acquisition",
+                        "lead generation",
+                        "conversion rate",
+                        "return on investment",
+                        " customer lifetime value",
+                        "net promoter score",
+                        "employee turnover",
+                        "inventory turnover",
+                        "cash flow",
+                        "return on assets",
+                        " return on equity",
+                        "gross margin",
+                        "net profit margin",
+                        "operating margin",
+                        "debt-to-equity ratio",
+                        "current ratio",
+                        "quick ratio",
+                        " earnings per share",
+                        "price-to-earnings ratio",
+                        "dividend yield",
+                        "market capitalization",
+                        "book value",
+                        "intrinsic value"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_limit": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "format": {
+                "type": "string",
+                "format": "None"
+            },
+            "download": {
+                "type": "boolean",
+                "format": "None"
+            },
+            "filename": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "file.txt",
+                        "report.docx",
+                        "image.jpg",
+                        "log.txt",
+                        "spreadsheet.xlsx",
+                        "presentation.pptx"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/failures": {
+        "get": {
+            "filters": {
+                "minItems": "1",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "CITYST:\"MEMPHIS",
+                        "TN\"",
+                        "!(CITY:\"PITTSBURGH\")",
+                        "FAILYR:[\"2015\" TO \"2016\"]"
+                    ],
+                    "generated": [
+                        "CITYST:\"NEW YORK",
+                        "NY\"",
+                        "!(CITY:\"LOS ANGELES\")",
+                        "FAILYR:[\"2017\" TO \"2018\"]",
+                        "CITYST:\"CHICAGO",
+                        "IL\"",
+                        "!(CITY:\"BOSTON\")",
+                        "FAILYR:[\"2019\" TO \"2020\"]"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "city",
+                        "state",
+                        "zip_code",
+                        "country",
+                        "assets",
+                        "deposits",
+                        "resolution",
+                        "failure_date",
+                        "updated_date",
+                        " institution_type",
+                        "charter_class",
+                        "charter_description",
+                        "charter_date",
+                        "charter_number",
+                        "charter_state",
+                        "charter_region",
+                        " in_business",
+                        "insured",
+                        "insured_date",
+                        "closing_date",
+                        "trust_name",
+                        "trust_number",
+                        "trust_state",
+                        "trust_region",
+                        " trust_date",
+                        "trust_assets",
+                        "trust_deposits",
+                        "trust_in_business",
+                        "trust_insured",
+                        "trust_insured_date",
+                        "trust_closing_date",
+                        " trust_updated_date",
+                        "trust_resolution",
+                        "trust_failure_date",
+                        "trust_updated_date",
+                        "trust_institution_type",
+                        "trust_charter_class",
+                        " trust_charter_description",
+                        "trust_charter_date",
+                        "trust_charter_number",
+                        "trust_charter_state",
+                        "trust_charter_region"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "sort_by": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity",
+                        "size",
+                        "category",
+                        "author",
+                        "duration",
+                        "distance",
+                        "score"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "limit": {
+                "min": "10",
+                "max": "10000",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "100",
+                        "1000",
+                        "5000",
+                        "10000"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "offset": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81",
+                        "82",
+                        "83",
+                        "84",
+                        "85",
+                        "86",
+                        "87",
+                        "88",
+                        "89",
+                        "90",
+                        "91",
+                        "92",
+                        "93",
+                        "94",
+                        "95",
+                        "96",
+                        "97",
+                        "98",
+                        "99"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "total_fields": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "subtotal_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "category1",
+                        "category2",
+                        "category3",
+                        "category4",
+                        "category5",
+                        "category6",
+                        "category7",
+                        "category8",
+                        "category9",
+                        "category10"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "agg_by": {
+                "minItems": "1",
+                "maxItems": "2",
+                "x-dependencies": [
+                    "IF agg_by=='FAILYR' OR agg_by=='FAILYR,PSTALP' THEN OnlyOne(FAILYR AND PSTALP)"
+                ],
+                "examples": {
+                    "provided": [
+                        "FAILYR",
+                        "FAILYR,PSTALP"
+                    ],
+                    "generated": [
+                        "FAILYR",
+                        "PSTALP",
+                        "FAILY"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "agg_term_fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_sum_fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "sales",
+                        "quantity",
+                        "price",
+                        "cost",
+                        "profit",
+                        "expenses",
+                        "budget",
+                        "investment",
+                        "assets",
+                        "liabilities",
+                        "income",
+                        "expenditure",
+                        " revenue growth",
+                        "market share",
+                        "customer satisfaction",
+                        "employee productivity",
+                        "website traffic",
+                        "social media followers",
+                        " customer retention",
+                        "brand awareness",
+                        "customer acquisition",
+                        "lead generation",
+                        "conversion rate",
+                        "return on investment",
+                        " customer lifetime value",
+                        "net promoter score",
+                        "employee turnover",
+                        "inventory turnover",
+                        "cash flow",
+                        "return on assets",
+                        " return on equity",
+                        "gross margin",
+                        "net profit margin",
+                        "operating margin",
+                        "debt-to-equity ratio",
+                        "current ratio",
+                        "quick ratio",
+                        " earnings per share",
+                        "price-to-earnings ratio",
+                        "dividend yield",
+                        "market capitalization",
+                        "book value",
+                        "intrinsic value"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_limit": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "format": {
+                "type": "string",
+                "format": "None"
+            },
+            "download": {
+                "type": "boolean",
+                "format": "None"
+            },
+            "filename": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "file.txt",
+                        "report.docx",
+                        "image.jpg",
+                        "log.txt",
+                        "spreadsheet.xlsx",
+                        "presentation.pptx"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/history": {
+        "get": {
+            "filters": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "STATE:\"VIRGINIA\"",
+                        "!(STATE:\"VIRGINIA\")",
+                        "PROCDATE:[2020-01-01 TO 2020-02-01]"
+                    ],
+                    "generated": [
+                        "STATE:\"CALIFORNIA\"",
+                        "!(STATE:\"CALIFORNIA\")",
+                        "PROCDATE:[2020-02-02 TO 2020-03-01]",
+                        "STATE:\"TEXAS\"",
+                        "!(STATE:\"TEXAS\")",
+                        "PROCDATE:[2020-03-02 TO 2020-04-01]",
+                        "STATE:\"NEW YORK\"",
+                        "!(STATE:\"NEW YORK\")",
+                        "PROCDATE:[2020-04-02 TO 2020-05-01]",
+                        "STATE:\"FLORIDA\"",
+                        "!(STATE:\"FLORIDA\")",
+                        "PROCDATE:[2020-05-02 TO 2020-06-01]",
+                        "STATE:\"ILLINOIS\"",
+                        "!(STATE:\"ILLINOIS\")",
+                        "PROCDATE:[2020-06-02 TO 2020-07-01]",
+                        "STATE:\"PENNSYLVANIA\"",
+                        "!(STATE:\"PENNSYLVANIA\")",
+                        "PROCDATE:[2020-07-02 TO 2020-08-01]",
+                        "STATE:\"OHIO\"",
+                        "!(STATE:\"OHIO\")",
+                        "PROCDATE:[2020-08-02 TO 2020-09-01]",
+                        "STATE:\"GEORGIA\"",
+                        "!(STATE:\"GEORGIA\")",
+                        "PROCDATE:[2020-09-02 TO 2020-10-01]",
+                        "STATE:\"MICHIGAN\"",
+                        "!(STATE:\"MICHIGAN\")",
+                        "PROCDATE:[2020-10-02 TO 2020-11-01]",
+                        "STATE:\"NORTH CAROLINA\"",
+                        "!(STATE:\"NORTH CAROLINA\")",
+                        "PROCDATE:[2020-11-02 TO 2020-12-01]",
+                        "STATE:\"WASHINGTON\"",
+                        "!(STATE:\"WASHINGTON\")",
+                        "PROCDATE:[2020-12-02 TO 2021-01-01]"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "search": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "NAME: Island",
+                        "NAME: Iland",
+                        "STATE: VA"
+                    ],
+                    "generated": [
+                        "NAME: Beach",
+                        "NAME: Land",
+                        "STATE: NY",
+                        "STATE: CA"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "city",
+                        "state",
+                        "zip_code",
+                        "country",
+                        "assets",
+                        "deposits",
+                        "resolution",
+                        "failure_date",
+                        "updated_date",
+                        " institution_type",
+                        "charter_class",
+                        "charter_description",
+                        "charter_date",
+                        "charter_number",
+                        "charter_state",
+                        "charter_region",
+                        " in_business",
+                        "insured",
+                        "insured_date",
+                        "closing_date",
+                        "trust_name",
+                        "trust_number",
+                        "trust_state",
+                        "trust_region",
+                        " trust_date",
+                        "trust_assets",
+                        "trust_deposits",
+                        "trust_in_business",
+                        "trust_insured",
+                        "trust_insured_date",
+                        "trust_closing_date",
+                        " trust_updated_date",
+                        "trust_resolution",
+                        "trust_failure_date",
+                        "trust_updated_date",
+                        "trust_institution_type",
+                        "trust_charter_class",
+                        " trust_charter_description",
+                        "trust_charter_date",
+                        "trust_charter_number",
+                        "trust_charter_state",
+                        "trust_charter_region"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "sort_by": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity",
+                        "size",
+                        "category",
+                        "author",
+                        "duration",
+                        "distance",
+                        "score"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "limit": {
+                "min": "10",
+                "max": "10000",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "100",
+                        "1000",
+                        "5000",
+                        "10000"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "offset": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81",
+                        "82",
+                        "83",
+                        "84",
+                        "85",
+                        "86",
+                        "87",
+                        "88",
+                        "89",
+                        "90",
+                        "91",
+                        "92",
+                        "93",
+                        "94",
+                        "95",
+                        "96",
+                        "97",
+                        "98",
+                        "99"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "agg_by": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "category",
+                        "date",
+                        "region",
+                        "product",
+                        "customer",
+                        "salesperson",
+                        "department",
+                        "channel",
+                        "campaign",
+                        "source"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_term_fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_limit": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "format": {
+                "type": "string",
+                "format": "None"
+            },
+            "download": {
+                "type": "boolean",
+                "format": "None"
+            },
+            "filename": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "file.txt",
+                        "report.docx",
+                        "image.jpg",
+                        "log.txt",
+                        "spreadsheet.xlsx",
+                        "presentation.pptx"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    },
+    "/financials": {
+        "get": {
+            "filters": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "ASSET:[1000 TO 9999]"
+                    ],
+                    "generated": [
+                        "ASSET:[0 TO 999]",
+                        "ASSET:[1000 TO 1999]",
+                        "ASSET:[2000 TO 2999]",
+                        "ASSET:[3000 TO 3999]",
+                        "ASSET:[4000 TO 4999]",
+                        "ASSET:[5000 TO 5999]",
+                        "ASSET:[6000 TO 6999]",
+                        "ASSET:[7000 TO 7999]",
+                        "ASSET:[8000 TO 8999]",
+                        "ASSET:[9000 TO 9999]"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "net income",
+                        "earnings per share",
+                        "operating income",
+                        "gross profit",
+                        "total assets",
+                        "total liabilities",
+                        " cash flow from operations",
+                        "free cash flow",
+                        "return on equity",
+                        "return on assets",
+                        "current ratio",
+                        "debt to equity ratio",
+                        " inventory turnover ratio",
+                        "accounts receivable turnover ratio",
+                        "profit margin",
+                        "gross margin",
+                        "operating margin",
+                        " return on investment",
+                        "price to earnings ratio",
+                        "dividend yield",
+                        "market capitalization"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "sort_by": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity",
+                        "size",
+                        "category",
+                        "author",
+                        "duration",
+                        "distance",
+                        "score"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "limit": {
+                "min": "10",
+                "max": "10000",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81",
+                        "82",
+                        "83",
+                        "84",
+                        "85",
+                        "86",
+                        "87",
+                        "88",
+                        "89",
+                        "90",
+                        "91",
+                        "92",
+                        "93",
+                        "94",
+                        "95",
+                        "96",
+                        "97",
+                        "98",
+                        "99",
+                        "100"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "offset": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81",
+                        "82",
+                        "83",
+                        "84",
+                        "85",
+                        "86",
+                        "87",
+                        "88",
+                        "89",
+                        "90",
+                        "91",
+                        "92",
+                        "93",
+                        "94",
+                        "95",
+                        "96",
+                        "97",
+                        "98",
+                        "99"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "agg_by": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "category",
+                        "date",
+                        "region",
+                        "product",
+                        "customer",
+                        "salesperson",
+                        "department",
+                        "channel",
+                        "source",
+                        "campaign"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_term_fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_sum_fields": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "sales",
+                        "quantity",
+                        "price",
+                        "cost",
+                        "profit",
+                        "expenses",
+                        "budget",
+                        "investment",
+                        "assets",
+                        "liabilities",
+                        "income",
+                        "expenditure",
+                        " revenue growth",
+                        "market share",
+                        "customer satisfaction",
+                        "employee productivity",
+                        "website traffic",
+                        "social media followers",
+                        " customer retention",
+                        "brand awareness",
+                        "customer acquisition",
+                        "lead generation",
+                        "conversion rate",
+                        "return on investment",
+                        " customer lifetime value",
+                        "net promoter score",
+                        "employee turnover",
+                        "inventory turnover",
+                        "cash flow",
+                        "return on assets",
+                        " return on equity",
+                        "gross margin",
+                        "net profit margin",
+                        "operating margin",
+                        "debt-to-equity ratio",
+                        "current ratio",
+                        "quick ratio",
+                        " earnings per share",
+                        "price-to-earnings ratio",
+                        "dividend yield",
+                        "market capitalization",
+                        "book value",
+                        "intrinsic value"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "None"
+            },
+            "agg_limit": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "format": {
+                "type": "string",
+                "format": "None"
+            },
+            "download": {
+                "type": "boolean",
+                "format": "None"
+            },
+            "filename": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "file.txt",
+                        "report.docx",
+                        "image.jpg",
+                        "log.txt",
+                        "spreadsheet.xlsx",
+                        "presentation.pptx"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            }
+        }
+    }
+}
