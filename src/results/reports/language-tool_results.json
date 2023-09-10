@@ -1,0 +1,472 @@
+{
+    "/check": {
+        "post": {
+            "request-body": {
+                "text": {
+                    "minLength": "None",
+                    "maxLength": "None",
+                    "x-dependencies": [
+                        "Or(text, data)"
+                    ],
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "This is a sample text.",
+                            "Lorem ipsum dolor sit amet",
+                            "consectetur adipiscing elit.",
+                            "Nulla facilisi.",
+                            "Sed euismod",
+                            "ipsum non placerat tincidunt",
+                            "mi metus feugiat mauris",
+                            "id lacinia nunc mauris id nunc.",
+                            "Fusce sed nunc id mauris efficitur lacinia.",
+                            "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Nulla facilisi.",
+                            "Sed euism"
+                        ]
+                    },
+                    "type": "string",
+                    "format": "None"
+                },
+                "data": {
+                    "min": "None",
+                    "max": "None",
+                    "examples": {
+                        "provided": [
+                            "<pre>A &lt;b>test&lt;/b></pre>",
+                            "<pre>{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}</pre>",
+                            "<pre>{\"markup\": \"&lt;p&gt;\"",
+                            "\"interpretAs\": \"\\n\\n\"}</pre>"
+                        ],
+                        "generated": [
+                            "<pre>{\"annotation\":[  {\"text\": \"Lorem ipsum dolor sit amet",
+                            "consectetur adipiscing elit.\"}",
+                            " {\"markup\": \"&lt;strong>\"}",
+                            " {\"text\": \"Sed\"}",
+                            " {\"markup\": \"&lt;/strong>\"}",
+                            " {\"text\": \" ut enim quis nisi commodo tincidunt.\"}",
+                            " {\"markup\": \"&lt;em>\"}",
+                            " {\"text\": \"Phasellus\"}",
+                            " {\"markup\": \"&lt;/em>\"}",
+                            " {\"text\": \" ultricies",
+                            "mi ut aliquam laoreet",
+                            "nunc risus tincidunt elit",
+                            "id aliquet justo neque at nisl.\"}",
+                            " {\"markup\": \"&lt;u>\"}",
+                            " {\"text\": \"Vestibulum\"}",
+                            " {\"markup\": \"&lt;/u>\"}",
+                            " {\"text\": \" ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;\"}",
+                            " {\"markup\": \"&lt;sub>\"}",
+                            " {\"text\": \"Praesent\"}",
+                            " {\"markup\": \"&lt;/sub>\"}",
+                            " {\"text\": \" et libero ut nisl interdum ultrices.\"}",
+                            " {\"markup\": \"&lt;sup>\"}",
+                            " {\"text\": \"Nullam\"}",
+                            " {\"markup\": \"&lt;/sup>\"}",
+                            " {\"text\": \" auctor",
+                            "mi id aliquet lobortis",
+                            "nunc elit ultricies est",
+                            "id aliquam nunc nunc ac nisi.\"}",
+                            " {\"markup\": \"&lt;code>\"}",
+                            " {\"text\": \"Nam\"}",
+                            " {\"markup\": \"&lt;/code>\"}",
+                            " {\"text\": \" euismod",
+                            "velit non posuere viverra",
+                            "mauris nunc ultrices ex",
+                            "id gravida tellus nunc at nunc.\"}",
+                            " {\"markup\": \"&lt;mark>\"}",
+                            " {\"text\": \"Fusce\"}",
+                            " {\"markup\": \"&lt;/mark>\"}",
+                            " {\"markup\": \"&lt;del>\"}",
+                            " {\"text\": \"Etiam\"}",
+                            " {\"markup\": \"&lt;/del>\"}",
+                            "n"
+                        ]
+                    },
+                    "type": "string",
+                    "format": "None"
+                },
+                "language": {
+                    "minLength": "5",
+                    "maxLength": "7",
+                    "examples": {
+                        "provided": [
+                            "en-US",
+                            "de-DE",
+                            "fr",
+                            "auto"
+                        ],
+                        "generated": [
+                            "en-GB",
+                            "en-AU",
+                            "en-CA",
+                            "en-IN",
+                            "de-AT",
+                            "de-CH",
+                            "de-LI",
+                            "de-LU",
+                            "fr-CA",
+                            "fr-CH",
+                            "fr-LU",
+                            "fr-BE",
+                            "fr-MC",
+                            "fr-DZ",
+                            " fr-MA",
+                            "fr-TN",
+                            "fr-BJ",
+                            "fr-BF",
+                            "fr-BI",
+                            "fr-CM",
+                            "fr-CF",
+                            "fr-KM",
+                            "fr-CG",
+                            "fr-CD",
+                            "fr-DJ",
+                            "fr-GQ",
+                            "fr-GA",
+                            "fr-GN",
+                            "fr-HT",
+                            "fr-CI",
+                            "fr-LA",
+                            "fr-MG",
+                            "fr-ML",
+                            "fr-MR",
+                            " fr-MU",
+                            "fr-YT",
+                            "fr-NE",
+                            "fr-RE",
+                            "fr-RW",
+                            "fr-SC",
+                            "fr-SN",
+                            "fr-TG",
+                            "fr-VU",
+                            "fr-WF",
+                            "fr-MA",
+                            " fr-CD",
+                            "fr-MU",
+                            " fr-WF",
+                            " fr-ML",
+                            " fr-KM",
+                            "fr-L"
+                        ]
+                    },
+                    "type": "string",
+                    "format": "None"
+                },
+                "altLanguages": {
+                    "minItems": "None",
+                    "maxItems": "None",
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "en-US",
+                            "en-GB",
+                            "en-AU",
+                            "en-CA",
+                            "en-NZ",
+                            "en-ZA",
+                            "de-DE",
+                            "de-AT",
+                            "de-CH",
+                            "pt-BR",
+                            "pt-PT",
+                            "es-ES",
+                            "es-MX",
+                            "es-AR",
+                            "es-CO",
+                            "es-PE",
+                            "es-VE",
+                            "es-CL",
+                            "es-EC",
+                            "es-CR",
+                            "es-DO",
+                            "es-PA",
+                            "es-UY",
+                            "es-GT",
+                            "es-BO",
+                            "es-HN",
+                            "es-SV",
+                            "es-NI",
+                            "es-PR",
+                            "es-PY",
+                            "es-US",
+                            "es-CU"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "format": "None"
+                },
+                "motherTongue": {
+                    "minLength": "None",
+                    "maxLength": "None",
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "ENG",
+                            "SPA",
+                            "FRA",
+                            "GER",
+                            "ITA",
+                            "POR",
+                            "RUS",
+                            "CHI",
+                            "JPN",
+                            "KOR",
+                            "ARA",
+                            "HIN",
+                            "BEN",
+                            "TEL",
+                            "TUR",
+                            "VIE",
+                            "THA",
+                            "IND",
+                            "MAL",
+                            "SWA",
+                            "DAN",
+                            "NOR",
+                            "SWE",
+                            "FIN",
+                            "DUT",
+                            "POL",
+                            "CZE",
+                            "HUN",
+                            "ROM",
+                            "BUL",
+                            "GRE",
+                            "UKR",
+                            "EST",
+                            "LAT",
+                            "LIT",
+                            "SLK",
+                            "SLV",
+                            "CRO",
+                            "SRB",
+                            "BOS",
+                            "MAC",
+                            "ALB",
+                            "SLO",
+                            "MKD",
+                            "ARM",
+                            "GEO",
+                            "AZE",
+                            "KAZ",
+                            "UZB",
+                            "TAJ",
+                            "KYR"
+                        ]
+                    },
+                    "type": "string",
+                    "format": "None"
+                },
+                "preferredVariants": {
+                    "minItems": "None",
+                    "maxItems": "None",
+                    "examples": {
+                        "provided": [
+                            "en-GB",
+                            "de-AT"
+                        ],
+                        "generated": [
+                            "en-US",
+                            "fr-FR",
+                            "es-ES",
+                            "it-IT",
+                            "pt-BR",
+                            "zh-CN",
+                            "ja-JP",
+                            "ko-KR",
+                            "ru-RU",
+                            "ar-SA",
+                            "hi-IN",
+                            "tr-TR",
+                            "nl-NL",
+                            "pl-PL",
+                            "sv-SE",
+                            "da-DK",
+                            "fi-FI",
+                            "no-NO",
+                            "cs-CZ",
+                            "el-GR",
+                            "hu-HU",
+                            "ro-RO",
+                            "th-TH",
+                            "id-ID",
+                            "vi-VN"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "format": "None"
+                },
+                "enabledRules": {
+                    "minItems": "None",
+                    "maxItems": "None",
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "rule1",
+                            "rule2",
+                            "rule3",
+                            "rule4",
+                            "rule5",
+                            "rule6",
+                            "rule7",
+                            "rule8",
+                            "rule9",
+                            "rule10",
+                            "rule11",
+                            "rule12",
+                            "rule13",
+                            "rule14",
+                            "rule15",
+                            "rule16",
+                            "rule17",
+                            "rule18",
+                            "rule19",
+                            "rule20",
+                            "rule21",
+                            "rule22",
+                            "rule23",
+                            "rule24",
+                            "rule25",
+                            "rule26",
+                            "rule27",
+                            "rule28",
+                            "rule29",
+                            "rule30",
+                            "rule31",
+                            "rule32",
+                            "rule33",
+                            "rule34",
+                            "rule35",
+                            "rule36",
+                            "rule37",
+                            "rule38",
+                            "rule39",
+                            "rule40",
+                            "rule41",
+                            "rule42",
+                            "rule43",
+                            "rule44",
+                            "rule45",
+                            "rule46",
+                            "rule47",
+                            "rule48",
+                            "rule49",
+                            "rule50"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "format": "None"
+                },
+                "disabledRules": {
+                    "minItems": "None",
+                    "maxItems": "None",
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "rule1",
+                            "rule2",
+                            "rule3",
+                            "rule4",
+                            "rule5",
+                            "rule6",
+                            "rule7",
+                            "rule8",
+                            "rule9",
+                            "rule10",
+                            "rule11",
+                            "rule12",
+                            "rule13",
+                            "rule14",
+                            "rule15",
+                            "rule16",
+                            "rule17",
+                            "rule18",
+                            "rule19",
+                            "rule20"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "format": "None"
+                },
+                "enabledCategories": {
+                    "minItems": "None",
+                    "maxItems": "None",
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "category1",
+                            "category2",
+                            "category3",
+                            "category4",
+                            "category5",
+                            "category6",
+                            "category7",
+                            "category8",
+                            "category9",
+                            "category10"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "format": "None"
+                },
+                "disabledCategories": {
+                    "minItems": "None",
+                    "maxItems": "None",
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "category1",
+                            "category2",
+                            "category3",
+                            "category4",
+                            "category5",
+                            "category6",
+                            "category7",
+                            "category8",
+                            "category9",
+                            "category10"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "format": "None"
+                },
+                "enabledOnly": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "True",
+                            "False"
+                        ]
+                    },
+                    "type": "boolean",
+                    "format": "None"
+                }
+            }
+        }
+    },
+    "/languages": {
+        "get": {}
+    }
+}

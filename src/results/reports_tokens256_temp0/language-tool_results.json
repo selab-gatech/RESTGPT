@@ -1,0 +1,445 @@
+{
+    "/check": {
+        "post": {
+            "request-body": {
+                "text": {
+                    "x-dependencies": [
+                        "Or(text, data)"
+                    ],
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "This is a sample text.",
+                            "Please check this text.",
+                            "Here is some example text.",
+                            "The quick brown fox jumps over the lazy dog.",
+                            "Lorem ipsum dolor sit amet",
+                            "consectetur adipiscing elit.",
+                            "Nulla facilisi.",
+                            "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.",
+                            "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.",
+                            "Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur.",
+                            "Vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.",
+                            "At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident.",
+                            "Similique sunt in culpa qui officia deserunt mollitia animi",
+                            "id est laborum et dolorum fuga.",
+                            "Et harum quidem rerum facilis est et expedita distinctio.",
+                            "Nam libero tempore",
+                            "cum soluta nobis est eligendi optio cumque nihil"
+                        ]
+                    },
+                    "type": "string"
+                },
+                "data": {
+                    "examples": {
+                        "provided": [
+                            "{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}"
+                        ],
+                        "generated": [
+                            "{\"annotation\":[  {\"text\": \"A \"}",
+                            " {\"markup\": \"&lt;b>\"}",
+                            " {\"text\": \"example\"}",
+                            " {\"markup\": \"&lt;/b>\"} ]}",
+                            " {\"text\": \"sample\"}",
+                            " {\"text\": \"demo\"}"
+                        ]
+                    },
+                    "type": "string"
+                },
+                "language": {
+                    "minLength": "5",
+                    "maxLength": "5",
+                    "examples": {
+                        "provided": [
+                            "en-US",
+                            "de-DE",
+                            "fr",
+                            "auto"
+                        ],
+                        "generated": [
+                            "en-GB",
+                            "en-AU",
+                            "en-CA",
+                            "en-IN",
+                            "de-AT",
+                            "de-CH",
+                            "de-LU",
+                            "fr-CA",
+                            "fr-BE",
+                            "fr-CH",
+                            "fr-LU",
+                            "pt-BR",
+                            "pt-PT"
+                        ]
+                    },
+                    "type": "string"
+                },
+                "altLanguages": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "en-US",
+                            "en-CA",
+                            "en-AU",
+                            "en-NZ",
+                            "en-ZA",
+                            "en-IN",
+                            "en-GB",
+                            "en-IE",
+                            "en-JM",
+                            "en-BZ",
+                            "en-TT",
+                            "en-ZW",
+                            "de-DE",
+                            "de-AT",
+                            "de-CH",
+                            "pt-BR",
+                            "pt-PT"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "collectionFormat": "csv"
+                },
+                "motherTongue": {
+                    "minLength": "2",
+                    "maxLength": "2",
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "en",
+                            "fr",
+                            "es",
+                            "de",
+                            "it",
+                            "pt",
+                            "nl",
+                            "sv",
+                            "da",
+                            "no",
+                            "fi",
+                            "ru",
+                            "pl",
+                            "cs",
+                            "hu",
+                            "ro",
+                            "bg",
+                            "el",
+                            "tr",
+                            "ar",
+                            "he",
+                            "ja",
+                            "ko",
+                            "zh",
+                            "th",
+                            "vi",
+                            "id",
+                            "ms",
+                            "hi",
+                            "bn",
+                            "ur",
+                            "fa",
+                            "sw",
+                            "af",
+                            "sq",
+                            "hy",
+                            "az",
+                            "eu",
+                            "be",
+                            "bs",
+                            "ca",
+                            "hr",
+                            "cy",
+                            "et",
+                            "gl",
+                            "ka",
+                            "ht",
+                            "is",
+                            "ga",
+                            "lv",
+                            "lt",
+                            "mk",
+                            "mt",
+                            " mn",
+                            "ne",
+                            "ps",
+                            "sr",
+                            "sk",
+                            "sl",
+                            "tl",
+                            "uk",
+                            "uz"
+                        ]
+                    },
+                    "type": "string"
+                },
+                "preferredVariants": {
+                    "examples": {
+                        "provided": [
+                            "en-GB",
+                            "de-AT"
+                        ],
+                        "generated": [
+                            "en-US",
+                            "fr-FR",
+                            "es-ES",
+                            "it-IT",
+                            "pt-BR",
+                            "zh-CN",
+                            "ja-JP",
+                            "ko-KR",
+                            "ru-RU",
+                            "ar-SA",
+                            "hi-IN",
+                            "id-ID",
+                            "th-TH",
+                            "tr-TR",
+                            "nl-NL",
+                            "pl-PL",
+                            "sv-SE",
+                            "da-DK",
+                            "fi-FI",
+                            "nb-NO",
+                            "el-GR",
+                            "cs-CZ",
+                            "hu-HU",
+                            "he-IL",
+                            "ro-RO",
+                            "sk-SK",
+                            "uk-UA",
+                            "vi-VN",
+                            "bg-BG",
+                            "hr-HR",
+                            "sr-RS",
+                            "sl-SI",
+                            "et-EE",
+                            "lv-LV",
+                            "lt-LT",
+                            "ms-MY",
+                            "fa-IR",
+                            "af-ZA",
+                            "sq-AL",
+                            "hy-AM",
+                            "az-AZ",
+                            "eu-ES",
+                            "be-BY",
+                            "bn-BD",
+                            "bs-BA",
+                            "ca-ES",
+                            "ceb-PH",
+                            "ny-MW",
+                            "zh-TW",
+                            "co-FR",
+                            "cy-GB",
+                            "eo-EO",
+                            "tl-PH",
+                            "fy-NL",
+                            "gl-ES",
+                            "ka-GE",
+                            "gu-IN",
+                            "ht-HT",
+                            "ha-HG",
+                            "haw-US",
+                            "iw-IL",
+                            "ig-NG",
+                            "ga"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "collectionFormat": "csv"
+                },
+                "enabledRules": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "rule1",
+                            "rule2",
+                            "rule3",
+                            "rule4",
+                            "rule5",
+                            "rule6",
+                            "rule7",
+                            "rule8",
+                            "rule9",
+                            "rule10",
+                            "rule11",
+                            "rule12",
+                            "rule13",
+                            "rule14",
+                            "rule15",
+                            "rule16",
+                            "rule17",
+                            "rule18",
+                            "rule19",
+                            "rule20",
+                            "rule21",
+                            "rule22",
+                            "rule23",
+                            "rule24",
+                            "rule25",
+                            "rule26",
+                            "rule27",
+                            "rule28",
+                            "rule29",
+                            "rule30",
+                            "rule31",
+                            "rule32",
+                            "rule33",
+                            "rule34",
+                            "rule35",
+                            "rule36",
+                            "rule37",
+                            "rule38",
+                            "rule39",
+                            "rule40",
+                            "rule41",
+                            "rule42",
+                            "rule43",
+                            "rule44",
+                            "rule45",
+                            "rule46",
+                            "rule47",
+                            "rule48",
+                            "rule49",
+                            "rule50"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "collectionFormat": "csv"
+                },
+                "disabledRules": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "rule1",
+                            "rule2",
+                            "rule3",
+                            "rule4",
+                            "rule5",
+                            "rule6",
+                            "rule7",
+                            "rule8",
+                            "rule9",
+                            "rule10",
+                            "rule11",
+                            "rule12",
+                            "rule13",
+                            "rule14",
+                            "rule15",
+                            "rule16",
+                            "rule17",
+                            "rule18",
+                            "rule19",
+                            "rule20",
+                            "rule21",
+                            "rule22",
+                            "rule23",
+                            "rule24",
+                            "rule25",
+                            "rule26",
+                            "rule27",
+                            "rule28",
+                            "rule29",
+                            "rule30",
+                            "rule31",
+                            "rule32",
+                            "rule33",
+                            "rule34",
+                            "rule35",
+                            "rule36",
+                            "rule37",
+                            "rule38",
+                            "rule39",
+                            "rule40",
+                            "rule41",
+                            "rule42",
+                            "rule43",
+                            "rule44",
+                            "rule45",
+                            "rule46",
+                            "rule47",
+                            "rule48",
+                            "rule49",
+                            "rule50"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "collectionFormat": "csv"
+                },
+                "enabledCategories": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "category1",
+                            "category2",
+                            "category3",
+                            "category4",
+                            "category5",
+                            "category6",
+                            "category7",
+                            "category8",
+                            "category9",
+                            "category10"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "collectionFormat": "csv"
+                },
+                "disabledCategories": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "category1",
+                            "category2",
+                            "category3",
+                            "category4",
+                            "category5",
+                            "category6",
+                            "category7",
+                            "category8",
+                            "category9",
+                            "category10"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string",
+                    "collectionFormat": "csv"
+                },
+                "enabledOnly": {
+                    "default": "true",
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "True",
+                            "False"
+                        ]
+                    },
+                    "type": "boolean"
+                }
+            }
+        }
+    },
+    "/languages": {
+        "get": {}
+    }
+}

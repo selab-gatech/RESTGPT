@@ -1,0 +1,2460 @@
+{
+    "/institutions": {
+        "get": {
+            "filters": {
+                "examples": {
+                    "provided": [
+                        "STNAME:\"West Virginia\"",
+                        "STNAME:(\"West Virginia\",\"Delaware\")",
+                        "!(STNAME:\"Virginia\")",
+                        "DATEUPDT:[\"2010-01-01\" TO \"2010-12-31\"]",
+                        "DEP:[50000 TO *]"
+                    ],
+                    "generated": [
+                        "STNAME:\"California\"",
+                        "STNAME:(\"California\",\"New York\")",
+                        "!(STNAME:\"Texas\")",
+                        "DATEUPDT:[\"2021-01-01\" TO \"2021-12-31\"]",
+                        "DEP:[10000 TO 50000]"
+                    ]
+                },
+                "type": "string"
+            },
+            "search": {
+                "examples": {
+                    "provided": [
+                        "NAME: Island",
+                        "NAME: Iland"
+                    ],
+                    "generated": [
+                        "NAME: Book",
+                        "NAME: Library",
+                        "NAME: Author",
+                        "NAME: Novel",
+                        "NAME: Story",
+                        "NAME: Publisher",
+                        "NAME: Title",
+                        "NAME: Fiction",
+                        "NAME: Nonfiction",
+                        "NAME: Bestseller",
+                        "NAME: Classic",
+                        "NAME: Mystery",
+                        "NAME: Romance",
+                        "NAME: Thriller",
+                        "NAME: Biography",
+                        "NAME: Autobiography",
+                        "NAME: Science Fiction",
+                        "NAME: Fantasy",
+                        "NAME: Historical Fiction",
+                        "NAME: Poetry",
+                        "NAME: Drama",
+                        "NAME: Adventure",
+                        "NAME: Young Adult",
+                        "NAME: Children's Book",
+                        "NAME: Self-Help",
+                        "NAME: Business",
+                        "NAME: Travel",
+                        "NAME: Cook",
+                        "NAME: Art",
+                        "NAME: Music",
+                        "NAME: Sports",
+                        "NAME: Health",
+                        "NAME: Science",
+                        "NAME: History",
+                        "NAME: Religion",
+                        "NAME: Philosophy",
+                        "NAME: Psychology",
+                        "NAME: Sociology",
+                        "NAME: Politics",
+                        "NAME: Memoir",
+                        "NAME: Comic",
+                        "NAME: Graphic Novel",
+                        "NAME: Magazine",
+                        "NAME: Newspaper",
+                        "NAME: Journal",
+                        "NAME: Guide",
+                        "NAME: Manual",
+                        "NAME: Encyclopedia",
+                        "NAME: Dictionary",
+                        "NAME: Textbook",
+                        "NAME: Workbook",
+                        "NAME: Audiobook",
+                        "NAME: E-book",
+                        "NAME: Hardcover",
+                        "NAME: Paperback"
+                    ]
+                },
+                "type": "string"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10",
+                        "field11",
+                        "field12",
+                        "field13",
+                        "field14",
+                        "field15",
+                        "field16",
+                        "field17",
+                        "field18",
+                        "field19",
+                        "field20",
+                        "field21",
+                        "field22",
+                        "field23",
+                        "field24",
+                        "field25",
+                        "field26",
+                        "field27",
+                        "field28",
+                        "field29",
+                        "field30",
+                        "field31",
+                        "field32",
+                        "field33",
+                        "field34",
+                        "field35",
+                        "field36",
+                        "field37",
+                        "field38",
+                        "field39",
+                        "field40",
+                        "field41",
+                        "field42",
+                        "field43",
+                        "field44",
+                        "field45",
+                        "field46",
+                        "field47",
+                        "field48",
+                        "field49",
+                        "field50"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "sort_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity"
+                    ]
+                },
+                "type": "string"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string"
+            },
+            "limit": {
+                "max": "10000",
+                "default": "10",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "10,000"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49"
+                    ]
+                },
+                "type": "integer"
+            },
+            "format": {
+                "type": "string"
+            },
+            "download": {
+                "type": "boolean"
+            },
+            "filename": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "data.txt",
+                        "data.json",
+                        "data.xml",
+                        "data.xlsx"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/locations": {
+        "get": {
+            "filters": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "city",
+                        "state",
+                        "country",
+                        "zip code",
+                        "latitude",
+                        "longitude"
+                    ]
+                },
+                "type": "string"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "sort_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity"
+                    ]
+                },
+                "type": "string"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string"
+            },
+            "limit": {
+                "max": "10000",
+                "default": "10",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "10,000"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49"
+                    ]
+                },
+                "type": "integer"
+            },
+            "format": {
+                "type": "string"
+            },
+            "download": {
+                "type": "boolean"
+            },
+            "filename": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "data.txt",
+                        "data.json",
+                        "data.xml",
+                        "data.xlsx"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/summary": {
+        "get": {
+            "filters": {
+                "examples": {
+                    "provided": [
+                        "CB_SI:CB",
+                        "STNAME:\"Virginia\"",
+                        "!(STNAME:\"Virginia\")",
+                        "STNAME:(\"West Virginia\",\"Delaware\")",
+                        "YEAR:[\"2015\" TO \"2017\"]"
+                    ],
+                    "generated": [
+                        "CB_SI:SI",
+                        "STNAME:\"Alabama\"",
+                        "!(STNAME:\"Alabama\")",
+                        "STNAME:(\"California\",\"New York\")",
+                        "YEAR:[\"2000\" TO \"2005\"]"
+                    ]
+                },
+                "type": "string"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "net income",
+                        "total assets",
+                        "total liabilities",
+                        "operating expenses",
+                        "cost of goods sold",
+                        "gross profit",
+                        "operating income",
+                        "net profit margin",
+                        "return on assets",
+                        "return on equity",
+                        "earnings per share",
+                        "dividend yield",
+                        "price-to-earnings ratio",
+                        "current ratio",
+                        "quick ratio",
+                        "debt-to-equity ratio",
+                        "inventory turnover ratio",
+                        "accounts receivable turnover ratio",
+                        "accounts payable turnover ratio",
+                        "cash conversion cycle",
+                        "fixed asset turnover ratio",
+                        "return on investment",
+                        "return on capital employed",
+                        "return on sales",
+                        "return"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "sort_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity"
+                    ]
+                },
+                "type": "string"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string"
+            },
+            "limit": {
+                "max": "10000",
+                "default": "10",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "10,000"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49"
+                    ]
+                },
+                "type": "integer"
+            },
+            "agg_by": {
+                "minItems": "1",
+                "maxItems": "2",
+                "x-dependencies": [
+                    "Or(YEAR, YEAR, STNAME)"
+                ],
+                "examples": {
+                    "provided": [
+                        "YEAR",
+                        "YEAR",
+                        "STNAME"
+                    ],
+                    "generated": [
+                        "MONTH",
+                        "STNAME",
+                        "CITY",
+                        "CATEGORY",
+                        "PRODUCT"
+                    ]
+                },
+                "type": "string"
+            },
+            "agg_term_fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10",
+                        "field11",
+                        "field12",
+                        "field13",
+                        "field14",
+                        "field15",
+                        "field16",
+                        "field17",
+                        "field18",
+                        "field19",
+                        "field20",
+                        "field21",
+                        "field22",
+                        "field23",
+                        "field24",
+                        "field25",
+                        "field26",
+                        "field27",
+                        "field28",
+                        "field29",
+                        "field30",
+                        "field31",
+                        "field32",
+                        "field33",
+                        "field34",
+                        "field35",
+                        "field36",
+                        "field37",
+                        "field38",
+                        "field39",
+                        "field40",
+                        "field41",
+                        "field42",
+                        "field43",
+                        "field44",
+                        "field45",
+                        "field46",
+                        "field47",
+                        "field48",
+                        "field49",
+                        "field50"
+                    ]
+                },
+                "type": "array",
+                "items": "string"
+            },
+            "agg_sum_fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "sales",
+                        "profit",
+                        "quantity",
+                        "cost",
+                        "price",
+                        "discount",
+                        "tax",
+                        "expenses",
+                        "budget"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "agg_limit": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer"
+            },
+            "format": {
+                "type": "string"
+            },
+            "download": {
+                "type": "boolean"
+            },
+            "filename": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "data.txt",
+                        "data.json",
+                        "data.xml",
+                        "data.xlsx"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/failures": {
+        "get": {
+            "filters": {
+                "examples": {
+                    "provided": [
+                        "CITYST:\"MEMPHIS",
+                        "TN\"",
+                        "!(CITY:\"PITTSBURGH\")",
+                        "FAILYR:[\"2015\" TO \"2016\"]"
+                    ],
+                    "generated": [
+                        "CITYST:\"NEW YORK",
+                        "NY\"",
+                        "!(CITY:\"LOS ANGELES\")",
+                        "FAILYR:[\"2017\" TO \"2018\"]",
+                        "CITYST:\"CHICAGO",
+                        "IL\"",
+                        " !(CITY:\"BOSTON\")",
+                        "FAILYR:[\"2019\" TO \"2020\"]",
+                        "CITYST:\"SAN FRANCISCO",
+                        "CA\"",
+                        "!(CITY:\"SEATTLE\")",
+                        "FAILYR:[\"2021\" TO \"2022\"]",
+                        " CITYST:\"DALLAS",
+                        "TX\"",
+                        "!(CITY:\"HOUSTON\")",
+                        "FAILYR:[\"2023\" TO \"2024\"]",
+                        "CITYST:\"MIAMI",
+                        "FL\"",
+                        "!(CITY:\"ATLANTA\")",
+                        "FAILYR:[\"2025\" TO \"2026\"]"
+                    ]
+                },
+                "type": "string"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "city",
+                        "state",
+                        "zip",
+                        "country",
+                        "status",
+                        "assets",
+                        "deposits",
+                        "establishment_date",
+                        "failure_date",
+                        "updated_date",
+                        " institution_type",
+                        "charter_class",
+                        "charter_description",
+                        "charter_date",
+                        "charter_number",
+                        "charter_state",
+                        "charter_region",
+                        " supervisory_agency",
+                        "supervisor",
+                        "supervisor_phone",
+                        "supervisor_address",
+                        "supervisor_city",
+                        "supervisor_state",
+                        " supervisor_zip",
+                        "supervisor_country",
+                        "supervisor_website",
+                        "supervisor_email",
+                        "supervisor_notes",
+                        "notes",
+                        " address",
+                        "phone",
+                        "website",
+                        "email",
+                        "latitude",
+                        "longitude",
+                        "county",
+                        "msa",
+                        "cbsa",
+                        " fips",
+                        "tax_id",
+                        "rssd_id",
+                        "fdic_id",
+                        "assets_range",
+                        "deposits_range",
+                        "establishment_date_range",
+                        "failure_date_range",
+                        " updated_date_range",
+                        "institution_type_range",
+                        "charter_class_range",
+                        "charter_description_range",
+                        "charter_date_range",
+                        " charter_number_range",
+                        "charter_state_range",
+                        "charter_region_range",
+                        "supervisory_agency_range",
+                        "supervisor_range",
+                        " supervisor_phone_range",
+                        "supervisor_address_range",
+                        "supervisor_city_range",
+                        "supervisor_state_range",
+                        " supervisor_zip_range",
+                        "supervisor_country_range",
+                        "supervisor_website_range",
+                        "supervisor_email_range",
+                        " supervisor_notes_range",
+                        "notes_range",
+                        "address_range",
+                        "city_range",
+                        "state_range",
+                        "zip_range"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "sort_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity"
+                    ]
+                },
+                "type": "string"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string"
+            },
+            "limit": {
+                "max": "10000",
+                "default": "10",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "10,000"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49"
+                    ]
+                },
+                "type": "integer"
+            },
+            "total_fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "array",
+                "items": "string"
+            },
+            "subtotal_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "category1",
+                        "category2",
+                        "category3",
+                        "category4",
+                        "category5",
+                        "category6",
+                        "category7",
+                        "category8",
+                        "category9",
+                        "category10"
+                    ]
+                },
+                "type": "string"
+            },
+            "agg_by": {
+                "minItems": "1",
+                "maxItems": "2",
+                "x-dependencies": [
+                    "OnlyOne(agg_by == 'FAILYR' AND agg_by == 'FAILYR,PSTALP')"
+                ],
+                "examples": {
+                    "provided": [
+                        "FAILYR",
+                        "FAILYR,PSTALP"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "agg_term_fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10",
+                        "field11",
+                        "field12",
+                        "field13",
+                        "field14",
+                        "field15",
+                        "field16",
+                        "field17",
+                        "field18",
+                        "field19",
+                        "field20",
+                        "field21",
+                        "field22",
+                        "field23",
+                        "field24",
+                        "field25",
+                        "field26",
+                        "field27",
+                        "field28",
+                        "field29",
+                        "field30",
+                        "field31",
+                        "field32",
+                        "field33",
+                        "field34",
+                        "field35",
+                        "field36",
+                        "field37",
+                        "field38",
+                        "field39",
+                        "field40",
+                        "field41",
+                        "field42",
+                        "field43",
+                        "field44",
+                        "field45",
+                        "field46",
+                        "field47",
+                        "field48",
+                        "field49",
+                        "field50"
+                    ]
+                },
+                "type": "array",
+                "items": "string"
+            },
+            "agg_sum_fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "sales",
+                        "profit",
+                        "quantity",
+                        "cost",
+                        "price",
+                        "discount",
+                        "tax",
+                        "expenses",
+                        "budget"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "agg_limit": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer"
+            },
+            "format": {
+                "type": "string"
+            },
+            "download": {
+                "type": "boolean"
+            },
+            "filename": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "data.txt",
+                        "data.json",
+                        "data.xml",
+                        "data.xlsx"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/history": {
+        "get": {
+            "filters": {
+                "examples": {
+                    "provided": [
+                        "STATE:\"VIRGINIA\"",
+                        "!(STATE:\"VIRGINIA\")",
+                        "PROCDATE:[2020-01-01 TO 2020-02-01]"
+                    ],
+                    "generated": [
+                        "STATE:\"CALIFORNIA\"",
+                        "!(STATE:\"CALIFORNIA\")",
+                        "PROCDATE:[2020-03-01 TO 2020-04-01]"
+                    ]
+                },
+                "type": "string"
+            },
+            "search": {
+                "examples": {
+                    "provided": [
+                        "NAME: Island",
+                        "NAME: Iland",
+                        "STATE: VA"
+                    ],
+                    "generated": [
+                        "NAME: Brazil",
+                        "NAME: France",
+                        "STATE: NY",
+                        "STATE: CA"
+                    ]
+                },
+                "type": "string"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "city",
+                        "state",
+                        "zip",
+                        "country",
+                        "status",
+                        "assets",
+                        "deposits",
+                        "establishment_date",
+                        "failure_date",
+                        "updated_date",
+                        " institution_type",
+                        "charter_class",
+                        "charter_description",
+                        "charter_date",
+                        "charter_number",
+                        "charter_state",
+                        "charter_region",
+                        " supervisory_agency",
+                        "supervisor",
+                        "supervisor_phone",
+                        "supervisor_address",
+                        "supervisor_city",
+                        "supervisor_state",
+                        " supervisor_zip",
+                        "supervisor_country",
+                        "supervisor_website",
+                        "supervisor_email",
+                        "supervisor_notes",
+                        "notes",
+                        " address",
+                        "phone",
+                        "website",
+                        "email",
+                        "latitude",
+                        "longitude",
+                        "county",
+                        "msa",
+                        "cbsa",
+                        " fips",
+                        "tax_id",
+                        "rssd_id",
+                        "fdic_id",
+                        "assets_range",
+                        "deposits_range",
+                        "establishment_date_range",
+                        "failure_date_range",
+                        " updated_date_range",
+                        "institution_type_range",
+                        "charter_class_range",
+                        "charter_description_range",
+                        "charter_date_range",
+                        " charter_number_range",
+                        "charter_state_range",
+                        "charter_region_range",
+                        "supervisory_agency_range",
+                        "supervisor_range",
+                        " supervisor_phone_range",
+                        "supervisor_address_range",
+                        "supervisor_city_range",
+                        "supervisor_state_range",
+                        " supervisor_zip_range",
+                        "supervisor_country_range",
+                        "supervisor_website_range",
+                        "supervisor_email_range",
+                        " supervisor_notes_range",
+                        "notes_range",
+                        "address_range",
+                        "city_range",
+                        "state_range",
+                        "zip_range"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "sort_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity"
+                    ]
+                },
+                "type": "string"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string"
+            },
+            "limit": {
+                "max": "10000",
+                "default": "10",
+                "x-dependencies": [
+                    "limit >= 10 AND limit <= 10000"
+                ],
+                "examples": {
+                    "provided": [
+                        "10,000"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49"
+                    ]
+                },
+                "type": "integer"
+            },
+            "agg_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "category",
+                        "date",
+                        "region",
+                        "product",
+                        "customer",
+                        "salesperson",
+                        "department",
+                        "source"
+                    ]
+                },
+                "type": "array",
+                "items": "string"
+            },
+            "agg_term_fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10",
+                        "field11",
+                        "field12",
+                        "field13",
+                        "field14",
+                        "field15",
+                        "field16",
+                        "field17",
+                        "field18",
+                        "field19",
+                        "field20",
+                        "field21",
+                        "field22",
+                        "field23",
+                        "field24",
+                        "field25",
+                        "field26",
+                        "field27",
+                        "field28",
+                        "field29",
+                        "field30",
+                        "field31",
+                        "field32",
+                        "field33",
+                        "field34",
+                        "field35",
+                        "field36",
+                        "field37",
+                        "field38",
+                        "field39",
+                        "field40",
+                        "field41",
+                        "field42",
+                        "field43",
+                        "field44",
+                        "field45",
+                        "field46",
+                        "field47",
+                        "field48",
+                        "field49",
+                        "field50"
+                    ]
+                },
+                "type": "array",
+                "items": "string"
+            },
+            "agg_limit": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer"
+            },
+            "format": {
+                "type": "string"
+            },
+            "download": {
+                "type": "boolean"
+            },
+            "filename": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "data.txt",
+                        "data.json",
+                        "data.xml",
+                        "data.xlsx"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/financials": {
+        "get": {
+            "filters": {
+                "examples": {
+                    "provided": [
+                        "ASSET:[1000 TO 9999]"
+                    ],
+                    "generated": [
+                        "ASSET:[0 TO 999]",
+                        "ASSET:[1000 TO 1999]",
+                        "ASSET:[2000 TO 2999]",
+                        "ASSET:[3000 TO 3999]",
+                        "ASSET:[4000 TO 4999]",
+                        "ASSET:[5000 TO 5999]",
+                        "ASSET:[6000 TO 6999]",
+                        "ASSET:[7000 TO 7999]",
+                        "ASSET:[8000 TO 8999]",
+                        "ASSET:[9000 TO 9999]"
+                    ]
+                },
+                "type": "string"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "expenses",
+                        "profit",
+                        "assets",
+                        "liabilities",
+                        "cash flow",
+                        "earnings per share",
+                        "dividends",
+                        "net income",
+                        "gross margin",
+                        "operating margin",
+                        "return on investment",
+                        "debt ratio",
+                        "inventory turnover",
+                        "current ratio",
+                        "quick ratio",
+                        "return on equity",
+                        "return on assets",
+                        "price to earnings ratio",
+                        "market capitalization",
+                        "revenue growth",
+                        "net income growth",
+                        "earnings per share growth",
+                        "dividend yield",
+                        "dividend payout ratio",
+                        "interest coverage ratio",
+                        "debt to equity ratio",
+                        "working capital",
+                        "fixed assets",
+                        "current liabilities",
+                        "long-term debt",
+                        "accounts payable",
+                        "accounts receivable",
+                        "inventory",
+                        "cash and cash equivalents",
+                        "retained earnings",
+                        "shareholder's equity",
+                        "total assets",
+                        "total liabilities",
+                        "total equity"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "sort_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "name",
+                        "date",
+                        "price",
+                        "rating",
+                        "popularity"
+                    ]
+                },
+                "type": "string"
+            },
+            "sort_order": {
+                "examples": {
+                    "provided": [
+                        "ASC",
+                        "DESC"
+                    ],
+                    "generated": [
+                        "ASC",
+                        "DESC"
+                    ]
+                },
+                "type": "string"
+            },
+            "limit": {
+                "min": "10",
+                "max": "10000",
+                "default": "10",
+                "examples": {
+                    "provided": [
+                        "10,000"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50",
+                        "51",
+                        "52",
+                        "53",
+                        "54",
+                        "55",
+                        "56",
+                        "57",
+                        "58",
+                        "59",
+                        "60",
+                        "61",
+                        "62",
+                        "63",
+                        "64",
+                        "65",
+                        "66",
+                        "67",
+                        "68",
+                        "69",
+                        "70",
+                        "71",
+                        "72",
+                        "73",
+                        "74",
+                        "75",
+                        "76",
+                        "77",
+                        "78",
+                        "79",
+                        "80",
+                        "81"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49"
+                    ]
+                },
+                "type": "integer"
+            },
+            "agg_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "category",
+                        "date",
+                        "region",
+                        "product",
+                        "customer",
+                        "salesperson",
+                        "department",
+                        "channel"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "agg_term_fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10",
+                        "field11",
+                        "field12",
+                        "field13",
+                        "field14",
+                        "field15",
+                        "field16",
+                        "field17",
+                        "field18",
+                        "field19",
+                        "field20",
+                        "field21",
+                        "field22",
+                        "field23",
+                        "field24",
+                        "field25",
+                        "field26",
+                        "field27",
+                        "field28",
+                        "field29",
+                        "field30",
+                        "field31",
+                        "field32",
+                        "field33",
+                        "field34",
+                        "field35",
+                        "field36",
+                        "field37",
+                        "field38",
+                        "field39",
+                        "field40",
+                        "field41",
+                        "field42",
+                        "field43",
+                        "field44",
+                        "field45",
+                        "field46",
+                        "field47",
+                        "field48",
+                        "field49",
+                        "field50"
+                    ]
+                },
+                "type": "array",
+                "items": "string"
+            },
+            "agg_sum_fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "revenue",
+                        "sales",
+                        "profit",
+                        "quantity",
+                        "cost",
+                        "price",
+                        "discount",
+                        "tax",
+                        "expenses",
+                        "budget"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "agg_limit": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer"
+            },
+            "format": {
+                "type": "string"
+            },
+            "download": {
+                "type": "boolean"
+            },
+            "filename": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "data.csv",
+                        "data.txt",
+                        "data.json",
+                        "data.xml",
+                        "data.xlsx"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    }
+}

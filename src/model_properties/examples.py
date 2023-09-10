@@ -39,59 +39,63 @@ description: 'This is the organization used for finding data. This is required.'
 
 PARAMETER_FORMAT_EXAMPLES = [
     {
-        "input": "'The list of percent grades corresponding to the student.'",
-        "output": "type array, items number, format None"
+        "input": "'A space-separated list of percent grades corresponding to the student.'",
+        "output": "type array, items number, format None, collectionFormat ssv"
     },
     {
         "input": "'This should contain the email of the sender.'",
-        "output": "type string, items None, format email"
+        "output": "type string, items None, format email, collectionFormat None"
     },
     {
         "input": "'This value should be true if the assignment is available for regrade.'",
-        "output": "type boolean, items None, format None"
+        "output": "type boolean, items None, format None, collectionFormat None"
     },
     {
         "input": "'A URL containing the website for evaluation.'",
-        "output": "type string, items None, format url"
+        "output": "type string, items None, format url, collectionFormat None"
     },
     {
         "input": "'The date of the contest. The date must be within the last three months.'",
-        "output": "type string, items None, format date"
+        "output": "type string, items None, format date, collectionFormat None"
     },
     {
         "input": "'The time that the project must be completed. Use Eastern Standard Timezone (EST).'",
-        "output": "type string, items None, format date-time"
+        "output": "type string, items None, format date-time, collectionFormat None"
+    },
+    {
+        "input": "'A list of region codes.'",
+        "output": "type array, items None, format None, collectionFormat None"
     }
 ]
 
 PARAMETER_CONSTRAINT_EXAMPLES = [
     {
         "input": "'An idea for a project. This and 'rating' are required.'",
-        "output": "min None, max None"
+        "output": "None"
     },
     {
         "input": "'The maximum value is 50. If nothing is put in, default to 0.'",
-        "output": "min None, max 50"
+        "output": "min None, max 50, default 0"
     },
     {
         "input": "'The timer counter. The value must be between 15.0 and 120.'",
-        "output": "min 15.0, max 120"
+        "output": "min 15.0, max 120, default None"
     },
     {
         "input": "'The input range. The smallest value possible is -120.8. The largest should be 179.652.'",
-        "output": "min -120.8, max 179.652"
+        "output": "min -120.8, max 179.652, default None"
     },
     {
         "input": "'The number of items to be investigated. The maximum is 9,999.99'",
-        "output": "min None, max 9999.99"
+        "output": "min None, max 9999.99, default None"
     },
     {
         "input": "The stock quantity. The smallest possible value is 1,200. All the values should be less than 8,999.",
-        "output": "min 1200, max 8999"
+        "output": "min 1200, max 8999, default None"
     },
     {
         "input": "'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'",
-        "output": "minLength 10, maxLength 20"
+        "output": "minLength 10, maxLength 20, default None"
     }
 ]
 
@@ -117,9 +121,7 @@ VGB, VIR, WLF, ESH, YEM, ZMB, ZWE"""
         "output":
 """PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
-4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9, 6.0, 6.1, 6.2, 6.3, 6.4, 6.5, 6.6, 6.7, 
-6.8, 6.9, 7.0, 7.1, 7.2, 7.3, 7.4, 7.5, 7.6, 7.7, 7.8, 7.9, 8.0, 8.1, 8.2, 8.3, 8.4, 8.5, 8.6, 8.7, 8.8, 8.9, 9.0, 
-9.1, 9.2, 9.3, 9.4, 9.5, 9.6, 9.7, 9.8, 9.9, 10.0, 99.9, 100.0"""
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0"""
     },
     {
         "input": "'The title of the book to be rated.'",
@@ -129,6 +131,16 @@ and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, 
 History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
 a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
 Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer"""
+    },
+    {
+        "input": "'The value for the number of products to consume. It must be greater than 12 and less than 50.'",
+        "output":
+"""PROVIDED: None +++ GENERATED: None"""
+    },
+    {
+        "input": "'The number of bank accounts associated. Cannot be less than 0.'",
+        "output":
+"""PROVIDED: None +++ GENERATED: None"""
     }
 ]
 

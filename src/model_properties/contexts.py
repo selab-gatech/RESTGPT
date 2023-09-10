@@ -90,13 +90,13 @@ and return True or False accordingly. Ignore links as irrelevant. Be lenient wit
 false positives than negatives.\n"""
 
 PARAMETER_FORMAT_CONTEXT = """
-Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
-or formatting. The list of possible data types are as follows: string, number, integer, boolean, array, and object.
-The list of formatting options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname,
-ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. If the data type is an array, attempt
-to identify its item type. Output the answer as follows: "type [type], items [item type], format [format]". Output
-None when unable to determine any of the categories. For example, only output a non-None "item type" if the "type" is 
-array.
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of example formatting options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+If the data type is an array, attempt to identify its item type which can be a string, number, integer, boolean, array, or object.
+If the data type is an array, attempt to identify its collection format. The list of collection formats are csv (comma-separated values), ssv (space-separated values), psv (pipe-separated values), and tsv (tab-separated values).
+Output the answer as follows: "type [type], items [item type], format [format], collectionFormat [collection format]". 
+Output None when unable to determine any of the categories. For example, only output a non-None "item type" and "collection type" if the "type" is array. 
 
 Here are some examples of inputs and expected outputs:
 """
@@ -104,28 +104,25 @@ Here are some examples of inputs and expected outputs:
 PARAMETER_CONSTRAINT_CONTEXT = """
 Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, 
 apply the following to determine restrictions on the parameter input:
-If it is a number, determine if the description mentions minimum or maximum possible values and output it in the 
-following format: "min [minimum], max [maximum]". 
-If it's a string or word, determine if the description mentions minimum or maximum possible input lengths, and output it in the 
-following format: "minLength [minimum], maxLength [maximum]". 
-If it's an array or list, determine if the description mentions minimum or maximum possible list lengths, and output it 
-in the following format: "minItems [minimum], maxItems [maximum]".
-If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties, and 
-output it in the following format: "minProperties [minimum], maxProperties [maximum]".
-If you are unable to determine any minimum or maximum restrictions, output "None". If you are able to determine only one 
-either the minimum or maximum, output the undetermined value as "None".
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: "min [minimum], max [maximum], default [default]". 
+If it's a string or word, determine if the description mentions minimum or maximum possible input lenghts or a default value, and output: "minLength [minimum], maxLength [maximum], default [default]". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: "minItems [minimum], maxItems [maximum], default [default]".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: "minProperties [minimum], maxProperties [maximum], default [default]".
+If it is any other data type where there is a default value provided, output: "min None, max None, default [default]".
+If you are unable to determine any minimum, maximum, or default restrictions, output "None". If you are able to determine only one either the minimum or maximum, output the undetermined value as "None".
 
 Here are some examples of inputs and expected outputs:
 """
 
 PARAMETER_EXAMPLE_CONTEXT = """
 Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
-Then, extrapolate and generate additional example values that correspond, or are in the same category as the provided values.
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
 If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+Do not generate examples of number ranges at all, and return None in that case. 
 If generating example values is not possible, return None. Consider the following cases: 
 
-Case 1: The description contains example values USA, CAN, ZWE: Output: "PROVIDED: USA, CAN, ZWE | GENERATED: BRA, FRA, GER ..."
-Case 2: The description does not explicitly mention example values: Output: "PROVIDED: None | GENERATED: BRA, FRA, GER, USA ..."
+Case 1: The description contains example values USA, CAN, ZWE: Output: "PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ..."
+Case 2: The description does not explicitly mention example values: Output: "PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ..."
 Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: "None"
 
 Here are some examples of inputs and expected outputs:"""

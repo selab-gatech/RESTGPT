@@ -9,3 +9,5 @@ package.json
 package-lock.json
 **/config.py
 config.py
+**/test_output.json
+**/test_resolving.py
