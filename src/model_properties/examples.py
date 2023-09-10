@@ -71,31 +71,31 @@ PARAMETER_FORMAT_EXAMPLES = [
 PARAMETER_CONSTRAINT_EXAMPLES = [
     {
         "input": "'An idea for a project. This and 'rating' are required.'",
-        "output": "min None, max None"
+        "output": "None"
     },
     {
         "input": "'The maximum value is 50. If nothing is put in, default to 0.'",
-        "output": "min None, max 50"
+        "output": "min None, max 50, default 0"
     },
     {
         "input": "'The timer counter. The value must be between 15.0 and 120.'",
-        "output": "min 15.0, max 120"
+        "output": "min 15.0, max 120, default None"
     },
     {
         "input": "'The input range. The smallest value possible is -120.8. The largest should be 179.652.'",
-        "output": "min -120.8, max 179.652"
+        "output": "min -120.8, max 179.652, default None"
     },
     {
         "input": "'The number of items to be investigated. The maximum is 9,999.99'",
-        "output": "min None, max 9999.99"
+        "output": "min None, max 9999.99, default None"
     },
     {
         "input": "The stock quantity. The smallest possible value is 1,200. All the values should be less than 8,999.",
-        "output": "min 1200, max 8999"
+        "output": "min 1200, max 8999, default None"
     },
     {
         "input": "'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'",
-        "output": "minLength 10, maxLength 20"
+        "output": "minLength 10, maxLength 20, default None"
     }
 ]
 
@@ -131,6 +131,16 @@ and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, 
 History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
 a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
 Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer"""
+    },
+    {
+        "input": "'The value for the number of products to consume. It must be greater than 12 and less than 50.'",
+        "output":
+"""PROVIDED: None +++ GENERATED: None"""
+    },
+    {
+        "input": "'The number of bank accounts associated. Cannot be less than 0.'",
+        "output":
+"""PROVIDED: None +++ GENERATED: None"""
     }
 ]
 

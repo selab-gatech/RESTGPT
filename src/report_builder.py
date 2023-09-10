@@ -41,11 +41,12 @@ class ReportBuilder:
         return f'{path[0]} {path[1]}'
         
 
-    def _add_parameter_constraint(self, build_parameter, parameter_constriant): 
-        if parameter_constriant is None:
+    def _add_parameter_constraint(self, build_parameter, parameter_constraint):
+        if parameter_constraint is None:
             return
-        for constraint_key, constraint in parameter_constriant.items(): 
-            build_parameter[constraint_key] = constraint
+        for constraint_key, constraint in parameter_constraint.items():
+            if constraint.strip() != "None":
+                build_parameter[constraint_key] = constraint
     def _add_ipd_constraint(self, build_parameter, ipd_constraint):
         if ipd_constraint is None:
             return
@@ -70,12 +71,13 @@ class ReportBuilder:
     def _add_parameter_type_values(self, build_parameter, parameter_types):
         if parameter_types is None: 
             return None
-        for type_key, extracted_type in parameter_types.items(): 
-            if type_key == "items" or type_key == "collectionFormat":
-                if parameter_types["type"] == "array":
+        for type_key, extracted_type in parameter_types.items():
+            if extracted_type.strip() != "None":
+                if type_key == "items" or type_key == "collectionFormat":
+                    if parameter_types["type"] == "array":
+                        build_parameter[type_key] = extracted_type
+                else:
                     build_parameter[type_key] = extracted_type
-            else:
-                build_parameter[type_key] = extracted_type
     
     def _save_run_ai(self,read_path, route, method):
         check = hashlib.md5(open('restgpt.py', 'rb').read()).hexdigest()
