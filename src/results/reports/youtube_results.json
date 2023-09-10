@@ -1,0 +1,928 @@
+{
+    "/search": {
+        "get": {
+            "channelId": {
+                "minProperties": "None",
+                "maxProperties": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "channel1",
+                        "channel2",
+                        "channel3",
+                        "channel4",
+                        "channel5",
+                        "channel6",
+                        "channel7",
+                        "channel8",
+                        "channel9",
+                        "channel10",
+                        "channel11",
+                        "channel12",
+                        " channel13",
+                        "channel14",
+                        "channel15",
+                        "channel16",
+                        "channel17",
+                        "channel18",
+                        "channel19",
+                        "channel20",
+                        "channel21",
+                        "channel22",
+                        "channel23",
+                        "channel24",
+                        "channel25",
+                        "channel26",
+                        " channel27",
+                        "channel28",
+                        "channel29",
+                        "channel30",
+                        "channel31",
+                        "channel32",
+                        "channel33",
+                        "channel34",
+                        "channel35",
+                        "channel36",
+                        "channel37",
+                        "channel38",
+                        "channel39",
+                        "channel40",
+                        " channel41",
+                        "channel42",
+                        "channel43",
+                        "channel44",
+                        "channel45",
+                        "channel46",
+                        "channel47",
+                        "channel48",
+                        "channel49",
+                        "channel50",
+                        "channel51",
+                        "channel52",
+                        "channel53",
+                        "channel54",
+                        " channel55",
+                        "channel56",
+                        "channel57",
+                        "channel58",
+                        "channel59",
+                        "channel60",
+                        "channel61",
+                        "channel62",
+                        "channel63",
+                        "channel64",
+                        "channel65",
+                        "channel66",
+                        "channel67",
+                        "channel68",
+                        " channel69",
+                        "channel70",
+                        "channel71",
+                        "channel72",
+                        "channel73",
+                        "channel74",
+                        "channel75",
+                        "channel76",
+                        "channel77",
+                        "channel78",
+                        "channel79",
+                        "channel80",
+                        "channel81",
+                        "channel82",
+                        " channel83",
+                        "channel84",
+                        "channel85",
+                        "channel86",
+                        "channel87",
+                        "channel88",
+                        "channel89",
+                        "channel90",
+                        "channel91",
+                        "channel92",
+                        "channel93",
+                        "channel94",
+                        "channel95",
+                        "channel96",
+                        " channel97",
+                        "channel98",
+                        "channel99",
+                        "channel100"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "channelType": {
+                "type": "string",
+                "format": "None"
+            },
+            "eventType": {
+                "x-dependencies": [
+                    "IF type=='video' THEN OnlyOne(eventType);"
+                ],
+                "type": "string",
+                "format": "None"
+            },
+            "forContentOwner": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "True",
+                        "False"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "forDeveloper": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "True",
+                        "False"
+                    ]
+                },
+                "type": "boolean",
+                "format": "None"
+            },
+            "forMine": {
+                "x-dependencies": [
+                    "IF forMine THEN type=='video'"
+                ],
+                "examples": {
+                    "provided": [
+                        "true"
+                    ],
+                    "generated": [
+                        "false"
+                    ]
+                },
+                "type": "boolean",
+                "format": "None"
+            },
+            "location": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "(37.42307,-122.08427)"
+                    ],
+                    "generated": [
+                        "(40.7128,-74.0060)",
+                        "(51.5074,-0.1278)",
+                        "(48.8566,2.3522)",
+                        "(34.0522,-118.2437)",
+                        "(35.6895,139.6917)",
+                        "(55.7558,37.6176)",
+                        "(37.7749,-122.4194)",
+                        "(41.9028,12.4964)",
+                        "(52.5200,13.4050)",
+                        "(37.9838,23.7275)",
+                        "(19.4326,-99.1332)",
+                        "(19.4326,-99.1332"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "locationRadius": {
+                "min": "0",
+                "max": "1000",
+                "x-dependencies": [
+                    "locationRadius <= 1000km"
+                ],
+                "examples": {
+                    "provided": [
+                        "1500m",
+                        "5km",
+                        "10000ft",
+                        "0.75mi"
+                    ],
+                    "generated": [
+                        "1m",
+                        "10m",
+                        "100m",
+                        "1km",
+                        "10km",
+                        "100km",
+                        "1ft",
+                        "10ft",
+                        "100ft",
+                        "1mi",
+                        "10mi",
+                        "100mi"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "maxResults": {
+                "min": "None",
+                "max": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "1",
+                        "5",
+                        "10",
+                        "20",
+                        "50",
+                        "100",
+                        "500",
+                        "1000"
+                    ]
+                },
+                "type": "integer",
+                "format": "None"
+            },
+            "onBehalfOfContentOwner": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "content_owner1",
+                        "content_owner2",
+                        "content_owner3",
+                        "content_owner4",
+                        "content_owner5",
+                        "content_owner6",
+                        "content_owner7",
+                        "content_owner8",
+                        "content_owner9",
+                        "content_owner10",
+                        "content_owner11",
+                        "content_owner12",
+                        "content_owner13",
+                        "content_owner14",
+                        "content_owner15",
+                        "content_owner16",
+                        "content_owner17",
+                        "content_owner18",
+                        "content_owner19",
+                        "content_owner20"
+                    ]
+                }
+            },
+            "order": {
+                "type": "string",
+                "format": "None"
+            },
+            "pageToken": {
+                "minLength": "None",
+                "maxLength": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "page1",
+                        "page2",
+                        "page3",
+                        "page4",
+                        "page5",
+                        "page6",
+                        "page7",
+                        "page8",
+                        "page9",
+                        "page10",
+                        "page11",
+                        "page12",
+                        "page13",
+                        "page14",
+                        "page15",
+                        "page16",
+                        "page17",
+                        "page18",
+                        "page19",
+                        "page20",
+                        "page21",
+                        "page22",
+                        "page23",
+                        "page24",
+                        "page25",
+                        "page26",
+                        "page27",
+                        "page28",
+                        "page29",
+                        "page30",
+                        "page31",
+                        "page32",
+                        "page33",
+                        "page34",
+                        "page35",
+                        "page36",
+                        "page37",
+                        "page38",
+                        "page39",
+                        "page40",
+                        "page41",
+                        "page42",
+                        "page43",
+                        "page44",
+                        "page45",
+                        "page46",
+                        "page47",
+                        "page48",
+                        "page49",
+                        "page50",
+                        "page51",
+                        "page52",
+                        "page53",
+                        "page54",
+                        "page55",
+                        "page56",
+                        "page57",
+                        "page58",
+                        "page59",
+                        "page60",
+                        "page61",
+                        "page62",
+                        "page63",
+                        "page64",
+                        "page65",
+                        "page66",
+                        "page67",
+                        "page68",
+                        "page69",
+                        "page70",
+                        "page71",
+                        "page72",
+                        "page73",
+                        "page74",
+                        "page75",
+                        "page76",
+                        "page77",
+                        "page78",
+                        "page79",
+                        "page80",
+                        "page81",
+                        "page82",
+                        "page83",
+                        "page84",
+                        "page85",
+                        "page86",
+                        "page87",
+                        "page88",
+                        "page89",
+                        "page90",
+                        "page91",
+                        "page92",
+                        "page93",
+                        "page94",
+                        "page95",
+                        "page96",
+                        "page97",
+                        "page98",
+                        "page99",
+                        "page100"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "part": {
+                "minItems": "1",
+                "maxItems": "None",
+                "type": "string",
+                "format": "None"
+            },
+            "publishedAfter": {
+                "examples": {
+                    "provided": [
+                        "1970-01-01T00:00:00Z"
+                    ],
+                    "generated": [
+                        "2022-01-01T00:00:00Z",
+                        "2023-05-15T12:30:00Z",
+                        "2024-10-31T23:59:59Z",
+                        "2025-12-25T08:00:00Z",
+                        "2026-06-21T18:45:00Z",
+                        "2027-09-01T15:20:00Z",
+                        "2028-03-10T05:55:00Z",
+                        "2029-07-04T16:10:00Z",
+                        "2030-11-11T11:11:11Z",
+                        "2031-02-14T00:00:00Z"
+                    ]
+                },
+                "type": "string",
+                "format": "date-time"
+            },
+            "publishedBefore": {
+                "examples": {
+                    "provided": [
+                        "1970-01-01T00:00:00Z"
+                    ],
+                    "generated": [
+                        "2000-01-01T00:00:00Z",
+                        "2010-01-01T00:00:00Z",
+                        "2020-01-01T00:00:00Z",
+                        "2030-01-01T00:00:00Z",
+                        "2040-01-01T00:00:00Z",
+                        "2050-01-01T00:00:00Z",
+                        "2060-01-01T00:00:00Z",
+                        "2070-01-01T00:00:00Z",
+                        "2080-01-01T00:00:00Z",
+                        "2090-01-01T00:00:00Z",
+                        "2100-01-01T00:00:00Z",
+                        "2110-01-01T00:00:00Z",
+                        "2120-01-01T00:00:00Z",
+                        "2130-01-01T00:00:00Z",
+                        "2140-01-01T00:00:00Z",
+                        "2150-01-01T00:00:00Z",
+                        "2160-01-01T00:00:00Z",
+                        "2170-01-01T00:00:00Z",
+                        "2180-01-01T00:00:00Z",
+                        "2190-01-01T00:00:00Z",
+                        "2200-01-01T00:00:00Z",
+                        "2210-01-01T00:00:00Z",
+                        "2220-01-01T00:00:00Z",
+                        "2230-01-01T00:00:00Z",
+                        "2240-01-01T00:00:00Z",
+                        "2250-01-01T00:00:00Z",
+                        "2260-01-01T00:00:00Z",
+                        "2270-01-01T00:00:00Z",
+                        "2280-01-01T00:00:00Z",
+                        "2290-01-01T00:00:00Z",
+                        "2300-01-01T00:00:00Z",
+                        "2310-01-01T00:00:00Z",
+                        "2320-01-01T00:00"
+                    ]
+                },
+                "type": "string",
+                "format": "date-time"
+            },
+            "q": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "cat",
+                        "dog",
+                        "bird",
+                        "fish",
+                        "horse",
+                        "rabbit",
+                        "mouse",
+                        "lion",
+                        "tiger",
+                        "elephant",
+                        "monkey",
+                        "giraffe",
+                        "bear",
+                        "wolf",
+                        "fox",
+                        " deer",
+                        "kangaroo",
+                        "zebra",
+                        "cow",
+                        "pig",
+                        "sheep",
+                        "goat",
+                        "chicken",
+                        "duck",
+                        "turkey",
+                        "snake",
+                        "lizard",
+                        "turtle",
+                        "frog",
+                        "butterfly",
+                        "bee",
+                        " ant",
+                        "spider",
+                        "snail",
+                        "whale",
+                        "dolphin",
+                        "shark",
+                        "octopus",
+                        "jellyfish",
+                        "crab",
+                        "lobster",
+                        "squid",
+                        "seahorse",
+                        "starfish",
+                        "coral",
+                        " oyster",
+                        "clam",
+                        "mussel",
+                        "shrimp",
+                        "scallop",
+                        "salmon",
+                        "trout",
+                        "tuna",
+                        "cod",
+                        "herring",
+                        "mackerel",
+                        "sardine",
+                        "anchovy",
+                        "swordfish",
+                        " bass",
+                        "carp",
+                        "catfish",
+                        "pike",
+                        "walleye",
+                        "tilapia",
+                        "goldfish",
+                        "betta",
+                        "guppy",
+                        "angelfish",
+                        "clownfish",
+                        "koi",
+                        "platy",
+                        "tetra",
+                        " molly",
+                        "cichlid",
+                        "discus",
+                        "axolotl",
+                        " axolotl"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "regionCode": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "USA",
+                        "CAN",
+                        "MEX",
+                        "GBR",
+                        "FRA",
+                        "GER",
+                        "JPN",
+                        "AUS",
+                        "BRA",
+                        "IND"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "relatedToVideoId": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "5Dl1avkVXOg",
+                        "9bZkp7q19f0",
+                        "2Vv-BfVoq4g",
+                        "3tmd-ClpJxA",
+                        "9bZkp7q19f0,"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "relevanceLanguage": {
+                "minLength": "2",
+                "maxLength": "7",
+                "examples": {
+                    "provided": [
+                        "zh-Hans",
+                        "zh-Hant"
+                    ],
+                    "generated": [
+                        "af",
+                        "sq",
+                        "am",
+                        "ar",
+                        "hy",
+                        "az",
+                        "eu",
+                        "be",
+                        "bn",
+                        "bs",
+                        "bg",
+                        "ca",
+                        "ceb",
+                        "ny",
+                        "zh-CN",
+                        "zh-TW",
+                        "co",
+                        "hr",
+                        "cs",
+                        "da",
+                        "nl",
+                        "en",
+                        "eo",
+                        "et",
+                        "tl",
+                        "fi",
+                        " fr",
+                        "fy",
+                        "gl",
+                        "ka",
+                        "de",
+                        "el",
+                        "gu",
+                        "ht",
+                        "ha",
+                        "haw",
+                        "iw",
+                        "hi",
+                        "hmn",
+                        "hu",
+                        "is",
+                        "ig",
+                        "id",
+                        "ga",
+                        "it",
+                        "ja",
+                        "jv",
+                        "kn",
+                        "kk",
+                        "km",
+                        "rw",
+                        "ko",
+                        "ku",
+                        " ky",
+                        "lo",
+                        "la",
+                        "lv",
+                        "lt",
+                        "lb",
+                        "mk",
+                        "mg",
+                        "ms",
+                        "ml",
+                        "mt",
+                        "mi",
+                        "mr",
+                        "mn",
+                        "my",
+                        "ne",
+                        "no",
+                        "or",
+                        "ps",
+                        "fa",
+                        "pl",
+                        "pt",
+                        "pa",
+                        "ro",
+                        "ru",
+                        "sm",
+                        "gd",
+                        " sr",
+                        "st",
+                        "sn",
+                        "sd",
+                        "si",
+                        "sk",
+                        "sl",
+                        "so",
+                        "es",
+                        "su",
+                        "sw",
+                        "sv",
+                        "tg",
+                        "ta",
+                        "tt",
+                        "te",
+                        "th",
+                        "tr",
+                        "tk",
+                        "uk",
+                        "ur",
+                        "ug",
+                        "uz",
+                        "vi",
+                        "cy",
+                        "xh",
+                        "yi",
+                        " yo",
+                        "zu"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "safeSearch": {
+                "type": "boolean",
+                "format": "None"
+            },
+            "topicId": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "/m/01j3sz",
+                        "/m/01j3t0",
+                        "/m/01j3t1",
+                        "/m/01j3t2",
+                        "/m/01j3t3",
+                        "/m/01j3t4",
+                        "/m/01j3t5",
+                        "/m/01j3t6",
+                        "/m/01j3t7",
+                        "/m/01j3t8",
+                        "/m/01j3t9",
+                        "/m/01j3tb",
+                        "/m/01j3tc",
+                        "/m/01j3td",
+                        "/m/01j3tf",
+                        "/m/01j3tg",
+                        "/m/01j3th",
+                        "/m/01j3tj",
+                        "/m/01j3tk",
+                        "/m/01j3tl",
+                        "/m/01j3tm",
+                        "/m/01j3tn",
+                        "/m/01j3tp",
+                        "/m/01j3tq",
+                        "/m/01j3tr",
+                        "/m/01j3ts",
+                        "/m/01j3tt",
+                        "/m/01j3tv",
+                        "/m/01j3tw",
+                        "/m/01j3tx",
+                        "/m/01j3ty",
+                        "/m/01j3tz",
+                        "/m/01j3v0",
+                        "/m/01j3v1",
+                        "/m/01j3v2",
+                        "/m/01j3v3",
+                        "/m/01j3v4",
+                        "/m/01j3v5",
+                        "/m/01j3v6",
+                        "/m/01j3v7",
+                        "/m/01j3v8",
+                        "/m/01j3v9",
+                        "/m/01j3vb",
+                        "/m/01j3vc",
+                        "/m/01j3vd",
+                        "/m/01j3vf",
+                        "/m/01j3vg",
+                        "/m/01j3vh",
+                        "/m/01j3vj",
+                        "/m/01j3vk",
+                        "/m/01j3vl",
+                        "/m/01j3vm",
+                        "/m/01j3vn",
+                        "/m/01j3vp",
+                        "/m/01j3vq",
+                        "/m/01j3vr",
+                        "/m/01j3vs",
+                        "/m/01j3vt",
+                        "/m/01j3vv",
+                        "/m/01j3vw",
+                        "/"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "type": {
+                "minItems": "None",
+                "maxItems": "None",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "video",
+                        "playlist",
+                        "channel",
+                        "movie",
+                        "music",
+                        "podcast",
+                        "audiobook",
+                        "ebook",
+                        "article",
+                        "blog",
+                        "forum",
+                        "image",
+                        "document",
+                        "presentation",
+                        "spreadsheet",
+                        "form",
+                        "survey",
+                        "quiz",
+                        "game",
+                        "app",
+                        "software",
+                        "website"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "videoCaption": {
+                "x-dependencies": [
+                    "IF type=='video' THEN videoCaption;"
+                ],
+                "type": "boolean",
+                "format": "None"
+            },
+            "videoCategoryId": {
+                "min": "None",
+                "max": "None",
+                "x-dependencies": [
+                    "IF type=='video' THEN videoCategoryId"
+                ],
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "Film & Animation",
+                        "Autos & Vehicles",
+                        "Music",
+                        "Pets & Animals",
+                        "Sports",
+                        "Short Movies",
+                        "Travel & Events",
+                        "Gaming",
+                        " Videoblogging",
+                        "People & Blogs",
+                        "Comedy",
+                        "Entertainment",
+                        "News & Politics",
+                        "Howto & Style",
+                        "Education",
+                        "Science & Technology",
+                        " Nonprofits & Activism",
+                        "Movies",
+                        "Anime/Animation",
+                        "Action/Adventure",
+                        "Classics",
+                        "Documentary",
+                        "Drama",
+                        "Family",
+                        "Foreign",
+                        " Horror",
+                        "Sci-Fi/Fantasy",
+                        "Thriller",
+                        "Shorts",
+                        "Shows",
+                        "Trailers"
+                    ]
+                },
+                "type": "string",
+                "format": "None"
+            },
+            "videoDefinition": {
+                "min": "None",
+                "max": "None",
+                "type": "string",
+                "format": "None"
+            },
+            "videoDimension": {
+                "x-dependencies": [
+                    "IF type=='video' THEN OnlyOne(videoDimension=='2D' AND videoDimension=='3D');"
+                ],
+                "type": "string",
+                "format": "None"
+            },
+            "videoDuration": {
+                "min": "None",
+                "max": "None",
+                "x-dependencies": [
+                    "IF type=='video' THEN videoDuration"
+                ],
+                "type": "string",
+                "format": "None"
+            },
+            "videoEmbeddable": {
+                "x-dependencies": [
+                    "IF videoEmbeddable THEN type=='video'"
+                ],
+                "type": "boolean",
+                "format": "None"
+            },
+            "videoLicense": {
+                "type": "string",
+                "format": "None"
+            },
+            "videoSyndicated": {
+                "x-dependencies": [
+                    "IF type=='video' THEN videoSyndicated;"
+                ],
+                "type": "boolean",
+                "format": "None"
+            },
+            "videoType": {
+                "min": "None",
+                "max": "None",
+                "x-dependencies": [
+                    "IF videoType THEN type=='video'"
+                ],
+                "type": "string",
+                "format": "None"
+            }
+        }
+    }
+}

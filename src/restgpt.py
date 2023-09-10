@@ -15,6 +15,8 @@ from model_properties.contexts import *
 from config import API_KEY
 import time
 
+langchain.llm_cache = InMemoryCache()
+
 class Classifications(BaseModel):
     check_operation_constraint: bool = Field(description="""
 A boolean that returns True if the input definitively mentions parameters that are required or not required.""")
@@ -104,7 +106,6 @@ def llm_output_formatting(name, specifier, operation_constraints, parameter_form
 
 def run_llm_chain(file_path, method_path, method_type):
 
-    langchain.llm_cache = InMemoryCache()
     llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=512, openai_api_key = API_KEY, temperature=0.2, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
 
     method_key = f"{method_path} {method_type}"
