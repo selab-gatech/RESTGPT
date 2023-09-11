@@ -43,7 +43,7 @@ class FewShotModel:
         self.examples_selector = LengthBasedExampleSelector(
             examples=self.examples,
             example_prompt=self.examples_format,
-            max_length="2048"  # based on words (~7000 word input limit)
+            max_length="5000"  # based on words (~7000 word input limit)
         )
         self.fewshot_prompt = FewShotPromptTemplate(
             example_prompt=self.examples_format,

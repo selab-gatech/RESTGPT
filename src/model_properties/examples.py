@@ -90,12 +90,28 @@ PARAMETER_CONSTRAINT_EXAMPLES = [
         "output": "min None, max 9999.99, default None"
     },
     {
-        "input": "The stock quantity. The smallest possible value is 1,200. All the values should be less than 8,999.",
-        "output": "min 1200, max 8999, default None"
-    },
-    {
         "input": "'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'",
         "output": "minLength 10, maxLength 20, default None"
+    },
+    {
+        "input": "'The country code which can be 1-letter, 2-letter, or 3-letter.'",
+        "output": "minLength 1, maxLength 3, default None"
+    },
+    {
+        "input": "'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'",
+        "output": "minLength 2, maxLength 3, default None"
+    },
+    {
+        "input": "'Search via county areas.'",
+        "output": "None"
+    },
+    {
+        "input": "'Identifies synonyms through word inputs.'",
+        "output": "None"
+    },
+    {
+        "input": "'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'",
+        "output": "minLength 2, maxLength 3, default None"
     }
 ]
 
