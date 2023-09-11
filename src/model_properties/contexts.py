@@ -80,6 +80,7 @@ ArithmeticOperator:
     '+' | '-' | '*' | '/';
 
 If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any "\n" values in the input indicate either new lines or spaces. 
 Here are some examples of expected outputs:
 """
 
@@ -98,18 +99,21 @@ to identify its item type. Output the answer as follows: "type [type], items [it
 None when unable to determine any of the categories. For example, only output a non-None "item type" if the "type" is 
 array.
 
+Assume any "\n" values in the input indicate either new lines or spaces. 
+
 Here are some examples of inputs and expected outputs:
 """
 
 PARAMETER_CONSTRAINT_CONTEXT = """
-Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, 
-apply the following to determine restrictions on the parameter input:
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
 If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: "min [minimum], max [maximum], default [default]". 
-If it's a string or word, determine if the description mentions minimum or maximum possible input lenghts or a default value, and output: "minLength [minimum], maxLength [maximum], default [default]". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: "minLength [minimum], maxLength [maximum], default [default]". 
 If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: "minItems [minimum], maxItems [maximum], default [default]".
 If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: "minProperties [minimum], maxProperties [maximum], default [default]".
 If it is any other data type where there is a default value provided, output: "min None, max None, default [default]".
 If you are unable to determine any minimum, maximum, or default restrictions, output "None". If you are able to determine only one either the minimum or maximum, output the undetermined value as "None".
+
+Assume any "\n" values in the input indicate either new lines or spaces. 
 
 Here are some examples of inputs and expected outputs:
 """
@@ -123,5 +127,7 @@ If generating example values is not possible, return None. Consider the followin
 Case 1: The description contains example values USA, CAN, ZWE: Output: "PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ..."
 Case 2: The description does not explicitly mention example values: Output: "PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ..."
 Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: "None"
+
+Assume any "\n" values in the input represent spaces or new lines. Do not output any "\n" strings.
 
 Here are some examples of inputs and expected outputs:"""

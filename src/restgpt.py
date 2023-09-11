@@ -43,7 +43,7 @@ class FewShotModel:
         self.examples_selector = LengthBasedExampleSelector(
             examples=self.examples,
             example_prompt=self.examples_format,
-            max_length="2048"  # based on words (~7000 word input limit)
+            max_length="5000"  # based on words (~7000 word input limit)
         )
         self.fewshot_prompt = FewShotPromptTemplate(
             example_prompt=self.examples_format,
@@ -106,7 +106,7 @@ def llm_output_formatting(name, specifier, operation_constraints, parameter_form
 
 def run_llm_chain(file_path, method_path, method_type):
 
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0.2, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
 
     method_key = f"{method_path} {method_type}"
     parameters = parse_parameters(file_path).get(method_key)
