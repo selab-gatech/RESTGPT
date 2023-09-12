@@ -1,0 +1,606 @@
+{
+    "/search": {
+        "get": {
+            "channelId": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "channelType": {
+                "type": "string"
+            },
+            "eventType": {
+                "x-dependencies": [
+                    "IF eventType=='broadcast' THEN type=='video';"
+                ],
+                "type": "string"
+            },
+            "forContentOwner": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "forDeveloper": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "True",
+                        "False"
+                    ]
+                },
+                "type": "boolean"
+            },
+            "forMine": {
+                "x-dependencies": [
+                    "IF forMine THEN type=='video'"
+                ],
+                "examples": {
+                    "provided": [
+                        "true"
+                    ],
+                    "generated": [
+                        "false"
+                    ]
+                },
+                "type": "boolean"
+            },
+            "location": {
+                "x-dependencies": [
+                    "REQUIRED: location, locationRadius"
+                ],
+                "examples": {
+                    "provided": [
+                        "(37.42307,-122.08427)"
+                    ],
+                    "generated": [
+                        "(40.7128,-74.0060)",
+                        "(51.5074,-0.1278)",
+                        "(48.8566,2.3522)",
+                        "(35.6895,139.6917)",
+                        "(55.7558,37.6176)",
+                        "(52.5200,13.4050)",
+                        "(37.7749,-122.4194)",
+                        "(34.0522,-118.2437)",
+                        "(41.9028,12.4964)",
+                        "(25.2048,55.2708)",
+                        "(19.4326,-99.1332)",
+                        "(22.5726,88.3639)",
+                        "(33.6844,73.0479)",
+                        "(41.9028,"
+                    ]
+                },
+                "type": "string"
+            },
+            "locationRadius": {
+                "max": "1000",
+                "examples": {
+                    "provided": [
+                        "1500m",
+                        "5km",
+                        "10000ft",
+                        "0.75mi"
+                    ],
+                    "generated": [
+                        "0.1m",
+                        "0.2m",
+                        "0.3m",
+                        "0.4m",
+                        "0.5m",
+                        "0.6m",
+                        "0.7m",
+                        "0.8m",
+                        "0.9m",
+                        "1.0m",
+                        "1.1m",
+                        "1.2m",
+                        "1.3m",
+                        "1.4m",
+                        "1.5m",
+                        "1.6m",
+                        "1.7m",
+                        "1.8m",
+                        "1.9m",
+                        "2.0m",
+                        "2.1m",
+                        "2.2m",
+                        "2.3m",
+                        "2.4m",
+                        "2.5m",
+                        "2.6m",
+                        "2.7m",
+                        "2.8m",
+                        "2.9m",
+                        "3.0m",
+                        "3.1m",
+                        "3.2m",
+                        "3.3m",
+                        "3.4m",
+                        "3.5m",
+                        "3.6m",
+                        "3.7m",
+                        "3.8m",
+                        "3"
+                    ]
+                },
+                "type": "string"
+            },
+            "maxResults": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "0",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49"
+                    ]
+                },
+                "type": "integer"
+            },
+            "onBehalfOfContentOwner": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                }
+            },
+            "order": {
+                "type": "string"
+            },
+            "pageToken": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "part": {
+                "default": "snippet",
+                "type": "string"
+            },
+            "publishedAfter": {
+                "examples": {
+                    "provided": [
+                        "1970-01-01T00:00:00Z"
+                    ],
+                    "generated": [
+                        "2022-03-15T10:30:00Z",
+                        "2019-07-20T15:45:00Z",
+                        "2020-11-05T08:20:00Z",
+                        "2021-06-10T18:55:00Z",
+                        "2018-09-25T12:10:00Z",
+                        "2023-12-31T23:59:59Z",
+                        "2024-02-29T07:30:00Z",
+                        "2025-08-15T16:45:00Z",
+                        "2026-04-01T09:20:00Z",
+                        "2027-11-11T21:55:00Z",
+                        "2028-05-05T14:10:00Z",
+                        "2029-09-30T03:30:00Z",
+                        "2030-12-25T19:45:00Z",
+                        "2031-07-04T11:20:00Z",
+                        "2032-02-14T23:55:00Z",
+                        "2033-10-20T17:"
+                    ]
+                },
+                "type": "string",
+                "format": "date-time"
+            },
+            "publishedBefore": {
+                "examples": {
+                    "provided": [
+                        "1970-01-01T00:00:00Z"
+                    ],
+                    "generated": [
+                        "2022-12-31T23:59:59Z",
+                        "2022-01-01T00:00:00Z",
+                        "2022-06-15T12:30:00Z",
+                        "2023-03-10T08:45:00Z",
+                        "2023-11-20T18:00:00Z",
+                        "2024-09-05T03:15:00Z",
+                        "2024-04-30T21:20:00Z",
+                        "2025-02-14T15:30:00Z",
+                        "2025-10-25T09:45:00Z",
+                        "2026-07-01T06:00:00Z",
+                        "2026-12-31T23:59:59Z"
+                    ]
+                },
+                "type": "string",
+                "format": "date-time"
+            },
+            "q": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "boating",
+                        "sailing",
+                        "fishing",
+                        "swimming",
+                        "hiking",
+                        "camping",
+                        "biking",
+                        "skiing",
+                        "surfing",
+                        "kayaking"
+                    ]
+                },
+                "type": "string"
+            },
+            "regionCode": {
+                "minLength": "2",
+                "maxLength": "2",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "AFG",
+                        "ALA",
+                        "ALB",
+                        "DZA",
+                        "ASM",
+                        "AND",
+                        "AGO",
+                        "AIA",
+                        "ATA",
+                        "ATG",
+                        "ARG",
+                        "ARM",
+                        "ABW",
+                        "AUS",
+                        "AUT",
+                        "AZE",
+                        "BHS",
+                        "BHR",
+                        "BGD",
+                        "BRB",
+                        "BLR",
+                        "BEL",
+                        " BLZ",
+                        "BEN",
+                        "BMU",
+                        "BTN",
+                        "BOL",
+                        "BES",
+                        "BIH",
+                        "BWA",
+                        "BVT",
+                        "BRA",
+                        "IOT",
+                        "BRN",
+                        "BGR",
+                        "BFA",
+                        "BDI",
+                        "CPV",
+                        "KHM",
+                        "CMR",
+                        "CAN",
+                        "CYM",
+                        "CAF",
+                        "TCD",
+                        " CHL",
+                        "CHN",
+                        "CXR",
+                        "CCK",
+                        "COL",
+                        "COM",
+                        "COG",
+                        "COD",
+                        "COK",
+                        "CRI",
+                        "CIV",
+                        "HRV",
+                        "CUB",
+                        "CUW",
+                        "CYP",
+                        "CZE",
+                        "DNK",
+                        "DJI",
+                        "DMA",
+                        "DOM",
+                        "ECU",
+                        "EGY",
+                        " SLV",
+                        "GNQ",
+                        "ERI",
+                        "EST",
+                        "SWZ",
+                        "ETH",
+                        "FLK",
+                        "FRO",
+                        "FJI",
+                        "FIN",
+                        "FRA",
+                        "GUF",
+                        "PYF",
+                        "ATF",
+                        "GAB",
+                        "GMB",
+                        "GEO",
+                        "DEU",
+                        "GHA",
+                        "GIB",
+                        "GRC",
+                        "GRL",
+                        " GR"
+                    ]
+                },
+                "type": "string"
+            },
+            "relatedToVideoId": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "relevanceLanguage": {
+                "minLength": "2",
+                "examples": {
+                    "provided": [
+                        "zh-Hans",
+                        "zh-Hant"
+                    ],
+                    "generated": [
+                        "af",
+                        "sq",
+                        "am",
+                        "ar",
+                        "hy",
+                        "az",
+                        "eu",
+                        "be",
+                        "bn",
+                        "bs",
+                        "bg",
+                        "ca",
+                        "ceb",
+                        "ny",
+                        "zh-CN",
+                        "zh-TW",
+                        "co",
+                        "hr",
+                        "cs",
+                        "da",
+                        "nl",
+                        "en",
+                        "eo",
+                        "et",
+                        "tl",
+                        "fi",
+                        " fr",
+                        "fy",
+                        "gl",
+                        "ka",
+                        "de",
+                        "el",
+                        "gu",
+                        "ht",
+                        "ha",
+                        "haw",
+                        "iw",
+                        "hi",
+                        "hmn",
+                        "hu",
+                        "is",
+                        "ig",
+                        "id",
+                        "ga",
+                        "it",
+                        "ja",
+                        "jv",
+                        "kn",
+                        "kk",
+                        "km",
+                        "ko",
+                        "ku",
+                        "ky",
+                        "lo",
+                        " la",
+                        "lv",
+                        "lt",
+                        "lb",
+                        "mk",
+                        "mg",
+                        "ms",
+                        "ml",
+                        "mt",
+                        "mi",
+                        "mr",
+                        "mn",
+                        "my",
+                        "ne",
+                        "no",
+                        "or",
+                        "ps",
+                        "fa",
+                        "pl",
+                        "pt",
+                        "pa",
+                        "ro",
+                        "ru",
+                        "sm",
+                        "gd",
+                        "sr",
+                        "st",
+                        "sn",
+                        "sd",
+                        " si",
+                        "sk",
+                        "sl",
+                        "so",
+                        "es",
+                        "su",
+                        "sw",
+                        "sv",
+                        "tg",
+                        "ta",
+                        "te",
+                        "th",
+                        "tr",
+                        "uk",
+                        "ur",
+                        "ug",
+                        "uz",
+                        "vi",
+                        "cy",
+                        "xh",
+                        "yi",
+                        "yo",
+                        "zu"
+                    ]
+                },
+                "type": "string"
+            },
+            "safeSearch": {
+                "type": "boolean"
+            },
+            "topicId": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "type": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "video",
+                        "playlist",
+                        "channel",
+                        "user",
+                        "comment",
+                        "liveBroadcast",
+                        "guideCategory",
+                        "videoCategory",
+                        "subscription",
+                        "activity"
+                    ]
+                },
+                "type": "string"
+            },
+            "videoCaption": {
+                "x-dependencies": [
+                    "IF type=='video' THEN videoCaption;"
+                ],
+                "type": "string"
+            },
+            "videoCategoryId": {
+                "x-dependencies": [
+                    "IF type=='video' THEN videoCategoryId;"
+                ],
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "videoDefinition": {
+                "type": "string"
+            },
+            "videoDimension": {
+                "x-dependencies": [
+                    "IF type=='video' THEN OnlyOne(videoDimension=='2D' AND videoDimension=='3D');"
+                ],
+                "type": "string"
+            },
+            "videoDuration": {
+                "x-dependencies": [
+                    "IF type=='video' THEN videoDuration;"
+                ],
+                "type": "string"
+            },
+            "videoEmbeddable": {
+                "x-dependencies": [
+                    "IF videoEmbeddable THEN type=='video'"
+                ],
+                "type": "boolean"
+            },
+            "videoLicense": {
+                "type": "string"
+            },
+            "videoSyndicated": {
+                "x-dependencies": [
+                    "IF type=='video' THEN videoSyndicated;"
+                ],
+                "type": "boolean"
+            },
+            "videoType": {
+                "x-dependencies": [
+                    "IF videoType THEN type=='video'"
+                ],
+                "type": "string"
+            }
+        }
+    }
+}

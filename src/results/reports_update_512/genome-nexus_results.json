@@ -1,0 +1,1291 @@
+{
+    "/annotation": {
+        "post": {
+            "isoformOverrideSource": {
+                "examples": {
+                    "provided": [
+                        "uniprot"
+                    ],
+                    "generated": [
+                        "ensembl",
+                        "refseq",
+                        "genbank"
+                    ]
+                },
+                "type": "string"
+            },
+            "token": {
+                "minProperties": "1",
+                "examples": {
+                    "provided": [
+                        "put-your-token1-here",
+                        "put-your-token2-here"
+                    ],
+                    "generated": [
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
+                    ]
+                },
+                "type": "object"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "hotspots"
+                    ],
+                    "generated": []
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "request-body": {
+                "": {
+                    "examples": {
+                        "provided": [
+                            "X:g.66937331T>A",
+                            "17:g.41242962_41242963insGA"
+                        ],
+                        "generated": [
+                            "1:g.182712A>C",
+                            "2:g.265023C>T",
+                            "3:g.319781del",
+                            "19:g.110753dup",
+                            "1:g.1385015_1387562del"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/annotation/dbsnp/": {
+        "post": {
+            "isoformOverrideSource": {
+                "examples": {
+                    "provided": [
+                        "uniprot"
+                    ],
+                    "generated": [
+                        "ensembl",
+                        "refseq",
+                        "genbank"
+                    ]
+                },
+                "type": "string"
+            },
+            "token": {
+                "minProperties": "1",
+                "examples": {
+                    "provided": [
+                        "put-your-token1-here",
+                        "put-your-token2-here"
+                    ],
+                    "generated": [
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
+                    ]
+                },
+                "type": "object"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "annotation_summary"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "request-body": {
+                "": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "[\"rs116035550\"]"
+                        ],
+                        "generated": [
+                            "[\"rs116035551\"",
+                            "\"rs116035552\"",
+                            "\"rs116035553\"",
+                            "\"rs116035554\"",
+                            "\"rs116035555\"",
+                            "\"rs116035556\"",
+                            "\"rs116035557\"",
+                            "\"rs116035558\"",
+                            "\"rs116035559\"",
+                            "\"rs116035560\"]"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/annotation/dbsnp/{variantId}": {
+        "get": {
+            "variantId": {
+                "examples": {
+                    "provided": [
+                        "rs116035550"
+                    ],
+                    "generated": [
+                        "rs123456789",
+                        "rs987654321",
+                        "rs246813579"
+                    ]
+                },
+                "type": "string"
+            },
+            "isoformOverrideSource": {
+                "examples": {
+                    "provided": [
+                        "uniprot"
+                    ],
+                    "generated": [
+                        "ensembl",
+                        "refseq",
+                        "genbank"
+                    ]
+                },
+                "type": "string"
+            },
+            "token": {
+                "minProperties": "1",
+                "examples": {
+                    "provided": [
+                        "put-your-token1-here",
+                        "put-your-token2-here"
+                    ],
+                    "generated": [
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
+                    ]
+                },
+                "type": "object"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "annotation_summary"
+                    ],
+                    "generated": [
+                        "field1",
+                        "field2",
+                        "field3",
+                        "field4",
+                        "field5",
+                        "field6",
+                        "field7",
+                        "field8",
+                        "field9",
+                        "field10"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            }
+        }
+    },
+    "/annotation/genomic": {
+        "post": {
+            "isoformOverrideSource": {
+                "examples": {
+                    "provided": [
+                        "uniprot"
+                    ],
+                    "generated": [
+                        "ensembl",
+                        "refseq",
+                        "genbank"
+                    ]
+                },
+                "type": "string"
+            },
+            "token": {
+                "minProperties": "1",
+                "examples": {
+                    "provided": [
+                        "put-your-token1-here",
+                        "put-your-token2-here"
+                    ],
+                    "generated": [
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
+                    ]
+                },
+                "type": "object"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "hotspots"
+                    ],
+                    "generated": []
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "request-body": {
+                "": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": []
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/annotation/genomic/{genomicLocation}": {
+        "get": {
+            "genomicLocation": {
+                "examples": {
+                    "provided": [
+                        "7,140453136,140453136,A,T"
+                    ],
+                    "generated": [
+                        "1,100000000,200000000,G,C"
+                    ]
+                },
+                "type": "string"
+            },
+            "isoformOverrideSource": {
+                "examples": {
+                    "provided": [
+                        "uniprot"
+                    ],
+                    "generated": [
+                        "ensembl",
+                        "refseq",
+                        "genbank"
+                    ]
+                },
+                "type": "string"
+            },
+            "token": {
+                "minProperties": "1",
+                "examples": {
+                    "provided": [
+                        "put-your-token1-here",
+                        "put-your-token2-here"
+                    ],
+                    "generated": [
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
+                    ]
+                },
+                "type": "object"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "hotspots"
+                    ],
+                    "generated": []
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            }
+        }
+    },
+    "/annotation/{variant}": {
+        "get": {
+            "variant": {
+                "examples": {
+                    "provided": [
+                        "17:g.41242962_41242963insGA"
+                    ],
+                    "generated": [
+                        "1:g.12345678_12345679insAT",
+                        "2:g.23456789_23456790insCG",
+                        "3:g.34567890_34567891insTC",
+                        "4:g.45678901_45678902insGA",
+                        "5:g.56789012_56789013insAT",
+                        "6:g.67890123_67890124insCG",
+                        "7:g.78901234_78901235insTC",
+                        "8:g.89012345_89012346insGA",
+                        "9:g.90123456_90123457insAT",
+                        "10:g.01234567_01234568insCG"
+                    ]
+                },
+                "type": "string"
+            },
+            "isoformOverrideSource": {
+                "examples": {
+                    "provided": [
+                        "uniprot"
+                    ],
+                    "generated": [
+                        "ensembl",
+                        "refseq",
+                        "genbank"
+                    ]
+                },
+                "type": "string"
+            },
+            "token": {
+                "minProperties": "1",
+                "examples": {
+                    "provided": [
+                        "put-your-token1-here",
+                        "put-your-token2-here"
+                    ],
+                    "generated": [
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
+                    ]
+                },
+                "type": "object"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "hotspots"
+                    ],
+                    "generated": []
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            }
+        }
+    },
+    "/ensembl/canonical-gene/entrez": {
+        "post": {
+            "request-body": {
+                "": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "[\"23140\",\"26009\",\"100131879\"]"
+                        ],
+                        "generated": [
+                            "[\"12345\",\"67890\",\"98765\"]"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/ensembl/canonical-gene/entrez/{entrezGeneId}": {
+        "get": {
+            "entrezGeneId": {
+                "examples": {
+                    "provided": [
+                        "23140"
+                    ],
+                    "generated": [
+                        "100",
+                        "200",
+                        "300",
+                        "400",
+                        "500",
+                        "600",
+                        "700",
+                        "800",
+                        "900",
+                        "1000"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/ensembl/canonical-gene/hgnc": {
+        "post": {
+            "request-body": {
+                "": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "TP53",
+                            "PIK3CA",
+                            "BRCA1"
+                        ],
+                        "generated": [
+                            "EGFR",
+                            "KRAS",
+                            "PTEN",
+                            "AKT1",
+                            "CDKN2A",
+                            "MAPK1",
+                            "NOTCH1",
+                            "MET",
+                            "JAK2",
+                            "ALK",
+                            " BRAF",
+                            "NRAS",
+                            "RET",
+                            "ROS1",
+                            "ERBB2",
+                            "FGFR1",
+                            "FGFR2",
+                            "FGFR3",
+                            "KIT",
+                            "PDGFRA",
+                            "PDGFRB",
+                            "DDR2",
+                            "NTRK1",
+                            "NTRK2",
+                            "NTRK3",
+                            " ABL1",
+                            "ABL2",
+                            "EGFRvIII",
+                            "EGFRvIV",
+                            "EGFRvV",
+                            "EGFRvVI",
+                            "EGFRvVII",
+                            "EGFRvVIII",
+                            "EGFRvIX",
+                            "EGFRvX",
+                            "EGFRvXI",
+                            "EGFRvXII",
+                            " EGFRvXIII",
+                            "EGFRvXIV",
+                            "EGFRvXV",
+                            "EGFRvXVI",
+                            "EGFRvXVII",
+                            "EGFRvXVIII",
+                            "EGFRvXIX",
+                            "EGFRvXX",
+                            "EGFRvXXI",
+                            "EGFRvXXII",
+                            " EGFRvXXIII",
+                            "EGFRvXXIV",
+                            "EGFRvXXV"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/ensembl/canonical-gene/hgnc/{hugoSymbol}": {
+        "get": {
+            "hugoSymbol": {
+                "minLength": "1",
+                "examples": {
+                    "provided": [
+                        "TP53"
+                    ],
+                    "generated": [
+                        "ABCD",
+                        "EFGH",
+                        "IJKL",
+                        "MNOP",
+                        "QRST",
+                        "UVWX",
+                        "YZAB",
+                        "CDEF",
+                        "GHIJ",
+                        "KLMN",
+                        "OPQR",
+                        "STUV",
+                        "WXYZ"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/ensembl/canonical-transcript/hgnc": {
+        "post": {
+            "isoformOverrideSource": {
+                "examples": {
+                    "provided": [
+                        "uniprot"
+                    ],
+                    "generated": [
+                        "ensembl",
+                        "refseq",
+                        "genbank"
+                    ]
+                },
+                "type": "string"
+            },
+            "request-body": {
+                "": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "TP53",
+                            "PIK3CA",
+                            "BRCA1"
+                        ],
+                        "generated": [
+                            "EGFR",
+                            "KRAS",
+                            "PTEN",
+                            "AKT1",
+                            "CDKN2A",
+                            "MAPK1",
+                            "NOTCH1",
+                            "MET",
+                            "JAK2",
+                            "ALK",
+                            " BRAF",
+                            "NRAS",
+                            "RET",
+                            "ROS1",
+                            "ERBB2",
+                            "FGFR1",
+                            "FGFR2",
+                            "FGFR3",
+                            "KIT",
+                            "PDGFRA",
+                            "PDGFRB",
+                            "DDR2",
+                            "NTRK1",
+                            "NTRK2",
+                            "NTRK3",
+                            " ABL1",
+                            "ABL2",
+                            "EGFRvIII",
+                            "EGFRvIV",
+                            "EGFRvV",
+                            "EGFRvVI",
+                            "EGFRvVII",
+                            "EGFRvVIII",
+                            "EGFRvIX",
+                            "EGFRvX",
+                            "EGFRvXI",
+                            "EGFRvXII",
+                            " EGFRvXIII",
+                            "EGFRvXIV",
+                            "EGFRvXV",
+                            "EGFRvXVI",
+                            "EGFRvXVII",
+                            "EGFRvXVIII",
+                            "EGFRvXIX",
+                            "EGFRvXX",
+                            "EGFRvXXI",
+                            "EGFRvXXII",
+                            " EGFRvXXIII",
+                            "EGFRvXXIV",
+                            "EGFRvXXV"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/ensembl/canonical-transcript/hgnc/{hugoSymbol}": {
+        "get": {
+            "hugoSymbol": {
+                "minLength": "1",
+                "examples": {
+                    "provided": [
+                        "TP53"
+                    ],
+                    "generated": [
+                        "ABCD",
+                        "EFGH",
+                        "IJKL",
+                        "MNOP",
+                        "QRST",
+                        "UVWX",
+                        "YZAB",
+                        "CDEF",
+                        "GHIJ",
+                        "KLMN",
+                        "OPQR",
+                        "STUV",
+                        "WXYZ"
+                    ]
+                },
+                "type": "string"
+            },
+            "isoformOverrideSource": {
+                "examples": {
+                    "provided": [
+                        "uniprot"
+                    ],
+                    "generated": [
+                        "ensembl",
+                        "refseq",
+                        "genbank"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/ensembl/transcript": {
+        "get": {
+            "geneId": {
+                "minLength": "18",
+                "maxLength": "18",
+                "examples": {
+                    "provided": [
+                        "ENSG00000136999"
+                    ],
+                    "generated": [
+                        "ENSG00000123456",
+                        "ENSG00000198765",
+                        "ENSG00000154321",
+                        "ENSG00000187654",
+                        "ENSG00000109876"
+                    ]
+                },
+                "type": "string"
+            },
+            "proteinId": {
+                "minLength": "17",
+                "maxLength": "17",
+                "examples": {
+                    "provided": [
+                        "ENSP00000439985"
+                    ],
+                    "generated": [
+                        "ENSP00000123456",
+                        "ENSP00000234567",
+                        "ENSP00000345678",
+                        "ENSP00000456789",
+                        "ENSP00000567890",
+                        "ENSP00000678901",
+                        "ENSP00000789012",
+                        "ENSP00000890123",
+                        "ENSP00000901234",
+                        "ENSP00001012345",
+                        "ENSP00001123456",
+                        "ENSP00001234567",
+                        "ENSP00001345678",
+                        "ENSP00001456789",
+                        "ENSP00001567890",
+                        "ENSP00001678901",
+                        "ENSP00001789012",
+                        "ENSP00001890123",
+                        "ENSP00001901234",
+                        "ENSP00002012345"
+                    ]
+                },
+                "type": "string"
+            },
+            "hugoSymbol": {
+                "minLength": "1",
+                "examples": {
+                    "provided": [
+                        "ARF5"
+                    ],
+                    "generated": [
+                        "ABC1",
+                        "XYZ9",
+                        "DEF2",
+                        "GHI3",
+                        "JKL4"
+                    ]
+                },
+                "type": "string"
+            }
+        },
+        "post": {
+            "request-body": {
+                "geneIds": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "ENSG00000136999",
+                            "ENSG00000272398",
+                            "ENSG00000198695"
+                        ],
+                        "generated": [
+                            "ENSG00000123456",
+                            "ENSG00000234567",
+                            "ENSG00000345678",
+                            "ENSG00000456789",
+                            "ENSG00000567890"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                },
+                "hugoSymbols": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "TP53",
+                            "PIK3CA",
+                            "BRCA1"
+                        ],
+                        "generated": [
+                            "EGFR",
+                            "KRAS",
+                            "PTEN",
+                            "AKT1",
+                            "CDKN2A",
+                            "MET",
+                            "HER2",
+                            "ALK",
+                            "RET",
+                            "ROS1",
+                            "BRAF",
+                            "FGFR1",
+                            "ERBB2",
+                            "NRAS",
+                            "MAP2K1",
+                            " PIK3R1",
+                            "NOTCH1",
+                            "JAK2",
+                            "SMAD4",
+                            "IDH1",
+                            "KIT",
+                            "PDGFRA",
+                            "EGFRvIII",
+                            "NTRK1",
+                            "DDR2",
+                            "FGFR2",
+                            "FGFR3",
+                            "FGFR4",
+                            "ERBB4",
+                            "ERBB3",
+                            "ERBB1",
+                            " ALK-EML4",
+                            "EML4-ALK",
+                            "ROS1-CD74",
+                            "CD74-ROS1",
+                            "NPM1-ALK",
+                            "ALK-NPM1",
+                            "TPM3-ALK",
+                            "ALK-TPM3",
+                            "TFG-ALK",
+                            "ALK-TFG",
+                            "KIF5B-ALK",
+                            "ALK-KIF5B",
+                            " TFG-ROS1",
+                            "ROS1-TFG",
+                            "SLC34A2-ROS1",
+                            "ROS1-SLC34A2"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                },
+                "proteinIds": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "ENSP00000439985",
+                            "ENSP00000478460",
+                            "ENSP00000346196"
+                        ],
+                        "generated": [
+                            "ENSP00000123456",
+                            "ENSP00000234567",
+                            "ENSP00000345678",
+                            "ENSP00000456789",
+                            "ENSP00000567890",
+                            "ENSP00000678901",
+                            "ENSP00000789012",
+                            "ENSP00000890123",
+                            "ENSP00000901234",
+                            "ENSP00001012345"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                },
+                "transcriptIds": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "ENST00000361390",
+                            "ENST00000361453",
+                            "ENST00000361624"
+                        ],
+                        "generated": [
+                            "ENST00000361391",
+                            "ENST00000361454",
+                            "ENST00000361625",
+                            "ENST00000361392",
+                            "ENST00000361455",
+                            "ENST00000361626",
+                            "ENST00000361393",
+                            "ENST00000361456",
+                            "ENST00000361627",
+                            "ENST00000361394",
+                            "ENST00000361457",
+                            "ENST00000361628",
+                            "ENST00000361395",
+                            "ENST00000361458",
+                            "ENST00000361629",
+                            "ENST00000361396",
+                            "ENST00000361459",
+                            "ENST00000361630",
+                            "ENST00000361397",
+                            "ENST00000361460",
+                            "ENST00000361631",
+                            "ENST00000361398",
+                            "ENST00000361461",
+                            "ENST00000361632",
+                            "ENST00000361399",
+                            "ENST00000361462",
+                            "ENST00000361633",
+                            "ENST00000361400",
+                            "ENST00000361463",
+                            "ENST00000361634",
+                            "ENST00000361401",
+                            "ENST00000361464",
+                            "ENST000003616"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/ensembl/transcript/{transcriptId}": {
+        "get": {
+            "transcriptId": {
+                "minLength": "17",
+                "maxLength": "17",
+                "examples": {
+                    "provided": [
+                        "ENST00000361390"
+                    ],
+                    "generated": [
+                        "ENST00000361391",
+                        "ENST00000361392",
+                        "ENST00000361393",
+                        "ENST00000361394",
+                        "ENST00000361395",
+                        "ENST00000361396",
+                        "ENST00000361397",
+                        "ENST00000361398",
+                        "ENST00000361399",
+                        "ENST00000361400",
+                        "ENST00000361401",
+                        "ENST00000361402",
+                        "ENST00000361403",
+                        "ENST00000361404",
+                        "ENST00000361405",
+                        "ENST00000361406",
+                        "ENST00000361407",
+                        "ENST00000361408",
+                        "ENST00000361409",
+                        "ENST00000361410",
+                        "ENST00000361411",
+                        "ENST00000361412",
+                        "ENST00000361413",
+                        "ENST00000361414",
+                        "ENST00000361415",
+                        "ENST00000361416",
+                        "ENST00000361417",
+                        "ENST00000361418",
+                        "ENST00000361419",
+                        "ENST00000361420",
+                        "ENST00000361421",
+                        "ENST00000361422",
+                        "ENST00000361423",
+                        "ENST00000361424",
+                        "ENST000003614"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/ensembl/xrefs": {
+        "get": {
+            "accession": {
+                "minLength": "1",
+                "examples": {
+                    "provided": [
+                        "ENSG00000169083"
+                    ],
+                    "generated": [
+                        "ENSG00000123456",
+                        "ENSG00000198765",
+                        "ENSG00000123457",
+                        "ENSG00000198766",
+                        "ENSG00000123458",
+                        "ENSG00000198767",
+                        "ENSG00000123459",
+                        "ENSG00000198768",
+                        "ENSG00000123460",
+                        "ENSG00000198769"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/pdb/header": {
+        "post": {
+            "request-body": {
+                "": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "[\"1a37\",\"1a4o\"]"
+                        ],
+                        "generated": [
+                            "[\"1a38\",\"1a4p\",\"1a4q\",\"1a4r\",\"1a4s\",\"1a4t\",\"1a4u\",\"1a4v\",\"1a4w\",\"1a4x\",\"1a4y\",\"1a4z\",\"1a50\",\"1a51\",\"1a52\",\"1a53\",\"1a54\",\"1a55\",\"1a56\",\"1a57\",\"1a58\",\"1a59\",\"1a5a\",\"1a5b\",\"1a5c\",\"1a5d\",\"1a5e\",\"1a5f\",\"1a5g\",\"1a5h\",\"1a5i\",\"1a5j\",\"1a5k\",\"1a5l\",\"1a5m\",\"1a5n\",\"1a5o\",\"1a5p\",\"1a5q\",\"1a5r\",\"1a5s\",\"1a5t\",\"1a5u\",\"1a5v\",\"1a5w\",\"1a5x\",\"1a5y\",\"1a5z\"]"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/pdb/header/{pdbId}": {
+        "get": {
+            "pdbId": {
+                "minLength": "4",
+                "maxLength": "4",
+                "examples": {
+                    "provided": [
+                        "1a37"
+                    ],
+                    "generated": [
+                        "0a00",
+                        "0a01",
+                        "0a02",
+                        "0a03",
+                        "0a04",
+                        "0a05",
+                        "0a06",
+                        "0a07",
+                        "0a08",
+                        "0a09",
+                        "0a10",
+                        "0a11",
+                        "0a12",
+                        "0a13",
+                        "0a14",
+                        "0a15",
+                        "0a16",
+                        "0a17",
+                        "0a18",
+                        "0a19",
+                        "0a20",
+                        "0a21",
+                        "0a22",
+                        "0a23",
+                        "0a24",
+                        "0a25",
+                        "0a26",
+                        "0a27",
+                        "0a28",
+                        "0a29",
+                        "0a30",
+                        "0a31",
+                        "0a32",
+                        "0a33",
+                        "0a34",
+                        "0a35",
+                        "0a36",
+                        "0a37",
+                        "0a38",
+                        "0a39",
+                        "0a40",
+                        "0a41",
+                        "0a42",
+                        "0a43",
+                        "0a44",
+                        "0a45",
+                        "0a46",
+                        "0a47",
+                        "0a48,"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/pfam/domain": {
+        "post": {
+            "request-body": {
+                "": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "PF02827",
+                            "PF00093",
+                            "PF15276"
+                        ],
+                        "generated": [
+                            "PF00001",
+                            "PF00002",
+                            "PF00003",
+                            "PF00004",
+                            "PF00005",
+                            "PF00006",
+                            "PF00007",
+                            "PF00008",
+                            "PF00009",
+                            "PF00010",
+                            "PF00011",
+                            "PF00012",
+                            "PF00013",
+                            "PF00014",
+                            "PF00015",
+                            "PF00016",
+                            "PF00017",
+                            "PF00018",
+                            "PF00019",
+                            "PF00020",
+                            "PF00021",
+                            "PF00022",
+                            "PF00023",
+                            "PF00024",
+                            "PF00025",
+                            "PF00026",
+                            "PF00027",
+                            "PF00028",
+                            "PF00029",
+                            "PF00030",
+                            "PF00031",
+                            "PF00032",
+                            "PF00033",
+                            "PF00034",
+                            "PF00035",
+                            "PF00036",
+                            "PF00037",
+                            "PF00038",
+                            "PF00039",
+                            "PF00040",
+                            "PF00041",
+                            "PF00042",
+                            "PF00043",
+                            "PF00044",
+                            "PF00045",
+                            "PF00046",
+                            "PF00047",
+                            "PF00048",
+                            "PF00049",
+                            "PF00050",
+                            "PF00051",
+                            "PF00052",
+                            "PF00053",
+                            "PF00054",
+                            "PF00055",
+                            "PF00056",
+                            "PF00057",
+                            "PF00058",
+                            "PF00059",
+                            "PF000"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/pfam/domain/{pfamAccession}": {
+        "get": {
+            "pfamAccession": {
+                "examples": {
+                    "provided": [
+                        "PF02827"
+                    ],
+                    "generated": [
+                        "PF00001",
+                        "PF00002",
+                        "PF00003",
+                        "PF00004",
+                        "PF00005",
+                        "PF00006",
+                        "PF00007",
+                        "PF00008",
+                        "PF00009",
+                        "PF00010",
+                        "PF00011",
+                        "PF00012",
+                        "PF00013",
+                        "PF00014",
+                        "PF00015",
+                        "PF00016",
+                        "PF00017",
+                        "PF00018",
+                        "PF00019",
+                        "PF00020",
+                        "PF00021",
+                        "PF00022",
+                        "PF00023",
+                        "PF00024",
+                        "PF00025",
+                        "PF00026",
+                        "PF00027",
+                        "PF00028",
+                        "PF00029",
+                        "PF00030",
+                        "PF00031",
+                        "PF00032",
+                        "PF00033",
+                        "PF00034",
+                        "PF00035",
+                        "PF00036",
+                        "PF00037",
+                        "PF00038",
+                        "PF00039",
+                        "PF00040",
+                        "PF00041",
+                        "PF00042",
+                        "PF00043",
+                        "PF00044",
+                        "PF00045",
+                        "PF00046",
+                        "PF00047",
+                        "PF00048",
+                        "PF00049",
+                        "PF00050"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/ptm/experimental": {
+        "get": {
+            "ensemblTranscriptId": {
+                "minLength": "14",
+                "maxLength": "14",
+                "examples": {
+                    "provided": [
+                        "ENST00000646891"
+                    ],
+                    "generated": [
+                        "ENST00000345678",
+                        "ENST00000987654",
+                        "ENST00000123456",
+                        "ENST00000543210",
+                        "ENST00000765432"
+                    ]
+                },
+                "type": "string"
+            }
+        },
+        "post": {
+            "request-body": {
+                "transcriptIds": {
+                    "minItems": "1",
+                    "examples": {
+                        "provided": [
+                            "ENST00000361390",
+                            "ENST00000361453",
+                            "ENST00000361624"
+                        ],
+                        "generated": [
+                            "ENST00000361391",
+                            "ENST00000361454",
+                            "ENST00000361625",
+                            "ENST00000361392",
+                            "ENST00000361455",
+                            "ENST00000361626",
+                            "ENST00000361393",
+                            "ENST00000361456",
+                            "ENST00000361627",
+                            "ENST00000361394",
+                            "ENST00000361457",
+                            "ENST00000361628",
+                            "ENST00000361395",
+                            "ENST00000361458",
+                            "ENST00000361629",
+                            "ENST00000361396",
+                            "ENST00000361459",
+                            "ENST00000361630",
+                            "ENST00000361397",
+                            "ENST00000361460",
+                            "ENST00000361631",
+                            "ENST00000361398",
+                            "ENST00000361461",
+                            "ENST00000361632",
+                            "ENST00000361399",
+                            "ENST00000361462",
+                            "ENST00000361633",
+                            "ENST00000361400",
+                            "ENST00000361463",
+                            "ENST00000361634",
+                            "ENST00000361401",
+                            "ENST00000361464",
+                            "ENST000003616"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "string"
+                }
+            }
+        }
+    },
+    "/version": {
+        "get": {}
+    }
+}

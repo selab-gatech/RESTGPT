@@ -1,0 +1,1351 @@
+{
+    "/me": {
+        "get": {}
+    },
+    "/me/playlists": {
+        "get": {
+            "limit": {
+                "min": "1",
+                "max": "50",
+                "default": "20",
+                "x-dependencies": [
+                    "REQUIRED: limit"
+                ],
+                "examples": {
+                    "provided": [
+                        "Default: 20"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "min": "0",
+                "max": "100000",
+                "default": "0",
+                "x-dependencies": [
+                    "offset >= 0 AND offset <= 100000"
+                ],
+                "examples": {
+                    "provided": [
+                        "0"
+                    ],
+                    "generated": [
+                        "-100000",
+                        "-99999",
+                        "-99998",
+                        "-99997",
+                        "-99996",
+                        "-99995",
+                        "-99994",
+                        "-99993",
+                        "-99992",
+                        "-99991",
+                        "-99990",
+                        "-99989",
+                        "-99988",
+                        "-99987",
+                        "-99986",
+                        "-99985",
+                        "-99984",
+                        "-99983",
+                        "-99982",
+                        "-99981",
+                        "-99980",
+                        "-99979",
+                        "-99978",
+                        "-99977",
+                        "-99976",
+                        "-99975",
+                        "-99974",
+                        "-99973",
+                        "-99972",
+                        "-99971",
+                        "-99970",
+                        "-99969",
+                        "-99968",
+                        "-99967",
+                        "-99966",
+                        "-99965",
+                        "-99964",
+                        "-99963",
+                        "-99962",
+                        "-99961",
+                        "-99960",
+                        "-99959",
+                        "-99958",
+                        "-99957",
+                        "-99956",
+                        "-99955",
+                        "-99954",
+                        "-99953",
+                        "-99952",
+                        "-99951",
+                        "-99950",
+                        "-99949",
+                        "-99948",
+                        "-99947",
+                        "-99946",
+                        "-99945",
+                        "-99944",
+                        "-99943",
+                        "-99942",
+                        "-99941",
+                        "-99940",
+                        "-99939"
+                    ]
+                },
+                "type": "integer"
+            }
+        }
+    },
+    "/playlists/{playlist_id}": {
+        "get": {
+            "playlist_id": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "market": {
+                "minLength": "2",
+                "examples": {
+                    "provided": [
+                        "from_token"
+                    ],
+                    "generated": [
+                        "AFG",
+                        "ALA",
+                        "ALB",
+                        "DZA",
+                        "ASM",
+                        "AND",
+                        "AGO",
+                        "AIA",
+                        "ATA",
+                        "ATG",
+                        "ARG",
+                        "ARM",
+                        "ABW",
+                        "AUS",
+                        "AUT",
+                        "AZE",
+                        "BHS",
+                        "BHR",
+                        "BGD",
+                        "BRB",
+                        "BLR",
+                        "BEL",
+                        " BLZ",
+                        "BEN",
+                        "BMU",
+                        "BTN",
+                        "BOL",
+                        "BES",
+                        "BIH",
+                        "BWA",
+                        "BVT",
+                        "BRA",
+                        "IOT",
+                        "BRN",
+                        "BGR",
+                        "BFA",
+                        "BDI",
+                        "CPV",
+                        "KHM",
+                        "CMR",
+                        "CAN",
+                        "CYM",
+                        "CAF",
+                        "TCD",
+                        " CHL",
+                        "CHN",
+                        "CXR",
+                        "CCK",
+                        "COL",
+                        "COM",
+                        "COG",
+                        "COD",
+                        "COK",
+                        "CRI",
+                        "CIV",
+                        "HRV",
+                        "CUB",
+                        "CUW",
+                        "CYP",
+                        "CZE",
+                        "DNK",
+                        "DJI",
+                        "DMA",
+                        "DOM",
+                        "ECU",
+                        "EGY",
+                        " SLV",
+                        "GNQ",
+                        "ERI",
+                        "EST",
+                        "SWZ",
+                        "ETH",
+                        "FLK",
+                        "FRO",
+                        "FJI",
+                        "FIN",
+                        "FRA",
+                        "GUF",
+                        "PYF",
+                        "ATF",
+                        "GAB",
+                        "GMB",
+                        "GEO",
+                        "DEU",
+                        "GHA",
+                        "GIB",
+                        "GRC",
+                        "GRL,"
+                    ]
+                },
+                "type": "string"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "fields",
+                        "description",
+                        "uri",
+                        "tracks.items",
+                        "added_at",
+                        "added_by.id",
+                        "track(name,href,album(name,href))",
+                        "album(!name,href)"
+                    ]
+                },
+                "type": "string"
+            },
+            "additional_types": {
+                "examples": {
+                    "provided": [
+                        "track",
+                        "episode"
+                    ],
+                    "generated": [
+                        "movie",
+                        "podcast",
+                        "audiobook",
+                        "playlist",
+                        "live performance"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            }
+        },
+        "put": {
+            "playlist_id": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "request-body": {
+                "collaborative": {
+                    "default": "true",
+                    "examples": {
+                        "provided": [
+                            "true"
+                        ],
+                        "generated": [
+                            "false"
+                        ]
+                    },
+                    "type": "boolean"
+                },
+                "description": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": []
+                    },
+                    "type": "string"
+                },
+                "name": {
+                    "minLength": "1",
+                    "examples": {
+                        "provided": [
+                            "\"My New Playlist Title\""
+                        ],
+                        "generated": [
+                            "\"My Playlist\"",
+                            "\"New Hits\"",
+                            "\"Favorite Jams\"",
+                            "\"Ultimate Playlist\"",
+                            "\"Top Tracks\""
+                        ]
+                    },
+                    "type": "string"
+                },
+                "public": {
+                    "examples": {
+                        "provided": [
+                            "true",
+                            "false"
+                        ],
+                        "generated": [
+                            "true",
+                            "false"
+                        ]
+                    },
+                    "type": "boolean"
+                }
+            }
+        }
+    },
+    "/playlists/{playlist_id}/images": {
+        "get": {
+            "playlist_id": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/playlists/{playlist_id}/tracks": {
+        "delete": {
+            "playlist_id": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "request-body": {
+                "snapshot_id": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": []
+                    },
+                    "type": "string"
+                },
+                "tracks": {
+                    "maxItems": "100",
+                    "examples": {
+                        "provided": [
+                            "{ \"tracks\": [{ \"uri\": \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\" },{ \"uri\": \"spotify:track:1301WleyT98MSxVHPZCA6M\" }] }"
+                        ],
+                        "generated": [
+                            "{ \"tracks\": [{ \"uri\": \"spotify:track:1Bc1f2XvXf6Ej3F6f9lk7R\" },{ \"uri\": \"spotify:track:2CdH8Xs3GF2jxRk8UOg5y3\" }] }",
+                            "{ \"tracks\": [{ \"uri\": \"spotify:track:3DcBtXx9z4X0Wv3vZD3q8x\" },{ \"uri\": \"spotify:track:4DcBtXx9z4X0Wv3vZD3q8x\" }] }",
+                            "{ \"tracks\": [{ \"uri\": \"spotify:track:5DcBtXx9z4X0Wv3vZD3q8x\" },{ \"uri\": \"spotify:track:6DcBtXx9z4"
+                        ]
+                    },
+                    "type": "array",
+                    "items": "object"
+                }
+            }
+        },
+        "get": {
+            "playlist_id": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "market": {
+                "minLength": "2",
+                "examples": {
+                    "provided": [
+                        "from_token"
+                    ],
+                    "generated": [
+                        "AFG",
+                        "ALA",
+                        "ALB",
+                        "DZA",
+                        "ASM",
+                        "AND",
+                        "AGO",
+                        "AIA",
+                        "ATA",
+                        "ATG",
+                        "ARG",
+                        "ARM",
+                        "ABW",
+                        "AUS",
+                        "AUT",
+                        "AZE",
+                        "BHS",
+                        "BHR",
+                        "BGD",
+                        "BRB",
+                        "BLR",
+                        "BEL",
+                        " BLZ",
+                        "BEN",
+                        "BMU",
+                        "BTN",
+                        "BOL",
+                        "BES",
+                        "BIH",
+                        "BWA",
+                        "BVT",
+                        "BRA",
+                        "IOT",
+                        "BRN",
+                        "BGR",
+                        "BFA",
+                        "BDI",
+                        "CPV",
+                        "KHM",
+                        "CMR",
+                        "CAN",
+                        "CYM",
+                        "CAF",
+                        "TCD",
+                        " CHL",
+                        "CHN",
+                        "CXR",
+                        "CCK",
+                        "COL",
+                        "COM",
+                        "COG",
+                        "COD",
+                        "COK",
+                        "CRI",
+                        "CIV",
+                        "HRV",
+                        "CUB",
+                        "CUW",
+                        "CYP",
+                        "CZE",
+                        "DNK",
+                        "DJI",
+                        "DMA",
+                        "DOM",
+                        "ECU",
+                        "EGY",
+                        " SLV",
+                        "GNQ",
+                        "ERI",
+                        "EST",
+                        "SWZ",
+                        "ETH",
+                        "FLK",
+                        "FRO",
+                        "FJI",
+                        "FIN",
+                        "FRA",
+                        "GUF",
+                        "PYF",
+                        "ATF",
+                        "GAB",
+                        "GMB",
+                        "GEO",
+                        "DEU",
+                        "GHA",
+                        "GIB",
+                        "GRC",
+                        "GRL,"
+                    ]
+                },
+                "type": "string"
+            },
+            "fields": {
+                "examples": {
+                    "provided": [
+                        "fields=total,limit",
+                        "fields=items(added_at,added_by.id)",
+                        "fields=items(track(name,href,album(name,href)))",
+                        "fields=items.track.album(!external_urls,images)"
+                    ],
+                    "generated": [
+                        "fields=items(track(name,href,album(name,href)))"
+                    ]
+                },
+                "type": "string"
+            },
+            "limit": {
+                "min": "1",
+                "max": "100",
+                "default": "100",
+                "x-dependencies": [
+                    "REQUIRED: limit"
+                ],
+                "examples": {
+                    "provided": [
+                        "Default: 100"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "20",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "default": "0",
+                "examples": {
+                    "provided": [
+                        "0"
+                    ],
+                    "generated": [
+                        "-1",
+                        "-2",
+                        "-3",
+                        "-4",
+                        "-5",
+                        "-6",
+                        "-7",
+                        "-8",
+                        "-9",
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9"
+                    ]
+                },
+                "type": "integer"
+            },
+            "additional_types": {
+                "examples": {
+                    "provided": [
+                        "track",
+                        "episode"
+                    ],
+                    "generated": [
+                        "movie",
+                        "podcast",
+                        "audiobook",
+                        "playlist",
+                        "live performance"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            }
+        },
+        "post": {
+            "playlist_id": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "position": {
+                "examples": {
+                    "provided": [
+                        "position=0",
+                        "position=2"
+                    ],
+                    "generated": [
+                        "position=1",
+                        "position=3",
+                        "position=4",
+                        "position=5",
+                        "position=6",
+                        "position=7",
+                        "position=8",
+                        "position=9",
+                        "position=10",
+                        "position=11",
+                        "position=12",
+                        "position=13",
+                        "position=14",
+                        "position=15",
+                        "position=16",
+                        "position=17",
+                        "position=18",
+                        "position=19",
+                        "position=20",
+                        "position=21",
+                        "position=22",
+                        "position=23",
+                        "position=24",
+                        "position=25",
+                        "position=26",
+                        "position=27",
+                        "position=28",
+                        "position=29",
+                        "position=30",
+                        "position=31",
+                        "position=32",
+                        "position=33",
+                        "position=34",
+                        "position=35",
+                        "position=36",
+                        "position=37",
+                        "position=38",
+                        "position=39",
+                        "position=40",
+                        "position=41",
+                        "position=42",
+                        "position=43",
+                        "position=44",
+                        "position=45",
+                        "position=46",
+                        "position=47",
+                        "position=48",
+                        "position=49"
+                    ]
+                },
+                "type": "object"
+            },
+            "uris": {
+                "maxItems": "100",
+                "examples": {
+                    "provided": [
+                        "spotify:track:4iV5W9uYEdYUVa79Axb7Rh",
+                        "spotify:track:1301WleyT98MSxVHPZCA6M",
+                        "spotify:episode:512ojhOuo1ktJprKbVcKyQ"
+                    ],
+                    "generated": [
+                        "spotify:track:1xznGGDReH1oQq0xzbwXa3",
+                        "spotify:track:2yjJWw3P1j5X4F3j5w6w4W",
+                        "spotify:episode:3z1jX2uX0a3y4F3y4w6y4W",
+                        "spotify:track:4z1zGGDReH1oQq0xzbwXa3",
+                        "spotify:track:5yjJWw3P1j5X4F3j5w6w4W",
+                        "spotify:episode:6z1jX2uX0a3y4F3y4w6y4W",
+                        "spotify:track:7z1zGGDReH1oQq0xzbwXa3",
+                        "spotify:track:8yjJWw"
+                    ]
+                },
+                "type": "object"
+            }
+        },
+        "put": {
+            "playlist_id": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
+            },
+            "uris": {
+                "maxItems": "100",
+                "examples": {
+                    "provided": [
+                        "spotify:track:4iV5W9uYEdYUVa79Axb7Rh",
+                        "spotify:track:1301WleyT98MSxVHPZCA6M",
+                        "spotify:episode:512ojhOuo1ktJprKbVcKyQ"
+                    ],
+                    "generated": [
+                        "spotify:track:7xGfFoTpQ2E7fRF5lN10tr",
+                        "spotify:track:2VvzFJ6vY7ZxYzR2lWxYh7",
+                        "spotify:episode:3oFVX6Ozv4j3jgUkW0Rl8K",
+                        "spotify:track:6N6tiFZ9vLTSOIxkj8qKrd",
+                        "spotify:track:1rfofaqEpACxVEHIZBJe6W",
+                        "spotify:episode:0wz9j8s5YkWz0q6f4Hf1aX",
+                        "spotify:track:3tjFYV6RSFtuktYl3ZtYcq",
+                        "spotify:track:4u7EnebtmKWzUH433cf5Qv",
+                        "spotify"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "format": "uri",
+                "collectionFormat": "csv"
+            },
+            "request-body": {
+                "insert_before": {
+                    "examples": {
+                        "provided": [
+                            "0",
+                            "10"
+                        ],
+                        "generated": [
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "11",
+                            "12",
+                            "13",
+                            "14",
+                            "15",
+                            "16",
+                            "17",
+                            "18",
+                            "19",
+                            "20",
+                            "21",
+                            "22",
+                            "23",
+                            "24",
+                            "25",
+                            "26",
+                            "27",
+                            "28",
+                            "29",
+                            "30",
+                            "31",
+                            "32",
+                            "33",
+                            "34",
+                            "35",
+                            "36",
+                            "37",
+                            "38",
+                            "39",
+                            "40",
+                            "41",
+                            "42",
+                            "43",
+                            "44",
+                            "45",
+                            "46",
+                            "47",
+                            "48",
+                            "49"
+                        ]
+                    },
+                    "type": "integer"
+                },
+                "range_length": {
+                    "default": "1",
+                    "examples": {
+                        "provided": [
+                            "range_start=9",
+                            "range_length=2"
+                        ],
+                        "generated": [
+                            "range_start=0",
+                            "range_length=1",
+                            "range_start=5",
+                            "range_length=3",
+                            "range_start=15",
+                            "range_length=4"
+                        ]
+                    },
+                    "type": "number"
+                },
+                "range_start": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": [
+                            "0",
+                            "1",
+                            "2",
+                            "3",
+                            "4",
+                            "5",
+                            "6",
+                            "7",
+                            "8",
+                            "9",
+                            "10",
+                            "11",
+                            "12",
+                            "13",
+                            "14",
+                            "15",
+                            "16",
+                            "17",
+                            "18",
+                            "19",
+                            "20",
+                            "21",
+                            "22",
+                            "23",
+                            "24",
+                            "25",
+                            "26",
+                            "27",
+                            "28",
+                            "29",
+                            "30",
+                            "31",
+                            "32",
+                            "33",
+                            "34",
+                            "35",
+                            "36",
+                            "37",
+                            "38",
+                            "39",
+                            "40",
+                            "41",
+                            "42",
+                            "43",
+                            "44",
+                            "45",
+                            "46",
+                            "47",
+                            "48",
+                            "49"
+                        ]
+                    },
+                    "type": "integer"
+                },
+                "snapshot_id": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": []
+                    },
+                    "type": "string"
+                }
+            }
+        }
+    },
+    "/search": {
+        "get": {
+            "q": {
+                "examples": {
+                    "provided": [
+                        "roadhouse blues"
+                    ],
+                    "generated": [
+                        "hotel california",
+                        "stairway to heaven",
+                        "bohemian rhapsody",
+                        "imagine",
+                        "hey jude",
+                        "like a rolling stone",
+                        "let it be",
+                        "satisfaction",
+                        "smells like teen spirit",
+                        "born to run",
+                        "born to run,"
+                    ]
+                },
+                "type": "string"
+            },
+            "type": {
+                "minItems": "1",
+                "examples": {
+                    "provided": [
+                        "album",
+                        "artist",
+                        "playlist",
+                        "track",
+                        "show",
+                        "episode"
+                    ],
+                    "generated": [
+                        "movie",
+                        "book",
+                        "game",
+                        "podcast",
+                        "audiobook",
+                        "documentary"
+                    ]
+                },
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "market": {
+                "minLength": "2",
+                "maxLength": "2",
+                "default": "from_token",
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": [
+                        "USA",
+                        "CAN",
+                        "GBR",
+                        "FRA",
+                        "DEU",
+                        "AUS",
+                        "JPN",
+                        "BRA",
+                        "IND",
+                        "MEX",
+                        "ITA",
+                        "ESP",
+                        "NLD",
+                        "SWE",
+                        "CHE",
+                        "ARG",
+                        "COL",
+                        "ZAF",
+                        "KOR",
+                        "CHN",
+                        "RUS",
+                        "TUR",
+                        "ISR",
+                        "EGY",
+                        "THA",
+                        "IDN",
+                        "SAU",
+                        "ARE",
+                        "QAT",
+                        "KWT",
+                        "OMN",
+                        "BHR",
+                        "PAK",
+                        "NGA",
+                        "KEN",
+                        "ETH",
+                        "ZWE",
+                        "NZL",
+                        "IRL",
+                        "AUT",
+                        "BEL",
+                        "DNK",
+                        "FIN",
+                        "NOR",
+                        "POL",
+                        "PRT",
+                        "CZE",
+                        "HUN",
+                        "SVN",
+                        "HRV",
+                        "SRB",
+                        "BGR",
+                        "ROU",
+                        "GRC",
+                        "UKR",
+                        "LTU",
+                        "LVA",
+                        "EST",
+                        "SVK",
+                        "BIH",
+                        "MKD",
+                        "MNE",
+                        "ALB",
+                        "CYP",
+                        "MLT",
+                        "ISL",
+                        "LUX",
+                        "LIE",
+                        "VAT",
+                        "SMR",
+                        "MCO",
+                        "AND",
+                        "GIB",
+                        "JEY",
+                        "GGY",
+                        "IMN",
+                        "FRO",
+                        "ALA",
+                        "SJM",
+                        "BLM",
+                        "SHN",
+                        "SPM",
+                        "CYM",
+                        "TCA",
+                        "MNP",
+                        "VIR",
+                        "GUM",
+                        "MHL",
+                        "PLW",
+                        "FSM,"
+                    ]
+                },
+                "type": "string"
+            },
+            "limit": {
+                "min": "1",
+                "max": "50",
+                "default": "20",
+                "examples": {
+                    "provided": [
+                        "20"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "min": "0",
+                "max": "1000",
+                "default": "0",
+                "examples": {
+                    "provided": [
+                        "0"
+                    ],
+                    "generated": [
+                        "-100",
+                        "-50",
+                        "-10",
+                        "-5",
+                        "-1",
+                        "1",
+                        "5",
+                        "10",
+                        "50",
+                        "100",
+                        "500",
+                        "1000"
+                    ]
+                },
+                "type": "integer"
+            },
+            "include_external": {
+                "examples": {
+                    "provided": [
+                        "audio"
+                    ],
+                    "generated": [
+                        "video",
+                        "image",
+                        "text",
+                        "document"
+                    ]
+                },
+                "type": "string"
+            }
+        }
+    },
+    "/users/{user_id}/playlists": {
+        "get": {
+            "user_id": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "uri"
+            },
+            "limit": {
+                "min": "1",
+                "max": "50",
+                "default": "20",
+                "x-dependencies": [
+                    "REQUIRED: limit",
+                    "limit >= 1",
+                    "limit <= 50"
+                ],
+                "examples": {
+                    "provided": [
+                        "20"
+                    ],
+                    "generated": [
+                        "1",
+                        "2",
+                        "3",
+                        "4",
+                        "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
+                        "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49",
+                        "50"
+                    ]
+                },
+                "type": "integer"
+            },
+            "offset": {
+                "min": "0",
+                "max": "100000",
+                "default": "0",
+                "x-dependencies": [
+                    "offset >= 0 AND offset <= 100000"
+                ],
+                "examples": {
+                    "provided": [
+                        "0"
+                    ],
+                    "generated": [
+                        "-100",
+                        "-50",
+                        "-10",
+                        "10",
+                        "50",
+                        "100",
+                        "1000"
+                    ]
+                },
+                "type": "integer"
+            }
+        },
+        "post": {
+            "user_id": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string",
+                "format": "uri"
+            },
+            "request-body": {
+                "collaborative": {
+                    "default": "false",
+                    "x-dependencies": [
+                        "IF collaborative==true THEN OnlyOne(public==false AND (playlist-modify-private OR playlist-modify-public));"
+                    ],
+                    "examples": {
+                        "provided": [
+                            "false"
+                        ],
+                        "generated": [
+                            "true"
+                        ]
+                    },
+                    "type": "boolean"
+                },
+                "description": {
+                    "examples": {
+                        "provided": [
+                            "None"
+                        ],
+                        "generated": []
+                    },
+                    "type": "string"
+                },
+                "name": {
+                    "minLength": "1",
+                    "examples": {
+                        "provided": [
+                            "\"Your Coolest Playlist\""
+                        ],
+                        "generated": [
+                            "\"My Awesome Playlist\"",
+                            "\"Best Playlist Ever\"",
+                            "\"Top Hits Playlist\""
+                        ]
+                    },
+                    "type": "string"
+                },
+                "public": {
+                    "default": "true",
+                    "x-dependencies": [
+                        "REQUIRED: public"
+                    ],
+                    "examples": {
+                        "provided": [
+                            "true"
+                        ],
+                        "generated": [
+                            "false"
+                        ]
+                    },
+                    "type": "boolean"
+                }
+            }
+        }
+    }
+}

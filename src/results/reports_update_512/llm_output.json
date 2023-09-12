@@ -1,0 +1,12 @@
+{
+    "/api/translations/{language} post": [
+        {
+            "name": "language",
+            "specifier": "parameter",
+            "operational_constraints": "None",
+            "parameter_formats": "type string, items None, format None, collectionFormat None",
+            "parameter_constraints": "None",
+            "parameter_examples": "PROVIDED: None +++ GENERATED: English, Spanish, French, German, Chinese, Japanese, Russian, Italian, Portuguese, Arabic"
+        }
+    ]
+}
