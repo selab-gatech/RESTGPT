@@ -2,8 +2,6 @@
     "/institutions": {
         "get": {
             "filters": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "STNAME:\"West Virginia\"",
@@ -20,146 +18,30 @@
                         "DEP:[10000 TO 50000]"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "search": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "NAME: Island",
                         "NAME: Iland"
                     ],
                     "generated": [
-                        "NAME: University",
-                        "NAME: College",
-                        "NAME: School",
-                        "NAME: Institute",
-                        "NAME: Academy",
-                        "NAME: Center",
-                        "NAME: Foundation",
-                        "NAME: Association",
-                        "NAME: Corporation",
-                        "NAME: Society",
-                        "NAME: Organization",
-                        "NAME: Company",
-                        "NAME: Hospital",
-                        "NAME: Bank",
-                        "NAME: Library",
-                        "NAME: Museum",
-                        "NAME: Gallery",
-                        "NAME: Theater",
-                        "NAME: Stadium",
-                        "NAME: Park",
-                        "NAME: Zoo",
-                        "NAME: Restaurant",
-                        "NAME: Hotel",
-                        "NAME: Resort",
-                        "NAME: Cafe",
-                        "NAME: Bar",
-                        "NAME: Pub",
-                        "NAME: Club",
-                        "NAME: Store",
-                        "NAME: Shop",
-                        "NAME: Market",
-                        "NAME: Mall",
-                        "NAME: Plaza",
-                        "NAME: Tower",
-                        "NAME: Building",
-                        "NAME: Bridge",
-                        "NAME: Road",
-                        "NAME: Street",
-                        "NAME: Avenue",
-                        "NAME: Lane",
-                        "NAME: Court",
-                        "NAME: Square",
-                        "NAME: Garden",
-                        "NAME: Lake",
-                        "NAME: River",
-                        "NAME: Beach",
-                        "NAME: Mountain",
-                        "NAME: Forest",
-                        "NAME: Desert",
-                        "NAME: Island",
-                        "NAME: Country",
-                        "NAME: State",
-                        "NAME: City",
-                        "NAME: Town",
-                        "NAME: Village",
-                        "NAME: Neighborhood",
-                        "NAME: District",
-                        "NAME: Province",
-                        "NAME: County",
-                        "NAME: Region",
-                        "NAME: Territory",
-                        "NAME: Area",
-                        "NAME: Zone",
-                        "NAME: Campus",
-                        "NAME: Department",
-                        "NAME: Division",
-                        "NAME: Office",
-                        "NAME: Laboratory",
-                        "NAME: Research",
-                        "NAME: Project",
-                        "NAME: Program",
-                        "NAME: Course",
-                        "NAME: Degree",
-                        "NAME: Certificate",
-                        "NAME: Diploma",
-                        "NAME: Scholarship",
-                        "NAME: Grant",
-                        "NAME: Fellowship",
-                        "NAME: Award",
-                        "NAME: Prize",
-                        "NAME: Competition",
-                        "NAME: Conference",
-                        "NAME: Seminar",
-                        "NAME: Workshop",
-                        "NAME: Symposium",
-                        "NAME: Exhibition",
-                        "NAME: Festival",
-                        "NAME: Event",
-                        "NAME: Celebration",
-                        "NAME: Ceremony",
-                        "NAME: Parade",
-                        "NAME: Performance",
-                        "NAME: Show",
-                        "NAME: Concert",
-                        "NAME: Recital",
-                        "NAME: Lecture",
-                        "NAME: Talk",
-                        "NAME: Presentation",
-                        "NAME: Discussion",
-                        "NAME: Debate",
-                        "NAME: Forum",
-                        "NAME: Panel",
-                        "NAME: Roundtable",
-                        "NAME: Training",
-                        "NAME: Coaching",
-                        "NAME: Mentoring",
-                        "NAME: Tutoring",
-                        "NAME: Counseling",
-                        "NAME: Therapy",
-                        "NAME: Treatment",
-                        "NAME: Rehabilitation",
-                        "NAME: Support",
-                        "NAME: Assistance",
-                        "NAME: Service",
-                        "NAME: Initiative",
-                        "NAME: Campaign",
-                        "NAME: Network",
-                        "NAME: Alliance",
-                        "NAME: Coalition",
-                        "NAME"
+                        "NAME: Island University",
+                        "NAME: Iland College",
+                        "NAME: Island Bank",
+                        "NAME: Iland Financial Services",
+                        "NAME: Island Insurance",
+                        "NAME: Iland Hospital",
+                        "NAME: Island School",
+                        "NAME: Iland Library",
+                        "NAME: Island Hotel",
+                        "NAME: Iland Restaurant"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -219,34 +101,18 @@
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "name",
-                        "date",
-                        "price",
-                        "rating",
-                        "popularity",
-                        "size",
-                        "category",
-                        "relevance",
-                        "distance",
-                        "duration"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "ASC",
@@ -257,12 +123,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -352,100 +217,12 @@
                         "78",
                         "79",
                         "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99",
-                        "100",
-                        "101",
-                        "102",
-                        "103",
-                        "104",
-                        "105",
-                        "106",
-                        "107",
-                        "108",
-                        "109",
-                        "110",
-                        "111",
-                        "112",
-                        "113",
-                        "114",
-                        "115",
-                        "116",
-                        "117",
-                        "118",
-                        "119",
-                        "120",
-                        "121",
-                        "122",
-                        "123",
-                        "124",
-                        "125",
-                        "126",
-                        "127",
-                        "128",
-                        "129",
-                        "130",
-                        "131",
-                        "132",
-                        "133",
-                        "134",
-                        "135",
-                        "136",
-                        "137",
-                        "138",
-                        "139",
-                        "140",
-                        "141",
-                        "142",
-                        "143",
-                        "144",
-                        "145",
-                        "146",
-                        "147",
-                        "148",
-                        "149",
-                        "150",
-                        "151",
-                        "152",
-                        "153",
-                        "154",
-                        "155",
-                        "156",
-                        "157",
-                        "158",
-                        "159",
-                        "160",
-                        "161",
-                        "162",
-                        "163",
-                        "164",
-                        "165",
-                        "166,"
+                        "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -500,75 +277,18 @@
                         "46",
                         "47",
                         "48",
-                        "49",
-                        "50",
-                        "51",
-                        "52",
-                        "53",
-                        "54",
-                        "55",
-                        "56",
-                        "57",
-                        "58",
-                        "59",
-                        "60",
-                        "61",
-                        "62",
-                        "63",
-                        "64",
-                        "65",
-                        "66",
-                        "67",
-                        "68",
-                        "69",
-                        "70",
-                        "71",
-                        "72",
-                        "73",
-                        "74",
-                        "75",
-                        "76",
-                        "77",
-                        "78",
-                        "79",
-                        "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99"
+                        "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "minLength": "None",
-                "maxLength": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -576,43 +296,27 @@
                     "generated": [
                         "data.csv",
                         "file.txt",
-                        "document.docx",
+                        "report.doc",
                         "image.jpg",
-                        "report.pdf",
-                        "presentation.pptx",
-                        "audio.mp3",
-                        "video.mp4"
+                        "log.txt"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/locations": {
         "get": {
             "filters": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "city",
-                        "state",
-                        "country",
-                        "zip code",
-                        "latitude",
-                        "longitude"
-                    ]
+                    "generated": []
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -627,48 +331,23 @@
                         "field7",
                         "field8",
                         "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20"
+                        "field10"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "name",
-                        "date",
-                        "price",
-                        "rating",
-                        "popularity",
-                        "size",
-                        "category",
-                        "relevance",
-                        "distance",
-                        "duration"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "ASC",
@@ -679,12 +358,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -774,100 +452,12 @@
                         "78",
                         "79",
                         "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99",
-                        "100",
-                        "101",
-                        "102",
-                        "103",
-                        "104",
-                        "105",
-                        "106",
-                        "107",
-                        "108",
-                        "109",
-                        "110",
-                        "111",
-                        "112",
-                        "113",
-                        "114",
-                        "115",
-                        "116",
-                        "117",
-                        "118",
-                        "119",
-                        "120",
-                        "121",
-                        "122",
-                        "123",
-                        "124",
-                        "125",
-                        "126",
-                        "127",
-                        "128",
-                        "129",
-                        "130",
-                        "131",
-                        "132",
-                        "133",
-                        "134",
-                        "135",
-                        "136",
-                        "137",
-                        "138",
-                        "139",
-                        "140",
-                        "141",
-                        "142",
-                        "143",
-                        "144",
-                        "145",
-                        "146",
-                        "147",
-                        "148",
-                        "149",
-                        "150",
-                        "151",
-                        "152",
-                        "153",
-                        "154",
-                        "155",
-                        "156",
-                        "157",
-                        "158",
-                        "159",
-                        "160",
-                        "161",
-                        "162",
-                        "163",
-                        "164",
-                        "165",
-                        "166,"
+                        "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -922,75 +512,18 @@
                         "46",
                         "47",
                         "48",
-                        "49",
-                        "50",
-                        "51",
-                        "52",
-                        "53",
-                        "54",
-                        "55",
-                        "56",
-                        "57",
-                        "58",
-                        "59",
-                        "60",
-                        "61",
-                        "62",
-                        "63",
-                        "64",
-                        "65",
-                        "66",
-                        "67",
-                        "68",
-                        "69",
-                        "70",
-                        "71",
-                        "72",
-                        "73",
-                        "74",
-                        "75",
-                        "76",
-                        "77",
-                        "78",
-                        "79",
-                        "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99"
+                        "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "minLength": "None",
-                "maxLength": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -998,24 +531,18 @@
                     "generated": [
                         "data.csv",
                         "file.txt",
-                        "document.docx",
+                        "report.doc",
                         "image.jpg",
-                        "report.pdf",
-                        "presentation.pptx",
-                        "audio.mp3",
-                        "video.mp4"
+                        "log.txt"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/summary": {
         "get": {
             "filters": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "CB_SI:CB",
@@ -1025,20 +552,16 @@
                         "YEAR:[\"2015\" TO \"2017\"]"
                     ],
                     "generated": [
-                        "STNAME:\"Alabama\" AND YEAR:2005",
                         "CB_SI:SI",
                         "STNAME:\"Alabama\"",
                         "!(STNAME:\"Alabama\")",
-                        "STNAME:(\"Alaska\",\"Arizona\")",
-                        "YEAR:[\"2000\" TO \"2004\"]"
+                        "STNAME:(\"California\",\"New York\")",
+                        "YEAR:[\"2000\" TO \"2005\"]"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1048,61 +571,28 @@
                         "net income",
                         "total assets",
                         "total liabilities",
-                        "operating income",
+                        "operating expenses",
                         "gross profit",
-                        " EBITDA",
-                        "earnings per share",
+                        "EBITDA",
                         "cash flow from operations",
-                        "free cash flow",
-                        "return on equity",
-                        "return on assets",
-                        " debt to equity ratio",
-                        "current ratio",
-                        "quick ratio",
-                        "inventory turnover",
-                        "accounts receivable turnover",
-                        " days sales outstanding",
-                        "fixed asset turnover",
-                        "return on investment",
-                        "profit margin",
-                        "gross margin",
-                        " operating margin",
-                        "net profit margin",
-                        "price to earnings ratio",
-                        "price to sales ratio",
-                        "price to book ratio"
+                        "capital expenditures",
+                        "dividends"
                     ]
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "name",
-                        "date",
-                        "price",
-                        "rating",
-                        "popularity",
-                        "size",
-                        "category",
-                        "relevance",
-                        "distance",
-                        "duration"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "ASC",
@@ -1113,12 +603,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -1208,100 +697,12 @@
                         "78",
                         "79",
                         "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99",
-                        "100",
-                        "101",
-                        "102",
-                        "103",
-                        "104",
-                        "105",
-                        "106",
-                        "107",
-                        "108",
-                        "109",
-                        "110",
-                        "111",
-                        "112",
-                        "113",
-                        "114",
-                        "115",
-                        "116",
-                        "117",
-                        "118",
-                        "119",
-                        "120",
-                        "121",
-                        "122",
-                        "123",
-                        "124",
-                        "125",
-                        "126",
-                        "127",
-                        "128",
-                        "129",
-                        "130",
-                        "131",
-                        "132",
-                        "133",
-                        "134",
-                        "135",
-                        "136",
-                        "137",
-                        "138",
-                        "139",
-                        "140",
-                        "141",
-                        "142",
-                        "143",
-                        "144",
-                        "145",
-                        "146",
-                        "147",
-                        "148",
-                        "149",
-                        "150",
-                        "151",
-                        "152",
-                        "153",
-                        "154",
-                        "155",
-                        "156",
-                        "157",
-                        "158",
-                        "159",
-                        "160",
-                        "161",
-                        "162",
-                        "163",
-                        "164",
-                        "165",
-                        "166,"
+                        "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1356,67 +757,16 @@
                         "46",
                         "47",
                         "48",
-                        "49",
-                        "50",
-                        "51",
-                        "52",
-                        "53",
-                        "54",
-                        "55",
-                        "56",
-                        "57",
-                        "58",
-                        "59",
-                        "60",
-                        "61",
-                        "62",
-                        "63",
-                        "64",
-                        "65",
-                        "66",
-                        "67",
-                        "68",
-                        "69",
-                        "70",
-                        "71",
-                        "72",
-                        "73",
-                        "74",
-                        "75",
-                        "76",
-                        "77",
-                        "78",
-                        "79",
-                        "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99"
+                        "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "agg_by": {
                 "minItems": "1",
                 "maxItems": "2",
                 "x-dependencies": [
-                    "REQUIRED: agg_by"
+                    "OnlyOne(YEAR AND STNAME)"
                 ],
                 "examples": {
                     "provided": [
@@ -1425,150 +775,45 @@
                         "STNAME"
                     ],
                     "generated": [
-                        "YEAR",
-                        "STNAME"
+                        "MONTH",
+                        "STNAME",
+                        "CITY",
+                        "ZIPCODE",
+                        "CATEGORY"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "agg_term_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "field1",
-                        "field2",
-                        "field3",
-                        "field4",
-                        "field5",
-                        "field6",
-                        "field7",
-                        "field8",
-                        "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20",
-                        "field21",
-                        "field22",
-                        "field23",
-                        "field24",
-                        "field25",
-                        "field26",
-                        "field27",
-                        "field28",
-                        "field29",
-                        "field30",
-                        "field31",
-                        "field32",
-                        "field33",
-                        "field34",
-                        "field35",
-                        "field36",
-                        "field37",
-                        "field38",
-                        "field39",
-                        "field40",
-                        "field41",
-                        "field42",
-                        "field43",
-                        "field44",
-                        "field45",
-                        "field46",
-                        "field47",
-                        "field48",
-                        "field49",
-                        "field50"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_sum_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "field1",
-                        "field2",
-                        "field3",
-                        "field4",
-                        "field5",
-                        "field6",
-                        "field7",
-                        "field8",
-                        "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20",
-                        "field21",
-                        "field22",
-                        "field23",
-                        "field24",
-                        "field25",
-                        "field26",
-                        "field27",
-                        "field28",
-                        "field29",
-                        "field30",
-                        "field31",
-                        "field32",
-                        "field33",
-                        "field34",
-                        "field35",
-                        "field36",
-                        "field37",
-                        "field38",
-                        "field39",
-                        "field40",
-                        "field41",
-                        "field42",
-                        "field43",
-                        "field44",
-                        "field45",
-                        "field46",
-                        "field47",
-                        "field48",
-                        "field49",
-                        "field50"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_limit": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
                     "generated": [
                         "1",
+                        "2",
+                        "3",
+                        "4",
                         "5",
                         "10",
                         "20",
@@ -1576,22 +821,15 @@
                         "100"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "minLength": "None",
-                "maxLength": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1599,24 +837,18 @@
                     "generated": [
                         "data.csv",
                         "file.txt",
-                        "document.docx",
+                        "report.doc",
                         "image.jpg",
-                        "report.pdf",
-                        "presentation.pptx",
-                        "audio.mp3",
-                        "video.mp4"
+                        "log.txt"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/failures": {
         "get": {
             "filters": {
-                "minItems": "1",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "CITYST:\"MEMPHIS",
@@ -1631,94 +863,77 @@
                         "FAILYR:[\"2017\" TO \"2018\"]",
                         "CITYST:\"CHICAGO",
                         "IL\"",
-                        "!(CITY:\"HOUSTON\")",
-                        "FAILYR:[\"2019\" TO \"2020\"]",
-                        "CITYST:\"SAN FRANCISCO",
-                        "CA\"",
-                        "!(CITY:\"MIAMI\")",
-                        "FAILYR:[\"2021\" TO \"2022\"]",
-                        "CITYST:\"BOSTON",
-                        "MA\"",
-                        "!(CITY:\"DALLAS\")",
-                        "FAILYR:[\"2023\" TO \"2024\"]",
-                        "CITYST:\"SEATTLE",
-                        "WA\"",
-                        "!(CITY:\"ATLANTA\")",
-                        "FAILYR:[\"2025\" TO \"2026\"]",
-                        "CITYST:\"PHILADELPHIA",
-                        "PA\"",
-                        "!(CITY:\"PHOENIX\")",
-                        "FAILYR:[\"2027\" TO \"2028\"]",
-                        "CITYST:\"WASHINGTON",
-                        "DC\"",
-                        "!(CITY:\"DENVER\")",
-                        "FAILYR:[\"2029\" TO \"2030\"]",
-                        "CITYST:\"AUSTIN",
-                        "TX\"",
-                        "!(CITY:\"SAN DIEGO\")",
-                        "FAILYR:[\"2031\" TO \"2032\"]",
-                        "CITYST:\"PORTLAND",
-                        "OR\"",
-                        "!(CITY:\"CHARLOTTE\")",
-                        "FAILYR:[\"2033\" TO \"2034\"]"
+                        "!(CITY:\"BOSTON\")",
+                        "FAILYR:[\"2019\" TO \"2020\"]"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
-                "examples": {
-                    "provided": [
-                        "None"
-                    ],
-                    "generated": [
-                        "institution_name",
-                        "institution_id",
-                        "city",
-                        "state",
-                        "zip_code",
-                        "closing_date",
-                        "updated_date",
-                        " asset_classification",
-                        "asset_amount",
-                        "deposit_classification",
-                        "deposit_amount",
-                        "resolution_type",
-                        "resolution_cost"
-                    ]
-                },
-                "type": "array",
-                "items": "string",
-                "format": "None"
-            },
-            "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
                     "generated": [
                         "name",
-                        "date",
-                        "price",
-                        "rating",
-                        "popularity",
-                        "size",
-                        "category",
-                        "relevance",
-                        "distance",
-                        "duration"
+                        "city",
+                        "state",
+                        "zip_code",
+                        "country",
+                        "assets",
+                        "deposits",
+                        "establishment_date",
+                        "failure_date",
+                        "resolution_date",
+                        "resolution_method",
+                        "charter_type",
+                        "charter_code",
+                        "charter_description",
+                        "charter_date",
+                        "charter_number",
+                        "charter_state",
+                        "charter_city",
+                        "charter_zip_code",
+                        "charter_county",
+                        "charter_country",
+                        "charter_assets",
+                        "charter_deposits",
+                        "charter_establishment_date",
+                        "charter_failure_date",
+                        "charter_resolution_date",
+                        "charter_resolution_method",
+                        "charter_charter_type",
+                        "charter_charter_code",
+                        "charter_charter_description",
+                        "charter_charter_date",
+                        "charter_charter_number",
+                        "charter_charter_state",
+                        "charter_charter_city",
+                        "charter_charter_zip_code",
+                        "charter_charter_county",
+                        "charter_charter_country",
+                        "charter_charter_assets",
+                        "charter_charter_deposits",
+                        "charter_charter_establishment_date",
+                        "charter_charter_failure_date",
+                        "charter_charter_resolution_date",
+                        "charter_charter_resolution_method"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "sort_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
             },
             "sort_order": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "ASC",
@@ -1729,12 +944,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -1824,100 +1038,12 @@
                         "78",
                         "79",
                         "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99",
-                        "100",
-                        "101",
-                        "102",
-                        "103",
-                        "104",
-                        "105",
-                        "106",
-                        "107",
-                        "108",
-                        "109",
-                        "110",
-                        "111",
-                        "112",
-                        "113",
-                        "114",
-                        "115",
-                        "116",
-                        "117",
-                        "118",
-                        "119",
-                        "120",
-                        "121",
-                        "122",
-                        "123",
-                        "124",
-                        "125",
-                        "126",
-                        "127",
-                        "128",
-                        "129",
-                        "130",
-                        "131",
-                        "132",
-                        "133",
-                        "134",
-                        "135",
-                        "136",
-                        "137",
-                        "138",
-                        "139",
-                        "140",
-                        "141",
-                        "142",
-                        "143",
-                        "144",
-                        "145",
-                        "146",
-                        "147",
-                        "148",
-                        "149",
-                        "150",
-                        "151",
-                        "152",
-                        "153",
-                        "154",
-                        "155",
-                        "156",
-                        "157",
-                        "158",
-                        "159",
-                        "160",
-                        "161",
-                        "162",
-                        "163",
-                        "164",
-                        "165",
-                        "166,"
+                        "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1972,89 +1098,22 @@
                         "46",
                         "47",
                         "48",
-                        "49",
-                        "50",
-                        "51",
-                        "52",
-                        "53",
-                        "54",
-                        "55",
-                        "56",
-                        "57",
-                        "58",
-                        "59",
-                        "60",
-                        "61",
-                        "62",
-                        "63",
-                        "64",
-                        "65",
-                        "66",
-                        "67",
-                        "68",
-                        "69",
-                        "70",
-                        "71",
-                        "72",
-                        "73",
-                        "74",
-                        "75",
-                        "76",
-                        "77",
-                        "78",
-                        "79",
-                        "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99"
+                        "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "total_fields": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "age",
-                        "height",
-                        "weight",
-                        "income",
-                        "population",
-                        "sales",
-                        "expenses",
-                        "distance",
-                        "duration",
-                        "temperature"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "subtotal_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2079,200 +1138,56 @@
                         "category17",
                         "category18",
                         "category19",
-                        "category20",
-                        "category21",
-                        "category22",
-                        "category23",
-                        "category24",
-                        "category25",
-                        "category26",
-                        "category27",
-                        "category28",
-                        "category29",
-                        "category30",
-                        "category31",
-                        "category32",
-                        "category33",
-                        "category34",
-                        "category35",
-                        "category36",
-                        "category37",
-                        "category38",
-                        "category39",
-                        "category40",
-                        "category41",
-                        "category42",
-                        "category43",
-                        "category44",
-                        "category45",
-                        "category46",
-                        "category47",
-                        "category48",
-                        "category49",
-                        "category50"
+                        "category20"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "agg_by": {
                 "minItems": "1",
                 "maxItems": "2",
                 "x-dependencies": [
-                    "OnlyOne(agg_by=='FAILYR' AND agg_by=='FAILYR,PSTALP')"
+                    "Or(agg_by=='FAILYR', agg_by=='FAILYR,PSTALP')"
                 ],
                 "examples": {
                     "provided": [
                         "FAILYR",
                         "FAILYR,PSTALP"
                     ],
-                    "generated": [
-                        "FAILYR",
-                        "PSTALP",
-                        "FAILYR,PSTALP",
-                        "FAILYR,PSTAL"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "agg_term_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "field1",
-                        "field2",
-                        "field3",
-                        "field4",
-                        "field5",
-                        "field6",
-                        "field7",
-                        "field8",
-                        "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20",
-                        "field21",
-                        "field22",
-                        "field23",
-                        "field24",
-                        "field25",
-                        "field26",
-                        "field27",
-                        "field28",
-                        "field29",
-                        "field30",
-                        "field31",
-                        "field32",
-                        "field33",
-                        "field34",
-                        "field35",
-                        "field36",
-                        "field37",
-                        "field38",
-                        "field39",
-                        "field40",
-                        "field41",
-                        "field42",
-                        "field43",
-                        "field44",
-                        "field45",
-                        "field46",
-                        "field47",
-                        "field48",
-                        "field49",
-                        "field50"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_sum_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "field1",
-                        "field2",
-                        "field3",
-                        "field4",
-                        "field5",
-                        "field6",
-                        "field7",
-                        "field8",
-                        "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20",
-                        "field21",
-                        "field22",
-                        "field23",
-                        "field24",
-                        "field25",
-                        "field26",
-                        "field27",
-                        "field28",
-                        "field29",
-                        "field30",
-                        "field31",
-                        "field32",
-                        "field33",
-                        "field34",
-                        "field35",
-                        "field36",
-                        "field37",
-                        "field38",
-                        "field39",
-                        "field40",
-                        "field41",
-                        "field42",
-                        "field43",
-                        "field44",
-                        "field45",
-                        "field46",
-                        "field47",
-                        "field48",
-                        "field49",
-                        "field50"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_limit": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
                     "generated": [
                         "1",
+                        "2",
+                        "3",
+                        "4",
                         "5",
                         "10",
                         "20",
@@ -2280,22 +1195,15 @@
                         "100"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "minLength": "None",
-                "maxLength": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2303,24 +1211,18 @@
                     "generated": [
                         "data.csv",
                         "file.txt",
-                        "document.docx",
+                        "report.doc",
                         "image.jpg",
-                        "report.pdf",
-                        "presentation.pptx",
-                        "audio.mp3",
-                        "video.mp4"
+                        "log.txt"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/history": {
         "get": {
             "filters": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "STATE:\"VIRGINIA\"",
@@ -2342,33 +1244,12 @@
                         "PROCDATE:[2020-05-02 TO 2020-06-01]",
                         "STATE:\"ILLINOIS\"",
                         "!(STATE:\"ILLINOIS\")",
-                        "PROCDATE:[2020-06-02 TO 2020-07-01]",
-                        "STATE:\"PENNSYLVANIA\"",
-                        "!(STATE:\"PENNSYLVANIA\")",
-                        "PROCDATE:[2020-07-02 TO 2020-08-01]",
-                        "STATE:\"OHIO\"",
-                        "!(STATE:\"OHIO\")",
-                        "PROCDATE:[2020-08-02 TO 2020-09-01]",
-                        "STATE:\"GEORGIA\"",
-                        "!(STATE:\"GEORGIA\")",
-                        "PROCDATE:[2020-09-02 TO 2020-10-01]",
-                        "STATE:\"MICHIGAN\"",
-                        "!(STATE:\"MICHIGAN\")",
-                        "PROCDATE:[2020-10-02 TO 2020-11-01]",
-                        "STATE:\"NORTH CAROLINA\"",
-                        "!(STATE:\"NORTH CAROLINA\")",
-                        "PROCDATE:[2020-11-02 TO 2020-12-01]",
-                        "STATE:\"WASHINGTON\"",
-                        "!(STATE:\"WASHINGTON\")",
-                        "PROCDATE:[2020-12-02 TO 2021-01-01]"
+                        "PROCDATE:[2020-06-02 TO 2020-07-01]"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "search": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "NAME: Island",
@@ -2378,105 +1259,76 @@
                     "generated": [
                         "NAME: Beach",
                         "NAME: Land",
-                        "STATE: NY",
-                        "STATE: CA",
-                        "NAME: City",
-                        "NAME: Town",
-                        "STATE: TX",
-                        "STATE: FL",
-                        "NAME: County",
-                        "NAME: Village",
-                        "STATE: IL",
-                        "STATE: PA",
-                        "NAME: Park",
-                        "NAME: Lake",
-                        "STATE: OH",
-                        "STATE: MI",
-                        "NAME: River",
-                        "NAME: Mountain",
-                        "STATE: GA",
-                        "STATE: NC",
-                        "NAME: Hill",
-                        "NAME: Valley",
-                        "STATE: NJ",
-                        "STATE: WA",
-                        "NAME: Ridge",
-                        "NAME: Springs",
-                        "STATE: MA",
-                        "STATE: MD",
-                        "NAME: Heights",
-                        "NAME: Bay",
-                        "STATE: TN",
-                        "STATE: IN",
-                        "NAME: Creek",
-                        "STATE: WI",
-                        "STATE: AZ",
-                        "NAME: Junction",
-                        "NAME: Grove",
-                        "STATE: MO",
-                        "STATE: MN",
-                        "NAME: Harbor",
-                        "NAME: Fork",
-                        "STATE: CO",
-                        "STATE: AL"
+                        "STATE: NY"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
-                "examples": {
-                    "provided": [
-                        "None"
-                    ],
-                    "generated": [
-                        "institution_name",
-                        "institution_id",
-                        "city",
-                        "state",
-                        "zip_code",
-                        "closing_date",
-                        "updated_date",
-                        " asset_classification",
-                        "asset_amount",
-                        "deposit_classification",
-                        "deposit_amount",
-                        "resolution_type",
-                        "resolution_cost"
-                    ]
-                },
-                "type": "array",
-                "items": "string",
-                "format": "None"
-            },
-            "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
                     "generated": [
                         "name",
-                        "date",
-                        "price",
-                        "rating",
-                        "popularity",
-                        "size",
-                        "category",
-                        "relevance",
-                        "distance",
-                        "duration"
+                        "city",
+                        "state",
+                        "zip_code",
+                        "country",
+                        "assets",
+                        "deposits",
+                        "establishment_date",
+                        "failure_date",
+                        "resolution_date",
+                        "resolution_method",
+                        "charter_type",
+                        "charter_code",
+                        "charter_description",
+                        "charter_date",
+                        "charter_number",
+                        "charter_state",
+                        "charter_city",
+                        "charter_zip_code",
+                        "charter_county",
+                        "charter_country",
+                        "charter_assets",
+                        "charter_deposits",
+                        "charter_establishment_date",
+                        "charter_failure_date",
+                        "charter_resolution_date",
+                        "charter_resolution_method",
+                        "charter_charter_type",
+                        "charter_charter_code",
+                        "charter_charter_description",
+                        "charter_charter_date",
+                        "charter_charter_number",
+                        "charter_charter_state",
+                        "charter_charter_city",
+                        "charter_charter_zip_code",
+                        "charter_charter_county",
+                        "charter_charter_country",
+                        "charter_charter_assets",
+                        "charter_charter_deposits",
+                        "charter_charter_establishment_date",
+                        "charter_charter_failure_date",
+                        "charter_charter_resolution_date",
+                        "charter_charter_resolution_method"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "array",
+                "items": "string",
+                "collectionFormat": "csv"
+            },
+            "sort_by": {
+                "examples": {
+                    "provided": [
+                        "None"
+                    ],
+                    "generated": []
+                },
+                "type": "string"
             },
             "sort_order": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "ASC",
@@ -2487,12 +1339,11 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
-                "min": "10",
                 "max": "10000",
+                "default": "10",
                 "x-dependencies": [
                     "limit >= 10 AND limit <= 10000"
                 ],
@@ -2582,100 +1433,12 @@
                         "78",
                         "79",
                         "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99",
-                        "100",
-                        "101",
-                        "102",
-                        "103",
-                        "104",
-                        "105",
-                        "106",
-                        "107",
-                        "108",
-                        "109",
-                        "110",
-                        "111",
-                        "112",
-                        "113",
-                        "114",
-                        "115",
-                        "116",
-                        "117",
-                        "118",
-                        "119",
-                        "120",
-                        "121",
-                        "122",
-                        "123",
-                        "124",
-                        "125",
-                        "126",
-                        "127",
-                        "128",
-                        "129",
-                        "130",
-                        "131",
-                        "132",
-                        "133",
-                        "134",
-                        "135",
-                        "136",
-                        "137",
-                        "138",
-                        "139",
-                        "140",
-                        "141",
-                        "142",
-                        "143",
-                        "144",
-                        "145",
-                        "146",
-                        "147",
-                        "148",
-                        "149",
-                        "150",
-                        "151",
-                        "152",
-                        "153",
-                        "154",
-                        "155",
-                        "156",
-                        "157",
-                        "158",
-                        "159",
-                        "160",
-                        "161",
-                        "162",
-                        "163",
-                        "164",
-                        "165",
-                        "166,"
+                        "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2730,170 +1493,41 @@
                         "46",
                         "47",
                         "48",
-                        "49",
-                        "50",
-                        "51",
-                        "52",
-                        "53",
-                        "54",
-                        "55",
-                        "56",
-                        "57",
-                        "58",
-                        "59",
-                        "60",
-                        "61",
-                        "62",
-                        "63",
-                        "64",
-                        "65",
-                        "66",
-                        "67",
-                        "68",
-                        "69",
-                        "70",
-                        "71",
-                        "72",
-                        "73",
-                        "74",
-                        "75",
-                        "76",
-                        "77",
-                        "78",
-                        "79",
-                        "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99"
+                        "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "agg_by": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "category",
-                        "date",
-                        "region",
-                        "product",
-                        "customer",
-                        "salesperson",
-                        "department",
-                        "channel",
-                        "source",
-                        "campaign",
-                        "device",
-                        "browser",
-                        "operating system",
-                        "language",
-                        "gender",
-                        "age",
-                        "income",
-                        "education",
-                        "occupation",
-                        "marital status",
-                        "interests"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_term_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "field1",
-                        "field2",
-                        "field3",
-                        "field4",
-                        "field5",
-                        "field6",
-                        "field7",
-                        "field8",
-                        "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20",
-                        "field21",
-                        "field22",
-                        "field23",
-                        "field24",
-                        "field25",
-                        "field26",
-                        "field27",
-                        "field28",
-                        "field29",
-                        "field30",
-                        "field31",
-                        "field32",
-                        "field33",
-                        "field34",
-                        "field35",
-                        "field36",
-                        "field37",
-                        "field38",
-                        "field39",
-                        "field40",
-                        "field41",
-                        "field42",
-                        "field43",
-                        "field44",
-                        "field45",
-                        "field46",
-                        "field47",
-                        "field48",
-                        "field49",
-                        "field50"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_limit": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
                     "generated": [
                         "1",
+                        "2",
+                        "3",
+                        "4",
                         "5",
                         "10",
                         "20",
@@ -2901,22 +1535,15 @@
                         "100"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "minLength": "None",
-                "maxLength": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -2924,24 +1551,18 @@
                     "generated": [
                         "data.csv",
                         "file.txt",
-                        "document.docx",
+                        "report.doc",
                         "image.jpg",
-                        "report.pdf",
-                        "presentation.pptx",
-                        "audio.mp3",
-                        "video.mp4"
+                        "log.txt"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/financials": {
         "get": {
             "filters": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "ASSET:[1000 TO 9999]"
@@ -2971,103 +1592,41 @@
                         "ASSET:[21000 TO 21999]",
                         "ASSET:[22000 TO 22999]",
                         "ASSET:[23000 TO 23999]",
-                        "ASSET:[24000 TO 24999]",
-                        "ASSET:[25000 TO 25999]",
-                        "ASSET:[26000 TO 26999]",
-                        "ASSET:[27000 TO 27999]",
-                        "ASSET:[28000 TO 28999]",
-                        "ASSET:[29000 TO 29999]",
-                        "ASSET:[30000 TO 30999]",
-                        "ASSET:[31000 TO 31999]",
-                        "ASSET:[32000 TO 32999]",
-                        "ASSET:[33000 TO 33999]",
-                        "ASSET:[34000 TO 34999]",
-                        "ASSET:[35000 TO 35999]",
-                        "ASSET:[36000 TO 36999]",
-                        "ASSET:[37000 TO 37999]",
-                        "ASSET:[38000 TO 38999]",
-                        "ASSET:[39000 TO 39999]",
-                        "ASSET:[40000 TO 40999]",
-                        "ASSET:[41000 TO 41999]",
-                        "ASSET:[42000 TO 42999]",
-                        "ASSET:[43000 TO 43999]",
-                        "ASSET:[44000 TO 44999]",
-                        "ASSET:[45000 TO 45999]",
-                        "ASSET:[46000 TO 46999]",
-                        "ASSET:[47000 TO 47999]",
-                        "ASSET:[48000 TO 48999]",
-                        "ASSET:[49000 TO"
+                        "AS"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
                     "generated": [
                         "revenue",
+                        "expenses",
                         "net income",
                         "earnings per share",
-                        "operating income",
-                        "gross profit",
-                        "total assets",
-                        "total liabilities",
-                        " cash flow from operations",
-                        "free cash flow",
-                        "return on equity",
-                        "return on assets",
-                        "current ratio",
-                        "debt to equity ratio",
-                        " inventory turnover ratio",
-                        "accounts receivable turnover ratio",
-                        "days sales outstanding",
-                        "days inventory outstanding",
-                        "days payable outstanding",
-                        " gross margin",
-                        "operating margin",
-                        "net profit margin",
-                        "earnings before interest and taxes",
-                        "earnings before interest",
-                        "taxes",
-                        "depreciation",
-                        "and amortization"
+                        "cash flow",
+                        "assets",
+                        "liabilities",
+                        "equity"
                     ]
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "sort_by": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "name",
-                        "date",
-                        "price",
-                        "rating",
-                        "popularity",
-                        "size",
-                        "category",
-                        "relevance",
-                        "distance",
-                        "duration"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "sort_order": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "ASC",
@@ -3078,12 +1637,12 @@
                         "DESC"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "limit": {
                 "min": "10",
                 "max": "10000",
+                "default": "10",
                 "examples": {
                     "provided": [
                         "10,000"
@@ -3170,100 +1729,12 @@
                         "78",
                         "79",
                         "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99",
-                        "100",
-                        "101",
-                        "102",
-                        "103",
-                        "104",
-                        "105",
-                        "106",
-                        "107",
-                        "108",
-                        "109",
-                        "110",
-                        "111",
-                        "112",
-                        "113",
-                        "114",
-                        "115",
-                        "116",
-                        "117",
-                        "118",
-                        "119",
-                        "120",
-                        "121",
-                        "122",
-                        "123",
-                        "124",
-                        "125",
-                        "126",
-                        "127",
-                        "128",
-                        "129",
-                        "130",
-                        "131",
-                        "132",
-                        "133",
-                        "134",
-                        "135",
-                        "136",
-                        "137",
-                        "138",
-                        "139",
-                        "140",
-                        "141",
-                        "142",
-                        "143",
-                        "144",
-                        "145",
-                        "146",
-                        "147",
-                        "148",
-                        "149",
-                        "150",
-                        "151",
-                        "152",
-                        "153",
-                        "154",
-                        "155",
-                        "156",
-                        "157",
-                        "158",
-                        "159",
-                        "160",
-                        "161",
-                        "162",
-                        "163",
-                        "164",
-                        "165",
-                        "166,"
+                        "81"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "offset": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -3318,65 +1789,12 @@
                         "46",
                         "47",
                         "48",
-                        "49",
-                        "50",
-                        "51",
-                        "52",
-                        "53",
-                        "54",
-                        "55",
-                        "56",
-                        "57",
-                        "58",
-                        "59",
-                        "60",
-                        "61",
-                        "62",
-                        "63",
-                        "64",
-                        "65",
-                        "66",
-                        "67",
-                        "68",
-                        "69",
-                        "70",
-                        "71",
-                        "72",
-                        "73",
-                        "74",
-                        "75",
-                        "76",
-                        "77",
-                        "78",
-                        "79",
-                        "80",
-                        "81",
-                        "82",
-                        "83",
-                        "84",
-                        "85",
-                        "86",
-                        "87",
-                        "88",
-                        "89",
-                        "90",
-                        "91",
-                        "92",
-                        "93",
-                        "94",
-                        "95",
-                        "96",
-                        "97",
-                        "98",
-                        "99"
+                        "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "agg_by": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -3387,154 +1805,42 @@
                         "region",
                         "product",
                         "customer",
-                        "salesperson",
-                        "department",
-                        "channel",
-                        "source",
-                        "campaign"
+                        "sales"
                     ]
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_term_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "field1",
-                        "field2",
-                        "field3",
-                        "field4",
-                        "field5",
-                        "field6",
-                        "field7",
-                        "field8",
-                        "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20",
-                        "field21",
-                        "field22",
-                        "field23",
-                        "field24",
-                        "field25",
-                        "field26",
-                        "field27",
-                        "field28",
-                        "field29",
-                        "field30",
-                        "field31",
-                        "field32",
-                        "field33",
-                        "field34",
-                        "field35",
-                        "field36",
-                        "field37",
-                        "field38",
-                        "field39",
-                        "field40",
-                        "field41",
-                        "field42",
-                        "field43",
-                        "field44",
-                        "field45",
-                        "field46",
-                        "field47",
-                        "field48",
-                        "field49",
-                        "field50"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_sum_fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "field1",
-                        "field2",
-                        "field3",
-                        "field4",
-                        "field5",
-                        "field6",
-                        "field7",
-                        "field8",
-                        "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20",
-                        "field21",
-                        "field22",
-                        "field23",
-                        "field24",
-                        "field25",
-                        "field26",
-                        "field27",
-                        "field28",
-                        "field29",
-                        "field30",
-                        "field31",
-                        "field32",
-                        "field33",
-                        "field34",
-                        "field35",
-                        "field36",
-                        "field37",
-                        "field38",
-                        "field39",
-                        "field40",
-                        "field41",
-                        "field42",
-                        "field43",
-                        "field44",
-                        "field45",
-                        "field46",
-                        "field47",
-                        "field48",
-                        "field49",
-                        "field50"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
-                "items": "string",
-                "format": "None"
+                "items": "string"
             },
             "agg_limit": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
                     "generated": [
                         "1",
+                        "2",
+                        "3",
+                        "4",
                         "5",
                         "10",
                         "20",
@@ -3542,22 +1848,15 @@
                         "100"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "format": {
-                "minLength": "None",
-                "maxLength": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "download": {
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "filename": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -3565,16 +1864,12 @@
                     "generated": [
                         "data.csv",
                         "file.txt",
-                        "document.docx",
+                        "report.doc",
                         "image.jpg",
-                        "report.pdf",
-                        "presentation.pptx",
-                        "audio.mp3",
-                        "video.mp4"
+                        "log.txt"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     }

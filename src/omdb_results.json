@@ -2,48 +2,13 @@
     "/": {
         "get": {
             "t": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "The Shawshank Redemption",
-                        "The Godfather",
-                        "Pulp Fiction",
-                        "The Dark Knight",
-                        "Fight Club",
-                        "Inception",
-                        "The Matrix",
-                        " Interstellar",
-                        "The Avengers",
-                        "Titanic",
-                        "Forrest Gump",
-                        "The Lion King",
-                        "The Lord of the Rings: The Fellowship of the Ring",
-                        " The Harry Potter series",
-                        "Game of Thrones",
-                        "Breaking Bad",
-                        "Stranger Things",
-                        "Friends",
-                        "The Office",
-                        "The Big Bang Theory",
-                        " Black Mirror",
-                        "The Walking Dead",
-                        "The Simpsons",
-                        "The Crown",
-                        "The Witcher",
-                        "La La Land",
-                        "The Social Network",
-                        "The Grand Budapest  Hotel",
-                        "Avengers: Endgame",
-                        "Joker",
-                        "Parasite"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "i": {
                 "minLength": "9",
@@ -104,56 +69,18 @@
                         "tt0000050"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "s": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "The Shawshank Redemption",
-                        "The Godfather",
-                        "Pulp Fiction",
-                        "The Dark Knight",
-                        "Fight Club",
-                        "Inception",
-                        "The Matrix",
-                        " Interstellar",
-                        "The Avengers",
-                        "Titanic",
-                        "Forrest Gump",
-                        "The Lion King",
-                        "The Lord of the Rings: The Fellowship of the Ring",
-                        " The Harry Potter series",
-                        "Game of Thrones",
-                        "Breaking Bad",
-                        "Stranger Things",
-                        "Friends",
-                        "The Office",
-                        "The Big Bang Theory",
-                        " Black Mirror",
-                        "The Walking Dead",
-                        "The Simpsons",
-                        "The Crown",
-                        "The Witcher",
-                        "La La Land",
-                        "The Social Network",
-                        "The Grand Budapest  Hotel",
-                        "Avengers: Endgame",
-                        "Joker",
-                        "Parasite"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "page": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -208,25 +135,12 @@
                         "47",
                         "48",
                         "49",
-                        "50",
-                        "51",
-                        "52",
-                        "53",
-                        "54",
-                        "55",
-                        "56",
-                        "57",
-                        "58",
-                        "59",
-                        "60"
+                        "50"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "y": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -265,30 +179,18 @@
                         "2030"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "type": {
-                "minLength": "None",
-                "maxLength": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "plot": {
-                "minLength": "None",
-                "maxLength": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "r": {
-                "min": "None",
-                "max": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "callback": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -346,8 +248,7 @@
                         "callback50"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     }

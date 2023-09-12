@@ -2,97 +2,31 @@
     "/search": {
         "get": {
             "channelId": {
-                "minProperties": "None",
-                "maxProperties": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "channel1",
-                        "channel2",
-                        "channel3",
-                        "channel4",
-                        "channel5",
-                        "channel6",
-                        "channel7",
-                        "channel8",
-                        "channel9",
-                        "channel10",
-                        "channel11",
-                        "channel12",
-                        "channel13",
-                        "channel14",
-                        "channel15",
-                        "channel16",
-                        "channel17",
-                        "channel18",
-                        "channel19",
-                        "channel20",
-                        "channel21",
-                        "channel22",
-                        "channel23",
-                        "channel24",
-                        "channel25",
-                        "channel26",
-                        "channel27",
-                        "channel28",
-                        "channel29",
-                        "channel30",
-                        "channel31",
-                        "channel32",
-                        "channel33",
-                        "channel34",
-                        "channel35",
-                        "channel36",
-                        "channel37",
-                        "channel38",
-                        "channel39",
-                        "channel40",
-                        "channel41",
-                        "channel42",
-                        "channel43",
-                        "channel44",
-                        "channel45",
-                        "channel46",
-                        "channel47",
-                        "channel48",
-                        "channel49",
-                        "channel50"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "channelType": {
-                "min": "None",
-                "max": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "eventType": {
-                "min": "None",
-                "max": "None",
                 "x-dependencies": [
-                    "IF type=='video' THEN OnlyOne(eventType);"
+                    "IF eventType=='broadcast' THEN type=='video';"
                 ],
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "forContentOwner": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "True",
-                        "False"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "forDeveloper": {
                 "examples": {
@@ -104,14 +38,11 @@
                         "False"
                     ]
                 },
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "forMine": {
-                "min": "None",
-                "max": "None",
                 "x-dependencies": [
-                    "IF forMine==true THEN type=='video'"
+                    "IF forMine THEN type=='video'"
                 ],
                 "examples": {
                     "provided": [
@@ -121,111 +52,37 @@
                         "false"
                     ]
                 },
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "location": {
-                "minLength": "None",
-                "maxLength": "None",
+                "x-dependencies": [
+                    "REQUIRED: location, locationRadius"
+                ],
                 "examples": {
                     "provided": [
-                        "37.42307,-122.08427"
+                        "(37.42307,-122.08427)"
                     ],
                     "generated": [
-                        "0.00000",
-                        "0.00001",
-                        "0.00002",
-                        "0.00003",
-                        "0.00004",
-                        "0.00005",
-                        "0.00006",
-                        "0.00007",
-                        "0.00008",
-                        "0.00009",
-                        "0.00010",
-                        "0.00011",
-                        "0.00012",
-                        "0.00013",
-                        "0.00014",
-                        "0.00015",
-                        "0.00016",
-                        "0.00017",
-                        "0.00018",
-                        "0.00019",
-                        "0.00020",
-                        "0.00021",
-                        "0.00022",
-                        "0.00023",
-                        "0.00024",
-                        "0.00025",
-                        "0.00026",
-                        "0.00027",
-                        "0.00028",
-                        "0.00029",
-                        "0.00030",
-                        "0.00031",
-                        "0.00032",
-                        "0.00033",
-                        "0.00034",
-                        "0.00035",
-                        "0.00036",
-                        "0.00037",
-                        "0.00038",
-                        "0.00039",
-                        "0.00040",
-                        "0.00041",
-                        "0.00042",
-                        "0.00043",
-                        "0.00044",
-                        "0.00045",
-                        "0.00046",
-                        "0.00047",
-                        "0.00048",
-                        "0.00049",
-                        "0.00050",
-                        "0.00051",
-                        "0.00052",
-                        "0.00053",
-                        "0.00054",
-                        "0.00055",
-                        "0.00056",
-                        "0.00057",
-                        "0.00058",
-                        "0.00059",
-                        "0.00060",
-                        "0.00061",
-                        "0.00062",
-                        "0.00063",
-                        "0.00064",
-                        "0.00065",
-                        "0.00066",
-                        "0.00067",
-                        "0.00068",
-                        "0.00069",
-                        "0.00070",
-                        "0.00071",
-                        "0.00072",
-                        "0.00073",
-                        "0.00074",
-                        "0.00075",
-                        "0.00076",
-                        "0.00077",
-                        "0.00078",
-                        "0.00079",
-                        "0.00080",
-                        "0.00081",
-                        "0."
+                        "(40.7128,-74.0060)",
+                        "(51.5074,-0.1278)",
+                        "(48.8566,2.3522)",
+                        "(35.6895,139.6917)",
+                        "(55.7558,37.6176)",
+                        "(52.5200,13.4050)",
+                        "(37.7749,-122.4194)",
+                        "(34.0522,-118.2437)",
+                        "(41.9028,12.4964)",
+                        "(25.2048,55.2708)",
+                        "(19.4326,-99.1332)",
+                        "(22.5726,88.3639)",
+                        "(33.6844,73.0479)",
+                        "(41.9028,"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "locationRadius": {
-                "min": "0",
                 "max": "1000",
-                "x-dependencies": [
-                    "locationRadius <= 1000km"
-                ],
                 "examples": {
                     "provided": [
                         "1500m",
@@ -234,18 +91,6 @@
                         "0.75mi"
                     ],
                     "generated": [
-                        "1m",
-                        "10m",
-                        "100m",
-                        "1km",
-                        "10km",
-                        "100km",
-                        "1ft",
-                        "10ft",
-                        "100ft",
-                        "1mi",
-                        "10mi",
-                        "100mi",
                         "0.1m",
                         "0.2m",
                         "0.3m",
@@ -255,362 +100,192 @@
                         "0.7m",
                         "0.8m",
                         "0.9m",
-                        "0.01km",
-                        "0.02km",
-                        "0.03km",
-                        "0.04km",
-                        "0.05km",
-                        "0.06km",
-                        "0.07km",
-                        "0.08km",
-                        "0.09km",
-                        "0.001mi",
-                        "0.002mi",
-                        "0.003mi",
-                        "0.004mi",
-                        "0.005mi",
-                        "0.006mi",
-                        "0.007mi",
-                        "0.008mi",
-                        "0.009mi"
+                        "1.0m",
+                        "1.1m",
+                        "1.2m",
+                        "1.3m",
+                        "1.4m",
+                        "1.5m",
+                        "1.6m",
+                        "1.7m",
+                        "1.8m",
+                        "1.9m",
+                        "2.0m",
+                        "2.1m",
+                        "2.2m",
+                        "2.3m",
+                        "2.4m",
+                        "2.5m",
+                        "2.6m",
+                        "2.7m",
+                        "2.8m",
+                        "2.9m",
+                        "3.0m",
+                        "3.1m",
+                        "3.2m",
+                        "3.3m",
+                        "3.4m",
+                        "3.5m",
+                        "3.6m",
+                        "3.7m",
+                        "3.8m",
+                        "3"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "maxResults": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
                     "generated": [
+                        "0",
                         "1",
+                        "2",
+                        "3",
+                        "4",
                         "5",
+                        "6",
+                        "7",
+                        "8",
+                        "9",
                         "10",
+                        "11",
+                        "12",
+                        "13",
+                        "14",
+                        "15",
+                        "16",
+                        "17",
+                        "18",
+                        "19",
                         "20",
-                        "50",
-                        "100",
-                        "500",
-                        "1000",
-                        "5000",
-                        "10000"
+                        "21",
+                        "22",
+                        "23",
+                        "24",
+                        "25",
+                        "26",
+                        "27",
+                        "28",
+                        "29",
+                        "30",
+                        "31",
+                        "32",
+                        "33",
+                        "34",
+                        "35",
+                        "36",
+                        "37",
+                        "38",
+                        "39",
+                        "40",
+                        "41",
+                        "42",
+                        "43",
+                        "44",
+                        "45",
+                        "46",
+                        "47",
+                        "48",
+                        "49"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "integer"
             },
             "onBehalfOfContentOwner": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "content_owner1",
-                        "content_owner2",
-                        "content_owner3",
-                        "content_owner4",
-                        "content_owner5",
-                        "content_owner6",
-                        "content_owner7",
-                        "content_owner8",
-                        "content_owner9",
-                        "content_owner10",
-                        "content_owner11",
-                        "content_owner12",
-                        "content_owner13",
-                        "content_owner14",
-                        "content_owner15",
-                        "content_owner16",
-                        "content_owner17",
-                        "content_owner18",
-                        "content_owner19",
-                        "content_owner20",
-                        "content_owner21",
-                        "content_owner22",
-                        "content_owner23",
-                        "content_owner24",
-                        "content_owner25",
-                        "content_owner26",
-                        "content_owner27",
-                        "content_owner28",
-                        "content_owner29",
-                        "content_owner30",
-                        "content_owner31",
-                        "content_owner32",
-                        "content_owner33",
-                        "content_owner34",
-                        "content_owner35",
-                        "content_owner36",
-                        "content_owner37",
-                        "content_owner38",
-                        "content_owner39",
-                        "content_owner40",
-                        "content_owner41",
-                        "content_owner42",
-                        "content_owner43",
-                        "content_owner44",
-                        "content_owner45",
-                        "content_owner46",
-                        "content_owner47",
-                        "content_owner48",
-                        "content_owner49",
-                        "content_owner50"
-                    ]
+                    "generated": []
                 }
             },
             "order": {
-                "min": "None",
-                "max": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "pageToken": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "page1",
-                        "page2",
-                        "page3",
-                        "page4",
-                        "page5",
-                        "page6",
-                        "page7",
-                        "page8",
-                        "page9",
-                        "page10",
-                        "page11",
-                        "page12",
-                        "page13",
-                        "page14",
-                        "page15",
-                        "page16",
-                        "page17",
-                        "page18",
-                        "page19",
-                        "page20",
-                        "page21",
-                        "page22",
-                        "page23",
-                        "page24",
-                        "page25",
-                        "page26",
-                        "page27",
-                        "page28",
-                        "page29",
-                        "page30",
-                        "page31",
-                        "page32",
-                        "page33",
-                        "page34",
-                        "page35",
-                        "page36",
-                        "page37",
-                        "page38",
-                        "page39",
-                        "page40",
-                        "page41",
-                        "page42",
-                        "page43",
-                        "page44",
-                        "page45",
-                        "page46",
-                        "page47",
-                        "page48",
-                        "page49",
-                        "page50",
-                        "page51",
-                        "page52",
-                        "page53",
-                        "page54",
-                        "page55",
-                        "page56",
-                        "page57",
-                        "page58",
-                        "page59",
-                        "page60",
-                        "page61",
-                        "page62",
-                        "page63",
-                        "page64",
-                        "page65",
-                        "page66",
-                        "page67",
-                        "page68",
-                        "page69",
-                        "page70",
-                        "page71",
-                        "page72",
-                        "page73",
-                        "page74",
-                        "page75",
-                        "page76",
-                        "page77",
-                        "page78",
-                        "page79",
-                        "page80",
-                        "page81",
-                        "page82",
-                        "page83",
-                        "page84",
-                        "page85",
-                        "page86",
-                        "page87",
-                        "page88",
-                        "page89",
-                        "page90",
-                        "page91",
-                        "page92",
-                        "page93",
-                        "page94",
-                        "page95",
-                        "page96",
-                        "page97",
-                        "page98",
-                        "page99",
-                        "page100"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "part": {
-                "minItems": "1",
-                "maxItems": "None",
-                "type": "string",
-                "format": "None"
+                "default": "snippet",
+                "type": "string"
             },
             "publishedAfter": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "1970-01-01T00:00:00Z"
                     ],
                     "generated": [
-                        "2022-12-31T23:59:59Z",
-                        "2023-01-01T00:00:00Z",
-                        "2023-01-01T12:00:00Z",
-                        "2023-06-30T00:00:00Z",
+                        "2022-03-15T10:30:00Z",
+                        "2019-07-20T15:45:00Z",
+                        "2020-11-05T08:20:00Z",
+                        "2021-06-10T18:55:00Z",
+                        "2018-09-25T12:10:00Z",
                         "2023-12-31T23:59:59Z",
-                        "2024-01-01T00:00:00Z",
-                        "2024-01-01T12:00:00Z",
-                        "2024-06-30T00:00:00Z",
-                        "2024-12-31T23:59:59Z",
-                        "2025-01-01T00:00:00Z",
-                        "2025-01-01T12:00:00Z",
-                        "2025-06-30T00:00:00Z",
-                        "2025-12-31T23:59:59Z",
-                        "2026-01-01T00:00:00Z",
-                        "2026-01-01T12:00:00Z",
-                        "2026-06-30T00:00:00Z",
-                        "2026-12-31T23:59:59Z",
-                        "2027-01-01T00:00:00Z",
-                        "2027-01-01T12:00:00Z",
-                        "2027-06-30T00:00:00Z",
-                        "2027-12-31T23:59:59Z",
-                        "2028-01-01T00:00:00Z",
-                        "2028-01-01T12:00:00Z",
-                        "2028-06-30T00:00:00Z",
-                        "2028-12-31T23:59:59Z",
-                        "2029-01-01T00:00:00Z",
-                        "2029-01-01T12:00:00Z",
-                        "2029-06-30T00:00:00Z",
-                        "2029-12-31T23:59:59Z",
-                        "2030-01-01T00:00:00Z",
-                        "2030-01-01T12:00:00Z",
-                        "2030-06-30T00:00:00Z",
-                        "2030-12-31T23:59"
+                        "2024-02-29T07:30:00Z",
+                        "2025-08-15T16:45:00Z",
+                        "2026-04-01T09:20:00Z",
+                        "2027-11-11T21:55:00Z",
+                        "2028-05-05T14:10:00Z",
+                        "2029-09-30T03:30:00Z",
+                        "2030-12-25T19:45:00Z",
+                        "2031-07-04T11:20:00Z",
+                        "2032-02-14T23:55:00Z",
+                        "2033-10-20T17:"
                     ]
                 },
                 "type": "string",
                 "format": "date-time"
             },
             "publishedBefore": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "1970-01-01T00:00:00Z"
                     ],
                     "generated": [
-                        "2000-01-01T00:00:00Z",
-                        "2010-01-01T00:00:00Z",
-                        "2020-01-01T00:00:00Z",
-                        "2030-01-01T00:00:00Z",
-                        "2040-01-01T00:00:00Z",
-                        "2050-01-01T00:00:00Z",
-                        "2060-01-01T00:00:00Z",
-                        "2070-01-01T00:00:00Z",
-                        "2080-01-01T00:00:00Z",
-                        "2090-01-01T00:00:00Z",
-                        "2100-01-01T00:00:00Z",
-                        "2110-01-01T00:00:00Z",
-                        "2120-01-01T00:00:00Z",
-                        "2130-01-01T00:00:00Z",
-                        "2140-01-01T00:00:00Z",
-                        "2150-01-01T00:00:00Z",
-                        "2160-01-01T00:00:00Z",
-                        "2170-01-01T00:00:00Z",
-                        "2180-01-01T00:00:00Z",
-                        "2190-01-01T00:00:00Z",
-                        "2200-01-01T00:00:00Z",
-                        "2210-01-01T00:00:00Z",
-                        "2220-01-01T00:00:00Z",
-                        "2230-01-01T00:00:00Z",
-                        "2240-01-01T00:00:00Z",
-                        "2250-01-01T00:00:00Z",
-                        "2260-01-01T00:00:00Z",
-                        "2270-01-01T00:00:00Z",
-                        "2280-01-01T00:00:00Z",
-                        "2290-01-01T00:00:00Z",
-                        "2300-01-01T00:00:00Z",
-                        "2310-01-01T00:00:00Z",
-                        "2320-01-01T00:00"
+                        "2022-12-31T23:59:59Z",
+                        "2022-01-01T00:00:00Z",
+                        "2022-06-15T12:30:00Z",
+                        "2023-03-10T08:45:00Z",
+                        "2023-11-20T18:00:00Z",
+                        "2024-09-05T03:15:00Z",
+                        "2024-04-30T21:20:00Z",
+                        "2025-02-14T15:30:00Z",
+                        "2025-10-25T09:45:00Z",
+                        "2026-07-01T06:00:00Z",
+                        "2026-12-31T23:59:59Z"
                     ]
                 },
                 "type": "string",
                 "format": "date-time"
             },
             "q": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
                     "generated": [
-                        "cat",
-                        "dog",
-                        "car",
-                        "house",
-                        "tree",
-                        "beach",
-                        "mountain",
-                        "sunset",
-                        "city",
-                        "food",
-                        "music",
-                        "movie",
-                        "book",
-                        "art",
-                        "dance",
-                        "sports",
-                        "travel",
-                        "fashion",
-                        "technology",
-                        "science"
+                        "boating",
+                        "sailing",
+                        "fishing",
+                        "swimming",
+                        "hiking",
+                        "camping",
+                        "biking",
+                        "skiing",
+                        "surfing",
+                        "kayaking"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "regionCode": {
                 "minLength": "2",
@@ -708,153 +383,22 @@
                         "GIB",
                         "GRC",
                         "GRL",
-                        " GRD",
-                        "GLP",
-                        "GUM",
-                        "GTM",
-                        "GGY",
-                        "GIN",
-                        "GNB",
-                        "GUY",
-                        "HTI",
-                        "HMD",
-                        "VAT",
-                        "HND",
-                        "HKG",
-                        "HUN",
-                        "ISL",
-                        "IND",
-                        "IDN",
-                        "IRN",
-                        "IRQ",
-                        "IRL",
-                        "IMN",
-                        "ISR",
-                        " ITA",
-                        "JAM",
-                        "JPN",
-                        "JEY",
-                        "JOR",
-                        "KAZ",
-                        "KEN",
-                        "KIR",
-                        "PRK",
-                        "KOR",
-                        "KWT",
-                        "KGZ",
-                        "LAO",
-                        "LVA",
-                        "LBN",
-                        "LSO",
-                        "LBR",
-                        "LBY",
-                        "LIE",
-                        "LTU",
-                        "LUX",
-                        "MAC",
-                        " MDG",
-                        "MWI",
-                        "MYS",
-                        "MDV",
-                        "MLI",
-                        "MLT",
-                        "MHL",
-                        "MTQ",
-                        "MRT",
-                        "MUS",
-                        "MYT",
-                        "MEX",
-                        "FSM",
-                        "MDA",
-                        "MCO",
-                        "MNG",
-                        "MNE",
-                        "MSR",
-                        "MAR",
-                        "MOZ",
-                        "MMR",
-                        "NAM",
-                        " NRU",
-                        "NPL",
-                        "NLD",
-                        "NCL",
-                        "NZL",
-                        "NIC",
-                        "NER",
-                        "NGA",
-                        "NIU",
-                        "NFK",
-                        "MKD",
-                        "MNP",
-                        "NOR",
-                        "OMN",
-                        "PAK",
-                        "PLW",
-                        "PSE",
-                        "PAN",
-                        "PNG",
-                        "PRY",
-                        "PER",
-                        "PHL",
-                        " PCN",
-                        "POL"
+                        " GR"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "relatedToVideoId": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "9bZkp7q19f0",
-                        "aJOTlE1K90k",
-                        "2Vv-BfVoq4g",
-                        "5VGm0dczmHc",
-                        "6Dh-RL__uN4",
-                        "7C2z4GqqS5E",
-                        "CevxZvSJLk8",
-                        " DGdSlnw4D_M",
-                        "dQw4w9WgXcQ",
-                        "e-ORhEE9VVg",
-                        "fRh_vgS2dFE",
-                        "GZjt_sA2eso",
-                        "hT_nvWreIhg",
-                        "iS1g8G_njx8",
-                        "JGwWNGJdvx8",
-                        "kXYiU_JCYtU",
-                        " lWA2pjMjpBs",
-                        "mBBuzHrZBro",
-                        "nSDgHBxUbVQ",
-                        "oHg5SJYRHA0",
-                        "pRpeEdMmmQ0",
-                        "q6EoRBvdVPQ",
-                        "rYEDA3JcQqw",
-                        "s7L2PVdrb_8",
-                        "T6j4f8cHBIM",
-                        " UqyT8IEBkvY",
-                        "VYOjWnS4cMY",
-                        "w4s6H4ku6ZY",
-                        "XqZsoesa55w",
-                        "YQHsXMglC9A",
-                        "zpOULjyy-n8",
-                        "1wYNFfgrXTI",
-                        " 6Dh-RL__uN4",
-                        "DGdSlnw4D_M",
-                        " iS1g8G_njx8",
-                        "lWA2pjMjpBs"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "relevanceLanguage": {
                 "minLength": "2",
-                "maxLength": "7",
                 "examples": {
                     "provided": [
                         "zh-Hans",
@@ -966,97 +510,24 @@
                         "xh",
                         "yi",
                         "yo",
-                        "zu",
-                        "zh-Hans",
-                        "zh-Hant"
+                        "zu"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "safeSearch": {
-                "min": "None",
-                "max": "None",
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "topicId": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "/m/0d6lp",
-                        "/m/0d6lr",
-                        "/m/0d6ls",
-                        "/m/0d6lt",
-                        "/m/0d6lu",
-                        "/m/0d6lv",
-                        "/m/0d6lw",
-                        "/m/0d6lx",
-                        "/m/0d6ly",
-                        "/m/0d6lz",
-                        "/m/0d6m0",
-                        "/m/0d6m1",
-                        "/m/0d6m2",
-                        "/m/0d6m3",
-                        "/m/0d6m4",
-                        "/m/0d6m5",
-                        "/m/0d6m6",
-                        "/m/0d6m7",
-                        "/m/0d6m8",
-                        "/m/0d6m9",
-                        "/m/0d6ma",
-                        "/m/0d6mb",
-                        "/m/0d6mc",
-                        "/m/0d6md",
-                        "/m/0d6me",
-                        "/m/0d6mf",
-                        "/m/0d6mg",
-                        "/m/0d6mh",
-                        "/m/0d6mi",
-                        "/m/0d6mj",
-                        "/m/0d6mk",
-                        "/m/0d6ml",
-                        "/m/0d6mm",
-                        "/m/0d6mn",
-                        "/m/0d6mo",
-                        "/m/0d6mp",
-                        "/m/0d6mq",
-                        "/m/0d6mr",
-                        "/m/0d6ms",
-                        "/m/0d6mt",
-                        "/m/0d6mu",
-                        "/m/0d6mv",
-                        "/m/0d6mw",
-                        "/m/0d6mx",
-                        "/m/0d6my",
-                        "/m/0d6mz",
-                        "/m/0d6n0",
-                        "/m/0d6n1",
-                        "/m/0d6n2",
-                        "/m/0d6n3",
-                        "/m/0d6n4",
-                        "/m/0d6n5",
-                        "/m/0d6n6",
-                        "/m/0d6n7",
-                        "/m/0d6n8",
-                        "/m/0d6n9",
-                        "/m/0d6na",
-                        "/m/0d6nb",
-                        "/m/0d6nc",
-                        "/m/0d6nd",
-                        "/m/"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "type": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "None"
@@ -1065,125 +536,70 @@
                         "video",
                         "playlist",
                         "channel",
-                        "movie",
-                        "music",
-                        "book",
-                        "article",
-                        "podcast",
-                        "image",
-                        "document"
+                        "user",
+                        "comment",
+                        "liveBroadcast",
+                        "guideCategory",
+                        "videoCategory",
+                        "subscription",
+                        "activity"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "videoCaption": {
                 "x-dependencies": [
                     "IF type=='video' THEN videoCaption;"
                 ],
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "videoCategoryId": {
-                "min": "None",
-                "max": "None",
                 "x-dependencies": [
-                    "IF type=='video' THEN videoCategoryId"
+                    "IF type=='video' THEN videoCategoryId;"
                 ],
                 "examples": {
                     "provided": [
                         "None"
                     ],
-                    "generated": [
-                        "Film & Animation",
-                        "Autos & Vehicles",
-                        "Music",
-                        "Pets & Animals",
-                        "Sports",
-                        "Short Movies",
-                        "Travel & Events",
-                        "Gaming",
-                        "Videoblogging",
-                        "People & Blogs",
-                        "Comedy",
-                        "Entertainment",
-                        "News & Politics",
-                        "Howto & Style",
-                        "Education",
-                        "Science & Technology",
-                        "Nonprofits & Activism",
-                        "Movies",
-                        "Anime/Animation",
-                        "Action/Adventure",
-                        "Classics",
-                        "Documentary",
-                        "Drama",
-                        "Family",
-                        "Foreign",
-                        "Horror",
-                        "Sci-Fi/Fantasy",
-                        "Thriller",
-                        "Shorts",
-                        "Shows",
-                        "Trailers"
-                    ]
+                    "generated": []
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "videoDefinition": {
-                "min": "None",
-                "max": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "videoDimension": {
-                "min": "None",
-                "max": "None",
                 "x-dependencies": [
-                    "IF type=='video' THEN videoDimension;"
+                    "IF type=='video' THEN OnlyOne(videoDimension=='2D' AND videoDimension=='3D');"
                 ],
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "videoDuration": {
-                "min": "None",
-                "max": "None",
                 "x-dependencies": [
-                    "IF type=='video' THEN videoDuration"
+                    "IF type=='video' THEN videoDuration;"
                 ],
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "videoEmbeddable": {
-                "min": "None",
-                "max": "None",
                 "x-dependencies": [
                     "IF videoEmbeddable THEN type=='video'"
                 ],
-                "type": "boolean",
-                "format": "None"
+                "type": "boolean"
             },
             "videoLicense": {
-                "min": "None",
-                "max": "None",
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "videoSyndicated": {
-                "min": "None",
-                "max": "None",
-                "type": "boolean",
-                "format": "None"
+                "x-dependencies": [
+                    "IF type=='video' THEN videoSyndicated;"
+                ],
+                "type": "boolean"
             },
             "videoType": {
-                "min": "None",
-                "max": "None",
                 "x-dependencies": [
                     "IF videoType THEN type=='video'"
                 ],
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     }

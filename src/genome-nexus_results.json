@@ -2,89 +2,68 @@
     "/annotation": {
         "post": {
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
                     ],
                     "generated": [
-                        "refseq",
                         "ensembl",
-                        "genbank",
-                        "ucsc",
-                        "ncbi"
+                        "refseq",
+                        "genbank"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
-                "minProperties": "2",
-                "maxProperties": "2",
+                "minProperties": "1",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "1",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "hotspots"
                     ],
-                    "generated": [
-                        "fields",
-                        "data",
-                        "parameters",
-                        "options",
-                        "values",
-                        "filters",
-                        "categories",
-                        "tags",
-                        "attributes"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "request-body": {
                 "": {
-                    "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
-                            "[\"X:g.66937331T>A\",\"17:g.41242962_41242963insGA\"] (GRCh37)",
-                            "[\"1:g.182712A>C\"",
-                            "\"2:g.265023C>T\"",
-                            "\"3:g.319781del\"",
-                            "\"19:g.110753dup\"",
-                            "\"1:g.1385015_1387562del\"] (GRCh38)"
+                            "X:g.66937331T>A",
+                            "17:g.41242962_41242963insGA"
                         ],
                         "generated": [
-                            "[\"1:g.123456A>T\"",
-                            "\"2:g.234567C>G\"",
-                            "\"3:g.345678del\"",
-                            "\"4:g.456789dup\"",
-                            "\"5:g.567890_567891insAT\"]",
-                            "[\"X:g.98765432T>C\"",
-                            "\"Y:g.87654321C>G\"",
-                            "\"MT:g.76543210del\"",
-                            "\"6:g.654321dup\"",
-                            "\"7:g.543210_543211insTA\"]"
+                            "1:g.182712A>C",
+                            "2:g.265023C>T",
+                            "3:g.319781del",
+                            "19:g.110753dup",
+                            "1:g.1385015_1387562del"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -92,40 +71,41 @@
     "/annotation/dbsnp/": {
         "post": {
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
                     ],
                     "generated": [
-                        "refseq",
                         "ensembl",
-                        "genbank",
-                        "ucsc",
-                        "ncbi"
+                        "refseq",
+                        "genbank"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
-                "minProperties": "2",
-                "maxProperties": "2",
+                "minProperties": "1",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "annotation_summary"
@@ -140,47 +120,35 @@
                         "field7",
                         "field8",
                         "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20"
+                        "field10"
                     ]
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "request-body": {
                 "": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "[\"rs116035550\"]"
                         ],
                         "generated": [
-                            "[\"rs123456789\"",
-                            "\"rs987654321\"",
-                            "\"rs246813579\"",
-                            "\"rs135792468\"",
-                            "\"rs864209753\"",
-                            "\"rs975318642\"",
-                            "\"rs753198426\"",
-                            "\"rs642037591\"",
-                            "\"rs519283746\"",
-                            "\"rs427619385\"]"
+                            "[\"rs116035551\"",
+                            "\"rs116035552\"",
+                            "\"rs116035553\"",
+                            "\"rs116035554\"",
+                            "\"rs116035555\"",
+                            "\"rs116035556\"",
+                            "\"rs116035557\"",
+                            "\"rs116035558\"",
+                            "\"rs116035559\"",
+                            "\"rs116035560\"]"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -188,153 +156,54 @@
     "/annotation/dbsnp/{variantId}": {
         "get": {
             "variantId": {
-                "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "rs116035550"
                     ],
                     "generated": [
-                        "rs100000001",
-                        "rs100000002",
-                        "rs100000003",
-                        "rs100000004",
-                        "rs100000005",
-                        "rs100000006",
-                        "rs100000007",
-                        "rs100000008",
-                        "rs100000009",
-                        "rs100000010",
-                        "rs100000011",
-                        "rs100000012",
-                        "rs100000013",
-                        "rs100000014",
-                        "rs100000015",
-                        "rs100000016",
-                        "rs100000017",
-                        "rs100000018",
-                        "rs100000019",
-                        "rs100000020",
-                        "rs100000021",
-                        "rs100000022",
-                        "rs100000023",
-                        "rs100000024",
-                        "rs100000025",
-                        "rs100000026",
-                        "rs100000027",
-                        "rs100000028",
-                        "rs100000029",
-                        "rs100000030",
-                        "rs100000031",
-                        "rs100000032",
-                        "rs100000033",
-                        "rs100000034",
-                        "rs100000035",
-                        "rs100000036",
-                        "rs100000037",
-                        "rs100000038",
-                        "rs100000039",
-                        "rs100000040",
-                        "rs100000041",
-                        "rs100000042",
-                        "rs100000043",
-                        "rs100000044",
-                        "rs100000045",
-                        "rs100000046",
-                        "rs100000047",
-                        "rs100000048",
-                        "rs100000049",
-                        "rs100000050",
-                        "rs100000051",
-                        "rs100000052",
-                        "rs100000053",
-                        "rs100000054",
-                        "rs100000055",
-                        "rs100000056",
-                        "rs100000057",
-                        "rs100000058",
-                        "rs100000059",
-                        "rs100000060",
-                        "rs100000061",
-                        "rs100000062",
-                        "rs100000063",
-                        "rs100000064",
-                        "rs100000065",
-                        "rs100000066",
-                        "rs100000067",
-                        "rs100000068",
-                        "rs100000069",
-                        "rs100000070",
-                        "rs100000071",
-                        "rs100000072",
-                        "rs100000073",
-                        "rs100000074",
-                        "rs100000075",
-                        "rs100000076",
-                        "rs100000077",
-                        "rs100000078",
-                        "rs100000079",
-                        "rs100000080",
-                        "rs100000081",
-                        "rs100000082",
-                        "rs100000083",
-                        "rs100000084",
-                        "rs100000085",
-                        "rs100000086",
-                        "rs100000087",
-                        "rs100000088",
-                        "rs100000089",
-                        "rs100000090",
-                        "rs100000091",
-                        "rs100000092",
-                        "rs100000093",
-                        "rs100000094",
-                        "rs100000095",
-                        "rs100000096",
-                        "rs100000097",
-                        "rs100000098",
-                        "rs100000099",
-                        "rs100000100"
+                        "rs123456789",
+                        "rs987654321",
+                        "rs246813579"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
                     ],
                     "generated": [
-                        "refseq",
                         "ensembl",
-                        "genbank",
-                        "ucsc",
-                        "ncbi"
+                        "refseq",
+                        "genbank"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
-                "minProperties": "2",
-                "maxProperties": "2",
+                "minProperties": "1",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "None",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "annotation_summary"
@@ -349,121 +218,73 @@
                         "field7",
                         "field8",
                         "field9",
-                        "field10",
-                        "field11",
-                        "field12",
-                        "field13",
-                        "field14",
-                        "field15",
-                        "field16",
-                        "field17",
-                        "field18",
-                        "field19",
-                        "field20"
+                        "field10"
                     ]
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         }
     },
     "/annotation/genomic": {
         "post": {
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
                     ],
                     "generated": [
-                        "refseq",
                         "ensembl",
-                        "genbank",
-                        "ucsc",
-                        "ncbi"
+                        "refseq",
+                        "genbank"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
-                "minProperties": "2",
-                "maxProperties": "2",
+                "minProperties": "1",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "1",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "hotspots"
                     ],
-                    "generated": [
-                        "fields",
-                        "data",
-                        "parameters",
-                        "options",
-                        "values",
-                        "filters",
-                        "categories",
-                        "tags",
-                        "attributes"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             },
             "request-body": {
                 "": {
-                    "minItems": "None",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "None"
                         ],
-                        "generated": [
-                            "chr1:100-200",
-                            "chr2:300-400",
-                            "chr3:500-600",
-                            "chr4:700-800",
-                            "chr5:900-1000",
-                            "chr6:1100-1200",
-                            "chr7:1300-1400",
-                            "chr8:1500-1600",
-                            "chr9:1700-1800",
-                            "chr10:1900-2000",
-                            "chr11:2100-2200",
-                            "chr12:2300-2400",
-                            "chr13:2500-2600",
-                            "chr14:2700-2800",
-                            "chr15:2900-3000",
-                            "chr16:3100-3200",
-                            "chr17:3300-3400",
-                            "chr18:3500-3600",
-                            "chr19:3700-3800",
-                            "chr20:3900-4000",
-                            "chr21:4100-4200",
-                            "chr22:4300-4400",
-                            "chrX:4500-4600",
-                            "chrY:4700-4800",
-                            "chrM:4900-5000"
-                        ]
+                        "generated": []
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -471,161 +292,131 @@
     "/annotation/genomic/{genomicLocation}": {
         "get": {
             "genomicLocation": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "7,140453136,140453136,A,T"
                     ],
                     "generated": [
-                        "1,100000000,200000000,300000000,400000000,500000000,600000000,800000000,900000000,1000000000,1100000000,1200000000,1300000000,1400000000,1500000000,1600000000,1700000000,1800000000,1900000000,2000000000,2100000000,2200000000,2300000000,2400000000,2500000000,2600000000,2700000000,2800000000,2900000000,3000000000,3100000000,3200000000,3300000000,3400000000,3500000000,3600000000,3700000000,3800000000,3900000000,4000000000,4100000000,4200000000,4300000000,4400000000,4500000000,4600000000,4700000000,4800000000,4900000000,5000000000,5100000000,5200000000,5300000000,5400000000,5500000000,5600000000,5700000000,5800000000,5900000000,6000000000,6100000000,6200000000,6300000000,6400000000,6500000000,6600000000,6700000000,6800000000,6900000000,7000000000,7100000000,7200000000,7300000000,7400000000,7500000000,7600000000,7700000000,7800000000,7900000000,8000000000,8100000000,8200000000,8300000000,8400000000,8500000000,8600000000,8700000000,8800000000,8900000000,9000000000,9100000000,9200000000,9300000000,9400000000,9500000000,9600000000,9700000000,9800000000,9900000000,10000000000,101000000"
+                        "1,100000000,200000000,G,C"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
                     ],
                     "generated": [
-                        "refseq",
                         "ensembl",
-                        "genbank",
-                        "ucsc",
-                        "ncbi"
+                        "refseq",
+                        "genbank"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
-                "minProperties": "2",
-                "maxProperties": "2",
+                "minProperties": "1",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "1",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "hotspots"
                     ],
-                    "generated": [
-                        "fields",
-                        "data",
-                        "parameters",
-                        "options",
-                        "values",
-                        "filters",
-                        "categories",
-                        "tags",
-                        "attributes"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         }
     },
     "/annotation/{variant}": {
         "get": {
             "variant": {
-                "min": "None",
-                "max": "None",
                 "examples": {
                     "provided": [
                         "17:g.41242962_41242963insGA"
                     ],
                     "generated": [
-                        "17:g.41242962_41242963insAA",
-                        "17:g.41242962_41242963insAG",
-                        "17:g.41242962_41242963insAT",
-                        "17:g.41242962_41242963insAC",
-                        "17:g.41242962_41242963insCA",
-                        "17:g.41242962_41242963insCG",
-                        "17:g.41242962_41242963insCT",
-                        "17:g.41242962_41242963insCC",
-                        "17:g.41242962_41242963insGA",
-                        "17:g.41242962_41242963insGG",
-                        "17:g.41242962_41242963insGT",
-                        "17:g.41242962_41242963insGC",
-                        "17:g.41242962_41242963insTA",
-                        "17:g.41242962_41242963insTG",
-                        "17:g.41242962_41242963insTT",
-                        "17:g.41242962_41242963insTC"
+                        "1:g.12345678_12345679insAT",
+                        "2:g.23456789_23456790insCG",
+                        "3:g.34567890_34567891insTC",
+                        "4:g.45678901_45678902insGA",
+                        "5:g.56789012_56789013insAT",
+                        "6:g.67890123_67890124insCG",
+                        "7:g.78901234_78901235insTC",
+                        "8:g.89012345_89012346insGA",
+                        "9:g.90123456_90123457insAT",
+                        "10:g.01234567_01234568insCG"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
                     ],
                     "generated": [
-                        "refseq",
                         "ensembl",
-                        "genbank",
-                        "ucsc",
-                        "ncbi"
+                        "refseq",
+                        "genbank"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "token": {
-                "minProperties": "2",
-                "maxProperties": "2",
+                "minProperties": "1",
                 "examples": {
                     "provided": [
-                        "{\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}"
+                        "put-your-token1-here",
+                        "put-your-token2-here"
                     ],
                     "generated": [
-                        "{\"source3\":\"put-your-token3-here\",\"source4\":\"put-your-token4-here\"}"
+                        "token123",
+                        "token456",
+                        "token789",
+                        "myToken",
+                        "secretToken",
+                        "access_token",
+                        "authToken",
+                        "apiToken",
+                        "userToken",
+                        "sessionToken"
                     ]
                 },
-                "type": "object",
-                "format": "None"
+                "type": "object"
             },
             "fields": {
-                "minItems": "1",
-                "maxItems": "None",
                 "examples": {
                     "provided": [
                         "hotspots"
                     ],
-                    "generated": [
-                        "fields",
-                        "data",
-                        "parameters",
-                        "options",
-                        "values",
-                        "filters",
-                        "categories",
-                        "tags",
-                        "attributes"
-                    ]
+                    "generated": []
                 },
                 "type": "array",
                 "items": "string",
-                "format": "None"
+                "collectionFormat": "csv"
             }
         }
     },
@@ -633,19 +424,17 @@
         "post": {
             "request-body": {
                 "": {
-                    "minItems": "3",
-                    "maxItems": "None",
+                    "minItems": "1",
                     "examples": {
                         "provided": [
                             "[\"23140\",\"26009\",\"100131879\"]"
                         ],
                         "generated": [
-                            "[\"12345\",\"67890\",\"54321\"]"
+                            "[\"12345\",\"67890\",\"98765\"]"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -653,8 +442,6 @@
     "/ensembl/canonical-gene/entrez/{entrezGeneId}": {
         "get": {
             "entrezGeneId": {
-                "min": "23140",
-                "max": "23140",
                 "examples": {
                     "provided": [
                         "23140"
@@ -669,101 +456,10 @@
                         "700",
                         "800",
                         "900",
-                        "1000",
-                        "1100",
-                        "1200",
-                        "1300",
-                        "1400",
-                        "1500",
-                        "1600",
-                        "1700",
-                        "1800",
-                        "1900",
-                        "2000",
-                        "2100",
-                        "2200",
-                        "2300",
-                        "2400",
-                        "2500",
-                        "2600",
-                        "2700",
-                        "2800",
-                        "2900",
-                        "3000",
-                        "3100",
-                        "3200",
-                        "3300",
-                        "3400",
-                        "3500",
-                        "3600",
-                        "3700",
-                        "3800",
-                        "3900",
-                        "4000",
-                        "4100",
-                        "4200",
-                        "4300",
-                        "4400",
-                        "4500",
-                        "4600",
-                        "4700",
-                        "4800",
-                        "4900",
-                        "5000",
-                        "5100",
-                        "5200",
-                        "5300",
-                        "5400",
-                        "5500",
-                        "5600",
-                        "5700",
-                        "5800",
-                        "5900",
-                        "6000",
-                        "6100",
-                        "6200",
-                        "6300",
-                        "6400",
-                        "6500",
-                        "6600",
-                        "6700",
-                        "6800",
-                        "6900",
-                        "7000",
-                        "7100",
-                        "7200",
-                        "7300",
-                        "7400",
-                        "7500",
-                        "7600",
-                        "7700",
-                        "7800",
-                        "7900",
-                        "8000",
-                        "8100",
-                        "8200",
-                        "8300",
-                        "8400",
-                        "8500",
-                        "8600",
-                        "8700",
-                        "8800",
-                        "8900",
-                        "9000",
-                        "9100",
-                        "9200",
-                        "9300",
-                        "9400",
-                        "9500",
-                        "9600",
-                        "9700",
-                        "9800",
-                        "9900",
-                        "10000"
+                        "1000"
                     ]
                 },
-                "type": "integer",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -771,8 +467,7 @@
         "post": {
             "request-body": {
                 "": {
-                    "minItems": "3",
-                    "maxItems": "None",
+                    "minItems": "1",
                     "examples": {
                         "provided": [
                             "TP53",
@@ -784,22 +479,29 @@
                             "KRAS",
                             "PTEN",
                             "AKT1",
+                            "CDKN2A",
+                            "MAPK1",
+                            "NOTCH1",
                             "MET",
+                            "JAK2",
                             "ALK",
-                            "ROS1",
-                            "RET",
-                            "BRAF",
+                            " BRAF",
                             "NRAS",
-                            "HRAS",
+                            "RET",
+                            "ROS1",
                             "ERBB2",
                             "FGFR1",
                             "FGFR2",
                             "FGFR3",
-                            " ALK",
+                            "KIT",
+                            "PDGFRA",
+                            "PDGFRB",
+                            "DDR2",
                             "NTRK1",
                             "NTRK2",
                             "NTRK3",
-                            "DDR2",
+                            " ABL1",
+                            "ABL2",
                             "EGFRvIII",
                             "EGFRvIV",
                             "EGFRvV",
@@ -809,8 +511,8 @@
                             "EGFRvIX",
                             "EGFRvX",
                             "EGFRvXI",
-                            " EGFRvXII",
-                            "EGFRvXIII",
+                            "EGFRvXII",
+                            " EGFRvXIII",
                             "EGFRvXIV",
                             "EGFRvXV",
                             "EGFRvXVI",
@@ -822,58 +524,11 @@
                             "EGFRvXXII",
                             " EGFRvXXIII",
                             "EGFRvXXIV",
-                            "EGFRvXXV",
-                            "EGFRvXXVI",
-                            "EGFRvXXVII",
-                            "EGFRvXXVIII",
-                            "EGFRvXXIX",
-                            "EGFRvXXX",
-                            "EGFRvXXXI",
-                            "EGFRvXXXII",
-                            " EGFRvXXXIII",
-                            "EGFRvXXXIV",
-                            "EGFRvXXXV",
-                            "EGFRvXXXVI",
-                            "EGFRvXXXVII",
-                            "EGFRvXXXVIII",
-                            "EGFRvXXXIX",
-                            "EGFRvXL",
-                            "EGFRvXLI",
-                            "EGFRvXLII",
-                            " EGFRvXLIII",
-                            "EGFRvXLIV",
-                            "EGFRvXLV",
-                            "EGFRvXLVI",
-                            "EGFRvXLVII",
-                            "EGFRvXLVIII",
-                            "EGFRvXLIX",
-                            "EGFRvL",
-                            "EGFRvLI",
-                            "EGFRvLII",
-                            "EGFRvLIII",
-                            " EGFRvLIV",
-                            "EGFRvLV",
-                            "EGFRvLVI",
-                            "EGFRvLVII",
-                            "EGFRvLVIII",
-                            "EGFRvLIX",
-                            "EGFRvLX",
-                            "EGFRvLXI",
-                            "EGFRvLXII",
-                            "EGFRvLXIII",
-                            "EGFRvLXIV",
-                            " EGFRvLXV",
-                            "EGFRvLXVI",
-                            "EGFRvLXVII",
-                            "EGFRvLXVIII",
-                            "EGFRvLXIX",
-                            "EGFRvLXX",
-                            "EGFRvLXXI"
+                            "EGFRvXXV"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -882,7 +537,6 @@
         "get": {
             "hugoSymbol": {
                 "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "TP53"
@@ -903,35 +557,28 @@
                         "WXYZ"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/ensembl/canonical-transcript/hgnc": {
         "post": {
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
                     ],
                     "generated": [
-                        "refseq",
                         "ensembl",
-                        "genbank",
-                        "ucsc",
-                        "ncbi"
+                        "refseq",
+                        "genbank"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "request-body": {
                 "": {
-                    "minItems": "3",
-                    "maxItems": "None",
+                    "minItems": "1",
                     "examples": {
                         "provided": [
                             "TP53",
@@ -943,22 +590,29 @@
                             "KRAS",
                             "PTEN",
                             "AKT1",
+                            "CDKN2A",
+                            "MAPK1",
+                            "NOTCH1",
                             "MET",
+                            "JAK2",
                             "ALK",
-                            "ROS1",
-                            "RET",
-                            "BRAF",
+                            " BRAF",
                             "NRAS",
-                            "HRAS",
+                            "RET",
+                            "ROS1",
                             "ERBB2",
                             "FGFR1",
                             "FGFR2",
                             "FGFR3",
-                            " ALK",
+                            "KIT",
+                            "PDGFRA",
+                            "PDGFRB",
+                            "DDR2",
                             "NTRK1",
                             "NTRK2",
                             "NTRK3",
-                            "DDR2",
+                            " ABL1",
+                            "ABL2",
                             "EGFRvIII",
                             "EGFRvIV",
                             "EGFRvV",
@@ -968,8 +622,8 @@
                             "EGFRvIX",
                             "EGFRvX",
                             "EGFRvXI",
-                            " EGFRvXII",
-                            "EGFRvXIII",
+                            "EGFRvXII",
+                            " EGFRvXIII",
                             "EGFRvXIV",
                             "EGFRvXV",
                             "EGFRvXVI",
@@ -981,58 +635,11 @@
                             "EGFRvXXII",
                             " EGFRvXXIII",
                             "EGFRvXXIV",
-                            "EGFRvXXV",
-                            "EGFRvXXVI",
-                            "EGFRvXXVII",
-                            "EGFRvXXVIII",
-                            "EGFRvXXIX",
-                            "EGFRvXXX",
-                            "EGFRvXXXI",
-                            "EGFRvXXXII",
-                            " EGFRvXXXIII",
-                            "EGFRvXXXIV",
-                            "EGFRvXXXV",
-                            "EGFRvXXXVI",
-                            "EGFRvXXXVII",
-                            "EGFRvXXXVIII",
-                            "EGFRvXXXIX",
-                            "EGFRvXL",
-                            "EGFRvXLI",
-                            "EGFRvXLII",
-                            " EGFRvXLIII",
-                            "EGFRvXLIV",
-                            "EGFRvXLV",
-                            "EGFRvXLVI",
-                            "EGFRvXLVII",
-                            "EGFRvXLVIII",
-                            "EGFRvXLIX",
-                            "EGFRvL",
-                            "EGFRvLI",
-                            "EGFRvLII",
-                            "EGFRvLIII",
-                            " EGFRvLIV",
-                            "EGFRvLV",
-                            "EGFRvLVI",
-                            "EGFRvLVII",
-                            "EGFRvLVIII",
-                            "EGFRvLIX",
-                            "EGFRvLX",
-                            "EGFRvLXI",
-                            "EGFRvLXII",
-                            "EGFRvLXIII",
-                            "EGFRvLXIV",
-                            " EGFRvLXV",
-                            "EGFRvLXVI",
-                            "EGFRvLXVII",
-                            "EGFRvLXVIII",
-                            "EGFRvLXIX",
-                            "EGFRvLXX",
-                            "EGFRvLXXI"
+                            "EGFRvXXV"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -1041,7 +648,6 @@
         "get": {
             "hugoSymbol": {
                 "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "TP53"
@@ -1062,26 +668,20 @@
                         "WXYZ"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "isoformOverrideSource": {
-                "minLength": "None",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "uniprot"
                     ],
                     "generated": [
-                        "refseq",
                         "ensembl",
-                        "genbank",
-                        "ucsc",
-                        "ncbi"
+                        "refseq",
+                        "genbank"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1099,24 +699,23 @@
                         "ENSG00000198765",
                         "ENSG00000154321",
                         "ENSG00000187654",
-                        "ENSG00000109876",
-                        "ENSG00000176543"
+                        "ENSG00000109876"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "proteinId": {
-                "minLength": "None",
-                "maxLength": "None",
+                "minLength": "17",
+                "maxLength": "17",
                 "examples": {
                     "provided": [
                         "ENSP00000439985"
                     ],
                     "generated": [
-                        "ENSP00000312345",
-                        "ENSP00000234567",
                         "ENSP00000123456",
+                        "ENSP00000234567",
+                        "ENSP00000345678",
+                        "ENSP00000456789",
                         "ENSP00000567890",
                         "ENSP00000678901",
                         "ENSP00000789012",
@@ -1132,91 +731,32 @@
                         "ENSP00001789012",
                         "ENSP00001890123",
                         "ENSP00001901234",
-                        "ENSP00002012345",
-                        "ENSP00002123456"
+                        "ENSP00002012345"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             },
             "hugoSymbol": {
                 "minLength": "1",
-                "maxLength": "20",
                 "examples": {
                     "provided": [
                         "ARF5"
                     ],
                     "generated": [
-                        "ARF1",
-                        "ARF2",
-                        "ARF3",
-                        "ARF4",
-                        "ARF6",
-                        "ARF7",
-                        "ARF8",
-                        "ARF9",
-                        "ARF10",
-                        "ARF11",
-                        "ARF12",
-                        "ARF13",
-                        "ARF14",
-                        "ARF15",
-                        "ARF16",
-                        "ARF17",
-                        "ARF18",
-                        "ARF19",
-                        "ARF20",
-                        "ARF21",
-                        "ARF22",
-                        "ARF23",
-                        "ARF24",
-                        "ARF25",
-                        "ARF26",
-                        "ARF27",
-                        "ARF28",
-                        "ARF29",
-                        "ARF30",
-                        "ARF31",
-                        "ARF32",
-                        "ARF33",
-                        "ARF34",
-                        "ARF35",
-                        "ARF36",
-                        "ARF37",
-                        "ARF38",
-                        "ARF39",
-                        "ARF40",
-                        "ARF41",
-                        "ARF42",
-                        "ARF43",
-                        "ARF44",
-                        "ARF45",
-                        "ARF46",
-                        "ARF47",
-                        "ARF48",
-                        "ARF49",
-                        "ARF50",
-                        "ARF51",
-                        "ARF52",
-                        "ARF53",
-                        "ARF54",
-                        "ARF55",
-                        "ARF56",
-                        "ARF57",
-                        "ARF58",
-                        "ARF59",
-                        "ARF60"
+                        "ABC1",
+                        "XYZ9",
+                        "DEF2",
+                        "GHI3",
+                        "JKL4"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         },
         "post": {
             "request-body": {
                 "geneIds": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "ENSG00000136999",
@@ -1228,72 +768,14 @@
                             "ENSG00000234567",
                             "ENSG00000345678",
                             "ENSG00000456789",
-                            "ENSG00000567890",
-                            "ENSG00000678901",
-                            "ENSG00000789012",
-                            "ENSG00000890123",
-                            "ENSG00000901234",
-                            "ENSG00001012345",
-                            "ENSG00001123456",
-                            "ENSG00001234567",
-                            "ENSG00001345678",
-                            "ENSG00001456789",
-                            "ENSG00001567890",
-                            "ENSG00001678901",
-                            "ENSG00001789012",
-                            "ENSG00001890123",
-                            "ENSG00001901234",
-                            "ENSG00002012345",
-                            "ENSG00002123456",
-                            "ENSG00002234567",
-                            "ENSG00002345678",
-                            "ENSG00002456789",
-                            "ENSG00002567890",
-                            "ENSG00002678901",
-                            "ENSG00002789012",
-                            "ENSG00002890123",
-                            "ENSG00002901234",
-                            "ENSG00003012345",
-                            "ENSG00003123456",
-                            "ENSG00003234567",
-                            "ENSG00003345678",
-                            "ENSG00003456789",
-                            "ENSG00003567890",
-                            "ENSG00003678901",
-                            "ENSG00003789012",
-                            "ENSG00003890123",
-                            "ENSG00003901234",
-                            "ENSG00004012345",
-                            "ENSG00004123456",
-                            "ENSG00004234567",
-                            "ENSG00004345678",
-                            "ENSG00004456789",
-                            "ENSG00004567890",
-                            "ENSG00004678901",
-                            "ENSG00004789012",
-                            "ENSG00004890123",
-                            "ENSG00004901234",
-                            "ENSG00005012345",
-                            "ENSG00005123456",
-                            "ENSG00005234567",
-                            "ENSG00005345678",
-                            "ENSG00005456789",
-                            "ENSG00005567890",
-                            "ENSG00005678901",
-                            "ENSG00005789012",
-                            "ENSG00005890123",
-                            "ENSG00005901234",
-                            "ENSG00006012345",
-                            "ENS"
+                            "ENSG00000567890"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 },
                 "hugoSymbols": {
-                    "minItems": "3",
-                    "maxItems": "None",
+                    "minItems": "1",
                     "examples": {
                         "provided": [
                             "TP53",
@@ -1305,95 +787,56 @@
                             "KRAS",
                             "PTEN",
                             "AKT1",
+                            "CDKN2A",
                             "MET",
-                            "ALK",
-                            "ROS1",
-                            "RET",
                             "HER2",
+                            "ALK",
+                            "RET",
+                            "ROS1",
                             "BRAF",
-                            "NRAS",
-                            "HRAS",
-                            "ERBB2",
-                            " EGFRvIII",
                             "FGFR1",
+                            "ERBB2",
+                            "NRAS",
+                            "MAP2K1",
+                            " PIK3R1",
+                            "NOTCH1",
+                            "JAK2",
+                            "SMAD4",
+                            "IDH1",
+                            "KIT",
+                            "PDGFRA",
+                            "EGFRvIII",
+                            "NTRK1",
+                            "DDR2",
                             "FGFR2",
                             "FGFR3",
                             "FGFR4",
-                            "PDGFRA",
-                            "PDGFRB",
-                            "KIT",
-                            "FLT3",
-                            "NTRK1",
-                            "NTRK2",
-                            "NTRK3",
-                            "ALK-ROS1",
-                            "ALK-RET",
-                            "ALK-ERBB2",
-                            "ALK-FGFR1",
-                            "ALK-FGFR2",
-                            "ALK-FGFR3",
-                            " ALK-FGFR4",
-                            "ALK-PDGFRA",
-                            "ALK-PDGFRB",
-                            "ALK-KIT",
-                            "ALK-FLT3",
-                            "ALK-NTRK1",
-                            "ALK-NTRK2",
-                            "ALK-NTRK3",
-                            "ROS1-RET",
-                            "ROS1-ERBB2",
-                            "ROS1-FGFR1",
-                            "ROS1-FGFR2",
-                            "ROS1-FGFR3",
-                            "ROS1-FGFR4",
-                            " ROS1-PDGFRA",
-                            "ROS1-PDGFRB",
-                            "ROS1-KIT",
-                            "ROS1-FLT3",
-                            "ROS1-NTRK1",
-                            "ROS1-NTRK2",
-                            "ROS1-NTRK3",
-                            "RET-ERBB2",
-                            "RET-FGFR1",
-                            "RET-FGFR2",
-                            "RET-FGFR3",
-                            "RET-FGFR4",
-                            "RET-PDGFRA",
-                            "RET-PDGFRB",
-                            " RET-KIT",
-                            "RET-FLT3",
-                            "RET-NTRK1",
-                            "RET-NTRK2",
-                            "RET-NTRK3",
-                            "ERBB2-FGFR1",
-                            "ERBB2-FGFR2",
-                            "ERBB2-FGFR3",
-                            "ERBB2-FGFR4",
-                            "ERBB2-PDGFRA",
-                            "ERBB2-PDGFRB",
-                            "ERBB2-KIT",
-                            "ERBB2-FLT3",
-                            "ERBB2-NTRK1",
-                            " ERBB2-NTRK2",
-                            "ERBB2-NTRK3",
-                            "FGFR1-FGFR2",
-                            "FGFR1-FGFR3",
-                            "FGFR1-FGFR4",
-                            "FGFR1-PDGFRA",
-                            "FGFR1-PDGFRB",
-                            "FGFR1-KIT",
-                            "FGFR1-FLT3",
-                            "FGFR1-NTRK1",
-                            "FGFR1-NTRK2"
+                            "ERBB4",
+                            "ERBB3",
+                            "ERBB1",
+                            " ALK-EML4",
+                            "EML4-ALK",
+                            "ROS1-CD74",
+                            "CD74-ROS1",
+                            "NPM1-ALK",
+                            "ALK-NPM1",
+                            "TPM3-ALK",
+                            "ALK-TPM3",
+                            "TFG-ALK",
+                            "ALK-TFG",
+                            "KIF5B-ALK",
+                            "ALK-KIF5B",
+                            " TFG-ROS1",
+                            "ROS1-TFG",
+                            "SLC34A2-ROS1",
+                            "ROS1-SLC34A2"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 },
                 "proteinIds": {
-                    "minItems": "3",
-                    "maxItems": "None",
+                    "minItems": "1",
                     "examples": {
                         "provided": [
                             "ENSP00000439985",
@@ -1410,36 +853,14 @@
                             "ENSP00000789012",
                             "ENSP00000890123",
                             "ENSP00000901234",
-                            "ENSP00001012345",
-                            "ENSP00001123456",
-                            "ENSP00001234567",
-                            "ENSP00001345678",
-                            "ENSP00001456789",
-                            "ENSP00001567890",
-                            "ENSP00001678901",
-                            "ENSP00001789012",
-                            "ENSP00001890123",
-                            "ENSP00001901234",
-                            "ENSP00002012345",
-                            "ENSP00002123456",
-                            "ENSP00002234567",
-                            "ENSP00002345678",
-                            "ENSP00002456789",
-                            "ENSP00002567890",
-                            "ENSP00002678901",
-                            "ENSP00002789012",
-                            "ENSP00002890123",
-                            "ENSP00002901234",
-                            "ENSP00003012345"
+                            "ENSP00001012345"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 },
                 "transcriptIds": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "ENST00000361390",
@@ -1479,49 +900,11 @@
                             "ENST00000361634",
                             "ENST00000361401",
                             "ENST00000361464",
-                            "ENST00000361635",
-                            "ENST00000361402",
-                            "ENST00000361465",
-                            "ENST00000361636",
-                            "ENST00000361403",
-                            "ENST00000361466",
-                            "ENST00000361637",
-                            "ENST00000361404",
-                            "ENST00000361467",
-                            "ENST00000361638",
-                            "ENST00000361405",
-                            "ENST00000361468",
-                            "ENST00000361639",
-                            "ENST00000361406",
-                            "ENST00000361469",
-                            "ENST00000361640",
-                            "ENST00000361407",
-                            "ENST00000361470",
-                            "ENST00000361641",
-                            "ENST00000361408",
-                            "ENST00000361471",
-                            "ENST00000361642",
-                            "ENST00000361409",
-                            "ENST00000361472",
-                            "ENST00000361643",
-                            "ENST00000361410",
-                            "ENST00000361473",
-                            "ENST00000361644",
-                            "ENST00000361411",
-                            "ENST00000361474",
-                            "ENST00000361645",
-                            "ENST00000361412",
-                            "ENST00000361475",
-                            "ENST00000361646",
-                            "ENST00000361413",
-                            "ENST00000361476",
-                            "ENST00000361647",
-                            "ENST"
+                            "ENST000003616"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -1529,27 +912,51 @@
     "/ensembl/transcript/{transcriptId}": {
         "get": {
             "transcriptId": {
-                "minLength": "18",
-                "maxLength": "18",
+                "minLength": "17",
+                "maxLength": "17",
                 "examples": {
                     "provided": [
                         "ENST00000361390"
                     ],
                     "generated": [
-                        "ENST00000123456",
-                        "ENST00000234567",
-                        "ENST00000345678",
-                        "ENST00000456789",
-                        "ENST00000567890",
-                        "ENST00000678901",
-                        "ENST00000789012",
-                        "ENST00000890123",
-                        "ENST00000901234",
-                        "ENST00001012345"
+                        "ENST00000361391",
+                        "ENST00000361392",
+                        "ENST00000361393",
+                        "ENST00000361394",
+                        "ENST00000361395",
+                        "ENST00000361396",
+                        "ENST00000361397",
+                        "ENST00000361398",
+                        "ENST00000361399",
+                        "ENST00000361400",
+                        "ENST00000361401",
+                        "ENST00000361402",
+                        "ENST00000361403",
+                        "ENST00000361404",
+                        "ENST00000361405",
+                        "ENST00000361406",
+                        "ENST00000361407",
+                        "ENST00000361408",
+                        "ENST00000361409",
+                        "ENST00000361410",
+                        "ENST00000361411",
+                        "ENST00000361412",
+                        "ENST00000361413",
+                        "ENST00000361414",
+                        "ENST00000361415",
+                        "ENST00000361416",
+                        "ENST00000361417",
+                        "ENST00000361418",
+                        "ENST00000361419",
+                        "ENST00000361420",
+                        "ENST00000361421",
+                        "ENST00000361422",
+                        "ENST00000361423",
+                        "ENST00000361424",
+                        "ENST000003614"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1557,7 +964,6 @@
         "get": {
             "accession": {
                 "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "ENSG00000169083"
@@ -1565,70 +971,17 @@
                     "generated": [
                         "ENSG00000123456",
                         "ENSG00000198765",
-                        "ENSG00000111111",
-                        "ENSG00000122222",
-                        "ENSG00000133333",
-                        "ENSG00000144444",
-                        "ENSG00000155555",
-                        "ENSG00000166666",
-                        "ENSG00000177777",
-                        "ENSG00000188888",
-                        "ENSG00000199999",
-                        "ENSG00000200000",
-                        "ENSG00000211111",
-                        "ENSG00000222222",
-                        "ENSG00000233333",
-                        "ENSG00000244444",
-                        "ENSG00000255555",
-                        "ENSG00000266666",
-                        "ENSG00000277777",
-                        "ENSG00000288888",
-                        "ENSG00000299999",
-                        "ENSG00000300000",
-                        "ENSG00000311111",
-                        "ENSG00000322222",
-                        "ENSG00000333333",
-                        "ENSG00000344444",
-                        "ENSG00000355555",
-                        "ENSG00000366666",
-                        "ENSG00000377777",
-                        "ENSG00000388888",
-                        "ENSG00000399999",
-                        "ENSG00000400000",
-                        "ENSG00000411111",
-                        "ENSG00000422222",
-                        "ENSG00000433333",
-                        "ENSG00000444444",
-                        "ENSG00000455555",
-                        "ENSG00000466666",
-                        "ENSG00000477777",
-                        "ENSG00000488888",
-                        "ENSG00000499999",
-                        "ENSG00000500000",
-                        "ENSG00000511111",
-                        "ENSG00000522222",
-                        "ENSG00000533333",
-                        "ENSG00000544444",
-                        "ENSG00000555555",
-                        "ENSG00000566666",
-                        "ENSG00000577777",
-                        "ENSG00000588888",
-                        "ENSG00000599999",
-                        "ENSG00000600000",
-                        "ENSG00000611111",
-                        "ENSG00000622222",
-                        "ENSG00000633333",
-                        "ENSG00000644444",
-                        "ENSG00000655555",
-                        "ENSG00000666666",
-                        "ENSG00000677777",
-                        "ENSG00000688888",
-                        "ENSG00000699999",
-                        "ENSG00000700000"
+                        "ENSG00000123457",
+                        "ENSG00000198766",
+                        "ENSG00000123458",
+                        "ENSG00000198767",
+                        "ENSG00000123459",
+                        "ENSG00000198768",
+                        "ENSG00000123460",
+                        "ENSG00000198769"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1636,19 +989,17 @@
         "post": {
             "request-body": {
                 "": {
-                    "minItems": "2",
-                    "maxItems": "None",
+                    "minItems": "1",
                     "examples": {
                         "provided": [
                             "[\"1a37\",\"1a4o\"]"
                         ],
                         "generated": [
-                            "[\"1a37\",\"1a4o\",\"1a38\",\"1a4p\",\"1a39\",\"1a4q\",\"1a3a\",\"1a4r\",\"1a3b\",\"1a4s\"]"
+                            "[\"1a38\",\"1a4p\",\"1a4q\",\"1a4r\",\"1a4s\",\"1a4t\",\"1a4u\",\"1a4v\",\"1a4w\",\"1a4x\",\"1a4y\",\"1a4z\",\"1a50\",\"1a51\",\"1a52\",\"1a53\",\"1a54\",\"1a55\",\"1a56\",\"1a57\",\"1a58\",\"1a59\",\"1a5a\",\"1a5b\",\"1a5c\",\"1a5d\",\"1a5e\",\"1a5f\",\"1a5g\",\"1a5h\",\"1a5i\",\"1a5j\",\"1a5k\",\"1a5l\",\"1a5m\",\"1a5n\",\"1a5o\",\"1a5p\",\"1a5q\",\"1a5r\",\"1a5s\",\"1a5t\",\"1a5u\",\"1a5v\",\"1a5w\",\"1a5x\",\"1a5y\",\"1a5z\"]"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -1663,73 +1014,58 @@
                         "1a37"
                     ],
                     "generated": [
-                        "1a38",
-                        "1a39",
-                        "1a40",
-                        "1a41",
-                        "1a42",
-                        "1a43",
-                        "1a44",
-                        "1a45",
-                        "1a46",
-                        "1a47",
-                        "1a48",
-                        "1a49",
-                        "1a50",
-                        "1a51",
-                        "1a52",
-                        "1a53",
-                        "1a54",
-                        "1a55",
-                        "1a56",
-                        "1a57",
-                        "1a58",
-                        "1a59",
-                        "1a60",
-                        "1a61",
-                        "1a62",
-                        "1a63",
-                        "1a64",
-                        "1a65",
-                        "1a66",
-                        "1a67",
-                        "1a68",
-                        "1a69",
-                        "1a70",
-                        "1a71",
-                        "1a72",
-                        "1a73",
-                        "1a74",
-                        "1a75",
-                        "1a76",
-                        "1a77",
-                        "1a78",
-                        "1a79",
-                        "1a80",
-                        "1a81",
-                        "1a82",
-                        "1a83",
-                        "1a84",
-                        "1a85",
-                        "1a86",
-                        "1a87",
-                        "1a88",
-                        "1a89",
-                        "1a90",
-                        "1a91",
-                        "1a92",
-                        "1a93",
-                        "1a94",
-                        "1a95",
-                        "1a96",
-                        "1a97",
-                        "1a98",
-                        "1a99",
-                        "1a100"
+                        "0a00",
+                        "0a01",
+                        "0a02",
+                        "0a03",
+                        "0a04",
+                        "0a05",
+                        "0a06",
+                        "0a07",
+                        "0a08",
+                        "0a09",
+                        "0a10",
+                        "0a11",
+                        "0a12",
+                        "0a13",
+                        "0a14",
+                        "0a15",
+                        "0a16",
+                        "0a17",
+                        "0a18",
+                        "0a19",
+                        "0a20",
+                        "0a21",
+                        "0a22",
+                        "0a23",
+                        "0a24",
+                        "0a25",
+                        "0a26",
+                        "0a27",
+                        "0a28",
+                        "0a29",
+                        "0a30",
+                        "0a31",
+                        "0a32",
+                        "0a33",
+                        "0a34",
+                        "0a35",
+                        "0a36",
+                        "0a37",
+                        "0a38",
+                        "0a39",
+                        "0a40",
+                        "0a41",
+                        "0a42",
+                        "0a43",
+                        "0a44",
+                        "0a45",
+                        "0a46",
+                        "0a47",
+                        "0a48,"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
@@ -1737,8 +1073,7 @@
         "post": {
             "request-body": {
                 "": {
-                    "minItems": "3",
-                    "maxItems": "None",
+                    "minItems": "1",
                     "examples": {
                         "provided": [
                             "PF02827",
@@ -1757,7 +1092,7 @@
                             "PF00009",
                             "PF00010",
                             "PF00011",
-                            " PF00012",
+                            "PF00012",
                             "PF00013",
                             "PF00014",
                             "PF00015",
@@ -1770,7 +1105,7 @@
                             "PF00022",
                             "PF00023",
                             "PF00024",
-                            " PF00025",
+                            "PF00025",
                             "PF00026",
                             "PF00027",
                             "PF00028",
@@ -1783,7 +1118,7 @@
                             "PF00035",
                             "PF00036",
                             "PF00037",
-                            " PF00038",
+                            "PF00038",
                             "PF00039",
                             "PF00040",
                             "PF00041",
@@ -1796,7 +1131,7 @@
                             "PF00048",
                             "PF00049",
                             "PF00050",
-                            " PF00051",
+                            "PF00051",
                             "PF00052",
                             "PF00053",
                             "PF00054",
@@ -1805,74 +1140,11 @@
                             "PF00057",
                             "PF00058",
                             "PF00059",
-                            "PF00060",
-                            "PF00061",
-                            "PF00062",
-                            "PF00063",
-                            " PF00064",
-                            "PF00065",
-                            "PF00066",
-                            "PF00067",
-                            "PF00068",
-                            "PF00069",
-                            "PF00070",
-                            "PF00071",
-                            "PF00072",
-                            "PF00073",
-                            "PF00074",
-                            "PF00075",
-                            "PF00076",
-                            " PF00077",
-                            "PF00078",
-                            "PF00079",
-                            "PF00080",
-                            "PF00081",
-                            "PF00082",
-                            "PF00083",
-                            "PF00084",
-                            "PF00085",
-                            "PF00086",
-                            "PF00087",
-                            "PF00088",
-                            "PF00089",
-                            " PF00090",
-                            "PF00091",
-                            "PF00092",
-                            "PF00093",
-                            "PF00094",
-                            "PF00095",
-                            "PF00096",
-                            "PF00097",
-                            "PF00098",
-                            "PF00099",
-                            "PF00100",
-                            "PF00101",
-                            "PF00102",
-                            " PF00103",
-                            "PF00104",
-                            "PF00105",
-                            "PF00106",
-                            "PF00107",
-                            "PF00108",
-                            "PF00109",
-                            "PF00110",
-                            "PF00111",
-                            "PF00112",
-                            "PF00113",
-                            "PF00114",
-                            "PF00115",
-                            " PF00116",
-                            "PF00117",
-                            "PF00118",
-                            "PF00119",
-                            "PF00120",
-                            "PF00121",
-                            "PF"
+                            "PF000"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
@@ -1880,8 +1152,6 @@
     "/pfam/domain/{pfamAccession}": {
         "get": {
             "pfamAccession": {
-                "minLength": "1",
-                "maxLength": "None",
                 "examples": {
                     "provided": [
                         "PF02827"
@@ -1936,116 +1206,37 @@
                         "PF00047",
                         "PF00048",
                         "PF00049",
-                        "PF00050",
-                        "PF00051",
-                        "PF00052",
-                        "PF00053",
-                        "PF00054",
-                        "PF00055",
-                        "PF00056",
-                        "PF00057",
-                        "PF00058",
-                        "PF00059",
-                        "PF00060",
-                        "PF00061",
-                        "PF00062",
-                        "PF00063",
-                        "PF00064",
-                        "PF00065",
-                        "PF00066",
-                        "PF00067",
-                        "PF00068",
-                        "PF00069",
-                        "PF00070",
-                        "PF00071",
-                        "PF00072",
-                        "PF00073",
-                        "PF00074",
-                        "PF00075",
-                        "PF00076",
-                        "PF00077",
-                        "PF00078",
-                        "PF00079",
-                        "PF00080",
-                        "PF00081",
-                        "PF00082",
-                        "PF00083",
-                        "PF00084",
-                        "PF00085",
-                        "PF00086",
-                        "PF00087",
-                        "PF00088",
-                        "PF00089",
-                        "PF00090",
-                        "PF00091",
-                        "PF00092",
-                        "PF00093",
-                        "PF00094",
-                        "PF00095",
-                        "PF00096",
-                        "PF00097",
-                        "PF00098",
-                        "PF00099",
-                        "PF00100",
-                        "PF00101",
-                        "PF00102",
-                        "PF00103",
-                        "PF00104",
-                        "PF00105",
-                        "PF00106",
-                        "PF00107",
-                        "PF00108",
-                        "PF00109",
-                        "PF00110",
-                        "PF00111",
-                        "PF00112",
-                        "PF00113",
-                        "PF00114",
-                        "PF00115",
-                        "PF00116",
-                        "PF00117",
-                        "PF00118",
-                        "PF00119",
-                        "PF00120",
-                        "PF00121",
-                        "PF00122",
-                        "PF00123",
-                        "PF00124",
-                        "PF00125",
-                        "PF001"
+                        "PF00050"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         }
     },
     "/ptm/experimental": {
         "get": {
             "ensemblTranscriptId": {
-                "minLength": "18",
-                "maxLength": "18",
+                "minLength": "14",
+                "maxLength": "14",
                 "examples": {
                     "provided": [
                         "ENST00000646891"
                     ],
                     "generated": [
-                        "ENST00000123456",
-                        "ENST00000234567",
                         "ENST00000345678",
-                        "ENST00000456789",
-                        "ENST00000567890"
+                        "ENST00000987654",
+                        "ENST00000123456",
+                        "ENST00000543210",
+                        "ENST00000765432"
                     ]
                 },
-                "type": "string",
-                "format": "None"
+                "type": "string"
             }
         },
         "post": {
             "request-body": {
                 "transcriptIds": {
                     "minItems": "1",
-                    "maxItems": "None",
                     "examples": {
                         "provided": [
                             "ENST00000361390",
@@ -2085,49 +1276,11 @@
                             "ENST00000361634",
                             "ENST00000361401",
                             "ENST00000361464",
-                            "ENST00000361635",
-                            "ENST00000361402",
-                            "ENST00000361465",
-                            "ENST00000361636",
-                            "ENST00000361403",
-                            "ENST00000361466",
-                            "ENST00000361637",
-                            "ENST00000361404",
-                            "ENST00000361467",
-                            "ENST00000361638",
-                            "ENST00000361405",
-                            "ENST00000361468",
-                            "ENST00000361639",
-                            "ENST00000361406",
-                            "ENST00000361469",
-                            "ENST00000361640",
-                            "ENST00000361407",
-                            "ENST00000361470",
-                            "ENST00000361641",
-                            "ENST00000361408",
-                            "ENST00000361471",
-                            "ENST00000361642",
-                            "ENST00000361409",
-                            "ENST00000361472",
-                            "ENST00000361643",
-                            "ENST00000361410",
-                            "ENST00000361473",
-                            "ENST00000361644",
-                            "ENST00000361411",
-                            "ENST00000361474",
-                            "ENST00000361645",
-                            "ENST00000361412",
-                            "ENST00000361475",
-                            "ENST00000361646",
-                            "ENST00000361413",
-                            "ENST00000361476",
-                            "ENST00000361647",
-                            "ENST"
+                            "ENST000003616"
                         ]
                     },
                     "type": "array",
-                    "items": "string",
-                    "format": "None"
+                    "items": "string"
                 }
             }
         }
