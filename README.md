@@ -6,11 +6,12 @@ RESTGPT is an approach to automated API testing that leverages Large Language Mo
 
 The RESTGPT Github currently contains OpenAPI Specifications from 9 different wide-spread commercial APIs: **FDIC, Genome-Nexus, Language-Tool, OCVN, Ohsome, OMDB, Rest-Countries, Spotify,** and **Youtube**. To access these files, navigate to `src/specifications/openapi_yaml`.
 
-After downloading the Github repository, once must simply do two things to generate results for the 9 pre-added OpenAPI Specifications:
-1. Create a `config.py` file in the root directory with an [**OpenAI API Key**](https://platform.openai.com/account/api-keys) as the sole piece of content.
+After downloading the Github repository, once must simply do three things to generate results for the 9 pre-added OpenAPI Specifications:
+1. Download the packages specified in the `requirements.txt` file.
+2. Create a `config.py` file in the root directory with an [**OpenAI API Key**](https://platform.openai.com/account/api-keys) as the sole piece of content.
 > **Note:**
 > Running the program can cost up to $10 in OpenAI token costs.
-2. Run the `src/build_reports.py` file.
+3. Run the `src/build_reports.py` file.
 
 Results will be generated in the `src/` directory, with a different file representing the enhanced report for each of their corresponding OpenAPI Specifications. 
 
