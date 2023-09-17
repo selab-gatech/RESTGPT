@@ -17,7 +17,9 @@ Results will be generated in the `src/` directory, with a different file represe
 ## Customization
 
 **Changing LLMs:** RESTGPT uses GPT-3.5 Turbo as its Large Language Model, however the program can support any of OpenAI's available LLMs. To switch the LLM, navigate to `src/restgpt.py` and find the following line:
-```llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0.2, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])```
+```
+llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0.2, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
+```
 Swap the "model_name" string for any of the OpenAI model codes.
 
 **Changing Specifications:** The program and the results come alongside 9 OpenAPI Specifications for Proof of Concepts. However, if one would like to use different specifications, navigate to `src/specifications/openapi_yaml` and add the desired OpenAPI Specification file in **yaml** format.
