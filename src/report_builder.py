@@ -40,7 +40,6 @@ class ReportBuilder:
     def _convert_key(self, path):
         return f'{path[0]} {path[1]}'
         
-
     def _add_parameter_constraint(self, build_parameter, parameter_constraint):
         if parameter_constraint is None:
             return
