@@ -36,14 +36,19 @@ class ExampleParser:
                 example_dict = {"examples" : {}}
                 provided_base =  "PROVIDED"
                 generated_base = "GENERATED"
+                existing_examples = set()
                 if provided_examples is not None: 
                     for i in range(len(provided_examples)):
-                        example_dict["examples"][f"{provided_base}_{i}"] = {}
-                        example_dict["examples"][f"{provided_base}_{i}"]["value"] = provided_examples[i]
+                        if provided_examples[i] is not None and provided_examples[i].strip() != "None" and provided_examples[i] not in existing_examples:
+                            example_dict["examples"][f"{provided_base}_{i}"] = {}
+                            example_dict["examples"][f"{provided_base}_{i}"]["value"] = provided_examples[i]
+                            existing_examples.add(provided_examples[i])
                 if generated_examples is not None:
                     for i in range(len(generated_examples)):
-                        example_dict["examples"][f"{generated_base}_{i}"] = {}
-                        example_dict["examples"][f"{generated_base}_{i}"]["value"] = generated_examples[i]
+                        if generated_examples[i] is not None and generated_examples[i].strip() != "None" and generated_examples[i] not in existing_examples:
+                            example_dict["examples"][f"{generated_base}_{i}"] = {}
+                            example_dict["examples"][f"{generated_base}_{i}"]["value"] = generated_examples[i]
+                            existing_examples.add(generated_examples[i])
                 return example_dict
         else:
             example_dict = {"examples" : {}}

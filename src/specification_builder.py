@@ -42,7 +42,7 @@ class SpecificationBuilder:
         if parameter_constraint is None:
             return
         for constraint_key, constraint in parameter_constraint.items():
-            if constraint.strip() != "None":
+            if  constraint is not None and constraint.strip() != "None":
                 build_parameter[constraint_key] = constraint
     def _add_ipd_constraint(self, build_parameter, ipd_constraint):
         if ipd_constraint is None:
@@ -90,8 +90,8 @@ class SpecificationBuilder:
             self.process_request_body(operation['requestBody'], generated_request_body_values, xdependencies)
         if xdependencies: 
             operation['x-dependencies'] = xdependencies
-        with open('test.yaml', 'w') as yaml_file:
-            yaml.dump(self.output_builder, yaml_file, default_flow_style=False, sort_keys=False)
+        #with open('test.yaml', 'w') as yaml_file:
+        #    yaml.dump(self.output_builder, yaml_file, default_flow_style=False, sort_keys=False)
 
     def process_parameter(self, parameter, generated_parameter_values, xdependencies):
         if parameter['name'] in generated_parameter_values:
@@ -109,12 +109,15 @@ class SpecificationBuilder:
                 if 'schema' not in parameter: 
                     parameter['schema'] = {}
                 if 'type' in constraint_set:
+                    schema_loc = parameter['schema']
                     if constraint_set['type'] == 'array':
-                        parameter['schema'].setdefault("items", {})
-                        parameter['items'].setdefault("type", constraint_set.get("items"))
-                        parameter['items'].setdefault("format", constraint_set.get("format"))
+                        schema_loc.setdefault("items", {})
+                        if constraint_set.get("items") is not None and constraint_set.get("items").strip() != "None":
+                            schema_loc['items'].setdefault("type", constraint_set.get("items"))
+                        if constraint_set.get("format") is not None and constraint_set.get("format").strip() != "None":
+                            schema_loc['items'].setdefault("format", constraint_set.get("format"))
                     else:
-                        parameter['schema'].setdefault("type", constraint_set.get("type"))
+                        schema_loc.setdefault("type", constraint_set.get("type"))
                     constraint_set.pop("type")
                 for field in constraint_set:
                     parameter['schema'].setdefault(field, constraint_set.get(field))
@@ -146,9 +149,12 @@ class SpecificationBuilder:
                                 constraint_set.pop("x-dependencies")
                             if 'type' in constraint_set:
                                 if constraint_set['type'] == 'array':
-                                    request_body['content'][encoding_type]['schema']['properties'][property_name].setdefault("items", {})
-                                    request_body['content'][encoding_type]['schema']['properties'][property_name]['items'].setdefault("type", constraint_set.get("items"))
-                                    request_body['content'][encoding_type]['schema']['properties'][property_name]['items'].setdefault("format", constraint_set.get("format"))
+                                    prop_loc = request_body['content'][encoding_type]['schema']['properties'][property_name]
+                                    prop_loc.setdefault("items", {})
+                                    if constraint_set.get("items") is not None and constraint_set.get("items").strip() != "None":
+                                        prop_loc['items'].setdefault("type", constraint_set.get("items"))
+                                    if constraint_set.get("format") is not None and constraint_set.get("format").strip() != "None":
+                                        prop_loc['items'].setdefault("format", constraint_set.get("format"))
                                 else:
                                     request_body['content'][encoding_type]['schema']['properties'][property_name].setdefault("type", constraint_set.get("type"))
                                 constraint_set.pop("type")
@@ -168,9 +174,12 @@ class SpecificationBuilder:
                         constraint_set.pop("x-dependencies")
                     if 'type' in constraint_set:
                         if constraint_set['type'] == 'array':
-                            request_body['content'][encoding_type]['schema'].setdefault("items", {})
-                            request_body['content'][encoding_type]['schema']['items'].setdefault("type", constraint_set.get("items"))
-                            request_body['content'][encoding_type]['schema']['items'].setdefault("format", constraint_set.get("format"))
+                            schema_loc = request_body['content'][encoding_type]['schema']
+                            schema_loc.setdefault("items", {})
+                            if constraint_set.get("items") is not None and constraint_set.get("items") != "None":
+                                schema_loc['items'].setdefault("type", constraint_set.get("items"))
+                            if constraint_set.get("format") is not None and constraint_set.get("format") != "None":
+                                schema_loc['items'].setdefault("format", constraint_set.get("format"))
                         else:
                             request_body['content'][encoding_type]['schema'].setdefault("type", constraint_set.get("type"))
                         constraint_set.pop("type")
