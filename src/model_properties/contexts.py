@@ -92,12 +92,13 @@ false positives than negatives.\n"""
 
 PARAMETER_FORMAT_CONTEXT = """
 Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
-or formatting. The list of possible data types are as follows: string, number, integer, boolean, array, and object.
-The list of formatting options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname,
-ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. If the data type is an array, attempt
-to identify its item type. Output the answer as follows: "type [type], items [item type], format [format]". Output
-None when unable to determine any of the categories. For example, only output a non-None "item type" if the "type" is 
-array.
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: "type [type], items [item type], format [format], collectionFormat [". Output None when unable to determine any of the categories. 
+For example, only output a non-None "item type" if the "type" is array.
 
 Assume any "\n" values in the input indicate either new lines or spaces. 
 
