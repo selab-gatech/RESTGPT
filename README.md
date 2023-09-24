@@ -11,9 +11,9 @@ After downloading the Github repository, once must simply do three things to gen
 2. Create a `config.py` file in the root directory with an [**OpenAI API Key**](https://platform.openai.com/account/api-keys) as the sole piece of content.
 > **Note:**
 > Running the program can cost up to $10 in OpenAI token costs.
-3. Run the `src/build_reports.py` file.
+3. Run the `src/enhance_specifications.py` file.
 
-Results will be generated in the `src/` directory, with a different file representing the enhanced report for each of their corresponding OpenAPI Specifications. 
+Results will be generated in the `src/outputs/` directory, with a different file representing the enhanced report for each of their corresponding OpenAPI Specifications. 
 
 ## Customization
 
