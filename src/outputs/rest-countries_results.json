@@ -1,0 +1,2572 @@
+{
+    "openapi": "3.0.0",
+    "servers": [
+        {
+            "url": "http://localhost:9007"
+        }
+    ],
+    "info": {
+        "description": "REST countries API",
+        "title": "REST countries API",
+        "version": "v2.0.5"
+    },
+    "paths": {
+        "/v2/all": {
+            "get": {
+                "operationId": "v2All",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v2/alpha/{alphacode}": {
+            "get": {
+                "operationId": "v2Alphacode",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "alphacode",
+                        "description": "Search by ISO 3166-1 2-letter or 3-letter country code",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "minLength": "2",
+                            "maxLength": "3",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v2/alpha": {
+            "get": {
+                "operationId": "v2Alphacodes",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "codes",
+                        "description": "Search by list of ISO 3166-1 2-letter or 3-letter country codes",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "array",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "USA"
+                                },
+                                "example2": {
+                                    "value": "CAN"
+                                },
+                                "example3": {
+                                    "value": "GBR"
+                                },
+                                "example4": {
+                                    "value": "AUS"
+                                },
+                                "example5": {
+                                    "value": "FRA"
+                                },
+                                "example6": {
+                                    "value": "DEU"
+                                },
+                                "example7": {
+                                    "value": "JPN"
+                                },
+                                "example8": {
+                                    "value": "BRA"
+                                },
+                                "example9": {
+                                    "value": "IND"
+                                },
+                                "example10": {
+                                    "value": "CHN"
+                                }
+                            },
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v2/currency/{currency}": {
+            "get": {
+                "operationId": "v2Currency",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "currency",
+                        "description": "Search by ISO 4217 currency code",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v2/name/{name}": {
+            "get": {
+                "operationId": "v2Name",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "Search by country name. It can be the native name or partial name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "United States"
+                                },
+                                "example2": {
+                                    "value": "Canada"
+                                },
+                                "example3": {
+                                    "value": "Australia"
+                                },
+                                "example4": {
+                                    "value": "Germany"
+                                },
+                                "example5": {
+                                    "value": "France"
+                                },
+                                "example6": {
+                                    "value": "Brazil"
+                                },
+                                "example7": {
+                                    "value": "China"
+                                },
+                                "example8": {
+                                    "value": "India"
+                                },
+                                "example9": {
+                                    "value": "Japan"
+                                },
+                                "example10": {
+                                    "value": "Mexico"
+                                },
+                                "example11": {
+                                    "value": "Russia"
+                                },
+                                "example12": {
+                                    "value": "South Africa"
+                                },
+                                "example13": {
+                                    "value": "United Kingdom"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v2/callingcode/{callingcode}": {
+            "get": {
+                "operationId": "v2Callingcode",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "callingcode",
+                        "description": "Search by calling code",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "1"
+                                },
+                                "example2": {
+                                    "value": "2"
+                                },
+                                "example3": {
+                                    "value": "3"
+                                },
+                                "example4": {
+                                    "value": "4"
+                                },
+                                "example5": {
+                                    "value": "5"
+                                },
+                                "example6": {
+                                    "value": "6"
+                                },
+                                "example7": {
+                                    "value": "7"
+                                },
+                                "example8": {
+                                    "value": "8"
+                                },
+                                "example9": {
+                                    "value": "9"
+                                },
+                                "example10": {
+                                    "value": "10"
+                                },
+                                "example11": {
+                                    "value": "11"
+                                },
+                                "example12": {
+                                    "value": "12"
+                                },
+                                "example13": {
+                                    "value": "13"
+                                },
+                                "example14": {
+                                    "value": "14"
+                                },
+                                "example15": {
+                                    "value": "15"
+                                },
+                                "example16": {
+                                    "value": "16"
+                                },
+                                "example17": {
+                                    "value": "17"
+                                },
+                                "example18": {
+                                    "value": "18"
+                                },
+                                "example19": {
+                                    "value": "19"
+                                },
+                                "example20": {
+                                    "value": "20"
+                                },
+                                "example21": {
+                                    "value": "21"
+                                },
+                                "example22": {
+                                    "value": "22"
+                                },
+                                "example23": {
+                                    "value": "23"
+                                },
+                                "example24": {
+                                    "value": "24"
+                                },
+                                "example25": {
+                                    "value": "25"
+                                },
+                                "example26": {
+                                    "value": "26"
+                                },
+                                "example27": {
+                                    "value": "27"
+                                },
+                                "example28": {
+                                    "value": "28"
+                                },
+                                "example29": {
+                                    "value": "29"
+                                },
+                                "example30": {
+                                    "value": "30"
+                                },
+                                "example31": {
+                                    "value": "31"
+                                },
+                                "example32": {
+                                    "value": "32"
+                                },
+                                "example33": {
+                                    "value": "33"
+                                },
+                                "example34": {
+                                    "value": "34"
+                                },
+                                "example35": {
+                                    "value": "35"
+                                },
+                                "example36": {
+                                    "value": "36"
+                                },
+                                "example37": {
+                                    "value": "37"
+                                },
+                                "example38": {
+                                    "value": "38"
+                                },
+                                "example39": {
+                                    "value": "39"
+                                },
+                                "example40": {
+                                    "value": "40"
+                                },
+                                "example41": {
+                                    "value": "41"
+                                },
+                                "example42": {
+                                    "value": "42"
+                                },
+                                "example43": {
+                                    "value": "43"
+                                },
+                                "example44": {
+                                    "value": "44"
+                                },
+                                "example45": {
+                                    "value": "45"
+                                },
+                                "example46": {
+                                    "value": "46"
+                                },
+                                "example47": {
+                                    "value": "47"
+                                },
+                                "example48": {
+                                    "value": "48"
+                                },
+                                "example49": {
+                                    "value": "49"
+                                },
+                                "example50": {
+                                    "value": "50"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v2/capital/{capital}": {
+            "get": {
+                "operationId": "v2Capital",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "capital",
+                        "description": "Search by capital city",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "London"
+                                },
+                                "example2": {
+                                    "value": "Paris"
+                                },
+                                "example3": {
+                                    "value": "Tokyo"
+                                },
+                                "example4": {
+                                    "value": "Beijing"
+                                },
+                                "example5": {
+                                    "value": "Moscow"
+                                },
+                                "example6": {
+                                    "value": "Berlin"
+                                },
+                                "example7": {
+                                    "value": "Rome"
+                                },
+                                "example8": {
+                                    "value": "Madrid"
+                                },
+                                "example9": {
+                                    "value": "Ottawa"
+                                },
+                                "example10": {
+                                    "value": "Washington"
+                                },
+                                "example11": {
+                                    "value": "D.C."
+                                },
+                                "example12": {
+                                    "value": "Canberra"
+                                },
+                                "example13": {
+                                    "value": "Bras\u00edlia"
+                                },
+                                "example14": {
+                                    "value": " New Delhi"
+                                },
+                                "example15": {
+                                    "value": "Cairo"
+                                },
+                                "example16": {
+                                    "value": "Nairobi"
+                                },
+                                "example17": {
+                                    "value": "Buenos Aires"
+                                },
+                                "example18": {
+                                    "value": "Mexico City"
+                                },
+                                "example19": {
+                                    "value": "Jakarta"
+                                },
+                                "example20": {
+                                    "value": "Bangkok"
+                                },
+                                "example21": {
+                                    "value": "Seoul"
+                                },
+                                "example22": {
+                                    "value": "Manila"
+                                },
+                                "example23": {
+                                    "value": "Hanoi"
+                                },
+                                "example24": {
+                                    "value": "Wellington"
+                                },
+                                "example25": {
+                                    "value": " Canberra"
+                                },
+                                "example26": {
+                                    "value": "Riyadh"
+                                },
+                                "example27": {
+                                    "value": "Abu Dhabi"
+                                },
+                                "example28": {
+                                    "value": "Tehran"
+                                },
+                                "example29": {
+                                    "value": "Baghdad"
+                                },
+                                "example30": {
+                                    "value": "Jerusalem"
+                                },
+                                "example31": {
+                                    "value": "Amman"
+                                },
+                                "example32": {
+                                    "value": "Beirut"
+                                },
+                                "example33": {
+                                    "value": "Damascus"
+                                },
+                                "example34": {
+                                    "value": "Ankara"
+                                },
+                                "example35": {
+                                    "value": "Athens"
+                                },
+                                "example36": {
+                                    "value": "Sofia"
+                                },
+                                "example37": {
+                                    "value": "Bucharest"
+                                },
+                                "example38": {
+                                    "value": "Budapest"
+                                },
+                                "example39": {
+                                    "value": " Vienna"
+                                },
+                                "example40": {
+                                    "value": "Prague"
+                                },
+                                "example41": {
+                                    "value": "Warsaw"
+                                },
+                                "example42": {
+                                    "value": "Copenhagen"
+                                },
+                                "example43": {
+                                    "value": "Stockholm"
+                                },
+                                "example44": {
+                                    "value": "Helsinki"
+                                },
+                                "example45": {
+                                    "value": "Oslo"
+                                },
+                                "example46": {
+                                    "value": "Reykjavik"
+                                },
+                                "example47": {
+                                    "value": "Dublin"
+                                },
+                                "example48": {
+                                    "value": "Lisbon"
+                                },
+                                "example49": {
+                                    "value": "Bern"
+                                },
+                                "example50": {
+                                    "value": "Amsterdam"
+                                },
+                                "example51": {
+                                    "value": "Brussels"
+                                },
+                                "example52": {
+                                    "value": " Luxembourg City"
+                                },
+                                "example53": {
+                                    "value": "Cape Town"
+                                },
+                                "example54": {
+                                    "value": "Lima"
+                                },
+                                "example55": {
+                                    "value": " Mexico City"
+                                },
+                                "example56": {
+                                    "value": "New Delhi"
+                                },
+                                "example57": {
+                                    "value": " Riyadh"
+                                },
+                                "example58": {
+                                    "value": "Vienna"
+                                },
+                                "example59": {
+                                    "value": " Copenhagen"
+                                },
+                                "example60": {
+                                    "value": "Bern,"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v2/region/{region}": {
+            "get": {
+                "operationId": "v2Region",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "region",
+                        "description": "In version 2 regions are continent and subregions are region Search by continent: Africa, Americas, Asia, Europe, Oceania",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "Africa"
+                                },
+                                "example1": {
+                                    "value": "Americas"
+                                },
+                                "example2": {
+                                    "value": "Asia"
+                                },
+                                "example3": {
+                                    "value": "Europe"
+                                },
+                                "example4": {
+                                    "value": "Oceania"
+                                },
+                                "example5": {
+                                    "value": "Antarctica"
+                                },
+                                "example6": {
+                                    "value": "Arctic"
+                                },
+                                "example7": {
+                                    "value": "Caribbean"
+                                },
+                                "example8": {
+                                    "value": "Central America"
+                                },
+                                "example9": {
+                                    "value": "Eastern Africa"
+                                },
+                                "example10": {
+                                    "value": "Eastern Asia"
+                                },
+                                "example11": {
+                                    "value": "Eastern Europe"
+                                },
+                                "example12": {
+                                    "value": "Melanesia"
+                                },
+                                "example13": {
+                                    "value": "Micronesia"
+                                },
+                                "example14": {
+                                    "value": "Middle Africa"
+                                },
+                                "example15": {
+                                    "value": "Northern Africa"
+                                },
+                                "example16": {
+                                    "value": "Northern America"
+                                },
+                                "example17": {
+                                    "value": "Northern Europe"
+                                },
+                                "example18": {
+                                    "value": "Polynesia"
+                                },
+                                "example19": {
+                                    "value": "South America"
+                                },
+                                "example20": {
+                                    "value": "South-Eastern Asia"
+                                },
+                                "example21": {
+                                    "value": "Southern Africa"
+                                },
+                                "example22": {
+                                    "value": "Southern Asia"
+                                },
+                                "example23": {
+                                    "value": "Southern Europe"
+                                },
+                                "example24": {
+                                    "value": "Western Africa"
+                                },
+                                "example25": {
+                                    "value": "Western Asia"
+                                },
+                                "example26": {
+                                    "value": "Western Europe"
+                                },
+                                "example27": {
+                                    "value": "Western Sahara"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v2/lang/{lang}": {
+            "get": {
+                "operationId": "v2Lang",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "lang",
+                        "description": "Search by ISO 639-1 language code",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "minLength": "2",
+                            "maxLength": "2",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v2/regionalbloc/{regionalbloc}": {
+            "get": {
+                "operationId": "v2Regionalbloc",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "regionalbloc",
+                        "description": "Search by regional bloc:\n  - EU (European Union)\n  - EFTA (European Free Trade Association)\n  - CARICOM (Caribbean Community)\n  - PA (Pacific Alliance)\n  - AU (African Union)\n  - USAN (Union of South American Nations)\n  - EEU (Eurasian Economic Union)\n  - AL (Arab League)\n  - ASEAN (Association of Southeast Asian Nations)\n  - CAIS (Central American Integration System)\n  - CEFTA (Central European Free Trade Agreement)\n  - NAFTA (North American Free Trade Agreement)\n  - SAARC (South Asian Association for Regional Cooperation)\n",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "EU"
+                                },
+                                "example1": {
+                                    "value": "EFTA"
+                                },
+                                "example2": {
+                                    "value": "CARICOM"
+                                },
+                                "example3": {
+                                    "value": "PA"
+                                },
+                                "example4": {
+                                    "value": "AU"
+                                },
+                                "example5": {
+                                    "value": "USAN"
+                                },
+                                "example6": {
+                                    "value": "EEU"
+                                },
+                                "example7": {
+                                    "value": "AL"
+                                },
+                                "example8": {
+                                    "value": "ASEAN"
+                                },
+                                "example9": {
+                                    "value": "CAIS"
+                                },
+                                "example10": {
+                                    "value": "CEFTA"
+                                },
+                                "example11": {
+                                    "value": "NAFTA"
+                                },
+                                "example12": {
+                                    "value": "SAARC"
+                                },
+                                "example13": {
+                                    "value": "GCC (Gulf Cooperation Council)"
+                                },
+                                "example14": {
+                                    "value": "MERCOSUR (Southern Common Market)"
+                                },
+                                "example15": {
+                                    "value": "CIS (Commonwealth of Independent States)"
+                                },
+                                "example16": {
+                                    "value": "OPEC (Organization of the Petroleum Exporting Countries)"
+                                },
+                                "example17": {
+                                    "value": "APEC (Asia-Pacific Economic Cooperation)"
+                                },
+                                "example18": {
+                                    "value": "SADC (Southern African Development Community)"
+                                },
+                                "example19": {
+                                    "value": "CISFTA (CIS Free Trade Agreement)"
+                                },
+                                "example20": {
+                                    "value": "CEMAC (Central African Economic and Monetary Community)"
+                                },
+                                "example21": {
+                                    "value": "ECOWAS (Economic Community of West African States)"
+                                },
+                                "example22": {
+                                    "value": "CACM (Central American Common Market)"
+                                },
+                                "example23": {
+                                    "value": "MCCA (Mercado Com\u00fan Centroamericano)"
+                                },
+                                "example24": {
+                                    "value": "CPTPP (Comprehensive and Progressive Agreement for Trans-Pacific Partnership)"
+                                },
+                                "example25": {
+                                    "value": "EAC (East African Community)"
+                                },
+                                "example26": {
+                                    "value": "SACU (Southern African Customs Union)"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/all": {
+            "get": {
+                "operationId": "v3All",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/alpha/{alphacode}": {
+            "get": {
+                "operationId": "v3Alphacode",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "alphacode",
+                        "description": "Search by ISO 3166-1 2-letter or 3-letter country code",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "minLength": "2",
+                            "maxLength": "3",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/alpha": {
+            "get": {
+                "operationId": "v3Alphacodes",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "codes",
+                        "description": "Search by list of ISO 3166-1 2-letter or 3-letter country codes",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "array",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "USA"
+                                },
+                                "example2": {
+                                    "value": "CAN"
+                                },
+                                "example3": {
+                                    "value": "GBR"
+                                },
+                                "example4": {
+                                    "value": "AUS"
+                                },
+                                "example5": {
+                                    "value": "FRA"
+                                },
+                                "example6": {
+                                    "value": "DEU"
+                                },
+                                "example7": {
+                                    "value": "JPN"
+                                },
+                                "example8": {
+                                    "value": "BRA"
+                                },
+                                "example9": {
+                                    "value": "IND"
+                                },
+                                "example10": {
+                                    "value": "CHN"
+                                }
+                            },
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/currency/{currency}": {
+            "get": {
+                "operationId": "v3Currency",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "currency",
+                        "description": "Search by currency code or name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "USD"
+                                },
+                                "example2": {
+                                    "value": "EUR"
+                                },
+                                "example3": {
+                                    "value": "GBP"
+                                },
+                                "example4": {
+                                    "value": "JPY"
+                                },
+                                "example5": {
+                                    "value": "AUD"
+                                },
+                                "example6": {
+                                    "value": "CAD"
+                                },
+                                "example7": {
+                                    "value": "CHF"
+                                },
+                                "example8": {
+                                    "value": "CNY"
+                                },
+                                "example9": {
+                                    "value": "SEK"
+                                },
+                                "example10": {
+                                    "value": "NZD"
+                                },
+                                "example11": {
+                                    "value": "MXN"
+                                },
+                                "example12": {
+                                    "value": "SGD"
+                                },
+                                "example13": {
+                                    "value": "HKD"
+                                },
+                                "example14": {
+                                    "value": "NOK"
+                                },
+                                "example15": {
+                                    "value": "KRW"
+                                },
+                                "example16": {
+                                    "value": "TRY"
+                                },
+                                "example17": {
+                                    "value": "RUB"
+                                },
+                                "example18": {
+                                    "value": "INR"
+                                },
+                                "example19": {
+                                    "value": "BRL"
+                                },
+                                "example20": {
+                                    "value": "ZAR"
+                                },
+                                "example21": {
+                                    "value": "AED"
+                                },
+                                "example22": {
+                                    "value": "SAR"
+                                },
+                                "example23": {
+                                    "value": "QAR"
+                                },
+                                "example24": {
+                                    "value": "THB"
+                                },
+                                "example25": {
+                                    "value": "DKK"
+                                },
+                                "example26": {
+                                    "value": "MYR"
+                                },
+                                "example27": {
+                                    "value": "IDR"
+                                },
+                                "example28": {
+                                    "value": "PLN"
+                                },
+                                "example29": {
+                                    "value": "HUF"
+                                },
+                                "example30": {
+                                    "value": "CZK"
+                                },
+                                "example31": {
+                                    "value": "ILS"
+                                },
+                                "example32": {
+                                    "value": "CLP"
+                                },
+                                "example33": {
+                                    "value": "PHP"
+                                },
+                                "example34": {
+                                    "value": "COP"
+                                },
+                                "example35": {
+                                    "value": "ARS"
+                                },
+                                "example36": {
+                                    "value": "TWD"
+                                },
+                                "example37": {
+                                    "value": "VND"
+                                },
+                                "example38": {
+                                    "value": "MAD"
+                                },
+                                "example39": {
+                                    "value": "EGP"
+                                },
+                                "example40": {
+                                    "value": "NGN"
+                                },
+                                "example41": {
+                                    "value": "PKR"
+                                },
+                                "example42": {
+                                    "value": "IQD"
+                                },
+                                "example43": {
+                                    "value": "KWD"
+                                },
+                                "example44": {
+                                    "value": "DZD"
+                                },
+                                "example45": {
+                                    "value": "UAH"
+                                },
+                                "example46": {
+                                    "value": "PEN"
+                                },
+                                "example47": {
+                                    "value": "RON"
+                                },
+                                "example48": {
+                                    "value": "BHD"
+                                },
+                                "example49": {
+                                    "value": "XOF"
+                                },
+                                "example50": {
+                                    "value": "XAF"
+                                },
+                                "example51": {
+                                    "value": "TZS"
+                                },
+                                "example52": {
+                                    "value": "UGX"
+                                },
+                                "example53": {
+                                    "value": "GHS"
+                                },
+                                "example54": {
+                                    "value": "KES"
+                                },
+                                "example55": {
+                                    "value": "ETB"
+                                },
+                                "example56": {
+                                    "value": "SDG"
+                                },
+                                "example57": {
+                                    "value": "SOS"
+                                },
+                                "example58": {
+                                    "value": "RWF"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/name/{name}": {
+            "get": {
+                "operationId": "v3Name",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "name",
+                        "description": "Search by country name. It can be the common or official value",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "United States"
+                                },
+                                "example2": {
+                                    "value": "Canada"
+                                },
+                                "example3": {
+                                    "value": "Zimbabwe"
+                                },
+                                "example4": {
+                                    "value": "Brazil"
+                                },
+                                "example5": {
+                                    "value": "France"
+                                },
+                                "example6": {
+                                    "value": "Germany"
+                                },
+                                "example7": {
+                                    "value": "Australia"
+                                },
+                                "example8": {
+                                    "value": "Japan"
+                                },
+                                "example9": {
+                                    "value": "China"
+                                },
+                                "example10": {
+                                    "value": "India"
+                                },
+                                "example11": {
+                                    "value": "Mexico"
+                                },
+                                "example12": {
+                                    "value": "South Africa"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "fullText",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/capital/{capital}": {
+            "get": {
+                "operationId": "v3Capital",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "capital",
+                        "description": "Search by capital city",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "London"
+                                },
+                                "example2": {
+                                    "value": "Paris"
+                                },
+                                "example3": {
+                                    "value": "Tokyo"
+                                },
+                                "example4": {
+                                    "value": "Beijing"
+                                },
+                                "example5": {
+                                    "value": "Moscow"
+                                },
+                                "example6": {
+                                    "value": "Berlin"
+                                },
+                                "example7": {
+                                    "value": "Rome"
+                                },
+                                "example8": {
+                                    "value": "Madrid"
+                                },
+                                "example9": {
+                                    "value": "Ottawa"
+                                },
+                                "example10": {
+                                    "value": "Washington"
+                                },
+                                "example11": {
+                                    "value": "D.C."
+                                },
+                                "example12": {
+                                    "value": "Canberra"
+                                },
+                                "example13": {
+                                    "value": "Bras\u00edlia"
+                                },
+                                "example14": {
+                                    "value": " New Delhi"
+                                },
+                                "example15": {
+                                    "value": "Cairo"
+                                },
+                                "example16": {
+                                    "value": "Nairobi"
+                                },
+                                "example17": {
+                                    "value": "Buenos Aires"
+                                },
+                                "example18": {
+                                    "value": "Mexico City"
+                                },
+                                "example19": {
+                                    "value": "Jakarta"
+                                },
+                                "example20": {
+                                    "value": "Bangkok"
+                                },
+                                "example21": {
+                                    "value": "Seoul"
+                                },
+                                "example22": {
+                                    "value": "Manila"
+                                },
+                                "example23": {
+                                    "value": "Hanoi"
+                                },
+                                "example24": {
+                                    "value": "Wellington"
+                                },
+                                "example25": {
+                                    "value": " Canberra"
+                                },
+                                "example26": {
+                                    "value": "Riyadh"
+                                },
+                                "example27": {
+                                    "value": "Abu Dhabi"
+                                },
+                                "example28": {
+                                    "value": "Tehran"
+                                },
+                                "example29": {
+                                    "value": "Baghdad"
+                                },
+                                "example30": {
+                                    "value": "Jerusalem"
+                                },
+                                "example31": {
+                                    "value": "Amman"
+                                },
+                                "example32": {
+                                    "value": "Beirut"
+                                },
+                                "example33": {
+                                    "value": "Damascus"
+                                },
+                                "example34": {
+                                    "value": "Ankara"
+                                },
+                                "example35": {
+                                    "value": "Athens"
+                                },
+                                "example36": {
+                                    "value": "Sofia"
+                                },
+                                "example37": {
+                                    "value": "Bucharest"
+                                },
+                                "example38": {
+                                    "value": "Budapest"
+                                },
+                                "example39": {
+                                    "value": " Vienna"
+                                },
+                                "example40": {
+                                    "value": "Prague"
+                                },
+                                "example41": {
+                                    "value": "Warsaw"
+                                },
+                                "example42": {
+                                    "value": "Copenhagen"
+                                },
+                                "example43": {
+                                    "value": "Stockholm"
+                                },
+                                "example44": {
+                                    "value": "Helsinki"
+                                },
+                                "example45": {
+                                    "value": "Oslo"
+                                },
+                                "example46": {
+                                    "value": "Reykjavik"
+                                },
+                                "example47": {
+                                    "value": "Dublin"
+                                },
+                                "example48": {
+                                    "value": "Lisbon"
+                                },
+                                "example49": {
+                                    "value": "Bern"
+                                },
+                                "example50": {
+                                    "value": "Amsterdam"
+                                },
+                                "example51": {
+                                    "value": "Brussels"
+                                },
+                                "example52": {
+                                    "value": " Luxembourg City"
+                                },
+                                "example53": {
+                                    "value": "Cape Town"
+                                },
+                                "example54": {
+                                    "value": "Lima"
+                                },
+                                "example55": {
+                                    "value": " Mexico City"
+                                },
+                                "example56": {
+                                    "value": "New Delhi"
+                                },
+                                "example57": {
+                                    "value": " Riyadh"
+                                },
+                                "example58": {
+                                    "value": "Vienna"
+                                },
+                                "example59": {
+                                    "value": " Copenhagen"
+                                },
+                                "example60": {
+                                    "value": "Bern,"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3.1/region/{region}": {
+            "get": {
+                "operationId": "v3Region",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "region",
+                        "description": "Search by Region: Africa, Americas, Asia, Europe, Oceania. The search can be using the full region\u2019s name or just part of it",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "Africa"
+                                },
+                                "example1": {
+                                    "value": "Americas"
+                                },
+                                "example2": {
+                                    "value": "Asia"
+                                },
+                                "example3": {
+                                    "value": "Europe"
+                                },
+                                "example4": {
+                                    "value": "Oceania"
+                                },
+                                "example5": {
+                                    "value": "North America"
+                                },
+                                "example6": {
+                                    "value": "South America"
+                                },
+                                "example7": {
+                                    "value": "Central America"
+                                },
+                                "example8": {
+                                    "value": "East Asia"
+                                },
+                                "example9": {
+                                    "value": "Southeast Asia"
+                                },
+                                "example10": {
+                                    "value": "South Asia"
+                                },
+                                "example11": {
+                                    "value": " West Asia"
+                                },
+                                "example12": {
+                                    "value": "Eastern Europe"
+                                },
+                                "example13": {
+                                    "value": "Western Europe"
+                                },
+                                "example14": {
+                                    "value": "Northern Europe"
+                                },
+                                "example15": {
+                                    "value": "Southern Europe"
+                                },
+                                "example16": {
+                                    "value": "Oceania"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/subregion/{subregion}": {
+            "get": {
+                "operationId": "v3Subregion",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "subregion",
+                        "description": "Search by Subregion: South America, Southern Europe, Central America, Eastern Asia, etc. The search can be using the full subregion\u2019s name or just part of it",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "South America"
+                                },
+                                "example1": {
+                                    "value": "Southern Europe"
+                                },
+                                "example2": {
+                                    "value": "Central America"
+                                },
+                                "example3": {
+                                    "value": "Eastern Asia"
+                                },
+                                "example4": {
+                                    "value": "Western Europe"
+                                },
+                                "example5": {
+                                    "value": "Northern Africa"
+                                },
+                                "example6": {
+                                    "value": "Southeast Asia"
+                                },
+                                "example7": {
+                                    "value": "Western Asia"
+                                },
+                                "example8": {
+                                    "value": "Eastern Europe"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/lang/{lang}": {
+            "get": {
+                "operationId": "v3Lang",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "lang",
+                        "description": "Search by language code or name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/demonym/{demonym}": {
+            "get": {
+                "operationId": "v3Demonym",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "demonym",
+                        "description": "Now you can search by how a citizen is called.",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "minLength": "1",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "John"
+                                },
+                                "example2": {
+                                    "value": "Mary"
+                                },
+                                "example3": {
+                                    "value": "David"
+                                },
+                                "example4": {
+                                    "value": "Sarah"
+                                },
+                                "example5": {
+                                    "value": "Michael"
+                                },
+                                "example6": {
+                                    "value": "Jennifer"
+                                },
+                                "example7": {
+                                    "value": "Christopher"
+                                },
+                                "example8": {
+                                    "value": "Jessica"
+                                },
+                                "example9": {
+                                    "value": "Matthew"
+                                },
+                                "example10": {
+                                    "value": "Amanda"
+                                },
+                                "example11": {
+                                    "value": "Andrew"
+                                },
+                                "example12": {
+                                    "value": "Stephanie"
+                                },
+                                "example13": {
+                                    "value": "Joshua"
+                                },
+                                "example14": {
+                                    "value": "Melissa"
+                                },
+                                "example15": {
+                                    "value": "Daniel"
+                                },
+                                "example16": {
+                                    "value": " Emily"
+                                },
+                                "example17": {
+                                    "value": "Justin"
+                                },
+                                "example18": {
+                                    "value": "Samantha"
+                                },
+                                "example19": {
+                                    "value": "James"
+                                },
+                                "example20": {
+                                    "value": "Ashley"
+                                },
+                                "example21": {
+                                    "value": "Joseph"
+                                },
+                                "example22": {
+                                    "value": "Brittany"
+                                },
+                                "example23": {
+                                    "value": "Ryan"
+                                },
+                                "example24": {
+                                    "value": "Lauren"
+                                },
+                                "example25": {
+                                    "value": "Nicholas"
+                                },
+                                "example26": {
+                                    "value": "Megan"
+                                },
+                                "example27": {
+                                    "value": "Brandon"
+                                },
+                                "example28": {
+                                    "value": "Elizabeth"
+                                },
+                                "example29": {
+                                    "value": "Jonathan"
+                                },
+                                "example30": {
+                                    "value": " Rachel"
+                                },
+                                "example31": {
+                                    "value": "Tyler"
+                                },
+                                "example32": {
+                                    "value": "Heather"
+                                },
+                                "example33": {
+                                    "value": "Zachary"
+                                },
+                                "example34": {
+                                    "value": "Nicole"
+                                },
+                                "example35": {
+                                    "value": "Benjamin"
+                                },
+                                "example36": {
+                                    "value": "Alyssa"
+                                },
+                                "example37": {
+                                    "value": "William"
+                                },
+                                "example38": {
+                                    "value": "Kayla"
+                                },
+                                "example39": {
+                                    "value": "Robert"
+                                },
+                                "example40": {
+                                    "value": "Amber"
+                                },
+                                "example41": {
+                                    "value": "Courtney"
+                                },
+                                "example42": {
+                                    "value": "Anthony"
+                                },
+                                "example43": {
+                                    "value": " Danielle"
+                                },
+                                "example44": {
+                                    "value": "Kevin"
+                                },
+                                "example45": {
+                                    "value": "Tiffany"
+                                },
+                                "example46": {
+                                    "value": "Eric"
+                                },
+                                "example47": {
+                                    "value": "Christina"
+                                },
+                                "example48": {
+                                    "value": "Steven"
+                                },
+                                "example49": {
+                                    "value": "Victoria"
+                                },
+                                "example50": {
+                                    "value": "Thomas"
+                                },
+                                "example51": {
+                                    "value": "Kimberly"
+                                },
+                                "example52": {
+                                    "value": "Brian"
+                                },
+                                "example53": {
+                                    "value": "Michelle"
+                                },
+                                "example54": {
+                                    "value": "Timothy"
+                                },
+                                "example55": {
+                                    "value": "Laura"
+                                },
+                                "example56": {
+                                    "value": "Richard"
+                                },
+                                "example57": {
+                                    "value": " Rebecca"
+                                },
+                                "example58": {
+                                    "value": "Charles"
+                                },
+                                "example59": {
+                                    "value": "Erin"
+                                },
+                                "example60": {
+                                    "value": "Jeremy"
+                                },
+                                "example61": {
+                                    "value": "Amy"
+                                },
+                                "example62": {
+                                    "value": "Mark"
+                                },
+                                "example63": {
+                                    "value": "Shannon"
+                                },
+                                "example64": {
+                                    "value": "Jeffrey"
+                                },
+                                "example65": {
+                                    "value": "Angela"
+                                },
+                                "example66": {
+                                    "value": "Scott"
+                                },
+                                "example67": {
+                                    "value": "Lisa"
+                                },
+                                "example68": {
+                                    "value": "Stephen"
+                                },
+                                "example69": {
+                                    "value": "Kelly"
+                                },
+                                "example70": {
+                                    "value": "Patrick"
+                                },
+                                "example71": {
+                                    "value": "Crystal"
+                                },
+                                "example72": {
+                                    "value": " Nathan"
+                                },
+                                "example73": {
+                                    "value": "Aaron"
+                                },
+                                "example74": {
+                                    "value": "Sara"
+                                },
+                                "example75": {
+                                    "value": "Donald"
+                                },
+                                "example76": {
+                                    "value": "Katherine"
+                                },
+                                "example77": {
+                                    "value": "Gregory"
+                                },
+                                "example78": {
+                                    "value": "Andrea"
+                                },
+                                "example79": {
+                                    "value": "Samuel"
+                                },
+                                "example80": {
+                                    "value": "Julie"
+                                },
+                                "example81": {
+                                    "value": "Jack"
+                                },
+                                "example82": {
+                                    "value": "Emma"
+                                },
+                                "example83": {
+                                    "value": "Oliver"
+                                },
+                                "example84": {
+                                    "value": " Olivia"
+                                },
+                                "example85": {
+                                    "value": "Noah"
+                                },
+                                "example86": {
+                                    "value": "Ava"
+                                },
+                                "example87": {
+                                    "value": "Sophia"
+                                },
+                                "example88": {
+                                    "value": "Isabella"
+                                },
+                                "example89": {
+                                    "value": "Mia"
+                                },
+                                "example90": {
+                                    "value": "Charlotte"
+                                },
+                                "example91": {
+                                    "value": "Amelia"
+                                },
+                                "example92": {
+                                    "value": "Harper"
+                                },
+                                "example93": {
+                                    "value": "Evelyn"
+                                },
+                                "example94": {
+                                    "value": "Abigail"
+                                },
+                                "example95": {
+                                    "value": "Emily"
+                                },
+                                "example96": {
+                                    "value": "Avery"
+                                },
+                                "example97": {
+                                    "value": "Sofia"
+                                },
+                                "example98": {
+                                    "value": " Ella"
+                                },
+                                "example99": {
+                                    "value": "Scarlett"
+                                },
+                                "example100": {
+                                    "value": "Grace"
+                                },
+                                "example101": {
+                                    "value": "Chloe"
+                                },
+                                "example102": {
+                                    "value": "Riley"
+                                },
+                                "example103": {
+                                    "value": "Aria"
+                                },
+                                "example104": {
+                                    "value": "Lily"
+                                },
+                                "example105": {
+                                    "value": "Aubrey"
+                                },
+                                "example106": {
+                                    "value": "Zoey"
+                                },
+                                "example107": {
+                                    "value": "Penelope"
+                                },
+                                "example108": {
+                                    "value": "L"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        },
+        "/v3/translation/{translation}": {
+            "get": {
+                "operationId": "v3Translation",
+                "parameters": [
+                    {
+                        "name": "fields",
+                        "description": "You can filter the output of your request to include only the specified fields.",
+                        "in": "query",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "translation",
+                        "description": "You can search by any translation name",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "None"
+                                },
+                                "example1": {
+                                    "value": "English"
+                                },
+                                "example2": {
+                                    "value": "Spanish"
+                                },
+                                "example3": {
+                                    "value": "French"
+                                },
+                                "example4": {
+                                    "value": "German"
+                                },
+                                "example5": {
+                                    "value": "Italian"
+                                },
+                                "example6": {
+                                    "value": "Portuguese"
+                                },
+                                "example7": {
+                                    "value": "Russian"
+                                },
+                                "example8": {
+                                    "value": "Chinese"
+                                },
+                                "example9": {
+                                    "value": "Japanese"
+                                },
+                                "example10": {
+                                    "value": "Korean"
+                                },
+                                "example11": {
+                                    "value": "Arabic"
+                                },
+                                "example12": {
+                                    "value": "Dutch"
+                                },
+                                "example13": {
+                                    "value": "Swedish"
+                                },
+                                "example14": {
+                                    "value": "Norwegian"
+                                },
+                                "example15": {
+                                    "value": "Danish"
+                                },
+                                "example16": {
+                                    "value": "Finnish"
+                                },
+                                "example17": {
+                                    "value": "Greek"
+                                },
+                                "example18": {
+                                    "value": "Turkish"
+                                },
+                                "example19": {
+                                    "value": "Polish"
+                                },
+                                "example20": {
+                                    "value": "Hungarian"
+                                },
+                                "example21": {
+                                    "value": "Czech"
+                                },
+                                "example22": {
+                                    "value": "Slovak"
+                                },
+                                "example23": {
+                                    "value": "Romanian"
+                                },
+                                "example24": {
+                                    "value": "Bulgarian"
+                                },
+                                "example25": {
+                                    "value": "Ukrainian"
+                                },
+                                "example26": {
+                                    "value": "Serbian"
+                                },
+                                "example27": {
+                                    "value": "Croatian"
+                                },
+                                "example28": {
+                                    "value": "Slovenian"
+                                },
+                                "example29": {
+                                    "value": "Macedonian"
+                                },
+                                "example30": {
+                                    "value": "Albanian"
+                                },
+                                "example31": {
+                                    "value": "Estonian"
+                                },
+                                "example32": {
+                                    "value": "Latvian"
+                                },
+                                "example33": {
+                                    "value": "Lithuanian"
+                                },
+                                "example34": {
+                                    "value": "Maltese"
+                                },
+                                "example35": {
+                                    "value": "Icelandic"
+                                },
+                                "example36": {
+                                    "value": "Irish"
+                                },
+                                "example37": {
+                                    "value": "Welsh"
+                                },
+                                "example38": {
+                                    "value": "Scottish Gaelic"
+                                },
+                                "example39": {
+                                    "value": "Catalan"
+                                },
+                                "example40": {
+                                    "value": "Basque"
+                                },
+                                "example41": {
+                                    "value": "Galician"
+                                },
+                                "example42": {
+                                    "value": "Corsican"
+                                },
+                                "example43": {
+                                    "value": "Luxembourgish"
+                                },
+                                "example44": {
+                                    "value": "Malagasy"
+                                },
+                                "example45": {
+                                    "value": "Swahili"
+                                },
+                                "example46": {
+                                    "value": "Hausa"
+                                },
+                                "example47": {
+                                    "value": "Yoruba"
+                                },
+                                "example48": {
+                                    "value": "Igbo"
+                                },
+                                "example49": {
+                                    "value": "Zulu"
+                                },
+                                "example50": {
+                                    "value": "Xhosa"
+                                },
+                                "example51": {
+                                    "value": "Afrikaans"
+                                },
+                                "example52": {
+                                    "value": "Amharic"
+                                },
+                                "example53": {
+                                    "value": "Somali"
+                                },
+                                "example54": {
+                                    "value": "Hebrew"
+                                },
+                                "example55": {
+                                    "value": "Hindi"
+                                },
+                                "example56": {
+                                    "value": "Bengali"
+                                },
+                                "example57": {
+                                    "value": "Tamil"
+                                },
+                                "example58": {
+                                    "value": "Telugu"
+                                },
+                                "example59": {
+                                    "value": "Kannada"
+                                },
+                                "example60": {
+                                    "value": "Malayalam"
+                                },
+                                "example61": {
+                                    "value": "Marathi"
+                                },
+                                "example62": {
+                                    "value": "Gujarati"
+                                },
+                                "example63": {
+                                    "value": "Punjabi"
+                                },
+                                "example64": {
+                                    "value": "Urdu"
+                                },
+                                "example65": {
+                                    "value": "Persian"
+                                },
+                                "example66": {
+                                    "value": "Vietnamese"
+                                },
+                                "example67": {
+                                    "value": "Thai"
+                                },
+                                "example68": {
+                                    "value": "Indonesian"
+                                },
+                                "example69": {
+                                    "value": "Filipino"
+                                },
+                                "example70": {
+                                    "value": "Malay"
+                                },
+                                "example71": {
+                                    "value": "Burmese"
+                                },
+                                "example72": {
+                                    "value": "Khmer"
+                                },
+                                "example73": {
+                                    "value": "Lao"
+                                },
+                                "example74": {
+                                    "value": "Tibetan"
+                                },
+                                "example75": {
+                                    "value": "Nepali"
+                                },
+                                "example76": {
+                                    "value": "Sinhala"
+                                },
+                                "example77": {
+                                    "value": "Mongolian"
+                                },
+                                "example78": {
+                                    "value": "Uzbek"
+                                },
+                                "example79": {
+                                    "value": "Kazakh"
+                                },
+                                "example80": {
+                                    "value": "Kyrgyz"
+                                },
+                                "example81": {
+                                    "value": "Tajik"
+                                },
+                                "example82": {
+                                    "value": "Turkmen"
+                                },
+                                "example83": {
+                                    "value": "Azeri"
+                                },
+                                "example84": {
+                                    "value": "Georgian"
+                                },
+                                "example85": {
+                                    "value": "Armenian"
+                                },
+                                "example86": {
+                                    "value": "Belarusian"
+                                },
+                                "example87": {
+                                    "value": "Moldovan"
+                                },
+                                "example88": {
+                                    "value": "Bosnian"
+                                },
+                                "example89": {
+                                    "value": "Montenegrin"
+                                },
+                                "example90": {
+                                    "value": "Haitian Creole"
+                                },
+                                "example91": {
+                                    "value": "Haitian"
+                                },
+                                "example92": {
+                                    "value": "Creole,"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful response"
+                    },
+                    "default": {
+                        "description": "Other responses"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {}
+    }
+}

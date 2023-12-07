@@ -7,6 +7,7 @@ from parsers.specification_parser import parse_parameters
 from parsers.ipd_parser import InterDependencyParser
 import yaml
 import json
+import os
 
 class SpecificationBuilder:
     def __init__(self, read_path, output_path):
@@ -203,10 +204,144 @@ class SpecificationBuilder:
                 self._add_example_values(parameter_spec, self.example_parser.parse_examples(parameter["parameter_examples"], is_requestBody=False, parameter_name=parameter["name"]))
                 request_body.append(parameter_spec)
         return parameters, request_body
-    
-    def build_specification(self):
+
+    def make_report_constraint_object(self, path, operation, parameter, values, requestBody):
+        restrictions = []
+        for value, restrict in values.items():
+            restrictions.append({
+                "restriction_name": value,
+                "restriction_value": restrict
+            })
+        # save navigation to parameter to edit in RevolvingParser
+        return {
+            "path": path,
+            "method": operation,
+            "parameter": parameter,
+            "restrictions": restrictions,
+            "request_body": requestBody
+        }
+
+    def find_report_constraints(self, report_values):
+        constraint_list = []
+        for path, method in report_values.items():
+            for operation, parameters in method.items():
+                for parameter, values in parameters.items():
+                    if parameter != "request-body":
+                        constraint_list.append(
+                            self.make_report_constraint_object(path, operation, parameter, values, False))
+                    else:
+                        for request_parameter, request_values in values.items():
+                            constraint_list.append(
+                                self.make_report_constraint_object(path, operation, request_parameter, request_values,
+                                                                   True))
+        return constraint_list
+
+    def add_properties_with_report(self, constraint, parameter_properties, parameter_level, is_requestBody):
+        special_properties = {"items", "x-dependencies", "examples", "properties"} # requires special parsing
+        check_consistency = {"collectionFormat", "format", "minimum", "maximum", "minLength", "maxLength", "minItems", "maxItems", "minProperties", "maxProperties"} # check if they coincide with the correct type
+
+        # check for type constraint first to ensure consistency checks
+        for restriction in constraint["restrictions"]:
+            if restriction["restriction_name"] == "type":
+                parameter_properties["type"] = restriction["restriction_value"]
+
+        for restriction in constraint["restrictions"]:
+            name = restriction["restriction_name"]
+            value = restriction["restriction_value"]
+
+            # add if standard property
+            if name not in special_properties and name not in check_consistency:
+                parameter_properties.setdefault(name, value)
+
+            elif name in check_consistency:
+                # check for array-only properties
+                if name == "collectionFormat" or name == "minItems" or name == "maxItems":
+                    if parameter_properties["type"] == "array":
+                        parameter_properties.setdefault(name, value)
+                # check for integer-only properties
+                elif name == "minimum" or name == "maximum":
+                    if parameter_properties["type"] == "integer" or parameter_properties["type"] == "number":
+                        parameter_properties.setdefault(name, value)
+                # check for string-only properties
+                elif name == "format" or name == "minLength" or name == "maxLength":
+                    if parameter_properties["type"] == "string":
+                        parameter_properties.setdefault(name, value)
+
+            elif name in special_properties:
+
+                # x-dependencies occur outside "parameters"
+                if name == "x-dependencies":
+                    parameter_level.setdefault(name, [])
+                    for dependency in value: # given as a list
+                        parameter_level[name].extend(value)
+
+                # examples occur within "parameters" but no in the specific parameter
+                elif name == "examples":
+                    examples = []
+                    for example in value["provided"]:
+                        examples.append(example)
+                    for example in value["generated"]:
+                        examples.append(example)
+
+                    parameter_properties.setdefault("examples", {})
+                    for i in range(len(examples)):
+                        parameter_properties[name][f"example{i}"] = {
+                            "value": examples[i]
+                        }
+
+                elif name == "items":
+                    parameter_properties.setdefault(name, {})
+                    parameter_properties[name].setdefault("type", value)
+
+                elif name == "properties":
+                    parameter_properties.setdefault(name, {})
+                    parameter_properties[name].setdefault(constraint["parameter"], {})
+                    for property_name, property_value in value.items():
+                        parameter_properties[name][constraint["parameter"]].setdefault(property_name, property_value)
+
+    def change_specification_with_report(self, constraint_list):
+        for constraint in constraint_list:
+            if not constraint["request_body"]:
+                parameter_level = self.output_builder['paths'][constraint["path"]][constraint["method"]]
+                # parameter_level stores as list
+                for parameter in parameter_level['parameters']:
+                    if parameter["name"] == constraint["parameter"]:
+                        self.add_properties_with_report(constraint, parameter["schema"], parameter_level, False)
+            else:
+                for application, schema in self.output_builder['paths'][constraint["path"]][constraint["method"]]["requestBody"]["content"].items():
+                    if application != 'description':
+                        property_level = schema['schema']
+                        # property_level stores as object
+                        # some request bodies don't have "properties" and only have one parameter
+                        if "properties" not in property_level:
+                            self.add_properties_with_report(constraint, property_level, property_level, True)
+                        else:
+                            parameter_properties = property_level['properties'][constraint["parameter"]]
+                            self.add_properties_with_report(constraint, parameter_properties, property_level, True)
+
+    def build_specification_with_report(self, file_path):
+        print("Attempting generation at: " + file_path)
+        with open(file_path, 'r') as json_file:
+            report_values = json.load(json_file)
+
+        # IDEA: make a list of constraint objects with the path and the added constraints that we listed in the report,
+        # then navigate to that location in the SpecificationBuilder and copy them over
+        constraint_list = self.find_report_constraints(report_values)
+
+        # we can now attempt to add the constraints to the specification
+        self.change_specification_with_report(constraint_list)
+
+        # choose if we are outputting in JSON or YAML
+        self.create_output_file()
+
+    def build_specification(self): # this runs the specification builder using the llm
         for path, method in self.paths:
             self.process_operation(path, method)
+        self.create_output_file()
+
+    def create_output_file(self):
+        if not os.path.exists(os.path.dirname(self.output_path)):
+            os.makedirs(os.path.dirname(self.output_path))
         if self.output_path.split(".")[-1] == 'yaml':
             with open(self.output_path, 'w') as yaml_file:
                 yaml.dump(self.output_builder, yaml_file, default_flow_style=False, sort_keys=False)
