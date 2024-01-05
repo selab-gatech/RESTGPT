@@ -32,6 +32,26 @@ def build_one_spec(file_path, file_name):
     spec_build = SpecificationBuilder(file_path, output_name)
     spec_build.build_specification()
 
+def build_all_specs_eval(file_type):
+    try:
+        files = os.listdir("specifications/inputs")
+        for file in files:
+            print("Buidling specification for " + file + ".")
+            try:
+                spec_builder = SpecificationBuilder(f'specifications/inputs/{file}', f'outputs/{file}_results.{file_type}')
+                spec_builder.build_specification()
+            except ImportError:
+                print("The config file containing your API key does not exist.")
+                return
+            except KeyError:
+                print("The API key used to access GPT-3.5 Turbo is invalid.")
+                return
+            except Exception:
+                print(f"Failed to build specification for {file}.")
+    except Exception:
+        print("Failed to access input specifications.")
+
+
 def build_one_spec_with_report(file_path, file_name):
     # language tool to test requestBody
     # omdb to test general
@@ -51,11 +71,11 @@ def build_all_specs_with_reports(): # run this for RESTGPT paper enhanced specif
 
 if __name__ == '__main__':
     file_type = input("Would you like to build the specifications in json(1) or yaml (2) format: ")
-    if file_type == " 1":
+    if file_type == "1":
         file_type = "json"
     elif file_type == "2":
         file_type = "yaml"
     else:
         print("Invalid input. Please input either 1 or 2 according to the instructions.")
         exit()
-    build_all_specs(file_type)
+    build_all_specs_eval(file_type) # uses the eval folder for the Docker containers

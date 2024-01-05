@@ -12,8 +12,10 @@ from pydantic import BaseModel, Field
 from parsers.specification_parser import parse_parameters
 from model_properties.examples import *
 from model_properties.contexts import *
-from config import API_KEY
 import time
+
+
+from config import API_KEY # will throw ImportError if config does not exist
 
 langchain.llm_cache = InMemoryCache()
 
