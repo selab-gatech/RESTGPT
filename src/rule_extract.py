@@ -1,5 +1,5 @@
 import argparse
-from restgpt import run_llm_chain
+from llm import run_llm_chain
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Run the RESTGPT tool.')

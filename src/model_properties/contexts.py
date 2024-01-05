@@ -97,7 +97,7 @@ The list of possible data types are as follows: string, number, integer, boolean
 The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
 A list of collectionFormat types are as follows: csv, ssv, and pipes.
 If the data type is an array, attempt to identify its item type. 
-Output the answer as follows: "type [type], items [item type], format [format], collectionFormat [". Output None when unable to determine any of the categories. 
+Output the answer as follows: "P". Output None when unable to determine any of the categories. 
 For example, only output a non-None "item type" if the "type" is array.
 
 Assume any "\n" values in the input indicate either new lines or spaces. 
