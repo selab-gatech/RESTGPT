@@ -14,4 +14,4 @@ WORKDIR /app/src
 RUN pip install --no-cache-dir -r requirements.txt
 
 # Run report_builder.py
-CMD ["python", "build_reports.py"]
+CMD ["python", "restgpt.py"]

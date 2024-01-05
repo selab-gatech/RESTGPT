@@ -66,7 +66,7 @@ class FewShotModel:
                 output = self.fewshot_chain.run(input=input_value)
                 return output
             except openai.error.OpenAIError as e:
-                print(f"Received an API error. Will retry in 20 seconds.")
+                print(f"Received an API error. This could be due to an invalid key or something on OpenAI's side. Will retry in 20 seconds for a total of 3 times.")
                 time.sleep(20)
         return "None"
 
