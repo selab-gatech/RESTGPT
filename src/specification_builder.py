@@ -1,4 +1,4 @@
-from restgpt import run_llm_chain
+from llm import run_llm_chain
 from prance import ResolvingParser, BaseParser
 from parsers.parameter_constraint_parser import ParameterConstraintParser
 from parsers.example_parser import ExampleParser
@@ -279,9 +279,11 @@ class SpecificationBuilder:
                 elif name == "examples":
                     examples = []
                     for example in value["provided"]:
-                        examples.append(example)
+                        if example != "None":
+                            examples.append(example)
                     for example in value["generated"]:
-                        examples.append(example)
+                        if example != "None":
+                            examples.append(example)
 
                     parameter_properties.setdefault("examples", {})
                     for i in range(len(examples)):

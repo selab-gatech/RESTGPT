@@ -1,4 +1,4 @@
-from restgpt import run_llm_chain
+from llm import run_llm_chain
 from parsers.ipd_parser import InterDependencyParser
 from prance import ResolvingParser, BaseParser
 from parsers.parameter_constraint_parser import ParameterConstraintParser
@@ -79,7 +79,7 @@ class ReportBuilder:
                     build_parameter[type_key] = extracted_type
     
     def _save_run_ai(self,read_path, route, method):
-        check = hashlib.md5(open('restgpt.py', 'rb').read()).hexdigest()
+        check = hashlib.md5(open('llm.py', 'rb').read()).hexdigest()
         gpt_modified = True
         if os.path.isfile(".last_modified"):
             with open(".last_modified", "r") as f:
