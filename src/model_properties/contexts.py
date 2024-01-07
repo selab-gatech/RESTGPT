@@ -1,4 +1,5 @@
 MODEL_SUFFIX = """
+Now complete the following.\n
 Input:\n{input}
 Output:\n"""
 
