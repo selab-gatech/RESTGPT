@@ -1,0 +1,1106 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "OMDb API",
+        "description": "This API requires authorization, you can get a free key here: [http://omdbapi.com/apikey.aspx](http://omdbapi.com/apikey.aspx)",
+        "termsOfService": "http://omdbapi.com/legal.htm",
+        "contact": {
+            "email": "bfritz@fadingsignal.com"
+        },
+        "license": {
+            "name": "CC BY-NC 4.0",
+            "url": "https://creativecommons.org/licenses/by-nc/4.0/"
+        },
+        "version": "1.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:9006/"
+        }
+    ],
+    "security": [
+        {
+            "APIKeyQueryParam": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "Search"
+        }
+    ],
+    "paths": {
+        "/": {
+            "get": {
+                "tags": [
+                    "Search"
+                ],
+                "summary": "Search",
+                "operationId": "search",
+                "parameters": [
+                    {
+                        "name": "t",
+                        "in": "query",
+                        "description": "Title of movie or series",
+                        "schema": {
+                            "type": "string",
+                            "examples": {}
+                        }
+                    },
+                    {
+                        "name": "i",
+                        "in": "query",
+                        "description": "A valid IMDb ID (e.g. tt0000001)",
+                        "schema": {
+                            "type": "string",
+                            "minLength": "9",
+                            "maxLength": "9",
+                            "examples": {
+                                "example0": {
+                                    "value": "tt0000001"
+                                },
+                                "example1": {
+                                    "value": "tt0000002"
+                                },
+                                "example2": {
+                                    "value": "tt0000003"
+                                },
+                                "example3": {
+                                    "value": "tt0000004"
+                                },
+                                "example4": {
+                                    "value": "tt0000005"
+                                },
+                                "example5": {
+                                    "value": "tt0000006"
+                                },
+                                "example6": {
+                                    "value": "tt0000007"
+                                },
+                                "example7": {
+                                    "value": "tt0000008"
+                                },
+                                "example8": {
+                                    "value": "tt0000009"
+                                },
+                                "example9": {
+                                    "value": "tt0000010"
+                                },
+                                "example10": {
+                                    "value": "tt0000011"
+                                },
+                                "example11": {
+                                    "value": "tt0000012"
+                                },
+                                "example12": {
+                                    "value": "tt0000013"
+                                },
+                                "example13": {
+                                    "value": "tt0000014"
+                                },
+                                "example14": {
+                                    "value": "tt0000015"
+                                },
+                                "example15": {
+                                    "value": "tt0000016"
+                                },
+                                "example16": {
+                                    "value": "tt0000017"
+                                },
+                                "example17": {
+                                    "value": "tt0000018"
+                                },
+                                "example18": {
+                                    "value": "tt0000019"
+                                },
+                                "example19": {
+                                    "value": "tt0000020"
+                                },
+                                "example20": {
+                                    "value": "tt0000021"
+                                },
+                                "example21": {
+                                    "value": "tt0000022"
+                                },
+                                "example22": {
+                                    "value": "tt0000023"
+                                },
+                                "example23": {
+                                    "value": "tt0000024"
+                                },
+                                "example24": {
+                                    "value": "tt0000025"
+                                },
+                                "example25": {
+                                    "value": "tt0000026"
+                                },
+                                "example26": {
+                                    "value": "tt0000027"
+                                },
+                                "example27": {
+                                    "value": "tt0000028"
+                                },
+                                "example28": {
+                                    "value": "tt0000029"
+                                },
+                                "example29": {
+                                    "value": "tt0000030"
+                                },
+                                "example30": {
+                                    "value": "tt0000031"
+                                },
+                                "example31": {
+                                    "value": "tt0000032"
+                                },
+                                "example32": {
+                                    "value": "tt0000033"
+                                },
+                                "example33": {
+                                    "value": "tt0000034"
+                                },
+                                "example34": {
+                                    "value": "tt0000035"
+                                },
+                                "example35": {
+                                    "value": "tt0000036"
+                                },
+                                "example36": {
+                                    "value": "tt0000037"
+                                },
+                                "example37": {
+                                    "value": "tt0000038"
+                                },
+                                "example38": {
+                                    "value": "tt0000039"
+                                },
+                                "example39": {
+                                    "value": "tt0000040"
+                                },
+                                "example40": {
+                                    "value": "tt0000041"
+                                },
+                                "example41": {
+                                    "value": "tt0000042"
+                                },
+                                "example42": {
+                                    "value": "tt0000043"
+                                },
+                                "example43": {
+                                    "value": "tt0000044"
+                                },
+                                "example44": {
+                                    "value": "tt0000045"
+                                },
+                                "example45": {
+                                    "value": "tt0000046"
+                                },
+                                "example46": {
+                                    "value": "tt0000047"
+                                },
+                                "example47": {
+                                    "value": "tt0000048"
+                                },
+                                "example48": {
+                                    "value": "tt0000049"
+                                },
+                                "example49": {
+                                    "value": "tt0000050"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "s",
+                        "in": "query",
+                        "description": "Title of movie or series",
+                        "schema": {
+                            "type": "string",
+                            "examples": {}
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Page number to return",
+                        "schema": {
+                            "type": "integer",
+                            "examples": {
+                                "example0": {
+                                    "value": "1"
+                                },
+                                "example1": {
+                                    "value": "2"
+                                },
+                                "example2": {
+                                    "value": "3"
+                                },
+                                "example3": {
+                                    "value": "4"
+                                },
+                                "example4": {
+                                    "value": "5"
+                                },
+                                "example5": {
+                                    "value": "6"
+                                },
+                                "example6": {
+                                    "value": "7"
+                                },
+                                "example7": {
+                                    "value": "8"
+                                },
+                                "example8": {
+                                    "value": "9"
+                                },
+                                "example9": {
+                                    "value": "10"
+                                },
+                                "example10": {
+                                    "value": "11"
+                                },
+                                "example11": {
+                                    "value": "12"
+                                },
+                                "example12": {
+                                    "value": "13"
+                                },
+                                "example13": {
+                                    "value": "14"
+                                },
+                                "example14": {
+                                    "value": "15"
+                                },
+                                "example15": {
+                                    "value": "16"
+                                },
+                                "example16": {
+                                    "value": "17"
+                                },
+                                "example17": {
+                                    "value": "18"
+                                },
+                                "example18": {
+                                    "value": "19"
+                                },
+                                "example19": {
+                                    "value": "20"
+                                },
+                                "example20": {
+                                    "value": "21"
+                                },
+                                "example21": {
+                                    "value": "22"
+                                },
+                                "example22": {
+                                    "value": "23"
+                                },
+                                "example23": {
+                                    "value": "24"
+                                },
+                                "example24": {
+                                    "value": "25"
+                                },
+                                "example25": {
+                                    "value": "26"
+                                },
+                                "example26": {
+                                    "value": "27"
+                                },
+                                "example27": {
+                                    "value": "28"
+                                },
+                                "example28": {
+                                    "value": "29"
+                                },
+                                "example29": {
+                                    "value": "30"
+                                },
+                                "example30": {
+                                    "value": "31"
+                                },
+                                "example31": {
+                                    "value": "32"
+                                },
+                                "example32": {
+                                    "value": "33"
+                                },
+                                "example33": {
+                                    "value": "34"
+                                },
+                                "example34": {
+                                    "value": "35"
+                                },
+                                "example35": {
+                                    "value": "36"
+                                },
+                                "example36": {
+                                    "value": "37"
+                                },
+                                "example37": {
+                                    "value": "38"
+                                },
+                                "example38": {
+                                    "value": "39"
+                                },
+                                "example39": {
+                                    "value": "40"
+                                },
+                                "example40": {
+                                    "value": "41"
+                                },
+                                "example41": {
+                                    "value": "42"
+                                },
+                                "example42": {
+                                    "value": "43"
+                                },
+                                "example43": {
+                                    "value": "44"
+                                },
+                                "example44": {
+                                    "value": "45"
+                                },
+                                "example45": {
+                                    "value": "46"
+                                },
+                                "example46": {
+                                    "value": "47"
+                                },
+                                "example47": {
+                                    "value": "48"
+                                },
+                                "example48": {
+                                    "value": "49"
+                                },
+                                "example49": {
+                                    "value": "50"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "y",
+                        "in": "query",
+                        "description": "Year of release",
+                        "schema": {
+                            "type": "integer",
+                            "examples": {
+                                "example0": {
+                                    "value": "2000"
+                                },
+                                "example1": {
+                                    "value": "2001"
+                                },
+                                "example2": {
+                                    "value": "2002"
+                                },
+                                "example3": {
+                                    "value": "2003"
+                                },
+                                "example4": {
+                                    "value": "2004"
+                                },
+                                "example5": {
+                                    "value": "2005"
+                                },
+                                "example6": {
+                                    "value": "2006"
+                                },
+                                "example7": {
+                                    "value": "2007"
+                                },
+                                "example8": {
+                                    "value": "2008"
+                                },
+                                "example9": {
+                                    "value": "2009"
+                                },
+                                "example10": {
+                                    "value": "2010"
+                                },
+                                "example11": {
+                                    "value": "2011"
+                                },
+                                "example12": {
+                                    "value": "2012"
+                                },
+                                "example13": {
+                                    "value": "2013"
+                                },
+                                "example14": {
+                                    "value": "2014"
+                                },
+                                "example15": {
+                                    "value": "2015"
+                                },
+                                "example16": {
+                                    "value": "2016"
+                                },
+                                "example17": {
+                                    "value": "2017"
+                                },
+                                "example18": {
+                                    "value": "2018"
+                                },
+                                "example19": {
+                                    "value": "2019"
+                                },
+                                "example20": {
+                                    "value": "2020"
+                                },
+                                "example21": {
+                                    "value": "2021"
+                                },
+                                "example22": {
+                                    "value": "2022"
+                                },
+                                "example23": {
+                                    "value": "2023"
+                                },
+                                "example24": {
+                                    "value": "2024"
+                                },
+                                "example25": {
+                                    "value": "2025"
+                                },
+                                "example26": {
+                                    "value": "2026"
+                                },
+                                "example27": {
+                                    "value": "2027"
+                                },
+                                "example28": {
+                                    "value": "2028"
+                                },
+                                "example29": {
+                                    "value": "2029"
+                                },
+                                "example30": {
+                                    "value": "2030"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "Return movie or series",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "movie",
+                                "series",
+                                "episode"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "plot",
+                        "in": "query",
+                        "description": "Return short or full plot",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "short",
+                                "full"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "r",
+                        "in": "query",
+                        "description": "The response type to return",
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "json",
+                                "xml"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "callback",
+                        "in": "query",
+                        "description": "JSONP callback name",
+                        "schema": {
+                            "type": "string",
+                            "examples": {
+                                "example0": {
+                                    "value": "callback1"
+                                },
+                                "example1": {
+                                    "value": "callback2"
+                                },
+                                "example2": {
+                                    "value": "callback3"
+                                },
+                                "example3": {
+                                    "value": "callback4"
+                                },
+                                "example4": {
+                                    "value": "callback5"
+                                },
+                                "example5": {
+                                    "value": "callback6"
+                                },
+                                "example6": {
+                                    "value": "callback7"
+                                },
+                                "example7": {
+                                    "value": "callback8"
+                                },
+                                "example8": {
+                                    "value": "callback9"
+                                },
+                                "example9": {
+                                    "value": "callback10"
+                                },
+                                "example10": {
+                                    "value": "callback11"
+                                },
+                                "example11": {
+                                    "value": "callback12"
+                                },
+                                "example12": {
+                                    "value": "callback13"
+                                },
+                                "example13": {
+                                    "value": "callback14"
+                                },
+                                "example14": {
+                                    "value": "callback15"
+                                },
+                                "example15": {
+                                    "value": "callback16"
+                                },
+                                "example16": {
+                                    "value": "callback17"
+                                },
+                                "example17": {
+                                    "value": "callback18"
+                                },
+                                "example18": {
+                                    "value": "callback19"
+                                },
+                                "example19": {
+                                    "value": "callback20"
+                                },
+                                "example20": {
+                                    "value": "callback21"
+                                },
+                                "example21": {
+                                    "value": "callback22"
+                                },
+                                "example22": {
+                                    "value": "callback23"
+                                },
+                                "example23": {
+                                    "value": "callback24"
+                                },
+                                "example24": {
+                                    "value": "callback25"
+                                },
+                                "example25": {
+                                    "value": "callback26"
+                                },
+                                "example26": {
+                                    "value": "callback27"
+                                },
+                                "example27": {
+                                    "value": "callback28"
+                                },
+                                "example28": {
+                                    "value": "callback29"
+                                },
+                                "example29": {
+                                    "value": "callback30"
+                                },
+                                "example30": {
+                                    "value": "callback31"
+                                },
+                                "example31": {
+                                    "value": "callback32"
+                                },
+                                "example32": {
+                                    "value": "callback33"
+                                },
+                                "example33": {
+                                    "value": "callback34"
+                                },
+                                "example34": {
+                                    "value": "callback35"
+                                },
+                                "example35": {
+                                    "value": "callback36"
+                                },
+                                "example36": {
+                                    "value": "callback37"
+                                },
+                                "example37": {
+                                    "value": "callback38"
+                                },
+                                "example38": {
+                                    "value": "callback39"
+                                },
+                                "example39": {
+                                    "value": "callback40"
+                                },
+                                "example40": {
+                                    "value": "callback41"
+                                },
+                                "example41": {
+                                    "value": "callback42"
+                                },
+                                "example42": {
+                                    "value": "callback43"
+                                },
+                                "example43": {
+                                    "value": "callback44"
+                                },
+                                "example44": {
+                                    "value": "callback45"
+                                },
+                                "example45": {
+                                    "value": "callback46"
+                                },
+                                "example46": {
+                                    "value": "callback47"
+                                },
+                                "example47": {
+                                    "value": "callback48"
+                                },
+                                "example48": {
+                                    "value": "callback49"
+                                },
+                                "example49": {
+                                    "value": "callback50"
+                                }
+                            }
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "required": [
+                                        "Response"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "Response": {
+                                            "type": "string",
+                                            "example": true,
+                                            "enum": [
+                                                true,
+                                                false
+                                            ]
+                                        },
+                                        "Error": {
+                                            "type": "string",
+                                            "example": "No API key provided."
+                                        },
+                                        "Search": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "Title": {
+                                                        "type": "string",
+                                                        "example": "This Is the End"
+                                                    },
+                                                    "Year": {
+                                                        "type": "string",
+                                                        "example": "2013"
+                                                    },
+                                                    "imdbID": {
+                                                        "type": "string",
+                                                        "example": "tt1245492"
+                                                    },
+                                                    "Type": {
+                                                        "type": "string",
+                                                        "example": "movie"
+                                                    },
+                                                    "Poster": {
+                                                        "type": "string",
+                                                        "example": "https://m.media-amazon.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1_SX300.jpg"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "totalResults": {
+                                            "type": "integer",
+                                            "example": 2
+                                        },
+                                        "Title": {
+                                            "type": "string",
+                                            "example": "This Is the End"
+                                        },
+                                        "Year": {
+                                            "type": "string",
+                                            "example": "2013"
+                                        },
+                                        "Rated": {
+                                            "type": "string",
+                                            "example": "R"
+                                        },
+                                        "Released": {
+                                            "type": "string",
+                                            "example": "12 Jun 2013"
+                                        },
+                                        "Runtime": {
+                                            "type": "string",
+                                            "example": "107 min"
+                                        },
+                                        "Genre": {
+                                            "type": "string",
+                                            "example": "Comedy"
+                                        },
+                                        "Director": {
+                                            "type": "string",
+                                            "example": "Evan Goldberg, Seth Rogen"
+                                        },
+                                        "Writer": {
+                                            "type": "string",
+                                            "example": "Seth Rogen (screenplay), Evan Goldberg (screenplay), Seth Rogen (screen story), Evan Goldberg (screen story), Seth Rogen (short film \\\"Jay and Seth vs. The Apocalypse\\\"), Jason Stone (based on the short film \\\"Jay and Seth vs. The Apocalypse\\\" by), Evan Goldberg (short film \\\"Jay and Seth vs. The Apocalypse\\\")"
+                                        },
+                                        "Actors": {
+                                            "type": "string",
+                                            "example": "James Franco, Jonah Hill, Seth Rogen, Jay Baruchel"
+                                        },
+                                        "Plot": {
+                                            "type": "string",
+                                            "example": "6 Los Angeles celebrities are stuck in James Franco's house after a series of devastating events just destroyed the city. Inside, the group not only have to face the apocalypse, but themselves."
+                                        },
+                                        "Language": {
+                                            "type": "string",
+                                            "example": "English, Spanish"
+                                        },
+                                        "Country": {
+                                            "type": "string",
+                                            "example": "USA"
+                                        },
+                                        "Awards": {
+                                            "type": "string",
+                                            "example": "10 wins & 20 nominations."
+                                        },
+                                        "Poster": {
+                                            "type": "string",
+                                            "example": "https://m.media-amazon.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1_SX300.jpg"
+                                        },
+                                        "Ratings": {
+                                            "type": "array",
+                                            "items": {
+                                                "type": "object",
+                                                "properties": {
+                                                    "Source": {
+                                                        "type": "string",
+                                                        "example": "Internet Movie Database"
+                                                    },
+                                                    "Value": {
+                                                        "type": "string",
+                                                        "example": "6.6/10"
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "Metascore": {
+                                            "type": "string",
+                                            "example": "67"
+                                        },
+                                        "imdbRating": {
+                                            "type": "string",
+                                            "example": "6.6"
+                                        },
+                                        "imdbVotes": {
+                                            "type": "string",
+                                            "example": 370080
+                                        },
+                                        "imdbID": {
+                                            "type": "string",
+                                            "example": "tt1245492"
+                                        },
+                                        "Type": {
+                                            "type": "string",
+                                            "example": "movie"
+                                        },
+                                        "DVD": {
+                                            "type": "string",
+                                            "example": "01 Oct 2013"
+                                        },
+                                        "BoxOffice": {
+                                            "type": "string",
+                                            "example": "$96,200,000"
+                                        },
+                                        "Production": {
+                                            "type": "string",
+                                            "example": "Sony Pictures"
+                                        },
+                                        "Website": {
+                                            "type": "string",
+                                            "example": "N/A"
+                                        },
+                                        "Episode": {
+                                            "type": "string",
+                                            "example": "4"
+                                        },
+                                        "Season": {
+                                            "type": "string",
+                                            "example": "16"
+                                        },
+                                        "seriesID": {
+                                            "type": "string",
+                                            "example": "tt0341939"
+                                        },
+                                        "totalSeasons": {
+                                            "type": "string",
+                                            "example": "2"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Not authenticated",
+                        "content": {
+                            "*/*": {
+                                "schema": {
+                                    "required": [
+                                        "Error",
+                                        "Response"
+                                    ],
+                                    "type": "object",
+                                    "properties": {
+                                        "Response": {
+                                            "type": "string",
+                                            "example": false,
+                                            "enum": [
+                                                false
+                                            ]
+                                        },
+                                        "Error": {
+                                            "type": "string",
+                                            "example": "No API key provided."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "x-dependencies": [
+                    "OnlyOne(i OR t, s);"
+                ]
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Response": {
+                "required": [
+                    "Response"
+                ],
+                "type": "object",
+                "properties": {
+                    "Response": {
+                        "type": "string",
+                        "example": true,
+                        "enum": [
+                            true,
+                            false
+                        ]
+                    },
+                    "Error": {
+                        "type": "string",
+                        "example": "No API key provided."
+                    },
+                    "Search": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Title": {
+                                    "type": "string",
+                                    "example": "This Is the End"
+                                },
+                                "Year": {
+                                    "type": "string",
+                                    "example": "2013"
+                                },
+                                "imdbID": {
+                                    "type": "string",
+                                    "example": "tt1245492"
+                                },
+                                "Type": {
+                                    "type": "string",
+                                    "example": "movie"
+                                },
+                                "Poster": {
+                                    "type": "string",
+                                    "example": "https://m.media-amazon.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1_SX300.jpg"
+                                }
+                            }
+                        }
+                    },
+                    "totalResults": {
+                        "type": "integer",
+                        "example": 2
+                    },
+                    "Title": {
+                        "type": "string",
+                        "example": "This Is the End"
+                    },
+                    "Year": {
+                        "type": "string",
+                        "example": "2013"
+                    },
+                    "Rated": {
+                        "type": "string",
+                        "example": "R"
+                    },
+                    "Released": {
+                        "type": "string",
+                        "example": "12 Jun 2013"
+                    },
+                    "Runtime": {
+                        "type": "string",
+                        "example": "107 min"
+                    },
+                    "Genre": {
+                        "type": "string",
+                        "example": "Comedy"
+                    },
+                    "Director": {
+                        "type": "string",
+                        "example": "Evan Goldberg, Seth Rogen"
+                    },
+                    "Writer": {
+                        "type": "string",
+                        "example": "Seth Rogen (screenplay), Evan Goldberg (screenplay), Seth Rogen (screen story), Evan Goldberg (screen story), Seth Rogen (short film \\\"Jay and Seth vs. The Apocalypse\\\"), Jason Stone (based on the short film \\\"Jay and Seth vs. The Apocalypse\\\" by), Evan Goldberg (short film \\\"Jay and Seth vs. The Apocalypse\\\")"
+                    },
+                    "Actors": {
+                        "type": "string",
+                        "example": "James Franco, Jonah Hill, Seth Rogen, Jay Baruchel"
+                    },
+                    "Plot": {
+                        "type": "string",
+                        "example": "6 Los Angeles celebrities are stuck in James Franco's house after a series of devastating events just destroyed the city. Inside, the group not only have to face the apocalypse, but themselves."
+                    },
+                    "Language": {
+                        "type": "string",
+                        "example": "English, Spanish"
+                    },
+                    "Country": {
+                        "type": "string",
+                        "example": "USA"
+                    },
+                    "Awards": {
+                        "type": "string",
+                        "example": "10 wins & 20 nominations."
+                    },
+                    "Poster": {
+                        "type": "string",
+                        "example": "https://m.media-amazon.com/images/M/MV5BMTQxODE3NjM1Ml5BMl5BanBnXkFtZTcwMzkzNjc4OA@@._V1_SX300.jpg"
+                    },
+                    "Ratings": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "Source": {
+                                    "type": "string",
+                                    "example": "Internet Movie Database"
+                                },
+                                "Value": {
+                                    "type": "string",
+                                    "example": "6.6/10"
+                                }
+                            }
+                        }
+                    },
+                    "Metascore": {
+                        "type": "string",
+                        "example": "67"
+                    },
+                    "imdbRating": {
+                        "type": "string",
+                        "example": "6.6"
+                    },
+                    "imdbVotes": {
+                        "type": "string",
+                        "example": 370080
+                    },
+                    "imdbID": {
+                        "type": "string",
+                        "example": "tt1245492"
+                    },
+                    "Type": {
+                        "type": "string",
+                        "example": "movie"
+                    },
+                    "DVD": {
+                        "type": "string",
+                        "example": "01 Oct 2013"
+                    },
+                    "BoxOffice": {
+                        "type": "string",
+                        "example": "$96,200,000"
+                    },
+                    "Production": {
+                        "type": "string",
+                        "example": "Sony Pictures"
+                    },
+                    "Website": {
+                        "type": "string",
+                        "example": "N/A"
+                    },
+                    "Episode": {
+                        "type": "string",
+                        "example": "4"
+                    },
+                    "Season": {
+                        "type": "string",
+                        "example": "16"
+                    },
+                    "seriesID": {
+                        "type": "string",
+                        "example": "tt0341939"
+                    },
+                    "totalSeasons": {
+                        "type": "string",
+                        "example": "2"
+                    }
+                }
+            },
+            "Error": {
+                "required": [
+                    "Error",
+                    "Response"
+                ],
+                "type": "object",
+                "properties": {
+                    "Response": {
+                        "type": "string",
+                        "example": false,
+                        "enum": [
+                            false
+                        ]
+                    },
+                    "Error": {
+                        "type": "string",
+                        "example": "No API key provided."
+                    }
+                }
+            }
+        },
+        "securitySchemes": {
+            "APIKeyQueryParam": {
+                "type": "apiKey",
+                "name": "apikey",
+                "in": "query"
+            }
+        }
+    }
+}

@@ -1,0 +1,736 @@
+{
+    "openapi": "3.0.1",
+    "info": {
+        "title": "LanguageTool API",
+        "description": "Check texts for style and grammar issues with LanguageTool. See <a\nhref='http://wiki.languagetool.org/public-http-api'>our wiki</a> for access limitations.",
+        "version": "1.0.2"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:9003/v2"
+        }
+    ],
+    "paths": {
+        "/check": {
+            "post": {
+                "summary": "Check a text",
+                "description": "The main feature - check a text with LanguageTool for possible\nstyle and grammar issues.",
+                "requestBody": {
+                    "content": {
+                        "application/x-www-form-urlencoded": {
+                            "schema": {
+                                "required": [
+                                    "language"
+                                ],
+                                "properties": {
+                                    "text": {
+                                        "type": "string",
+                                        "description": "The text to be checked. This or 'data' is required.",
+                                        "examples": {}
+                                    },
+                                    "data": {
+                                        "type": "string",
+                                        "description": "The text to be checked, given as a JSON document that specifies what's text and what's markup. This or 'text' is required. Markup will be ignored when looking for errors. Example text: <pre>A &lt;b>test&lt;/b></pre>JSON for the example text: <pre>{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}</pre> <p>If you have markup that should be interpreted as whitespace, like <tt>&lt;p&gt;</tt> in HTML, you can have it interpreted like this: <pre>{\"markup\": \"&lt;p&gt;\", \"interpretAs\": \"\\n\\n\"}</pre><p>The 'data' feature is not limited to HTML or XML, it can be used for any kind of markup.",
+                                        "examples": {
+                                            "example0": {
+                                                "value": "<pre>A &lt;b>test&lt;/b></pre>"
+                                            },
+                                            "example1": {
+                                                "value": "<pre>{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}</pre>"
+                                            },
+                                            "example2": {
+                                                "value": "<pre>{\"markup\": \"&lt;p&gt;\""
+                                            },
+                                            "example3": {
+                                                "value": "\"interpretAs\": \"\\n\\n\"}</pre>"
+                                            },
+                                            "example4": {
+                                                "value": "<pre>&lt;div>Example text&lt;/div></pre>"
+                                            },
+                                            "example5": {
+                                                "value": "<pre>{\"annotation\":[  {\"text\": \"Example \"}"
+                                            },
+                                            "example6": {
+                                                "value": " {\"markup\": \"&lt;b>\"}"
+                                            },
+                                            "example7": {
+                                                "value": " {\"text\": \"text\"}"
+                                            },
+                                            "example8": {
+                                                "value": " {\"markup\": \"&lt;/b>\"} ]}</pre>"
+                                            },
+                                            "example9": {
+                                                "value": "<pre>{\"markup\": \"&lt;p&gt;\""
+                                            },
+                                            "example10": {
+                                                "value": "\"interpretAs\": \"\\n\"}</pre>"
+                                            }
+                                        }
+                                    },
+                                    "language": {
+                                        "type": "string",
+                                        "description": "A language code like `en-US`, `de-DE`, `fr`, or `auto`\nto guess the language automatically (see `preferredVariants` below).\nFor languages with variants (English, German, Portuguese) spell\nchecking will only be activated when you specify the variant,\ne.g. `en-GB` instead of just `en`.",
+                                        "minLength": "2",
+                                        "maxLength": "5",
+                                        "examples": {
+                                            "example0": {
+                                                "value": "en-US"
+                                            },
+                                            "example1": {
+                                                "value": "de-DE"
+                                            },
+                                            "example2": {
+                                                "value": "fr"
+                                            },
+                                            "example3": {
+                                                "value": "auto"
+                                            },
+                                            "example4": {
+                                                "value": "en-GB"
+                                            },
+                                            "example5": {
+                                                "value": "en-AU"
+                                            },
+                                            "example6": {
+                                                "value": "en-CA"
+                                            },
+                                            "example7": {
+                                                "value": "en-IN"
+                                            },
+                                            "example8": {
+                                                "value": "en-NZ"
+                                            },
+                                            "example9": {
+                                                "value": "en-ZA"
+                                            },
+                                            "example10": {
+                                                "value": "de-AT"
+                                            },
+                                            "example11": {
+                                                "value": "de-CH"
+                                            },
+                                            "example12": {
+                                                "value": "de-LI"
+                                            },
+                                            "example13": {
+                                                "value": "de-LU"
+                                            },
+                                            "example14": {
+                                                "value": "fr-BE"
+                                            },
+                                            "example15": {
+                                                "value": "fr-CA"
+                                            },
+                                            "example16": {
+                                                "value": "fr-CH"
+                                            },
+                                            "example17": {
+                                                "value": "fr-LU"
+                                            },
+                                            "example18": {
+                                                "value": "fr-MC"
+                                            },
+                                            "example19": {
+                                                "value": "fr-MA"
+                                            },
+                                            "example20": {
+                                                "value": "fr-DZ"
+                                            },
+                                            "example21": {
+                                                "value": "fr-TN"
+                                            },
+                                            "example22": {
+                                                "value": "fr-CI"
+                                            },
+                                            "example23": {
+                                                "value": "fr-SN"
+                                            },
+                                            "example24": {
+                                                "value": "fr-CG"
+                                            },
+                                            "example25": {
+                                                "value": "fr-CM"
+                                            },
+                                            "example26": {
+                                                "value": "fr-CD"
+                                            },
+                                            "example27": {
+                                                "value": "fr-GA"
+                                            },
+                                            "example28": {
+                                                "value": "fr-GF"
+                                            },
+                                            "example29": {
+                                                "value": "fr-GP"
+                                            },
+                                            "example30": {
+                                                "value": "fr-HT"
+                                            },
+                                            "example31": {
+                                                "value": "fr-MQ"
+                                            },
+                                            "example32": {
+                                                "value": "fr-MR"
+                                            },
+                                            "example33": {
+                                                "value": "fr-MU"
+                                            },
+                                            "example34": {
+                                                "value": "fr-NC"
+                                            },
+                                            "example35": {
+                                                "value": "fr-PF"
+                                            },
+                                            "example36": {
+                                                "value": "fr-RE"
+                                            },
+                                            "example37": {
+                                                "value": "fr-RW"
+                                            },
+                                            "example38": {
+                                                "value": "fr-BL"
+                                            },
+                                            "example39": {
+                                                "value": "fr-MF"
+                                            },
+                                            "example40": {
+                                                "value": "fr-PM"
+                                            },
+                                            "example41": {
+                                                "value": "fr-VC"
+                                            },
+                                            "example42": {
+                                                "value": "fr-SC"
+                                            },
+                                            "example43": {
+                                                "value": "fr-SY"
+                                            },
+                                            "example44": {
+                                                "value": "fr-TG"
+                                            },
+                                            "example45": {
+                                                "value": "fr-TD"
+                                            },
+                                            "example46": {
+                                                "value": "fr"
+                                            }
+                                        }
+                                    },
+                                    "altLanguages": {
+                                        "type": "array",
+                                        "description": "EXPERIMENTAL: Comma-separated list of language codes\nto check if a word is not similar to one of the main language\n(parameter `language`). Unknown words that are similar to a word\nfrom the main language will still be considered errors but with\ntype `Hint`. For languages with variants (English, German, Portuguese)\nyou need to specify the variant, e.g. `en-GB` instead of just\n`en`.",
+                                        "examples": {
+                                            "example0": {
+                                                "value": "en-US"
+                                            },
+                                            "example1": {
+                                                "value": "en-CA"
+                                            },
+                                            "example2": {
+                                                "value": "en-AU"
+                                            },
+                                            "example3": {
+                                                "value": "en-NZ"
+                                            },
+                                            "example4": {
+                                                "value": "en-ZA"
+                                            },
+                                            "example5": {
+                                                "value": "en-IN"
+                                            },
+                                            "example6": {
+                                                "value": "en-GB"
+                                            },
+                                            "example7": {
+                                                "value": "de-DE"
+                                            },
+                                            "example8": {
+                                                "value": "de-AT"
+                                            },
+                                            "example9": {
+                                                "value": "de-CH"
+                                            },
+                                            "example10": {
+                                                "value": "pt-BR"
+                                            },
+                                            "example11": {
+                                                "value": "pt-PT"
+                                            },
+                                            "example12": {
+                                                "value": "es-ES"
+                                            },
+                                            "example13": {
+                                                "value": "es-MX"
+                                            },
+                                            "example14": {
+                                                "value": "es-AR"
+                                            },
+                                            "example15": {
+                                                "value": "es-CO"
+                                            },
+                                            "example16": {
+                                                "value": "es-PE"
+                                            },
+                                            "example17": {
+                                                "value": "es-VE"
+                                            },
+                                            "example18": {
+                                                "value": "es-CL"
+                                            },
+                                            "example19": {
+                                                "value": "es-EC"
+                                            },
+                                            "example20": {
+                                                "value": "es-DO"
+                                            },
+                                            "example21": {
+                                                "value": "es-CR"
+                                            },
+                                            "example22": {
+                                                "value": "es-PA"
+                                            },
+                                            "example23": {
+                                                "value": "es-UY"
+                                            },
+                                            "example24": {
+                                                "value": "es-GT"
+                                            },
+                                            "example25": {
+                                                "value": "es-BO"
+                                            },
+                                            "example26": {
+                                                "value": "es-HN"
+                                            },
+                                            "example27": {
+                                                "value": "es-SV"
+                                            },
+                                            "example28": {
+                                                "value": "es-NI"
+                                            },
+                                            "example29": {
+                                                "value": "es-PR"
+                                            },
+                                            "example30": {
+                                                "value": "es-PY"
+                                            },
+                                            "example31": {
+                                                "value": "es-US"
+                                            },
+                                            "example32": {
+                                                "value": "es-CU"
+                                            }
+                                        },
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "csv"
+                                    },
+                                    "motherTongue": {
+                                        "type": "string",
+                                        "description": "A language code of the user's native language, enabling\nfalse friends checks for some language pairs.",
+                                        "minLength": "2",
+                                        "maxLength": "3",
+                                        "examples": {
+                                            "example0": {
+                                                "value": "en"
+                                            },
+                                            "example1": {
+                                                "value": "fr"
+                                            },
+                                            "example2": {
+                                                "value": "de"
+                                            },
+                                            "example3": {
+                                                "value": "es"
+                                            },
+                                            "example4": {
+                                                "value": "it"
+                                            },
+                                            "example5": {
+                                                "value": "pt"
+                                            },
+                                            "example6": {
+                                                "value": "nl"
+                                            },
+                                            "example7": {
+                                                "value": "sv"
+                                            },
+                                            "example8": {
+                                                "value": "da"
+                                            },
+                                            "example9": {
+                                                "value": "no"
+                                            },
+                                            "example10": {
+                                                "value": "fi"
+                                            },
+                                            "example11": {
+                                                "value": "ru"
+                                            },
+                                            "example12": {
+                                                "value": "pl"
+                                            },
+                                            "example13": {
+                                                "value": "cs"
+                                            },
+                                            "example14": {
+                                                "value": "hu"
+                                            },
+                                            "example15": {
+                                                "value": "ro"
+                                            },
+                                            "example16": {
+                                                "value": "bg"
+                                            },
+                                            "example17": {
+                                                "value": "el"
+                                            },
+                                            "example18": {
+                                                "value": "tr"
+                                            },
+                                            "example19": {
+                                                "value": "ar"
+                                            },
+                                            "example20": {
+                                                "value": "he"
+                                            },
+                                            "example21": {
+                                                "value": "ja"
+                                            },
+                                            "example22": {
+                                                "value": "ko"
+                                            },
+                                            "example23": {
+                                                "value": "zh"
+                                            },
+                                            "example24": {
+                                                "value": "th"
+                                            },
+                                            "example25": {
+                                                "value": "vi"
+                                            }
+                                        }
+                                    },
+                                    "preferredVariants": {
+                                        "type": "array",
+                                        "description": "Comma-separated list of preferred language variants.\nThe language detector used with `language=auto` can detect e.g.\nEnglish, but it cannot decide whether British English or American\nEnglish is used. Thus this parameter can be used to specify the\npreferred variants like `en-GB` and `de-AT`. Only available with\n`language=auto`.",
+                                        "examples": {
+                                            "example0": {
+                                                "value": "en-GB"
+                                            },
+                                            "example1": {
+                                                "value": "de-AT"
+                                            },
+                                            "example2": {
+                                                "value": "en-US"
+                                            },
+                                            "example3": {
+                                                "value": "fr-FR"
+                                            },
+                                            "example4": {
+                                                "value": "es-ES"
+                                            },
+                                            "example5": {
+                                                "value": "it-IT"
+                                            },
+                                            "example6": {
+                                                "value": "pt-BR"
+                                            },
+                                            "example7": {
+                                                "value": "zh-CN"
+                                            },
+                                            "example8": {
+                                                "value": "ja-JP"
+                                            },
+                                            "example9": {
+                                                "value": "ko-KR"
+                                            },
+                                            "example10": {
+                                                "value": "ru-RU"
+                                            },
+                                            "example11": {
+                                                "value": "ar-SA"
+                                            },
+                                            "example12": {
+                                                "value": "hi-IN"
+                                            },
+                                            "example13": {
+                                                "value": "id-ID"
+                                            },
+                                            "example14": {
+                                                "value": "tr-TR"
+                                            },
+                                            "example15": {
+                                                "value": "nl-NL"
+                                            },
+                                            "example16": {
+                                                "value": "pl-PL"
+                                            },
+                                            "example17": {
+                                                "value": "sv-SE"
+                                            },
+                                            "example18": {
+                                                "value": "da-DK"
+                                            },
+                                            "example19": {
+                                                "value": "fi-FI"
+                                            },
+                                            "example20": {
+                                                "value": "nb-NO"
+                                            },
+                                            "example21": {
+                                                "value": "el-GR"
+                                            },
+                                            "example22": {
+                                                "value": "cs-CZ"
+                                            },
+                                            "example23": {
+                                                "value": "hu-HU"
+                                            },
+                                            "example24": {
+                                                "value": "th-TH"
+                                            },
+                                            "example25": {
+                                                "value": "he-IL"
+                                            },
+                                            "example26": {
+                                                "value": "vi-VN"
+                                            },
+                                            "example27": {
+                                                "value": "ro-RO"
+                                            },
+                                            "example28": {
+                                                "value": "uk-UA"
+                                            },
+                                            "example29": {
+                                                "value": "hr-HR"
+                                            },
+                                            "example30": {
+                                                "value": "bg-BG"
+                                            },
+                                            "example31": {
+                                                "value": "sr-RS"
+                                            },
+                                            "example32": {
+                                                "value": "sl-SI"
+                                            },
+                                            "example33": {
+                                                "value": "sk-SK"
+                                            },
+                                            "example34": {
+                                                "value": "lt-LT"
+                                            },
+                                            "example35": {
+                                                "value": "lv-LV"
+                                            },
+                                            "example36": {
+                                                "value": "et-EE"
+                                            },
+                                            "example37": {
+                                                "value": "ms-MY"
+                                            },
+                                            "example38": {
+                                                "value": "fa-IR"
+                                            },
+                                            "example39": {
+                                                "value": "af-ZA"
+                                            },
+                                            "example40": {
+                                                "value": "sq-AL"
+                                            },
+                                            "example41": {
+                                                "value": "hy-AM"
+                                            },
+                                            "example42": {
+                                                "value": "eu-ES"
+                                            },
+                                            "example43": {
+                                                "value": "bn-BD"
+                                            },
+                                            "example44": {
+                                                "value": "bs-BA"
+                                            },
+                                            "example45": {
+                                                "value": "ca-ES"
+                                            },
+                                            "example46": {
+                                                "value": "cy-GB"
+                                            },
+                                            "example47": {
+                                                "value": "eo-EO"
+                                            },
+                                            "example48": {
+                                                "value": "fil-PH"
+                                            },
+                                            "example49": {
+                                                "value": "ga-IE"
+                                            },
+                                            "example50": {
+                                                "value": "gl-ES"
+                                            },
+                                            "example51": {
+                                                "value": "gu-IN"
+                                            },
+                                            "example52": {
+                                                "value": "ht-HT"
+                                            },
+                                            "example53": {
+                                                "value": "is-IS"
+                                            },
+                                            "example54": {
+                                                "value": "jv-ID"
+                                            },
+                                            "example55": {
+                                                "value": "kn-IN"
+                                            },
+                                            "example56": {
+                                                "value": "km-KH"
+                                            },
+                                            "example57": {
+                                                "value": "ku-TR"
+                                            },
+                                            "example58": {
+                                                "value": "ky-KG"
+                                            },
+                                            "example59": {
+                                                "value": "lo-LA"
+                                            },
+                                            "example60": {
+                                                "value": "mk-MK"
+                                            },
+                                            "example61": {
+                                                "value": "ml-IN"
+                                            },
+                                            "example62": {
+                                                "value": "mn-MN"
+                                            },
+                                            "example63": {
+                                                "value": "mr-IN"
+                                            },
+                                            "example64": {
+                                                "value": "ne-NP"
+                                            },
+                                            "example65": {
+                                                "value": "pa-IN"
+                                            }
+                                        },
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "csv"
+                                    },
+                                    "enabledRules": {
+                                        "type": "array",
+                                        "description": "IDs of rules to be enabled, comma-separated",
+                                        "examples": {},
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "csv"
+                                    },
+                                    "disabledRules": {
+                                        "type": "array",
+                                        "description": "IDs of rules to be disabled, comma-separated",
+                                        "examples": {},
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "csv"
+                                    },
+                                    "enabledCategories": {
+                                        "type": "array",
+                                        "description": "IDs of categories to be enabled, comma-separated",
+                                        "examples": {},
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "csv"
+                                    },
+                                    "disabledCategories": {
+                                        "type": "array",
+                                        "description": "IDs of categories to be disabled, comma-separated",
+                                        "examples": {},
+                                        "items": {
+                                            "type": "string"
+                                        },
+                                        "collectionFormat": "csv"
+                                    },
+                                    "enabledOnly": {
+                                        "type": "boolean",
+                                        "description": "If true, only the rules and categories whose IDs are\nspecified with `enabledRules` or `enabledCategories` are enabled.",
+                                        "default": false,
+                                        "examples": {
+                                            "example0": {
+                                                "value": "True"
+                                            },
+                                            "example1": {
+                                                "value": "False"
+                                            }
+                                        }
+                                    }
+                                },
+                                "x-dependencies": [
+                                    "Or(text, data)",
+                                    "Or(data, text);"
+                                ]
+                            }
+                        }
+                    },
+                    "required": true
+                },
+                "responses": {
+                    "200": {
+                        "description": "the result of checking the text",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/languages": {
+            "get": {
+                "summary": "Get a list of supported languages.",
+                "responses": {
+                    "200": {
+                        "description": "An array of language objects.",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "required": [
+                                            "code",
+                                            "longCode",
+                                            "name"
+                                        ],
+                                        "type": "object",
+                                        "properties": {
+                                            "name": {
+                                                "type": "string",
+                                                "description": "a language name like 'French' or 'English (Australia)'"
+                                            },
+                                            "code": {
+                                                "type": "string",
+                                                "description": "a language code like 'en'"
+                                            },
+                                            "longCode": {
+                                                "type": "string",
+                                                "description": "a language code like 'en-US' or 'ca-ES-valencia'"
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {}
+}
