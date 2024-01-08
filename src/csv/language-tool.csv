@@ -1,0 +1,2188 @@
+parameter,temperature,token_limit,prompt,response
+text,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:The text to be checked. This or 'data' is required.
+Output:",None
+text,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:The text to be checked. This or 'data' is required.
+Output:",None
+text,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:The text to be checked. This or 'data' is required.
+Output:",None
+text,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:The text to be checked. This or 'data' is required.
+Output:",None
+data,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:The text to be checked, given as a JSON document that specifies what's text and what's markup. This or 'text' is required. Markup will be ignored when looking for errors. Example text: <pre>A &lt;b>test&lt;/b></pre>JSON for the example text: <pre>{""annotation"":[
+ {""text"": ""A ""},
+ {""markup"": ""&lt;b>""},
+ {""text"": ""test""},
+ {""markup"": ""&lt;/b>""}
+]}</pre> <p>If you have markup that should be interpreted as whitespace, like <tt>&lt;p&gt;</tt> in HTML, you can have it interpreted like this: <pre>{""markup"": ""&lt;p&gt;"", ""interpretAs"": ""\n\n""}</pre><p>The 'data' feature is not limited to HTML or XML, it can be used for any kind of markup.
+Output:",None
+data,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:The text to be checked, given as a JSON document that specifies what's text and what's markup. This or 'text' is required. Markup will be ignored when looking for errors. Example text: <pre>A &lt;b>test&lt;/b></pre>JSON for the example text: <pre>{""annotation"":[
+ {""text"": ""A ""},
+ {""markup"": ""&lt;b>""},
+ {""text"": ""test""},
+ {""markup"": ""&lt;/b>""}
+]}</pre> <p>If you have markup that should be interpreted as whitespace, like <tt>&lt;p&gt;</tt> in HTML, you can have it interpreted like this: <pre>{""markup"": ""&lt;p&gt;"", ""interpretAs"": ""\n\n""}</pre><p>The 'data' feature is not limited to HTML or XML, it can be used for any kind of markup.
+Output:",None
+data,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:The text to be checked, given as a JSON document that specifies what's text and what's markup. This or 'text' is required. Markup will be ignored when looking for errors. Example text: <pre>A &lt;b>test&lt;/b></pre>JSON for the example text: <pre>{""annotation"":[
+ {""text"": ""A ""},
+ {""markup"": ""&lt;b>""},
+ {""text"": ""test""},
+ {""markup"": ""&lt;/b>""}
+]}</pre> <p>If you have markup that should be interpreted as whitespace, like <tt>&lt;p&gt;</tt> in HTML, you can have it interpreted like this: <pre>{""markup"": ""&lt;p&gt;"", ""interpretAs"": ""\n\n""}</pre><p>The 'data' feature is not limited to HTML or XML, it can be used for any kind of markup.
+Output:",None
+data,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:The text to be checked, given as a JSON document that specifies what's text and what's markup. This or 'text' is required. Markup will be ignored when looking for errors. Example text: <pre>A &lt;b>test&lt;/b></pre>JSON for the example text: <pre>{""annotation"":[
+ {""text"": ""A ""},
+ {""markup"": ""&lt;b>""},
+ {""text"": ""test""},
+ {""markup"": ""&lt;/b>""}
+]}</pre> <p>If you have markup that should be interpreted as whitespace, like <tt>&lt;p&gt;</tt> in HTML, you can have it interpreted like this: <pre>{""markup"": ""&lt;p&gt;"", ""interpretAs"": ""\n\n""}</pre><p>The 'data' feature is not limited to HTML or XML, it can be used for any kind of markup.
+Output:",None
+language,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:A language code like `en-US`, `de-DE`, `fr`, or `auto` to guess the language automatically (see `preferredVariants` below). For languages with variants (English, German, Portuguese) spell checking will only be activated when you specify the variant, e.g. `en-GB` instead of just `en`.
+Output:",None
+language,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:A language code like `en-US`, `de-DE`, `fr`, or `auto` to guess the language automatically (see `preferredVariants` below). For languages with variants (English, German, Portuguese) spell checking will only be activated when you specify the variant, e.g. `en-GB` instead of just `en`.
+Output:","minLength 5, maxLength 5, default None"
+language,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:A language code like `en-US`, `de-DE`, `fr`, or `auto` to guess the language automatically (see `preferredVariants` below). For languages with variants (English, German, Portuguese) spell checking will only be activated when you specify the variant, e.g. `en-GB` instead of just `en`.
+Output:",None
+language,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:A language code like `en-US`, `de-DE`, `fr`, or `auto` to guess the language automatically (see `preferredVariants` below). For languages with variants (English, German, Portuguese) spell checking will only be activated when you specify the variant, e.g. `en-GB` instead of just `en`.
+Output:",None
+altLanguages,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:EXPERIMENTAL: Comma-separated list of language codes to check if a word is not similar to one of the main language (parameter `language`). Unknown words that are similar to a word from the main language will still be considered errors but with type `Hint`. For languages with variants (English, German, Portuguese) you need to specify the variant, e.g. `en-GB` instead of just `en`.
+Output:",None
+altLanguages,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:EXPERIMENTAL: Comma-separated list of language codes to check if a word is not similar to one of the main language (parameter `language`). Unknown words that are similar to a word from the main language will still be considered errors but with type `Hint`. For languages with variants (English, German, Portuguese) you need to specify the variant, e.g. `en-GB` instead of just `en`.
+Output:",None
+altLanguages,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:EXPERIMENTAL: Comma-separated list of language codes to check if a word is not similar to one of the main language (parameter `language`). Unknown words that are similar to a word from the main language will still be considered errors but with type `Hint`. For languages with variants (English, German, Portuguese) you need to specify the variant, e.g. `en-GB` instead of just `en`.
+Output:",None
+altLanguages,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:EXPERIMENTAL: Comma-separated list of language codes to check if a word is not similar to one of the main language (parameter `language`). Unknown words that are similar to a word from the main language will still be considered errors but with type `Hint`. For languages with variants (English, German, Portuguese) you need to specify the variant, e.g. `en-GB` instead of just `en`.
+Output:",None
+motherTongue,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:A language code of the user's native language, enabling false friends checks for some language pairs.
+Output:",None
+motherTongue,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:A language code of the user's native language, enabling false friends checks for some language pairs.
+Output:",None
+motherTongue,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:A language code of the user's native language, enabling false friends checks for some language pairs.
+Output:",None
+motherTongue,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:A language code of the user's native language, enabling false friends checks for some language pairs.
+Output:",None
+preferredVariants,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:Comma-separated list of preferred language variants. The language detector used with `language=auto` can detect e.g. English, but it cannot decide whether British English or American English is used. Thus this parameter can be used to specify the preferred variants like `en-GB` and `de-AT`. Only available with `language=auto`.
+Output:",None
+preferredVariants,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:Comma-separated list of preferred language variants. The language detector used with `language=auto` can detect e.g. English, but it cannot decide whether British English or American English is used. Thus this parameter can be used to specify the preferred variants like `en-GB` and `de-AT`. Only available with `language=auto`.
+Output:",None
+preferredVariants,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:Comma-separated list of preferred language variants. The language detector used with `language=auto` can detect e.g. English, but it cannot decide whether British English or American English is used. Thus this parameter can be used to specify the preferred variants like `en-GB` and `de-AT`. Only available with `language=auto`.
+Output:",None
+preferredVariants,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:Comma-separated list of preferred language variants. The language detector used with `language=auto` can detect e.g. English, but it cannot decide whether British English or American English is used. Thus this parameter can be used to specify the preferred variants like `en-GB` and `de-AT`. Only available with `language=auto`.
+Output:",None
+enabledRules,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:IDs of rules to be enabled, comma-separated
+Output:",None
+enabledRules,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:IDs of rules to be enabled, comma-separated
+Output:",None
+enabledRules,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:IDs of rules to be enabled, comma-separated
+Output:",None
+enabledRules,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:IDs of rules to be enabled, comma-separated
+Output:",None
+disabledRules,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:IDs of rules to be disabled, comma-separated
+Output:",None
+disabledRules,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:IDs of rules to be disabled, comma-separated
+Output:",None
+disabledRules,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:IDs of rules to be disabled, comma-separated
+Output:",None
+disabledRules,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:IDs of rules to be disabled, comma-separated
+Output:",None
+enabledCategories,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:IDs of categories to be enabled, comma-separated
+Output:",None
+enabledCategories,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:IDs of categories to be enabled, comma-separated
+Output:",None
+enabledCategories,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:IDs of categories to be enabled, comma-separated
+Output:",None
+enabledCategories,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:IDs of categories to be enabled, comma-separated
+Output:",None
+disabledCategories,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:IDs of categories to be disabled, comma-separated
+Output:",None
+disabledCategories,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:IDs of categories to be disabled, comma-separated
+Output:",None
+disabledCategories,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:IDs of categories to be disabled, comma-separated
+Output:",None
+disabledCategories,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:IDs of categories to be disabled, comma-separated
+Output:",None
+enabledOnly,0.2,256,"
+Analyze the provided API parameter description, and extract any example values for the parameter mentioned in the description. 
+Then, generate a few additional example values that correspond to, or are in the same category as the provided values.
+If there are no example values provided, simply generate values corresponding to the description, and always generate values when possible.  
+If generating example values is not possible, return None. Consider the following cases: 
+
+Case 1: The description contains example values USA, CAN, ZWE: Output: ""PROVIDED: USA, CAN, ZWE +++ GENERATED: BRA, FRA, GER ...""
+Case 2: The description does not explicitly mention example values: Output: ""PROVIDED: None +++ GENERATED: BRA, FRA, GER, USA ...""
+Case 3: The description does not explicitly mention example values, and it is not possible to generate example values: Output: ""None""
+
+Assume any ""
+"" values in the input represent spaces or new lines. Do not output any ""
+"" strings.
+
+Here are some examples of inputs and expected outputs:
+Input:'The country code associated with the country. Examples are CAD, USD, etc...'
+Output:PROVIDED: CAD, USD +++ GENERATED: AFG, ALA, ALB, DZA, ASM, AND, AGO, AIA, ATA, ATG, ARG, ARM, ABW, AUS, AUT, AZE, BHS, BHR, BGD, BRB, BLR, BEL, 
+BLZ, BEN, BMU, BTN, BOL, BES, BIH, BWA, BVT, BRA, IOT, BRN, BGR, BFA, BDI, CPV, KHM, CMR, CAN, CYM, CAF, TCD, 
+CHL, CHN, CXR, CCK, COL, COM, COG, COD, COK, CRI, CIV, HRV, CUB, CUW, CYP, CZE, DNK, DJI, DMA, DOM, ECU, EGY, 
+SLV, GNQ, ERI, EST, SWZ, ETH, FLK, FRO, FJI, FIN, FRA, GUF, PYF, ATF, GAB, GMB, GEO, DEU, GHA, GIB, GRC, GRL, 
+GRD, GLP, GUM, GTM, GGY, GIN, GNB, GUY, HTI, HMD, VAT, HND, HKG, HUN, ISL, IND, IDN, IRN, IRQ, IRL, IMN, ISR, 
+ITA, JAM, JPN, JEY, JOR, KAZ, KEN, KIR, PRK, KOR, KWT, KGZ, LAO, LVA, LBN, LSO, LBR, LBY, LIE, LTU, LUX, MAC, 
+MDG, MWI, MYS, MDV, MLI, MLT, MHL, MTQ, MRT, MUS, MYT, MEX, FSM, MDA, MCO, MNG, MNE, MSR, MAR, MOZ, MMR, NAM, 
+NRU, NPL, NLD, NCL, NZL, NIC, NER, NGA, NIU, NFK, MKD, MNP, NOR, OMN, PAK, PLW, PSE, PAN, PNG, PRY, PER, PHL, 
+PCN, POL, PRT, PRI, QAT, REU, ROU, RUS, RWA, BLM, SHN, KNA, LCA, MAF, SPM, VCT, WSM, SMR, STP, SAU, SEN, SRB, 
+SYC, SLE, SGP, SXM, SVK, SVN, SLB, SOM, ZAF, SGS, SSD, ESP, LKA, SDN, SUR, SJM, SWE, CHE, SYR, TWN, TJK, TZA, 
+THA, TLS, TGO, TKL, TON, TTO, TUN, TUR, TKM, TCA, TUV, UGA, UKR, ARE, GBR, USA, UMI, URY, UZB, VUT, VEN, VNM, 
+VGB, VIR, WLF, ESH, YEM, ZMB, ZWE
+Input:'The numbers for the percent grades must be to one decimal place (such as 10.6).'
+Output:PROVIDED: 10.6 +++ GENERATED: 0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2.0, 2.1, 
+2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3.0, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4.0, 4.1, 4.2, 4.3, 4.4, 
+4.5, 4.6, 4.7, 4.8, 4.9, 5.0, 5.1, 5.2, 5.3, 10.0, 99.9, 100.0
+Input:'The title of the book to be rated.'
+Output:PROVIDED: None +++ GENERATED: To Kill a Mockingbird, 1984, Pride and Prejudice, The Great Gatsby, Moby-Dick, The Catcher in the Rye, Harry Potter 
+and the Sorcerer's Stone, The Lord of the Rings, One Hundred Years of Solitude, Brave New World, Sapiens: A Brief 
+History of Humankind, The Immortal Life of Henrietta Lacks, Thinking, Fast and Slow, The Wright Brothers, The Diary of 
+a Young Girl, Educated, The Art of War, The 7 Habits of Highly Effective People, Freakonomics, Quiet: The Power of 
+Introverts in a World That Can't Stop Talking, Dune, Ender's Game, Neuromancer
+Input:'The value for the number of products to consume. It must be greater than 12 and less than 50.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:'The number of bank accounts associated. Cannot be less than 0.'
+Output:PROVIDED: None +++ GENERATED: None
+Input:If true, only the rules and categories whose IDs are specified with `enabledRules` or `enabledCategories` are enabled.
+Output:",None
+enabledOnly,0.2,256,"
+Analyze the provided API parameter description and first estimate the parameter type. Then, according to the type, apply the following to determine restrictions on the parameter input:
+If it is a number, determine if the description mentions minimum, maximum, or default possible values and output: ""min [minimum], max [maximum], default [default]"". 
+If it's a string, word, or code, determine if the description mentions minimum or maximum possible character amounts or a default value, and output: ""minLength [minimum], maxLength [maximum], default [default]"". 
+If it's an array or list, determine if the description mentions minimum or maximum possible list lengths or a default value, and output: ""minItems [minimum], maxItems [maximum], default [default]"".
+If it's an object, determine if the description mentions minimum or maximum possible numbers of object properties or a default value, and output: ""minProperties [minimum], maxProperties [maximum], default [default]"".
+If it is any other data type where there is a default value provided, output: ""min None, max None, default [default]"".
+If you are unable to determine any minimum, maximum, or default restrictions, output ""None"". If you are able to determine only one either the minimum or maximum, output the undetermined value as ""None"".
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'An idea for a project. This and 'rating' are required.'
+Output:None
+Input:'The maximum value is 50. If nothing is put in, default to 0.'
+Output:min None, max 50, default 0
+Input:'The timer counter. The value must be between 15.0 and 120.'
+Output:min 15.0, max 120, default None
+Input:'The input range. The smallest value possible is -120.8. The largest should be 179.652.'
+Output:min -120.8, max 179.652, default None
+Input:'The number of items to be investigated. The maximum is 9,999.99'
+Output:min None, max 9999.99, default None
+Input:'The name of the movie. The movie name cannot be shorter than 10 characters and longer than 20 characters.'
+Output:minLength 10, maxLength 20, default None
+Input:'The country code which can be 1-letter, 2-letter, or 3-letter.'
+Output:minLength 1, maxLength 3, default None
+Input:'A supplied language code that can either be 2-letter or 3-letter which is used to parse through a list of common phrases.'
+Output:minLength 2, maxLength 3, default None
+Input:'Search via county areas.'
+Output:None
+Input:'Identifies synonyms through word inputs.'
+Output:None
+Input:'After searching through a list of ISO country codes, input 2-letter or 3-letter codes to find their data.'
+Output:minLength 2, maxLength 3, default None
+Input:If true, only the rules and categories whose IDs are specified with `enabledRules` or `enabledCategories` are enabled.
+Output:","min None, max None, default true"
+enabledOnly,0.2,256,"
+Analyze the provided API parameter description and determine whether it clearly identifies the parameter's data type 
+or formatting. 
+The list of possible data types are as follows: string, number, integer, boolean, array, and object.
+The list of format options are as follows: time, date, password, byte, binary, email, uuid, uri, url, hostname, ipv4, and ipv6. Use the types and formats available for the OpenAPI Specification. 
+A list of collectionFormat types are as follows: csv, ssv, and pipes.
+If the data type is an array, attempt to identify its item type. 
+Output the answer as follows: ""type [type], items [item type], format [format], collectionFormat [collectionFormat]"". Output None when unable to determine any of the categories. 
+For example, only output a non-None ""item type"" if the ""type"" is array.
+
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+
+Here are some examples of inputs and expected outputs:
+
+Input:'A space-separated list of percent grades corresponding to the student.'
+Output:type array, items number, format None, collectionFormat ssv
+Input:'This should contain the email of the sender.'
+Output:type string, items None, format email, collectionFormat None
+Input:'This value should be true if the assignment is available for regrade.'
+Output:type boolean, items None, format None, collectionFormat None
+Input:'A URL containing the website for evaluation.'
+Output:type string, items None, format url, collectionFormat None
+Input:'The date of the contest. The date must be within the last three months.'
+Output:type string, items None, format date, collectionFormat None
+Input:'The time that the project must be completed. Use Eastern Standard Timezone (EST).'
+Output:type string, items None, format date-time, collectionFormat None
+Input:'A list of region codes.'
+Output:type array, items None, format None, collectionFormat None
+Input:If true, only the rules and categories whose IDs are specified with `enabledRules` or `enabledCategories` are enabled.
+Output:",None
+enabledOnly,0.2,256,"
+Identify the API parameter object by the grouping of its ""name"" and ""description"". Analyze the parameter description and extract logical constraints
+in the provided format. Evaluate each case and determine whether it is applicable. Strictly follow the format and make no inferences. Only consider constraints
+that are strictly required. Interpret the description in the least constraining manner, and assume Case 1 unless the other cases are obvious:
+
+Case 1: The description isn't definitive about parameter requirements. Output ""None"".
+Case 2: The description states the parameter ""name"" is required. Output: ""REQUIRED: name"". 
+Case 3: The description states that parameter ""name"" or another parameter ""name"" is required. Output: ""Or(name, name)""
+Case 4: The description states that given a set of parameters name, name_2, . . . , name_n, zero or one can be present in the API call: Output: ""ZeroOrOne(name, name_2, ... name_n)""
+Case 5: The description states that given a set of parameters name, name_2, . . . , name_n, exactly one must be present in the API call: Output: ""OnlyOne(name, name_2, ... name_n)""
+Case 6: The description states that given a set of parameters name, name_2, . . . , name_n, all of them or none must be present in the API call: Output: ""AllOrNone(name, name_2, ... name_n)""
+Case 7: The description states that there is a relational relationship between some parameters: Output: ""name >= name_2"", where the standard relational operators can be used
+Case 8: The description states that there is an arithmetic relationship between the value of parameters: Output: ""name_1 + name_2 <= value"", where the standard arithmetic operators can be used
+Case 9: The description states there is a conditional relationship between parameters: Output: ""IF name THEN name_2"", where the standard logical operators can be used
+Case 10: The description states that there exists a complex relationship between parameters, you can combine rules from the grammar to express a statement: Output: ""IF name==value THEN OnlyOne(name_2 AND name_3, name_4 AND name_5);
+
+The grammar for statements is succinctly defined as follows:
+
+Model:
+    Dependency*;
+Dependency:
+    RelationalDependency | ArithmeticDependency |
+    ConditionalDependency | PredefinedDependency;
+RelationalDependency:
+    Param RelationalOperator Param;
+ArithmeticDependency:
+    Operation RelationalOperator DOUBLE;
+Operation:
+    Param OperationContinuation |
+    '(' Operation ')' OperationContinuation?;
+OperationContinuation:
+    ArithmeticOperator (Param | Operation);
+ConditionalDependency:
+    'IF' Predicate 'THEN' Predicate;
+Predicate:
+    Clause ClauseContinuation?;
+Clause:
+    (Term | RelationalDependency | ArithmeticDependency
+    | PredefinedDependency) | 'NOT'? '(' Predicate ')';
+Term:
+    'NOT'? (Param | ParamValueRelation);
+Param:
+    ID | '[' ID ']';
+ParamValueRelation:
+    Param '==' STRING('|'STRING)* |
+    Param 'LIKE' PATTERN_STRING | Param '==' BOOLEAN |
+    Param RelationalOperator DOUBLE;
+ClauseContinuation:
+    ('AND' | 'OR') Predicate;
+PredefinedDependency:
+    'NOT'? ('Or' | 'OnlyOne' | 'AllOrNone' |
+    'ZeroOrOne') '(' Clause (',' Clause)+ ')';
+RelationalOperator:
+    '<' | '>' | '<=' | '>=' | '==' | '!=';
+ArithmeticOperator:
+    '+' | '-' | '*' | '/';
+
+If there are multiple dependency statements, return each one on a new line. Do not include any other text. Do not create dependencies on expected API responses.
+Assume any ""
+"" values in the input indicate either new lines or spaces. 
+Here are some examples of expected outputs:
+
+Input:
+name: text 
+description: The text to be checked. This or 'data' is required.
+Output:Or(text, data);
+Input: 
+     name: idea
+     description: 'An idea for a project. This and 'rating' are required.'
+Output:OnlyOne(idea AND rating);
+Input:
+      name: partID
+      description: 'The ID of the part. If partModel is specified partID must be specified'
+Output:IF partModel THEN partID;
+Input:
+       name: language 
+       description: The language of the client, not required if the country-code is USA or CAN.
+Output:IF country-code!='USA' OR country-code=='CAN' THEN language;
+Input:
+        name: cost
+        description: The cost of the product, this - profit must be greater than 500.
+Output:cost - profit > 500;
+Input:If true, only the rules and categories whose IDs are specified with `enabledRules` or `enabledCategories` are enabled.
+Output:",None
