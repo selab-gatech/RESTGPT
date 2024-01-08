@@ -35,6 +35,11 @@ docker run -e FILE_TYPE=<your_value> restgpt
 > Fill in the "<your_value>" parameter with either "json" or "yaml" (without quotes) to specify the desired output type of the OpenAPI Specifications. Otherwise, the execution will default to json outputs.
 
 Results will be generated within the `app/src/outputs` folder of the Docker container. Any failure to comply with the instructions, such as not creating and supplying the inputs folder or not creating the `config.py` folder, may result in improper completion on the `docker run` stage.
+
+## LLM Prompt-Response CSV
+
+To provide further context for the results of RESTGPT, the repository contains a list of CSV files that show the prompts and responses sent and received to the LLM when generating the enhanced specifications. The `src/csv` folder contains the corresponding CSVs for the 9 pre-added OpenAPI Specifications. The CSVs contain the **temperature**, **token limit**, **parameter name**, **prompt**, and **response** for each LLM query.
+
 ## Customization
 
 **Changing LLMs:** RESTGPT uses GPT-3.5 Turbo as its Large Language Model, however the program can support any of OpenAI's available LLMs. To switch the LLM, navigate to `src/restgpt.py` and find the following line:
