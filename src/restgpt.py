@@ -113,11 +113,12 @@ def custom_inputs(file_type):
     build_all_specs_eval(file_type)
 
 if __name__ == '__main__':
-    docker_execute()
+    # docker_execute()
     # predefined_inputs("yaml")
     # custom_inputs("yaml") # change the file_type to your choosing
 
     # build_openai_csv()
+    build_all_specs_with_reports("json")
 
 
 

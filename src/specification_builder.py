@@ -252,6 +252,12 @@ class SpecificationBuilder:
     def make_report_constraint_object(self, path, operation, parameter, values, requestBody):
         restrictions = []
         for value, restrict in values.items():
+            # corrections to report errors - OpenAPI takes "maximum" not "max"
+            if value == "max":
+                value = "maximum"
+            elif value == "min":
+                value = "minimum"
+
             restrictions.append({
                 "restriction_name": value,
                 "restriction_value": restrict
@@ -463,6 +469,8 @@ class SpecificationBuilder:
         special_properties = {"items", "x-dependencies", "examples", "properties"} # requires special parsing
         check_consistency = {"collectionFormat", "format", "minimum", "maximum", "minLength", "maxLength", "minItems", "maxItems", "minProperties", "maxProperties"} # check if they coincide with the correct type
 
+        format_mappings = {"csv": {"style": "form", "explode": False}, "ssv": {"style": "spaceDelimited", "explode": False}, "pipes": {"style": "pipeDelimited", "explode": False}, "multi": {"style": "form", "explode": True}}
+
         # check for type constraint first to ensure consistency checks
         for restriction in constraint["restrictions"]:
             if restriction["restriction_name"] == "type":
@@ -480,15 +488,29 @@ class SpecificationBuilder:
                 # check for array-only properties
                 if name == "collectionFormat" or name == "minItems" or name == "maxItems":
                     if parameter_properties["type"] == "array":
-                        parameter_properties.setdefault(name, value)
+                        if name == "collectionFormat" and not is_requestBody:
+                            for parameter in parameter_level['parameters']:
+                                if parameter["name"] == constraint["parameter"]:
+                                    mapping = format_mappings[value]
+                                    parameter.setdefault("style", mapping["style"])
+                                    parameter.setdefault("explode", mapping["explode"])
+                        elif name == "collectionFormat" and is_requestBody:
+                            mapping = format_mappings[value]
+                            parameter_properties.setdefault("style", mapping["style"])
+                            parameter_properties.setdefault("explode", mapping["explode"])
+                        else:
+                            parameter_properties.setdefault(name, int(value))
                 # check for integer-only properties
                 elif name == "minimum" or name == "maximum":
                     if parameter_properties["type"] == "integer" or parameter_properties["type"] == "number":
-                        parameter_properties.setdefault(name, value)
+                        parameter_properties.setdefault(name, int(value))
                 # check for string-only properties
                 elif name == "format" or name == "minLength" or name == "maxLength":
                     if parameter_properties["type"] == "string":
-                        parameter_properties.setdefault(name, value)
+                        if name == "format":
+                            parameter_properties.setdefault(name, value)
+                        else:
+                            parameter_properties.setdefault(name, int(value))
 
             elif name in special_properties:
 
@@ -500,19 +522,56 @@ class SpecificationBuilder:
 
                 # examples occur within "parameters" but no in the specific parameter
                 elif name == "examples":
+                    # determine if cast example
+                    is_int = False
+                    if not is_requestBody:
+                        for parameter in parameter_level['parameters']:
+                            if parameter["name"] == constraint["parameter"]:
+                                if parameter["schema"]["type"] == "int":
+                                    is_int = True
+                    else:
+                        if parameter_properties["type"] == "int":
+                            is_int = True
+
+                    def add_example(example, is_int):
+                        if is_int:
+                            try:
+                                return int(example)
+                            except ValueError:
+                                return example
+                        else:
+                            return example
+
                     examples = []
                     for example in value["provided"]:
                         if example != "None":
-                            examples.append(example)
+                            examples.append(add_example(example, is_int))
                     for example in value["generated"]:
                         if example != "None":
-                            examples.append(example)
+                            examples.append(add_example(example, is_int))
 
-                    parameter_properties.setdefault("examples", {})
-                    for i in range(len(examples)):
-                        parameter_properties[name][f"example{i}"] = {
-                            "value": examples[i]
-                        }
+                    if not is_requestBody:
+                        for parameter in parameter_level['parameters']:
+                            if parameter["name"] == constraint["parameter"]:
+                                # example is mutually exclusive with examples
+                                if "example" in parameter:
+                                    del parameter["example"]
+                                parameter.setdefault("examples", {})
+                                for i in range(len(examples)):
+                                    parameter[name][f"example{i}"] = {
+                                        "value": examples[i]
+                                    } # correcting the examples inside schema
+                    else:
+                        # example is mutually exclusive with examples
+                        if "example" in parameter_properties:
+                            del parameter_properties["example"]
+
+                        # not working well with request_body (not sure why)
+                        parameter_properties.setdefault("examples", {})
+                        for i in range(len(examples)):
+                            parameter_properties[name][f"example{i}"] = {
+                                "value": examples[i]
+                            }
 
                 elif name == "items":
                     parameter_properties.setdefault(name, {})
