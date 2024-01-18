@@ -145,9 +145,9 @@
                         "in": "query",
                         "description": "The channelId parameter indicates that the API response should only contain resources created by the channel",
                         "schema": {
-                            "type": "string",
-                            "examples": {}
-                        }
+                            "type": "string"
+                        },
+                        "examples": {}
                     },
                     {
                         "name": "channelType",
@@ -179,23 +179,23 @@
                         "in": "query",
                         "description": "Note: This parameter is intended exclusively for YouTube content partners.\n\nThe forContentOwner parameter restricts the search to only retrieve resources owned by the content owner specified by the onBehalfOfContentOwner parameter. The user must be authenticated using a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.",
                         "schema": {
-                            "type": "string",
-                            "examples": {}
-                        }
+                            "type": "string"
+                        },
+                        "examples": {}
                     },
                     {
                         "name": "forDeveloper",
                         "in": "query",
                         "description": "The forDeveloper parameter restricts the search to only retrieve videos uploaded via the developer's application or website. The API server uses the request's authorization credentials to identify the developer. Therefore, a developer can restrict results to videos uploaded through the developer's own app or website but not to videos uploaded through other apps or sites.",
                         "schema": {
-                            "type": "boolean",
-                            "examples": {
-                                "example0": {
-                                    "value": "True"
-                                },
-                                "example1": {
-                                    "value": "False"
-                                }
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "True"
+                            },
+                            "example1": {
+                                "value": "False"
                             }
                         }
                     },
@@ -204,14 +204,14 @@
                         "in": "query",
                         "description": "The forMine parameter restricts the search to only retrieve videos owned by the authenticated user. If you set this parameter to true, then the type parameter's value must also be set to video.",
                         "schema": {
-                            "type": "boolean",
-                            "examples": {
-                                "example0": {
-                                    "value": "true"
-                                },
-                                "example1": {
-                                    "value": "false"
-                                }
+                            "type": "boolean"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "true"
+                            },
+                            "example1": {
+                                "value": "false"
                             }
                         }
                     },
@@ -220,53 +220,53 @@
                         "in": "query",
                         "description": "The location parameter, in conjunction with the locationRadius parameter, defines a circular geographic area and also restricts a search to videos that specify, in their metadata, a geographic location that falls within that area. The parameter value is a string that specifies latitude/longitude coordinates e.g. (37.42307,-122.08427).\n\n\n- The location parameter value identifies the point at the center of the area.\n- The locationRadius parameter specifies the maximum distance that the location associated with a video can be from that point for the video to still be included in the search results.The API returns an error if your request specifies a value for the location parameter but does not also specify a value for the locationRadius parameter.",
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "(37.42307,-122.08427)"
-                                },
-                                "example1": {
-                                    "value": "(40.7128,-74.0060)"
-                                },
-                                "example2": {
-                                    "value": "(51.5074,-0.1278)"
-                                },
-                                "example3": {
-                                    "value": "(48.8566,2.3522)"
-                                },
-                                "example4": {
-                                    "value": "(35.6895,139.6917)"
-                                },
-                                "example5": {
-                                    "value": "(55.7558,37.6176)"
-                                },
-                                "example6": {
-                                    "value": "(52.5200,13.4050)"
-                                },
-                                "example7": {
-                                    "value": "(37.7749,-122.4194)"
-                                },
-                                "example8": {
-                                    "value": "(34.0522,-118.2437)"
-                                },
-                                "example9": {
-                                    "value": "(41.9028,12.4964)"
-                                },
-                                "example10": {
-                                    "value": "(25.2048,55.2708)"
-                                },
-                                "example11": {
-                                    "value": "(19.4326,-99.1332)"
-                                },
-                                "example12": {
-                                    "value": "(22.5726,88.3639)"
-                                },
-                                "example13": {
-                                    "value": "(33.6844,73.0479)"
-                                },
-                                "example14": {
-                                    "value": "(41.9028,"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "(37.42307,-122.08427)"
+                            },
+                            "example1": {
+                                "value": "(40.7128,-74.0060)"
+                            },
+                            "example2": {
+                                "value": "(51.5074,-0.1278)"
+                            },
+                            "example3": {
+                                "value": "(48.8566,2.3522)"
+                            },
+                            "example4": {
+                                "value": "(35.6895,139.6917)"
+                            },
+                            "example5": {
+                                "value": "(55.7558,37.6176)"
+                            },
+                            "example6": {
+                                "value": "(52.5200,13.4050)"
+                            },
+                            "example7": {
+                                "value": "(37.7749,-122.4194)"
+                            },
+                            "example8": {
+                                "value": "(34.0522,-118.2437)"
+                            },
+                            "example9": {
+                                "value": "(41.9028,12.4964)"
+                            },
+                            "example10": {
+                                "value": "(25.2048,55.2708)"
+                            },
+                            "example11": {
+                                "value": "(19.4326,-99.1332)"
+                            },
+                            "example12": {
+                                "value": "(22.5726,88.3639)"
+                            },
+                            "example13": {
+                                "value": "(33.6844,73.0479)"
+                            },
+                            "example14": {
+                                "value": "(41.9028,"
                             }
                         }
                     },
@@ -275,138 +275,137 @@
                         "in": "query",
                         "description": "The locationRadius parameter, in conjunction with the location parameter, defines a circular geographic area.\n\nThe parameter value must be a floating point number followed by a measurement unit. Valid measurement units are m, km, ft, and mi. For example, valid parameter values include 1500m, 5km, 10000ft, and 0.75mi. The API does not support locationRadius parameter values larger than 1000 kilometers.\n\nNote: See the definition of the location parameter for more information.",
                         "schema": {
-                            "type": "string",
-                            "max": "1000",
-                            "examples": {
-                                "example0": {
-                                    "value": "1500m"
-                                },
-                                "example1": {
-                                    "value": "5km"
-                                },
-                                "example2": {
-                                    "value": "10000ft"
-                                },
-                                "example3": {
-                                    "value": "0.75mi"
-                                },
-                                "example4": {
-                                    "value": "0.1m"
-                                },
-                                "example5": {
-                                    "value": "0.2m"
-                                },
-                                "example6": {
-                                    "value": "0.3m"
-                                },
-                                "example7": {
-                                    "value": "0.4m"
-                                },
-                                "example8": {
-                                    "value": "0.5m"
-                                },
-                                "example9": {
-                                    "value": "0.6m"
-                                },
-                                "example10": {
-                                    "value": "0.7m"
-                                },
-                                "example11": {
-                                    "value": "0.8m"
-                                },
-                                "example12": {
-                                    "value": "0.9m"
-                                },
-                                "example13": {
-                                    "value": "1.0m"
-                                },
-                                "example14": {
-                                    "value": "1.1m"
-                                },
-                                "example15": {
-                                    "value": "1.2m"
-                                },
-                                "example16": {
-                                    "value": "1.3m"
-                                },
-                                "example17": {
-                                    "value": "1.4m"
-                                },
-                                "example18": {
-                                    "value": "1.5m"
-                                },
-                                "example19": {
-                                    "value": "1.6m"
-                                },
-                                "example20": {
-                                    "value": "1.7m"
-                                },
-                                "example21": {
-                                    "value": "1.8m"
-                                },
-                                "example22": {
-                                    "value": "1.9m"
-                                },
-                                "example23": {
-                                    "value": "2.0m"
-                                },
-                                "example24": {
-                                    "value": "2.1m"
-                                },
-                                "example25": {
-                                    "value": "2.2m"
-                                },
-                                "example26": {
-                                    "value": "2.3m"
-                                },
-                                "example27": {
-                                    "value": "2.4m"
-                                },
-                                "example28": {
-                                    "value": "2.5m"
-                                },
-                                "example29": {
-                                    "value": "2.6m"
-                                },
-                                "example30": {
-                                    "value": "2.7m"
-                                },
-                                "example31": {
-                                    "value": "2.8m"
-                                },
-                                "example32": {
-                                    "value": "2.9m"
-                                },
-                                "example33": {
-                                    "value": "3.0m"
-                                },
-                                "example34": {
-                                    "value": "3.1m"
-                                },
-                                "example35": {
-                                    "value": "3.2m"
-                                },
-                                "example36": {
-                                    "value": "3.3m"
-                                },
-                                "example37": {
-                                    "value": "3.4m"
-                                },
-                                "example38": {
-                                    "value": "3.5m"
-                                },
-                                "example39": {
-                                    "value": "3.6m"
-                                },
-                                "example40": {
-                                    "value": "3.7m"
-                                },
-                                "example41": {
-                                    "value": "3.8m"
-                                },
-                                "example42": {
-                                    "value": "3"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "1500m"
+                            },
+                            "example1": {
+                                "value": "5km"
+                            },
+                            "example2": {
+                                "value": "10000ft"
+                            },
+                            "example3": {
+                                "value": "0.75mi"
+                            },
+                            "example4": {
+                                "value": "0.1m"
+                            },
+                            "example5": {
+                                "value": "0.2m"
+                            },
+                            "example6": {
+                                "value": "0.3m"
+                            },
+                            "example7": {
+                                "value": "0.4m"
+                            },
+                            "example8": {
+                                "value": "0.5m"
+                            },
+                            "example9": {
+                                "value": "0.6m"
+                            },
+                            "example10": {
+                                "value": "0.7m"
+                            },
+                            "example11": {
+                                "value": "0.8m"
+                            },
+                            "example12": {
+                                "value": "0.9m"
+                            },
+                            "example13": {
+                                "value": "1.0m"
+                            },
+                            "example14": {
+                                "value": "1.1m"
+                            },
+                            "example15": {
+                                "value": "1.2m"
+                            },
+                            "example16": {
+                                "value": "1.3m"
+                            },
+                            "example17": {
+                                "value": "1.4m"
+                            },
+                            "example18": {
+                                "value": "1.5m"
+                            },
+                            "example19": {
+                                "value": "1.6m"
+                            },
+                            "example20": {
+                                "value": "1.7m"
+                            },
+                            "example21": {
+                                "value": "1.8m"
+                            },
+                            "example22": {
+                                "value": "1.9m"
+                            },
+                            "example23": {
+                                "value": "2.0m"
+                            },
+                            "example24": {
+                                "value": "2.1m"
+                            },
+                            "example25": {
+                                "value": "2.2m"
+                            },
+                            "example26": {
+                                "value": "2.3m"
+                            },
+                            "example27": {
+                                "value": "2.4m"
+                            },
+                            "example28": {
+                                "value": "2.5m"
+                            },
+                            "example29": {
+                                "value": "2.6m"
+                            },
+                            "example30": {
+                                "value": "2.7m"
+                            },
+                            "example31": {
+                                "value": "2.8m"
+                            },
+                            "example32": {
+                                "value": "2.9m"
+                            },
+                            "example33": {
+                                "value": "3.0m"
+                            },
+                            "example34": {
+                                "value": "3.1m"
+                            },
+                            "example35": {
+                                "value": "3.2m"
+                            },
+                            "example36": {
+                                "value": "3.3m"
+                            },
+                            "example37": {
+                                "value": "3.4m"
+                            },
+                            "example38": {
+                                "value": "3.5m"
+                            },
+                            "example39": {
+                                "value": "3.6m"
+                            },
+                            "example40": {
+                                "value": "3.7m"
+                            },
+                            "example41": {
+                                "value": "3.8m"
+                            },
+                            "example42": {
+                                "value": "3"
                             }
                         }
                     },
@@ -418,158 +417,158 @@
                             "maximum": 50,
                             "minimum": 0,
                             "type": "integer",
-                            "default": 5,
-                            "examples": {
-                                "example0": {
-                                    "value": "0"
-                                },
-                                "example1": {
-                                    "value": "1"
-                                },
-                                "example2": {
-                                    "value": "2"
-                                },
-                                "example3": {
-                                    "value": "3"
-                                },
-                                "example4": {
-                                    "value": "4"
-                                },
-                                "example5": {
-                                    "value": "5"
-                                },
-                                "example6": {
-                                    "value": "6"
-                                },
-                                "example7": {
-                                    "value": "7"
-                                },
-                                "example8": {
-                                    "value": "8"
-                                },
-                                "example9": {
-                                    "value": "9"
-                                },
-                                "example10": {
-                                    "value": "10"
-                                },
-                                "example11": {
-                                    "value": "11"
-                                },
-                                "example12": {
-                                    "value": "12"
-                                },
-                                "example13": {
-                                    "value": "13"
-                                },
-                                "example14": {
-                                    "value": "14"
-                                },
-                                "example15": {
-                                    "value": "15"
-                                },
-                                "example16": {
-                                    "value": "16"
-                                },
-                                "example17": {
-                                    "value": "17"
-                                },
-                                "example18": {
-                                    "value": "18"
-                                },
-                                "example19": {
-                                    "value": "19"
-                                },
-                                "example20": {
-                                    "value": "20"
-                                },
-                                "example21": {
-                                    "value": "21"
-                                },
-                                "example22": {
-                                    "value": "22"
-                                },
-                                "example23": {
-                                    "value": "23"
-                                },
-                                "example24": {
-                                    "value": "24"
-                                },
-                                "example25": {
-                                    "value": "25"
-                                },
-                                "example26": {
-                                    "value": "26"
-                                },
-                                "example27": {
-                                    "value": "27"
-                                },
-                                "example28": {
-                                    "value": "28"
-                                },
-                                "example29": {
-                                    "value": "29"
-                                },
-                                "example30": {
-                                    "value": "30"
-                                },
-                                "example31": {
-                                    "value": "31"
-                                },
-                                "example32": {
-                                    "value": "32"
-                                },
-                                "example33": {
-                                    "value": "33"
-                                },
-                                "example34": {
-                                    "value": "34"
-                                },
-                                "example35": {
-                                    "value": "35"
-                                },
-                                "example36": {
-                                    "value": "36"
-                                },
-                                "example37": {
-                                    "value": "37"
-                                },
-                                "example38": {
-                                    "value": "38"
-                                },
-                                "example39": {
-                                    "value": "39"
-                                },
-                                "example40": {
-                                    "value": "40"
-                                },
-                                "example41": {
-                                    "value": "41"
-                                },
-                                "example42": {
-                                    "value": "42"
-                                },
-                                "example43": {
-                                    "value": "43"
-                                },
-                                "example44": {
-                                    "value": "44"
-                                },
-                                "example45": {
-                                    "value": "45"
-                                },
-                                "example46": {
-                                    "value": "46"
-                                },
-                                "example47": {
-                                    "value": "47"
-                                },
-                                "example48": {
-                                    "value": "48"
-                                },
-                                "example49": {
-                                    "value": "49"
-                                }
+                            "default": 5
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "0"
+                            },
+                            "example1": {
+                                "value": "1"
+                            },
+                            "example2": {
+                                "value": "2"
+                            },
+                            "example3": {
+                                "value": "3"
+                            },
+                            "example4": {
+                                "value": "4"
+                            },
+                            "example5": {
+                                "value": "5"
+                            },
+                            "example6": {
+                                "value": "6"
+                            },
+                            "example7": {
+                                "value": "7"
+                            },
+                            "example8": {
+                                "value": "8"
+                            },
+                            "example9": {
+                                "value": "9"
+                            },
+                            "example10": {
+                                "value": "10"
+                            },
+                            "example11": {
+                                "value": "11"
+                            },
+                            "example12": {
+                                "value": "12"
+                            },
+                            "example13": {
+                                "value": "13"
+                            },
+                            "example14": {
+                                "value": "14"
+                            },
+                            "example15": {
+                                "value": "15"
+                            },
+                            "example16": {
+                                "value": "16"
+                            },
+                            "example17": {
+                                "value": "17"
+                            },
+                            "example18": {
+                                "value": "18"
+                            },
+                            "example19": {
+                                "value": "19"
+                            },
+                            "example20": {
+                                "value": "20"
+                            },
+                            "example21": {
+                                "value": "21"
+                            },
+                            "example22": {
+                                "value": "22"
+                            },
+                            "example23": {
+                                "value": "23"
+                            },
+                            "example24": {
+                                "value": "24"
+                            },
+                            "example25": {
+                                "value": "25"
+                            },
+                            "example26": {
+                                "value": "26"
+                            },
+                            "example27": {
+                                "value": "27"
+                            },
+                            "example28": {
+                                "value": "28"
+                            },
+                            "example29": {
+                                "value": "29"
+                            },
+                            "example30": {
+                                "value": "30"
+                            },
+                            "example31": {
+                                "value": "31"
+                            },
+                            "example32": {
+                                "value": "32"
+                            },
+                            "example33": {
+                                "value": "33"
+                            },
+                            "example34": {
+                                "value": "34"
+                            },
+                            "example35": {
+                                "value": "35"
+                            },
+                            "example36": {
+                                "value": "36"
+                            },
+                            "example37": {
+                                "value": "37"
+                            },
+                            "example38": {
+                                "value": "38"
+                            },
+                            "example39": {
+                                "value": "39"
+                            },
+                            "example40": {
+                                "value": "40"
+                            },
+                            "example41": {
+                                "value": "41"
+                            },
+                            "example42": {
+                                "value": "42"
+                            },
+                            "example43": {
+                                "value": "43"
+                            },
+                            "example44": {
+                                "value": "44"
+                            },
+                            "example45": {
+                                "value": "45"
+                            },
+                            "example46": {
+                                "value": "46"
+                            },
+                            "example47": {
+                                "value": "47"
+                            },
+                            "example48": {
+                                "value": "48"
+                            },
+                            "example49": {
+                                "value": "49"
                             }
                         }
                     },
@@ -578,9 +577,9 @@
                         "in": "query",
                         "description": "Note: This parameter is intended exclusively for YouTube content partners.\n\nThe onBehalfOfContentOwner parameter indicates that the request's authorization credentials identify a YouTube CMS user who is acting on behalf of the content owner specified in the parameter value. This parameter is intended for YouTube content partners that own and manage many different YouTube channels. It allows content owners to authenticate once and get access to all their video and channel data, without having to provide authentication credentials for each individual channel. The CMS account that the user authenticates with must be linked to the specified YouTube content owner.",
                         "schema": {
-                            "type": "string",
-                            "examples": {}
-                        }
+                            "type": "string"
+                        },
+                        "examples": {}
                     },
                     {
                         "name": "order",
@@ -604,9 +603,9 @@
                         "in": "query",
                         "description": "The pageToken parameter identifies a specific page in the result set that should be returned. In an API response, the nextPageToken and prevPageToken properties identify other pages that could be retrieved.",
                         "schema": {
-                            "type": "string",
-                            "examples": {}
-                        }
+                            "type": "string"
+                        },
+                        "examples": {}
                     },
                     {
                         "name": "part",
@@ -627,60 +626,60 @@
                         "description": "The publishedAfter parameter indicates that the API response should only contain resources created after the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).",
                         "schema": {
                             "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "1970-01-01T00:00:00Z"
-                                },
-                                "example1": {
-                                    "value": "2022-03-15T10:30:00Z"
-                                },
-                                "example2": {
-                                    "value": "2019-07-20T15:45:00Z"
-                                },
-                                "example3": {
-                                    "value": "2020-11-05T08:20:00Z"
-                                },
-                                "example4": {
-                                    "value": "2021-06-10T18:55:00Z"
-                                },
-                                "example5": {
-                                    "value": "2018-09-25T12:10:00Z"
-                                },
-                                "example6": {
-                                    "value": "2023-12-31T23:59:59Z"
-                                },
-                                "example7": {
-                                    "value": "2024-02-29T07:30:00Z"
-                                },
-                                "example8": {
-                                    "value": "2025-08-15T16:45:00Z"
-                                },
-                                "example9": {
-                                    "value": "2026-04-01T09:20:00Z"
-                                },
-                                "example10": {
-                                    "value": "2027-11-11T21:55:00Z"
-                                },
-                                "example11": {
-                                    "value": "2028-05-05T14:10:00Z"
-                                },
-                                "example12": {
-                                    "value": "2029-09-30T03:30:00Z"
-                                },
-                                "example13": {
-                                    "value": "2030-12-25T19:45:00Z"
-                                },
-                                "example14": {
-                                    "value": "2031-07-04T11:20:00Z"
-                                },
-                                "example15": {
-                                    "value": "2032-02-14T23:55:00Z"
-                                },
-                                "example16": {
-                                    "value": "2033-10-20T17:"
-                                }
-                            },
                             "format": "date-time"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "1970-01-01T00:00:00Z"
+                            },
+                            "example1": {
+                                "value": "2022-03-15T10:30:00Z"
+                            },
+                            "example2": {
+                                "value": "2019-07-20T15:45:00Z"
+                            },
+                            "example3": {
+                                "value": "2020-11-05T08:20:00Z"
+                            },
+                            "example4": {
+                                "value": "2021-06-10T18:55:00Z"
+                            },
+                            "example5": {
+                                "value": "2018-09-25T12:10:00Z"
+                            },
+                            "example6": {
+                                "value": "2023-12-31T23:59:59Z"
+                            },
+                            "example7": {
+                                "value": "2024-02-29T07:30:00Z"
+                            },
+                            "example8": {
+                                "value": "2025-08-15T16:45:00Z"
+                            },
+                            "example9": {
+                                "value": "2026-04-01T09:20:00Z"
+                            },
+                            "example10": {
+                                "value": "2027-11-11T21:55:00Z"
+                            },
+                            "example11": {
+                                "value": "2028-05-05T14:10:00Z"
+                            },
+                            "example12": {
+                                "value": "2029-09-30T03:30:00Z"
+                            },
+                            "example13": {
+                                "value": "2030-12-25T19:45:00Z"
+                            },
+                            "example14": {
+                                "value": "2031-07-04T11:20:00Z"
+                            },
+                            "example15": {
+                                "value": "2032-02-14T23:55:00Z"
+                            },
+                            "example16": {
+                                "value": "2033-10-20T17:"
+                            }
                         }
                     },
                     {
@@ -689,45 +688,45 @@
                         "description": "The publishedBefore parameter indicates that the API response should only contain resources created before the specified time. The value is an RFC 3339 formatted date-time value (1970-01-01T00:00:00Z).",
                         "schema": {
                             "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "1970-01-01T00:00:00Z"
-                                },
-                                "example1": {
-                                    "value": "2022-12-31T23:59:59Z"
-                                },
-                                "example2": {
-                                    "value": "2022-01-01T00:00:00Z"
-                                },
-                                "example3": {
-                                    "value": "2022-06-15T12:30:00Z"
-                                },
-                                "example4": {
-                                    "value": "2023-03-10T08:45:00Z"
-                                },
-                                "example5": {
-                                    "value": "2023-11-20T18:00:00Z"
-                                },
-                                "example6": {
-                                    "value": "2024-09-05T03:15:00Z"
-                                },
-                                "example7": {
-                                    "value": "2024-04-30T21:20:00Z"
-                                },
-                                "example8": {
-                                    "value": "2025-02-14T15:30:00Z"
-                                },
-                                "example9": {
-                                    "value": "2025-10-25T09:45:00Z"
-                                },
-                                "example10": {
-                                    "value": "2026-07-01T06:00:00Z"
-                                },
-                                "example11": {
-                                    "value": "2026-12-31T23:59:59Z"
-                                }
-                            },
                             "format": "date-time"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "1970-01-01T00:00:00Z"
+                            },
+                            "example1": {
+                                "value": "2022-12-31T23:59:59Z"
+                            },
+                            "example2": {
+                                "value": "2022-01-01T00:00:00Z"
+                            },
+                            "example3": {
+                                "value": "2022-06-15T12:30:00Z"
+                            },
+                            "example4": {
+                                "value": "2023-03-10T08:45:00Z"
+                            },
+                            "example5": {
+                                "value": "2023-11-20T18:00:00Z"
+                            },
+                            "example6": {
+                                "value": "2024-09-05T03:15:00Z"
+                            },
+                            "example7": {
+                                "value": "2024-04-30T21:20:00Z"
+                            },
+                            "example8": {
+                                "value": "2025-02-14T15:30:00Z"
+                            },
+                            "example9": {
+                                "value": "2025-10-25T09:45:00Z"
+                            },
+                            "example10": {
+                                "value": "2026-07-01T06:00:00Z"
+                            },
+                            "example11": {
+                                "value": "2026-12-31T23:59:59Z"
+                            }
                         }
                     },
                     {
@@ -735,38 +734,38 @@
                         "in": "query",
                         "description": "The q parameter specifies the query term to search for.\n\nYour request can also use the Boolean NOT (-) and OR (|) operators to exclude videos or to find videos that are associated with one of several search terms. For example, to search for videos matching either \"boating\" or \"sailing\", set the q parameter value to boating|sailing. Similarly, to search for videos matching either \"boating\" or \"sailing\" but not \"fishing\", set the q parameter value to boating|sailing -fishing. Note that the pipe character must be URL-escaped when it is sent in your API request. The URL-escaped value for the pipe character is %7C.",
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "boating"
-                                },
-                                "example1": {
-                                    "value": "sailing"
-                                },
-                                "example2": {
-                                    "value": "fishing"
-                                },
-                                "example3": {
-                                    "value": "swimming"
-                                },
-                                "example4": {
-                                    "value": "hiking"
-                                },
-                                "example5": {
-                                    "value": "camping"
-                                },
-                                "example6": {
-                                    "value": "biking"
-                                },
-                                "example7": {
-                                    "value": "skiing"
-                                },
-                                "example8": {
-                                    "value": "surfing"
-                                },
-                                "example9": {
-                                    "value": "kayaking"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "boating"
+                            },
+                            "example1": {
+                                "value": "sailing"
+                            },
+                            "example2": {
+                                "value": "fishing"
+                            },
+                            "example3": {
+                                "value": "swimming"
+                            },
+                            "example4": {
+                                "value": "hiking"
+                            },
+                            "example5": {
+                                "value": "camping"
+                            },
+                            "example6": {
+                                "value": "biking"
+                            },
+                            "example7": {
+                                "value": "skiing"
+                            },
+                            "example8": {
+                                "value": "surfing"
+                            },
+                            "example9": {
+                                "value": "kayaking"
                             }
                         }
                     },
@@ -776,276 +775,276 @@
                         "description": "The regionCode parameter instructs the API to return search results for the specified country. The parameter value is an ISO 3166-1 alpha-2 country code.",
                         "schema": {
                             "type": "string",
-                            "minLength": "2",
-                            "maxLength": "2",
-                            "examples": {
-                                "example0": {
-                                    "value": "AFG"
-                                },
-                                "example1": {
-                                    "value": "ALA"
-                                },
-                                "example2": {
-                                    "value": "ALB"
-                                },
-                                "example3": {
-                                    "value": "DZA"
-                                },
-                                "example4": {
-                                    "value": "ASM"
-                                },
-                                "example5": {
-                                    "value": "AND"
-                                },
-                                "example6": {
-                                    "value": "AGO"
-                                },
-                                "example7": {
-                                    "value": "AIA"
-                                },
-                                "example8": {
-                                    "value": "ATA"
-                                },
-                                "example9": {
-                                    "value": "ATG"
-                                },
-                                "example10": {
-                                    "value": "ARG"
-                                },
-                                "example11": {
-                                    "value": "ARM"
-                                },
-                                "example12": {
-                                    "value": "ABW"
-                                },
-                                "example13": {
-                                    "value": "AUS"
-                                },
-                                "example14": {
-                                    "value": "AUT"
-                                },
-                                "example15": {
-                                    "value": "AZE"
-                                },
-                                "example16": {
-                                    "value": "BHS"
-                                },
-                                "example17": {
-                                    "value": "BHR"
-                                },
-                                "example18": {
-                                    "value": "BGD"
-                                },
-                                "example19": {
-                                    "value": "BRB"
-                                },
-                                "example20": {
-                                    "value": "BLR"
-                                },
-                                "example21": {
-                                    "value": "BEL"
-                                },
-                                "example22": {
-                                    "value": " BLZ"
-                                },
-                                "example23": {
-                                    "value": "BEN"
-                                },
-                                "example24": {
-                                    "value": "BMU"
-                                },
-                                "example25": {
-                                    "value": "BTN"
-                                },
-                                "example26": {
-                                    "value": "BOL"
-                                },
-                                "example27": {
-                                    "value": "BES"
-                                },
-                                "example28": {
-                                    "value": "BIH"
-                                },
-                                "example29": {
-                                    "value": "BWA"
-                                },
-                                "example30": {
-                                    "value": "BVT"
-                                },
-                                "example31": {
-                                    "value": "BRA"
-                                },
-                                "example32": {
-                                    "value": "IOT"
-                                },
-                                "example33": {
-                                    "value": "BRN"
-                                },
-                                "example34": {
-                                    "value": "BGR"
-                                },
-                                "example35": {
-                                    "value": "BFA"
-                                },
-                                "example36": {
-                                    "value": "BDI"
-                                },
-                                "example37": {
-                                    "value": "CPV"
-                                },
-                                "example38": {
-                                    "value": "KHM"
-                                },
-                                "example39": {
-                                    "value": "CMR"
-                                },
-                                "example40": {
-                                    "value": "CAN"
-                                },
-                                "example41": {
-                                    "value": "CYM"
-                                },
-                                "example42": {
-                                    "value": "CAF"
-                                },
-                                "example43": {
-                                    "value": "TCD"
-                                },
-                                "example44": {
-                                    "value": " CHL"
-                                },
-                                "example45": {
-                                    "value": "CHN"
-                                },
-                                "example46": {
-                                    "value": "CXR"
-                                },
-                                "example47": {
-                                    "value": "CCK"
-                                },
-                                "example48": {
-                                    "value": "COL"
-                                },
-                                "example49": {
-                                    "value": "COM"
-                                },
-                                "example50": {
-                                    "value": "COG"
-                                },
-                                "example51": {
-                                    "value": "COD"
-                                },
-                                "example52": {
-                                    "value": "COK"
-                                },
-                                "example53": {
-                                    "value": "CRI"
-                                },
-                                "example54": {
-                                    "value": "CIV"
-                                },
-                                "example55": {
-                                    "value": "HRV"
-                                },
-                                "example56": {
-                                    "value": "CUB"
-                                },
-                                "example57": {
-                                    "value": "CUW"
-                                },
-                                "example58": {
-                                    "value": "CYP"
-                                },
-                                "example59": {
-                                    "value": "CZE"
-                                },
-                                "example60": {
-                                    "value": "DNK"
-                                },
-                                "example61": {
-                                    "value": "DJI"
-                                },
-                                "example62": {
-                                    "value": "DMA"
-                                },
-                                "example63": {
-                                    "value": "DOM"
-                                },
-                                "example64": {
-                                    "value": "ECU"
-                                },
-                                "example65": {
-                                    "value": "EGY"
-                                },
-                                "example66": {
-                                    "value": " SLV"
-                                },
-                                "example67": {
-                                    "value": "GNQ"
-                                },
-                                "example68": {
-                                    "value": "ERI"
-                                },
-                                "example69": {
-                                    "value": "EST"
-                                },
-                                "example70": {
-                                    "value": "SWZ"
-                                },
-                                "example71": {
-                                    "value": "ETH"
-                                },
-                                "example72": {
-                                    "value": "FLK"
-                                },
-                                "example73": {
-                                    "value": "FRO"
-                                },
-                                "example74": {
-                                    "value": "FJI"
-                                },
-                                "example75": {
-                                    "value": "FIN"
-                                },
-                                "example76": {
-                                    "value": "FRA"
-                                },
-                                "example77": {
-                                    "value": "GUF"
-                                },
-                                "example78": {
-                                    "value": "PYF"
-                                },
-                                "example79": {
-                                    "value": "ATF"
-                                },
-                                "example80": {
-                                    "value": "GAB"
-                                },
-                                "example81": {
-                                    "value": "GMB"
-                                },
-                                "example82": {
-                                    "value": "GEO"
-                                },
-                                "example83": {
-                                    "value": "DEU"
-                                },
-                                "example84": {
-                                    "value": "GHA"
-                                },
-                                "example85": {
-                                    "value": "GIB"
-                                },
-                                "example86": {
-                                    "value": "GRC"
-                                },
-                                "example87": {
-                                    "value": "GRL"
-                                },
-                                "example88": {
-                                    "value": " GR"
-                                }
+                            "minLength": 2,
+                            "maxLength": 2
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "AFG"
+                            },
+                            "example1": {
+                                "value": "ALA"
+                            },
+                            "example2": {
+                                "value": "ALB"
+                            },
+                            "example3": {
+                                "value": "DZA"
+                            },
+                            "example4": {
+                                "value": "ASM"
+                            },
+                            "example5": {
+                                "value": "AND"
+                            },
+                            "example6": {
+                                "value": "AGO"
+                            },
+                            "example7": {
+                                "value": "AIA"
+                            },
+                            "example8": {
+                                "value": "ATA"
+                            },
+                            "example9": {
+                                "value": "ATG"
+                            },
+                            "example10": {
+                                "value": "ARG"
+                            },
+                            "example11": {
+                                "value": "ARM"
+                            },
+                            "example12": {
+                                "value": "ABW"
+                            },
+                            "example13": {
+                                "value": "AUS"
+                            },
+                            "example14": {
+                                "value": "AUT"
+                            },
+                            "example15": {
+                                "value": "AZE"
+                            },
+                            "example16": {
+                                "value": "BHS"
+                            },
+                            "example17": {
+                                "value": "BHR"
+                            },
+                            "example18": {
+                                "value": "BGD"
+                            },
+                            "example19": {
+                                "value": "BRB"
+                            },
+                            "example20": {
+                                "value": "BLR"
+                            },
+                            "example21": {
+                                "value": "BEL"
+                            },
+                            "example22": {
+                                "value": " BLZ"
+                            },
+                            "example23": {
+                                "value": "BEN"
+                            },
+                            "example24": {
+                                "value": "BMU"
+                            },
+                            "example25": {
+                                "value": "BTN"
+                            },
+                            "example26": {
+                                "value": "BOL"
+                            },
+                            "example27": {
+                                "value": "BES"
+                            },
+                            "example28": {
+                                "value": "BIH"
+                            },
+                            "example29": {
+                                "value": "BWA"
+                            },
+                            "example30": {
+                                "value": "BVT"
+                            },
+                            "example31": {
+                                "value": "BRA"
+                            },
+                            "example32": {
+                                "value": "IOT"
+                            },
+                            "example33": {
+                                "value": "BRN"
+                            },
+                            "example34": {
+                                "value": "BGR"
+                            },
+                            "example35": {
+                                "value": "BFA"
+                            },
+                            "example36": {
+                                "value": "BDI"
+                            },
+                            "example37": {
+                                "value": "CPV"
+                            },
+                            "example38": {
+                                "value": "KHM"
+                            },
+                            "example39": {
+                                "value": "CMR"
+                            },
+                            "example40": {
+                                "value": "CAN"
+                            },
+                            "example41": {
+                                "value": "CYM"
+                            },
+                            "example42": {
+                                "value": "CAF"
+                            },
+                            "example43": {
+                                "value": "TCD"
+                            },
+                            "example44": {
+                                "value": " CHL"
+                            },
+                            "example45": {
+                                "value": "CHN"
+                            },
+                            "example46": {
+                                "value": "CXR"
+                            },
+                            "example47": {
+                                "value": "CCK"
+                            },
+                            "example48": {
+                                "value": "COL"
+                            },
+                            "example49": {
+                                "value": "COM"
+                            },
+                            "example50": {
+                                "value": "COG"
+                            },
+                            "example51": {
+                                "value": "COD"
+                            },
+                            "example52": {
+                                "value": "COK"
+                            },
+                            "example53": {
+                                "value": "CRI"
+                            },
+                            "example54": {
+                                "value": "CIV"
+                            },
+                            "example55": {
+                                "value": "HRV"
+                            },
+                            "example56": {
+                                "value": "CUB"
+                            },
+                            "example57": {
+                                "value": "CUW"
+                            },
+                            "example58": {
+                                "value": "CYP"
+                            },
+                            "example59": {
+                                "value": "CZE"
+                            },
+                            "example60": {
+                                "value": "DNK"
+                            },
+                            "example61": {
+                                "value": "DJI"
+                            },
+                            "example62": {
+                                "value": "DMA"
+                            },
+                            "example63": {
+                                "value": "DOM"
+                            },
+                            "example64": {
+                                "value": "ECU"
+                            },
+                            "example65": {
+                                "value": "EGY"
+                            },
+                            "example66": {
+                                "value": " SLV"
+                            },
+                            "example67": {
+                                "value": "GNQ"
+                            },
+                            "example68": {
+                                "value": "ERI"
+                            },
+                            "example69": {
+                                "value": "EST"
+                            },
+                            "example70": {
+                                "value": "SWZ"
+                            },
+                            "example71": {
+                                "value": "ETH"
+                            },
+                            "example72": {
+                                "value": "FLK"
+                            },
+                            "example73": {
+                                "value": "FRO"
+                            },
+                            "example74": {
+                                "value": "FJI"
+                            },
+                            "example75": {
+                                "value": "FIN"
+                            },
+                            "example76": {
+                                "value": "FRA"
+                            },
+                            "example77": {
+                                "value": "GUF"
+                            },
+                            "example78": {
+                                "value": "PYF"
+                            },
+                            "example79": {
+                                "value": "ATF"
+                            },
+                            "example80": {
+                                "value": "GAB"
+                            },
+                            "example81": {
+                                "value": "GMB"
+                            },
+                            "example82": {
+                                "value": "GEO"
+                            },
+                            "example83": {
+                                "value": "DEU"
+                            },
+                            "example84": {
+                                "value": "GHA"
+                            },
+                            "example85": {
+                                "value": "GIB"
+                            },
+                            "example86": {
+                                "value": "GRC"
+                            },
+                            "example87": {
+                                "value": "GRL"
+                            },
+                            "example88": {
+                                "value": " GR"
                             }
                         }
                     },
@@ -1054,9 +1053,9 @@
                         "in": "query",
                         "description": "The relatedToVideoId parameter retrieves a list of videos that are related to the video that the parameter value identifies. The parameter value must be set to a YouTube video ID and, if you are using this parameter, the type parameter must be set to video.",
                         "schema": {
-                            "type": "string",
-                            "examples": {}
-                        }
+                            "type": "string"
+                        },
+                        "examples": {}
                     },
                     {
                         "name": "relevanceLanguage",
@@ -1064,332 +1063,332 @@
                         "description": "The relevanceLanguage parameter instructs the API to return search results that are most relevant to the specified language. The parameter value is typically an ISO 639-1 two-letter language code. However, you should use the values zh-Hans for simplified Chinese and zh-Hant for traditional Chinese. Please note that results in other languages will still be returned if they are highly relevant to the search query term.",
                         "schema": {
                             "type": "string",
-                            "minLength": "2",
-                            "examples": {
-                                "example0": {
-                                    "value": "zh-Hans"
-                                },
-                                "example1": {
-                                    "value": "zh-Hant"
-                                },
-                                "example2": {
-                                    "value": "af"
-                                },
-                                "example3": {
-                                    "value": "sq"
-                                },
-                                "example4": {
-                                    "value": "am"
-                                },
-                                "example5": {
-                                    "value": "ar"
-                                },
-                                "example6": {
-                                    "value": "hy"
-                                },
-                                "example7": {
-                                    "value": "az"
-                                },
-                                "example8": {
-                                    "value": "eu"
-                                },
-                                "example9": {
-                                    "value": "be"
-                                },
-                                "example10": {
-                                    "value": "bn"
-                                },
-                                "example11": {
-                                    "value": "bs"
-                                },
-                                "example12": {
-                                    "value": "bg"
-                                },
-                                "example13": {
-                                    "value": "ca"
-                                },
-                                "example14": {
-                                    "value": "ceb"
-                                },
-                                "example15": {
-                                    "value": "ny"
-                                },
-                                "example16": {
-                                    "value": "zh-CN"
-                                },
-                                "example17": {
-                                    "value": "zh-TW"
-                                },
-                                "example18": {
-                                    "value": "co"
-                                },
-                                "example19": {
-                                    "value": "hr"
-                                },
-                                "example20": {
-                                    "value": "cs"
-                                },
-                                "example21": {
-                                    "value": "da"
-                                },
-                                "example22": {
-                                    "value": "nl"
-                                },
-                                "example23": {
-                                    "value": "en"
-                                },
-                                "example24": {
-                                    "value": "eo"
-                                },
-                                "example25": {
-                                    "value": "et"
-                                },
-                                "example26": {
-                                    "value": "tl"
-                                },
-                                "example27": {
-                                    "value": "fi"
-                                },
-                                "example28": {
-                                    "value": " fr"
-                                },
-                                "example29": {
-                                    "value": "fy"
-                                },
-                                "example30": {
-                                    "value": "gl"
-                                },
-                                "example31": {
-                                    "value": "ka"
-                                },
-                                "example32": {
-                                    "value": "de"
-                                },
-                                "example33": {
-                                    "value": "el"
-                                },
-                                "example34": {
-                                    "value": "gu"
-                                },
-                                "example35": {
-                                    "value": "ht"
-                                },
-                                "example36": {
-                                    "value": "ha"
-                                },
-                                "example37": {
-                                    "value": "haw"
-                                },
-                                "example38": {
-                                    "value": "iw"
-                                },
-                                "example39": {
-                                    "value": "hi"
-                                },
-                                "example40": {
-                                    "value": "hmn"
-                                },
-                                "example41": {
-                                    "value": "hu"
-                                },
-                                "example42": {
-                                    "value": "is"
-                                },
-                                "example43": {
-                                    "value": "ig"
-                                },
-                                "example44": {
-                                    "value": "id"
-                                },
-                                "example45": {
-                                    "value": "ga"
-                                },
-                                "example46": {
-                                    "value": "it"
-                                },
-                                "example47": {
-                                    "value": "ja"
-                                },
-                                "example48": {
-                                    "value": "jv"
-                                },
-                                "example49": {
-                                    "value": "kn"
-                                },
-                                "example50": {
-                                    "value": "kk"
-                                },
-                                "example51": {
-                                    "value": "km"
-                                },
-                                "example52": {
-                                    "value": "ko"
-                                },
-                                "example53": {
-                                    "value": "ku"
-                                },
-                                "example54": {
-                                    "value": "ky"
-                                },
-                                "example55": {
-                                    "value": "lo"
-                                },
-                                "example56": {
-                                    "value": " la"
-                                },
-                                "example57": {
-                                    "value": "lv"
-                                },
-                                "example58": {
-                                    "value": "lt"
-                                },
-                                "example59": {
-                                    "value": "lb"
-                                },
-                                "example60": {
-                                    "value": "mk"
-                                },
-                                "example61": {
-                                    "value": "mg"
-                                },
-                                "example62": {
-                                    "value": "ms"
-                                },
-                                "example63": {
-                                    "value": "ml"
-                                },
-                                "example64": {
-                                    "value": "mt"
-                                },
-                                "example65": {
-                                    "value": "mi"
-                                },
-                                "example66": {
-                                    "value": "mr"
-                                },
-                                "example67": {
-                                    "value": "mn"
-                                },
-                                "example68": {
-                                    "value": "my"
-                                },
-                                "example69": {
-                                    "value": "ne"
-                                },
-                                "example70": {
-                                    "value": "no"
-                                },
-                                "example71": {
-                                    "value": "or"
-                                },
-                                "example72": {
-                                    "value": "ps"
-                                },
-                                "example73": {
-                                    "value": "fa"
-                                },
-                                "example74": {
-                                    "value": "pl"
-                                },
-                                "example75": {
-                                    "value": "pt"
-                                },
-                                "example76": {
-                                    "value": "pa"
-                                },
-                                "example77": {
-                                    "value": "ro"
-                                },
-                                "example78": {
-                                    "value": "ru"
-                                },
-                                "example79": {
-                                    "value": "sm"
-                                },
-                                "example80": {
-                                    "value": "gd"
-                                },
-                                "example81": {
-                                    "value": "sr"
-                                },
-                                "example82": {
-                                    "value": "st"
-                                },
-                                "example83": {
-                                    "value": "sn"
-                                },
-                                "example84": {
-                                    "value": "sd"
-                                },
-                                "example85": {
-                                    "value": " si"
-                                },
-                                "example86": {
-                                    "value": "sk"
-                                },
-                                "example87": {
-                                    "value": "sl"
-                                },
-                                "example88": {
-                                    "value": "so"
-                                },
-                                "example89": {
-                                    "value": "es"
-                                },
-                                "example90": {
-                                    "value": "su"
-                                },
-                                "example91": {
-                                    "value": "sw"
-                                },
-                                "example92": {
-                                    "value": "sv"
-                                },
-                                "example93": {
-                                    "value": "tg"
-                                },
-                                "example94": {
-                                    "value": "ta"
-                                },
-                                "example95": {
-                                    "value": "te"
-                                },
-                                "example96": {
-                                    "value": "th"
-                                },
-                                "example97": {
-                                    "value": "tr"
-                                },
-                                "example98": {
-                                    "value": "uk"
-                                },
-                                "example99": {
-                                    "value": "ur"
-                                },
-                                "example100": {
-                                    "value": "ug"
-                                },
-                                "example101": {
-                                    "value": "uz"
-                                },
-                                "example102": {
-                                    "value": "vi"
-                                },
-                                "example103": {
-                                    "value": "cy"
-                                },
-                                "example104": {
-                                    "value": "xh"
-                                },
-                                "example105": {
-                                    "value": "yi"
-                                },
-                                "example106": {
-                                    "value": "yo"
-                                },
-                                "example107": {
-                                    "value": "zu"
-                                }
+                            "minLength": 2
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "zh-Hans"
+                            },
+                            "example1": {
+                                "value": "zh-Hant"
+                            },
+                            "example2": {
+                                "value": "af"
+                            },
+                            "example3": {
+                                "value": "sq"
+                            },
+                            "example4": {
+                                "value": "am"
+                            },
+                            "example5": {
+                                "value": "ar"
+                            },
+                            "example6": {
+                                "value": "hy"
+                            },
+                            "example7": {
+                                "value": "az"
+                            },
+                            "example8": {
+                                "value": "eu"
+                            },
+                            "example9": {
+                                "value": "be"
+                            },
+                            "example10": {
+                                "value": "bn"
+                            },
+                            "example11": {
+                                "value": "bs"
+                            },
+                            "example12": {
+                                "value": "bg"
+                            },
+                            "example13": {
+                                "value": "ca"
+                            },
+                            "example14": {
+                                "value": "ceb"
+                            },
+                            "example15": {
+                                "value": "ny"
+                            },
+                            "example16": {
+                                "value": "zh-CN"
+                            },
+                            "example17": {
+                                "value": "zh-TW"
+                            },
+                            "example18": {
+                                "value": "co"
+                            },
+                            "example19": {
+                                "value": "hr"
+                            },
+                            "example20": {
+                                "value": "cs"
+                            },
+                            "example21": {
+                                "value": "da"
+                            },
+                            "example22": {
+                                "value": "nl"
+                            },
+                            "example23": {
+                                "value": "en"
+                            },
+                            "example24": {
+                                "value": "eo"
+                            },
+                            "example25": {
+                                "value": "et"
+                            },
+                            "example26": {
+                                "value": "tl"
+                            },
+                            "example27": {
+                                "value": "fi"
+                            },
+                            "example28": {
+                                "value": " fr"
+                            },
+                            "example29": {
+                                "value": "fy"
+                            },
+                            "example30": {
+                                "value": "gl"
+                            },
+                            "example31": {
+                                "value": "ka"
+                            },
+                            "example32": {
+                                "value": "de"
+                            },
+                            "example33": {
+                                "value": "el"
+                            },
+                            "example34": {
+                                "value": "gu"
+                            },
+                            "example35": {
+                                "value": "ht"
+                            },
+                            "example36": {
+                                "value": "ha"
+                            },
+                            "example37": {
+                                "value": "haw"
+                            },
+                            "example38": {
+                                "value": "iw"
+                            },
+                            "example39": {
+                                "value": "hi"
+                            },
+                            "example40": {
+                                "value": "hmn"
+                            },
+                            "example41": {
+                                "value": "hu"
+                            },
+                            "example42": {
+                                "value": "is"
+                            },
+                            "example43": {
+                                "value": "ig"
+                            },
+                            "example44": {
+                                "value": "id"
+                            },
+                            "example45": {
+                                "value": "ga"
+                            },
+                            "example46": {
+                                "value": "it"
+                            },
+                            "example47": {
+                                "value": "ja"
+                            },
+                            "example48": {
+                                "value": "jv"
+                            },
+                            "example49": {
+                                "value": "kn"
+                            },
+                            "example50": {
+                                "value": "kk"
+                            },
+                            "example51": {
+                                "value": "km"
+                            },
+                            "example52": {
+                                "value": "ko"
+                            },
+                            "example53": {
+                                "value": "ku"
+                            },
+                            "example54": {
+                                "value": "ky"
+                            },
+                            "example55": {
+                                "value": "lo"
+                            },
+                            "example56": {
+                                "value": " la"
+                            },
+                            "example57": {
+                                "value": "lv"
+                            },
+                            "example58": {
+                                "value": "lt"
+                            },
+                            "example59": {
+                                "value": "lb"
+                            },
+                            "example60": {
+                                "value": "mk"
+                            },
+                            "example61": {
+                                "value": "mg"
+                            },
+                            "example62": {
+                                "value": "ms"
+                            },
+                            "example63": {
+                                "value": "ml"
+                            },
+                            "example64": {
+                                "value": "mt"
+                            },
+                            "example65": {
+                                "value": "mi"
+                            },
+                            "example66": {
+                                "value": "mr"
+                            },
+                            "example67": {
+                                "value": "mn"
+                            },
+                            "example68": {
+                                "value": "my"
+                            },
+                            "example69": {
+                                "value": "ne"
+                            },
+                            "example70": {
+                                "value": "no"
+                            },
+                            "example71": {
+                                "value": "or"
+                            },
+                            "example72": {
+                                "value": "ps"
+                            },
+                            "example73": {
+                                "value": "fa"
+                            },
+                            "example74": {
+                                "value": "pl"
+                            },
+                            "example75": {
+                                "value": "pt"
+                            },
+                            "example76": {
+                                "value": "pa"
+                            },
+                            "example77": {
+                                "value": "ro"
+                            },
+                            "example78": {
+                                "value": "ru"
+                            },
+                            "example79": {
+                                "value": "sm"
+                            },
+                            "example80": {
+                                "value": "gd"
+                            },
+                            "example81": {
+                                "value": "sr"
+                            },
+                            "example82": {
+                                "value": "st"
+                            },
+                            "example83": {
+                                "value": "sn"
+                            },
+                            "example84": {
+                                "value": "sd"
+                            },
+                            "example85": {
+                                "value": " si"
+                            },
+                            "example86": {
+                                "value": "sk"
+                            },
+                            "example87": {
+                                "value": "sl"
+                            },
+                            "example88": {
+                                "value": "so"
+                            },
+                            "example89": {
+                                "value": "es"
+                            },
+                            "example90": {
+                                "value": "su"
+                            },
+                            "example91": {
+                                "value": "sw"
+                            },
+                            "example92": {
+                                "value": "sv"
+                            },
+                            "example93": {
+                                "value": "tg"
+                            },
+                            "example94": {
+                                "value": "ta"
+                            },
+                            "example95": {
+                                "value": "te"
+                            },
+                            "example96": {
+                                "value": "th"
+                            },
+                            "example97": {
+                                "value": "tr"
+                            },
+                            "example98": {
+                                "value": "uk"
+                            },
+                            "example99": {
+                                "value": "ur"
+                            },
+                            "example100": {
+                                "value": "ug"
+                            },
+                            "example101": {
+                                "value": "uz"
+                            },
+                            "example102": {
+                                "value": "vi"
+                            },
+                            "example103": {
+                                "value": "cy"
+                            },
+                            "example104": {
+                                "value": "xh"
+                            },
+                            "example105": {
+                                "value": "yi"
+                            },
+                            "example106": {
+                                "value": "yo"
+                            },
+                            "example107": {
+                                "value": "zu"
                             }
                         }
                     },
@@ -1411,9 +1410,9 @@
                         "in": "query",
                         "description": "The topicId parameter indicates that the API response should only contain resources associated with the specified topic. The value identifies a Freebase topic ID.",
                         "schema": {
-                            "type": "string",
-                            "examples": {}
-                        }
+                            "type": "string"
+                        },
+                        "examples": {}
                     },
                     {
                         "name": "type",
@@ -1421,38 +1420,38 @@
                         "description": "The type parameter restricts a search query to only retrieve a particular type of resource. The value is a comma-separated list of resource types.",
                         "schema": {
                             "type": "string",
-                            "default": "video,channel,playlist",
-                            "examples": {
-                                "example0": {
-                                    "value": "video"
-                                },
-                                "example1": {
-                                    "value": "playlist"
-                                },
-                                "example2": {
-                                    "value": "channel"
-                                },
-                                "example3": {
-                                    "value": "user"
-                                },
-                                "example4": {
-                                    "value": "comment"
-                                },
-                                "example5": {
-                                    "value": "liveBroadcast"
-                                },
-                                "example6": {
-                                    "value": "guideCategory"
-                                },
-                                "example7": {
-                                    "value": "videoCategory"
-                                },
-                                "example8": {
-                                    "value": "subscription"
-                                },
-                                "example9": {
-                                    "value": "activity"
-                                }
+                            "default": "video,channel,playlist"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "video"
+                            },
+                            "example1": {
+                                "value": "playlist"
+                            },
+                            "example2": {
+                                "value": "channel"
+                            },
+                            "example3": {
+                                "value": "user"
+                            },
+                            "example4": {
+                                "value": "comment"
+                            },
+                            "example5": {
+                                "value": "liveBroadcast"
+                            },
+                            "example6": {
+                                "value": "guideCategory"
+                            },
+                            "example7": {
+                                "value": "videoCategory"
+                            },
+                            "example8": {
+                                "value": "subscription"
+                            },
+                            "example9": {
+                                "value": "activity"
                             }
                         }
                     },
@@ -1474,9 +1473,9 @@
                         "in": "query",
                         "description": "The videoCategoryId parameter filters video search results based on their category. If you specify a value for this parameter, you must also set the type parameter's value to video.",
                         "schema": {
-                            "type": "string",
-                            "examples": {}
-                        }
+                            "type": "string"
+                        },
+                        "examples": {}
                     },
                     {
                         "name": "videoDefinition",

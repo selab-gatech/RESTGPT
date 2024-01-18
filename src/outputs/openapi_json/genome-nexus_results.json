@@ -54,20 +54,20 @@
                         "in": "query",
                         "description": "Isoform override source. For example uniprot",
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "uniprot"
-                                },
-                                "example1": {
-                                    "value": "ensembl"
-                                },
-                                "example2": {
-                                    "value": "refseq"
-                                },
-                                "example3": {
-                                    "value": "genbank"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "uniprot"
+                            },
+                            "example1": {
+                                "value": "ensembl"
+                            },
+                            "example2": {
+                                "value": "refseq"
+                            },
+                            "example3": {
+                                "value": "genbank"
                             }
                         }
                     },
@@ -76,44 +76,44 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object",
-                            "examples": {
-                                "example0": {
-                                    "value": "put-your-token1-here"
-                                },
-                                "example1": {
-                                    "value": "put-your-token2-here"
-                                },
-                                "example2": {
-                                    "value": "token123"
-                                },
-                                "example3": {
-                                    "value": "token456"
-                                },
-                                "example4": {
-                                    "value": "token789"
-                                },
-                                "example5": {
-                                    "value": "myToken"
-                                },
-                                "example6": {
-                                    "value": "secretToken"
-                                },
-                                "example7": {
-                                    "value": "access_token"
-                                },
-                                "example8": {
-                                    "value": "authToken"
-                                },
-                                "example9": {
-                                    "value": "apiToken"
-                                },
-                                "example10": {
-                                    "value": "userToken"
-                                },
-                                "example11": {
-                                    "value": "sessionToken"
-                                }
+                            "type": "object"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "put-your-token1-here"
+                            },
+                            "example1": {
+                                "value": "put-your-token2-here"
+                            },
+                            "example2": {
+                                "value": "token123"
+                            },
+                            "example3": {
+                                "value": "token456"
+                            },
+                            "example4": {
+                                "value": "token789"
+                            },
+                            "example5": {
+                                "value": "myToken"
+                            },
+                            "example6": {
+                                "value": "secretToken"
+                            },
+                            "example7": {
+                                "value": "access_token"
+                            },
+                            "example8": {
+                                "value": "authToken"
+                            },
+                            "example9": {
+                                "value": "apiToken"
+                            },
+                            "example10": {
+                                "value": "userToken"
+                            },
+                            "example11": {
+                                "value": "sessionToken"
                             }
                         }
                     },
@@ -128,13 +128,12 @@
                             "items": {
                                 "type": "string",
                                 "default": "hotspots"
-                            },
-                            "examples": {
-                                "example0": {
-                                    "value": "hotspots"
-                                }
-                            },
-                            "collectionFormat": "csv"
+                            }
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "hotspots"
+                            }
                         }
                     }
                 ],
@@ -146,29 +145,6 @@
                                 "type": "array",
                                 "items": {
                                     "type": "string"
-                                },
-                                "examples": {
-                                    "example0": {
-                                        "value": "X:g.66937331T>A"
-                                    },
-                                    "example1": {
-                                        "value": "17:g.41242962_41242963insGA"
-                                    },
-                                    "example2": {
-                                        "value": "1:g.182712A>C"
-                                    },
-                                    "example3": {
-                                        "value": "2:g.265023C>T"
-                                    },
-                                    "example4": {
-                                        "value": "3:g.319781del"
-                                    },
-                                    "example5": {
-                                        "value": "19:g.110753dup"
-                                    },
-                                    "example6": {
-                                        "value": "1:g.1385015_1387562del"
-                                    }
                                 }
                             }
                         }
@@ -2817,20 +2793,20 @@
                         "in": "query",
                         "description": "Isoform override source. For example uniprot",
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "uniprot"
-                                },
-                                "example1": {
-                                    "value": "ensembl"
-                                },
-                                "example2": {
-                                    "value": "refseq"
-                                },
-                                "example3": {
-                                    "value": "genbank"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "uniprot"
+                            },
+                            "example1": {
+                                "value": "ensembl"
+                            },
+                            "example2": {
+                                "value": "refseq"
+                            },
+                            "example3": {
+                                "value": "genbank"
                             }
                         }
                     },
@@ -2839,44 +2815,44 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object",
-                            "examples": {
-                                "example0": {
-                                    "value": "put-your-token1-here"
-                                },
-                                "example1": {
-                                    "value": "put-your-token2-here"
-                                },
-                                "example2": {
-                                    "value": "token123"
-                                },
-                                "example3": {
-                                    "value": "token456"
-                                },
-                                "example4": {
-                                    "value": "token789"
-                                },
-                                "example5": {
-                                    "value": "myToken"
-                                },
-                                "example6": {
-                                    "value": "secretToken"
-                                },
-                                "example7": {
-                                    "value": "access_token"
-                                },
-                                "example8": {
-                                    "value": "authToken"
-                                },
-                                "example9": {
-                                    "value": "apiToken"
-                                },
-                                "example10": {
-                                    "value": "userToken"
-                                },
-                                "example11": {
-                                    "value": "sessionToken"
-                                }
+                            "type": "object"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "put-your-token1-here"
+                            },
+                            "example1": {
+                                "value": "put-your-token2-here"
+                            },
+                            "example2": {
+                                "value": "token123"
+                            },
+                            "example3": {
+                                "value": "token456"
+                            },
+                            "example4": {
+                                "value": "token789"
+                            },
+                            "example5": {
+                                "value": "myToken"
+                            },
+                            "example6": {
+                                "value": "secretToken"
+                            },
+                            "example7": {
+                                "value": "access_token"
+                            },
+                            "example8": {
+                                "value": "authToken"
+                            },
+                            "example9": {
+                                "value": "apiToken"
+                            },
+                            "example10": {
+                                "value": "userToken"
+                            },
+                            "example11": {
+                                "value": "sessionToken"
                             }
                         }
                     },
@@ -2891,43 +2867,42 @@
                             "items": {
                                 "type": "string",
                                 "default": "annotation_summary"
+                            }
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "annotation_summary"
                             },
-                            "examples": {
-                                "example0": {
-                                    "value": "annotation_summary"
-                                },
-                                "example1": {
-                                    "value": "field1"
-                                },
-                                "example2": {
-                                    "value": "field2"
-                                },
-                                "example3": {
-                                    "value": "field3"
-                                },
-                                "example4": {
-                                    "value": "field4"
-                                },
-                                "example5": {
-                                    "value": "field5"
-                                },
-                                "example6": {
-                                    "value": "field6"
-                                },
-                                "example7": {
-                                    "value": "field7"
-                                },
-                                "example8": {
-                                    "value": "field8"
-                                },
-                                "example9": {
-                                    "value": "field9"
-                                },
-                                "example10": {
-                                    "value": "field10"
-                                }
+                            "example1": {
+                                "value": "field1"
                             },
-                            "collectionFormat": "csv"
+                            "example2": {
+                                "value": "field2"
+                            },
+                            "example3": {
+                                "value": "field3"
+                            },
+                            "example4": {
+                                "value": "field4"
+                            },
+                            "example5": {
+                                "value": "field5"
+                            },
+                            "example6": {
+                                "value": "field6"
+                            },
+                            "example7": {
+                                "value": "field7"
+                            },
+                            "example8": {
+                                "value": "field8"
+                            },
+                            "example9": {
+                                "value": "field9"
+                            },
+                            "example10": {
+                                "value": "field10"
+                            }
                         }
                     }
                 ],
@@ -2940,42 +2915,7 @@
                                 "items": {
                                     "type": "string"
                                 },
-                                "minItems": "1",
-                                "examples": {
-                                    "example0": {
-                                        "value": "[\"rs116035550\"]"
-                                    },
-                                    "example1": {
-                                        "value": "[\"rs116035551\""
-                                    },
-                                    "example2": {
-                                        "value": "\"rs116035552\""
-                                    },
-                                    "example3": {
-                                        "value": "\"rs116035553\""
-                                    },
-                                    "example4": {
-                                        "value": "\"rs116035554\""
-                                    },
-                                    "example5": {
-                                        "value": "\"rs116035555\""
-                                    },
-                                    "example6": {
-                                        "value": "\"rs116035556\""
-                                    },
-                                    "example7": {
-                                        "value": "\"rs116035557\""
-                                    },
-                                    "example8": {
-                                        "value": "\"rs116035558\""
-                                    },
-                                    "example9": {
-                                        "value": "\"rs116035559\""
-                                    },
-                                    "example10": {
-                                        "value": "\"rs116035560\"]"
-                                    }
-                                }
+                                "minItems": 1
                             }
                         }
                     },
@@ -5624,20 +5564,20 @@
                         "description": "dbSNP id. For example rs116035550.",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "rs116035550"
-                                },
-                                "example1": {
-                                    "value": "rs123456789"
-                                },
-                                "example2": {
-                                    "value": "rs987654321"
-                                },
-                                "example3": {
-                                    "value": "rs246813579"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "rs116035550"
+                            },
+                            "example1": {
+                                "value": "rs123456789"
+                            },
+                            "example2": {
+                                "value": "rs987654321"
+                            },
+                            "example3": {
+                                "value": "rs246813579"
                             }
                         }
                     },
@@ -5646,20 +5586,20 @@
                         "in": "query",
                         "description": "Isoform override source. For example uniprot",
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "uniprot"
-                                },
-                                "example1": {
-                                    "value": "ensembl"
-                                },
-                                "example2": {
-                                    "value": "refseq"
-                                },
-                                "example3": {
-                                    "value": "genbank"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "uniprot"
+                            },
+                            "example1": {
+                                "value": "ensembl"
+                            },
+                            "example2": {
+                                "value": "refseq"
+                            },
+                            "example3": {
+                                "value": "genbank"
                             }
                         }
                     },
@@ -5668,44 +5608,44 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object",
-                            "examples": {
-                                "example0": {
-                                    "value": "put-your-token1-here"
-                                },
-                                "example1": {
-                                    "value": "put-your-token2-here"
-                                },
-                                "example2": {
-                                    "value": "token123"
-                                },
-                                "example3": {
-                                    "value": "token456"
-                                },
-                                "example4": {
-                                    "value": "token789"
-                                },
-                                "example5": {
-                                    "value": "myToken"
-                                },
-                                "example6": {
-                                    "value": "secretToken"
-                                },
-                                "example7": {
-                                    "value": "access_token"
-                                },
-                                "example8": {
-                                    "value": "authToken"
-                                },
-                                "example9": {
-                                    "value": "apiToken"
-                                },
-                                "example10": {
-                                    "value": "userToken"
-                                },
-                                "example11": {
-                                    "value": "sessionToken"
-                                }
+                            "type": "object"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "put-your-token1-here"
+                            },
+                            "example1": {
+                                "value": "put-your-token2-here"
+                            },
+                            "example2": {
+                                "value": "token123"
+                            },
+                            "example3": {
+                                "value": "token456"
+                            },
+                            "example4": {
+                                "value": "token789"
+                            },
+                            "example5": {
+                                "value": "myToken"
+                            },
+                            "example6": {
+                                "value": "secretToken"
+                            },
+                            "example7": {
+                                "value": "access_token"
+                            },
+                            "example8": {
+                                "value": "authToken"
+                            },
+                            "example9": {
+                                "value": "apiToken"
+                            },
+                            "example10": {
+                                "value": "userToken"
+                            },
+                            "example11": {
+                                "value": "sessionToken"
                             }
                         }
                     },
@@ -5720,43 +5660,42 @@
                             "items": {
                                 "type": "string",
                                 "default": "annotation_summary"
+                            }
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "annotation_summary"
                             },
-                            "examples": {
-                                "example0": {
-                                    "value": "annotation_summary"
-                                },
-                                "example1": {
-                                    "value": "field1"
-                                },
-                                "example2": {
-                                    "value": "field2"
-                                },
-                                "example3": {
-                                    "value": "field3"
-                                },
-                                "example4": {
-                                    "value": "field4"
-                                },
-                                "example5": {
-                                    "value": "field5"
-                                },
-                                "example6": {
-                                    "value": "field6"
-                                },
-                                "example7": {
-                                    "value": "field7"
-                                },
-                                "example8": {
-                                    "value": "field8"
-                                },
-                                "example9": {
-                                    "value": "field9"
-                                },
-                                "example10": {
-                                    "value": "field10"
-                                }
+                            "example1": {
+                                "value": "field1"
                             },
-                            "collectionFormat": "csv"
+                            "example2": {
+                                "value": "field2"
+                            },
+                            "example3": {
+                                "value": "field3"
+                            },
+                            "example4": {
+                                "value": "field4"
+                            },
+                            "example5": {
+                                "value": "field5"
+                            },
+                            "example6": {
+                                "value": "field6"
+                            },
+                            "example7": {
+                                "value": "field7"
+                            },
+                            "example8": {
+                                "value": "field8"
+                            },
+                            "example9": {
+                                "value": "field9"
+                            },
+                            "example10": {
+                                "value": "field10"
+                            }
                         }
                     }
                 ],
@@ -8398,20 +8337,20 @@
                         "in": "query",
                         "description": "Isoform override source. For example uniprot",
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "uniprot"
-                                },
-                                "example1": {
-                                    "value": "ensembl"
-                                },
-                                "example2": {
-                                    "value": "refseq"
-                                },
-                                "example3": {
-                                    "value": "genbank"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "uniprot"
+                            },
+                            "example1": {
+                                "value": "ensembl"
+                            },
+                            "example2": {
+                                "value": "refseq"
+                            },
+                            "example3": {
+                                "value": "genbank"
                             }
                         }
                     },
@@ -8420,44 +8359,44 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object",
-                            "examples": {
-                                "example0": {
-                                    "value": "put-your-token1-here"
-                                },
-                                "example1": {
-                                    "value": "put-your-token2-here"
-                                },
-                                "example2": {
-                                    "value": "token123"
-                                },
-                                "example3": {
-                                    "value": "token456"
-                                },
-                                "example4": {
-                                    "value": "token789"
-                                },
-                                "example5": {
-                                    "value": "myToken"
-                                },
-                                "example6": {
-                                    "value": "secretToken"
-                                },
-                                "example7": {
-                                    "value": "access_token"
-                                },
-                                "example8": {
-                                    "value": "authToken"
-                                },
-                                "example9": {
-                                    "value": "apiToken"
-                                },
-                                "example10": {
-                                    "value": "userToken"
-                                },
-                                "example11": {
-                                    "value": "sessionToken"
-                                }
+                            "type": "object"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "put-your-token1-here"
+                            },
+                            "example1": {
+                                "value": "put-your-token2-here"
+                            },
+                            "example2": {
+                                "value": "token123"
+                            },
+                            "example3": {
+                                "value": "token456"
+                            },
+                            "example4": {
+                                "value": "token789"
+                            },
+                            "example5": {
+                                "value": "myToken"
+                            },
+                            "example6": {
+                                "value": "secretToken"
+                            },
+                            "example7": {
+                                "value": "access_token"
+                            },
+                            "example8": {
+                                "value": "authToken"
+                            },
+                            "example9": {
+                                "value": "apiToken"
+                            },
+                            "example10": {
+                                "value": "userToken"
+                            },
+                            "example11": {
+                                "value": "sessionToken"
                             }
                         }
                     },
@@ -8472,13 +8411,12 @@
                             "items": {
                                 "type": "string",
                                 "default": "hotspots"
-                            },
-                            "examples": {
-                                "example0": {
-                                    "value": "hotspots"
-                                }
-                            },
-                            "collectionFormat": "csv"
+                            }
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "hotspots"
+                            }
                         }
                     }
                 ],
@@ -8521,8 +8459,7 @@
                                             "description": "Variant Allele"
                                         }
                                     }
-                                },
-                                "examples": {}
+                                }
                             }
                         }
                     },
@@ -11171,14 +11108,14 @@
                         "description": "A genomic location. For example 7,140453136,140453136,A,T",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "7,140453136,140453136,A,T"
-                                },
-                                "example1": {
-                                    "value": "1,100000000,200000000,G,C"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "7,140453136,140453136,A,T"
+                            },
+                            "example1": {
+                                "value": "1,100000000,200000000,G,C"
                             }
                         }
                     },
@@ -11187,20 +11124,20 @@
                         "in": "query",
                         "description": "Isoform override source. For example uniprot",
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "uniprot"
-                                },
-                                "example1": {
-                                    "value": "ensembl"
-                                },
-                                "example2": {
-                                    "value": "refseq"
-                                },
-                                "example3": {
-                                    "value": "genbank"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "uniprot"
+                            },
+                            "example1": {
+                                "value": "ensembl"
+                            },
+                            "example2": {
+                                "value": "refseq"
+                            },
+                            "example3": {
+                                "value": "genbank"
                             }
                         }
                     },
@@ -11209,44 +11146,44 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object",
-                            "examples": {
-                                "example0": {
-                                    "value": "put-your-token1-here"
-                                },
-                                "example1": {
-                                    "value": "put-your-token2-here"
-                                },
-                                "example2": {
-                                    "value": "token123"
-                                },
-                                "example3": {
-                                    "value": "token456"
-                                },
-                                "example4": {
-                                    "value": "token789"
-                                },
-                                "example5": {
-                                    "value": "myToken"
-                                },
-                                "example6": {
-                                    "value": "secretToken"
-                                },
-                                "example7": {
-                                    "value": "access_token"
-                                },
-                                "example8": {
-                                    "value": "authToken"
-                                },
-                                "example9": {
-                                    "value": "apiToken"
-                                },
-                                "example10": {
-                                    "value": "userToken"
-                                },
-                                "example11": {
-                                    "value": "sessionToken"
-                                }
+                            "type": "object"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "put-your-token1-here"
+                            },
+                            "example1": {
+                                "value": "put-your-token2-here"
+                            },
+                            "example2": {
+                                "value": "token123"
+                            },
+                            "example3": {
+                                "value": "token456"
+                            },
+                            "example4": {
+                                "value": "token789"
+                            },
+                            "example5": {
+                                "value": "myToken"
+                            },
+                            "example6": {
+                                "value": "secretToken"
+                            },
+                            "example7": {
+                                "value": "access_token"
+                            },
+                            "example8": {
+                                "value": "authToken"
+                            },
+                            "example9": {
+                                "value": "apiToken"
+                            },
+                            "example10": {
+                                "value": "userToken"
+                            },
+                            "example11": {
+                                "value": "sessionToken"
                             }
                         }
                     },
@@ -11261,13 +11198,12 @@
                             "items": {
                                 "type": "string",
                                 "default": "hotspots"
-                            },
-                            "examples": {
-                                "example0": {
-                                    "value": "hotspots"
-                                }
-                            },
-                            "collectionFormat": "csv"
+                            }
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "hotspots"
+                            }
                         }
                     }
                 ],
@@ -13910,41 +13846,41 @@
                         "description": "Variant. For example 17:g.41242962_41242963insGA",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "17:g.41242962_41242963insGA"
-                                },
-                                "example1": {
-                                    "value": "1:g.12345678_12345679insAT"
-                                },
-                                "example2": {
-                                    "value": "2:g.23456789_23456790insCG"
-                                },
-                                "example3": {
-                                    "value": "3:g.34567890_34567891insTC"
-                                },
-                                "example4": {
-                                    "value": "4:g.45678901_45678902insGA"
-                                },
-                                "example5": {
-                                    "value": "5:g.56789012_56789013insAT"
-                                },
-                                "example6": {
-                                    "value": "6:g.67890123_67890124insCG"
-                                },
-                                "example7": {
-                                    "value": "7:g.78901234_78901235insTC"
-                                },
-                                "example8": {
-                                    "value": "8:g.89012345_89012346insGA"
-                                },
-                                "example9": {
-                                    "value": "9:g.90123456_90123457insAT"
-                                },
-                                "example10": {
-                                    "value": "10:g.01234567_01234568insCG"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "17:g.41242962_41242963insGA"
+                            },
+                            "example1": {
+                                "value": "1:g.12345678_12345679insAT"
+                            },
+                            "example2": {
+                                "value": "2:g.23456789_23456790insCG"
+                            },
+                            "example3": {
+                                "value": "3:g.34567890_34567891insTC"
+                            },
+                            "example4": {
+                                "value": "4:g.45678901_45678902insGA"
+                            },
+                            "example5": {
+                                "value": "5:g.56789012_56789013insAT"
+                            },
+                            "example6": {
+                                "value": "6:g.67890123_67890124insCG"
+                            },
+                            "example7": {
+                                "value": "7:g.78901234_78901235insTC"
+                            },
+                            "example8": {
+                                "value": "8:g.89012345_89012346insGA"
+                            },
+                            "example9": {
+                                "value": "9:g.90123456_90123457insAT"
+                            },
+                            "example10": {
+                                "value": "10:g.01234567_01234568insCG"
                             }
                         }
                     },
@@ -13953,20 +13889,20 @@
                         "in": "query",
                         "description": "Isoform override source. For example uniprot",
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "uniprot"
-                                },
-                                "example1": {
-                                    "value": "ensembl"
-                                },
-                                "example2": {
-                                    "value": "refseq"
-                                },
-                                "example3": {
-                                    "value": "genbank"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "uniprot"
+                            },
+                            "example1": {
+                                "value": "ensembl"
+                            },
+                            "example2": {
+                                "value": "refseq"
+                            },
+                            "example3": {
+                                "value": "genbank"
                             }
                         }
                     },
@@ -13975,44 +13911,44 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object",
-                            "examples": {
-                                "example0": {
-                                    "value": "put-your-token1-here"
-                                },
-                                "example1": {
-                                    "value": "put-your-token2-here"
-                                },
-                                "example2": {
-                                    "value": "token123"
-                                },
-                                "example3": {
-                                    "value": "token456"
-                                },
-                                "example4": {
-                                    "value": "token789"
-                                },
-                                "example5": {
-                                    "value": "myToken"
-                                },
-                                "example6": {
-                                    "value": "secretToken"
-                                },
-                                "example7": {
-                                    "value": "access_token"
-                                },
-                                "example8": {
-                                    "value": "authToken"
-                                },
-                                "example9": {
-                                    "value": "apiToken"
-                                },
-                                "example10": {
-                                    "value": "userToken"
-                                },
-                                "example11": {
-                                    "value": "sessionToken"
-                                }
+                            "type": "object"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "put-your-token1-here"
+                            },
+                            "example1": {
+                                "value": "put-your-token2-here"
+                            },
+                            "example2": {
+                                "value": "token123"
+                            },
+                            "example3": {
+                                "value": "token456"
+                            },
+                            "example4": {
+                                "value": "token789"
+                            },
+                            "example5": {
+                                "value": "myToken"
+                            },
+                            "example6": {
+                                "value": "secretToken"
+                            },
+                            "example7": {
+                                "value": "access_token"
+                            },
+                            "example8": {
+                                "value": "authToken"
+                            },
+                            "example9": {
+                                "value": "apiToken"
+                            },
+                            "example10": {
+                                "value": "userToken"
+                            },
+                            "example11": {
+                                "value": "sessionToken"
                             }
                         }
                     },
@@ -14027,13 +13963,12 @@
                             "items": {
                                 "type": "string",
                                 "default": "hotspots"
-                            },
-                            "examples": {
-                                "example0": {
-                                    "value": "hotspots"
-                                }
-                            },
-                            "collectionFormat": "csv"
+                            }
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "hotspots"
+                            }
                         }
                     }
                 ],
@@ -16678,15 +16613,7 @@
                                 "items": {
                                     "type": "string"
                                 },
-                                "minItems": "1",
-                                "examples": {
-                                    "example0": {
-                                        "value": "[\"23140\",\"26009\",\"100131879\"]"
-                                    },
-                                    "example1": {
-                                        "value": "[\"12345\",\"67890\",\"98765\"]"
-                                    }
-                                }
+                                "minItems": 1
                             }
                         }
                     },
@@ -16756,41 +16683,41 @@
                         "description": "An Entrez Gene Id. For example 23140",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "23140"
-                                },
-                                "example1": {
-                                    "value": "100"
-                                },
-                                "example2": {
-                                    "value": "200"
-                                },
-                                "example3": {
-                                    "value": "300"
-                                },
-                                "example4": {
-                                    "value": "400"
-                                },
-                                "example5": {
-                                    "value": "500"
-                                },
-                                "example6": {
-                                    "value": "600"
-                                },
-                                "example7": {
-                                    "value": "700"
-                                },
-                                "example8": {
-                                    "value": "800"
-                                },
-                                "example9": {
-                                    "value": "900"
-                                },
-                                "example10": {
-                                    "value": "1000"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "23140"
+                            },
+                            "example1": {
+                                "value": "100"
+                            },
+                            "example2": {
+                                "value": "200"
+                            },
+                            "example3": {
+                                "value": "300"
+                            },
+                            "example4": {
+                                "value": "400"
+                            },
+                            "example5": {
+                                "value": "500"
+                            },
+                            "example6": {
+                                "value": "600"
+                            },
+                            "example7": {
+                                "value": "700"
+                            },
+                            "example8": {
+                                "value": "800"
+                            },
+                            "example9": {
+                                "value": "900"
+                            },
+                            "example10": {
+                                "value": "1000"
                             }
                         }
                     }
@@ -16857,168 +16784,7 @@
                                 "items": {
                                     "type": "string"
                                 },
-                                "minItems": "1",
-                                "examples": {
-                                    "example0": {
-                                        "value": "TP53"
-                                    },
-                                    "example1": {
-                                        "value": "PIK3CA"
-                                    },
-                                    "example2": {
-                                        "value": "BRCA1"
-                                    },
-                                    "example3": {
-                                        "value": "EGFR"
-                                    },
-                                    "example4": {
-                                        "value": "KRAS"
-                                    },
-                                    "example5": {
-                                        "value": "PTEN"
-                                    },
-                                    "example6": {
-                                        "value": "AKT1"
-                                    },
-                                    "example7": {
-                                        "value": "CDKN2A"
-                                    },
-                                    "example8": {
-                                        "value": "MAPK1"
-                                    },
-                                    "example9": {
-                                        "value": "NOTCH1"
-                                    },
-                                    "example10": {
-                                        "value": "MET"
-                                    },
-                                    "example11": {
-                                        "value": "JAK2"
-                                    },
-                                    "example12": {
-                                        "value": "ALK"
-                                    },
-                                    "example13": {
-                                        "value": " BRAF"
-                                    },
-                                    "example14": {
-                                        "value": "NRAS"
-                                    },
-                                    "example15": {
-                                        "value": "RET"
-                                    },
-                                    "example16": {
-                                        "value": "ROS1"
-                                    },
-                                    "example17": {
-                                        "value": "ERBB2"
-                                    },
-                                    "example18": {
-                                        "value": "FGFR1"
-                                    },
-                                    "example19": {
-                                        "value": "FGFR2"
-                                    },
-                                    "example20": {
-                                        "value": "FGFR3"
-                                    },
-                                    "example21": {
-                                        "value": "KIT"
-                                    },
-                                    "example22": {
-                                        "value": "PDGFRA"
-                                    },
-                                    "example23": {
-                                        "value": "PDGFRB"
-                                    },
-                                    "example24": {
-                                        "value": "DDR2"
-                                    },
-                                    "example25": {
-                                        "value": "NTRK1"
-                                    },
-                                    "example26": {
-                                        "value": "NTRK2"
-                                    },
-                                    "example27": {
-                                        "value": "NTRK3"
-                                    },
-                                    "example28": {
-                                        "value": " ABL1"
-                                    },
-                                    "example29": {
-                                        "value": "ABL2"
-                                    },
-                                    "example30": {
-                                        "value": "EGFRvIII"
-                                    },
-                                    "example31": {
-                                        "value": "EGFRvIV"
-                                    },
-                                    "example32": {
-                                        "value": "EGFRvV"
-                                    },
-                                    "example33": {
-                                        "value": "EGFRvVI"
-                                    },
-                                    "example34": {
-                                        "value": "EGFRvVII"
-                                    },
-                                    "example35": {
-                                        "value": "EGFRvVIII"
-                                    },
-                                    "example36": {
-                                        "value": "EGFRvIX"
-                                    },
-                                    "example37": {
-                                        "value": "EGFRvX"
-                                    },
-                                    "example38": {
-                                        "value": "EGFRvXI"
-                                    },
-                                    "example39": {
-                                        "value": "EGFRvXII"
-                                    },
-                                    "example40": {
-                                        "value": " EGFRvXIII"
-                                    },
-                                    "example41": {
-                                        "value": "EGFRvXIV"
-                                    },
-                                    "example42": {
-                                        "value": "EGFRvXV"
-                                    },
-                                    "example43": {
-                                        "value": "EGFRvXVI"
-                                    },
-                                    "example44": {
-                                        "value": "EGFRvXVII"
-                                    },
-                                    "example45": {
-                                        "value": "EGFRvXVIII"
-                                    },
-                                    "example46": {
-                                        "value": "EGFRvXIX"
-                                    },
-                                    "example47": {
-                                        "value": "EGFRvXX"
-                                    },
-                                    "example48": {
-                                        "value": "EGFRvXXI"
-                                    },
-                                    "example49": {
-                                        "value": "EGFRvXXII"
-                                    },
-                                    "example50": {
-                                        "value": " EGFRvXXIII"
-                                    },
-                                    "example51": {
-                                        "value": "EGFRvXXIV"
-                                    },
-                                    "example52": {
-                                        "value": "EGFRvXXV"
-                                    }
-                                }
+                                "minItems": 1
                             }
                         }
                     },
@@ -17089,50 +16855,50 @@
                         "required": true,
                         "schema": {
                             "type": "string",
-                            "minLength": "1",
-                            "examples": {
-                                "example0": {
-                                    "value": "TP53"
-                                },
-                                "example1": {
-                                    "value": "ABCD"
-                                },
-                                "example2": {
-                                    "value": "EFGH"
-                                },
-                                "example3": {
-                                    "value": "IJKL"
-                                },
-                                "example4": {
-                                    "value": "MNOP"
-                                },
-                                "example5": {
-                                    "value": "QRST"
-                                },
-                                "example6": {
-                                    "value": "UVWX"
-                                },
-                                "example7": {
-                                    "value": "YZAB"
-                                },
-                                "example8": {
-                                    "value": "CDEF"
-                                },
-                                "example9": {
-                                    "value": "GHIJ"
-                                },
-                                "example10": {
-                                    "value": "KLMN"
-                                },
-                                "example11": {
-                                    "value": "OPQR"
-                                },
-                                "example12": {
-                                    "value": "STUV"
-                                },
-                                "example13": {
-                                    "value": "WXYZ"
-                                }
+                            "minLength": 1
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "TP53"
+                            },
+                            "example1": {
+                                "value": "ABCD"
+                            },
+                            "example2": {
+                                "value": "EFGH"
+                            },
+                            "example3": {
+                                "value": "IJKL"
+                            },
+                            "example4": {
+                                "value": "MNOP"
+                            },
+                            "example5": {
+                                "value": "QRST"
+                            },
+                            "example6": {
+                                "value": "UVWX"
+                            },
+                            "example7": {
+                                "value": "YZAB"
+                            },
+                            "example8": {
+                                "value": "CDEF"
+                            },
+                            "example9": {
+                                "value": "GHIJ"
+                            },
+                            "example10": {
+                                "value": "KLMN"
+                            },
+                            "example11": {
+                                "value": "OPQR"
+                            },
+                            "example12": {
+                                "value": "STUV"
+                            },
+                            "example13": {
+                                "value": "WXYZ"
                             }
                         }
                     }
@@ -17197,20 +16963,20 @@
                         "description": "Isoform override source. For example uniprot",
                         "schema": {
                             "type": "string",
-                            "default": "uniprot",
-                            "examples": {
-                                "example0": {
-                                    "value": "uniprot"
-                                },
-                                "example1": {
-                                    "value": "ensembl"
-                                },
-                                "example2": {
-                                    "value": "refseq"
-                                },
-                                "example3": {
-                                    "value": "genbank"
-                                }
+                            "default": "uniprot"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "uniprot"
+                            },
+                            "example1": {
+                                "value": "ensembl"
+                            },
+                            "example2": {
+                                "value": "refseq"
+                            },
+                            "example3": {
+                                "value": "genbank"
                             }
                         }
                     }
@@ -17224,168 +16990,7 @@
                                 "items": {
                                     "type": "string"
                                 },
-                                "minItems": "1",
-                                "examples": {
-                                    "example0": {
-                                        "value": "TP53"
-                                    },
-                                    "example1": {
-                                        "value": "PIK3CA"
-                                    },
-                                    "example2": {
-                                        "value": "BRCA1"
-                                    },
-                                    "example3": {
-                                        "value": "EGFR"
-                                    },
-                                    "example4": {
-                                        "value": "KRAS"
-                                    },
-                                    "example5": {
-                                        "value": "PTEN"
-                                    },
-                                    "example6": {
-                                        "value": "AKT1"
-                                    },
-                                    "example7": {
-                                        "value": "CDKN2A"
-                                    },
-                                    "example8": {
-                                        "value": "MAPK1"
-                                    },
-                                    "example9": {
-                                        "value": "NOTCH1"
-                                    },
-                                    "example10": {
-                                        "value": "MET"
-                                    },
-                                    "example11": {
-                                        "value": "JAK2"
-                                    },
-                                    "example12": {
-                                        "value": "ALK"
-                                    },
-                                    "example13": {
-                                        "value": " BRAF"
-                                    },
-                                    "example14": {
-                                        "value": "NRAS"
-                                    },
-                                    "example15": {
-                                        "value": "RET"
-                                    },
-                                    "example16": {
-                                        "value": "ROS1"
-                                    },
-                                    "example17": {
-                                        "value": "ERBB2"
-                                    },
-                                    "example18": {
-                                        "value": "FGFR1"
-                                    },
-                                    "example19": {
-                                        "value": "FGFR2"
-                                    },
-                                    "example20": {
-                                        "value": "FGFR3"
-                                    },
-                                    "example21": {
-                                        "value": "KIT"
-                                    },
-                                    "example22": {
-                                        "value": "PDGFRA"
-                                    },
-                                    "example23": {
-                                        "value": "PDGFRB"
-                                    },
-                                    "example24": {
-                                        "value": "DDR2"
-                                    },
-                                    "example25": {
-                                        "value": "NTRK1"
-                                    },
-                                    "example26": {
-                                        "value": "NTRK2"
-                                    },
-                                    "example27": {
-                                        "value": "NTRK3"
-                                    },
-                                    "example28": {
-                                        "value": " ABL1"
-                                    },
-                                    "example29": {
-                                        "value": "ABL2"
-                                    },
-                                    "example30": {
-                                        "value": "EGFRvIII"
-                                    },
-                                    "example31": {
-                                        "value": "EGFRvIV"
-                                    },
-                                    "example32": {
-                                        "value": "EGFRvV"
-                                    },
-                                    "example33": {
-                                        "value": "EGFRvVI"
-                                    },
-                                    "example34": {
-                                        "value": "EGFRvVII"
-                                    },
-                                    "example35": {
-                                        "value": "EGFRvVIII"
-                                    },
-                                    "example36": {
-                                        "value": "EGFRvIX"
-                                    },
-                                    "example37": {
-                                        "value": "EGFRvX"
-                                    },
-                                    "example38": {
-                                        "value": "EGFRvXI"
-                                    },
-                                    "example39": {
-                                        "value": "EGFRvXII"
-                                    },
-                                    "example40": {
-                                        "value": " EGFRvXIII"
-                                    },
-                                    "example41": {
-                                        "value": "EGFRvXIV"
-                                    },
-                                    "example42": {
-                                        "value": "EGFRvXV"
-                                    },
-                                    "example43": {
-                                        "value": "EGFRvXVI"
-                                    },
-                                    "example44": {
-                                        "value": "EGFRvXVII"
-                                    },
-                                    "example45": {
-                                        "value": "EGFRvXVIII"
-                                    },
-                                    "example46": {
-                                        "value": "EGFRvXIX"
-                                    },
-                                    "example47": {
-                                        "value": "EGFRvXX"
-                                    },
-                                    "example48": {
-                                        "value": "EGFRvXXI"
-                                    },
-                                    "example49": {
-                                        "value": "EGFRvXXII"
-                                    },
-                                    "example50": {
-                                        "value": " EGFRvXXIII"
-                                    },
-                                    "example51": {
-                                        "value": "EGFRvXXIV"
-                                    },
-                                    "example52": {
-                                        "value": "EGFRvXXV"
-                                    }
-                                }
+                                "minItems": 1
                             }
                         }
                     },
@@ -17574,50 +17179,50 @@
                         "required": true,
                         "schema": {
                             "type": "string",
-                            "minLength": "1",
-                            "examples": {
-                                "example0": {
-                                    "value": "TP53"
-                                },
-                                "example1": {
-                                    "value": "ABCD"
-                                },
-                                "example2": {
-                                    "value": "EFGH"
-                                },
-                                "example3": {
-                                    "value": "IJKL"
-                                },
-                                "example4": {
-                                    "value": "MNOP"
-                                },
-                                "example5": {
-                                    "value": "QRST"
-                                },
-                                "example6": {
-                                    "value": "UVWX"
-                                },
-                                "example7": {
-                                    "value": "YZAB"
-                                },
-                                "example8": {
-                                    "value": "CDEF"
-                                },
-                                "example9": {
-                                    "value": "GHIJ"
-                                },
-                                "example10": {
-                                    "value": "KLMN"
-                                },
-                                "example11": {
-                                    "value": "OPQR"
-                                },
-                                "example12": {
-                                    "value": "STUV"
-                                },
-                                "example13": {
-                                    "value": "WXYZ"
-                                }
+                            "minLength": 1
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "TP53"
+                            },
+                            "example1": {
+                                "value": "ABCD"
+                            },
+                            "example2": {
+                                "value": "EFGH"
+                            },
+                            "example3": {
+                                "value": "IJKL"
+                            },
+                            "example4": {
+                                "value": "MNOP"
+                            },
+                            "example5": {
+                                "value": "QRST"
+                            },
+                            "example6": {
+                                "value": "UVWX"
+                            },
+                            "example7": {
+                                "value": "YZAB"
+                            },
+                            "example8": {
+                                "value": "CDEF"
+                            },
+                            "example9": {
+                                "value": "GHIJ"
+                            },
+                            "example10": {
+                                "value": "KLMN"
+                            },
+                            "example11": {
+                                "value": "OPQR"
+                            },
+                            "example12": {
+                                "value": "STUV"
+                            },
+                            "example13": {
+                                "value": "WXYZ"
                             }
                         }
                     },
@@ -17627,20 +17232,20 @@
                         "description": "Isoform override source. For example uniprot",
                         "schema": {
                             "type": "string",
-                            "default": "uniprot",
-                            "examples": {
-                                "example0": {
-                                    "value": "uniprot"
-                                },
-                                "example1": {
-                                    "value": "ensembl"
-                                },
-                                "example2": {
-                                    "value": "refseq"
-                                },
-                                "example3": {
-                                    "value": "genbank"
-                                }
+                            "default": "uniprot"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "uniprot"
+                            },
+                            "example1": {
+                                "value": "ensembl"
+                            },
+                            "example2": {
+                                "value": "refseq"
+                            },
+                            "example3": {
+                                "value": "genbank"
                             }
                         }
                     }
@@ -17823,27 +17428,27 @@
                         "description": "An Ensembl gene ID. For example ENSG00000136999",
                         "schema": {
                             "type": "string",
-                            "minLength": "18",
-                            "maxLength": "18",
-                            "examples": {
-                                "example0": {
-                                    "value": "ENSG00000136999"
-                                },
-                                "example1": {
-                                    "value": "ENSG00000123456"
-                                },
-                                "example2": {
-                                    "value": "ENSG00000198765"
-                                },
-                                "example3": {
-                                    "value": "ENSG00000154321"
-                                },
-                                "example4": {
-                                    "value": "ENSG00000187654"
-                                },
-                                "example5": {
-                                    "value": "ENSG00000109876"
-                                }
+                            "minLength": 18,
+                            "maxLength": 18
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "ENSG00000136999"
+                            },
+                            "example1": {
+                                "value": "ENSG00000123456"
+                            },
+                            "example2": {
+                                "value": "ENSG00000198765"
+                            },
+                            "example3": {
+                                "value": "ENSG00000154321"
+                            },
+                            "example4": {
+                                "value": "ENSG00000187654"
+                            },
+                            "example5": {
+                                "value": "ENSG00000109876"
                             }
                         }
                     },
@@ -17853,72 +17458,72 @@
                         "description": "An Ensembl protein ID. For example ENSP00000439985",
                         "schema": {
                             "type": "string",
-                            "minLength": "17",
-                            "maxLength": "17",
-                            "examples": {
-                                "example0": {
-                                    "value": "ENSP00000439985"
-                                },
-                                "example1": {
-                                    "value": "ENSP00000123456"
-                                },
-                                "example2": {
-                                    "value": "ENSP00000234567"
-                                },
-                                "example3": {
-                                    "value": "ENSP00000345678"
-                                },
-                                "example4": {
-                                    "value": "ENSP00000456789"
-                                },
-                                "example5": {
-                                    "value": "ENSP00000567890"
-                                },
-                                "example6": {
-                                    "value": "ENSP00000678901"
-                                },
-                                "example7": {
-                                    "value": "ENSP00000789012"
-                                },
-                                "example8": {
-                                    "value": "ENSP00000890123"
-                                },
-                                "example9": {
-                                    "value": "ENSP00000901234"
-                                },
-                                "example10": {
-                                    "value": "ENSP00001012345"
-                                },
-                                "example11": {
-                                    "value": "ENSP00001123456"
-                                },
-                                "example12": {
-                                    "value": "ENSP00001234567"
-                                },
-                                "example13": {
-                                    "value": "ENSP00001345678"
-                                },
-                                "example14": {
-                                    "value": "ENSP00001456789"
-                                },
-                                "example15": {
-                                    "value": "ENSP00001567890"
-                                },
-                                "example16": {
-                                    "value": "ENSP00001678901"
-                                },
-                                "example17": {
-                                    "value": "ENSP00001789012"
-                                },
-                                "example18": {
-                                    "value": "ENSP00001890123"
-                                },
-                                "example19": {
-                                    "value": "ENSP00001901234"
-                                },
-                                "example20": {
-                                    "value": "ENSP00002012345"
-                                }
+                            "minLength": 17,
+                            "maxLength": 17
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "ENSP00000439985"
+                            },
+                            "example1": {
+                                "value": "ENSP00000123456"
+                            },
+                            "example2": {
+                                "value": "ENSP00000234567"
+                            },
+                            "example3": {
+                                "value": "ENSP00000345678"
+                            },
+                            "example4": {
+                                "value": "ENSP00000456789"
+                            },
+                            "example5": {
+                                "value": "ENSP00000567890"
+                            },
+                            "example6": {
+                                "value": "ENSP00000678901"
+                            },
+                            "example7": {
+                                "value": "ENSP00000789012"
+                            },
+                            "example8": {
+                                "value": "ENSP00000890123"
+                            },
+                            "example9": {
+                                "value": "ENSP00000901234"
+                            },
+                            "example10": {
+                                "value": "ENSP00001012345"
+                            },
+                            "example11": {
+                                "value": "ENSP00001123456"
+                            },
+                            "example12": {
+                                "value": "ENSP00001234567"
+                            },
+                            "example13": {
+                                "value": "ENSP00001345678"
+                            },
+                            "example14": {
+                                "value": "ENSP00001456789"
+                            },
+                            "example15": {
+                                "value": "ENSP00001567890"
+                            },
+                            "example16": {
+                                "value": "ENSP00001678901"
+                            },
+                            "example17": {
+                                "value": "ENSP00001789012"
+                            },
+                            "example18": {
+                                "value": "ENSP00001890123"
+                            },
+                            "example19": {
+                                "value": "ENSP00001901234"
+                            },
+                            "example20": {
+                                "value": "ENSP00002012345"
                             }
                         }
                     },
@@ -17928,26 +17533,26 @@
                         "description": "A Hugo Symbol For example ARF5",
                         "schema": {
                             "type": "string",
-                            "minLength": "1",
-                            "examples": {
-                                "example0": {
-                                    "value": "ARF5"
-                                },
-                                "example1": {
-                                    "value": "ABC1"
-                                },
-                                "example2": {
-                                    "value": "XYZ9"
-                                },
-                                "example3": {
-                                    "value": "DEF2"
-                                },
-                                "example4": {
-                                    "value": "GHI3"
-                                },
-                                "example5": {
-                                    "value": "JKL4"
-                                }
+                            "minLength": 1
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "ARF5"
+                            },
+                            "example1": {
+                                "value": "ABC1"
+                            },
+                            "example2": {
+                                "value": "XYZ9"
+                            },
+                            "example3": {
+                                "value": "DEF2"
+                            },
+                            "example4": {
+                                "value": "GHI3"
+                            },
+                            "example5": {
+                                "value": "JKL4"
                             }
                         }
                     }
@@ -18137,33 +17742,7 @@
                                         "items": {
                                             "type": "string"
                                         },
-                                        "minItems": "1",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "ENSG00000136999"
-                                            },
-                                            "example1": {
-                                                "value": "ENSG00000272398"
-                                            },
-                                            "example2": {
-                                                "value": "ENSG00000198695"
-                                            },
-                                            "example3": {
-                                                "value": "ENSG00000123456"
-                                            },
-                                            "example4": {
-                                                "value": "ENSG00000234567"
-                                            },
-                                            "example5": {
-                                                "value": "ENSG00000345678"
-                                            },
-                                            "example6": {
-                                                "value": "ENSG00000456789"
-                                            },
-                                            "example7": {
-                                                "value": "ENSG00000567890"
-                                            }
-                                        }
+                                        "minItems": 1
                                     },
                                     "hugoSymbols": {
                                         "type": "array",
@@ -18171,159 +17750,7 @@
                                         "items": {
                                             "type": "string"
                                         },
-                                        "minItems": "1",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "TP53"
-                                            },
-                                            "example1": {
-                                                "value": "PIK3CA"
-                                            },
-                                            "example2": {
-                                                "value": "BRCA1"
-                                            },
-                                            "example3": {
-                                                "value": "EGFR"
-                                            },
-                                            "example4": {
-                                                "value": "KRAS"
-                                            },
-                                            "example5": {
-                                                "value": "PTEN"
-                                            },
-                                            "example6": {
-                                                "value": "AKT1"
-                                            },
-                                            "example7": {
-                                                "value": "CDKN2A"
-                                            },
-                                            "example8": {
-                                                "value": "MET"
-                                            },
-                                            "example9": {
-                                                "value": "HER2"
-                                            },
-                                            "example10": {
-                                                "value": "ALK"
-                                            },
-                                            "example11": {
-                                                "value": "RET"
-                                            },
-                                            "example12": {
-                                                "value": "ROS1"
-                                            },
-                                            "example13": {
-                                                "value": "BRAF"
-                                            },
-                                            "example14": {
-                                                "value": "FGFR1"
-                                            },
-                                            "example15": {
-                                                "value": "ERBB2"
-                                            },
-                                            "example16": {
-                                                "value": "NRAS"
-                                            },
-                                            "example17": {
-                                                "value": "MAP2K1"
-                                            },
-                                            "example18": {
-                                                "value": " PIK3R1"
-                                            },
-                                            "example19": {
-                                                "value": "NOTCH1"
-                                            },
-                                            "example20": {
-                                                "value": "JAK2"
-                                            },
-                                            "example21": {
-                                                "value": "SMAD4"
-                                            },
-                                            "example22": {
-                                                "value": "IDH1"
-                                            },
-                                            "example23": {
-                                                "value": "KIT"
-                                            },
-                                            "example24": {
-                                                "value": "PDGFRA"
-                                            },
-                                            "example25": {
-                                                "value": "EGFRvIII"
-                                            },
-                                            "example26": {
-                                                "value": "NTRK1"
-                                            },
-                                            "example27": {
-                                                "value": "DDR2"
-                                            },
-                                            "example28": {
-                                                "value": "FGFR2"
-                                            },
-                                            "example29": {
-                                                "value": "FGFR3"
-                                            },
-                                            "example30": {
-                                                "value": "FGFR4"
-                                            },
-                                            "example31": {
-                                                "value": "ERBB4"
-                                            },
-                                            "example32": {
-                                                "value": "ERBB3"
-                                            },
-                                            "example33": {
-                                                "value": "ERBB1"
-                                            },
-                                            "example34": {
-                                                "value": " ALK-EML4"
-                                            },
-                                            "example35": {
-                                                "value": "EML4-ALK"
-                                            },
-                                            "example36": {
-                                                "value": "ROS1-CD74"
-                                            },
-                                            "example37": {
-                                                "value": "CD74-ROS1"
-                                            },
-                                            "example38": {
-                                                "value": "NPM1-ALK"
-                                            },
-                                            "example39": {
-                                                "value": "ALK-NPM1"
-                                            },
-                                            "example40": {
-                                                "value": "TPM3-ALK"
-                                            },
-                                            "example41": {
-                                                "value": "ALK-TPM3"
-                                            },
-                                            "example42": {
-                                                "value": "TFG-ALK"
-                                            },
-                                            "example43": {
-                                                "value": "ALK-TFG"
-                                            },
-                                            "example44": {
-                                                "value": "KIF5B-ALK"
-                                            },
-                                            "example45": {
-                                                "value": "ALK-KIF5B"
-                                            },
-                                            "example46": {
-                                                "value": " TFG-ROS1"
-                                            },
-                                            "example47": {
-                                                "value": "ROS1-TFG"
-                                            },
-                                            "example48": {
-                                                "value": "SLC34A2-ROS1"
-                                            },
-                                            "example49": {
-                                                "value": "ROS1-SLC34A2"
-                                            }
-                                        }
+                                        "minItems": 1
                                     },
                                     "proteinIds": {
                                         "type": "array",
@@ -18331,48 +17758,7 @@
                                         "items": {
                                             "type": "string"
                                         },
-                                        "minItems": "1",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "ENSP00000439985"
-                                            },
-                                            "example1": {
-                                                "value": "ENSP00000478460"
-                                            },
-                                            "example2": {
-                                                "value": "ENSP00000346196"
-                                            },
-                                            "example3": {
-                                                "value": "ENSP00000123456"
-                                            },
-                                            "example4": {
-                                                "value": "ENSP00000234567"
-                                            },
-                                            "example5": {
-                                                "value": "ENSP00000345678"
-                                            },
-                                            "example6": {
-                                                "value": "ENSP00000456789"
-                                            },
-                                            "example7": {
-                                                "value": "ENSP00000567890"
-                                            },
-                                            "example8": {
-                                                "value": "ENSP00000678901"
-                                            },
-                                            "example9": {
-                                                "value": "ENSP00000789012"
-                                            },
-                                            "example10": {
-                                                "value": "ENSP00000890123"
-                                            },
-                                            "example11": {
-                                                "value": "ENSP00000901234"
-                                            },
-                                            "example12": {
-                                                "value": "ENSP00001012345"
-                                            }
-                                        }
+                                        "minItems": 1
                                     },
                                     "transcriptIds": {
                                         "type": "array",
@@ -18380,117 +17766,7 @@
                                         "items": {
                                             "type": "string"
                                         },
-                                        "minItems": "1",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "ENST00000361390"
-                                            },
-                                            "example1": {
-                                                "value": "ENST00000361453"
-                                            },
-                                            "example2": {
-                                                "value": "ENST00000361624"
-                                            },
-                                            "example3": {
-                                                "value": "ENST00000361391"
-                                            },
-                                            "example4": {
-                                                "value": "ENST00000361454"
-                                            },
-                                            "example5": {
-                                                "value": "ENST00000361625"
-                                            },
-                                            "example6": {
-                                                "value": "ENST00000361392"
-                                            },
-                                            "example7": {
-                                                "value": "ENST00000361455"
-                                            },
-                                            "example8": {
-                                                "value": "ENST00000361626"
-                                            },
-                                            "example9": {
-                                                "value": "ENST00000361393"
-                                            },
-                                            "example10": {
-                                                "value": "ENST00000361456"
-                                            },
-                                            "example11": {
-                                                "value": "ENST00000361627"
-                                            },
-                                            "example12": {
-                                                "value": "ENST00000361394"
-                                            },
-                                            "example13": {
-                                                "value": "ENST00000361457"
-                                            },
-                                            "example14": {
-                                                "value": "ENST00000361628"
-                                            },
-                                            "example15": {
-                                                "value": "ENST00000361395"
-                                            },
-                                            "example16": {
-                                                "value": "ENST00000361458"
-                                            },
-                                            "example17": {
-                                                "value": "ENST00000361629"
-                                            },
-                                            "example18": {
-                                                "value": "ENST00000361396"
-                                            },
-                                            "example19": {
-                                                "value": "ENST00000361459"
-                                            },
-                                            "example20": {
-                                                "value": "ENST00000361630"
-                                            },
-                                            "example21": {
-                                                "value": "ENST00000361397"
-                                            },
-                                            "example22": {
-                                                "value": "ENST00000361460"
-                                            },
-                                            "example23": {
-                                                "value": "ENST00000361631"
-                                            },
-                                            "example24": {
-                                                "value": "ENST00000361398"
-                                            },
-                                            "example25": {
-                                                "value": "ENST00000361461"
-                                            },
-                                            "example26": {
-                                                "value": "ENST00000361632"
-                                            },
-                                            "example27": {
-                                                "value": "ENST00000361399"
-                                            },
-                                            "example28": {
-                                                "value": "ENST00000361462"
-                                            },
-                                            "example29": {
-                                                "value": "ENST00000361633"
-                                            },
-                                            "example30": {
-                                                "value": "ENST00000361400"
-                                            },
-                                            "example31": {
-                                                "value": "ENST00000361463"
-                                            },
-                                            "example32": {
-                                                "value": "ENST00000361634"
-                                            },
-                                            "example33": {
-                                                "value": "ENST00000361401"
-                                            },
-                                            "example34": {
-                                                "value": "ENST00000361464"
-                                            },
-                                            "example35": {
-                                                "value": "ENST000003616"
-                                            }
-                                        }
+                                        "minItems": 1
                                     }
                                 }
                             }
@@ -18681,117 +17957,117 @@
                         "required": true,
                         "schema": {
                             "type": "string",
-                            "minLength": "17",
-                            "maxLength": "17",
-                            "examples": {
-                                "example0": {
-                                    "value": "ENST00000361390"
-                                },
-                                "example1": {
-                                    "value": "ENST00000361391"
-                                },
-                                "example2": {
-                                    "value": "ENST00000361392"
-                                },
-                                "example3": {
-                                    "value": "ENST00000361393"
-                                },
-                                "example4": {
-                                    "value": "ENST00000361394"
-                                },
-                                "example5": {
-                                    "value": "ENST00000361395"
-                                },
-                                "example6": {
-                                    "value": "ENST00000361396"
-                                },
-                                "example7": {
-                                    "value": "ENST00000361397"
-                                },
-                                "example8": {
-                                    "value": "ENST00000361398"
-                                },
-                                "example9": {
-                                    "value": "ENST00000361399"
-                                },
-                                "example10": {
-                                    "value": "ENST00000361400"
-                                },
-                                "example11": {
-                                    "value": "ENST00000361401"
-                                },
-                                "example12": {
-                                    "value": "ENST00000361402"
-                                },
-                                "example13": {
-                                    "value": "ENST00000361403"
-                                },
-                                "example14": {
-                                    "value": "ENST00000361404"
-                                },
-                                "example15": {
-                                    "value": "ENST00000361405"
-                                },
-                                "example16": {
-                                    "value": "ENST00000361406"
-                                },
-                                "example17": {
-                                    "value": "ENST00000361407"
-                                },
-                                "example18": {
-                                    "value": "ENST00000361408"
-                                },
-                                "example19": {
-                                    "value": "ENST00000361409"
-                                },
-                                "example20": {
-                                    "value": "ENST00000361410"
-                                },
-                                "example21": {
-                                    "value": "ENST00000361411"
-                                },
-                                "example22": {
-                                    "value": "ENST00000361412"
-                                },
-                                "example23": {
-                                    "value": "ENST00000361413"
-                                },
-                                "example24": {
-                                    "value": "ENST00000361414"
-                                },
-                                "example25": {
-                                    "value": "ENST00000361415"
-                                },
-                                "example26": {
-                                    "value": "ENST00000361416"
-                                },
-                                "example27": {
-                                    "value": "ENST00000361417"
-                                },
-                                "example28": {
-                                    "value": "ENST00000361418"
-                                },
-                                "example29": {
-                                    "value": "ENST00000361419"
-                                },
-                                "example30": {
-                                    "value": "ENST00000361420"
-                                },
-                                "example31": {
-                                    "value": "ENST00000361421"
-                                },
-                                "example32": {
-                                    "value": "ENST00000361422"
-                                },
-                                "example33": {
-                                    "value": "ENST00000361423"
-                                },
-                                "example34": {
-                                    "value": "ENST00000361424"
-                                },
-                                "example35": {
-                                    "value": "ENST000003614"
-                                }
+                            "minLength": 17,
+                            "maxLength": 17
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "ENST00000361390"
+                            },
+                            "example1": {
+                                "value": "ENST00000361391"
+                            },
+                            "example2": {
+                                "value": "ENST00000361392"
+                            },
+                            "example3": {
+                                "value": "ENST00000361393"
+                            },
+                            "example4": {
+                                "value": "ENST00000361394"
+                            },
+                            "example5": {
+                                "value": "ENST00000361395"
+                            },
+                            "example6": {
+                                "value": "ENST00000361396"
+                            },
+                            "example7": {
+                                "value": "ENST00000361397"
+                            },
+                            "example8": {
+                                "value": "ENST00000361398"
+                            },
+                            "example9": {
+                                "value": "ENST00000361399"
+                            },
+                            "example10": {
+                                "value": "ENST00000361400"
+                            },
+                            "example11": {
+                                "value": "ENST00000361401"
+                            },
+                            "example12": {
+                                "value": "ENST00000361402"
+                            },
+                            "example13": {
+                                "value": "ENST00000361403"
+                            },
+                            "example14": {
+                                "value": "ENST00000361404"
+                            },
+                            "example15": {
+                                "value": "ENST00000361405"
+                            },
+                            "example16": {
+                                "value": "ENST00000361406"
+                            },
+                            "example17": {
+                                "value": "ENST00000361407"
+                            },
+                            "example18": {
+                                "value": "ENST00000361408"
+                            },
+                            "example19": {
+                                "value": "ENST00000361409"
+                            },
+                            "example20": {
+                                "value": "ENST00000361410"
+                            },
+                            "example21": {
+                                "value": "ENST00000361411"
+                            },
+                            "example22": {
+                                "value": "ENST00000361412"
+                            },
+                            "example23": {
+                                "value": "ENST00000361413"
+                            },
+                            "example24": {
+                                "value": "ENST00000361414"
+                            },
+                            "example25": {
+                                "value": "ENST00000361415"
+                            },
+                            "example26": {
+                                "value": "ENST00000361416"
+                            },
+                            "example27": {
+                                "value": "ENST00000361417"
+                            },
+                            "example28": {
+                                "value": "ENST00000361418"
+                            },
+                            "example29": {
+                                "value": "ENST00000361419"
+                            },
+                            "example30": {
+                                "value": "ENST00000361420"
+                            },
+                            "example31": {
+                                "value": "ENST00000361421"
+                            },
+                            "example32": {
+                                "value": "ENST00000361422"
+                            },
+                            "example33": {
+                                "value": "ENST00000361423"
+                            },
+                            "example34": {
+                                "value": "ENST00000361424"
+                            },
+                            "example35": {
+                                "value": "ENST000003614"
                             }
                         }
                     }
@@ -18975,41 +18251,41 @@
                         "required": true,
                         "schema": {
                             "type": "string",
-                            "minLength": "1",
-                            "examples": {
-                                "example0": {
-                                    "value": "ENSG00000169083"
-                                },
-                                "example1": {
-                                    "value": "ENSG00000123456"
-                                },
-                                "example2": {
-                                    "value": "ENSG00000198765"
-                                },
-                                "example3": {
-                                    "value": "ENSG00000123457"
-                                },
-                                "example4": {
-                                    "value": "ENSG00000198766"
-                                },
-                                "example5": {
-                                    "value": "ENSG00000123458"
-                                },
-                                "example6": {
-                                    "value": "ENSG00000198767"
-                                },
-                                "example7": {
-                                    "value": "ENSG00000123459"
-                                },
-                                "example8": {
-                                    "value": "ENSG00000198768"
-                                },
-                                "example9": {
-                                    "value": "ENSG00000123460"
-                                },
-                                "example10": {
-                                    "value": "ENSG00000198769"
-                                }
+                            "minLength": 1
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "ENSG00000169083"
+                            },
+                            "example1": {
+                                "value": "ENSG00000123456"
+                            },
+                            "example2": {
+                                "value": "ENSG00000198765"
+                            },
+                            "example3": {
+                                "value": "ENSG00000123457"
+                            },
+                            "example4": {
+                                "value": "ENSG00000198766"
+                            },
+                            "example5": {
+                                "value": "ENSG00000123458"
+                            },
+                            "example6": {
+                                "value": "ENSG00000198767"
+                            },
+                            "example7": {
+                                "value": "ENSG00000123459"
+                            },
+                            "example8": {
+                                "value": "ENSG00000198768"
+                            },
+                            "example9": {
+                                "value": "ENSG00000123460"
+                            },
+                            "example10": {
+                                "value": "ENSG00000198769"
                             }
                         }
                     }
@@ -19099,15 +18375,7 @@
                                 "items": {
                                     "type": "string"
                                 },
-                                "minItems": "1",
-                                "examples": {
-                                    "example0": {
-                                        "value": "[\"1a37\",\"1a4o\"]"
-                                    },
-                                    "example1": {
-                                        "value": "[\"1a38\",\"1a4p\",\"1a4q\",\"1a4r\",\"1a4s\",\"1a4t\",\"1a4u\",\"1a4v\",\"1a4w\",\"1a4x\",\"1a4y\",\"1a4z\",\"1a50\",\"1a51\",\"1a52\",\"1a53\",\"1a54\",\"1a55\",\"1a56\",\"1a57\",\"1a58\",\"1a59\",\"1a5a\",\"1a5b\",\"1a5c\",\"1a5d\",\"1a5e\",\"1a5f\",\"1a5g\",\"1a5h\",\"1a5i\",\"1a5j\",\"1a5k\",\"1a5l\",\"1a5m\",\"1a5n\",\"1a5o\",\"1a5p\",\"1a5q\",\"1a5r\",\"1a5s\",\"1a5t\",\"1a5u\",\"1a5v\",\"1a5w\",\"1a5x\",\"1a5y\",\"1a5z\"]"
-                                    }
-                                }
+                                "minItems": 1
                             }
                         }
                     },
@@ -19168,159 +18436,159 @@
                         "required": true,
                         "schema": {
                             "type": "string",
-                            "minLength": "4",
-                            "maxLength": "4",
-                            "examples": {
-                                "example0": {
-                                    "value": "1a37"
-                                },
-                                "example1": {
-                                    "value": "0a00"
-                                },
-                                "example2": {
-                                    "value": "0a01"
-                                },
-                                "example3": {
-                                    "value": "0a02"
-                                },
-                                "example4": {
-                                    "value": "0a03"
-                                },
-                                "example5": {
-                                    "value": "0a04"
-                                },
-                                "example6": {
-                                    "value": "0a05"
-                                },
-                                "example7": {
-                                    "value": "0a06"
-                                },
-                                "example8": {
-                                    "value": "0a07"
-                                },
-                                "example9": {
-                                    "value": "0a08"
-                                },
-                                "example10": {
-                                    "value": "0a09"
-                                },
-                                "example11": {
-                                    "value": "0a10"
-                                },
-                                "example12": {
-                                    "value": "0a11"
-                                },
-                                "example13": {
-                                    "value": "0a12"
-                                },
-                                "example14": {
-                                    "value": "0a13"
-                                },
-                                "example15": {
-                                    "value": "0a14"
-                                },
-                                "example16": {
-                                    "value": "0a15"
-                                },
-                                "example17": {
-                                    "value": "0a16"
-                                },
-                                "example18": {
-                                    "value": "0a17"
-                                },
-                                "example19": {
-                                    "value": "0a18"
-                                },
-                                "example20": {
-                                    "value": "0a19"
-                                },
-                                "example21": {
-                                    "value": "0a20"
-                                },
-                                "example22": {
-                                    "value": "0a21"
-                                },
-                                "example23": {
-                                    "value": "0a22"
-                                },
-                                "example24": {
-                                    "value": "0a23"
-                                },
-                                "example25": {
-                                    "value": "0a24"
-                                },
-                                "example26": {
-                                    "value": "0a25"
-                                },
-                                "example27": {
-                                    "value": "0a26"
-                                },
-                                "example28": {
-                                    "value": "0a27"
-                                },
-                                "example29": {
-                                    "value": "0a28"
-                                },
-                                "example30": {
-                                    "value": "0a29"
-                                },
-                                "example31": {
-                                    "value": "0a30"
-                                },
-                                "example32": {
-                                    "value": "0a31"
-                                },
-                                "example33": {
-                                    "value": "0a32"
-                                },
-                                "example34": {
-                                    "value": "0a33"
-                                },
-                                "example35": {
-                                    "value": "0a34"
-                                },
-                                "example36": {
-                                    "value": "0a35"
-                                },
-                                "example37": {
-                                    "value": "0a36"
-                                },
-                                "example38": {
-                                    "value": "0a37"
-                                },
-                                "example39": {
-                                    "value": "0a38"
-                                },
-                                "example40": {
-                                    "value": "0a39"
-                                },
-                                "example41": {
-                                    "value": "0a40"
-                                },
-                                "example42": {
-                                    "value": "0a41"
-                                },
-                                "example43": {
-                                    "value": "0a42"
-                                },
-                                "example44": {
-                                    "value": "0a43"
-                                },
-                                "example45": {
-                                    "value": "0a44"
-                                },
-                                "example46": {
-                                    "value": "0a45"
-                                },
-                                "example47": {
-                                    "value": "0a46"
-                                },
-                                "example48": {
-                                    "value": "0a47"
-                                },
-                                "example49": {
-                                    "value": "0a48,"
-                                }
+                            "minLength": 4,
+                            "maxLength": 4
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "1a37"
+                            },
+                            "example1": {
+                                "value": "0a00"
+                            },
+                            "example2": {
+                                "value": "0a01"
+                            },
+                            "example3": {
+                                "value": "0a02"
+                            },
+                            "example4": {
+                                "value": "0a03"
+                            },
+                            "example5": {
+                                "value": "0a04"
+                            },
+                            "example6": {
+                                "value": "0a05"
+                            },
+                            "example7": {
+                                "value": "0a06"
+                            },
+                            "example8": {
+                                "value": "0a07"
+                            },
+                            "example9": {
+                                "value": "0a08"
+                            },
+                            "example10": {
+                                "value": "0a09"
+                            },
+                            "example11": {
+                                "value": "0a10"
+                            },
+                            "example12": {
+                                "value": "0a11"
+                            },
+                            "example13": {
+                                "value": "0a12"
+                            },
+                            "example14": {
+                                "value": "0a13"
+                            },
+                            "example15": {
+                                "value": "0a14"
+                            },
+                            "example16": {
+                                "value": "0a15"
+                            },
+                            "example17": {
+                                "value": "0a16"
+                            },
+                            "example18": {
+                                "value": "0a17"
+                            },
+                            "example19": {
+                                "value": "0a18"
+                            },
+                            "example20": {
+                                "value": "0a19"
+                            },
+                            "example21": {
+                                "value": "0a20"
+                            },
+                            "example22": {
+                                "value": "0a21"
+                            },
+                            "example23": {
+                                "value": "0a22"
+                            },
+                            "example24": {
+                                "value": "0a23"
+                            },
+                            "example25": {
+                                "value": "0a24"
+                            },
+                            "example26": {
+                                "value": "0a25"
+                            },
+                            "example27": {
+                                "value": "0a26"
+                            },
+                            "example28": {
+                                "value": "0a27"
+                            },
+                            "example29": {
+                                "value": "0a28"
+                            },
+                            "example30": {
+                                "value": "0a29"
+                            },
+                            "example31": {
+                                "value": "0a30"
+                            },
+                            "example32": {
+                                "value": "0a31"
+                            },
+                            "example33": {
+                                "value": "0a32"
+                            },
+                            "example34": {
+                                "value": "0a33"
+                            },
+                            "example35": {
+                                "value": "0a34"
+                            },
+                            "example36": {
+                                "value": "0a35"
+                            },
+                            "example37": {
+                                "value": "0a36"
+                            },
+                            "example38": {
+                                "value": "0a37"
+                            },
+                            "example39": {
+                                "value": "0a38"
+                            },
+                            "example40": {
+                                "value": "0a39"
+                            },
+                            "example41": {
+                                "value": "0a40"
+                            },
+                            "example42": {
+                                "value": "0a41"
+                            },
+                            "example43": {
+                                "value": "0a42"
+                            },
+                            "example44": {
+                                "value": "0a43"
+                            },
+                            "example45": {
+                                "value": "0a44"
+                            },
+                            "example46": {
+                                "value": "0a45"
+                            },
+                            "example47": {
+                                "value": "0a46"
+                            },
+                            "example48": {
+                                "value": "0a47"
+                            },
+                            "example49": {
+                                "value": "0a48,"
                             }
                         }
                     }
@@ -19377,198 +18645,7 @@
                                 "items": {
                                     "type": "string"
                                 },
-                                "minItems": "1",
-                                "examples": {
-                                    "example0": {
-                                        "value": "PF02827"
-                                    },
-                                    "example1": {
-                                        "value": "PF00093"
-                                    },
-                                    "example2": {
-                                        "value": "PF15276"
-                                    },
-                                    "example3": {
-                                        "value": "PF00001"
-                                    },
-                                    "example4": {
-                                        "value": "PF00002"
-                                    },
-                                    "example5": {
-                                        "value": "PF00003"
-                                    },
-                                    "example6": {
-                                        "value": "PF00004"
-                                    },
-                                    "example7": {
-                                        "value": "PF00005"
-                                    },
-                                    "example8": {
-                                        "value": "PF00006"
-                                    },
-                                    "example9": {
-                                        "value": "PF00007"
-                                    },
-                                    "example10": {
-                                        "value": "PF00008"
-                                    },
-                                    "example11": {
-                                        "value": "PF00009"
-                                    },
-                                    "example12": {
-                                        "value": "PF00010"
-                                    },
-                                    "example13": {
-                                        "value": "PF00011"
-                                    },
-                                    "example14": {
-                                        "value": "PF00012"
-                                    },
-                                    "example15": {
-                                        "value": "PF00013"
-                                    },
-                                    "example16": {
-                                        "value": "PF00014"
-                                    },
-                                    "example17": {
-                                        "value": "PF00015"
-                                    },
-                                    "example18": {
-                                        "value": "PF00016"
-                                    },
-                                    "example19": {
-                                        "value": "PF00017"
-                                    },
-                                    "example20": {
-                                        "value": "PF00018"
-                                    },
-                                    "example21": {
-                                        "value": "PF00019"
-                                    },
-                                    "example22": {
-                                        "value": "PF00020"
-                                    },
-                                    "example23": {
-                                        "value": "PF00021"
-                                    },
-                                    "example24": {
-                                        "value": "PF00022"
-                                    },
-                                    "example25": {
-                                        "value": "PF00023"
-                                    },
-                                    "example26": {
-                                        "value": "PF00024"
-                                    },
-                                    "example27": {
-                                        "value": "PF00025"
-                                    },
-                                    "example28": {
-                                        "value": "PF00026"
-                                    },
-                                    "example29": {
-                                        "value": "PF00027"
-                                    },
-                                    "example30": {
-                                        "value": "PF00028"
-                                    },
-                                    "example31": {
-                                        "value": "PF00029"
-                                    },
-                                    "example32": {
-                                        "value": "PF00030"
-                                    },
-                                    "example33": {
-                                        "value": "PF00031"
-                                    },
-                                    "example34": {
-                                        "value": "PF00032"
-                                    },
-                                    "example35": {
-                                        "value": "PF00033"
-                                    },
-                                    "example36": {
-                                        "value": "PF00034"
-                                    },
-                                    "example37": {
-                                        "value": "PF00035"
-                                    },
-                                    "example38": {
-                                        "value": "PF00036"
-                                    },
-                                    "example39": {
-                                        "value": "PF00037"
-                                    },
-                                    "example40": {
-                                        "value": "PF00038"
-                                    },
-                                    "example41": {
-                                        "value": "PF00039"
-                                    },
-                                    "example42": {
-                                        "value": "PF00040"
-                                    },
-                                    "example43": {
-                                        "value": "PF00041"
-                                    },
-                                    "example44": {
-                                        "value": "PF00042"
-                                    },
-                                    "example45": {
-                                        "value": "PF00043"
-                                    },
-                                    "example46": {
-                                        "value": "PF00044"
-                                    },
-                                    "example47": {
-                                        "value": "PF00045"
-                                    },
-                                    "example48": {
-                                        "value": "PF00046"
-                                    },
-                                    "example49": {
-                                        "value": "PF00047"
-                                    },
-                                    "example50": {
-                                        "value": "PF00048"
-                                    },
-                                    "example51": {
-                                        "value": "PF00049"
-                                    },
-                                    "example52": {
-                                        "value": "PF00050"
-                                    },
-                                    "example53": {
-                                        "value": "PF00051"
-                                    },
-                                    "example54": {
-                                        "value": "PF00052"
-                                    },
-                                    "example55": {
-                                        "value": "PF00053"
-                                    },
-                                    "example56": {
-                                        "value": "PF00054"
-                                    },
-                                    "example57": {
-                                        "value": "PF00055"
-                                    },
-                                    "example58": {
-                                        "value": "PF00056"
-                                    },
-                                    "example59": {
-                                        "value": "PF00057"
-                                    },
-                                    "example60": {
-                                        "value": "PF00058"
-                                    },
-                                    "example61": {
-                                        "value": "PF00059"
-                                    },
-                                    "example62": {
-                                        "value": "PF000"
-                                    }
-                                }
+                                "minItems": 1
                             }
                         }
                     },
@@ -19624,161 +18701,161 @@
                         "description": "A PFAM domain accession ID. For example PF02827",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "examples": {
-                                "example0": {
-                                    "value": "PF02827"
-                                },
-                                "example1": {
-                                    "value": "PF00001"
-                                },
-                                "example2": {
-                                    "value": "PF00002"
-                                },
-                                "example3": {
-                                    "value": "PF00003"
-                                },
-                                "example4": {
-                                    "value": "PF00004"
-                                },
-                                "example5": {
-                                    "value": "PF00005"
-                                },
-                                "example6": {
-                                    "value": "PF00006"
-                                },
-                                "example7": {
-                                    "value": "PF00007"
-                                },
-                                "example8": {
-                                    "value": "PF00008"
-                                },
-                                "example9": {
-                                    "value": "PF00009"
-                                },
-                                "example10": {
-                                    "value": "PF00010"
-                                },
-                                "example11": {
-                                    "value": "PF00011"
-                                },
-                                "example12": {
-                                    "value": "PF00012"
-                                },
-                                "example13": {
-                                    "value": "PF00013"
-                                },
-                                "example14": {
-                                    "value": "PF00014"
-                                },
-                                "example15": {
-                                    "value": "PF00015"
-                                },
-                                "example16": {
-                                    "value": "PF00016"
-                                },
-                                "example17": {
-                                    "value": "PF00017"
-                                },
-                                "example18": {
-                                    "value": "PF00018"
-                                },
-                                "example19": {
-                                    "value": "PF00019"
-                                },
-                                "example20": {
-                                    "value": "PF00020"
-                                },
-                                "example21": {
-                                    "value": "PF00021"
-                                },
-                                "example22": {
-                                    "value": "PF00022"
-                                },
-                                "example23": {
-                                    "value": "PF00023"
-                                },
-                                "example24": {
-                                    "value": "PF00024"
-                                },
-                                "example25": {
-                                    "value": "PF00025"
-                                },
-                                "example26": {
-                                    "value": "PF00026"
-                                },
-                                "example27": {
-                                    "value": "PF00027"
-                                },
-                                "example28": {
-                                    "value": "PF00028"
-                                },
-                                "example29": {
-                                    "value": "PF00029"
-                                },
-                                "example30": {
-                                    "value": "PF00030"
-                                },
-                                "example31": {
-                                    "value": "PF00031"
-                                },
-                                "example32": {
-                                    "value": "PF00032"
-                                },
-                                "example33": {
-                                    "value": "PF00033"
-                                },
-                                "example34": {
-                                    "value": "PF00034"
-                                },
-                                "example35": {
-                                    "value": "PF00035"
-                                },
-                                "example36": {
-                                    "value": "PF00036"
-                                },
-                                "example37": {
-                                    "value": "PF00037"
-                                },
-                                "example38": {
-                                    "value": "PF00038"
-                                },
-                                "example39": {
-                                    "value": "PF00039"
-                                },
-                                "example40": {
-                                    "value": "PF00040"
-                                },
-                                "example41": {
-                                    "value": "PF00041"
-                                },
-                                "example42": {
-                                    "value": "PF00042"
-                                },
-                                "example43": {
-                                    "value": "PF00043"
-                                },
-                                "example44": {
-                                    "value": "PF00044"
-                                },
-                                "example45": {
-                                    "value": "PF00045"
-                                },
-                                "example46": {
-                                    "value": "PF00046"
-                                },
-                                "example47": {
-                                    "value": "PF00047"
-                                },
-                                "example48": {
-                                    "value": "PF00048"
-                                },
-                                "example49": {
-                                    "value": "PF00049"
-                                },
-                                "example50": {
-                                    "value": "PF00050"
-                                }
+                            "type": "string"
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "PF02827"
+                            },
+                            "example1": {
+                                "value": "PF00001"
+                            },
+                            "example2": {
+                                "value": "PF00002"
+                            },
+                            "example3": {
+                                "value": "PF00003"
+                            },
+                            "example4": {
+                                "value": "PF00004"
+                            },
+                            "example5": {
+                                "value": "PF00005"
+                            },
+                            "example6": {
+                                "value": "PF00006"
+                            },
+                            "example7": {
+                                "value": "PF00007"
+                            },
+                            "example8": {
+                                "value": "PF00008"
+                            },
+                            "example9": {
+                                "value": "PF00009"
+                            },
+                            "example10": {
+                                "value": "PF00010"
+                            },
+                            "example11": {
+                                "value": "PF00011"
+                            },
+                            "example12": {
+                                "value": "PF00012"
+                            },
+                            "example13": {
+                                "value": "PF00013"
+                            },
+                            "example14": {
+                                "value": "PF00014"
+                            },
+                            "example15": {
+                                "value": "PF00015"
+                            },
+                            "example16": {
+                                "value": "PF00016"
+                            },
+                            "example17": {
+                                "value": "PF00017"
+                            },
+                            "example18": {
+                                "value": "PF00018"
+                            },
+                            "example19": {
+                                "value": "PF00019"
+                            },
+                            "example20": {
+                                "value": "PF00020"
+                            },
+                            "example21": {
+                                "value": "PF00021"
+                            },
+                            "example22": {
+                                "value": "PF00022"
+                            },
+                            "example23": {
+                                "value": "PF00023"
+                            },
+                            "example24": {
+                                "value": "PF00024"
+                            },
+                            "example25": {
+                                "value": "PF00025"
+                            },
+                            "example26": {
+                                "value": "PF00026"
+                            },
+                            "example27": {
+                                "value": "PF00027"
+                            },
+                            "example28": {
+                                "value": "PF00028"
+                            },
+                            "example29": {
+                                "value": "PF00029"
+                            },
+                            "example30": {
+                                "value": "PF00030"
+                            },
+                            "example31": {
+                                "value": "PF00031"
+                            },
+                            "example32": {
+                                "value": "PF00032"
+                            },
+                            "example33": {
+                                "value": "PF00033"
+                            },
+                            "example34": {
+                                "value": "PF00034"
+                            },
+                            "example35": {
+                                "value": "PF00035"
+                            },
+                            "example36": {
+                                "value": "PF00036"
+                            },
+                            "example37": {
+                                "value": "PF00037"
+                            },
+                            "example38": {
+                                "value": "PF00038"
+                            },
+                            "example39": {
+                                "value": "PF00039"
+                            },
+                            "example40": {
+                                "value": "PF00040"
+                            },
+                            "example41": {
+                                "value": "PF00041"
+                            },
+                            "example42": {
+                                "value": "PF00042"
+                            },
+                            "example43": {
+                                "value": "PF00043"
+                            },
+                            "example44": {
+                                "value": "PF00044"
+                            },
+                            "example45": {
+                                "value": "PF00045"
+                            },
+                            "example46": {
+                                "value": "PF00046"
+                            },
+                            "example47": {
+                                "value": "PF00047"
+                            },
+                            "example48": {
+                                "value": "PF00048"
+                            },
+                            "example49": {
+                                "value": "PF00049"
+                            },
+                            "example50": {
+                                "value": "PF00050"
                             }
                         }
                     }
@@ -19829,27 +18906,27 @@
                         "description": "Ensembl Transcript ID. For example ENST00000646891",
                         "schema": {
                             "type": "string",
-                            "minLength": "14",
-                            "maxLength": "14",
-                            "examples": {
-                                "example0": {
-                                    "value": "ENST00000646891"
-                                },
-                                "example1": {
-                                    "value": "ENST00000345678"
-                                },
-                                "example2": {
-                                    "value": "ENST00000987654"
-                                },
-                                "example3": {
-                                    "value": "ENST00000123456"
-                                },
-                                "example4": {
-                                    "value": "ENST00000543210"
-                                },
-                                "example5": {
-                                    "value": "ENST00000765432"
-                                }
+                            "minLength": 14,
+                            "maxLength": 14
+                        },
+                        "examples": {
+                            "example0": {
+                                "value": "ENST00000646891"
+                            },
+                            "example1": {
+                                "value": "ENST00000345678"
+                            },
+                            "example2": {
+                                "value": "ENST00000987654"
+                            },
+                            "example3": {
+                                "value": "ENST00000123456"
+                            },
+                            "example4": {
+                                "value": "ENST00000543210"
+                            },
+                            "example5": {
+                                "value": "ENST00000765432"
                             }
                         }
                     }
@@ -19919,117 +18996,7 @@
                                         "items": {
                                             "type": "string"
                                         },
-                                        "minItems": "1",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "ENST00000361390"
-                                            },
-                                            "example1": {
-                                                "value": "ENST00000361453"
-                                            },
-                                            "example2": {
-                                                "value": "ENST00000361624"
-                                            },
-                                            "example3": {
-                                                "value": "ENST00000361391"
-                                            },
-                                            "example4": {
-                                                "value": "ENST00000361454"
-                                            },
-                                            "example5": {
-                                                "value": "ENST00000361625"
-                                            },
-                                            "example6": {
-                                                "value": "ENST00000361392"
-                                            },
-                                            "example7": {
-                                                "value": "ENST00000361455"
-                                            },
-                                            "example8": {
-                                                "value": "ENST00000361626"
-                                            },
-                                            "example9": {
-                                                "value": "ENST00000361393"
-                                            },
-                                            "example10": {
-                                                "value": "ENST00000361456"
-                                            },
-                                            "example11": {
-                                                "value": "ENST00000361627"
-                                            },
-                                            "example12": {
-                                                "value": "ENST00000361394"
-                                            },
-                                            "example13": {
-                                                "value": "ENST00000361457"
-                                            },
-                                            "example14": {
-                                                "value": "ENST00000361628"
-                                            },
-                                            "example15": {
-                                                "value": "ENST00000361395"
-                                            },
-                                            "example16": {
-                                                "value": "ENST00000361458"
-                                            },
-                                            "example17": {
-                                                "value": "ENST00000361629"
-                                            },
-                                            "example18": {
-                                                "value": "ENST00000361396"
-                                            },
-                                            "example19": {
-                                                "value": "ENST00000361459"
-                                            },
-                                            "example20": {
-                                                "value": "ENST00000361630"
-                                            },
-                                            "example21": {
-                                                "value": "ENST00000361397"
-                                            },
-                                            "example22": {
-                                                "value": "ENST00000361460"
-                                            },
-                                            "example23": {
-                                                "value": "ENST00000361631"
-                                            },
-                                            "example24": {
-                                                "value": "ENST00000361398"
-                                            },
-                                            "example25": {
-                                                "value": "ENST00000361461"
-                                            },
-                                            "example26": {
-                                                "value": "ENST00000361632"
-                                            },
-                                            "example27": {
-                                                "value": "ENST00000361399"
-                                            },
-                                            "example28": {
-                                                "value": "ENST00000361462"
-                                            },
-                                            "example29": {
-                                                "value": "ENST00000361633"
-                                            },
-                                            "example30": {
-                                                "value": "ENST00000361400"
-                                            },
-                                            "example31": {
-                                                "value": "ENST00000361463"
-                                            },
-                                            "example32": {
-                                                "value": "ENST00000361634"
-                                            },
-                                            "example33": {
-                                                "value": "ENST00000361401"
-                                            },
-                                            "example34": {
-                                                "value": "ENST00000361464"
-                                            },
-                                            "example35": {
-                                                "value": "ENST000003616"
-                                            }
-                                        }
+                                        "minItems": 1
                                     }
                                 }
                             }
