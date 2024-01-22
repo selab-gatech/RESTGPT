@@ -348,154 +348,151 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "Default: 20"
+                                "value": 1
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 2
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 3
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 4
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 5
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 6
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 7
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 8
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 9
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 10
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 11
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 12
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 13
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 14
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 15
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 16
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 17
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 18
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 19
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 21
                             },
                             "example20": {
-                                "value": "21"
+                                "value": 22
                             },
                             "example21": {
-                                "value": "22"
+                                "value": 23
                             },
                             "example22": {
-                                "value": "23"
+                                "value": 24
                             },
                             "example23": {
-                                "value": "24"
+                                "value": 25
                             },
                             "example24": {
-                                "value": "25"
+                                "value": 26
                             },
                             "example25": {
-                                "value": "26"
+                                "value": 27
                             },
                             "example26": {
-                                "value": "27"
+                                "value": 28
                             },
                             "example27": {
-                                "value": "28"
+                                "value": 29
                             },
                             "example28": {
-                                "value": "29"
+                                "value": 30
                             },
                             "example29": {
-                                "value": "30"
+                                "value": 31
                             },
                             "example30": {
-                                "value": "31"
+                                "value": 32
                             },
                             "example31": {
-                                "value": "32"
+                                "value": 33
                             },
                             "example32": {
-                                "value": "33"
+                                "value": 34
                             },
                             "example33": {
-                                "value": "34"
+                                "value": 35
                             },
                             "example34": {
-                                "value": "35"
+                                "value": 36
                             },
                             "example35": {
-                                "value": "36"
+                                "value": 37
                             },
                             "example36": {
-                                "value": "37"
+                                "value": 38
                             },
                             "example37": {
-                                "value": "38"
+                                "value": 39
                             },
                             "example38": {
-                                "value": "39"
+                                "value": 40
                             },
                             "example39": {
-                                "value": "40"
+                                "value": 41
                             },
                             "example40": {
-                                "value": "41"
+                                "value": 42
                             },
                             "example41": {
-                                "value": "42"
+                                "value": 43
                             },
                             "example42": {
-                                "value": "43"
+                                "value": 44
                             },
                             "example43": {
-                                "value": "44"
+                                "value": 45
                             },
                             "example44": {
-                                "value": "45"
+                                "value": 46
                             },
                             "example45": {
-                                "value": "46"
+                                "value": 47
                             },
                             "example46": {
-                                "value": "47"
+                                "value": 48
                             },
                             "example47": {
-                                "value": "48"
+                                "value": 49
                             },
                             "example48": {
-                                "value": "49"
-                            },
-                            "example49": {
-                                "value": "50"
+                                "value": 50
                             }
                         }
                     },
@@ -513,193 +510,193 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "-100000"
+                                "value": -100000
                             },
                             "example2": {
-                                "value": "-99999"
+                                "value": -99999
                             },
                             "example3": {
-                                "value": "-99998"
+                                "value": -99998
                             },
                             "example4": {
-                                "value": "-99997"
+                                "value": -99997
                             },
                             "example5": {
-                                "value": "-99996"
+                                "value": -99996
                             },
                             "example6": {
-                                "value": "-99995"
+                                "value": -99995
                             },
                             "example7": {
-                                "value": "-99994"
+                                "value": -99994
                             },
                             "example8": {
-                                "value": "-99993"
+                                "value": -99993
                             },
                             "example9": {
-                                "value": "-99992"
+                                "value": -99992
                             },
                             "example10": {
-                                "value": "-99991"
+                                "value": -99991
                             },
                             "example11": {
-                                "value": "-99990"
+                                "value": -99990
                             },
                             "example12": {
-                                "value": "-99989"
+                                "value": -99989
                             },
                             "example13": {
-                                "value": "-99988"
+                                "value": -99988
                             },
                             "example14": {
-                                "value": "-99987"
+                                "value": -99987
                             },
                             "example15": {
-                                "value": "-99986"
+                                "value": -99986
                             },
                             "example16": {
-                                "value": "-99985"
+                                "value": -99985
                             },
                             "example17": {
-                                "value": "-99984"
+                                "value": -99984
                             },
                             "example18": {
-                                "value": "-99983"
+                                "value": -99983
                             },
                             "example19": {
-                                "value": "-99982"
+                                "value": -99982
                             },
                             "example20": {
-                                "value": "-99981"
+                                "value": -99981
                             },
                             "example21": {
-                                "value": "-99980"
+                                "value": -99980
                             },
                             "example22": {
-                                "value": "-99979"
+                                "value": -99979
                             },
                             "example23": {
-                                "value": "-99978"
+                                "value": -99978
                             },
                             "example24": {
-                                "value": "-99977"
+                                "value": -99977
                             },
                             "example25": {
-                                "value": "-99976"
+                                "value": -99976
                             },
                             "example26": {
-                                "value": "-99975"
+                                "value": -99975
                             },
                             "example27": {
-                                "value": "-99974"
+                                "value": -99974
                             },
                             "example28": {
-                                "value": "-99973"
+                                "value": -99973
                             },
                             "example29": {
-                                "value": "-99972"
+                                "value": -99972
                             },
                             "example30": {
-                                "value": "-99971"
+                                "value": -99971
                             },
                             "example31": {
-                                "value": "-99970"
+                                "value": -99970
                             },
                             "example32": {
-                                "value": "-99969"
+                                "value": -99969
                             },
                             "example33": {
-                                "value": "-99968"
+                                "value": -99968
                             },
                             "example34": {
-                                "value": "-99967"
+                                "value": -99967
                             },
                             "example35": {
-                                "value": "-99966"
+                                "value": -99966
                             },
                             "example36": {
-                                "value": "-99965"
+                                "value": -99965
                             },
                             "example37": {
-                                "value": "-99964"
+                                "value": -99964
                             },
                             "example38": {
-                                "value": "-99963"
+                                "value": -99963
                             },
                             "example39": {
-                                "value": "-99962"
+                                "value": -99962
                             },
                             "example40": {
-                                "value": "-99961"
+                                "value": -99961
                             },
                             "example41": {
-                                "value": "-99960"
+                                "value": -99960
                             },
                             "example42": {
-                                "value": "-99959"
+                                "value": -99959
                             },
                             "example43": {
-                                "value": "-99958"
+                                "value": -99958
                             },
                             "example44": {
-                                "value": "-99957"
+                                "value": -99957
                             },
                             "example45": {
-                                "value": "-99956"
+                                "value": -99956
                             },
                             "example46": {
-                                "value": "-99955"
+                                "value": -99955
                             },
                             "example47": {
-                                "value": "-99954"
+                                "value": -99954
                             },
                             "example48": {
-                                "value": "-99953"
+                                "value": -99953
                             },
                             "example49": {
-                                "value": "-99952"
+                                "value": -99952
                             },
                             "example50": {
-                                "value": "-99951"
+                                "value": -99951
                             },
                             "example51": {
-                                "value": "-99950"
+                                "value": -99950
                             },
                             "example52": {
-                                "value": "-99949"
+                                "value": -99949
                             },
                             "example53": {
-                                "value": "-99948"
+                                "value": -99948
                             },
                             "example54": {
-                                "value": "-99947"
+                                "value": -99947
                             },
                             "example55": {
-                                "value": "-99946"
+                                "value": -99946
                             },
                             "example56": {
-                                "value": "-99945"
+                                "value": -99945
                             },
                             "example57": {
-                                "value": "-99944"
+                                "value": -99944
                             },
                             "example58": {
-                                "value": "-99943"
+                                "value": -99943
                             },
                             "example59": {
-                                "value": "-99942"
+                                "value": -99942
                             },
                             "example60": {
-                                "value": "-99941"
+                                "value": -99941
                             },
                             "example61": {
-                                "value": "-99940"
+                                "value": -99940
                             },
                             "example62": {
-                                "value": "-99939"
+                                "value": -99939
                             }
                         }
                     }
@@ -1330,7 +1327,7 @@
                         "name": "additional_types",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -1357,9 +1354,7 @@
                             "example6": {
                                 "value": "live performance"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     }
                 ],
                 "responses": {
@@ -2471,63 +2466,20 @@
                                     "collaborative": {
                                         "description": "If `true` , the playlist will become collaborative and other users will be able to modify the playlist in their Spotify client. *Note: You can only set `collaborative` to `true` on non-public playlists.*",
                                         "type": "boolean",
-                                        "default": "true",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "true"
-                                            },
-                                            "example1": {
-                                                "value": "false"
-                                            }
-                                        }
+                                        "default": "true"
                                     },
                                     "description": {
                                         "description": "Value for playlist description as displayed in Spotify Clients and in the Web API.",
-                                        "type": "string",
-                                        "examples": {}
+                                        "type": "string"
                                     },
                                     "name": {
                                         "description": "The new name for the playlist, for example `\"My New Playlist Title\"`",
                                         "type": "string",
-                                        "minLength": 1,
-                                        "examples": {
-                                            "example0": {
-                                                "value": "\"My New Playlist Title\""
-                                            },
-                                            "example1": {
-                                                "value": "\"My Playlist\""
-                                            },
-                                            "example2": {
-                                                "value": "\"New Hits\""
-                                            },
-                                            "example3": {
-                                                "value": "\"Favorite Jams\""
-                                            },
-                                            "example4": {
-                                                "value": "\"Ultimate Playlist\""
-                                            },
-                                            "example5": {
-                                                "value": "\"Top Tracks\""
-                                            }
-                                        }
+                                        "minLength": 1
                                     },
                                     "public": {
                                         "description": "If `true` the playlist will be public, if `false` it will be private.",
-                                        "type": "boolean",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "true"
-                                            },
-                                            "example1": {
-                                                "value": "false"
-                                            },
-                                            "example2": {
-                                                "value": "true"
-                                            },
-                                            "example3": {
-                                                "value": "false"
-                                            }
-                                        }
+                                        "type": "boolean"
                                     }
                                 },
                                 "type": "object"
@@ -2708,8 +2660,7 @@
                                 "properties": {
                                     "snapshot_id": {
                                         "description": "The playlist's snapshot ID against which you want to make the changes. The API will validate that the specified items exist and in the specified positions and make the changes, even if more recent changes have been made to the playlist.",
-                                        "type": "string",
-                                        "examples": {}
+                                        "type": "string"
                                     },
                                     "tracks": {
                                         "description": "An array of objects containing [Spotify URIs](https://developer.spotify.com/spotify-documentation/web-api/#spotify-uris-and-ids) of the tracks or episodes to remove. For example: `{ \"tracks\": [{ \"uri\": \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\" },{ \"uri\": \"spotify:track:1301WleyT98MSxVHPZCA6M\" }] }`. A maximum of 100 objects can be sent at once.",
@@ -3132,157 +3083,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "Default: 100"
+                                "value": 1
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 2
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 3
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 4
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 5
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 6
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 7
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 8
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 9
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 10
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 11
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 12
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 13
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 14
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 15
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 16
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 17
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 18
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 19
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 20
                             },
                             "example20": {
-                                "value": "20"
+                                "value": 21
                             },
                             "example21": {
-                                "value": "21"
+                                "value": 22
                             },
                             "example22": {
-                                "value": "22"
+                                "value": 23
                             },
                             "example23": {
-                                "value": "23"
+                                "value": 24
                             },
                             "example24": {
-                                "value": "24"
+                                "value": 25
                             },
                             "example25": {
-                                "value": "25"
+                                "value": 26
                             },
                             "example26": {
-                                "value": "26"
+                                "value": 27
                             },
                             "example27": {
-                                "value": "27"
+                                "value": 28
                             },
                             "example28": {
-                                "value": "28"
+                                "value": 29
                             },
                             "example29": {
-                                "value": "29"
+                                "value": 30
                             },
                             "example30": {
-                                "value": "30"
+                                "value": 31
                             },
                             "example31": {
-                                "value": "31"
+                                "value": 32
                             },
                             "example32": {
-                                "value": "32"
+                                "value": 33
                             },
                             "example33": {
-                                "value": "33"
+                                "value": 34
                             },
                             "example34": {
-                                "value": "34"
+                                "value": 35
                             },
                             "example35": {
-                                "value": "35"
+                                "value": 36
                             },
                             "example36": {
-                                "value": "36"
+                                "value": 37
                             },
                             "example37": {
-                                "value": "37"
+                                "value": 38
                             },
                             "example38": {
-                                "value": "38"
+                                "value": 39
                             },
                             "example39": {
-                                "value": "39"
+                                "value": 40
                             },
                             "example40": {
-                                "value": "40"
+                                "value": 41
                             },
                             "example41": {
-                                "value": "41"
+                                "value": 42
                             },
                             "example42": {
-                                "value": "42"
+                                "value": 43
                             },
                             "example43": {
-                                "value": "43"
+                                "value": 44
                             },
                             "example44": {
-                                "value": "44"
+                                "value": 45
                             },
                             "example45": {
-                                "value": "45"
+                                "value": 46
                             },
                             "example46": {
-                                "value": "46"
+                                "value": 47
                             },
                             "example47": {
-                                "value": "47"
+                                "value": 48
                             },
                             "example48": {
-                                "value": "48"
+                                "value": 49
                             },
                             "example49": {
-                                "value": "49"
-                            },
-                            "example50": {
-                                "value": "50"
+                                "value": 50
                             }
                         }
                     },
@@ -3298,61 +3246,61 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "-1"
+                                "value": -1
                             },
                             "example2": {
-                                "value": "-2"
+                                "value": -2
                             },
                             "example3": {
-                                "value": "-3"
+                                "value": -3
                             },
                             "example4": {
-                                "value": "-4"
+                                "value": -4
                             },
                             "example5": {
-                                "value": "-5"
+                                "value": -5
                             },
                             "example6": {
-                                "value": "-6"
+                                "value": -6
                             },
                             "example7": {
-                                "value": "-7"
+                                "value": -7
                             },
                             "example8": {
-                                "value": "-8"
+                                "value": -8
                             },
                             "example9": {
-                                "value": "-9"
+                                "value": -9
                             },
                             "example10": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example11": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example12": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example13": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example14": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example15": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example16": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example17": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example18": {
-                                "value": "9"
+                                "value": 9
                             }
                         }
                     },
@@ -3362,7 +3310,7 @@
                         "name": "additional_types",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -3389,9 +3337,7 @@
                             "example6": {
                                 "value": "live performance"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     }
                 ],
                 "responses": {
@@ -4313,160 +4259,9 @@
                         "required": false,
                         "schema": {
                             "format": "int32",
-                            "type": "object"
+                            "type": "integer"
                         },
-                        "examples": {
-                            "example0": {
-                                "value": "position=0"
-                            },
-                            "example1": {
-                                "value": "position=2"
-                            },
-                            "example2": {
-                                "value": "position=1"
-                            },
-                            "example3": {
-                                "value": "position=3"
-                            },
-                            "example4": {
-                                "value": "position=4"
-                            },
-                            "example5": {
-                                "value": "position=5"
-                            },
-                            "example6": {
-                                "value": "position=6"
-                            },
-                            "example7": {
-                                "value": "position=7"
-                            },
-                            "example8": {
-                                "value": "position=8"
-                            },
-                            "example9": {
-                                "value": "position=9"
-                            },
-                            "example10": {
-                                "value": "position=10"
-                            },
-                            "example11": {
-                                "value": "position=11"
-                            },
-                            "example12": {
-                                "value": "position=12"
-                            },
-                            "example13": {
-                                "value": "position=13"
-                            },
-                            "example14": {
-                                "value": "position=14"
-                            },
-                            "example15": {
-                                "value": "position=15"
-                            },
-                            "example16": {
-                                "value": "position=16"
-                            },
-                            "example17": {
-                                "value": "position=17"
-                            },
-                            "example18": {
-                                "value": "position=18"
-                            },
-                            "example19": {
-                                "value": "position=19"
-                            },
-                            "example20": {
-                                "value": "position=20"
-                            },
-                            "example21": {
-                                "value": "position=21"
-                            },
-                            "example22": {
-                                "value": "position=22"
-                            },
-                            "example23": {
-                                "value": "position=23"
-                            },
-                            "example24": {
-                                "value": "position=24"
-                            },
-                            "example25": {
-                                "value": "position=25"
-                            },
-                            "example26": {
-                                "value": "position=26"
-                            },
-                            "example27": {
-                                "value": "position=27"
-                            },
-                            "example28": {
-                                "value": "position=28"
-                            },
-                            "example29": {
-                                "value": "position=29"
-                            },
-                            "example30": {
-                                "value": "position=30"
-                            },
-                            "example31": {
-                                "value": "position=31"
-                            },
-                            "example32": {
-                                "value": "position=32"
-                            },
-                            "example33": {
-                                "value": "position=33"
-                            },
-                            "example34": {
-                                "value": "position=34"
-                            },
-                            "example35": {
-                                "value": "position=35"
-                            },
-                            "example36": {
-                                "value": "position=36"
-                            },
-                            "example37": {
-                                "value": "position=37"
-                            },
-                            "example38": {
-                                "value": "position=38"
-                            },
-                            "example39": {
-                                "value": "position=39"
-                            },
-                            "example40": {
-                                "value": "position=40"
-                            },
-                            "example41": {
-                                "value": "position=41"
-                            },
-                            "example42": {
-                                "value": "position=42"
-                            },
-                            "example43": {
-                                "value": "position=43"
-                            },
-                            "example44": {
-                                "value": "position=44"
-                            },
-                            "example45": {
-                                "value": "position=45"
-                            },
-                            "example46": {
-                                "value": "position=46"
-                            },
-                            "example47": {
-                                "value": "position=47"
-                            },
-                            "example48": {
-                                "value": "position=48"
-                            },
-                            "example49": {
-                                "value": "position=49"
-                            }
-                        }
+                        "examples": {}
                     },
                     {
                         "description": "A comma-separated list of [Spotify URIs](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) to add, can be track or episode URIs. For example:\n`uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh, spotify:track:1301WleyT98MSxVHPZCA6M, spotify:episode:512ojhOuo1ktJprKbVcKyQ`\nA maximum of 100 items can be added in one request. *Note: it is likely that passing a large number of item URIs as a query parameter will exceed the maximum length of the request URI. When adding a large number of items, it is recommended to pass them in the request body, see below.*",
@@ -4474,7 +4269,7 @@
                         "name": "uris",
                         "required": false,
                         "schema": {
-                            "type": "object"
+                            "type": "string"
                         },
                         "examples": {
                             "example0": {
@@ -4622,11 +4417,11 @@
                         "name": "uris",
                         "required": false,
                         "schema": {
-                            "type": "array",
-                            "maxItems": 100,
+                            "type": "string",
                             "items": {
                                 "type": "string"
-                            }
+                            },
+                            "format": "uri"
                         },
                         "examples": {
                             "example0": {
@@ -4665,9 +4460,7 @@
                             "example11": {
                                 "value": "spotify"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     }
                 ],
                 "requestBody": {
@@ -4678,353 +4471,22 @@
                                     "insert_before": {
                                         "description": "The position where the items should be inserted.\nTo reorder the items to the end of the playlist, simply set *insert_before* to the position after the last item.\nExamples:\nTo reorder the first item to the last position in a playlist with 10 items, set *range_start* to 0, and *insert_before* to 10.\nTo reorder the last item in a playlist with 10 items to the start of the playlist, set *range_start* to 9, and *insert_before* to 0.",
                                         "format": "int32",
-                                        "type": "integer",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "0"
-                                            },
-                                            "example1": {
-                                                "value": "10"
-                                            },
-                                            "example2": {
-                                                "value": "1"
-                                            },
-                                            "example3": {
-                                                "value": "2"
-                                            },
-                                            "example4": {
-                                                "value": "3"
-                                            },
-                                            "example5": {
-                                                "value": "4"
-                                            },
-                                            "example6": {
-                                                "value": "5"
-                                            },
-                                            "example7": {
-                                                "value": "6"
-                                            },
-                                            "example8": {
-                                                "value": "7"
-                                            },
-                                            "example9": {
-                                                "value": "8"
-                                            },
-                                            "example10": {
-                                                "value": "9"
-                                            },
-                                            "example11": {
-                                                "value": "11"
-                                            },
-                                            "example12": {
-                                                "value": "12"
-                                            },
-                                            "example13": {
-                                                "value": "13"
-                                            },
-                                            "example14": {
-                                                "value": "14"
-                                            },
-                                            "example15": {
-                                                "value": "15"
-                                            },
-                                            "example16": {
-                                                "value": "16"
-                                            },
-                                            "example17": {
-                                                "value": "17"
-                                            },
-                                            "example18": {
-                                                "value": "18"
-                                            },
-                                            "example19": {
-                                                "value": "19"
-                                            },
-                                            "example20": {
-                                                "value": "20"
-                                            },
-                                            "example21": {
-                                                "value": "21"
-                                            },
-                                            "example22": {
-                                                "value": "22"
-                                            },
-                                            "example23": {
-                                                "value": "23"
-                                            },
-                                            "example24": {
-                                                "value": "24"
-                                            },
-                                            "example25": {
-                                                "value": "25"
-                                            },
-                                            "example26": {
-                                                "value": "26"
-                                            },
-                                            "example27": {
-                                                "value": "27"
-                                            },
-                                            "example28": {
-                                                "value": "28"
-                                            },
-                                            "example29": {
-                                                "value": "29"
-                                            },
-                                            "example30": {
-                                                "value": "30"
-                                            },
-                                            "example31": {
-                                                "value": "31"
-                                            },
-                                            "example32": {
-                                                "value": "32"
-                                            },
-                                            "example33": {
-                                                "value": "33"
-                                            },
-                                            "example34": {
-                                                "value": "34"
-                                            },
-                                            "example35": {
-                                                "value": "35"
-                                            },
-                                            "example36": {
-                                                "value": "36"
-                                            },
-                                            "example37": {
-                                                "value": "37"
-                                            },
-                                            "example38": {
-                                                "value": "38"
-                                            },
-                                            "example39": {
-                                                "value": "39"
-                                            },
-                                            "example40": {
-                                                "value": "40"
-                                            },
-                                            "example41": {
-                                                "value": "41"
-                                            },
-                                            "example42": {
-                                                "value": "42"
-                                            },
-                                            "example43": {
-                                                "value": "43"
-                                            },
-                                            "example44": {
-                                                "value": "44"
-                                            },
-                                            "example45": {
-                                                "value": "45"
-                                            },
-                                            "example46": {
-                                                "value": "46"
-                                            },
-                                            "example47": {
-                                                "value": "47"
-                                            },
-                                            "example48": {
-                                                "value": "48"
-                                            },
-                                            "example49": {
-                                                "value": "49"
-                                            }
-                                        }
+                                        "type": "integer"
                                     },
                                     "range_length": {
                                         "description": "The amount of items to be reordered. Defaults to 1 if not set.\nThe range of items to be reordered begins from the *range_start* position, and includes the *range_length* subsequent items.\nExample:\nTo move the items at index 9-10 to the start of the playlist, *range_start* is set to 9, and *range_length* is set to 2.",
                                         "format": "int32",
-                                        "type": "number",
-                                        "default": "1",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "range_start=9"
-                                            },
-                                            "example1": {
-                                                "value": "range_length=2"
-                                            },
-                                            "example2": {
-                                                "value": "range_start=0"
-                                            },
-                                            "example3": {
-                                                "value": "range_length=1"
-                                            },
-                                            "example4": {
-                                                "value": "range_start=5"
-                                            },
-                                            "example5": {
-                                                "value": "range_length=3"
-                                            },
-                                            "example6": {
-                                                "value": "range_start=15"
-                                            },
-                                            "example7": {
-                                                "value": "range_length=4"
-                                            }
-                                        }
+                                        "type": "integer",
+                                        "default": "1"
                                     },
                                     "range_start": {
                                         "description": "The position of the first item to be reordered.",
                                         "format": "int32",
-                                        "type": "integer",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "0"
-                                            },
-                                            "example1": {
-                                                "value": "1"
-                                            },
-                                            "example2": {
-                                                "value": "2"
-                                            },
-                                            "example3": {
-                                                "value": "3"
-                                            },
-                                            "example4": {
-                                                "value": "4"
-                                            },
-                                            "example5": {
-                                                "value": "5"
-                                            },
-                                            "example6": {
-                                                "value": "6"
-                                            },
-                                            "example7": {
-                                                "value": "7"
-                                            },
-                                            "example8": {
-                                                "value": "8"
-                                            },
-                                            "example9": {
-                                                "value": "9"
-                                            },
-                                            "example10": {
-                                                "value": "10"
-                                            },
-                                            "example11": {
-                                                "value": "11"
-                                            },
-                                            "example12": {
-                                                "value": "12"
-                                            },
-                                            "example13": {
-                                                "value": "13"
-                                            },
-                                            "example14": {
-                                                "value": "14"
-                                            },
-                                            "example15": {
-                                                "value": "15"
-                                            },
-                                            "example16": {
-                                                "value": "16"
-                                            },
-                                            "example17": {
-                                                "value": "17"
-                                            },
-                                            "example18": {
-                                                "value": "18"
-                                            },
-                                            "example19": {
-                                                "value": "19"
-                                            },
-                                            "example20": {
-                                                "value": "20"
-                                            },
-                                            "example21": {
-                                                "value": "21"
-                                            },
-                                            "example22": {
-                                                "value": "22"
-                                            },
-                                            "example23": {
-                                                "value": "23"
-                                            },
-                                            "example24": {
-                                                "value": "24"
-                                            },
-                                            "example25": {
-                                                "value": "25"
-                                            },
-                                            "example26": {
-                                                "value": "26"
-                                            },
-                                            "example27": {
-                                                "value": "27"
-                                            },
-                                            "example28": {
-                                                "value": "28"
-                                            },
-                                            "example29": {
-                                                "value": "29"
-                                            },
-                                            "example30": {
-                                                "value": "30"
-                                            },
-                                            "example31": {
-                                                "value": "31"
-                                            },
-                                            "example32": {
-                                                "value": "32"
-                                            },
-                                            "example33": {
-                                                "value": "33"
-                                            },
-                                            "example34": {
-                                                "value": "34"
-                                            },
-                                            "example35": {
-                                                "value": "35"
-                                            },
-                                            "example36": {
-                                                "value": "36"
-                                            },
-                                            "example37": {
-                                                "value": "37"
-                                            },
-                                            "example38": {
-                                                "value": "38"
-                                            },
-                                            "example39": {
-                                                "value": "39"
-                                            },
-                                            "example40": {
-                                                "value": "40"
-                                            },
-                                            "example41": {
-                                                "value": "41"
-                                            },
-                                            "example42": {
-                                                "value": "42"
-                                            },
-                                            "example43": {
-                                                "value": "43"
-                                            },
-                                            "example44": {
-                                                "value": "44"
-                                            },
-                                            "example45": {
-                                                "value": "45"
-                                            },
-                                            "example46": {
-                                                "value": "46"
-                                            },
-                                            "example47": {
-                                                "value": "47"
-                                            },
-                                            "example48": {
-                                                "value": "48"
-                                            },
-                                            "example49": {
-                                                "value": "49"
-                                            }
-                                        }
+                                        "type": "integer"
                                     },
                                     "snapshot_id": {
                                         "description": "The playlist's snapshot ID against which you want to make the changes.",
-                                        "type": "string",
-                                        "examples": {}
+                                        "type": "string"
                                     },
                                     "uris": {
                                         "description": "A comma-separated list of [Spotify URIs](https://developer.spotify.com/documentation/web-api/#spotify-uris-and-ids) to set, can be track or episode URIs. For example: `uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M,spotify:episode:512ojhOuo1ktJprKbVcKyQ`\nA maximum of 100 items can be set in one request.",
@@ -5180,8 +4642,7 @@
                         "name": "type",
                         "required": true,
                         "schema": {
-                            "type": "array",
-                            "minItems": 1,
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -5223,9 +4684,7 @@
                             "example11": {
                                 "value": "documentary"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     },
                     {
                         "description": "An [ISO 3166-1 alpha-2 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) or the string `from_token`.\nIf a country code is specified, only content that is playable in that market is returned.\n**Note** :\n- Playlist results are not affected by the market parameter.\n- If market is set to `from_token`, and a valid access token is specified in the request header, only content playable in the country associated with the user account, is returned.\n- Users can view the country that is associated with their account in the [account settings](https://www.spotify.com/se/account/overview/). A user must grant access to the `user-read-private` scope prior to when the access token is issued.",
@@ -5525,154 +4984,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example21": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example22": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example23": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example24": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example25": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example26": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example27": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example28": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example29": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example30": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example31": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example32": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example33": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example34": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example35": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example36": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example37": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example38": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example39": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example40": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example41": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example42": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example43": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example44": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example45": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example46": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example47": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example48": {
-                                "value": "49"
+                                "value": 49
                             },
                             "example49": {
-                                "value": "50"
+                                "value": 50
                             }
                         }
                     },
@@ -5690,43 +5149,43 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "-100"
+                                "value": -100
                             },
                             "example2": {
-                                "value": "-50"
+                                "value": -50
                             },
                             "example3": {
-                                "value": "-10"
+                                "value": -10
                             },
                             "example4": {
-                                "value": "-5"
+                                "value": -5
                             },
                             "example5": {
-                                "value": "-1"
+                                "value": -1
                             },
                             "example6": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example7": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example8": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example9": {
-                                "value": "50"
+                                "value": 50
                             },
                             "example10": {
-                                "value": "100"
+                                "value": 100
                             },
                             "example11": {
-                                "value": "500"
+                                "value": 500
                             },
                             "example12": {
-                                "value": "1000"
+                                "value": 1000
                             }
                         }
                     },
@@ -7229,154 +6688,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example21": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example22": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example23": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example24": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example25": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example26": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example27": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example28": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example29": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example30": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example31": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example32": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example33": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example34": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example35": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example36": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example37": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example38": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example39": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example40": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example41": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example42": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example43": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example44": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example45": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example46": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example47": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example48": {
-                                "value": "49"
+                                "value": 49
                             },
                             "example49": {
-                                "value": "50"
+                                "value": 50
                             }
                         }
                     },
@@ -7394,28 +6853,28 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "-100"
+                                "value": -100
                             },
                             "example2": {
-                                "value": "-50"
+                                "value": -50
                             },
                             "example3": {
-                                "value": "-10"
+                                "value": -10
                             },
                             "example4": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example5": {
-                                "value": "50"
+                                "value": 50
                             },
                             "example6": {
-                                "value": "100"
+                                "value": 100
                             },
                             "example7": {
-                                "value": "1000"
+                                "value": 1000
                             }
                         }
                     }
@@ -7742,52 +7201,21 @@
                                     "collaborative": {
                                         "description": "Defaults to `false` . If `true` the playlist will be collaborative. Note that to create a collaborative playlist you must also set `public` to `false` . To create collaborative playlists you must have granted `playlist-modify-private` and `playlist-modify-public` [scopes](https://developer.spotify.com/documentation/general/guides/authorization-guide/#list-of-scopes) .",
                                         "type": "boolean",
-                                        "default": "false",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "false"
-                                            },
-                                            "example1": {
-                                                "value": "true"
-                                            }
-                                        }
+                                        "default": "false"
                                     },
                                     "description": {
                                         "description": "value for playlist description as displayed in Spotify Clients and in the Web API.",
-                                        "type": "string",
-                                        "examples": {}
+                                        "type": "string"
                                     },
                                     "name": {
                                         "description": "The name for the new playlist, for example `\"Your Coolest Playlist\"` . This name does not need to be unique; a user may have several playlists with the same name.",
                                         "type": "string",
-                                        "minLength": 1,
-                                        "examples": {
-                                            "example0": {
-                                                "value": "\"Your Coolest Playlist\""
-                                            },
-                                            "example1": {
-                                                "value": "\"My Awesome Playlist\""
-                                            },
-                                            "example2": {
-                                                "value": "\"Best Playlist Ever\""
-                                            },
-                                            "example3": {
-                                                "value": "\"Top Hits Playlist\""
-                                            }
-                                        }
+                                        "minLength": 1
                                     },
                                     "public": {
                                         "description": "Defaults to `true` . If `true` the playlist will be public, if `false` it will be private. To be able to create private playlists, the user must have granted the `playlist-modify-private` [scope](https://developer.spotify.com/documentation/general/guides/authorization-guide/#list-of-scopes)",
                                         "type": "boolean",
-                                        "default": "true",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "true"
-                                            },
-                                            "example1": {
-                                                "value": "false"
-                                            }
-                                        }
+                                        "default": "true"
                                     }
                                 },
                                 "required": [

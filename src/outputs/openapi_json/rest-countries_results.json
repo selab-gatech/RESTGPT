@@ -93,7 +93,7 @@
                         "in": "query",
                         "required": true,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -1018,7 +1018,7 @@
                         "in": "query",
                         "required": true,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }

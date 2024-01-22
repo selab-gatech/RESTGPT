@@ -179,7 +179,7 @@
                         "in": "query",
                         "description": "Note: This parameter is intended exclusively for YouTube content partners.\n\nThe forContentOwner parameter restricts the search to only retrieve resources owned by the content owner specified by the onBehalfOfContentOwner parameter. The user must be authenticated using a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.",
                         "schema": {
-                            "type": "string"
+                            "type": "boolean"
                         },
                         "examples": {}
                     },
@@ -192,10 +192,10 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "True"
+                                "value": true
                             },
                             "example1": {
-                                "value": "False"
+                                "value": true
                             }
                         }
                     },
@@ -208,10 +208,10 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "true"
+                                "value": true
                             },
                             "example1": {
-                                "value": "false"
+                                "value": true
                             }
                         }
                     },
@@ -421,154 +421,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "49"
+                                "value": 49
                             }
                         }
                     },
@@ -1397,7 +1397,7 @@
                         "in": "query",
                         "description": "The safeSearch parameter indicates whether the search results should include restricted content as well as standard content.",
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "enum": [
                                 "moderate",
                                 "none",
@@ -1522,7 +1522,7 @@
                         "in": "query",
                         "description": "The videoEmbeddable parameter lets you to restrict a search to only videos that can be embedded into a webpage. If you specify a value for this parameter, you must also set the type parameter's value to video.",
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "enum": [
                                 "any",
                                 "true"
@@ -1547,7 +1547,7 @@
                         "in": "query",
                         "description": "The videoSyndicated parameter lets you to restrict a search to only videos that can be played outside youtube.com. If you specify a value for this parameter, you must also set the type parameter's value to video.",
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "enum": [
                                 "any",
                                 "true"

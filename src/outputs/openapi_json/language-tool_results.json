@@ -25,349 +25,70 @@
                                 "properties": {
                                     "text": {
                                         "type": "string",
-                                        "description": "The text to be checked. This or 'data' is required.",
-                                        "examples": {}
+                                        "description": "The text to be checked. This or 'data' is required."
                                     },
                                     "data": {
                                         "type": "string",
-                                        "description": "The text to be checked, given as a JSON document that specifies what's text and what's markup. This or 'text' is required. Markup will be ignored when looking for errors. Example text: <pre>A &lt;b>test&lt;/b></pre>JSON for the example text: <pre>{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}</pre> <p>If you have markup that should be interpreted as whitespace, like <tt>&lt;p&gt;</tt> in HTML, you can have it interpreted like this: <pre>{\"markup\": \"&lt;p&gt;\", \"interpretAs\": \"\\n\\n\"}</pre><p>The 'data' feature is not limited to HTML or XML, it can be used for any kind of markup.",
-                                        "examples": {
-                                            "example0": {
-                                                "value": "<pre>A &lt;b>test&lt;/b></pre>"
-                                            },
-                                            "example1": {
-                                                "value": "<pre>{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}</pre>"
-                                            },
-                                            "example2": {
-                                                "value": "<pre>{\"markup\": \"&lt;p&gt;\""
-                                            },
-                                            "example3": {
-                                                "value": "\"interpretAs\": \"\\n\\n\"}</pre>"
-                                            },
-                                            "example4": {
-                                                "value": "<pre>&lt;div>Example text&lt;/div></pre>"
-                                            },
-                                            "example5": {
-                                                "value": "<pre>{\"annotation\":[  {\"text\": \"Example \"}"
-                                            },
-                                            "example6": {
-                                                "value": " {\"markup\": \"&lt;b>\"}"
-                                            },
-                                            "example7": {
-                                                "value": " {\"text\": \"text\"}"
-                                            },
-                                            "example8": {
-                                                "value": " {\"markup\": \"&lt;/b>\"} ]}</pre>"
-                                            },
-                                            "example9": {
-                                                "value": "<pre>{\"markup\": \"&lt;p&gt;\""
-                                            },
-                                            "example10": {
-                                                "value": "\"interpretAs\": \"\\n\"}</pre>"
-                                            }
-                                        }
+                                        "description": "The text to be checked, given as a JSON document that specifies what's text and what's markup. This or 'text' is required. Markup will be ignored when looking for errors. Example text: <pre>A &lt;b>test&lt;/b></pre>JSON for the example text: <pre>{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}</pre> <p>If you have markup that should be interpreted as whitespace, like <tt>&lt;p&gt;</tt> in HTML, you can have it interpreted like this: <pre>{\"markup\": \"&lt;p&gt;\", \"interpretAs\": \"\\n\\n\"}</pre><p>The 'data' feature is not limited to HTML or XML, it can be used for any kind of markup."
                                     },
                                     "language": {
                                         "type": "string",
                                         "description": "A language code like `en-US`, `de-DE`, `fr`, or `auto`\nto guess the language automatically (see `preferredVariants` below).\nFor languages with variants (English, German, Portuguese) spell\nchecking will only be activated when you specify the variant,\ne.g. `en-GB` instead of just `en`.",
                                         "minLength": 2,
-                                        "maxLength": 5,
-                                        "examples": {
-                                            "example0": {
-                                                "value": "en-US"
-                                            },
-                                            "example1": {
-                                                "value": "de-DE"
-                                            },
-                                            "example2": {
-                                                "value": "fr"
-                                            },
-                                            "example3": {
-                                                "value": "auto"
-                                            },
-                                            "example4": {
-                                                "value": "en-GB"
-                                            },
-                                            "example5": {
-                                                "value": "en-AU"
-                                            },
-                                            "example6": {
-                                                "value": "en-CA"
-                                            },
-                                            "example7": {
-                                                "value": "en-IN"
-                                            },
-                                            "example8": {
-                                                "value": "en-NZ"
-                                            },
-                                            "example9": {
-                                                "value": "en-ZA"
-                                            },
-                                            "example10": {
-                                                "value": "de-AT"
-                                            },
-                                            "example11": {
-                                                "value": "de-CH"
-                                            },
-                                            "example12": {
-                                                "value": "de-LI"
-                                            },
-                                            "example13": {
-                                                "value": "de-LU"
-                                            },
-                                            "example14": {
-                                                "value": "fr-BE"
-                                            },
-                                            "example15": {
-                                                "value": "fr-CA"
-                                            },
-                                            "example16": {
-                                                "value": "fr-CH"
-                                            },
-                                            "example17": {
-                                                "value": "fr-LU"
-                                            },
-                                            "example18": {
-                                                "value": "fr-MC"
-                                            },
-                                            "example19": {
-                                                "value": "fr-MA"
-                                            },
-                                            "example20": {
-                                                "value": "fr-DZ"
-                                            },
-                                            "example21": {
-                                                "value": "fr-TN"
-                                            },
-                                            "example22": {
-                                                "value": "fr-CI"
-                                            },
-                                            "example23": {
-                                                "value": "fr-SN"
-                                            },
-                                            "example24": {
-                                                "value": "fr-CG"
-                                            },
-                                            "example25": {
-                                                "value": "fr-CM"
-                                            },
-                                            "example26": {
-                                                "value": "fr-CD"
-                                            },
-                                            "example27": {
-                                                "value": "fr-GA"
-                                            },
-                                            "example28": {
-                                                "value": "fr-GF"
-                                            },
-                                            "example29": {
-                                                "value": "fr-GP"
-                                            },
-                                            "example30": {
-                                                "value": "fr-HT"
-                                            },
-                                            "example31": {
-                                                "value": "fr-MQ"
-                                            },
-                                            "example32": {
-                                                "value": "fr-MR"
-                                            },
-                                            "example33": {
-                                                "value": "fr-MU"
-                                            },
-                                            "example34": {
-                                                "value": "fr-NC"
-                                            },
-                                            "example35": {
-                                                "value": "fr-PF"
-                                            },
-                                            "example36": {
-                                                "value": "fr-RE"
-                                            },
-                                            "example37": {
-                                                "value": "fr-RW"
-                                            },
-                                            "example38": {
-                                                "value": "fr-BL"
-                                            },
-                                            "example39": {
-                                                "value": "fr-MF"
-                                            },
-                                            "example40": {
-                                                "value": "fr-PM"
-                                            },
-                                            "example41": {
-                                                "value": "fr-VC"
-                                            },
-                                            "example42": {
-                                                "value": "fr-SC"
-                                            },
-                                            "example43": {
-                                                "value": "fr-SY"
-                                            },
-                                            "example44": {
-                                                "value": "fr-TG"
-                                            },
-                                            "example45": {
-                                                "value": "fr-TD"
-                                            },
-                                            "example46": {
-                                                "value": "fr"
-                                            }
-                                        }
+                                        "maxLength": 5
                                     },
                                     "altLanguages": {
-                                        "type": "array",
+                                        "type": "string",
                                         "description": "EXPERIMENTAL: Comma-separated list of language codes\nto check if a word is not similar to one of the main language\n(parameter `language`). Unknown words that are similar to a word\nfrom the main language will still be considered errors but with\ntype `Hint`. For languages with variants (English, German, Portuguese)\nyou need to specify the variant, e.g. `en-GB` instead of just\n`en`.",
                                         "items": {
                                             "type": "string"
-                                        },
-                                        "style": "form",
-                                        "explode": false
+                                        }
                                     },
                                     "motherTongue": {
                                         "type": "string",
                                         "description": "A language code of the user's native language, enabling\nfalse friends checks for some language pairs.",
                                         "minLength": 2,
-                                        "maxLength": 3,
-                                        "examples": {
-                                            "example0": {
-                                                "value": "en"
-                                            },
-                                            "example1": {
-                                                "value": "fr"
-                                            },
-                                            "example2": {
-                                                "value": "de"
-                                            },
-                                            "example3": {
-                                                "value": "es"
-                                            },
-                                            "example4": {
-                                                "value": "it"
-                                            },
-                                            "example5": {
-                                                "value": "pt"
-                                            },
-                                            "example6": {
-                                                "value": "nl"
-                                            },
-                                            "example7": {
-                                                "value": "sv"
-                                            },
-                                            "example8": {
-                                                "value": "da"
-                                            },
-                                            "example9": {
-                                                "value": "no"
-                                            },
-                                            "example10": {
-                                                "value": "fi"
-                                            },
-                                            "example11": {
-                                                "value": "ru"
-                                            },
-                                            "example12": {
-                                                "value": "pl"
-                                            },
-                                            "example13": {
-                                                "value": "cs"
-                                            },
-                                            "example14": {
-                                                "value": "hu"
-                                            },
-                                            "example15": {
-                                                "value": "ro"
-                                            },
-                                            "example16": {
-                                                "value": "bg"
-                                            },
-                                            "example17": {
-                                                "value": "el"
-                                            },
-                                            "example18": {
-                                                "value": "tr"
-                                            },
-                                            "example19": {
-                                                "value": "ar"
-                                            },
-                                            "example20": {
-                                                "value": "he"
-                                            },
-                                            "example21": {
-                                                "value": "ja"
-                                            },
-                                            "example22": {
-                                                "value": "ko"
-                                            },
-                                            "example23": {
-                                                "value": "zh"
-                                            },
-                                            "example24": {
-                                                "value": "th"
-                                            },
-                                            "example25": {
-                                                "value": "vi"
-                                            }
-                                        }
+                                        "maxLength": 3
                                     },
                                     "preferredVariants": {
-                                        "type": "array",
+                                        "type": "string",
                                         "description": "Comma-separated list of preferred language variants.\nThe language detector used with `language=auto` can detect e.g.\nEnglish, but it cannot decide whether British English or American\nEnglish is used. Thus this parameter can be used to specify the\npreferred variants like `en-GB` and `de-AT`. Only available with\n`language=auto`.",
                                         "items": {
                                             "type": "string"
-                                        },
-                                        "style": "form",
-                                        "explode": false
+                                        }
                                     },
                                     "enabledRules": {
-                                        "type": "array",
+                                        "type": "string",
                                         "description": "IDs of rules to be enabled, comma-separated",
                                         "items": {
                                             "type": "string"
-                                        },
-                                        "style": "form",
-                                        "explode": false
+                                        }
                                     },
                                     "disabledRules": {
-                                        "type": "array",
+                                        "type": "string",
                                         "description": "IDs of rules to be disabled, comma-separated",
                                         "items": {
                                             "type": "string"
-                                        },
-                                        "style": "form",
-                                        "explode": false
+                                        }
                                     },
                                     "enabledCategories": {
-                                        "type": "array",
+                                        "type": "string",
                                         "description": "IDs of categories to be enabled, comma-separated",
                                         "items": {
                                             "type": "string"
-                                        },
-                                        "style": "form",
-                                        "explode": false
+                                        }
                                     },
                                     "disabledCategories": {
-                                        "type": "array",
+                                        "type": "string",
                                         "description": "IDs of categories to be disabled, comma-separated",
                                         "items": {
                                             "type": "string"
-                                        },
-                                        "style": "form",
-                                        "explode": false
+                                        }
                                     },
                                     "enabledOnly": {
                                         "type": "boolean",
                                         "description": "If true, only the rules and categories whose IDs are\nspecified with `enabledRules` or `enabledCategories` are enabled.",
-                                        "default": false,
-                                        "examples": {
-                                            "example0": {
-                                                "value": "True"
-                                            },
-                                            "example1": {
-                                                "value": "False"
-                                            }
-                                        }
+                                        "default": false
                                     }
                                 },
                                 "x-dependencies": [
