@@ -226,154 +226,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example1": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example2": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example3": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example4": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example5": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example6": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example7": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example8": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example9": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example10": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example11": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example12": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example13": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example14": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example15": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example16": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example17": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example18": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example19": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example20": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example21": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example22": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example23": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example24": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example25": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example26": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example27": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example28": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example29": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example30": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example31": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example32": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example33": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example34": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example35": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example36": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example37": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example38": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example39": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example40": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example41": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example42": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example43": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example44": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example45": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example46": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example47": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example48": {
-                                "value": "49"
+                                "value": 49
                             },
                             "example49": {
-                                "value": "50"
+                                "value": 50
                             }
                         }
                     },
@@ -386,97 +386,97 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "2000"
+                                "value": 2000
                             },
                             "example1": {
-                                "value": "2001"
+                                "value": 2001
                             },
                             "example2": {
-                                "value": "2002"
+                                "value": 2002
                             },
                             "example3": {
-                                "value": "2003"
+                                "value": 2003
                             },
                             "example4": {
-                                "value": "2004"
+                                "value": 2004
                             },
                             "example5": {
-                                "value": "2005"
+                                "value": 2005
                             },
                             "example6": {
-                                "value": "2006"
+                                "value": 2006
                             },
                             "example7": {
-                                "value": "2007"
+                                "value": 2007
                             },
                             "example8": {
-                                "value": "2008"
+                                "value": 2008
                             },
                             "example9": {
-                                "value": "2009"
+                                "value": 2009
                             },
                             "example10": {
-                                "value": "2010"
+                                "value": 2010
                             },
                             "example11": {
-                                "value": "2011"
+                                "value": 2011
                             },
                             "example12": {
-                                "value": "2012"
+                                "value": 2012
                             },
                             "example13": {
-                                "value": "2013"
+                                "value": 2013
                             },
                             "example14": {
-                                "value": "2014"
+                                "value": 2014
                             },
                             "example15": {
-                                "value": "2015"
+                                "value": 2015
                             },
                             "example16": {
-                                "value": "2016"
+                                "value": 2016
                             },
                             "example17": {
-                                "value": "2017"
+                                "value": 2017
                             },
                             "example18": {
-                                "value": "2018"
+                                "value": 2018
                             },
                             "example19": {
-                                "value": "2019"
+                                "value": 2019
                             },
                             "example20": {
-                                "value": "2020"
+                                "value": 2020
                             },
                             "example21": {
-                                "value": "2021"
+                                "value": 2021
                             },
                             "example22": {
-                                "value": "2022"
+                                "value": 2022
                             },
                             "example23": {
-                                "value": "2023"
+                                "value": 2023
                             },
                             "example24": {
-                                "value": "2024"
+                                "value": 2024
                             },
                             "example25": {
-                                "value": "2025"
+                                "value": 2025
                             },
                             "example26": {
-                                "value": "2026"
+                                "value": 2026
                             },
                             "example27": {
-                                "value": "2027"
+                                "value": 2027
                             },
                             "example28": {
-                                "value": "2028"
+                                "value": 2028
                             },
                             "example29": {
-                                "value": "2029"
+                                "value": 2029
                             },
                             "example30": {
-                                "value": "2030"
+                                "value": 2030
                             }
                         }
                     },

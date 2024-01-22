@@ -140,7 +140,7 @@
                         "description": "Comma delimited list of fields to search.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -296,9 +296,7 @@
                             "example49": {
                                 "value": "field50"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     },
                     {
                         "in": "query",
@@ -348,253 +346,250 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "10,000"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "0"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "1"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "2"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "3"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "4"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "5"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "6"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "7"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "8"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "9"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "10"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "11"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "12"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "13"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "14"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "15"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "16"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "17"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "18"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "19"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "20"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "21"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "22"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "23"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "24"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "25"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "26"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "27"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "28"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "29"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "30"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "31"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "32"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "33"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "34"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "35"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "36"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "37"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "38"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "39"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "40"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "41"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "42"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "43"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "44"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "45"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "46"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "47"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "48"
+                                "value": 49
                             },
                             "example50": {
-                                "value": "49"
+                                "value": 50
                             },
                             "example51": {
-                                "value": "50"
+                                "value": 51
                             },
                             "example52": {
-                                "value": "51"
+                                "value": 52
                             },
                             "example53": {
-                                "value": "52"
+                                "value": 53
                             },
                             "example54": {
-                                "value": "53"
+                                "value": 54
                             },
                             "example55": {
-                                "value": "54"
+                                "value": 55
                             },
                             "example56": {
-                                "value": "55"
+                                "value": 56
                             },
                             "example57": {
-                                "value": "56"
+                                "value": 57
                             },
                             "example58": {
-                                "value": "57"
+                                "value": 58
                             },
                             "example59": {
-                                "value": "58"
+                                "value": 59
                             },
                             "example60": {
-                                "value": "59"
+                                "value": 60
                             },
                             "example61": {
-                                "value": "60"
+                                "value": 61
                             },
                             "example62": {
-                                "value": "61"
+                                "value": 62
                             },
                             "example63": {
-                                "value": "62"
+                                "value": 63
                             },
                             "example64": {
-                                "value": "63"
+                                "value": 64
                             },
                             "example65": {
-                                "value": "64"
+                                "value": 65
                             },
                             "example66": {
-                                "value": "65"
+                                "value": 66
                             },
                             "example67": {
-                                "value": "66"
+                                "value": 67
                             },
                             "example68": {
-                                "value": "67"
+                                "value": 68
                             },
                             "example69": {
-                                "value": "68"
+                                "value": 69
                             },
                             "example70": {
-                                "value": "69"
+                                "value": 70
                             },
                             "example71": {
-                                "value": "70"
+                                "value": 71
                             },
                             "example72": {
-                                "value": "71"
+                                "value": 72
                             },
                             "example73": {
-                                "value": "72"
+                                "value": 73
                             },
                             "example74": {
-                                "value": "73"
+                                "value": 74
                             },
                             "example75": {
-                                "value": "74"
+                                "value": 75
                             },
                             "example76": {
-                                "value": "75"
+                                "value": 76
                             },
                             "example77": {
-                                "value": "76"
+                                "value": 77
                             },
                             "example78": {
-                                "value": "77"
+                                "value": 78
                             },
                             "example79": {
-                                "value": "78"
+                                "value": 79
                             },
                             "example80": {
-                                "value": "79"
+                                "value": 80
                             },
                             "example81": {
-                                "value": "80"
-                            },
-                            "example82": {
-                                "value": "81"
+                                "value": 81
                             }
                         }
                     },
@@ -610,154 +605,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "49"
+                                "value": 49
                             }
                         }
                     },
@@ -782,7 +777,7 @@
                         "required": false,
                         "example": false,
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "enum": [
                                 false,
                                 true
@@ -2764,7 +2759,7 @@
                         "description": "The filter for the location search.",
                         "required": false,
                         "schema": {
-                            "type": "object"
+                            "type": "string"
                         },
                         "examples": {}
                     },
@@ -2774,7 +2769,7 @@
                         "description": "Comma delimited list of fields to return.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -2810,9 +2805,7 @@
                             "example9": {
                                 "value": "field10"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     },
                     {
                         "in": "query",
@@ -2862,253 +2855,250 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "10,000"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "0"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "1"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "2"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "3"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "4"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "5"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "6"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "7"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "8"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "9"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "10"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "11"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "12"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "13"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "14"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "15"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "16"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "17"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "18"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "19"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "20"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "21"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "22"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "23"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "24"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "25"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "26"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "27"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "28"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "29"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "30"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "31"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "32"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "33"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "34"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "35"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "36"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "37"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "38"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "39"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "40"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "41"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "42"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "43"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "44"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "45"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "46"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "47"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "48"
+                                "value": 49
                             },
                             "example50": {
-                                "value": "49"
+                                "value": 50
                             },
                             "example51": {
-                                "value": "50"
+                                "value": 51
                             },
                             "example52": {
-                                "value": "51"
+                                "value": 52
                             },
                             "example53": {
-                                "value": "52"
+                                "value": 53
                             },
                             "example54": {
-                                "value": "53"
+                                "value": 54
                             },
                             "example55": {
-                                "value": "54"
+                                "value": 55
                             },
                             "example56": {
-                                "value": "55"
+                                "value": 56
                             },
                             "example57": {
-                                "value": "56"
+                                "value": 57
                             },
                             "example58": {
-                                "value": "57"
+                                "value": 58
                             },
                             "example59": {
-                                "value": "58"
+                                "value": 59
                             },
                             "example60": {
-                                "value": "59"
+                                "value": 60
                             },
                             "example61": {
-                                "value": "60"
+                                "value": 61
                             },
                             "example62": {
-                                "value": "61"
+                                "value": 62
                             },
                             "example63": {
-                                "value": "62"
+                                "value": 63
                             },
                             "example64": {
-                                "value": "63"
+                                "value": 64
                             },
                             "example65": {
-                                "value": "64"
+                                "value": 65
                             },
                             "example66": {
-                                "value": "65"
+                                "value": 66
                             },
                             "example67": {
-                                "value": "66"
+                                "value": 67
                             },
                             "example68": {
-                                "value": "67"
+                                "value": 68
                             },
                             "example69": {
-                                "value": "68"
+                                "value": 69
                             },
                             "example70": {
-                                "value": "69"
+                                "value": 70
                             },
                             "example71": {
-                                "value": "70"
+                                "value": 71
                             },
                             "example72": {
-                                "value": "71"
+                                "value": 72
                             },
                             "example73": {
-                                "value": "72"
+                                "value": 73
                             },
                             "example74": {
-                                "value": "73"
+                                "value": 74
                             },
                             "example75": {
-                                "value": "74"
+                                "value": 75
                             },
                             "example76": {
-                                "value": "75"
+                                "value": 76
                             },
                             "example77": {
-                                "value": "76"
+                                "value": 77
                             },
                             "example78": {
-                                "value": "77"
+                                "value": 78
                             },
                             "example79": {
-                                "value": "78"
+                                "value": 79
                             },
                             "example80": {
-                                "value": "79"
+                                "value": 80
                             },
                             "example81": {
-                                "value": "80"
-                            },
-                            "example82": {
-                                "value": "81"
+                                "value": 81
                             }
                         }
                     },
@@ -3124,154 +3114,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "49"
+                                "value": 49
                             }
                         }
                     },
@@ -3296,7 +3286,7 @@
                         "required": false,
                         "example": false,
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "enum": [
                                 false,
                                 true
@@ -3981,7 +3971,7 @@
                         "description": "Comma delimited list of fields with aggregated annual financial data to return.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -4017,9 +4007,7 @@
                             "example9": {
                                 "value": "dividends"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     },
                     {
                         "in": "query",
@@ -4069,253 +4057,250 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "10,000"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "0"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "1"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "2"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "3"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "4"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "5"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "6"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "7"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "8"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "9"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "10"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "11"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "12"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "13"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "14"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "15"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "16"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "17"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "18"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "19"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "20"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "21"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "22"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "23"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "24"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "25"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "26"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "27"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "28"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "29"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "30"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "31"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "32"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "33"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "34"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "35"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "36"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "37"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "38"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "39"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "40"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "41"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "42"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "43"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "44"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "45"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "46"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "47"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "48"
+                                "value": 49
                             },
                             "example50": {
-                                "value": "49"
+                                "value": 50
                             },
                             "example51": {
-                                "value": "50"
+                                "value": 51
                             },
                             "example52": {
-                                "value": "51"
+                                "value": 52
                             },
                             "example53": {
-                                "value": "52"
+                                "value": 53
                             },
                             "example54": {
-                                "value": "53"
+                                "value": 54
                             },
                             "example55": {
-                                "value": "54"
+                                "value": 55
                             },
                             "example56": {
-                                "value": "55"
+                                "value": 56
                             },
                             "example57": {
-                                "value": "56"
+                                "value": 57
                             },
                             "example58": {
-                                "value": "57"
+                                "value": 58
                             },
                             "example59": {
-                                "value": "58"
+                                "value": 59
                             },
                             "example60": {
-                                "value": "59"
+                                "value": 60
                             },
                             "example61": {
-                                "value": "60"
+                                "value": 61
                             },
                             "example62": {
-                                "value": "61"
+                                "value": 62
                             },
                             "example63": {
-                                "value": "62"
+                                "value": 63
                             },
                             "example64": {
-                                "value": "63"
+                                "value": 64
                             },
                             "example65": {
-                                "value": "64"
+                                "value": 65
                             },
                             "example66": {
-                                "value": "65"
+                                "value": 66
                             },
                             "example67": {
-                                "value": "66"
+                                "value": 67
                             },
                             "example68": {
-                                "value": "67"
+                                "value": 68
                             },
                             "example69": {
-                                "value": "68"
+                                "value": 69
                             },
                             "example70": {
-                                "value": "69"
+                                "value": 70
                             },
                             "example71": {
-                                "value": "70"
+                                "value": 71
                             },
                             "example72": {
-                                "value": "71"
+                                "value": 72
                             },
                             "example73": {
-                                "value": "72"
+                                "value": 73
                             },
                             "example74": {
-                                "value": "73"
+                                "value": 74
                             },
                             "example75": {
-                                "value": "74"
+                                "value": 75
                             },
                             "example76": {
-                                "value": "75"
+                                "value": 76
                             },
                             "example77": {
-                                "value": "76"
+                                "value": 77
                             },
                             "example78": {
-                                "value": "77"
+                                "value": 78
                             },
                             "example79": {
-                                "value": "78"
+                                "value": 79
                             },
                             "example80": {
-                                "value": "79"
+                                "value": 80
                             },
                             "example81": {
-                                "value": "80"
-                            },
-                            "example82": {
-                                "value": "81"
+                                "value": 81
                             }
                         }
                     },
@@ -4331,154 +4316,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "49"
+                                "value": 49
                             }
                         }
                     },
@@ -4523,7 +4508,7 @@
                         "description": "The field(s) for which aggregations will be counted for each unique term.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -4536,7 +4521,7 @@
                         "description": "The field(s) for which aggregations will be summed or aggregated.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -4555,31 +4540,31 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example1": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example2": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example3": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example4": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example5": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example6": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example7": {
-                                "value": "50"
+                                "value": 50
                             },
                             "example8": {
-                                "value": "100"
+                                "value": 100
                             }
                         }
                     },
@@ -4604,7 +4589,7 @@
                         "required": false,
                         "example": false,
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "enum": [
                                 false,
                                 true
@@ -5948,7 +5933,7 @@
                         "description": "Comma delimited list of fields of failed financial institutions to return.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -6083,9 +6068,7 @@
                             "example42": {
                                 "value": "charter_charter_resolution_method"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     },
                     {
                         "in": "query",
@@ -6135,253 +6118,250 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "10,000"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "0"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "1"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "2"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "3"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "4"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "5"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "6"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "7"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "8"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "9"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "10"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "11"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "12"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "13"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "14"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "15"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "16"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "17"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "18"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "19"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "20"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "21"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "22"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "23"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "24"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "25"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "26"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "27"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "28"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "29"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "30"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "31"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "32"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "33"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "34"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "35"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "36"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "37"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "38"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "39"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "40"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "41"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "42"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "43"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "44"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "45"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "46"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "47"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "48"
+                                "value": 49
                             },
                             "example50": {
-                                "value": "49"
+                                "value": 50
                             },
                             "example51": {
-                                "value": "50"
+                                "value": 51
                             },
                             "example52": {
-                                "value": "51"
+                                "value": 52
                             },
                             "example53": {
-                                "value": "52"
+                                "value": 53
                             },
                             "example54": {
-                                "value": "53"
+                                "value": 54
                             },
                             "example55": {
-                                "value": "54"
+                                "value": 55
                             },
                             "example56": {
-                                "value": "55"
+                                "value": 56
                             },
                             "example57": {
-                                "value": "56"
+                                "value": 57
                             },
                             "example58": {
-                                "value": "57"
+                                "value": 58
                             },
                             "example59": {
-                                "value": "58"
+                                "value": 59
                             },
                             "example60": {
-                                "value": "59"
+                                "value": 60
                             },
                             "example61": {
-                                "value": "60"
+                                "value": 61
                             },
                             "example62": {
-                                "value": "61"
+                                "value": 62
                             },
                             "example63": {
-                                "value": "62"
+                                "value": 63
                             },
                             "example64": {
-                                "value": "63"
+                                "value": 64
                             },
                             "example65": {
-                                "value": "64"
+                                "value": 65
                             },
                             "example66": {
-                                "value": "65"
+                                "value": 66
                             },
                             "example67": {
-                                "value": "66"
+                                "value": 67
                             },
                             "example68": {
-                                "value": "67"
+                                "value": 68
                             },
                             "example69": {
-                                "value": "68"
+                                "value": 69
                             },
                             "example70": {
-                                "value": "69"
+                                "value": 70
                             },
                             "example71": {
-                                "value": "70"
+                                "value": 71
                             },
                             "example72": {
-                                "value": "71"
+                                "value": 72
                             },
                             "example73": {
-                                "value": "72"
+                                "value": 73
                             },
                             "example74": {
-                                "value": "73"
+                                "value": 74
                             },
                             "example75": {
-                                "value": "74"
+                                "value": 75
                             },
                             "example76": {
-                                "value": "75"
+                                "value": 76
                             },
                             "example77": {
-                                "value": "76"
+                                "value": 77
                             },
                             "example78": {
-                                "value": "77"
+                                "value": 78
                             },
                             "example79": {
-                                "value": "78"
+                                "value": 79
                             },
                             "example80": {
-                                "value": "79"
+                                "value": 80
                             },
                             "example81": {
-                                "value": "80"
-                            },
-                            "example82": {
-                                "value": "81"
+                                "value": 81
                             }
                         }
                     },
@@ -6397,154 +6377,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "49"
+                                "value": 49
                             }
                         }
                     },
@@ -6554,7 +6534,7 @@
                         "description": "Fields to sum up (in a totals response object). Only numeric columns are valid.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -6655,7 +6635,7 @@
                         "description": "The field(s) for which aggregations will be counted for each unique term.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -6668,7 +6648,7 @@
                         "description": "The field(s) for which aggregations will be summed or aggregated.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -6688,31 +6668,31 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example1": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example2": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example3": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example4": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example5": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example6": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example7": {
-                                "value": "50"
+                                "value": 50
                             },
                             "example8": {
-                                "value": "100"
+                                "value": 100
                             }
                         }
                     },
@@ -6737,7 +6717,7 @@
                         "required": false,
                         "example": false,
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "enum": [
                                 false,
                                 true
@@ -7074,7 +7054,7 @@
                         "description": "Comma delimited list of fields of failed financial institutions to return.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -7209,9 +7189,7 @@
                             "example42": {
                                 "value": "charter_charter_resolution_method"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     },
                     {
                         "in": "query",
@@ -7261,253 +7239,250 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "10,000"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "0"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "1"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "2"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "3"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "4"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "5"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "6"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "7"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "8"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "9"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "10"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "11"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "12"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "13"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "14"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "15"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "16"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "17"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "18"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "19"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "20"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "21"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "22"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "23"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "24"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "25"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "26"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "27"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "28"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "29"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "30"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "31"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "32"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "33"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "34"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "35"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "36"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "37"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "38"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "39"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "40"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "41"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "42"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "43"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "44"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "45"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "46"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "47"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "48"
+                                "value": 49
                             },
                             "example50": {
-                                "value": "49"
+                                "value": 50
                             },
                             "example51": {
-                                "value": "50"
+                                "value": 51
                             },
                             "example52": {
-                                "value": "51"
+                                "value": 52
                             },
                             "example53": {
-                                "value": "52"
+                                "value": 53
                             },
                             "example54": {
-                                "value": "53"
+                                "value": 54
                             },
                             "example55": {
-                                "value": "54"
+                                "value": 55
                             },
                             "example56": {
-                                "value": "55"
+                                "value": 56
                             },
                             "example57": {
-                                "value": "56"
+                                "value": 57
                             },
                             "example58": {
-                                "value": "57"
+                                "value": 58
                             },
                             "example59": {
-                                "value": "58"
+                                "value": 59
                             },
                             "example60": {
-                                "value": "59"
+                                "value": 60
                             },
                             "example61": {
-                                "value": "60"
+                                "value": 61
                             },
                             "example62": {
-                                "value": "61"
+                                "value": 62
                             },
                             "example63": {
-                                "value": "62"
+                                "value": 63
                             },
                             "example64": {
-                                "value": "63"
+                                "value": 64
                             },
                             "example65": {
-                                "value": "64"
+                                "value": 65
                             },
                             "example66": {
-                                "value": "65"
+                                "value": 66
                             },
                             "example67": {
-                                "value": "66"
+                                "value": 67
                             },
                             "example68": {
-                                "value": "67"
+                                "value": 68
                             },
                             "example69": {
-                                "value": "68"
+                                "value": 69
                             },
                             "example70": {
-                                "value": "69"
+                                "value": 70
                             },
                             "example71": {
-                                "value": "70"
+                                "value": 71
                             },
                             "example72": {
-                                "value": "71"
+                                "value": 72
                             },
                             "example73": {
-                                "value": "72"
+                                "value": 73
                             },
                             "example74": {
-                                "value": "73"
+                                "value": 74
                             },
                             "example75": {
-                                "value": "74"
+                                "value": 75
                             },
                             "example76": {
-                                "value": "75"
+                                "value": 76
                             },
                             "example77": {
-                                "value": "76"
+                                "value": 77
                             },
                             "example78": {
-                                "value": "77"
+                                "value": 78
                             },
                             "example79": {
-                                "value": "78"
+                                "value": 79
                             },
                             "example80": {
-                                "value": "79"
+                                "value": 80
                             },
                             "example81": {
-                                "value": "80"
-                            },
-                            "example82": {
-                                "value": "81"
+                                "value": 81
                             }
                         }
                     },
@@ -7523,154 +7498,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "49"
+                                "value": 49
                             }
                         }
                     },
@@ -7680,7 +7655,7 @@
                         "description": "The field(s) by which data will be aggregated",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -7693,7 +7668,7 @@
                         "description": "The field(s) for which aggregations will be counted for each unique term.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -7713,31 +7688,31 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example1": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example2": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example3": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example4": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example5": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example6": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example7": {
-                                "value": "50"
+                                "value": 50
                             },
                             "example8": {
-                                "value": "100"
+                                "value": 100
                             }
                         }
                     },
@@ -7762,7 +7737,7 @@
                         "required": false,
                         "example": false,
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "enum": [
                                 false,
                                 true
@@ -10608,7 +10583,7 @@
                         "description": "Comma delimited list of fields with quarterly financial data to return.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -10638,9 +10613,7 @@
                             "example7": {
                                 "value": "equity"
                             }
-                        },
-                        "style": "form",
-                        "explode": false
+                        }
                     },
                     {
                         "in": "query",
@@ -10690,253 +10663,250 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "10,000"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "0"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "1"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "2"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "3"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "4"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "5"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "6"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "7"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "8"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "9"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "10"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "11"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "12"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "13"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "14"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "15"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "16"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "17"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "18"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "19"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "20"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "21"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "22"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "23"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "24"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "25"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "26"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "27"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "28"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "29"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "30"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "31"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "32"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "33"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "34"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "35"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "36"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "37"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "38"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "39"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "40"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "41"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "42"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "43"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "44"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "45"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "46"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "47"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "48"
+                                "value": 49
                             },
                             "example50": {
-                                "value": "49"
+                                "value": 50
                             },
                             "example51": {
-                                "value": "50"
+                                "value": 51
                             },
                             "example52": {
-                                "value": "51"
+                                "value": 52
                             },
                             "example53": {
-                                "value": "52"
+                                "value": 53
                             },
                             "example54": {
-                                "value": "53"
+                                "value": 54
                             },
                             "example55": {
-                                "value": "54"
+                                "value": 55
                             },
                             "example56": {
-                                "value": "55"
+                                "value": 56
                             },
                             "example57": {
-                                "value": "56"
+                                "value": 57
                             },
                             "example58": {
-                                "value": "57"
+                                "value": 58
                             },
                             "example59": {
-                                "value": "58"
+                                "value": 59
                             },
                             "example60": {
-                                "value": "59"
+                                "value": 60
                             },
                             "example61": {
-                                "value": "60"
+                                "value": 61
                             },
                             "example62": {
-                                "value": "61"
+                                "value": 62
                             },
                             "example63": {
-                                "value": "62"
+                                "value": 63
                             },
                             "example64": {
-                                "value": "63"
+                                "value": 64
                             },
                             "example65": {
-                                "value": "64"
+                                "value": 65
                             },
                             "example66": {
-                                "value": "65"
+                                "value": 66
                             },
                             "example67": {
-                                "value": "66"
+                                "value": 67
                             },
                             "example68": {
-                                "value": "67"
+                                "value": 68
                             },
                             "example69": {
-                                "value": "68"
+                                "value": 69
                             },
                             "example70": {
-                                "value": "69"
+                                "value": 70
                             },
                             "example71": {
-                                "value": "70"
+                                "value": 71
                             },
                             "example72": {
-                                "value": "71"
+                                "value": 72
                             },
                             "example73": {
-                                "value": "72"
+                                "value": 73
                             },
                             "example74": {
-                                "value": "73"
+                                "value": 74
                             },
                             "example75": {
-                                "value": "74"
+                                "value": 75
                             },
                             "example76": {
-                                "value": "75"
+                                "value": 76
                             },
                             "example77": {
-                                "value": "76"
+                                "value": 77
                             },
                             "example78": {
-                                "value": "77"
+                                "value": 78
                             },
                             "example79": {
-                                "value": "78"
+                                "value": 79
                             },
                             "example80": {
-                                "value": "79"
+                                "value": 80
                             },
                             "example81": {
-                                "value": "80"
-                            },
-                            "example82": {
-                                "value": "81"
+                                "value": 81
                             }
                         }
                     },
@@ -10952,154 +10922,154 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "0"
+                                "value": 0
                             },
                             "example1": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example2": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example3": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example4": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example5": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example6": {
-                                "value": "6"
+                                "value": 6
                             },
                             "example7": {
-                                "value": "7"
+                                "value": 7
                             },
                             "example8": {
-                                "value": "8"
+                                "value": 8
                             },
                             "example9": {
-                                "value": "9"
+                                "value": 9
                             },
                             "example10": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example11": {
-                                "value": "11"
+                                "value": 11
                             },
                             "example12": {
-                                "value": "12"
+                                "value": 12
                             },
                             "example13": {
-                                "value": "13"
+                                "value": 13
                             },
                             "example14": {
-                                "value": "14"
+                                "value": 14
                             },
                             "example15": {
-                                "value": "15"
+                                "value": 15
                             },
                             "example16": {
-                                "value": "16"
+                                "value": 16
                             },
                             "example17": {
-                                "value": "17"
+                                "value": 17
                             },
                             "example18": {
-                                "value": "18"
+                                "value": 18
                             },
                             "example19": {
-                                "value": "19"
+                                "value": 19
                             },
                             "example20": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example21": {
-                                "value": "21"
+                                "value": 21
                             },
                             "example22": {
-                                "value": "22"
+                                "value": 22
                             },
                             "example23": {
-                                "value": "23"
+                                "value": 23
                             },
                             "example24": {
-                                "value": "24"
+                                "value": 24
                             },
                             "example25": {
-                                "value": "25"
+                                "value": 25
                             },
                             "example26": {
-                                "value": "26"
+                                "value": 26
                             },
                             "example27": {
-                                "value": "27"
+                                "value": 27
                             },
                             "example28": {
-                                "value": "28"
+                                "value": 28
                             },
                             "example29": {
-                                "value": "29"
+                                "value": 29
                             },
                             "example30": {
-                                "value": "30"
+                                "value": 30
                             },
                             "example31": {
-                                "value": "31"
+                                "value": 31
                             },
                             "example32": {
-                                "value": "32"
+                                "value": 32
                             },
                             "example33": {
-                                "value": "33"
+                                "value": 33
                             },
                             "example34": {
-                                "value": "34"
+                                "value": 34
                             },
                             "example35": {
-                                "value": "35"
+                                "value": 35
                             },
                             "example36": {
-                                "value": "36"
+                                "value": 36
                             },
                             "example37": {
-                                "value": "37"
+                                "value": 37
                             },
                             "example38": {
-                                "value": "38"
+                                "value": 38
                             },
                             "example39": {
-                                "value": "39"
+                                "value": 39
                             },
                             "example40": {
-                                "value": "40"
+                                "value": 40
                             },
                             "example41": {
-                                "value": "41"
+                                "value": 41
                             },
                             "example42": {
-                                "value": "42"
+                                "value": 42
                             },
                             "example43": {
-                                "value": "43"
+                                "value": 43
                             },
                             "example44": {
-                                "value": "44"
+                                "value": 44
                             },
                             "example45": {
-                                "value": "45"
+                                "value": 45
                             },
                             "example46": {
-                                "value": "46"
+                                "value": 46
                             },
                             "example47": {
-                                "value": "47"
+                                "value": 47
                             },
                             "example48": {
-                                "value": "48"
+                                "value": 48
                             },
                             "example49": {
-                                "value": "49"
+                                "value": 49
                             }
                         }
                     },
@@ -11109,7 +11079,7 @@
                         "description": "The field(s) by which data will be aggregated.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -11141,7 +11111,7 @@
                         "description": "The field(s) for which aggregations will be counted for each unique term.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -11154,7 +11124,7 @@
                         "description": "The field(s) for which aggregations will be summed or aggregated.",
                         "required": false,
                         "schema": {
-                            "type": "array",
+                            "type": "string",
                             "items": {
                                 "type": "string"
                             }
@@ -11173,31 +11143,31 @@
                         },
                         "examples": {
                             "example0": {
-                                "value": "1"
+                                "value": 1
                             },
                             "example1": {
-                                "value": "2"
+                                "value": 2
                             },
                             "example2": {
-                                "value": "3"
+                                "value": 3
                             },
                             "example3": {
-                                "value": "4"
+                                "value": 4
                             },
                             "example4": {
-                                "value": "5"
+                                "value": 5
                             },
                             "example5": {
-                                "value": "10"
+                                "value": 10
                             },
                             "example6": {
-                                "value": "20"
+                                "value": 20
                             },
                             "example7": {
-                                "value": "50"
+                                "value": 50
                             },
                             "example8": {
-                                "value": "100"
+                                "value": 100
                             }
                         }
                     },
@@ -11222,7 +11192,7 @@
                         "required": false,
                         "example": false,
                         "schema": {
-                            "type": "boolean",
+                            "type": "string",
                             "enum": [
                                 false,
                                 true

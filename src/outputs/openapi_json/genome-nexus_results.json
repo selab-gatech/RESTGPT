@@ -76,7 +76,7 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object"
+                            "type": "string"
                         },
                         "examples": {
                             "example0": {
@@ -2815,7 +2815,7 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object"
+                            "type": "string"
                         },
                         "examples": {
                             "example0": {
@@ -5608,7 +5608,7 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object"
+                            "type": "string"
                         },
                         "examples": {
                             "example0": {
@@ -8359,7 +8359,7 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object"
+                            "type": "string"
                         },
                         "examples": {
                             "example0": {
@@ -11146,7 +11146,7 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object"
+                            "type": "string"
                         },
                         "examples": {
                             "example0": {
@@ -13911,7 +13911,7 @@
                         "in": "query",
                         "description": "Map of tokens. For example {\"source1\":\"put-your-token1-here\",\"source2\":\"put-your-token2-here\"}",
                         "schema": {
-                            "type": "object"
+                            "type": "string"
                         },
                         "examples": {
                             "example0": {
