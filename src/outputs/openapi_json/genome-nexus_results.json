@@ -146,6 +146,43 @@
                                 "items": {
                                     "type": "string"
                                 }
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "": "X:g.66937331T>A"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "": "17:g.41242962_41242963insGA"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "": "1:g.182712A>C"
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "": "2:g.265023C>T"
+                                    }
+                                },
+                                "example4": {
+                                    "value": {
+                                        "": "3:g.319781del"
+                                    }
+                                },
+                                "example5": {
+                                    "value": {
+                                        "": "19:g.110753dup"
+                                    }
+                                },
+                                "example6": {
+                                    "value": {
+                                        "": "1:g.1385015_1387562del"
+                                    }
+                                }
                             }
                         }
                     },
@@ -2916,6 +2953,63 @@
                                     "type": "string"
                                 },
                                 "minItems": 1
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "": "[\"rs116035550\"]"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "": "[\"rs116035551\""
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "": "\"rs116035552\""
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "": "\"rs116035553\""
+                                    }
+                                },
+                                "example4": {
+                                    "value": {
+                                        "": "\"rs116035554\""
+                                    }
+                                },
+                                "example5": {
+                                    "value": {
+                                        "": "\"rs116035555\""
+                                    }
+                                },
+                                "example6": {
+                                    "value": {
+                                        "": "\"rs116035556\""
+                                    }
+                                },
+                                "example7": {
+                                    "value": {
+                                        "": "\"rs116035557\""
+                                    }
+                                },
+                                "example8": {
+                                    "value": {
+                                        "": "\"rs116035558\""
+                                    }
+                                },
+                                "example9": {
+                                    "value": {
+                                        "": "\"rs116035559\""
+                                    }
+                                },
+                                "example10": {
+                                    "value": {
+                                        "": "\"rs116035560\"]"
+                                    }
+                                }
                             }
                         }
                     },
@@ -8460,7 +8554,8 @@
                                         }
                                     }
                                 }
-                            }
+                            },
+                            "examples": {}
                         }
                     },
                     "required": true
@@ -16614,6 +16709,18 @@
                                     "type": "string"
                                 },
                                 "minItems": 1
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "": "[\"23140\",\"26009\",\"100131879\"]"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "": "[\"12345\",\"67890\",\"98765\"]"
+                                    }
+                                }
                             }
                         }
                     },
@@ -16785,6 +16892,273 @@
                                     "type": "string"
                                 },
                                 "minItems": 1
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "": "TP53"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "": "PIK3CA"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "": "BRCA1"
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "": "EGFR"
+                                    }
+                                },
+                                "example4": {
+                                    "value": {
+                                        "": "KRAS"
+                                    }
+                                },
+                                "example5": {
+                                    "value": {
+                                        "": "PTEN"
+                                    }
+                                },
+                                "example6": {
+                                    "value": {
+                                        "": "AKT1"
+                                    }
+                                },
+                                "example7": {
+                                    "value": {
+                                        "": "CDKN2A"
+                                    }
+                                },
+                                "example8": {
+                                    "value": {
+                                        "": "MAPK1"
+                                    }
+                                },
+                                "example9": {
+                                    "value": {
+                                        "": "NOTCH1"
+                                    }
+                                },
+                                "example10": {
+                                    "value": {
+                                        "": "MET"
+                                    }
+                                },
+                                "example11": {
+                                    "value": {
+                                        "": "JAK2"
+                                    }
+                                },
+                                "example12": {
+                                    "value": {
+                                        "": "ALK"
+                                    }
+                                },
+                                "example13": {
+                                    "value": {
+                                        "": " BRAF"
+                                    }
+                                },
+                                "example14": {
+                                    "value": {
+                                        "": "NRAS"
+                                    }
+                                },
+                                "example15": {
+                                    "value": {
+                                        "": "RET"
+                                    }
+                                },
+                                "example16": {
+                                    "value": {
+                                        "": "ROS1"
+                                    }
+                                },
+                                "example17": {
+                                    "value": {
+                                        "": "ERBB2"
+                                    }
+                                },
+                                "example18": {
+                                    "value": {
+                                        "": "FGFR1"
+                                    }
+                                },
+                                "example19": {
+                                    "value": {
+                                        "": "FGFR2"
+                                    }
+                                },
+                                "example20": {
+                                    "value": {
+                                        "": "FGFR3"
+                                    }
+                                },
+                                "example21": {
+                                    "value": {
+                                        "": "KIT"
+                                    }
+                                },
+                                "example22": {
+                                    "value": {
+                                        "": "PDGFRA"
+                                    }
+                                },
+                                "example23": {
+                                    "value": {
+                                        "": "PDGFRB"
+                                    }
+                                },
+                                "example24": {
+                                    "value": {
+                                        "": "DDR2"
+                                    }
+                                },
+                                "example25": {
+                                    "value": {
+                                        "": "NTRK1"
+                                    }
+                                },
+                                "example26": {
+                                    "value": {
+                                        "": "NTRK2"
+                                    }
+                                },
+                                "example27": {
+                                    "value": {
+                                        "": "NTRK3"
+                                    }
+                                },
+                                "example28": {
+                                    "value": {
+                                        "": " ABL1"
+                                    }
+                                },
+                                "example29": {
+                                    "value": {
+                                        "": "ABL2"
+                                    }
+                                },
+                                "example30": {
+                                    "value": {
+                                        "": "EGFRvIII"
+                                    }
+                                },
+                                "example31": {
+                                    "value": {
+                                        "": "EGFRvIV"
+                                    }
+                                },
+                                "example32": {
+                                    "value": {
+                                        "": "EGFRvV"
+                                    }
+                                },
+                                "example33": {
+                                    "value": {
+                                        "": "EGFRvVI"
+                                    }
+                                },
+                                "example34": {
+                                    "value": {
+                                        "": "EGFRvVII"
+                                    }
+                                },
+                                "example35": {
+                                    "value": {
+                                        "": "EGFRvVIII"
+                                    }
+                                },
+                                "example36": {
+                                    "value": {
+                                        "": "EGFRvIX"
+                                    }
+                                },
+                                "example37": {
+                                    "value": {
+                                        "": "EGFRvX"
+                                    }
+                                },
+                                "example38": {
+                                    "value": {
+                                        "": "EGFRvXI"
+                                    }
+                                },
+                                "example39": {
+                                    "value": {
+                                        "": "EGFRvXII"
+                                    }
+                                },
+                                "example40": {
+                                    "value": {
+                                        "": " EGFRvXIII"
+                                    }
+                                },
+                                "example41": {
+                                    "value": {
+                                        "": "EGFRvXIV"
+                                    }
+                                },
+                                "example42": {
+                                    "value": {
+                                        "": "EGFRvXV"
+                                    }
+                                },
+                                "example43": {
+                                    "value": {
+                                        "": "EGFRvXVI"
+                                    }
+                                },
+                                "example44": {
+                                    "value": {
+                                        "": "EGFRvXVII"
+                                    }
+                                },
+                                "example45": {
+                                    "value": {
+                                        "": "EGFRvXVIII"
+                                    }
+                                },
+                                "example46": {
+                                    "value": {
+                                        "": "EGFRvXIX"
+                                    }
+                                },
+                                "example47": {
+                                    "value": {
+                                        "": "EGFRvXX"
+                                    }
+                                },
+                                "example48": {
+                                    "value": {
+                                        "": "EGFRvXXI"
+                                    }
+                                },
+                                "example49": {
+                                    "value": {
+                                        "": "EGFRvXXII"
+                                    }
+                                },
+                                "example50": {
+                                    "value": {
+                                        "": " EGFRvXXIII"
+                                    }
+                                },
+                                "example51": {
+                                    "value": {
+                                        "": "EGFRvXXIV"
+                                    }
+                                },
+                                "example52": {
+                                    "value": {
+                                        "": "EGFRvXXV"
+                                    }
+                                }
                             }
                         }
                     },
@@ -16991,6 +17365,273 @@
                                     "type": "string"
                                 },
                                 "minItems": 1
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "": "TP53"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "": "PIK3CA"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "": "BRCA1"
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "": "EGFR"
+                                    }
+                                },
+                                "example4": {
+                                    "value": {
+                                        "": "KRAS"
+                                    }
+                                },
+                                "example5": {
+                                    "value": {
+                                        "": "PTEN"
+                                    }
+                                },
+                                "example6": {
+                                    "value": {
+                                        "": "AKT1"
+                                    }
+                                },
+                                "example7": {
+                                    "value": {
+                                        "": "CDKN2A"
+                                    }
+                                },
+                                "example8": {
+                                    "value": {
+                                        "": "MAPK1"
+                                    }
+                                },
+                                "example9": {
+                                    "value": {
+                                        "": "NOTCH1"
+                                    }
+                                },
+                                "example10": {
+                                    "value": {
+                                        "": "MET"
+                                    }
+                                },
+                                "example11": {
+                                    "value": {
+                                        "": "JAK2"
+                                    }
+                                },
+                                "example12": {
+                                    "value": {
+                                        "": "ALK"
+                                    }
+                                },
+                                "example13": {
+                                    "value": {
+                                        "": " BRAF"
+                                    }
+                                },
+                                "example14": {
+                                    "value": {
+                                        "": "NRAS"
+                                    }
+                                },
+                                "example15": {
+                                    "value": {
+                                        "": "RET"
+                                    }
+                                },
+                                "example16": {
+                                    "value": {
+                                        "": "ROS1"
+                                    }
+                                },
+                                "example17": {
+                                    "value": {
+                                        "": "ERBB2"
+                                    }
+                                },
+                                "example18": {
+                                    "value": {
+                                        "": "FGFR1"
+                                    }
+                                },
+                                "example19": {
+                                    "value": {
+                                        "": "FGFR2"
+                                    }
+                                },
+                                "example20": {
+                                    "value": {
+                                        "": "FGFR3"
+                                    }
+                                },
+                                "example21": {
+                                    "value": {
+                                        "": "KIT"
+                                    }
+                                },
+                                "example22": {
+                                    "value": {
+                                        "": "PDGFRA"
+                                    }
+                                },
+                                "example23": {
+                                    "value": {
+                                        "": "PDGFRB"
+                                    }
+                                },
+                                "example24": {
+                                    "value": {
+                                        "": "DDR2"
+                                    }
+                                },
+                                "example25": {
+                                    "value": {
+                                        "": "NTRK1"
+                                    }
+                                },
+                                "example26": {
+                                    "value": {
+                                        "": "NTRK2"
+                                    }
+                                },
+                                "example27": {
+                                    "value": {
+                                        "": "NTRK3"
+                                    }
+                                },
+                                "example28": {
+                                    "value": {
+                                        "": " ABL1"
+                                    }
+                                },
+                                "example29": {
+                                    "value": {
+                                        "": "ABL2"
+                                    }
+                                },
+                                "example30": {
+                                    "value": {
+                                        "": "EGFRvIII"
+                                    }
+                                },
+                                "example31": {
+                                    "value": {
+                                        "": "EGFRvIV"
+                                    }
+                                },
+                                "example32": {
+                                    "value": {
+                                        "": "EGFRvV"
+                                    }
+                                },
+                                "example33": {
+                                    "value": {
+                                        "": "EGFRvVI"
+                                    }
+                                },
+                                "example34": {
+                                    "value": {
+                                        "": "EGFRvVII"
+                                    }
+                                },
+                                "example35": {
+                                    "value": {
+                                        "": "EGFRvVIII"
+                                    }
+                                },
+                                "example36": {
+                                    "value": {
+                                        "": "EGFRvIX"
+                                    }
+                                },
+                                "example37": {
+                                    "value": {
+                                        "": "EGFRvX"
+                                    }
+                                },
+                                "example38": {
+                                    "value": {
+                                        "": "EGFRvXI"
+                                    }
+                                },
+                                "example39": {
+                                    "value": {
+                                        "": "EGFRvXII"
+                                    }
+                                },
+                                "example40": {
+                                    "value": {
+                                        "": " EGFRvXIII"
+                                    }
+                                },
+                                "example41": {
+                                    "value": {
+                                        "": "EGFRvXIV"
+                                    }
+                                },
+                                "example42": {
+                                    "value": {
+                                        "": "EGFRvXV"
+                                    }
+                                },
+                                "example43": {
+                                    "value": {
+                                        "": "EGFRvXVI"
+                                    }
+                                },
+                                "example44": {
+                                    "value": {
+                                        "": "EGFRvXVII"
+                                    }
+                                },
+                                "example45": {
+                                    "value": {
+                                        "": "EGFRvXVIII"
+                                    }
+                                },
+                                "example46": {
+                                    "value": {
+                                        "": "EGFRvXIX"
+                                    }
+                                },
+                                "example47": {
+                                    "value": {
+                                        "": "EGFRvXX"
+                                    }
+                                },
+                                "example48": {
+                                    "value": {
+                                        "": "EGFRvXXI"
+                                    }
+                                },
+                                "example49": {
+                                    "value": {
+                                        "": "EGFRvXXII"
+                                    }
+                                },
+                                "example50": {
+                                    "value": {
+                                        "": " EGFRvXXIII"
+                                    }
+                                },
+                                "example51": {
+                                    "value": {
+                                        "": "EGFRvXXIV"
+                                    }
+                                },
+                                "example52": {
+                                    "value": {
+                                        "": "EGFRvXXV"
+                                    }
+                                }
                             }
                         }
                     },
@@ -17769,6 +18410,315 @@
                                         "minItems": 1
                                     }
                                 }
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "geneIds": "ENSG00000136999",
+                                        "hugoSymbols": "TP53",
+                                        "proteinIds": "ENSP00000439985",
+                                        "transcriptIds": "ENST00000361390"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "geneIds": "ENSG00000272398",
+                                        "hugoSymbols": "PIK3CA",
+                                        "proteinIds": "ENSP00000478460",
+                                        "transcriptIds": "ENST00000361453"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "geneIds": "ENSG00000198695",
+                                        "hugoSymbols": "BRCA1",
+                                        "proteinIds": "ENSP00000346196",
+                                        "transcriptIds": "ENST00000361624"
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "geneIds": "ENSG00000123456",
+                                        "hugoSymbols": "EGFR",
+                                        "proteinIds": "ENSP00000123456",
+                                        "transcriptIds": "ENST00000361391"
+                                    }
+                                },
+                                "example4": {
+                                    "value": {
+                                        "geneIds": "ENSG00000234567",
+                                        "hugoSymbols": "KRAS",
+                                        "proteinIds": "ENSP00000234567",
+                                        "transcriptIds": "ENST00000361454"
+                                    }
+                                },
+                                "example5": {
+                                    "value": {
+                                        "geneIds": "ENSG00000345678",
+                                        "hugoSymbols": "PTEN",
+                                        "proteinIds": "ENSP00000345678",
+                                        "transcriptIds": "ENST00000361625"
+                                    }
+                                },
+                                "example6": {
+                                    "value": {
+                                        "geneIds": "ENSG00000456789",
+                                        "hugoSymbols": "AKT1",
+                                        "proteinIds": "ENSP00000456789",
+                                        "transcriptIds": "ENST00000361392"
+                                    }
+                                },
+                                "example7": {
+                                    "value": {
+                                        "geneIds": "ENSG00000567890",
+                                        "hugoSymbols": "CDKN2A",
+                                        "proteinIds": "ENSP00000567890",
+                                        "transcriptIds": "ENST00000361455"
+                                    }
+                                },
+                                "example8": {
+                                    "value": {
+                                        "hugoSymbols": "MET",
+                                        "proteinIds": "ENSP00000678901",
+                                        "transcriptIds": "ENST00000361626"
+                                    }
+                                },
+                                "example9": {
+                                    "value": {
+                                        "hugoSymbols": "HER2",
+                                        "proteinIds": "ENSP00000789012",
+                                        "transcriptIds": "ENST00000361393"
+                                    }
+                                },
+                                "example10": {
+                                    "value": {
+                                        "hugoSymbols": "ALK",
+                                        "proteinIds": "ENSP00000890123",
+                                        "transcriptIds": "ENST00000361456"
+                                    }
+                                },
+                                "example11": {
+                                    "value": {
+                                        "hugoSymbols": "RET",
+                                        "proteinIds": "ENSP00000901234",
+                                        "transcriptIds": "ENST00000361627"
+                                    }
+                                },
+                                "example12": {
+                                    "value": {
+                                        "hugoSymbols": "ROS1",
+                                        "proteinIds": "ENSP00001012345",
+                                        "transcriptIds": "ENST00000361394"
+                                    }
+                                },
+                                "example13": {
+                                    "value": {
+                                        "hugoSymbols": "BRAF",
+                                        "transcriptIds": "ENST00000361457"
+                                    }
+                                },
+                                "example14": {
+                                    "value": {
+                                        "hugoSymbols": "FGFR1",
+                                        "transcriptIds": "ENST00000361628"
+                                    }
+                                },
+                                "example15": {
+                                    "value": {
+                                        "hugoSymbols": "ERBB2",
+                                        "transcriptIds": "ENST00000361395"
+                                    }
+                                },
+                                "example16": {
+                                    "value": {
+                                        "hugoSymbols": "NRAS",
+                                        "transcriptIds": "ENST00000361458"
+                                    }
+                                },
+                                "example17": {
+                                    "value": {
+                                        "hugoSymbols": "MAP2K1",
+                                        "transcriptIds": "ENST00000361629"
+                                    }
+                                },
+                                "example18": {
+                                    "value": {
+                                        "hugoSymbols": " PIK3R1",
+                                        "transcriptIds": "ENST00000361396"
+                                    }
+                                },
+                                "example19": {
+                                    "value": {
+                                        "hugoSymbols": "NOTCH1",
+                                        "transcriptIds": "ENST00000361459"
+                                    }
+                                },
+                                "example20": {
+                                    "value": {
+                                        "hugoSymbols": "JAK2",
+                                        "transcriptIds": "ENST00000361630"
+                                    }
+                                },
+                                "example21": {
+                                    "value": {
+                                        "hugoSymbols": "SMAD4",
+                                        "transcriptIds": "ENST00000361397"
+                                    }
+                                },
+                                "example22": {
+                                    "value": {
+                                        "hugoSymbols": "IDH1",
+                                        "transcriptIds": "ENST00000361460"
+                                    }
+                                },
+                                "example23": {
+                                    "value": {
+                                        "hugoSymbols": "KIT",
+                                        "transcriptIds": "ENST00000361631"
+                                    }
+                                },
+                                "example24": {
+                                    "value": {
+                                        "hugoSymbols": "PDGFRA",
+                                        "transcriptIds": "ENST00000361398"
+                                    }
+                                },
+                                "example25": {
+                                    "value": {
+                                        "hugoSymbols": "EGFRvIII",
+                                        "transcriptIds": "ENST00000361461"
+                                    }
+                                },
+                                "example26": {
+                                    "value": {
+                                        "hugoSymbols": "NTRK1",
+                                        "transcriptIds": "ENST00000361632"
+                                    }
+                                },
+                                "example27": {
+                                    "value": {
+                                        "hugoSymbols": "DDR2",
+                                        "transcriptIds": "ENST00000361399"
+                                    }
+                                },
+                                "example28": {
+                                    "value": {
+                                        "hugoSymbols": "FGFR2",
+                                        "transcriptIds": "ENST00000361462"
+                                    }
+                                },
+                                "example29": {
+                                    "value": {
+                                        "hugoSymbols": "FGFR3",
+                                        "transcriptIds": "ENST00000361633"
+                                    }
+                                },
+                                "example30": {
+                                    "value": {
+                                        "hugoSymbols": "FGFR4",
+                                        "transcriptIds": "ENST00000361400"
+                                    }
+                                },
+                                "example31": {
+                                    "value": {
+                                        "hugoSymbols": "ERBB4",
+                                        "transcriptIds": "ENST00000361463"
+                                    }
+                                },
+                                "example32": {
+                                    "value": {
+                                        "hugoSymbols": "ERBB3",
+                                        "transcriptIds": "ENST00000361634"
+                                    }
+                                },
+                                "example33": {
+                                    "value": {
+                                        "hugoSymbols": "ERBB1",
+                                        "transcriptIds": "ENST00000361401"
+                                    }
+                                },
+                                "example34": {
+                                    "value": {
+                                        "hugoSymbols": " ALK-EML4",
+                                        "transcriptIds": "ENST00000361464"
+                                    }
+                                },
+                                "example35": {
+                                    "value": {
+                                        "hugoSymbols": "EML4-ALK",
+                                        "transcriptIds": "ENST000003616"
+                                    }
+                                },
+                                "example36": {
+                                    "value": {
+                                        "hugoSymbols": "ROS1-CD74"
+                                    }
+                                },
+                                "example37": {
+                                    "value": {
+                                        "hugoSymbols": "CD74-ROS1"
+                                    }
+                                },
+                                "example38": {
+                                    "value": {
+                                        "hugoSymbols": "NPM1-ALK"
+                                    }
+                                },
+                                "example39": {
+                                    "value": {
+                                        "hugoSymbols": "ALK-NPM1"
+                                    }
+                                },
+                                "example40": {
+                                    "value": {
+                                        "hugoSymbols": "TPM3-ALK"
+                                    }
+                                },
+                                "example41": {
+                                    "value": {
+                                        "hugoSymbols": "ALK-TPM3"
+                                    }
+                                },
+                                "example42": {
+                                    "value": {
+                                        "hugoSymbols": "TFG-ALK"
+                                    }
+                                },
+                                "example43": {
+                                    "value": {
+                                        "hugoSymbols": "ALK-TFG"
+                                    }
+                                },
+                                "example44": {
+                                    "value": {
+                                        "hugoSymbols": "KIF5B-ALK"
+                                    }
+                                },
+                                "example45": {
+                                    "value": {
+                                        "hugoSymbols": "ALK-KIF5B"
+                                    }
+                                },
+                                "example46": {
+                                    "value": {
+                                        "hugoSymbols": " TFG-ROS1"
+                                    }
+                                },
+                                "example47": {
+                                    "value": {
+                                        "hugoSymbols": "ROS1-TFG"
+                                    }
+                                },
+                                "example48": {
+                                    "value": {
+                                        "hugoSymbols": "SLC34A2-ROS1"
+                                    }
+                                },
+                                "example49": {
+                                    "value": {
+                                        "hugoSymbols": "ROS1-SLC34A2"
+                                    }
+                                }
                             }
                         }
                     },
@@ -18376,6 +19326,18 @@
                                     "type": "string"
                                 },
                                 "minItems": 1
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "": "[\"1a37\",\"1a4o\"]"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "": "[\"1a38\",\"1a4p\",\"1a4q\",\"1a4r\",\"1a4s\",\"1a4t\",\"1a4u\",\"1a4v\",\"1a4w\",\"1a4x\",\"1a4y\",\"1a4z\",\"1a50\",\"1a51\",\"1a52\",\"1a53\",\"1a54\",\"1a55\",\"1a56\",\"1a57\",\"1a58\",\"1a59\",\"1a5a\",\"1a5b\",\"1a5c\",\"1a5d\",\"1a5e\",\"1a5f\",\"1a5g\",\"1a5h\",\"1a5i\",\"1a5j\",\"1a5k\",\"1a5l\",\"1a5m\",\"1a5n\",\"1a5o\",\"1a5p\",\"1a5q\",\"1a5r\",\"1a5s\",\"1a5t\",\"1a5u\",\"1a5v\",\"1a5w\",\"1a5x\",\"1a5y\",\"1a5z\"]"
+                                    }
+                                }
                             }
                         }
                     },
@@ -18646,6 +19608,323 @@
                                     "type": "string"
                                 },
                                 "minItems": 1
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "": "PF02827"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "": "PF00093"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "": "PF15276"
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "": "PF00001"
+                                    }
+                                },
+                                "example4": {
+                                    "value": {
+                                        "": "PF00002"
+                                    }
+                                },
+                                "example5": {
+                                    "value": {
+                                        "": "PF00003"
+                                    }
+                                },
+                                "example6": {
+                                    "value": {
+                                        "": "PF00004"
+                                    }
+                                },
+                                "example7": {
+                                    "value": {
+                                        "": "PF00005"
+                                    }
+                                },
+                                "example8": {
+                                    "value": {
+                                        "": "PF00006"
+                                    }
+                                },
+                                "example9": {
+                                    "value": {
+                                        "": "PF00007"
+                                    }
+                                },
+                                "example10": {
+                                    "value": {
+                                        "": "PF00008"
+                                    }
+                                },
+                                "example11": {
+                                    "value": {
+                                        "": "PF00009"
+                                    }
+                                },
+                                "example12": {
+                                    "value": {
+                                        "": "PF00010"
+                                    }
+                                },
+                                "example13": {
+                                    "value": {
+                                        "": "PF00011"
+                                    }
+                                },
+                                "example14": {
+                                    "value": {
+                                        "": "PF00012"
+                                    }
+                                },
+                                "example15": {
+                                    "value": {
+                                        "": "PF00013"
+                                    }
+                                },
+                                "example16": {
+                                    "value": {
+                                        "": "PF00014"
+                                    }
+                                },
+                                "example17": {
+                                    "value": {
+                                        "": "PF00015"
+                                    }
+                                },
+                                "example18": {
+                                    "value": {
+                                        "": "PF00016"
+                                    }
+                                },
+                                "example19": {
+                                    "value": {
+                                        "": "PF00017"
+                                    }
+                                },
+                                "example20": {
+                                    "value": {
+                                        "": "PF00018"
+                                    }
+                                },
+                                "example21": {
+                                    "value": {
+                                        "": "PF00019"
+                                    }
+                                },
+                                "example22": {
+                                    "value": {
+                                        "": "PF00020"
+                                    }
+                                },
+                                "example23": {
+                                    "value": {
+                                        "": "PF00021"
+                                    }
+                                },
+                                "example24": {
+                                    "value": {
+                                        "": "PF00022"
+                                    }
+                                },
+                                "example25": {
+                                    "value": {
+                                        "": "PF00023"
+                                    }
+                                },
+                                "example26": {
+                                    "value": {
+                                        "": "PF00024"
+                                    }
+                                },
+                                "example27": {
+                                    "value": {
+                                        "": "PF00025"
+                                    }
+                                },
+                                "example28": {
+                                    "value": {
+                                        "": "PF00026"
+                                    }
+                                },
+                                "example29": {
+                                    "value": {
+                                        "": "PF00027"
+                                    }
+                                },
+                                "example30": {
+                                    "value": {
+                                        "": "PF00028"
+                                    }
+                                },
+                                "example31": {
+                                    "value": {
+                                        "": "PF00029"
+                                    }
+                                },
+                                "example32": {
+                                    "value": {
+                                        "": "PF00030"
+                                    }
+                                },
+                                "example33": {
+                                    "value": {
+                                        "": "PF00031"
+                                    }
+                                },
+                                "example34": {
+                                    "value": {
+                                        "": "PF00032"
+                                    }
+                                },
+                                "example35": {
+                                    "value": {
+                                        "": "PF00033"
+                                    }
+                                },
+                                "example36": {
+                                    "value": {
+                                        "": "PF00034"
+                                    }
+                                },
+                                "example37": {
+                                    "value": {
+                                        "": "PF00035"
+                                    }
+                                },
+                                "example38": {
+                                    "value": {
+                                        "": "PF00036"
+                                    }
+                                },
+                                "example39": {
+                                    "value": {
+                                        "": "PF00037"
+                                    }
+                                },
+                                "example40": {
+                                    "value": {
+                                        "": "PF00038"
+                                    }
+                                },
+                                "example41": {
+                                    "value": {
+                                        "": "PF00039"
+                                    }
+                                },
+                                "example42": {
+                                    "value": {
+                                        "": "PF00040"
+                                    }
+                                },
+                                "example43": {
+                                    "value": {
+                                        "": "PF00041"
+                                    }
+                                },
+                                "example44": {
+                                    "value": {
+                                        "": "PF00042"
+                                    }
+                                },
+                                "example45": {
+                                    "value": {
+                                        "": "PF00043"
+                                    }
+                                },
+                                "example46": {
+                                    "value": {
+                                        "": "PF00044"
+                                    }
+                                },
+                                "example47": {
+                                    "value": {
+                                        "": "PF00045"
+                                    }
+                                },
+                                "example48": {
+                                    "value": {
+                                        "": "PF00046"
+                                    }
+                                },
+                                "example49": {
+                                    "value": {
+                                        "": "PF00047"
+                                    }
+                                },
+                                "example50": {
+                                    "value": {
+                                        "": "PF00048"
+                                    }
+                                },
+                                "example51": {
+                                    "value": {
+                                        "": "PF00049"
+                                    }
+                                },
+                                "example52": {
+                                    "value": {
+                                        "": "PF00050"
+                                    }
+                                },
+                                "example53": {
+                                    "value": {
+                                        "": "PF00051"
+                                    }
+                                },
+                                "example54": {
+                                    "value": {
+                                        "": "PF00052"
+                                    }
+                                },
+                                "example55": {
+                                    "value": {
+                                        "": "PF00053"
+                                    }
+                                },
+                                "example56": {
+                                    "value": {
+                                        "": "PF00054"
+                                    }
+                                },
+                                "example57": {
+                                    "value": {
+                                        "": "PF00055"
+                                    }
+                                },
+                                "example58": {
+                                    "value": {
+                                        "": "PF00056"
+                                    }
+                                },
+                                "example59": {
+                                    "value": {
+                                        "": "PF00057"
+                                    }
+                                },
+                                "example60": {
+                                    "value": {
+                                        "": "PF00058"
+                                    }
+                                },
+                                "example61": {
+                                    "value": {
+                                        "": "PF00059"
+                                    }
+                                },
+                                "example62": {
+                                    "value": {
+                                        "": "PF000"
+                                    }
+                                }
                             }
                         }
                     },
@@ -18997,6 +20276,188 @@
                                             "type": "string"
                                         },
                                         "minItems": 1
+                                    }
+                                }
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361390"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361453"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361624"
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361391"
+                                    }
+                                },
+                                "example4": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361454"
+                                    }
+                                },
+                                "example5": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361625"
+                                    }
+                                },
+                                "example6": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361392"
+                                    }
+                                },
+                                "example7": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361455"
+                                    }
+                                },
+                                "example8": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361626"
+                                    }
+                                },
+                                "example9": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361393"
+                                    }
+                                },
+                                "example10": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361456"
+                                    }
+                                },
+                                "example11": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361627"
+                                    }
+                                },
+                                "example12": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361394"
+                                    }
+                                },
+                                "example13": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361457"
+                                    }
+                                },
+                                "example14": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361628"
+                                    }
+                                },
+                                "example15": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361395"
+                                    }
+                                },
+                                "example16": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361458"
+                                    }
+                                },
+                                "example17": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361629"
+                                    }
+                                },
+                                "example18": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361396"
+                                    }
+                                },
+                                "example19": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361459"
+                                    }
+                                },
+                                "example20": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361630"
+                                    }
+                                },
+                                "example21": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361397"
+                                    }
+                                },
+                                "example22": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361460"
+                                    }
+                                },
+                                "example23": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361631"
+                                    }
+                                },
+                                "example24": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361398"
+                                    }
+                                },
+                                "example25": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361461"
+                                    }
+                                },
+                                "example26": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361632"
+                                    }
+                                },
+                                "example27": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361399"
+                                    }
+                                },
+                                "example28": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361462"
+                                    }
+                                },
+                                "example29": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361633"
+                                    }
+                                },
+                                "example30": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361400"
+                                    }
+                                },
+                                "example31": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361463"
+                                    }
+                                },
+                                "example32": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361634"
+                                    }
+                                },
+                                "example33": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361401"
+                                    }
+                                },
+                                "example34": {
+                                    "value": {
+                                        "transcriptIds": "ENST00000361464"
+                                    }
+                                },
+                                "example35": {
+                                    "value": {
+                                        "transcriptIds": "ENST000003616"
                                     }
                                 }
                             }

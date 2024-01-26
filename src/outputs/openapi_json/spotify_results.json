@@ -2483,6 +2483,44 @@
                                     }
                                 },
                                 "type": "object"
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "collaborative": "true",
+                                        "name": "\"My New Playlist Title\"",
+                                        "public": "true"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "collaborative": "false",
+                                        "name": "\"My Playlist\"",
+                                        "public": "false"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "name": "\"New Hits\"",
+                                        "public": "true"
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "name": "\"Favorite Jams\"",
+                                        "public": "false"
+                                    }
+                                },
+                                "example4": {
+                                    "value": {
+                                        "name": "\"Ultimate Playlist\""
+                                    }
+                                },
+                                "example5": {
+                                    "value": {
+                                        "name": "\"Top Tracks\""
+                                    }
+                                }
                             }
                         }
                     },
@@ -2680,6 +2718,28 @@
                                     "tracks"
                                 ],
                                 "type": "object"
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "tracks": "{ \"tracks\": [{ \"uri\": \"spotify:track:4iV5W9uYEdYUVa79Axb7Rh\" },{ \"uri\": \"spotify:track:1301WleyT98MSxVHPZCA6M\" }] }"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "tracks": "{ \"tracks\": [{ \"uri\": \"spotify:track:1Bc1f2XvXf6Ej3F6f9lk7R\" },{ \"uri\": \"spotify:track:2CdH8Xs3GF2jxRk8UOg5y3\" }] }"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "tracks": "{ \"tracks\": [{ \"uri\": \"spotify:track:3DcBtXx9z4X0Wv3vZD3q8x\" },{ \"uri\": \"spotify:track:4DcBtXx9z4X0Wv3vZD3q8x\" }] }"
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "tracks": "{ \"tracks\": [{ \"uri\": \"spotify:track:5DcBtXx9z4X0Wv3vZD3q8x\" },{ \"uri\": \"spotify:track:6DcBtXx9z4"
+                                    }
+                                }
                             }
                         }
                     },
@@ -4497,6 +4557,316 @@
                                     }
                                 },
                                 "type": "object"
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "insert_before": "0",
+                                        "range_length": "range_start=9",
+                                        "range_start": "0"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "insert_before": "10",
+                                        "range_length": "range_length=2",
+                                        "range_start": "1"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "insert_before": "1",
+                                        "range_length": "range_start=0",
+                                        "range_start": "2"
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "insert_before": "2",
+                                        "range_length": "range_length=1",
+                                        "range_start": "3"
+                                    }
+                                },
+                                "example4": {
+                                    "value": {
+                                        "insert_before": "3",
+                                        "range_length": "range_start=5",
+                                        "range_start": "4"
+                                    }
+                                },
+                                "example5": {
+                                    "value": {
+                                        "insert_before": "4",
+                                        "range_length": "range_length=3",
+                                        "range_start": "5"
+                                    }
+                                },
+                                "example6": {
+                                    "value": {
+                                        "insert_before": "5",
+                                        "range_length": "range_start=15",
+                                        "range_start": "6"
+                                    }
+                                },
+                                "example7": {
+                                    "value": {
+                                        "insert_before": "6",
+                                        "range_length": "range_length=4",
+                                        "range_start": "7"
+                                    }
+                                },
+                                "example8": {
+                                    "value": {
+                                        "insert_before": "7",
+                                        "range_start": "8"
+                                    }
+                                },
+                                "example9": {
+                                    "value": {
+                                        "insert_before": "8",
+                                        "range_start": "9"
+                                    }
+                                },
+                                "example10": {
+                                    "value": {
+                                        "insert_before": "9",
+                                        "range_start": "10"
+                                    }
+                                },
+                                "example11": {
+                                    "value": {
+                                        "insert_before": "11",
+                                        "range_start": "11"
+                                    }
+                                },
+                                "example12": {
+                                    "value": {
+                                        "insert_before": "12",
+                                        "range_start": "12"
+                                    }
+                                },
+                                "example13": {
+                                    "value": {
+                                        "insert_before": "13",
+                                        "range_start": "13"
+                                    }
+                                },
+                                "example14": {
+                                    "value": {
+                                        "insert_before": "14",
+                                        "range_start": "14"
+                                    }
+                                },
+                                "example15": {
+                                    "value": {
+                                        "insert_before": "15",
+                                        "range_start": "15"
+                                    }
+                                },
+                                "example16": {
+                                    "value": {
+                                        "insert_before": "16",
+                                        "range_start": "16"
+                                    }
+                                },
+                                "example17": {
+                                    "value": {
+                                        "insert_before": "17",
+                                        "range_start": "17"
+                                    }
+                                },
+                                "example18": {
+                                    "value": {
+                                        "insert_before": "18",
+                                        "range_start": "18"
+                                    }
+                                },
+                                "example19": {
+                                    "value": {
+                                        "insert_before": "19",
+                                        "range_start": "19"
+                                    }
+                                },
+                                "example20": {
+                                    "value": {
+                                        "insert_before": "20",
+                                        "range_start": "20"
+                                    }
+                                },
+                                "example21": {
+                                    "value": {
+                                        "insert_before": "21",
+                                        "range_start": "21"
+                                    }
+                                },
+                                "example22": {
+                                    "value": {
+                                        "insert_before": "22",
+                                        "range_start": "22"
+                                    }
+                                },
+                                "example23": {
+                                    "value": {
+                                        "insert_before": "23",
+                                        "range_start": "23"
+                                    }
+                                },
+                                "example24": {
+                                    "value": {
+                                        "insert_before": "24",
+                                        "range_start": "24"
+                                    }
+                                },
+                                "example25": {
+                                    "value": {
+                                        "insert_before": "25",
+                                        "range_start": "25"
+                                    }
+                                },
+                                "example26": {
+                                    "value": {
+                                        "insert_before": "26",
+                                        "range_start": "26"
+                                    }
+                                },
+                                "example27": {
+                                    "value": {
+                                        "insert_before": "27",
+                                        "range_start": "27"
+                                    }
+                                },
+                                "example28": {
+                                    "value": {
+                                        "insert_before": "28",
+                                        "range_start": "28"
+                                    }
+                                },
+                                "example29": {
+                                    "value": {
+                                        "insert_before": "29",
+                                        "range_start": "29"
+                                    }
+                                },
+                                "example30": {
+                                    "value": {
+                                        "insert_before": "30",
+                                        "range_start": "30"
+                                    }
+                                },
+                                "example31": {
+                                    "value": {
+                                        "insert_before": "31",
+                                        "range_start": "31"
+                                    }
+                                },
+                                "example32": {
+                                    "value": {
+                                        "insert_before": "32",
+                                        "range_start": "32"
+                                    }
+                                },
+                                "example33": {
+                                    "value": {
+                                        "insert_before": "33",
+                                        "range_start": "33"
+                                    }
+                                },
+                                "example34": {
+                                    "value": {
+                                        "insert_before": "34",
+                                        "range_start": "34"
+                                    }
+                                },
+                                "example35": {
+                                    "value": {
+                                        "insert_before": "35",
+                                        "range_start": "35"
+                                    }
+                                },
+                                "example36": {
+                                    "value": {
+                                        "insert_before": "36",
+                                        "range_start": "36"
+                                    }
+                                },
+                                "example37": {
+                                    "value": {
+                                        "insert_before": "37",
+                                        "range_start": "37"
+                                    }
+                                },
+                                "example38": {
+                                    "value": {
+                                        "insert_before": "38",
+                                        "range_start": "38"
+                                    }
+                                },
+                                "example39": {
+                                    "value": {
+                                        "insert_before": "39",
+                                        "range_start": "39"
+                                    }
+                                },
+                                "example40": {
+                                    "value": {
+                                        "insert_before": "40",
+                                        "range_start": "40"
+                                    }
+                                },
+                                "example41": {
+                                    "value": {
+                                        "insert_before": "41",
+                                        "range_start": "41"
+                                    }
+                                },
+                                "example42": {
+                                    "value": {
+                                        "insert_before": "42",
+                                        "range_start": "42"
+                                    }
+                                },
+                                "example43": {
+                                    "value": {
+                                        "insert_before": "43",
+                                        "range_start": "43"
+                                    }
+                                },
+                                "example44": {
+                                    "value": {
+                                        "insert_before": "44",
+                                        "range_start": "44"
+                                    }
+                                },
+                                "example45": {
+                                    "value": {
+                                        "insert_before": "45",
+                                        "range_start": "45"
+                                    }
+                                },
+                                "example46": {
+                                    "value": {
+                                        "insert_before": "46",
+                                        "range_start": "46"
+                                    }
+                                },
+                                "example47": {
+                                    "value": {
+                                        "insert_before": "47",
+                                        "range_start": "47"
+                                    }
+                                },
+                                "example48": {
+                                    "value": {
+                                        "insert_before": "48",
+                                        "range_start": "48"
+                                    }
+                                },
+                                "example49": {
+                                    "value": {
+                                        "insert_before": "49",
+                                        "range_start": "49"
+                                    }
+                                }
                             }
                         }
                     },
@@ -7226,6 +7596,32 @@
                                     "IF collaborative==true THEN OnlyOne(public==false AND (playlist-modify-private OR playlist-modify-public));",
                                     "REQUIRED: public"
                                 ]
+                            },
+                            "examples": {
+                                "example0": {
+                                    "value": {
+                                        "collaborative": "false",
+                                        "name": "\"Your Coolest Playlist\"",
+                                        "public": "true"
+                                    }
+                                },
+                                "example1": {
+                                    "value": {
+                                        "collaborative": "true",
+                                        "name": "\"My Awesome Playlist\"",
+                                        "public": "false"
+                                    }
+                                },
+                                "example2": {
+                                    "value": {
+                                        "name": "\"Best Playlist Ever\""
+                                    }
+                                },
+                                "example3": {
+                                    "value": {
+                                        "name": "\"Top Hits Playlist\""
+                                    }
+                                }
                             }
                         }
                     },

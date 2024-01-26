@@ -465,7 +465,10 @@ class SpecificationBuilder:
 
         return query_objects
 
-    def cast_example(self, example, param_type):
+    def process_cast_example(self, example, param_type):
+        if param_type is None:
+            example.strip("\"")
+            return example
         if param_type["is_int"]:
             try:
                 return int(example)
@@ -484,24 +487,60 @@ class SpecificationBuilder:
         else:
             return example
 
+    def process_report_examples(self, value, param_type=None):
+        examples = []
+        for example in value["provided"]:
+            if example != "None":
+                casted_example = self.process_cast_example(example, param_type)
+                examples.append(casted_example) if casted_example is not None else None
+        for example in value["generated"]:
+            if example != "None":
+                casted_example = self.process_cast_example(example, param_type)
+                examples.append(casted_example) if casted_example is not None else None
+        return examples
+
+    def determine_max_number_examples(self, examples):
+        max_val = 0
+        for example_object in examples:
+            example = example_object["examples"]
+            if len(example) > max_val:
+                max_val = len(example)
+        return max_val
+
     def add_request_body_examples(self, constraint_list):
         example_constraints = {}
         for constraint in constraint_list:
-            for restriction in constraint["restrictions"]:
-                if restriction["restriction_name"] == "examples":
-                    id = f"{constraint['path']}, {constraint['method']}"
-                    if id in example_constraints:
-                        example_constraints[id].append(constraint)
-                    else:
-                        example_constraints[id] = [constraint]
+            if constraint["request_body"]:
+                for restriction in constraint["restrictions"]:
+                    if restriction["restriction_name"] == "examples":
+                        id = f"{constraint['path']}, {constraint['method']}"
+                        if id in example_constraints:
+                            example_constraints[id].append({"name": constraint["parameter"], "examples": self.process_report_examples(restriction["restriction_value"])})
+                        else:
+                            example_constraints[id] = [{"name": constraint["parameter"], "examples": self.process_report_examples(restriction["restriction_value"])}]
 
         for id, examples in example_constraints.items():
             path, method = id.split(", ")
-            print(self.output_builder['paths'][path][method])
-            print(f"{path} {method}")
+            #print(self.output_builder['paths'][path][method])
+            #print(f"{path} {method}")
             for application, schema in self.output_builder['paths'][path][method]["requestBody"]["content"].items():
                 if application != 'description':
-                    property_level = schema['schema']
+                    #property_level = schema['schema']
+                    max_examples = self.determine_max_number_examples(examples)
+                    example_collection = [[] for _ in range(max_examples)]
+                    for example_object in examples:
+                        # examples here refers to the array of objects with "name" and "examples"
+                        for i in range(len(example_object["examples"])):
+                            example_collection[i].append({"name": example_object["name"], "example": example_object["examples"][i]})
+                    # now we should have example_collection with the examples at each index required to add
+                    schema.setdefault("examples", {})
+                    for i in range(len(example_collection)):
+                        # parse through {name, example} objects
+                        example_properties = {}
+                        for specific_examples in example_collection[i]:
+                            example_properties[specific_examples["name"]] = specific_examples["example"]
+                        schema["examples"][f"example{i}"] = {"value": example_properties}
+
                     # property_level stores as object
                     # some request bodies don't have "properties" and only have one parameter
                     #print(schema)
@@ -582,15 +621,7 @@ class SpecificationBuilder:
                             elif parameter["schema"]["type"] == "boolean":
                                 param_type["is_bool"] = True
 
-                    examples = []
-                    for example in value["provided"]:
-                        if example != "None":
-                            casted_example = self.cast_example(example, param_type)
-                            examples.append(casted_example) if casted_example is not None else None
-                    for example in value["generated"]:
-                        if example != "None":
-                            casted_example = self.cast_example(example, param_type)
-                            examples.append(casted_example) if casted_example is not None else None
+                    examples = self.process_report_examples(value, param_type)
 
                     for parameter in parameter_level['parameters']:
                         if parameter["name"] == constraint["parameter"]:
@@ -644,7 +675,7 @@ class SpecificationBuilder:
                             parameter_properties = property_level['properties'][constraint["parameter"]]
                             self.add_properties_with_report(constraint, parameter_properties, property_level, True)
 
-                # self.add_request_body_examples(constraint_list) # WIP
+                self.add_request_body_examples(constraint_list) # WIP
 
     def add_parameter_description(self, constraint_list):
         # will add to constraint list after finding description from original doc
