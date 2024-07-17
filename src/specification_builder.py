@@ -1,13 +1,13 @@
-from llm import run_llm_chain
+from src.llm import run_llm_chain
 from prance import ResolvingParser, BaseParser
-from parsers.parameter_constraint_parser import ParameterConstraintParser
-from parsers.example_parser import ExampleParser
-from parsers.parameter_format_parser import ParameterFormatParser
-from parsers.specification_parser import parse_parameters
-from parsers.ipd_parser import InterDependencyParser
+from src.parsers.parameter_constraint_parser import ParameterConstraintParser
+from src.parsers.example_parser import ExampleParser
+from src.parsers.parameter_format_parser import ParameterFormatParser
+from src.parsers.specification_parser import parse_parameters
+from src.parsers.ipd_parser import InterDependencyParser
 from typing import *
-from model_properties.contexts import *
-from model_properties.examples import *
+from src.model_properties.contexts import *
+from src.model_properties.examples import *
 import yaml
 import json
 import os

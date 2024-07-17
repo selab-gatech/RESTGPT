@@ -1,0 +1,15 @@
+name: restgpt
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.9  # You can adjust this version as needed
+  - pip
+  - pip:
+    - prance~=23.6.21.0
+    - openapi-spec-validator~=0.6.0
+    - langchain~=0.0.277
+    - openai~=0.27.10
+    - pydantic~=2.3.0
+    - PyYAML~=6.0.1
+    - python-dotenv~=1.0.1

@@ -6,15 +6,26 @@ RESTGPT is an approach to automated API testing that leverages Large Language Mo
 
 The RESTGPT Github currently contains OpenAPI Specifications from 9 different wide-spread commercial APIs: **FDIC, Genome-Nexus, Language-Tool, OCVN, Ohsome, OMDB, Rest-Countries, Spotify,** and **Youtube**. To access these files, navigate to `src/specifications/openapi_yaml` or `src/specifications/openapi_json`.
 
-After downloading the Github repository, once must simply do three things to generate results for either the 9 pre-added OpenAPI Specifications or their own select inputs:
+After downloading the Github repository, one must simply do three things to generate results for either the 9 pre-added OpenAPI Specifications or their own select inputs:
 1. Download the packages specified in the `requirements.txt` file.
-2. Create a `config.py` file in the root directory with an [**OpenAI API Key**](https://platform.openai.com/account/api-keys) as the sole piece of content.
+2. Create a `.env` file in the root directory with an [**OpenAI API Key**](https://platform.openai.com/account/api-keys) as the sole piece of content.
 > **Note:**
 > Running the program can cost over $10 in OpenAI token costs. The cost varies on input quantity.
-3. Alter the `src/restgpt.py` main function to suit the use case. By default, the file will be configured to run with Docker configurations (`docker_execute()`) and hence will require a `src/specifications/inputs` folder with the desired inputs. There are three functions that can be run for varying use cases: `custom_inputs()`, `predefined_inputs()`, and `docker_execute()`.
+3. Alter the `configurations.py` file's RUN_MODE variable to suit the use case.
+
+RESTGPT offeres three run modes: "predefined", "custom", and "docker". The "predefined" mode will run the program with the 9 pre-added OpenAPI Specifications, the "custom" mode will run the program with user-defined OpenAPI Specifications, and the "docker" mode will run the program with Docker configurations using custom specifications.
 
 > **Note:**
-> The `custom_inputs()` and `docker_execute()` functions both require a `src/specification/inputs` folder with the desired input OpenAPI Specifications. The `predefined_inputs()` function will work with the 9 pre-added OpenAPI Specifications and was used within the RESTGPT paper.
+> The `custom` and `docker` run modes both require a `src/specification/inputs` folder with the desired input OpenAPI Specifications. Refer to the **Customization** section for more details. The `predefined` mode will work with the 9 pre-added OpenAPI Specifications and was used within the RESTGPT paper.
+
+When using the _predefined_ or _custom_ run modes, execute the following command in the root directory to run RESTGPT:
+```
+python3 restgpt.py <FILE_TYPE>
+```
+> **Note:**
+> Fill in the "<FILE_TYPE>" parameter with either "json" or "yaml" (without quotes) to specify the desired output type of the OpenAPI Specifications.
+
+Refer to the **Use of Docker Container** section for executing the program with Docker configurations.
 
 Results will be generated in the `src/outputs` directory, with a different file representing the enhanced report for each of their corresponding OpenAPI Specifications. 
 
@@ -22,7 +33,7 @@ Results will be generated in the `src/outputs` directory, with a different file 
 
 The RESTGPT repository currently contains a pre-made Dockerfile for consistency in replicability. After downloading the Github repository with the Dockerfile, one must follow the following short steps to create the Docker container:
 1. On the local system, create the `src/specifications/inputs` folder with the desired input OpenAPI Specifications.
-2. Create a `config.py` file in the root directory with an [**OpenAI API Key**](https://platform.openai.com/account/api-keys) as the sole piece of content.
+2. Create a `.env` file in the root directory with an [**OpenAI API Key**](https://platform.openai.com/account/api-keys) as the sole piece of content.
 > **Note:**
 > Running the program can cost over $10 in OpenAI token costs. The cost varies on input quantity.
 3. Build the Docker image with the following commands executed sequentially in the root directory:

@@ -1,3 +1,5 @@
+import os
+
 import openai.error
 import langchain
 from langchain.chains import LLMChain
@@ -9,13 +11,16 @@ from langchain.output_parsers import PydanticOutputParser
 from langchain.cache import InMemoryCache
 from langchain.callbacks.streaming_stdout import StreamingStdOutCallbackHandler
 from pydantic import BaseModel, Field
-from parsers.specification_parser import parse_parameters
-from model_properties.examples import *
-from model_properties.contexts import *
+from src.parsers.specification_parser import parse_parameters
+from src.model_properties.examples import *
+from src.model_properties.contexts import *
 import time
 
+#from config import API_KEY # will throw ImportError if config does not exist
+from dotenv import load_dotenv
+load_dotenv()
 
-from config import API_KEY # will throw ImportError if config does not exist
+API_KEY = os.getenv("API_KEY")
 
 langchain.llm_cache = InMemoryCache()
 
@@ -55,14 +60,12 @@ class FewShotModel:
             suffix=self.suffix,
             input_variables=["input"]
         )
-        self.fewshot_chain = LLMChain(prompt=self.fewshot_prompt, llm=self.llm)
-
+        self.fewshot_chain = LLMChain(prompt=self.fewshot_prompt, llm=self.llm, verbose=False)
 
     def run_model(self, input_value):
         retries = 3
         for i in range(retries):
             try:
-                #print(self.fewshot_prompt.format(input=input_value))
                 output = self.fewshot_chain.run(input=input_value)
                 return output
             except openai.error.OpenAIError as e:
@@ -108,7 +111,8 @@ def llm_output_formatting(name, specifier, operation_constraints, parameter_form
 
 def run_llm_chain(file_path, method_path, method_type):
 
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0.4, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
+    #llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0.4, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
+    llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0.4)
 
     method_key = f"{method_path} {method_type}"
     parameters = parse_parameters(file_path).get(method_key)
@@ -134,14 +138,14 @@ def run_llm_chain(file_path, method_path, method_type):
                 parameter_examples="None")
 
         input_value = f"name: {name}\ndescription: {description}"
-        #print("Started operation and parameter constraints")
+        print("Started operation and parameter constraints")
         operation_constraints = operation_constraint(llm, input_value)
         parameter_constraints = parameter_constraint(llm, description)
         if format_value is None or type_value is None:
             parameter_formats = parameter_format(llm, description)
         if enum is None:
             parameter_examples = parameter_example(llm, description)
-        #print("Constraints finished")
+        print("Constraints finished")
         return llm_output_formatting(name=name,
                                      specifier=specifier,
                                      operation_constraints=operation_constraints,
@@ -150,7 +154,7 @@ def run_llm_chain(file_path, method_path, method_type):
                                      parameter_examples=parameter_examples)
     
     for parameter in parameters:
-        print(f"Attempting to request from LLM for {parameter}")
+        print(f"Attempting to request from LLM for {parameter}.")
         restriction_list.append(run_parameter(parameter))
         print("Completed a restriction!")
         #time.sleep(10)
