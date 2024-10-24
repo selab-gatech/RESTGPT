@@ -21,7 +21,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     }
@@ -46,7 +49,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -60,7 +66,56 @@
                             "minLength": 2,
                             "maxLength": 3
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "BRA"
+                            },
+                            "GENERATED_1": {
+                                "value": "FRA"
+                            },
+                            "GENERATED_2": {
+                                "value": "GER"
+                            },
+                            "GENERATED_3": {
+                                "value": "USA"
+                            },
+                            "GENERATED_4": {
+                                "value": "CAN"
+                            },
+                            "GENERATED_5": {
+                                "value": "ZWE"
+                            },
+                            "GENERATED_6": {
+                                "value": "AUS"
+                            },
+                            "GENERATED_7": {
+                                "value": "JPN"
+                            },
+                            "GENERATED_8": {
+                                "value": "IND"
+                            },
+                            "GENERATED_9": {
+                                "value": "RUS"
+                            },
+                            "GENERATED_10": {
+                                "value": "MEX"
+                            },
+                            "GENERATED_11": {
+                                "value": "ITA"
+                            },
+                            "GENERATED_12": {
+                                "value": "ESP"
+                            },
+                            "GENERATED_13": {
+                                "value": "CHN"
+                            },
+                            "GENERATED_14": {
+                                "value": "KOR"
+                            },
+                            "GENERATED_15": {
+                                "value": "ZAF"
+                            }
+                        }
                     }
                 ],
                 "responses": {
@@ -83,7 +138,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -96,38 +154,136 @@
                             "type": "string",
                             "items": {
                                 "type": "string"
-                            }
+                            },
+                            "minLength": 2,
+                            "maxLength": 3
                         },
                         "examples": {
-                            "example0": {
-                                "value": "USA"
+                            "GENERATED_0": {
+                                "value": "US"
                             },
-                            "example1": {
-                                "value": "CAN"
+                            "GENERATED_1": {
+                                "value": "CA"
                             },
-                            "example2": {
-                                "value": "GBR"
+                            "GENERATED_2": {
+                                "value": "ZW"
                             },
-                            "example3": {
-                                "value": "AUS"
+                            "GENERATED_3": {
+                                "value": "BR"
                             },
-                            "example4": {
-                                "value": "FRA"
+                            "GENERATED_4": {
+                                "value": "FR"
                             },
-                            "example5": {
-                                "value": "DEU"
+                            "GENERATED_5": {
+                                "value": "DE"
                             },
-                            "example6": {
-                                "value": "JPN"
+                            "GENERATED_6": {
+                                "value": "JP"
                             },
-                            "example7": {
-                                "value": "BRA"
+                            "GENERATED_7": {
+                                "value": "IN"
                             },
-                            "example8": {
-                                "value": "IND"
+                            "GENERATED_8": {
+                                "value": "AU"
                             },
-                            "example9": {
-                                "value": "CHN"
+                            "GENERATED_9": {
+                                "value": "MX"
+                            },
+                            "GENERATED_10": {
+                                "value": "RU"
+                            },
+                            "GENERATED_11": {
+                                "value": "CN"
+                            },
+                            "GENERATED_12": {
+                                "value": "IT"
+                            },
+                            "GENERATED_13": {
+                                "value": "ES"
+                            },
+                            "GENERATED_14": {
+                                "value": "ZA"
+                            },
+                            "GENERATED_15": {
+                                "value": "NG"
+                            },
+                            "GENERATED_16": {
+                                "value": "KR"
+                            },
+                            "GENERATED_17": {
+                                "value": "SE"
+                            },
+                            "GENERATED_18": {
+                                "value": "NL"
+                            },
+                            "GENERATED_19": {
+                                "value": "CH"
+                            },
+                            "GENERATED_20": {
+                                "value": "AR"
+                            },
+                            "GENERATED_21": {
+                                "value": "SG"
+                            },
+                            "GENERATED_22": {
+                                "value": "TH"
+                            },
+                            "GENERATED_23": {
+                                "value": "ID"
+                            },
+                            "GENERATED_24": {
+                                "value": "PL"
+                            },
+                            "GENERATED_25": {
+                                "value": "NO"
+                            },
+                            "GENERATED_26": {
+                                "value": "DK"
+                            },
+                            "GENERATED_27": {
+                                "value": "FI"
+                            },
+                            "GENERATED_28": {
+                                "value": "IE"
+                            },
+                            "GENERATED_29": {
+                                "value": "PT"
+                            },
+                            "GENERATED_30": {
+                                "value": "GR"
+                            },
+                            "GENERATED_31": {
+                                "value": "HU"
+                            },
+                            "GENERATED_32": {
+                                "value": "CZ"
+                            },
+                            "GENERATED_33": {
+                                "value": "AT"
+                            },
+                            "GENERATED_34": {
+                                "value": "NZ"
+                            },
+                            "GENERATED_35": {
+                                "value": "MY"
+                            },
+                            "GENERATED_36": {
+                                "value": "PH"
+                            },
+                            "GENERATED_37": {
+                                "value": "AE"
+                            },
+                            "GENERATED_38": {
+                                "value": "SA"
+                            },
+                            "GENERATED_39": {
+                                "value": "IL"
+                            },
+                            "GENERATED_40": {
+                                "value": "HK"
+                            },
+                            "GENERATED_41": {
+                                "value": "TW"
                             }
                         }
                     }
@@ -152,7 +308,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -164,7 +323,104 @@
                         "schema": {
                             "type": "string"
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "USD"
+                            },
+                            "GENERATED_1": {
+                                "value": "EUR"
+                            },
+                            "GENERATED_2": {
+                                "value": "JPY"
+                            },
+                            "GENERATED_3": {
+                                "value": "GBP"
+                            },
+                            "GENERATED_4": {
+                                "value": "AUD"
+                            },
+                            "GENERATED_5": {
+                                "value": "CAD"
+                            },
+                            "GENERATED_6": {
+                                "value": "CHF"
+                            },
+                            "GENERATED_7": {
+                                "value": "CNY"
+                            },
+                            "GENERATED_8": {
+                                "value": "SEK"
+                            },
+                            "GENERATED_9": {
+                                "value": "NZD"
+                            },
+                            "GENERATED_10": {
+                                "value": "MXN"
+                            },
+                            "GENERATED_11": {
+                                "value": "SGD"
+                            },
+                            "GENERATED_12": {
+                                "value": "HKD"
+                            },
+                            "GENERATED_13": {
+                                "value": "NOK"
+                            },
+                            "GENERATED_14": {
+                                "value": "INR"
+                            },
+                            "GENERATED_15": {
+                                "value": "RUB"
+                            },
+                            "GENERATED_16": {
+                                "value": "ZAR"
+                            },
+                            "GENERATED_17": {
+                                "value": "BRL"
+                            },
+                            "GENERATED_18": {
+                                "value": "TRY"
+                            },
+                            "GENERATED_19": {
+                                "value": "AED"
+                            },
+                            "GENERATED_20": {
+                                "value": "PLN"
+                            },
+                            "GENERATED_21": {
+                                "value": "DKK"
+                            },
+                            "GENERATED_22": {
+                                "value": "THB"
+                            },
+                            "GENERATED_23": {
+                                "value": "IDR"
+                            },
+                            "GENERATED_24": {
+                                "value": "HUF"
+                            },
+                            "GENERATED_25": {
+                                "value": "CZK"
+                            },
+                            "GENERATED_26": {
+                                "value": "ILS"
+                            },
+                            "GENERATED_27": {
+                                "value": "MYR"
+                            },
+                            "GENERATED_28": {
+                                "value": "PHP"
+                            },
+                            "GENERATED_29": {
+                                "value": "ARS"
+                            },
+                            "GENERATED_30": {
+                                "value": "CLP"
+                            },
+                            "GENERATED_31": {
+                                "value": "COP"
+                            }
+                        }
                     }
                 ],
                 "responses": {
@@ -187,7 +443,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -200,44 +459,65 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
+                            "GENERATED_0": {
                                 "value": "United States"
                             },
-                            "example1": {
+                            "GENERATED_1": {
                                 "value": "Canada"
                             },
-                            "example2": {
-                                "value": "Australia"
+                            "GENERATED_2": {
+                                "value": "Zimbabwe"
                             },
-                            "example3": {
+                            "GENERATED_3": {
                                 "value": "Germany"
                             },
-                            "example4": {
+                            "GENERATED_4": {
                                 "value": "France"
                             },
-                            "example5": {
+                            "GENERATED_5": {
                                 "value": "Brazil"
                             },
-                            "example6": {
-                                "value": "China"
+                            "GENERATED_6": {
+                                "value": "Australia"
                             },
-                            "example7": {
-                                "value": "India"
-                            },
-                            "example8": {
+                            "GENERATED_7": {
                                 "value": "Japan"
                             },
-                            "example9": {
-                                "value": "Mexico"
-                            },
-                            "example10": {
-                                "value": "Russia"
-                            },
-                            "example11": {
+                            "GENERATED_8": {
                                 "value": "South Africa"
                             },
-                            "example12": {
-                                "value": "United Kingdom"
+                            "GENERATED_9": {
+                                "value": "India"
+                            },
+                            "GENERATED_10": {
+                                "value": "Mexico"
+                            },
+                            "GENERATED_11": {
+                                "value": "Italy"
+                            },
+                            "GENERATED_12": {
+                                "value": "Spain"
+                            },
+                            "GENERATED_13": {
+                                "value": "China"
+                            },
+                            "GENERATED_14": {
+                                "value": "Russia"
+                            },
+                            "GENERATED_15": {
+                                "value": "Argentina"
+                            },
+                            "GENERATED_16": {
+                                "value": "Nigeria"
+                            },
+                            "GENERATED_17": {
+                                "value": "Egypt"
+                            },
+                            "GENERATED_18": {
+                                "value": "Saudi Arabia"
+                            },
+                            "GENERATED_19": {
+                                "value": "South Korea"
                             }
                         }
                     },
@@ -270,7 +550,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -283,155 +566,65 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
-                                "value": "1"
+                            "GENERATED_0": {
+                                "value": "+1"
                             },
-                            "example1": {
-                                "value": "2"
+                            "GENERATED_1": {
+                                "value": "+44"
                             },
-                            "example2": {
-                                "value": "3"
+                            "GENERATED_2": {
+                                "value": "+91"
                             },
-                            "example3": {
-                                "value": "4"
+                            "GENERATED_3": {
+                                "value": "+81"
                             },
-                            "example4": {
-                                "value": "5"
+                            "GENERATED_4": {
+                                "value": "+49"
                             },
-                            "example5": {
-                                "value": "6"
+                            "GENERATED_5": {
+                                "value": "+33"
                             },
-                            "example6": {
-                                "value": "7"
+                            "GENERATED_6": {
+                                "value": "+61"
                             },
-                            "example7": {
-                                "value": "8"
+                            "GENERATED_7": {
+                                "value": "+86"
                             },
-                            "example8": {
-                                "value": "9"
+                            "GENERATED_8": {
+                                "value": "+7"
                             },
-                            "example9": {
-                                "value": "10"
+                            "GENERATED_9": {
+                                "value": "+39"
                             },
-                            "example10": {
-                                "value": "11"
+                            "GENERATED_10": {
+                                "value": "+34"
                             },
-                            "example11": {
-                                "value": "12"
+                            "GENERATED_12": {
+                                "value": "+64"
                             },
-                            "example12": {
-                                "value": "13"
+                            "GENERATED_13": {
+                                "value": "+41"
                             },
-                            "example13": {
-                                "value": "14"
+                            "GENERATED_14": {
+                                "value": "+46"
                             },
-                            "example14": {
-                                "value": "15"
+                            "GENERATED_15": {
+                                "value": "+31"
                             },
-                            "example15": {
-                                "value": "16"
+                            "GENERATED_16": {
+                                "value": "+47"
                             },
-                            "example16": {
-                                "value": "17"
+                            "GENERATED_17": {
+                                "value": "+45"
                             },
-                            "example17": {
-                                "value": "18"
+                            "GENERATED_18": {
+                                "value": "+43"
                             },
-                            "example18": {
-                                "value": "19"
+                            "GENERATED_19": {
+                                "value": "+36"
                             },
-                            "example19": {
-                                "value": "20"
-                            },
-                            "example20": {
-                                "value": "21"
-                            },
-                            "example21": {
-                                "value": "22"
-                            },
-                            "example22": {
-                                "value": "23"
-                            },
-                            "example23": {
-                                "value": "24"
-                            },
-                            "example24": {
-                                "value": "25"
-                            },
-                            "example25": {
-                                "value": "26"
-                            },
-                            "example26": {
-                                "value": "27"
-                            },
-                            "example27": {
-                                "value": "28"
-                            },
-                            "example28": {
-                                "value": "29"
-                            },
-                            "example29": {
-                                "value": "30"
-                            },
-                            "example30": {
-                                "value": "31"
-                            },
-                            "example31": {
-                                "value": "32"
-                            },
-                            "example32": {
-                                "value": "33"
-                            },
-                            "example33": {
-                                "value": "34"
-                            },
-                            "example34": {
-                                "value": "35"
-                            },
-                            "example35": {
-                                "value": "36"
-                            },
-                            "example36": {
-                                "value": "37"
-                            },
-                            "example37": {
-                                "value": "38"
-                            },
-                            "example38": {
-                                "value": "39"
-                            },
-                            "example39": {
-                                "value": "40"
-                            },
-                            "example40": {
-                                "value": "41"
-                            },
-                            "example41": {
-                                "value": "42"
-                            },
-                            "example42": {
-                                "value": "43"
-                            },
-                            "example43": {
-                                "value": "44"
-                            },
-                            "example44": {
-                                "value": "45"
-                            },
-                            "example45": {
-                                "value": "46"
-                            },
-                            "example46": {
-                                "value": "47"
-                            },
-                            "example47": {
-                                "value": "48"
-                            },
-                            "example48": {
-                                "value": "49"
-                            },
-                            "example49": {
-                                "value": "50"
+                            "GENERATED_20": {
+                                "value": "+353"
                             }
                         }
                     }
@@ -456,7 +649,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -469,185 +665,68 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
-                                "value": "London"
-                            },
-                            "example1": {
-                                "value": "Paris"
-                            },
-                            "example2": {
-                                "value": "Tokyo"
-                            },
-                            "example3": {
-                                "value": "Beijing"
-                            },
-                            "example4": {
-                                "value": "Moscow"
-                            },
-                            "example5": {
-                                "value": "Berlin"
-                            },
-                            "example6": {
-                                "value": "Rome"
-                            },
-                            "example7": {
-                                "value": "Madrid"
-                            },
-                            "example8": {
-                                "value": "Ottawa"
-                            },
-                            "example9": {
+                            "GENERATED_0": {
                                 "value": "Washington"
                             },
-                            "example10": {
+                            "GENERATED_1": {
                                 "value": "D.C."
                             },
-                            "example11": {
+                            "GENERATED_2": {
+                                "value": "Ottawa"
+                            },
+                            "GENERATED_3": {
+                                "value": "Harare"
+                            },
+                            "GENERATED_4": {
+                                "value": "London"
+                            },
+                            "GENERATED_5": {
+                                "value": "Paris"
+                            },
+                            "GENERATED_6": {
+                                "value": "Tokyo"
+                            },
+                            "GENERATED_7": {
                                 "value": "Canberra"
                             },
-                            "example12": {
+                            "GENERATED_8": {
                                 "value": "Bras\u00edlia"
                             },
-                            "example13": {
-                                "value": " New Delhi"
-                            },
-                            "example14": {
-                                "value": "Cairo"
-                            },
-                            "example15": {
-                                "value": "Nairobi"
-                            },
-                            "example16": {
-                                "value": "Buenos Aires"
-                            },
-                            "example17": {
-                                "value": "Mexico City"
-                            },
-                            "example18": {
-                                "value": "Jakarta"
-                            },
-                            "example19": {
-                                "value": "Bangkok"
-                            },
-                            "example20": {
-                                "value": "Seoul"
-                            },
-                            "example21": {
-                                "value": "Manila"
-                            },
-                            "example22": {
-                                "value": "Hanoi"
-                            },
-                            "example23": {
-                                "value": "Wellington"
-                            },
-                            "example24": {
-                                "value": " Canberra"
-                            },
-                            "example25": {
-                                "value": "Riyadh"
-                            },
-                            "example26": {
-                                "value": "Abu Dhabi"
-                            },
-                            "example27": {
-                                "value": "Tehran"
-                            },
-                            "example28": {
-                                "value": "Baghdad"
-                            },
-                            "example29": {
-                                "value": "Jerusalem"
-                            },
-                            "example30": {
-                                "value": "Amman"
-                            },
-                            "example31": {
-                                "value": "Beirut"
-                            },
-                            "example32": {
-                                "value": "Damascus"
-                            },
-                            "example33": {
-                                "value": "Ankara"
-                            },
-                            "example34": {
-                                "value": "Athens"
-                            },
-                            "example35": {
-                                "value": "Sofia"
-                            },
-                            "example36": {
-                                "value": "Bucharest"
-                            },
-                            "example37": {
-                                "value": "Budapest"
-                            },
-                            "example38": {
-                                "value": " Vienna"
-                            },
-                            "example39": {
-                                "value": "Prague"
-                            },
-                            "example40": {
-                                "value": "Warsaw"
-                            },
-                            "example41": {
-                                "value": "Copenhagen"
-                            },
-                            "example42": {
-                                "value": "Stockholm"
-                            },
-                            "example43": {
-                                "value": "Helsinki"
-                            },
-                            "example44": {
-                                "value": "Oslo"
-                            },
-                            "example45": {
-                                "value": "Reykjavik"
-                            },
-                            "example46": {
-                                "value": "Dublin"
-                            },
-                            "example47": {
-                                "value": "Lisbon"
-                            },
-                            "example48": {
-                                "value": "Bern"
-                            },
-                            "example49": {
-                                "value": "Amsterdam"
-                            },
-                            "example50": {
-                                "value": "Brussels"
-                            },
-                            "example51": {
-                                "value": " Luxembourg City"
-                            },
-                            "example52": {
-                                "value": "Cape Town"
-                            },
-                            "example53": {
-                                "value": "Lima"
-                            },
-                            "example54": {
-                                "value": " Mexico City"
-                            },
-                            "example55": {
+                            "GENERATED_9": {
                                 "value": "New Delhi"
                             },
-                            "example56": {
-                                "value": " Riyadh"
+                            "GENERATED_10": {
+                                "value": "Cairo"
                             },
-                            "example57": {
-                                "value": "Vienna"
+                            "GENERATED_11": {
+                                "value": "Nairobi"
                             },
-                            "example58": {
-                                "value": " Copenhagen"
+                            "GENERATED_12": {
+                                "value": "Berlin"
                             },
-                            "example59": {
-                                "value": "Bern,"
+                            "GENERATED_13": {
+                                "value": "Moscow"
+                            },
+                            "GENERATED_14": {
+                                "value": "Beijing"
+                            },
+                            "GENERATED_15": {
+                                "value": "Buenos Aires"
+                            },
+                            "GENERATED_16": {
+                                "value": "Rome"
+                            },
+                            "GENERATED_17": {
+                                "value": "Madrid"
+                            },
+                            "GENERATED_18": {
+                                "value": "Lisbon"
+                            },
+                            "GENERATED_19": {
+                                "value": "Bangkok"
+                            },
+                            "GENERATED_20": {
+                                "value": "Jakarta"
                             }
                         }
                     }
@@ -672,7 +751,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -682,92 +764,50 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {
-                            "example0": {
+                            "PROVIDED_0": {
                                 "value": "Africa"
                             },
-                            "example1": {
+                            "PROVIDED_1": {
                                 "value": "Americas"
                             },
-                            "example2": {
+                            "PROVIDED_2": {
                                 "value": "Asia"
                             },
-                            "example3": {
+                            "PROVIDED_3": {
                                 "value": "Europe"
                             },
-                            "example4": {
+                            "PROVIDED_4": {
                                 "value": "Oceania"
                             },
-                            "example5": {
+                            "GENERATED_0": {
                                 "value": "Antarctica"
                             },
-                            "example6": {
-                                "value": "Arctic"
-                            },
-                            "example7": {
+                            "GENERATED_1": {
                                 "value": "Caribbean"
                             },
-                            "example8": {
+                            "GENERATED_2": {
+                                "value": "Middle East"
+                            },
+                            "GENERATED_3": {
+                                "value": "Southeast Asia"
+                            },
+                            "GENERATED_4": {
                                 "value": "Central America"
                             },
-                            "example9": {
-                                "value": "Eastern Africa"
-                            },
-                            "example10": {
-                                "value": "Eastern Asia"
-                            },
-                            "example11": {
-                                "value": "Eastern Europe"
-                            },
-                            "example12": {
-                                "value": "Melanesia"
-                            },
-                            "example13": {
-                                "value": "Micronesia"
-                            },
-                            "example14": {
-                                "value": "Middle Africa"
-                            },
-                            "example15": {
-                                "value": "Northern Africa"
-                            },
-                            "example16": {
-                                "value": "Northern America"
-                            },
-                            "example17": {
+                            "GENERATED_5": {
                                 "value": "Northern Europe"
                             },
-                            "example18": {
-                                "value": "Polynesia"
-                            },
-                            "example19": {
-                                "value": "South America"
-                            },
-                            "example20": {
-                                "value": "South-Eastern Asia"
-                            },
-                            "example21": {
+                            "GENERATED_6": {
                                 "value": "Southern Africa"
                             },
-                            "example22": {
-                                "value": "Southern Asia"
-                            },
-                            "example23": {
-                                "value": "Southern Europe"
-                            },
-                            "example24": {
-                                "value": "Western Africa"
-                            },
-                            "example25": {
+                            "GENERATED_7": {
                                 "value": "Western Asia"
-                            },
-                            "example26": {
-                                "value": "Western Europe"
-                            },
-                            "example27": {
-                                "value": "Western Sahara"
                             }
                         }
                     }
@@ -792,7 +832,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -802,11 +845,133 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "minLength": 2,
-                            "maxLength": 2
+                            "type": "string"
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "en"
+                            },
+                            "GENERATED_1": {
+                                "value": "fr"
+                            },
+                            "GENERATED_2": {
+                                "value": "es"
+                            },
+                            "GENERATED_3": {
+                                "value": "de"
+                            },
+                            "GENERATED_4": {
+                                "value": "it"
+                            },
+                            "GENERATED_5": {
+                                "value": "pt"
+                            },
+                            "GENERATED_6": {
+                                "value": "ru"
+                            },
+                            "GENERATED_7": {
+                                "value": "zh"
+                            },
+                            "GENERATED_8": {
+                                "value": "ja"
+                            },
+                            "GENERATED_9": {
+                                "value": "ko"
+                            },
+                            "GENERATED_10": {
+                                "value": "ar"
+                            },
+                            "GENERATED_11": {
+                                "value": "hi"
+                            },
+                            "GENERATED_12": {
+                                "value": "nl"
+                            },
+                            "GENERATED_13": {
+                                "value": "sv"
+                            },
+                            "GENERATED_14": {
+                                "value": "da"
+                            },
+                            "GENERATED_15": {
+                                "value": "fi"
+                            },
+                            "GENERATED_16": {
+                                "value": "no"
+                            },
+                            "GENERATED_17": {
+                                "value": "pl"
+                            },
+                            "GENERATED_18": {
+                                "value": "cs"
+                            },
+                            "GENERATED_19": {
+                                "value": "ro"
+                            },
+                            "GENERATED_20": {
+                                "value": "hu"
+                            },
+                            "GENERATED_21": {
+                                "value": "tr"
+                            },
+                            "GENERATED_22": {
+                                "value": "th"
+                            },
+                            "GENERATED_23": {
+                                "value": "vi"
+                            },
+                            "GENERATED_24": {
+                                "value": "el"
+                            },
+                            "GENERATED_25": {
+                                "value": "bg"
+                            },
+                            "GENERATED_26": {
+                                "value": "sr"
+                            },
+                            "GENERATED_27": {
+                                "value": "hr"
+                            },
+                            "GENERATED_28": {
+                                "value": "sk"
+                            },
+                            "GENERATED_29": {
+                                "value": "sl"
+                            },
+                            "GENERATED_30": {
+                                "value": "et"
+                            },
+                            "GENERATED_31": {
+                                "value": "lt"
+                            },
+                            "GENERATED_32": {
+                                "value": "lv"
+                            },
+                            "GENERATED_33": {
+                                "value": "is"
+                            },
+                            "GENERATED_34": {
+                                "value": "ga"
+                            },
+                            "GENERATED_35": {
+                                "value": "cy"
+                            },
+                            "GENERATED_36": {
+                                "value": "mk"
+                            },
+                            "GENERATED_37": {
+                                "value": "ms"
+                            },
+                            "GENERATED_38": {
+                                "value": "sw"
+                            },
+                            "GENERATED_39": {
+                                "value": "tl"
+                            },
+                            "GENERATED_40": {
+                                "value": "la"
+                            }
+                        }
                     }
                 ],
                 "responses": {
@@ -829,7 +994,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -839,89 +1007,86 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {
-                            "example0": {
+                            "PROVIDED_0": {
                                 "value": "EU"
                             },
-                            "example1": {
+                            "PROVIDED_1": {
                                 "value": "EFTA"
                             },
-                            "example2": {
+                            "PROVIDED_2": {
                                 "value": "CARICOM"
                             },
-                            "example3": {
+                            "PROVIDED_3": {
                                 "value": "PA"
                             },
-                            "example4": {
+                            "PROVIDED_4": {
                                 "value": "AU"
                             },
-                            "example5": {
+                            "PROVIDED_5": {
                                 "value": "USAN"
                             },
-                            "example6": {
+                            "PROVIDED_6": {
                                 "value": "EEU"
                             },
-                            "example7": {
+                            "PROVIDED_7": {
                                 "value": "AL"
                             },
-                            "example8": {
+                            "PROVIDED_8": {
                                 "value": "ASEAN"
                             },
-                            "example9": {
+                            "PROVIDED_9": {
                                 "value": "CAIS"
                             },
-                            "example10": {
+                            "PROVIDED_10": {
                                 "value": "CEFTA"
                             },
-                            "example11": {
+                            "PROVIDED_11": {
                                 "value": "NAFTA"
                             },
-                            "example12": {
+                            "PROVIDED_12": {
                                 "value": "SAARC"
                             },
-                            "example13": {
-                                "value": "GCC (Gulf Cooperation Council)"
+                            "GENERATED_0": {
+                                "value": "MERCOSUR"
                             },
-                            "example14": {
-                                "value": "MERCOSUR (Southern Common Market)"
+                            "GENERATED_1": {
+                                "value": "GCC"
                             },
-                            "example15": {
-                                "value": "CIS (Commonwealth of Independent States)"
+                            "GENERATED_2": {
+                                "value": "APEC"
                             },
-                            "example16": {
-                                "value": "OPEC (Organization of the Petroleum Exporting Countries)"
+                            "GENERATED_3": {
+                                "value": "SICA"
                             },
-                            "example17": {
-                                "value": "APEC (Asia-Pacific Economic Cooperation)"
+                            "GENERATED_4": {
+                                "value": "COMESA"
                             },
-                            "example18": {
-                                "value": "SADC (Southern African Development Community)"
+                            "GENERATED_5": {
+                                "value": "CEMAC"
                             },
-                            "example19": {
-                                "value": "CISFTA (CIS Free Trade Agreement)"
+                            "GENERATED_6": {
+                                "value": "ECOWAS"
                             },
-                            "example20": {
-                                "value": "CEMAC (Central African Economic and Monetary Community)"
+                            "GENERATED_7": {
+                                "value": "OIC"
                             },
-                            "example21": {
-                                "value": "ECOWAS (Economic Community of West African States)"
+                            "GENERATED_8": {
+                                "value": "PIF"
                             },
-                            "example22": {
-                                "value": "CACM (Central American Common Market)"
+                            "GENERATED_9": {
+                                "value": "CELAC"
                             },
-                            "example23": {
-                                "value": "MCCA (Mercado Com\u00fan Centroamericano)"
+                            "GENERATED_10": {
+                                "value": "TPP"
                             },
-                            "example24": {
-                                "value": "CPTPP (Comprehensive and Progressive Agreement for Trans-Pacific Partnership)"
-                            },
-                            "example25": {
-                                "value": "EAC (East African Community)"
-                            },
-                            "example26": {
-                                "value": "SACU (Southern African Customs Union)"
+                            "GENERATED_11": {
+                                "value": "RCEP"
                             }
                         }
                     }
@@ -933,7 +1098,10 @@
                     "default": {
                         "description": "Other responses"
                     }
-                }
+                },
+                "x-dependencies": [
+                    "OnlyOne(regionalbloc);"
+                ]
             }
         },
         "/v3/all": {
@@ -946,7 +1114,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     }
@@ -971,7 +1142,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -985,7 +1159,56 @@
                             "minLength": 2,
                             "maxLength": 3
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "BRA"
+                            },
+                            "GENERATED_1": {
+                                "value": "FRA"
+                            },
+                            "GENERATED_2": {
+                                "value": "GER"
+                            },
+                            "GENERATED_3": {
+                                "value": "USA"
+                            },
+                            "GENERATED_4": {
+                                "value": "CAN"
+                            },
+                            "GENERATED_5": {
+                                "value": "ZWE"
+                            },
+                            "GENERATED_6": {
+                                "value": "AUS"
+                            },
+                            "GENERATED_7": {
+                                "value": "JPN"
+                            },
+                            "GENERATED_8": {
+                                "value": "IND"
+                            },
+                            "GENERATED_9": {
+                                "value": "RUS"
+                            },
+                            "GENERATED_10": {
+                                "value": "MEX"
+                            },
+                            "GENERATED_11": {
+                                "value": "ITA"
+                            },
+                            "GENERATED_12": {
+                                "value": "ESP"
+                            },
+                            "GENERATED_13": {
+                                "value": "CHN"
+                            },
+                            "GENERATED_14": {
+                                "value": "KOR"
+                            },
+                            "GENERATED_15": {
+                                "value": "ZAF"
+                            }
+                        }
                     }
                 ],
                 "responses": {
@@ -1008,7 +1231,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -1021,38 +1247,136 @@
                             "type": "string",
                             "items": {
                                 "type": "string"
-                            }
+                            },
+                            "minLength": 2,
+                            "maxLength": 3
                         },
                         "examples": {
-                            "example0": {
-                                "value": "USA"
+                            "GENERATED_0": {
+                                "value": "US"
                             },
-                            "example1": {
-                                "value": "CAN"
+                            "GENERATED_1": {
+                                "value": "CA"
                             },
-                            "example2": {
-                                "value": "GBR"
+                            "GENERATED_2": {
+                                "value": "ZW"
                             },
-                            "example3": {
-                                "value": "AUS"
+                            "GENERATED_3": {
+                                "value": "BR"
                             },
-                            "example4": {
-                                "value": "FRA"
+                            "GENERATED_4": {
+                                "value": "FR"
                             },
-                            "example5": {
-                                "value": "DEU"
+                            "GENERATED_5": {
+                                "value": "DE"
                             },
-                            "example6": {
-                                "value": "JPN"
+                            "GENERATED_6": {
+                                "value": "JP"
                             },
-                            "example7": {
-                                "value": "BRA"
+                            "GENERATED_7": {
+                                "value": "IN"
                             },
-                            "example8": {
-                                "value": "IND"
+                            "GENERATED_8": {
+                                "value": "AU"
                             },
-                            "example9": {
-                                "value": "CHN"
+                            "GENERATED_9": {
+                                "value": "MX"
+                            },
+                            "GENERATED_10": {
+                                "value": "RU"
+                            },
+                            "GENERATED_11": {
+                                "value": "CN"
+                            },
+                            "GENERATED_12": {
+                                "value": "IT"
+                            },
+                            "GENERATED_13": {
+                                "value": "ES"
+                            },
+                            "GENERATED_14": {
+                                "value": "ZA"
+                            },
+                            "GENERATED_15": {
+                                "value": "NG"
+                            },
+                            "GENERATED_16": {
+                                "value": "KR"
+                            },
+                            "GENERATED_17": {
+                                "value": "SE"
+                            },
+                            "GENERATED_18": {
+                                "value": "NL"
+                            },
+                            "GENERATED_19": {
+                                "value": "CH"
+                            },
+                            "GENERATED_20": {
+                                "value": "AR"
+                            },
+                            "GENERATED_21": {
+                                "value": "SG"
+                            },
+                            "GENERATED_22": {
+                                "value": "TH"
+                            },
+                            "GENERATED_23": {
+                                "value": "ID"
+                            },
+                            "GENERATED_24": {
+                                "value": "PL"
+                            },
+                            "GENERATED_25": {
+                                "value": "NO"
+                            },
+                            "GENERATED_26": {
+                                "value": "DK"
+                            },
+                            "GENERATED_27": {
+                                "value": "FI"
+                            },
+                            "GENERATED_28": {
+                                "value": "IE"
+                            },
+                            "GENERATED_29": {
+                                "value": "PT"
+                            },
+                            "GENERATED_30": {
+                                "value": "GR"
+                            },
+                            "GENERATED_31": {
+                                "value": "HU"
+                            },
+                            "GENERATED_32": {
+                                "value": "CZ"
+                            },
+                            "GENERATED_33": {
+                                "value": "AT"
+                            },
+                            "GENERATED_34": {
+                                "value": "NZ"
+                            },
+                            "GENERATED_35": {
+                                "value": "MY"
+                            },
+                            "GENERATED_36": {
+                                "value": "PH"
+                            },
+                            "GENERATED_37": {
+                                "value": "AE"
+                            },
+                            "GENERATED_38": {
+                                "value": "SA"
+                            },
+                            "GENERATED_39": {
+                                "value": "IL"
+                            },
+                            "GENERATED_40": {
+                                "value": "HK"
+                            },
+                            "GENERATED_41": {
+                                "value": "TW"
                             }
                         }
                     }
@@ -1077,7 +1401,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -1090,179 +1417,101 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
+                            "GENERATED_0": {
                                 "value": "USD"
                             },
-                            "example1": {
+                            "GENERATED_1": {
                                 "value": "EUR"
                             },
-                            "example2": {
-                                "value": "GBP"
-                            },
-                            "example3": {
+                            "GENERATED_2": {
                                 "value": "JPY"
                             },
-                            "example4": {
+                            "GENERATED_3": {
+                                "value": "GBP"
+                            },
+                            "GENERATED_4": {
                                 "value": "AUD"
                             },
-                            "example5": {
+                            "GENERATED_5": {
                                 "value": "CAD"
                             },
-                            "example6": {
+                            "GENERATED_6": {
                                 "value": "CHF"
                             },
-                            "example7": {
+                            "GENERATED_7": {
                                 "value": "CNY"
                             },
-                            "example8": {
+                            "GENERATED_8": {
                                 "value": "SEK"
                             },
-                            "example9": {
+                            "GENERATED_9": {
                                 "value": "NZD"
                             },
-                            "example10": {
-                                "value": "MXN"
-                            },
-                            "example11": {
-                                "value": "SGD"
-                            },
-                            "example12": {
-                                "value": "HKD"
-                            },
-                            "example13": {
-                                "value": "NOK"
-                            },
-                            "example14": {
-                                "value": "KRW"
-                            },
-                            "example15": {
-                                "value": "TRY"
-                            },
-                            "example16": {
-                                "value": "RUB"
-                            },
-                            "example17": {
+                            "GENERATED_10": {
                                 "value": "INR"
                             },
-                            "example18": {
-                                "value": "BRL"
+                            "GENERATED_11": {
+                                "value": "MXN"
                             },
-                            "example19": {
+                            "GENERATED_12": {
+                                "value": "SGD"
+                            },
+                            "GENERATED_13": {
+                                "value": "HKD"
+                            },
+                            "GENERATED_14": {
+                                "value": "NOK"
+                            },
+                            "GENERATED_15": {
+                                "value": "RUB"
+                            },
+                            "GENERATED_16": {
                                 "value": "ZAR"
                             },
-                            "example20": {
-                                "value": "AED"
+                            "GENERATED_17": {
+                                "value": "BRL"
                             },
-                            "example21": {
-                                "value": "SAR"
-                            },
-                            "example22": {
-                                "value": "QAR"
-                            },
-                            "example23": {
-                                "value": "THB"
-                            },
-                            "example24": {
+                            "GENERATED_18": {
                                 "value": "DKK"
                             },
-                            "example25": {
-                                "value": "MYR"
-                            },
-                            "example26": {
-                                "value": "IDR"
-                            },
-                            "example27": {
+                            "GENERATED_19": {
                                 "value": "PLN"
                             },
-                            "example28": {
+                            "GENERATED_20": {
+                                "value": "AED"
+                            },
+                            "GENERATED_21": {
+                                "value": "THB"
+                            },
+                            "GENERATED_22": {
+                                "value": "IDR"
+                            },
+                            "GENERATED_23": {
                                 "value": "HUF"
                             },
-                            "example29": {
+                            "GENERATED_24": {
                                 "value": "CZK"
                             },
-                            "example30": {
+                            "GENERATED_25": {
                                 "value": "ILS"
                             },
-                            "example31": {
-                                "value": "CLP"
-                            },
-                            "example32": {
+                            "GENERATED_26": {
                                 "value": "PHP"
                             },
-                            "example33": {
-                                "value": "COP"
+                            "GENERATED_27": {
+                                "value": "MYR"
                             },
-                            "example34": {
+                            "GENERATED_28": {
                                 "value": "ARS"
                             },
-                            "example35": {
-                                "value": "TWD"
+                            "GENERATED_29": {
+                                "value": "CLP"
                             },
-                            "example36": {
-                                "value": "VND"
+                            "GENERATED_30": {
+                                "value": "COP"
                             },
-                            "example37": {
-                                "value": "MAD"
-                            },
-                            "example38": {
-                                "value": "EGP"
-                            },
-                            "example39": {
-                                "value": "NGN"
-                            },
-                            "example40": {
-                                "value": "PKR"
-                            },
-                            "example41": {
-                                "value": "IQD"
-                            },
-                            "example42": {
-                                "value": "KWD"
-                            },
-                            "example43": {
-                                "value": "DZD"
-                            },
-                            "example44": {
-                                "value": "UAH"
-                            },
-                            "example45": {
-                                "value": "PEN"
-                            },
-                            "example46": {
-                                "value": "RON"
-                            },
-                            "example47": {
-                                "value": "BHD"
-                            },
-                            "example48": {
-                                "value": "XOF"
-                            },
-                            "example49": {
-                                "value": "XAF"
-                            },
-                            "example50": {
-                                "value": "TZS"
-                            },
-                            "example51": {
-                                "value": "UGX"
-                            },
-                            "example52": {
-                                "value": "GHS"
-                            },
-                            "example53": {
-                                "value": "KES"
-                            },
-                            "example54": {
-                                "value": "ETB"
-                            },
-                            "example55": {
-                                "value": "SDG"
-                            },
-                            "example56": {
-                                "value": "SOS"
-                            },
-                            "example57": {
-                                "value": "RWF"
+                            "GENERATED_31": {
+                                "value": "TRY"
                             }
                         }
                     }
@@ -1287,7 +1536,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -1300,41 +1552,59 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
+                            "GENERATED_0": {
                                 "value": "United States"
                             },
-                            "example1": {
+                            "GENERATED_1": {
                                 "value": "Canada"
                             },
-                            "example2": {
+                            "GENERATED_2": {
                                 "value": "Zimbabwe"
                             },
-                            "example3": {
-                                "value": "Brazil"
-                            },
-                            "example4": {
-                                "value": "France"
-                            },
-                            "example5": {
-                                "value": "Germany"
-                            },
-                            "example6": {
+                            "GENERATED_3": {
                                 "value": "Australia"
                             },
-                            "example7": {
+                            "GENERATED_4": {
+                                "value": "Germany"
+                            },
+                            "GENERATED_5": {
+                                "value": "France"
+                            },
+                            "GENERATED_6": {
                                 "value": "Japan"
                             },
-                            "example8": {
-                                "value": "China"
+                            "GENERATED_7": {
+                                "value": "Brazil"
                             },
-                            "example9": {
+                            "GENERATED_8": {
                                 "value": "India"
                             },
-                            "example10": {
+                            "GENERATED_9": {
+                                "value": "South Africa"
+                            },
+                            "GENERATED_10": {
                                 "value": "Mexico"
                             },
-                            "example11": {
-                                "value": "South Africa"
+                            "GENERATED_11": {
+                                "value": "Italy"
+                            },
+                            "GENERATED_12": {
+                                "value": "Spain"
+                            },
+                            "GENERATED_13": {
+                                "value": "Argentina"
+                            },
+                            "GENERATED_14": {
+                                "value": "Nigeria"
+                            },
+                            "GENERATED_15": {
+                                "value": "Russia"
+                            },
+                            "GENERATED_16": {
+                                "value": "China"
+                            },
+                            "GENERATED_17": {
+                                "value": "United Kingdom"
                             }
                         }
                     },
@@ -1367,7 +1637,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -1380,185 +1653,68 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
-                                "value": "London"
-                            },
-                            "example1": {
-                                "value": "Paris"
-                            },
-                            "example2": {
-                                "value": "Tokyo"
-                            },
-                            "example3": {
-                                "value": "Beijing"
-                            },
-                            "example4": {
-                                "value": "Moscow"
-                            },
-                            "example5": {
-                                "value": "Berlin"
-                            },
-                            "example6": {
-                                "value": "Rome"
-                            },
-                            "example7": {
-                                "value": "Madrid"
-                            },
-                            "example8": {
-                                "value": "Ottawa"
-                            },
-                            "example9": {
+                            "GENERATED_0": {
                                 "value": "Washington"
                             },
-                            "example10": {
+                            "GENERATED_1": {
                                 "value": "D.C."
                             },
-                            "example11": {
+                            "GENERATED_2": {
+                                "value": "Ottawa"
+                            },
+                            "GENERATED_3": {
+                                "value": "Harare"
+                            },
+                            "GENERATED_4": {
+                                "value": "London"
+                            },
+                            "GENERATED_5": {
+                                "value": "Paris"
+                            },
+                            "GENERATED_6": {
+                                "value": "Tokyo"
+                            },
+                            "GENERATED_7": {
                                 "value": "Canberra"
                             },
-                            "example12": {
+                            "GENERATED_8": {
                                 "value": "Bras\u00edlia"
                             },
-                            "example13": {
-                                "value": " New Delhi"
-                            },
-                            "example14": {
-                                "value": "Cairo"
-                            },
-                            "example15": {
-                                "value": "Nairobi"
-                            },
-                            "example16": {
-                                "value": "Buenos Aires"
-                            },
-                            "example17": {
-                                "value": "Mexico City"
-                            },
-                            "example18": {
-                                "value": "Jakarta"
-                            },
-                            "example19": {
-                                "value": "Bangkok"
-                            },
-                            "example20": {
-                                "value": "Seoul"
-                            },
-                            "example21": {
-                                "value": "Manila"
-                            },
-                            "example22": {
-                                "value": "Hanoi"
-                            },
-                            "example23": {
-                                "value": "Wellington"
-                            },
-                            "example24": {
-                                "value": " Canberra"
-                            },
-                            "example25": {
-                                "value": "Riyadh"
-                            },
-                            "example26": {
-                                "value": "Abu Dhabi"
-                            },
-                            "example27": {
-                                "value": "Tehran"
-                            },
-                            "example28": {
-                                "value": "Baghdad"
-                            },
-                            "example29": {
-                                "value": "Jerusalem"
-                            },
-                            "example30": {
-                                "value": "Amman"
-                            },
-                            "example31": {
-                                "value": "Beirut"
-                            },
-                            "example32": {
-                                "value": "Damascus"
-                            },
-                            "example33": {
-                                "value": "Ankara"
-                            },
-                            "example34": {
-                                "value": "Athens"
-                            },
-                            "example35": {
-                                "value": "Sofia"
-                            },
-                            "example36": {
-                                "value": "Bucharest"
-                            },
-                            "example37": {
-                                "value": "Budapest"
-                            },
-                            "example38": {
-                                "value": " Vienna"
-                            },
-                            "example39": {
-                                "value": "Prague"
-                            },
-                            "example40": {
-                                "value": "Warsaw"
-                            },
-                            "example41": {
-                                "value": "Copenhagen"
-                            },
-                            "example42": {
-                                "value": "Stockholm"
-                            },
-                            "example43": {
-                                "value": "Helsinki"
-                            },
-                            "example44": {
-                                "value": "Oslo"
-                            },
-                            "example45": {
-                                "value": "Reykjavik"
-                            },
-                            "example46": {
-                                "value": "Dublin"
-                            },
-                            "example47": {
-                                "value": "Lisbon"
-                            },
-                            "example48": {
-                                "value": "Bern"
-                            },
-                            "example49": {
-                                "value": "Amsterdam"
-                            },
-                            "example50": {
-                                "value": "Brussels"
-                            },
-                            "example51": {
-                                "value": " Luxembourg City"
-                            },
-                            "example52": {
-                                "value": "Cape Town"
-                            },
-                            "example53": {
-                                "value": "Lima"
-                            },
-                            "example54": {
-                                "value": " Mexico City"
-                            },
-                            "example55": {
+                            "GENERATED_9": {
                                 "value": "New Delhi"
                             },
-                            "example56": {
-                                "value": " Riyadh"
+                            "GENERATED_10": {
+                                "value": "Cairo"
                             },
-                            "example57": {
-                                "value": "Vienna"
+                            "GENERATED_11": {
+                                "value": "Nairobi"
                             },
-                            "example58": {
-                                "value": " Copenhagen"
+                            "GENERATED_12": {
+                                "value": "Berlin"
                             },
-                            "example59": {
-                                "value": "Bern,"
+                            "GENERATED_13": {
+                                "value": "Moscow"
+                            },
+                            "GENERATED_14": {
+                                "value": "Beijing"
+                            },
+                            "GENERATED_15": {
+                                "value": "Buenos Aires"
+                            },
+                            "GENERATED_16": {
+                                "value": "Rome"
+                            },
+                            "GENERATED_17": {
+                                "value": "Madrid"
+                            },
+                            "GENERATED_18": {
+                                "value": "Lisbon"
+                            },
+                            "GENERATED_19": {
+                                "value": "Bangkok"
+                            },
+                            "GENERATED_20": {
+                                "value": "Jakarta"
                             }
                         }
                     }
@@ -1583,7 +1739,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -1593,59 +1752,71 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {
-                            "example0": {
+                            "GENERATED_0": {
                                 "value": "Africa"
                             },
-                            "example1": {
+                            "GENERATED_1": {
                                 "value": "Americas"
                             },
-                            "example2": {
+                            "GENERATED_2": {
                                 "value": "Asia"
                             },
-                            "example3": {
+                            "GENERATED_3": {
                                 "value": "Europe"
                             },
-                            "example4": {
+                            "GENERATED_4": {
                                 "value": "Oceania"
                             },
-                            "example5": {
+                            "GENERATED_5": {
                                 "value": "North America"
                             },
-                            "example6": {
+                            "GENERATED_6": {
                                 "value": "South America"
                             },
-                            "example7": {
+                            "GENERATED_7": {
                                 "value": "Central America"
                             },
-                            "example8": {
-                                "value": "East Asia"
+                            "GENERATED_8": {
+                                "value": "Caribbean"
                             },
-                            "example9": {
+                            "GENERATED_9": {
+                                "value": "Middle East"
+                            },
+                            "GENERATED_10": {
                                 "value": "Southeast Asia"
                             },
-                            "example10": {
+                            "GENERATED_11": {
+                                "value": "East Asia"
+                            },
+                            "GENERATED_12": {
                                 "value": "South Asia"
                             },
-                            "example11": {
-                                "value": " West Asia"
-                            },
-                            "example12": {
-                                "value": "Eastern Europe"
-                            },
-                            "example13": {
+                            "GENERATED_13": {
                                 "value": "Western Europe"
                             },
-                            "example14": {
+                            "GENERATED_14": {
+                                "value": "Eastern Europe"
+                            },
+                            "GENERATED_15": {
                                 "value": "Northern Europe"
                             },
-                            "example15": {
+                            "GENERATED_16": {
                                 "value": "Southern Europe"
                             },
-                            "example16": {
-                                "value": "Oceania"
+                            "GENERATED_17": {
+                                "value": "Pacific Islands"
+                            },
+                            "GENERATED_18": {
+                                "value": "Australia"
+                            },
+                            "GENERATED_19": {
+                                "value": "New Zealand"
                             }
                         }
                     }
@@ -1670,7 +1841,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -1680,35 +1854,47 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {
-                            "example0": {
+                            "GENERATED_0": {
                                 "value": "South America"
                             },
-                            "example1": {
+                            "GENERATED_1": {
                                 "value": "Southern Europe"
                             },
-                            "example2": {
+                            "GENERATED_2": {
                                 "value": "Central America"
                             },
-                            "example3": {
+                            "GENERATED_3": {
                                 "value": "Eastern Asia"
                             },
-                            "example4": {
-                                "value": "Western Europe"
+                            "GENERATED_4": {
+                                "value": "Western Africa"
                             },
-                            "example5": {
-                                "value": "Northern Africa"
+                            "GENERATED_5": {
+                                "value": "Northern Europe"
                             },
-                            "example6": {
+                            "GENERATED_6": {
+                                "value": "Middle East"
+                            },
+                            "GENERATED_7": {
                                 "value": "Southeast Asia"
                             },
-                            "example7": {
-                                "value": "Western Asia"
+                            "GENERATED_8": {
+                                "value": "Caribbean"
                             },
-                            "example8": {
+                            "GENERATED_9": {
                                 "value": "Eastern Europe"
+                            },
+                            "GENERATED_10": {
+                                "value": "Central Asia"
+                            },
+                            "GENERATED_11": {
+                                "value": "South Asia"
                             }
                         }
                     }
@@ -1733,7 +1919,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -1743,9 +1932,157 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "EN"
+                            },
+                            "GENERATED_1": {
+                                "value": "FR"
+                            },
+                            "GENERATED_2": {
+                                "value": "ES"
+                            },
+                            "GENERATED_3": {
+                                "value": "DE"
+                            },
+                            "GENERATED_4": {
+                                "value": "IT"
+                            },
+                            "GENERATED_5": {
+                                "value": "PT"
+                            },
+                            "GENERATED_6": {
+                                "value": "RU"
+                            },
+                            "GENERATED_7": {
+                                "value": "ZH"
+                            },
+                            "GENERATED_8": {
+                                "value": "JA"
+                            },
+                            "GENERATED_9": {
+                                "value": "AR"
+                            },
+                            "GENERATED_10": {
+                                "value": "HI"
+                            },
+                            "GENERATED_11": {
+                                "value": "KO"
+                            },
+                            "GENERATED_12": {
+                                "value": "NL"
+                            },
+                            "GENERATED_13": {
+                                "value": "SV"
+                            },
+                            "GENERATED_14": {
+                                "value": "DA"
+                            },
+                            "GENERATED_15": {
+                                "value": "NO"
+                            },
+                            "GENERATED_16": {
+                                "value": "FI"
+                            },
+                            "GENERATED_17": {
+                                "value": "TR"
+                            },
+                            "GENERATED_18": {
+                                "value": "PL"
+                            },
+                            "GENERATED_19": {
+                                "value": "CS"
+                            },
+                            "GENERATED_20": {
+                                "value": "HU"
+                            },
+                            "GENERATED_21": {
+                                "value": "EL"
+                            },
+                            "GENERATED_22": {
+                                "value": "TH"
+                            },
+                            "GENERATED_23": {
+                                "value": "VI"
+                            },
+                            "GENERATED_24": {
+                                "value": "ID"
+                            },
+                            "GENERATED_25": {
+                                "value": "MS"
+                            },
+                            "GENERATED_26": {
+                                "value": "SW"
+                            },
+                            "GENERATED_27": {
+                                "value": "TL"
+                            },
+                            "GENERATED_28": {
+                                "value": "FA"
+                            },
+                            "GENERATED_29": {
+                                "value": "HE"
+                            },
+                            "GENERATED_30": {
+                                "value": "UR"
+                            },
+                            "GENERATED_31": {
+                                "value": "RO"
+                            },
+                            "GENERATED_32": {
+                                "value": "BG"
+                            },
+                            "GENERATED_33": {
+                                "value": "HR"
+                            },
+                            "GENERATED_34": {
+                                "value": "SK"
+                            },
+                            "GENERATED_35": {
+                                "value": "SL"
+                            },
+                            "GENERATED_36": {
+                                "value": "LT"
+                            },
+                            "GENERATED_37": {
+                                "value": "LV"
+                            },
+                            "GENERATED_38": {
+                                "value": "ET"
+                            },
+                            "GENERATED_39": {
+                                "value": "IS"
+                            },
+                            "GENERATED_40": {
+                                "value": "AM"
+                            },
+                            "GENERATED_41": {
+                                "value": "AZ"
+                            },
+                            "GENERATED_42": {
+                                "value": "KY"
+                            },
+                            "GENERATED_43": {
+                                "value": "MN"
+                            },
+                            "GENERATED_44": {
+                                "value": "TG"
+                            },
+                            "GENERATED_45": {
+                                "value": "XH"
+                            },
+                            "GENERATED_46": {
+                                "value": "ZU"
+                            },
+                            "GENERATED_47": {
+                                "value": "SWA"
+                            }
+                        }
                     }
                 ],
                 "responses": {
@@ -1768,7 +2105,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -1778,333 +2118,38 @@
                         "in": "path",
                         "required": true,
                         "schema": {
-                            "type": "string",
-                            "minLength": 1
+                            "type": "string"
                         },
                         "examples": {
-                            "example0": {
-                                "value": "John"
+                            "GENERATED_0": {
+                                "value": "citizen"
                             },
-                            "example1": {
-                                "value": "Mary"
+                            "GENERATED_1": {
+                                "value": "national"
                             },
-                            "example2": {
-                                "value": "David"
+                            "GENERATED_2": {
+                                "value": "resident"
                             },
-                            "example3": {
-                                "value": "Sarah"
+                            "GENERATED_3": {
+                                "value": "local"
                             },
-                            "example4": {
-                                "value": "Michael"
+                            "GENERATED_4": {
+                                "value": "inhabitant"
                             },
-                            "example5": {
-                                "value": "Jennifer"
+                            "GENERATED_5": {
+                                "value": "denizen"
                             },
-                            "example6": {
-                                "value": "Christopher"
+                            "GENERATED_6": {
+                                "value": "subject"
                             },
-                            "example7": {
-                                "value": "Jessica"
+                            "GENERATED_7": {
+                                "value": "native"
                             },
-                            "example8": {
-                                "value": "Matthew"
+                            "GENERATED_8": {
+                                "value": "voter"
                             },
-                            "example9": {
-                                "value": "Amanda"
-                            },
-                            "example10": {
-                                "value": "Andrew"
-                            },
-                            "example11": {
-                                "value": "Stephanie"
-                            },
-                            "example12": {
-                                "value": "Joshua"
-                            },
-                            "example13": {
-                                "value": "Melissa"
-                            },
-                            "example14": {
-                                "value": "Daniel"
-                            },
-                            "example15": {
-                                "value": " Emily"
-                            },
-                            "example16": {
-                                "value": "Justin"
-                            },
-                            "example17": {
-                                "value": "Samantha"
-                            },
-                            "example18": {
-                                "value": "James"
-                            },
-                            "example19": {
-                                "value": "Ashley"
-                            },
-                            "example20": {
-                                "value": "Joseph"
-                            },
-                            "example21": {
-                                "value": "Brittany"
-                            },
-                            "example22": {
-                                "value": "Ryan"
-                            },
-                            "example23": {
-                                "value": "Lauren"
-                            },
-                            "example24": {
-                                "value": "Nicholas"
-                            },
-                            "example25": {
-                                "value": "Megan"
-                            },
-                            "example26": {
-                                "value": "Brandon"
-                            },
-                            "example27": {
-                                "value": "Elizabeth"
-                            },
-                            "example28": {
-                                "value": "Jonathan"
-                            },
-                            "example29": {
-                                "value": " Rachel"
-                            },
-                            "example30": {
-                                "value": "Tyler"
-                            },
-                            "example31": {
-                                "value": "Heather"
-                            },
-                            "example32": {
-                                "value": "Zachary"
-                            },
-                            "example33": {
-                                "value": "Nicole"
-                            },
-                            "example34": {
-                                "value": "Benjamin"
-                            },
-                            "example35": {
-                                "value": "Alyssa"
-                            },
-                            "example36": {
-                                "value": "William"
-                            },
-                            "example37": {
-                                "value": "Kayla"
-                            },
-                            "example38": {
-                                "value": "Robert"
-                            },
-                            "example39": {
-                                "value": "Amber"
-                            },
-                            "example40": {
-                                "value": "Courtney"
-                            },
-                            "example41": {
-                                "value": "Anthony"
-                            },
-                            "example42": {
-                                "value": " Danielle"
-                            },
-                            "example43": {
-                                "value": "Kevin"
-                            },
-                            "example44": {
-                                "value": "Tiffany"
-                            },
-                            "example45": {
-                                "value": "Eric"
-                            },
-                            "example46": {
-                                "value": "Christina"
-                            },
-                            "example47": {
-                                "value": "Steven"
-                            },
-                            "example48": {
-                                "value": "Victoria"
-                            },
-                            "example49": {
-                                "value": "Thomas"
-                            },
-                            "example50": {
-                                "value": "Kimberly"
-                            },
-                            "example51": {
-                                "value": "Brian"
-                            },
-                            "example52": {
-                                "value": "Michelle"
-                            },
-                            "example53": {
-                                "value": "Timothy"
-                            },
-                            "example54": {
-                                "value": "Laura"
-                            },
-                            "example55": {
-                                "value": "Richard"
-                            },
-                            "example56": {
-                                "value": " Rebecca"
-                            },
-                            "example57": {
-                                "value": "Charles"
-                            },
-                            "example58": {
-                                "value": "Erin"
-                            },
-                            "example59": {
-                                "value": "Jeremy"
-                            },
-                            "example60": {
-                                "value": "Amy"
-                            },
-                            "example61": {
-                                "value": "Mark"
-                            },
-                            "example62": {
-                                "value": "Shannon"
-                            },
-                            "example63": {
-                                "value": "Jeffrey"
-                            },
-                            "example64": {
-                                "value": "Angela"
-                            },
-                            "example65": {
-                                "value": "Scott"
-                            },
-                            "example66": {
-                                "value": "Lisa"
-                            },
-                            "example67": {
-                                "value": "Stephen"
-                            },
-                            "example68": {
-                                "value": "Kelly"
-                            },
-                            "example69": {
-                                "value": "Patrick"
-                            },
-                            "example70": {
-                                "value": "Crystal"
-                            },
-                            "example71": {
-                                "value": " Nathan"
-                            },
-                            "example72": {
-                                "value": "Aaron"
-                            },
-                            "example73": {
-                                "value": "Sara"
-                            },
-                            "example74": {
-                                "value": "Donald"
-                            },
-                            "example75": {
-                                "value": "Katherine"
-                            },
-                            "example76": {
-                                "value": "Gregory"
-                            },
-                            "example77": {
-                                "value": "Andrea"
-                            },
-                            "example78": {
-                                "value": "Samuel"
-                            },
-                            "example79": {
-                                "value": "Julie"
-                            },
-                            "example80": {
-                                "value": "Jack"
-                            },
-                            "example81": {
-                                "value": "Emma"
-                            },
-                            "example82": {
-                                "value": "Oliver"
-                            },
-                            "example83": {
-                                "value": " Olivia"
-                            },
-                            "example84": {
-                                "value": "Noah"
-                            },
-                            "example85": {
-                                "value": "Ava"
-                            },
-                            "example86": {
-                                "value": "Sophia"
-                            },
-                            "example87": {
-                                "value": "Isabella"
-                            },
-                            "example88": {
-                                "value": "Mia"
-                            },
-                            "example89": {
-                                "value": "Charlotte"
-                            },
-                            "example90": {
-                                "value": "Amelia"
-                            },
-                            "example91": {
-                                "value": "Harper"
-                            },
-                            "example92": {
-                                "value": "Evelyn"
-                            },
-                            "example93": {
-                                "value": "Abigail"
-                            },
-                            "example94": {
-                                "value": "Emily"
-                            },
-                            "example95": {
-                                "value": "Avery"
-                            },
-                            "example96": {
-                                "value": "Sofia"
-                            },
-                            "example97": {
-                                "value": " Ella"
-                            },
-                            "example98": {
-                                "value": "Scarlett"
-                            },
-                            "example99": {
-                                "value": "Grace"
-                            },
-                            "example100": {
-                                "value": "Chloe"
-                            },
-                            "example101": {
-                                "value": "Riley"
-                            },
-                            "example102": {
-                                "value": "Aria"
-                            },
-                            "example103": {
-                                "value": "Lily"
-                            },
-                            "example104": {
-                                "value": "Aubrey"
-                            },
-                            "example105": {
-                                "value": "Zoey"
-                            },
-                            "example106": {
-                                "value": "Penelope"
-                            },
-                            "example107": {
-                                "value": "L"
+                            "GENERATED_9": {
+                                "value": "taxpayer"
                             }
                         }
                     }
@@ -2129,7 +2174,10 @@
                         "in": "query",
                         "required": false,
                         "schema": {
-                            "type": "string"
+                            "type": "string",
+                            "items": {
+                                "type": "string"
+                            }
                         },
                         "examples": {}
                     },
@@ -2142,281 +2190,50 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
-                                "value": "English"
+                            "GENERATED_0": {
+                                "value": "Hello"
                             },
-                            "example1": {
-                                "value": "Spanish"
+                            "GENERATED_1": {
+                                "value": "Bonjour"
                             },
-                            "example2": {
-                                "value": "French"
+                            "GENERATED_2": {
+                                "value": "Hola"
                             },
-                            "example3": {
-                                "value": "German"
+                            "GENERATED_3": {
+                                "value": "Ciao"
                             },
-                            "example4": {
-                                "value": "Italian"
+                            "GENERATED_4": {
+                                "value": "Guten Tag"
                             },
-                            "example5": {
-                                "value": "Portuguese"
+                            "GENERATED_5": {
+                                "value": "Namaste"
                             },
-                            "example6": {
-                                "value": "Russian"
+                            "GENERATED_6": {
+                                "value": "Konnichiwa"
                             },
-                            "example7": {
-                                "value": "Chinese"
+                            "GENERATED_7": {
+                                "value": "Salaam"
                             },
-                            "example8": {
-                                "value": "Japanese"
+                            "GENERATED_8": {
+                                "value": "Zdravstvuyte"
                             },
-                            "example9": {
-                                "value": "Korean"
+                            "GENERATED_9": {
+                                "value": "Shalom"
                             },
-                            "example10": {
-                                "value": "Arabic"
+                            "GENERATED_10": {
+                                "value": "Ol\u00e1"
                             },
-                            "example11": {
-                                "value": "Dutch"
+                            "GENERATED_11": {
+                                "value": "Merhaba"
                             },
-                            "example12": {
-                                "value": "Swedish"
+                            "GENERATED_12": {
+                                "value": "Sawubona"
                             },
-                            "example13": {
-                                "value": "Norwegian"
+                            "GENERATED_13": {
+                                "value": "Jambo"
                             },
-                            "example14": {
-                                "value": "Danish"
-                            },
-                            "example15": {
-                                "value": "Finnish"
-                            },
-                            "example16": {
-                                "value": "Greek"
-                            },
-                            "example17": {
-                                "value": "Turkish"
-                            },
-                            "example18": {
-                                "value": "Polish"
-                            },
-                            "example19": {
-                                "value": "Hungarian"
-                            },
-                            "example20": {
-                                "value": "Czech"
-                            },
-                            "example21": {
-                                "value": "Slovak"
-                            },
-                            "example22": {
-                                "value": "Romanian"
-                            },
-                            "example23": {
-                                "value": "Bulgarian"
-                            },
-                            "example24": {
-                                "value": "Ukrainian"
-                            },
-                            "example25": {
-                                "value": "Serbian"
-                            },
-                            "example26": {
-                                "value": "Croatian"
-                            },
-                            "example27": {
-                                "value": "Slovenian"
-                            },
-                            "example28": {
-                                "value": "Macedonian"
-                            },
-                            "example29": {
-                                "value": "Albanian"
-                            },
-                            "example30": {
-                                "value": "Estonian"
-                            },
-                            "example31": {
-                                "value": "Latvian"
-                            },
-                            "example32": {
-                                "value": "Lithuanian"
-                            },
-                            "example33": {
-                                "value": "Maltese"
-                            },
-                            "example34": {
-                                "value": "Icelandic"
-                            },
-                            "example35": {
-                                "value": "Irish"
-                            },
-                            "example36": {
-                                "value": "Welsh"
-                            },
-                            "example37": {
-                                "value": "Scottish Gaelic"
-                            },
-                            "example38": {
-                                "value": "Catalan"
-                            },
-                            "example39": {
-                                "value": "Basque"
-                            },
-                            "example40": {
-                                "value": "Galician"
-                            },
-                            "example41": {
-                                "value": "Corsican"
-                            },
-                            "example42": {
-                                "value": "Luxembourgish"
-                            },
-                            "example43": {
-                                "value": "Malagasy"
-                            },
-                            "example44": {
-                                "value": "Swahili"
-                            },
-                            "example45": {
-                                "value": "Hausa"
-                            },
-                            "example46": {
-                                "value": "Yoruba"
-                            },
-                            "example47": {
-                                "value": "Igbo"
-                            },
-                            "example48": {
-                                "value": "Zulu"
-                            },
-                            "example49": {
-                                "value": "Xhosa"
-                            },
-                            "example50": {
-                                "value": "Afrikaans"
-                            },
-                            "example51": {
-                                "value": "Amharic"
-                            },
-                            "example52": {
-                                "value": "Somali"
-                            },
-                            "example53": {
-                                "value": "Hebrew"
-                            },
-                            "example54": {
-                                "value": "Hindi"
-                            },
-                            "example55": {
-                                "value": "Bengali"
-                            },
-                            "example56": {
-                                "value": "Tamil"
-                            },
-                            "example57": {
-                                "value": "Telugu"
-                            },
-                            "example58": {
-                                "value": "Kannada"
-                            },
-                            "example59": {
-                                "value": "Malayalam"
-                            },
-                            "example60": {
-                                "value": "Marathi"
-                            },
-                            "example61": {
-                                "value": "Gujarati"
-                            },
-                            "example62": {
-                                "value": "Punjabi"
-                            },
-                            "example63": {
-                                "value": "Urdu"
-                            },
-                            "example64": {
-                                "value": "Persian"
-                            },
-                            "example65": {
-                                "value": "Vietnamese"
-                            },
-                            "example66": {
-                                "value": "Thai"
-                            },
-                            "example67": {
-                                "value": "Indonesian"
-                            },
-                            "example68": {
-                                "value": "Filipino"
-                            },
-                            "example69": {
-                                "value": "Malay"
-                            },
-                            "example70": {
-                                "value": "Burmese"
-                            },
-                            "example71": {
-                                "value": "Khmer"
-                            },
-                            "example72": {
-                                "value": "Lao"
-                            },
-                            "example73": {
-                                "value": "Tibetan"
-                            },
-                            "example74": {
-                                "value": "Nepali"
-                            },
-                            "example75": {
-                                "value": "Sinhala"
-                            },
-                            "example76": {
-                                "value": "Mongolian"
-                            },
-                            "example77": {
-                                "value": "Uzbek"
-                            },
-                            "example78": {
-                                "value": "Kazakh"
-                            },
-                            "example79": {
-                                "value": "Kyrgyz"
-                            },
-                            "example80": {
-                                "value": "Tajik"
-                            },
-                            "example81": {
-                                "value": "Turkmen"
-                            },
-                            "example82": {
-                                "value": "Azeri"
-                            },
-                            "example83": {
-                                "value": "Georgian"
-                            },
-                            "example84": {
-                                "value": "Armenian"
-                            },
-                            "example85": {
-                                "value": "Belarusian"
-                            },
-                            "example86": {
-                                "value": "Moldovan"
-                            },
-                            "example87": {
-                                "value": "Bosnian"
-                            },
-                            "example88": {
-                                "value": "Montenegrin"
-                            },
-                            "example89": {
-                                "value": "Haitian Creole"
-                            },
-                            "example90": {
-                                "value": "Haitian"
-                            },
-                            "example91": {
-                                "value": "Creole,"
+                            "GENERATED_14": {
+                                "value": "Xin ch\u00e0o"
                             }
                         }
                     }

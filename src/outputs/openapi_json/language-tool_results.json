@@ -2,7 +2,7 @@
     "openapi": "3.0.1",
     "info": {
         "title": "LanguageTool API",
-        "description": "Check texts for style and grammar issues with LanguageTool. See <a\nhref='http://wiki.languagetool.org/public-http-api'>our wiki</a> for access limitations.",
+        "description": "Check texts for style and grammar issues with LanguageTool. See <a href='http://wiki.languagetool.org/public-http-api'>our wiki</a> for access limitations.",
         "version": "1.0.2"
     },
     "servers": [
@@ -14,7 +14,7 @@
         "/check": {
             "post": {
                 "summary": "Check a text",
-                "description": "The main feature - check a text with LanguageTool for possible\nstyle and grammar issues.",
+                "description": "The main feature - check a text with LanguageTool for possible style and grammar issues.",
                 "requestBody": {
                     "content": {
                         "application/x-www-form-urlencoded": {
@@ -33,29 +33,30 @@
                                     },
                                     "language": {
                                         "type": "string",
-                                        "description": "A language code like `en-US`, `de-DE`, `fr`, or `auto`\nto guess the language automatically (see `preferredVariants` below).\nFor languages with variants (English, German, Portuguese) spell\nchecking will only be activated when you specify the variant,\ne.g. `en-GB` instead of just `en`.",
+                                        "description": "A language code like `en-US`, `de-DE`, `fr`, or `auto` to guess the language automatically (see `preferredVariants` below). For languages with variants (English, German, Portuguese) spell checking will only be activated when you specify the variant, e.g. `en-GB` instead of just `en`.",
                                         "minLength": 2,
                                         "maxLength": 5
                                     },
                                     "altLanguages": {
                                         "type": "string",
-                                        "description": "EXPERIMENTAL: Comma-separated list of language codes\nto check if a word is not similar to one of the main language\n(parameter `language`). Unknown words that are similar to a word\nfrom the main language will still be considered errors but with\ntype `Hint`. For languages with variants (English, German, Portuguese)\nyou need to specify the variant, e.g. `en-GB` instead of just\n`en`.",
+                                        "description": "EXPERIMENTAL: Comma-separated list of language codes to check if a word is not similar to one of the main language (parameter `language`). Unknown words that are similar to a word from the main language will still be considered errors but with type `Hint`. For languages with variants (English, German, Portuguese) you need to specify the variant, e.g. `en-GB` instead of just `en`.",
                                         "items": {
                                             "type": "string"
-                                        }
+                                        },
+                                        "minLength": 2
                                     },
                                     "motherTongue": {
                                         "type": "string",
-                                        "description": "A language code of the user's native language, enabling\nfalse friends checks for some language pairs.",
-                                        "minLength": 2,
-                                        "maxLength": 3
+                                        "description": "A language code of the user's native language, enabling false friends checks for some language pairs."
                                     },
                                     "preferredVariants": {
                                         "type": "string",
-                                        "description": "Comma-separated list of preferred language variants.\nThe language detector used with `language=auto` can detect e.g.\nEnglish, but it cannot decide whether British English or American\nEnglish is used. Thus this parameter can be used to specify the\npreferred variants like `en-GB` and `de-AT`. Only available with\n`language=auto`.",
+                                        "description": "Comma-separated list of preferred language variants. The language detector used with `language=auto` can detect e.g. English, but it cannot decide whether British English or American English is used. Thus this parameter can be used to specify the preferred variants like `en-GB` and `de-AT`. Only available with `language=auto`.",
                                         "items": {
                                             "type": "string"
-                                        }
+                                        },
+                                        "minLength": 5,
+                                        "maxLength": 5
                                     },
                                     "enabledRules": {
                                         "type": "string",
@@ -75,7 +76,7 @@
                                         "type": "string",
                                         "description": "IDs of categories to be enabled, comma-separated",
                                         "items": {
-                                            "type": "string"
+                                            "type": "number"
                                         }
                                     },
                                     "disabledCategories": {
@@ -87,464 +88,116 @@
                                     },
                                     "enabledOnly": {
                                         "type": "boolean",
-                                        "description": "If true, only the rules and categories whose IDs are\nspecified with `enabledRules` or `enabledCategories` are enabled.",
+                                        "description": "If true, only the rules and categories whose IDs are specified with `enabledRules` or `enabledCategories` are enabled.",
                                         "default": false
                                     }
-                                },
-                                "x-dependencies": [
-                                    "Or(text, data)",
-                                    "Or(data, text);"
-                                ]
+                                }
                             },
                             "examples": {
-                                "example0": {
-                                    "value": {
-                                        "data": "<pre>A &lt;b>test&lt;/b></pre>",
-                                        "language": "en-US",
-                                        "altLanguages": "en-US",
-                                        "motherTongue": "en",
-                                        "preferredVariants": "en-GB",
-                                        "enabledOnly": "True"
-                                    }
-                                },
-                                "example1": {
-                                    "value": {
-                                        "data": "<pre>{\"annotation\":[\n {\"text\": \"A \"},\n {\"markup\": \"&lt;b>\"},\n {\"text\": \"test\"},\n {\"markup\": \"&lt;/b>\"}\n]}</pre>",
-                                        "language": "de-DE",
-                                        "altLanguages": "en-CA",
-                                        "motherTongue": "fr",
-                                        "preferredVariants": "de-AT",
-                                        "enabledOnly": "False"
-                                    }
-                                },
-                                "example2": {
-                                    "value": {
-                                        "data": "<pre>{\"markup\": \"&lt;p&gt;\"",
-                                        "language": "fr",
-                                        "altLanguages": "en-AU",
-                                        "motherTongue": "de",
-                                        "preferredVariants": "en-US"
-                                    }
-                                },
-                                "example3": {
-                                    "value": {
-                                        "data": "\"interpretAs\": \"\\n\\n\"}</pre>",
-                                        "language": "auto",
-                                        "altLanguages": "en-NZ",
-                                        "motherTongue": "es",
-                                        "preferredVariants": "fr-FR"
-                                    }
-                                },
-                                "example4": {
-                                    "value": {
-                                        "data": "<pre>&lt;div>Example text&lt;/div></pre>",
-                                        "language": "en-GB",
-                                        "altLanguages": "en-ZA",
-                                        "motherTongue": "it",
-                                        "preferredVariants": "es-ES"
-                                    }
-                                },
-                                "example5": {
-                                    "value": {
-                                        "data": "<pre>{\"annotation\":[  {\"text\": \"Example \"}",
-                                        "language": "en-AU",
-                                        "altLanguages": "en-IN",
-                                        "motherTongue": "pt",
-                                        "preferredVariants": "it-IT"
-                                    }
-                                },
-                                "example6": {
-                                    "value": {
-                                        "data": " {\"markup\": \"&lt;b>\"}",
-                                        "language": "en-CA",
-                                        "altLanguages": "en-GB",
-                                        "motherTongue": "nl",
-                                        "preferredVariants": "pt-BR"
-                                    }
-                                },
-                                "example7": {
-                                    "value": {
-                                        "data": " {\"text\": \"text\"}",
-                                        "language": "en-IN",
-                                        "altLanguages": "de-DE",
-                                        "motherTongue": "sv",
-                                        "preferredVariants": "zh-CN"
-                                    }
-                                },
-                                "example8": {
-                                    "value": {
-                                        "data": " {\"markup\": \"&lt;/b>\"} ]}</pre>",
-                                        "language": "en-NZ",
-                                        "altLanguages": "de-AT",
-                                        "motherTongue": "da",
-                                        "preferredVariants": "ja-JP"
-                                    }
-                                },
-                                "example9": {
-                                    "value": {
-                                        "data": "<pre>{\"markup\": \"&lt;p&gt;\"",
-                                        "language": "en-ZA",
-                                        "altLanguages": "de-CH",
-                                        "motherTongue": "no",
-                                        "preferredVariants": "ko-KR"
-                                    }
-                                },
-                                "example10": {
-                                    "value": {
-                                        "data": "\"interpretAs\": \"\\n\"}</pre>",
-                                        "language": "de-AT",
-                                        "altLanguages": "pt-BR",
-                                        "motherTongue": "fi",
-                                        "preferredVariants": "ru-RU"
-                                    }
-                                },
-                                "example11": {
-                                    "value": {
-                                        "language": "de-CH",
-                                        "altLanguages": "pt-PT",
-                                        "motherTongue": "ru",
-                                        "preferredVariants": "ar-SA"
-                                    }
-                                },
-                                "example12": {
-                                    "value": {
-                                        "language": "de-LI",
-                                        "altLanguages": "es-ES",
-                                        "motherTongue": "pl",
-                                        "preferredVariants": "hi-IN"
-                                    }
-                                },
-                                "example13": {
-                                    "value": {
-                                        "language": "de-LU",
-                                        "altLanguages": "es-MX",
-                                        "motherTongue": "cs",
-                                        "preferredVariants": "id-ID"
-                                    }
-                                },
-                                "example14": {
-                                    "value": {
-                                        "language": "fr-BE",
-                                        "altLanguages": "es-AR",
-                                        "motherTongue": "hu",
-                                        "preferredVariants": "tr-TR"
-                                    }
-                                },
-                                "example15": {
-                                    "value": {
-                                        "language": "fr-CA",
-                                        "altLanguages": "es-CO",
-                                        "motherTongue": "ro",
-                                        "preferredVariants": "nl-NL"
-                                    }
-                                },
-                                "example16": {
-                                    "value": {
-                                        "language": "fr-CH",
-                                        "altLanguages": "es-PE",
-                                        "motherTongue": "bg",
-                                        "preferredVariants": "pl-PL"
-                                    }
-                                },
-                                "example17": {
-                                    "value": {
-                                        "language": "fr-LU",
-                                        "altLanguages": "es-VE",
-                                        "motherTongue": "el",
-                                        "preferredVariants": "sv-SE"
-                                    }
-                                },
-                                "example18": {
-                                    "value": {
-                                        "language": "fr-MC",
-                                        "altLanguages": "es-CL",
-                                        "motherTongue": "tr",
-                                        "preferredVariants": "da-DK"
-                                    }
-                                },
-                                "example19": {
-                                    "value": {
-                                        "language": "fr-MA",
-                                        "altLanguages": "es-EC",
-                                        "motherTongue": "ar",
-                                        "preferredVariants": "fi-FI"
-                                    }
-                                },
-                                "example20": {
-                                    "value": {
-                                        "language": "fr-DZ",
-                                        "altLanguages": "es-DO",
-                                        "motherTongue": "he",
-                                        "preferredVariants": "nb-NO"
-                                    }
-                                },
-                                "example21": {
-                                    "value": {
-                                        "language": "fr-TN",
-                                        "altLanguages": "es-CR",
-                                        "motherTongue": "ja",
-                                        "preferredVariants": "el-GR"
-                                    }
-                                },
-                                "example22": {
-                                    "value": {
-                                        "language": "fr-CI",
-                                        "altLanguages": "es-PA",
-                                        "motherTongue": "ko",
-                                        "preferredVariants": "cs-CZ"
-                                    }
-                                },
-                                "example23": {
-                                    "value": {
-                                        "language": "fr-SN",
-                                        "altLanguages": "es-UY",
-                                        "motherTongue": "zh",
-                                        "preferredVariants": "hu-HU"
-                                    }
-                                },
-                                "example24": {
-                                    "value": {
-                                        "language": "fr-CG",
-                                        "altLanguages": "es-GT",
-                                        "motherTongue": "th",
-                                        "preferredVariants": "th-TH"
-                                    }
-                                },
-                                "example25": {
-                                    "value": {
-                                        "language": "fr-CM",
-                                        "altLanguages": "es-BO",
-                                        "motherTongue": "vi",
-                                        "preferredVariants": "he-IL"
-                                    }
-                                },
-                                "example26": {
-                                    "value": {
-                                        "language": "fr-CD",
-                                        "altLanguages": "es-HN",
-                                        "preferredVariants": "vi-VN"
-                                    }
-                                },
-                                "example27": {
-                                    "value": {
-                                        "language": "fr-GA",
-                                        "altLanguages": "es-SV",
-                                        "preferredVariants": "ro-RO"
-                                    }
-                                },
-                                "example28": {
-                                    "value": {
-                                        "language": "fr-GF",
-                                        "altLanguages": "es-NI",
-                                        "preferredVariants": "uk-UA"
-                                    }
-                                },
-                                "example29": {
-                                    "value": {
-                                        "language": "fr-GP",
-                                        "altLanguages": "es-PR",
-                                        "preferredVariants": "hr-HR"
-                                    }
-                                },
-                                "example30": {
-                                    "value": {
-                                        "language": "fr-HT",
-                                        "altLanguages": "es-PY",
-                                        "preferredVariants": "bg-BG"
-                                    }
-                                },
-                                "example31": {
-                                    "value": {
-                                        "language": "fr-MQ",
-                                        "altLanguages": "es-US",
-                                        "preferredVariants": "sr-RS"
-                                    }
-                                },
-                                "example32": {
-                                    "value": {
-                                        "language": "fr-MR",
-                                        "altLanguages": "es-CU",
-                                        "preferredVariants": "sl-SI"
-                                    }
-                                },
-                                "example33": {
-                                    "value": {
-                                        "language": "fr-MU",
-                                        "preferredVariants": "sk-SK"
-                                    }
-                                },
-                                "example34": {
-                                    "value": {
-                                        "language": "fr-NC",
-                                        "preferredVariants": "lt-LT"
-                                    }
-                                },
-                                "example35": {
-                                    "value": {
-                                        "language": "fr-PF",
-                                        "preferredVariants": "lv-LV"
-                                    }
-                                },
-                                "example36": {
-                                    "value": {
-                                        "language": "fr-RE",
-                                        "preferredVariants": "et-EE"
-                                    }
-                                },
-                                "example37": {
-                                    "value": {
-                                        "language": "fr-RW",
-                                        "preferredVariants": "ms-MY"
-                                    }
-                                },
-                                "example38": {
-                                    "value": {
-                                        "language": "fr-BL",
-                                        "preferredVariants": "fa-IR"
-                                    }
-                                },
-                                "example39": {
-                                    "value": {
-                                        "language": "fr-MF",
-                                        "preferredVariants": "af-ZA"
-                                    }
-                                },
-                                "example40": {
-                                    "value": {
-                                        "language": "fr-PM",
-                                        "preferredVariants": "sq-AL"
-                                    }
-                                },
-                                "example41": {
-                                    "value": {
-                                        "language": "fr-VC",
-                                        "preferredVariants": "hy-AM"
-                                    }
-                                },
-                                "example42": {
-                                    "value": {
-                                        "language": "fr-SC",
-                                        "preferredVariants": "eu-ES"
-                                    }
-                                },
-                                "example43": {
-                                    "value": {
-                                        "language": "fr-SY",
-                                        "preferredVariants": "bn-BD"
-                                    }
-                                },
-                                "example44": {
-                                    "value": {
-                                        "language": "fr-TG",
-                                        "preferredVariants": "bs-BA"
-                                    }
-                                },
-                                "example45": {
-                                    "value": {
-                                        "language": "fr-TD",
-                                        "preferredVariants": "ca-ES"
-                                    }
-                                },
-                                "example46": {
-                                    "value": {
-                                        "language": "fr",
-                                        "preferredVariants": "cy-GB"
-                                    }
-                                },
-                                "example47": {
-                                    "value": {
-                                        "preferredVariants": "eo-EO"
-                                    }
-                                },
-                                "example48": {
-                                    "value": {
-                                        "preferredVariants": "fil-PH"
-                                    }
-                                },
-                                "example49": {
-                                    "value": {
-                                        "preferredVariants": "ga-IE"
-                                    }
-                                },
-                                "example50": {
-                                    "value": {
-                                        "preferredVariants": "gl-ES"
-                                    }
-                                },
-                                "example51": {
-                                    "value": {
-                                        "preferredVariants": "gu-IN"
-                                    }
-                                },
-                                "example52": {
-                                    "value": {
-                                        "preferredVariants": "ht-HT"
-                                    }
-                                },
-                                "example53": {
-                                    "value": {
-                                        "preferredVariants": "is-IS"
-                                    }
-                                },
-                                "example54": {
-                                    "value": {
-                                        "preferredVariants": "jv-ID"
-                                    }
-                                },
-                                "example55": {
-                                    "value": {
-                                        "preferredVariants": "kn-IN"
-                                    }
-                                },
-                                "example56": {
-                                    "value": {
-                                        "preferredVariants": "km-KH"
-                                    }
-                                },
-                                "example57": {
-                                    "value": {
-                                        "preferredVariants": "ku-TR"
-                                    }
-                                },
-                                "example58": {
-                                    "value": {
-                                        "preferredVariants": "ky-KG"
-                                    }
-                                },
-                                "example59": {
-                                    "value": {
-                                        "preferredVariants": "lo-LA"
-                                    }
-                                },
-                                "example60": {
-                                    "value": {
-                                        "preferredVariants": "mk-MK"
-                                    }
-                                },
-                                "example61": {
-                                    "value": {
-                                        "preferredVariants": "ml-IN"
-                                    }
-                                },
-                                "example62": {
-                                    "value": {
-                                        "preferredVariants": "mn-MN"
-                                    }
-                                },
-                                "example63": {
-                                    "value": {
-                                        "preferredVariants": "mr-IN"
-                                    }
-                                },
-                                "example64": {
-                                    "value": {
-                                        "preferredVariants": "ne-NP"
-                                    }
-                                },
-                                "example65": {
-                                    "value": {
-                                        "preferredVariants": "pa-IN"
-                                    }
+                                "GENERATED_0": {
+                                    "value": "101"
+                                },
+                                "GENERATED_1": {
+                                    "value": "202"
+                                },
+                                "GENERATED_2": {
+                                    "value": "303"
+                                },
+                                "GENERATED_3": {
+                                    "value": "404"
+                                },
+                                "GENERATED_4": {
+                                    "value": "505"
+                                },
+                                "GENERATED_5": {
+                                    "value": "606"
+                                },
+                                "GENERATED_6": {
+                                    "value": "707"
+                                },
+                                "GENERATED_7": {
+                                    "value": "808"
+                                },
+                                "GENERATED_8": {
+                                    "value": "909"
+                                },
+                                "GENERATED_9": {
+                                    "value": "1001"
+                                },
+                                "GENERATED_10": {
+                                    "value": "11"
+                                },
+                                "GENERATED_11": {
+                                    "value": "12"
+                                },
+                                "GENERATED_12": {
+                                    "value": "13"
+                                },
+                                "GENERATED_13": {
+                                    "value": "14"
+                                },
+                                "GENERATED_14": {
+                                    "value": "15"
+                                },
+                                "GENERATED_15": {
+                                    "value": "zh-TW"
+                                },
+                                "GENERATED_16": {
+                                    "value": "FI"
+                                },
+                                "GENERATED_17": {
+                                    "value": "PL"
+                                },
+                                "GENERATED_18": {
+                                    "value": "TR"
+                                },
+                                "GENERATED_19": {
+                                    "value": "CS"
+                                },
+                                "GENERATED_20": {
+                                    "value": "HU"
+                                },
+                                "GENERATED_21": {
+                                    "value": "EL"
+                                },
+                                "GENERATED_22": {
+                                    "value": "TH"
+                                },
+                                "GENERATED_23": {
+                                    "value": "VI"
+                                },
+                                "GENERATED_24": {
+                                    "value": "RO"
+                                },
+                                "GENERATED_25": {
+                                    "value": "BG"
+                                },
+                                "GENERATED_26": {
+                                    "value": "HR"
+                                },
+                                "GENERATED_27": {
+                                    "value": "LT"
+                                },
+                                "GENERATED_28": {
+                                    "value": "LV"
+                                },
+                                "GENERATED_29": {
+                                    "value": "SL"
+                                },
+                                "GENERATED_30": {
+                                    "value": "ET"
+                                },
+                                "GENERATED_31": {
+                                    "value": "IS"
+                                },
+                                "GENERATED_32": {
+                                    "value": "MS"
+                                },
+                                "GENERATED_33": {
+                                    "value": "SW"
+                                },
+                                "GENERATED_34": {
+                                    "value": "TL"
                                 }
                             }
                         }
@@ -562,7 +215,13 @@
                             }
                         }
                     }
-                }
+                },
+                "x-dependencies": [
+                    "Or(text, data);",
+                    "Or(data, text);",
+                    "IF language=='auto' THEN ZeroOrOne(preferredVariants);",
+                    "IF enabledOnly THEN OnlyOne(enabledRules, enabledCategories);"
+                ]
             }
         },
         "/languages": {
