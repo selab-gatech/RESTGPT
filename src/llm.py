@@ -111,8 +111,8 @@ def llm_output_formatting(name, specifier, operation_constraints, parameter_form
 
 def run_llm_chain(file_path, method_path, method_type):
 
-    #llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0.4, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
-    llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0.4)
+    #llm = ChatOpenAI(model_name="gpt-4o-mini", max_tokens=256, openai_api_key = API_KEY, temperature=0.4, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
+    llm = ChatOpenAI(model_name="gpt-4o-mini", max_tokens=256, openai_api_key = API_KEY, temperature=0.4)
 
     method_key = f"{method_path} {method_type}"
     parameters = parse_parameters(file_path).get(method_key)
@@ -152,7 +152,7 @@ def run_llm_chain(file_path, method_path, method_type):
                                      parameter_formats=parameter_formats,
                                      parameter_constraints=parameter_constraints,
                                      parameter_examples=parameter_examples)
-    
+
     for parameter in parameters:
         print(f"Attempting to request from LLM for {parameter}.")
         restriction_list.append(run_parameter(parameter))

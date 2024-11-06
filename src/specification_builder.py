@@ -1,5 +1,5 @@
 from src.llm import run_llm_chain
-from prance import ResolvingParser, BaseParser
+from prance import ResolvingParser
 from src.parsers.parameter_constraint_parser import ParameterConstraintParser
 from src.parsers.example_parser import ExampleParser
 from src.parsers.parameter_format_parser import ParameterFormatParser
@@ -12,24 +12,28 @@ import yaml
 import json
 import os
 
+
 class Parameter_Example:
     def __init__(self, provided=None, generated=None, valid=False):
         self.provided = provided
         self.generated = generated
         self.valid = valid
 
+
 class Parameter_Constraint:
-    def __init__(self, min=None, max=None, minLength=None, maxLength=None, minItems=None, maxItems=None, minProperties=None, maxProperties=None, default=None, valid=False):
+    def __init__(self, min=None, max=None, minLength=None, maxLength=None, minItems=None, maxItems=None,
+                 minProperties=None, maxProperties=None, default=None, valid=False):
         self.min = min
         self.max = max
-        self.minLength = minLength
-        self.maxLength = maxLength
+        self.minLength = minLength  # Ensure this is treated as an integer
+        self.maxLength = maxLength  # Ensure this is treated as an integer
         self.minItems = minItems
         self.maxItems = maxItems
         self.minProperties = minProperties
         self.maxProperties = maxProperties
         self.default = default
         self.valid = valid
+
 
 class Parameter_Format:
     def __init__(self, type=None, format=None, collectionFormat=None, items=None, valid=False):
@@ -39,10 +43,12 @@ class Parameter_Format:
         self.items = items
         self.valid = valid
 
+
 class Operation_Constraint:
-    def __init__(self, x_dependencies = None, valid = False):
+    def __init__(self, x_dependencies=None, valid=False):
         self.x_dependencies = x_dependencies
         self.valid = valid
+
 
 class LLM_CSV_Body:
     def __init__(self, parameter: str, temperature: float, token_limit: int, prompt: str, response: str):
@@ -59,13 +65,14 @@ class SpecificationBuilder:
         self.example_parser = ExampleParser()
         self.parameter_constraint_parser = ParameterConstraintParser()
         self.parameter_format_parser = ParameterFormatParser()
-        self.output_builder = ResolvingParser(read_path, strict=False).specification #reads in the specification as a dictionary, this is the spec we modify
+        self.output_builder = ResolvingParser(read_path,
+                                              strict=False).specification
         self.read_path = read_path
         self.output_path = output_path
         self.paths = []
         valid_http_methods = {'put', 'post', 'patch', 'get', 'delete', 'options', 'head', 'patch', 'trace'}
         for path, path_values in self.output_builder.get('paths', {}).items():
-            for method_type, method_values in path_values.items(): # Determine HTTP method
+            for method_type, method_values in path_values.items():
                 if method_type in valid_http_methods:
                     method_key_tuple = (path, method_type)
                     self.paths.append(method_key_tuple)
@@ -80,27 +87,47 @@ class SpecificationBuilder:
             self.method_parameter_set[method_key] = set(self.method_parameter_set[method_key])
         self.report = {}
         self.values_to_add = set(['examples', 'x-dependencies'])
+
     def _convert_key(self, path):
         return f'{path[0]} {path[1]}'
-        
+
     def _add_parameter_constraint(self, build_parameter, parameter_constraint):
         if parameter_constraint is None:
             return
+
         for constraint_key, constraint in parameter_constraint.items():
-            if  constraint is not None and constraint.strip() != "None":
+            if constraint_key in ["minProperties", "maxProperties"] and constraint is not None:
+                try:
+                    build_parameter[constraint_key] = int(constraint)  # Ensure it's set as an integer.
+                except ValueError:
+                    pass  # Handle invalid conversion if necessary.
+            elif constraint_key in ['max', 'min'] and constraint is not None and "type" in build_parameter:
+                if build_parameter["type"] in ["integer", "number"]:
+                    build_parameter[constraint_key] = constraint
+
+                    # New line to prevent additional properties
+                    build_parameter["additionalProperties"] = False
+
+                else:
+                    # Remove max/min if type is not appropriate
+                    build_parameter.pop(constraint_key, None)
+            elif constraint is not None and constraint.strip() != "None":
                 build_parameter[constraint_key] = constraint
+
     def _add_ipd_constraint(self, build_parameter, ipd_constraint):
         if ipd_constraint is None:
             return
         for constraint in ipd_constraint:
             build_parameter["x-dependencies"] = ipd_constraint[constraint]
+
     def _add_example_values(self, build_parameter, model_examples):
-        if model_examples is None: 
+        if model_examples is None:
             return
         example_key = "examples"
         build_parameter[example_key] = model_examples
+
     def _add_parameter_type_values(self, build_parameter, parameter_types):
-        if parameter_types is None: 
+        if parameter_types is None:
             return None
         for type_key, extracted_type in parameter_types.items():
             if extracted_type.strip() != "None":
@@ -108,151 +135,204 @@ class SpecificationBuilder:
                     if parameter_types["type"] == "array":
                         build_parameter[type_key] = extracted_type
                 else:
-                    build_parameter[type_key] = extracted_type    
+                    build_parameter[type_key] = extracted_type
 
-    def process_operation(self, path, method): 
+    def process_operation(self, path, method):
         operation = None
-        if path in self.output_builder['paths']: 
+        if path in self.output_builder['paths']:
             if method in self.output_builder['paths'][path]:
                 operation = self.output_builder['paths'][path][method]
         if operation is None:
             raise Exception("Operation not found")
-        parameters = None 
-        #x-dependencies are operation level
-        xdependencies = [] 
+        parameters = None
+        xdependencies = []
         request_body = None
         if 'x-dependencies' in operation:
             xdependencies = operation['x-dependencies']
         if 'parameters' in operation:
             parameters = operation['parameters']
-        if 'requestBody' in operation: 
-            request_body = True
+        if 'requestBody' in operation:
+            if method != 'GET':
+              request_body = True
+            else:
+              request_body = False
         generated_parameter_values, generated_request_body_values = self.model_constraints(path, method)
         if parameters:
-            for parameter in parameters: 
+            for parameter in parameters:
                 self.process_parameter(parameter, generated_parameter_values, xdependencies)
         if request_body:
             self.process_request_body(operation['requestBody'], generated_request_body_values, xdependencies)
-        if xdependencies: 
+        if xdependencies:
             operation['x-dependencies'] = xdependencies
-        #with open('test.yaml', 'w') as yaml_file:
-        #    yaml.dump(self.output_builder, yaml_file, default_flow_style=False, sort_keys=False)
 
     def process_parameter(self, parameter, generated_parameter_values, xdependencies):
         if parameter['name'] in generated_parameter_values:
-                constraint_set = generated_parameter_values[parameter['name']]
-                if 'name' in constraint_set:
-                    constraint_set.pop("name")
-                parameter['examples'] = {} if 'examples' not in parameter else parameter['examples']  
-                if 'examples' in constraint_set:
-                    for key in constraint_set['examples']['examples']:
-                        parameter['examples'][key] = constraint_set['examples']['examples'][key]
-                    constraint_set.pop("examples")
-                if 'x-dependencies' in constraint_set:
-                    xdependencies.extend(constraint_set['x-dependencies'])
-                    constraint_set.pop("x-dependencies")
-                if 'schema' not in parameter: 
-                    parameter['schema'] = {}
-                if 'type' in constraint_set:
-                    schema_loc = parameter['schema']
-                    if constraint_set['type'] == 'array':
-                        schema_loc.setdefault("items", {})
-                        if constraint_set.get("items") is not None and constraint_set.get("items").strip() != "None":
-                            schema_loc['items'].setdefault("type", constraint_set.get("items"))
-                        if constraint_set.get("format") is not None and constraint_set.get("format").strip() != "None":
-                            schema_loc['items'].setdefault("format", constraint_set.get("format"))
-                    else:
-                        schema_loc.setdefault("type", constraint_set.get("type"))
+            constraint_set = generated_parameter_values[parameter['name']]
+            if 'name' in constraint_set:
+                constraint_set.pop("name")
+
+            # Ensure 'example' is not included if 'examples' exists
+            if 'examples' in constraint_set:
+                if 'example' in parameter:
+                    del parameter['example']  # Remove the example key
+
+                parameter['examples'] = {}
+                for key in constraint_set['examples']['examples']:
+                    parameter['examples'][key] = constraint_set['examples']['examples'][key]
+                constraint_set.pop("examples")
+
+            elif 'example' in constraint_set:
+                # If 'examples' doesn't exist but 'example' does, set it
+                parameter['example'] = constraint_set.pop("example")
+
+            if 'x-dependencies' in constraint_set:
+                xdependencies.extend(constraint_set['x-dependencies'])
+                constraint_set.pop("x-dependencies")
+
+            if 'schema' not in parameter:
+                parameter['schema'] = {}
+
+            # Handle the schema and styles
+            schema_loc = parameter['schema']
+            if 'type' in constraint_set:
+                if constraint_set['type'] == 'array':
+                    schema_loc.setdefault("items", {})
+                    if constraint_set.get("items") is not None and constraint_set.get("items").strip() != "None":
+                        schema_loc["items"].setdefault("type", constraint_set.get("items"))
+
+                    if 'maxItems' in constraint_set:
+                        schema_loc.setdefault("maxItems", int(constraint_set['maxItems']))  # Keep this as int for items
+                    if 'minItems' in constraint_set:
+                        schema_loc.setdefault("minItems", int(constraint_set['minItems']))
+                    if constraint_set.get("format") is not None and constraint_set.get("format").strip() != "None":
+                        schema_loc["items"].setdefault("format", constraint_set.get("format"))
+                else:
+                    schema_loc.setdefault("type", constraint_set.get("type"))
+                    # Handle max and min constraints
+                    if 'max' in constraint_set:
+                        # Check for float or int, then set accordingly
+                        try:
+                            if schema_loc["type"] in ["integer", "number"]:
+                                schema_loc.setdefault("maximum", int(float(constraint_set['max'])))
+                            constraint_set.pop("max", None)
+                        except ValueError:
+                            # Handle invalid conversion if necessary (either log or ignore)
+                            pass
+
+                    if 'min' in constraint_set:
+                        # Similarly, handle both integer and float
+                        try:
+                            if schema_loc["type"] in ["integer", "number"]:
+                                schema_loc.setdefault("minimum", int(float(constraint_set['min'])))
+                            constraint_set.pop("min", None)
+                        except ValueError:
+                            # Handle invalid conversion if necessary (either log or ignore)
+                            pass
+
                     constraint_set.pop("type")
-                for field in constraint_set:
+
+            # Set additional constraints
+            for field in constraint_set:
+                # Here collectionFormat is removed and style/explode
+                if field != "collectionFormat":
+                    if field in ["minLength", "maxLength"] and constraint_set[field] is not None:
+                        constraint_set[field] = int(constraint_set[field])
                     parameter['schema'].setdefault(field, constraint_set.get(field))
-                
+
     def process_request_body(self, request_body, generated_request_body_values, xdependencies):
         encoding_type = None
         for encoding in request_body.get("content", {}):
-                if encoding != 'description':
-                    encoding_type = encoding
-                    break
-        if encoding_type: 
+            if encoding != 'description':
+                encoding_type = encoding
+                break
+        if encoding_type:
             if 'schema' in request_body['content'][encoding_type]:
                 if 'properties' in request_body['content'][encoding_type]['schema']:
                     for property_name in request_body['content'][encoding_type]['schema']['properties']:
                         constraint_set = None
                         for item in generated_request_body_values:
                             if isinstance(item, dict) and 'name' in item and property_name == item['name']:
-                                constraint_set = item 
+                                constraint_set = item
                         if constraint_set:
+                            # Remove collection format, and add style and explode
+                            if 'collectionFormat' in constraint_set:
+                                del constraint_set['collectionFormat']
+
                             if 'name' in constraint_set:
                                 constraint_set.pop("name")
+
+                            # Ensure that if we have examples, we remove the example key if it exists
                             if 'examples' in constraint_set:
-                                request_body['content'][encoding_type]['schema']['properties'][property_name].setdefault("examples", {})
+                                if 'example' in request_body['content'][encoding_type]['schema']['properties'][property_name]:
+                                    del request_body['content'][encoding_type]['schema']['properties'][property_name]['example']  # Remove the example key if it exists
+
+                                request_body['content'][encoding_type].setdefault("examples", {})
                                 for key in constraint_set['examples']['examples']:
-                                    request_body['content'][encoding_type]['schema']['properties'][property_name]['examples'][key] = constraint_set['examples']['examples'][key]
+                                    request_body['content'][encoding_type]['examples'][key] = \
+                                        constraint_set['examples']['examples'][key]
                                 constraint_set.pop("examples")
+
                             if 'x-dependencies' in constraint_set:
                                 xdependencies.extend(constraint_set['x-dependencies'])
                                 constraint_set.pop("x-dependencies")
+
                             if 'type' in constraint_set:
                                 if constraint_set['type'] == 'array':
-                                    prop_loc = request_body['content'][encoding_type]['schema']['properties'][property_name]
+                                    prop_loc = request_body['content'][encoding_type]['schema']['properties'][
+                                        property_name]
                                     prop_loc.setdefault("items", {})
                                     if constraint_set.get("items") is not None and constraint_set.get("items").strip() != "None":
                                         prop_loc['items'].setdefault("type", constraint_set.get("items"))
                                     if constraint_set.get("format") is not None and constraint_set.get("format").strip() != "None":
                                         prop_loc['items'].setdefault("format", constraint_set.get("format"))
+
+                                    if 'minItems' in constraint_set:
+                                        prop_loc.setdefault("minItems", int(constraint_set['minItems']))
+                                    if 'maxItems' in constraint_set:
+                                        prop_loc.setdefault("maxItems", int(constraint_set['maxItems']))
                                 else:
                                     request_body['content'][encoding_type]['schema']['properties'][property_name].setdefault("type", constraint_set.get("type"))
                                 constraint_set.pop("type")
+
                             for field in constraint_set:
-                                request_body['content'][encoding_type]['schema']['properties'][property_name].setdefault(field, constraint_set.get(field))
-                else: 
-                    constraint_set = generated_request_body_values[0]
-                    if 'name' in constraint_set:
-                        constraint_set.pop("name")
-                    if 'examples' in constraint_set:
-                        request_body['content'][encoding_type].setdefault("examples", {})
-                        for key in constraint_set['examples']['examples']:
-                            request_body['content'][encoding_type]['examples'][key] = constraint_set['examples']['examples'][key]
-                        constraint_set.pop("examples")
-                    if 'x-dependencies' in constraint_set:
-                        xdependencies.extend(constraint_set['x-dependencies'])
-                        constraint_set.pop("x-dependencies")
-                    if 'type' in constraint_set:
-                        if constraint_set['type'] == 'array':
-                            schema_loc = request_body['content'][encoding_type]['schema']
-                            schema_loc.setdefault("items", {})
-                            if constraint_set.get("items") is not None and constraint_set.get("items") != "None":
-                                schema_loc['items'].setdefault("type", constraint_set.get("items"))
-                            if constraint_set.get("format") is not None and constraint_set.get("format") != "None":
-                                schema_loc['items'].setdefault("format", constraint_set.get("format"))
-                        else:
-                            request_body['content'][encoding_type]['schema'].setdefault("type", constraint_set.get("type"))
-                        constraint_set.pop("type")
-                    for field in constraint_set:
-                        request_body['content'][encoding_type]['schema'].setdefault(field, constraint_set.get(field))
+                                if field == "minLength" and constraint_set[field] is not None:
+                                    constraint_set[field] = int(constraint_set[field])
+                                elif field == "maxLength" and constraint_set[field] is not None:
+                                    constraint_set[field] = int(constraint_set[field])
+                                request_body['content'][encoding_type]['schema']['properties'][
+                                    property_name].setdefault(field, constraint_set.get(field))
+
 
     def model_constraints(self, path, method):
-        constraint_dict =  run_llm_chain(self.read_path, path, method)
+        constraint_dict = run_llm_chain(self.read_path, path, method)
         parameters = {}
         request_body = []
         for parameter in constraint_dict:
             parameter_spec = {}
             parameter_spec['name'] = parameter['name']
-            self._add_parameter_constraint(parameter_spec, self.parameter_constraint_parser.parse(parameter["parameter_constraints"]))
-            self._add_ipd_constraint(parameter_spec, self.ipd_parser.parse_parameter(parameter["operational_constraints"]))
-            self._add_parameter_type_values(parameter_spec, self.parameter_format_parser.parse(parameter["parameter_formats"]))
-            if parameter["name"] in self.method_parameter_set[self._convert_key((path,method))]:
-                self._add_example_values(parameter_spec, self.example_parser.parse_examples(parameter["parameter_examples"], is_requestBody=False, parameter_name=parameter["name"]))
+            self._add_parameter_constraint(parameter_spec,
+                                           self.parameter_constraint_parser.parse(parameter["parameter_constraints"]))
+            self._add_ipd_constraint(parameter_spec,
+                                     self.ipd_parser.parse_parameter(parameter["operational_constraints"]))
+            self._add_parameter_type_values(parameter_spec,
+                                            self.parameter_format_parser.parse(parameter["parameter_formats"]))
+            if parameter["name"] in self.method_parameter_set[self._convert_key((path, method))]:
+                self._add_example_values(parameter_spec,
+                                         self.example_parser.parse_examples(parameter["parameter_examples"],
+                                                                            is_requestBody=False,
+                                                                            parameter_name=parameter["name"]))
                 parameters[parameter["name"]] = parameter_spec
-            else: 
-                self._add_example_values(parameter_spec, self.example_parser.parse_examples(parameter["parameter_examples"], is_requestBody=False, parameter_name=parameter["name"]))
+            else:
+                self._add_example_values(parameter_spec,
+                                         self.example_parser.parse_examples(parameter["parameter_examples"],
+                                                                            is_requestBody=False,
+                                                                            parameter_name=parameter["name"]))
                 request_body.append(parameter_spec)
         return parameters, request_body
 
     def make_report_constraint_object(self, path, operation, parameter, values, requestBody):
         restrictions = []
         for value, restrict in values.items():
-            # corrections to report errors - OpenAPI takes "maximum" not "max"
             if value == "max":
                 value = "maximum"
             elif value == "min":
@@ -262,7 +342,6 @@ class SpecificationBuilder:
                 "restriction_name": value,
                 "restriction_value": restrict
             })
-        # save navigation to parameter to edit in RevolvingParser
         return {
             "path": path,
             "method": operation,
@@ -286,9 +365,11 @@ class SpecificationBuilder:
                                                                    True))
         return constraint_list
 
-    def assign_rule_categories(self, restriction_name, restriction_value, parameter_example, parameter_constraint, parameter_format, operation_constraint):
+    def assign_rule_categories(self, restriction_name, restriction_value, parameter_example, parameter_constraint,
+                               parameter_format, operation_constraint):
         parameter_example_map = {'provided': 'provided', 'generated': 'generated'}
-        parameter_constraint_map = {'minimum': 'min', 'maximum': 'max', 'minLength': 'minLength', 'maxLength': 'maxLength',
+        parameter_constraint_map = {'minimum': 'min', 'maximum': 'max', 'minLength': 'minLength',
+                                    'maxLength': 'maxLength',
                                     'minItems': 'minItems', 'maxItems': 'maxItems', 'minProperties': 'minProperties',
                                     'maxProperties': 'maxProperties', 'default': 'default'}
         parameter_format_map = {'type': 'type', 'format': 'format', 'collectionFormat': 'collectionFormat',
@@ -303,10 +384,10 @@ class SpecificationBuilder:
             parameter_constraint.valid = True
         elif restriction_name in parameter_format_map:
             setattr(parameter_format, parameter_format_map[restriction_name], restriction_value)
-            parameter_format.value = True
+            parameter_format.valid = True
         elif restriction_name in operation_constraint_map:
             setattr(operation_constraint, operation_constraint_map[restriction_name], restriction_value)
-            operation_constraint.value = True
+            operation_constraint.valid = True
 
     def llm_example_pair(self, description, parameter_example):
         example_prompt = PARAMETER_EXAMPLE_CONTEXT + "\n"
@@ -349,7 +430,7 @@ class SpecificationBuilder:
         constraint_response = "None"
         if parameter_constraint.valid:
             if parameter_constraint_type == 'int':
-                min = parameter_constraint.min if parameter_constraint.min is not None else "None" # we kept min instead of minimum
+                min = parameter_constraint.min if parameter_constraint.min is not None else "None"
                 max = parameter_constraint.max if parameter_constraint.max is not None else "None"
                 default = parameter_constraint.default if parameter_constraint.default is not None else "None"
                 constraint_response = f"min {min}, max {max}, default {default}"
@@ -411,10 +492,9 @@ class SpecificationBuilder:
         return operation_prompt, operation_response
 
     def create_prompt_and_response(self, parameter_info: dict):
-        # for each parameter in constraint_list, determine all the prompts and response bodies
         description = parameter_info['description']
 
-        parameter_constraint_type = 'int' # default to int since only having 'default' uses int formatting
+        parameter_constraint_type = 'int'
         constraint_type_mapping = {
             'minimum': 'int', 'maximum': 'int',
             'minLength': 'string', 'maxLength': 'string',
@@ -432,15 +512,15 @@ class SpecificationBuilder:
             restriction_value = restriction['restriction_value']
             if restriction_name in constraint_type_mapping:
                 parameter_constraint_type = constraint_type_mapping[restriction_name]
-            self.assign_rule_categories(restriction_name, restriction_value, parameter_example, parameter_constraint, parameter_format, operation_constraint)
+            self.assign_rule_categories(restriction_name, restriction_value, parameter_example, parameter_constraint,
+                                        parameter_format, operation_constraint)
 
-        # create prompt and response body
         example_prompt, example_response = self.llm_example_pair(description, parameter_example)
-        constraint_prompt, constraint_response = self.llm_constraint_pair(description, parameter_constraint, parameter_constraint_type)
+        constraint_prompt, constraint_response = self.llm_constraint_pair(description, parameter_constraint,
+                                                                          parameter_constraint_type)
         format_prompt, format_response = self.llm_format_pair(description, parameter_format)
         operation_prompt, operation_response = self.llm_operation_pair(description, operation_constraint)
 
-        # create LLM_CSV_Body object
         example_body = LLM_CSV_Body(parameter_info['parameter'], 0.2, 256, example_prompt, example_response)
         constraint_body = LLM_CSV_Body(parameter_info['parameter'], 0.2, 256, constraint_prompt, constraint_response)
         format_body = LLM_CSV_Body(parameter_info['parameter'], 0.2, 256, format_prompt, format_response)
@@ -448,15 +528,13 @@ class SpecificationBuilder:
 
         return [example_body, constraint_body, format_body, operation_body]
 
-
-
-    def generate_llm_query_objects(self, file_path: str)-> List[LLM_CSV_Body]:
+    def generate_llm_query_objects(self, file_path: str) -> List[LLM_CSV_Body]:
 
         with open(file_path, 'r') as json_file:
             report_values = json.load(json_file)
 
         constraint_list = self.find_report_constraints(report_values)
-        self.add_parameter_description(constraint_list) # should alter constraint_list directly
+        self.add_parameter_description(constraint_list)
 
         query_objects = []
         for parameter_info in constraint_list:
@@ -515,102 +593,108 @@ class SpecificationBuilder:
                     if restriction["restriction_name"] == "examples":
                         id = f"{constraint['path']}, {constraint['method']}"
                         if id in example_constraints:
-                            example_constraints[id].append({"name": constraint["parameter"], "examples": self.process_report_examples(restriction["restriction_value"])})
+                            example_constraints[id].append({"name": constraint["parameter"],
+                                                            "examples": self.process_report_examples(
+                                                                restriction["restriction_value"])})
                         else:
-                            example_constraints[id] = [{"name": constraint["parameter"], "examples": self.process_report_examples(restriction["restriction_value"])}]
+                            example_constraints[id] = [{"name": constraint["parameter"],
+                                                        "examples": self.process_report_examples(
+                                                            restriction["restriction_value"])}]
 
         for id, examples in example_constraints.items():
             path, method = id.split(", ")
-            #print(self.output_builder['paths'][path][method])
-            #print(f"{path} {method}")
             for application, schema in self.output_builder['paths'][path][method]["requestBody"]["content"].items():
                 if application != 'description':
-                    #property_level = schema['schema']
                     max_examples = self.determine_max_number_examples(examples)
                     example_collection = [[] for _ in range(max_examples)]
                     for example_object in examples:
-                        # examples here refers to the array of objects with "name" and "examples"
                         for i in range(len(example_object["examples"])):
-                            example_collection[i].append({"name": example_object["name"], "example": example_object["examples"][i]})
-                    # now we should have example_collection with the examples at each index required to add
+                            example_collection[i].append(
+                                {"name": example_object["name"], "example": example_object["examples"][i]})
                     schema.setdefault("examples", {})
                     for i in range(len(example_collection)):
-                        # parse through {name, example} objects
                         example_properties = {}
                         for specific_examples in example_collection[i]:
                             example_properties[specific_examples["name"]] = specific_examples["example"]
                         schema["examples"][f"example{i}"] = {"value": example_properties}
 
-                    # property_level stores as object
-                    # some request bodies don't have "properties" and only have one parameter
-                    #print(schema)
-
-
     def add_properties_with_report(self, constraint, parameter_properties, parameter_level, is_requestBody):
-        special_properties = {"items", "x-dependencies", "examples", "properties"} # requires special parsing
-        check_consistency = {"collectionFormat", "format", "minimum", "maximum", "minLength", "maxLength", "minItems", "maxItems", "minProperties", "maxProperties"} # check if they coincide with the correct type
+        special_properties = {"items", "x-dependencies", "examples", "properties"}
+        check_consistency = {"collectionFormat", "format", "minimum", "maximum", "minLength", "maxLength", "minItems",
+                             "maxItems", "minProperties", "maxProperties"}
 
-        format_mappings = {"csv": {"style": "form", "explode": False}, "ssv": {"style": "spaceDelimited", "explode": False}, "pipes": {"style": "pipeDelimited", "explode": False}, "multi": {"style": "form", "explode": True}}
-
-        # check for type constraint first to ensure consistency checks
         for restriction in constraint["restrictions"]:
             name = restriction["restriction_name"]
             value = restriction["restriction_value"]
+
+            # Skip processing for 'max'
+            if name == "max":
+                continue  # Skip this iteration if 'max' is found
+
+            if name == "minProperties" or name == "maxProperties":
+                parameter_properties.setdefault(name, int(value))  # Ensure conversion to int
 
             if name == "type":
                 if "type" not in parameter_properties:
-                    parameter_properties["type"] = value # we don't override type
+                    parameter_properties["type"] = value
 
         for restriction in constraint["restrictions"]:
             if restriction["restriction_name"] == "type":
-                continue # we do all type updating beforehand to allow for consistency checks
+                continue
 
             name = restriction["restriction_name"]
             value = restriction["restriction_value"]
 
-            # add if standard property
             if name not in special_properties and name not in check_consistency:
                 parameter_properties.setdefault(name, value)
 
             elif name in check_consistency:
-                # check for array-only properties
                 if name == "collectionFormat" or name == "minItems" or name == "maxItems":
                     if parameter_properties["type"] == "array":
+                        if name == "minItems" or name == "maxItems":
+                            parameter_properties.setdefault(name, int(value))  # Ensure conversion to int
                         if name == "collectionFormat" and not is_requestBody:
+                            # Move collectionFormat to 'items' schema
                             for parameter in parameter_level['parameters']:
                                 if parameter["name"] == constraint["parameter"]:
-                                    mapping = format_mappings[value]
-                                    parameter.setdefault("style", mapping["style"])
-                                    parameter.setdefault("explode", mapping["explode"])
-                        elif name == "collectionFormat" and is_requestBody:
-                            mapping = format_mappings[value]
-                            parameter_properties.setdefault("style", mapping["style"])
-                            parameter_properties.setdefault("explode", mapping["explode"])
-                        else:
-                            parameter_properties.setdefault(name, int(value))
-                # check for integer-only properties
-                elif name == "minimum" or name == "maximum":
+                                    parameter['schema']['items'].setdefault("collectionFormat", value)  # Correct placement
+                    elif name == "collectionFormat" and is_requestBody:
+                        parameter_properties['items'].setdefault("collectionFormat", value)  # Correct placement
+
+                elif name == "minimum":
                     if parameter_properties["type"] == "integer" or parameter_properties["type"] == "number":
                         parameter_properties.setdefault(name, int(value))
-                # check for string-only properties
-                elif name == "format" or name == "minLength" or name == "maxLength":
+
+                elif name == "maximum":
+                    if parameter_properties["type"] in ["integer", "number"]:
+                        parameter_properties.setdefault(name, int(value))
+                    else:
+                        # Remove 'maximum' if type is not appropriate
+                        parameter_properties.pop("maximum", None)
+
+                elif name == "format" or name == "minLength":
                     if parameter_properties["type"] == "string":
                         if name == "format":
                             parameter_properties.setdefault(name, value)
                         else:
+                            # Ensure minLength is an integer
                             parameter_properties.setdefault(name, int(value))
+                elif name == "maxLength":
+                    if parameter_properties["type"] == "string":
+                        # Ensure maxLength is an integer
+                        parameter_properties.setdefault(name, int(value))
 
             elif name in special_properties:
-                # x-dependencies occur outside "parameters"
                 if name == "x-dependencies":
                     parameter_level.setdefault(name, [])
-                    for dependency in value: # given as a list
+                    for dependency in value:
                         parameter_level[name].extend(value)
-
-                # examples occur within "parameters" but no in the specific parameter
-                # examples for requestBody is combined in to one section and handled differently
+                elif is_requestBody and "examples" in parameter_properties:
+                    parameter_level.setdefault("examples", {})
+                    for key, value in parameter_properties["examples"].items():
+                        parameter_level["examples"][key] = value
+                    del parameter_properties["examples"]
                 elif name == "examples" and not is_requestBody:
-                    # determine if cast example
                     param_type = {"is_int": False, "is_float": False, "is_bool": False}
                     for parameter in parameter_level['parameters']:
                         if parameter["name"] == constraint["parameter"]:
@@ -625,74 +709,58 @@ class SpecificationBuilder:
 
                     for parameter in parameter_level['parameters']:
                         if parameter["name"] == constraint["parameter"]:
-                            # example is mutually exclusive with examples
                             if "example" in parameter:
                                 del parameter["example"]
                             parameter.setdefault("examples", {})
                             for i in range(len(examples)):
-                                parameter[name][f"example{i}"] = {
+                                parameter['examples'][f"example{i}"] = {
                                     "value": examples[i]
-                                } # correcting the examples inside schema
-                    #else:
-                    #    # example is mutually exclusive with examples
-                    #    if "example" in parameter_properties:
-                    #        del parameter_properties["example"]
+                                }
 
-                        # not working well with request_body (not sure why)
-                    #    parameter_properties.setdefault("examples", {})
-                    #    for i in range(len(examples)):
-                    #        parameter_properties[name][f"example{i}"] = {
-                    #            "value": examples[i]
-                    #        }
-
-                elif name == "items":
+                if name == "items":
                     parameter_properties.setdefault(name, {})
                     parameter_properties[name].setdefault("type", value)
-
-                elif name == "properties":
-                    parameter_properties.setdefault(name, {})
-                    parameter_properties[name].setdefault(constraint["parameter"], {})
-                    for property_name, property_value in value.items():
-                        parameter_properties[name][constraint["parameter"]].setdefault(property_name, property_value)
 
     def change_specification_with_report(self, constraint_list):
         for constraint in constraint_list:
             if not constraint["request_body"]:
                 parameter_level = self.output_builder['paths'][constraint["path"]][constraint["method"]]
-                # parameter_level stores as list
                 for parameter in parameter_level['parameters']:
                     if parameter["name"] == constraint["parameter"]:
                         self.add_properties_with_report(constraint, parameter["schema"], parameter_level, False)
             else:
-                for application, schema in self.output_builder['paths'][constraint["path"]][constraint["method"]]["requestBody"]["content"].items():
+                for application, schema in \
+                        self.output_builder['paths'][constraint["path"]][constraint["method"]]["requestBody"][
+                            "content"].items():
                     if application != 'description':
                         property_level = schema['schema']
-                        # property_level stores as object
-                        # some request bodies don't have "properties" and only have one parameter
                         if "properties" not in property_level:
                             self.add_properties_with_report(constraint, property_level, property_level, True)
                         else:
+                            if "examples" in parameter_properties:
+                                # Move the "examples" property to the content level
+                                schema.setdefault("examples", {})
+                                for key, value in parameter_properties["examples"].items():
+                                    schema["examples"][key] = value
+                                del parameter_properties["examples"]
                             parameter_properties = property_level['properties'][constraint["parameter"]]
                             self.add_properties_with_report(constraint, parameter_properties, property_level, True)
 
-                self.add_request_body_examples(constraint_list) # WIP
+                self.add_request_body_examples(constraint_list)
 
     def add_parameter_description(self, constraint_list):
-        # will add to constraint list after finding description from original doc
-        # could make constraint list a LinkedList if need efficiency (we don't do index lookups anyway)
         for constraint in constraint_list:
             if not constraint["request_body"]:
                 parameter_level = self.output_builder['paths'][constraint["path"]][constraint["method"]]
-                # parameter_level stores as list
                 for parameter in parameter_level['parameters']:
                     if parameter["name"] == constraint["parameter"]:
                         constraint["description"] = parameter.get("description", "None")
             else:
-                for application, schema in self.output_builder['paths'][constraint["path"]][constraint["method"]]["requestBody"]["content"].items():
+                for application, schema in \
+                        self.output_builder['paths'][constraint["path"]][constraint["method"]]["requestBody"][
+                            "content"].items():
                     if application != 'description':
                         property_level = schema['schema']
-                        # property_level stores as object
-                        # some request bodies don't have "properties" and only have one parameter
                         if "properties" not in property_level:
                             constraint["description"] = property_level.get("description", "None")
                         else:
@@ -700,21 +768,39 @@ class SpecificationBuilder:
                             constraint["description"] = parameter_properties.get("description", "None")
 
     def build_specification_with_report(self, file_path):
-        print("Attempting generation at: " + file_path)
-        with open(file_path, 'r') as json_file:
-            report_values = json.load(json_file)
+            print("Attempting generation at: " + file_path)
+            with open(file_path, 'r') as json_file:
+                report_values = json.load(json_file)
 
-        # IDEA: make a list of constraint objects with the path and the added constraints that we listed in the report,
-        # then navigate to that location in the SpecificationBuilder and copy them over
-        constraint_list = self.find_report_constraints(report_values)
+            constraint_list = self.find_report_constraints(report_values)
 
-        # we can now attempt to add the constraints to the specification
-        self.change_specification_with_report(constraint_list)
+            # Only process the request body if it's not a GET request
+            for constraint in constraint_list:
+                if not constraint["request_body"] or (constraint["method"] != "GET" and constraint["request_body"]):
+                    parameter_level = self.output_builder['paths'][constraint["path"]][constraint["method"]]
+                    for parameter in parameter_level['parameters']:
+                        if parameter["name"] == constraint["parameter"]:
+                            self.add_properties_with_report(constraint, parameter["schema"], parameter_level, False)
+                else:
+                    for application, schema in \
+                            self.output_builder['paths'][constraint["path"]][constraint["method"]]["requestBody"][
+                                "content"].items():
+                        if application != 'description':
+                            property_level = schema['schema']
+                            if "properties" not in property_level:
+                                self.add_properties_with_report(constraint, property_level, property_level, True)
+                            else:
+                                if "examples" in parameter_properties:
+                                    # Move the "examples" property to the content level
+                                    schema.setdefault("examples", {})
+                                    for key, value in parameter_properties["examples"].items():
+                                        schema["examples"][key] = value
+                                    del parameter_properties["examples"]
+                                parameter_properties = property_level['properties'][constraint["parameter"]]
+                                self.add_properties_with_report(constraint, parameter_properties, property_level, True)
 
-        # choose if we are outputting in JSON or YAML
-        self.create_output_file()
-
-    def build_specification(self): # this runs the specification builder using the llm
+                    self.add_request_body_examples(constraint_list)
+    def build_specification(self):
         for path, method in self.paths:
             self.process_operation(path, method)
         self.create_output_file()

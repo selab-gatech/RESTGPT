@@ -147,7 +147,38 @@
                         "schema": {
                             "type": "string"
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "CH123"
+                            },
+                            "GENERATED_1": {
+                                "value": "CH456"
+                            },
+                            "GENERATED_2": {
+                                "value": "CH789"
+                            },
+                            "GENERATED_3": {
+                                "value": "CH001"
+                            },
+                            "GENERATED_4": {
+                                "value": "CH002"
+                            },
+                            "GENERATED_5": {
+                                "value": "CH003"
+                            },
+                            "GENERATED_6": {
+                                "value": "CH004"
+                            },
+                            "GENERATED_7": {
+                                "value": "CH005"
+                            },
+                            "GENERATED_8": {
+                                "value": "CH006"
+                            },
+                            "GENERATED_9": {
+                                "value": "CH007"
+                            }
+                        }
                     },
                     {
                         "name": "channelType",
@@ -180,8 +211,7 @@
                         "description": "Note: This parameter is intended exclusively for YouTube content partners.\n\nThe forContentOwner parameter restricts the search to only retrieve resources owned by the content owner specified by the onBehalfOfContentOwner parameter. The user must be authenticated using a CMS account linked to the specified content owner and onBehalfOfContentOwner must be provided.",
                         "schema": {
                             "type": "boolean"
-                        },
-                        "examples": {}
+                        }
                     },
                     {
                         "name": "forDeveloper",
@@ -189,14 +219,6 @@
                         "description": "The forDeveloper parameter restricts the search to only retrieve videos uploaded via the developer's application or website. The API server uses the request's authorization credentials to identify the developer. Therefore, a developer can restrict results to videos uploaded through the developer's own app or website but not to videos uploaded through other apps or sites.",
                         "schema": {
                             "type": "boolean"
-                        },
-                        "examples": {
-                            "example0": {
-                                "value": true
-                            },
-                            "example1": {
-                                "value": true
-                            }
                         }
                     },
                     {
@@ -207,11 +229,11 @@
                             "type": "boolean"
                         },
                         "examples": {
-                            "example0": {
-                                "value": true
+                            "GENERATED_0": {
+                                "value": "true"
                             },
-                            "example1": {
-                                "value": true
+                            "GENERATED_1": {
+                                "value": "false"
                             }
                         }
                     },
@@ -223,50 +245,29 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
-                                "value": "(37.42307,-122.08427)"
+                            "GENERATED_0": {
+                                "value": "(34.05223,-118.24368)"
                             },
-                            "example1": {
-                                "value": "(40.7128,-74.0060)"
+                            "GENERATED_1": {
+                                "value": "(40.71278,-74.00600)"
                             },
-                            "example2": {
-                                "value": "(51.5074,-0.1278)"
+                            "GENERATED_2": {
+                                "value": "(51.50722,-0.12750)"
                             },
-                            "example3": {
-                                "value": "(48.8566,2.3522)"
+                            "GENERATED_3": {
+                                "value": "(48.85661,2.35222)"
                             },
-                            "example4": {
-                                "value": "(35.6895,139.6917)"
+                            "GENERATED_4": {
+                                "value": "(35.68950,139.69171)"
                             },
-                            "example5": {
-                                "value": "(55.7558,37.6176)"
+                            "GENERATED_5": {
+                                "value": "(55.75583,37.61730)"
                             },
-                            "example6": {
-                                "value": "(52.5200,13.4050)"
+                            "GENERATED_6": {
+                                "value": "(39.90420,116.40739)"
                             },
-                            "example7": {
-                                "value": "(37.7749,-122.4194)"
-                            },
-                            "example8": {
-                                "value": "(34.0522,-118.2437)"
-                            },
-                            "example9": {
-                                "value": "(41.9028,12.4964)"
-                            },
-                            "example10": {
-                                "value": "(25.2048,55.2708)"
-                            },
-                            "example11": {
-                                "value": "(19.4326,-99.1332)"
-                            },
-                            "example12": {
-                                "value": "(22.5726,88.3639)"
-                            },
-                            "example13": {
-                                "value": "(33.6844,73.0479)"
-                            },
-                            "example14": {
-                                "value": "(41.9028,"
+                            "GENERATED_7": {
+                                "value": "(37.77493,-122.41942)"
                             }
                         }
                     },
@@ -278,134 +279,53 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
+                            "PROVIDED_0": {
                                 "value": "1500m"
                             },
-                            "example1": {
+                            "PROVIDED_1": {
                                 "value": "5km"
                             },
-                            "example2": {
+                            "PROVIDED_2": {
                                 "value": "10000ft"
                             },
-                            "example3": {
+                            "PROVIDED_3": {
                                 "value": "0.75mi"
                             },
-                            "example4": {
-                                "value": "0.1m"
+                            "GENERATED_0": {
+                                "value": "500m"
                             },
-                            "example5": {
-                                "value": "0.2m"
+                            "GENERATED_1": {
+                                "value": "2km"
                             },
-                            "example6": {
-                                "value": "0.3m"
+                            "GENERATED_2": {
+                                "value": "3000ft"
                             },
-                            "example7": {
-                                "value": "0.4m"
+                            "GENERATED_3": {
+                                "value": "1.5mi"
                             },
-                            "example8": {
-                                "value": "0.5m"
+                            "GENERATED_4": {
+                                "value": "750m"
                             },
-                            "example9": {
-                                "value": "0.6m"
+                            "GENERATED_5": {
+                                "value": "10km"
                             },
-                            "example10": {
-                                "value": "0.7m"
+                            "GENERATED_6": {
+                                "value": "2000ft"
                             },
-                            "example11": {
-                                "value": "0.8m"
+                            "GENERATED_7": {
+                                "value": "0.5mi"
                             },
-                            "example12": {
-                                "value": "0.9m"
+                            "GENERATED_8": {
+                                "value": "250m"
                             },
-                            "example13": {
-                                "value": "1.0m"
+                            "GENERATED_9": {
+                                "value": "15km"
                             },
-                            "example14": {
-                                "value": "1.1m"
+                            "GENERATED_10": {
+                                "value": "5000ft"
                             },
-                            "example15": {
-                                "value": "1.2m"
-                            },
-                            "example16": {
-                                "value": "1.3m"
-                            },
-                            "example17": {
-                                "value": "1.4m"
-                            },
-                            "example18": {
-                                "value": "1.5m"
-                            },
-                            "example19": {
-                                "value": "1.6m"
-                            },
-                            "example20": {
-                                "value": "1.7m"
-                            },
-                            "example21": {
-                                "value": "1.8m"
-                            },
-                            "example22": {
-                                "value": "1.9m"
-                            },
-                            "example23": {
-                                "value": "2.0m"
-                            },
-                            "example24": {
-                                "value": "2.1m"
-                            },
-                            "example25": {
-                                "value": "2.2m"
-                            },
-                            "example26": {
-                                "value": "2.3m"
-                            },
-                            "example27": {
-                                "value": "2.4m"
-                            },
-                            "example28": {
-                                "value": "2.5m"
-                            },
-                            "example29": {
-                                "value": "2.6m"
-                            },
-                            "example30": {
-                                "value": "2.7m"
-                            },
-                            "example31": {
-                                "value": "2.8m"
-                            },
-                            "example32": {
-                                "value": "2.9m"
-                            },
-                            "example33": {
-                                "value": "3.0m"
-                            },
-                            "example34": {
-                                "value": "3.1m"
-                            },
-                            "example35": {
-                                "value": "3.2m"
-                            },
-                            "example36": {
-                                "value": "3.3m"
-                            },
-                            "example37": {
-                                "value": "3.4m"
-                            },
-                            "example38": {
-                                "value": "3.5m"
-                            },
-                            "example39": {
-                                "value": "3.6m"
-                            },
-                            "example40": {
-                                "value": "3.7m"
-                            },
-                            "example41": {
-                                "value": "3.8m"
-                            },
-                            "example42": {
-                                "value": "3"
+                            "GENERATED_11": {
+                                "value": "0.25mi"
                             }
                         }
                     },
@@ -420,155 +340,32 @@
                             "default": 5
                         },
                         "examples": {
-                            "example0": {
-                                "value": 0
+                            "GENERATED_0": {
+                                "value": "1"
                             },
-                            "example1": {
-                                "value": 1
+                            "GENERATED_1": {
+                                "value": "5"
                             },
-                            "example2": {
-                                "value": 2
+                            "GENERATED_2": {
+                                "value": "10"
                             },
-                            "example3": {
-                                "value": 3
+                            "GENERATED_3": {
+                                "value": "20"
                             },
-                            "example4": {
-                                "value": 4
+                            "GENERATED_4": {
+                                "value": "50"
                             },
-                            "example5": {
-                                "value": 5
+                            "GENERATED_5": {
+                                "value": "100"
                             },
-                            "example6": {
-                                "value": 6
+                            "GENERATED_6": {
+                                "value": "200"
                             },
-                            "example7": {
-                                "value": 7
+                            "GENERATED_7": {
+                                "value": "500"
                             },
-                            "example8": {
-                                "value": 8
-                            },
-                            "example9": {
-                                "value": 9
-                            },
-                            "example10": {
-                                "value": 10
-                            },
-                            "example11": {
-                                "value": 11
-                            },
-                            "example12": {
-                                "value": 12
-                            },
-                            "example13": {
-                                "value": 13
-                            },
-                            "example14": {
-                                "value": 14
-                            },
-                            "example15": {
-                                "value": 15
-                            },
-                            "example16": {
-                                "value": 16
-                            },
-                            "example17": {
-                                "value": 17
-                            },
-                            "example18": {
-                                "value": 18
-                            },
-                            "example19": {
-                                "value": 19
-                            },
-                            "example20": {
-                                "value": 20
-                            },
-                            "example21": {
-                                "value": 21
-                            },
-                            "example22": {
-                                "value": 22
-                            },
-                            "example23": {
-                                "value": 23
-                            },
-                            "example24": {
-                                "value": 24
-                            },
-                            "example25": {
-                                "value": 25
-                            },
-                            "example26": {
-                                "value": 26
-                            },
-                            "example27": {
-                                "value": 27
-                            },
-                            "example28": {
-                                "value": 28
-                            },
-                            "example29": {
-                                "value": 29
-                            },
-                            "example30": {
-                                "value": 30
-                            },
-                            "example31": {
-                                "value": 31
-                            },
-                            "example32": {
-                                "value": 32
-                            },
-                            "example33": {
-                                "value": 33
-                            },
-                            "example34": {
-                                "value": 34
-                            },
-                            "example35": {
-                                "value": 35
-                            },
-                            "example36": {
-                                "value": 36
-                            },
-                            "example37": {
-                                "value": 37
-                            },
-                            "example38": {
-                                "value": 38
-                            },
-                            "example39": {
-                                "value": 39
-                            },
-                            "example40": {
-                                "value": 40
-                            },
-                            "example41": {
-                                "value": 41
-                            },
-                            "example42": {
-                                "value": 42
-                            },
-                            "example43": {
-                                "value": 43
-                            },
-                            "example44": {
-                                "value": 44
-                            },
-                            "example45": {
-                                "value": 45
-                            },
-                            "example46": {
-                                "value": 46
-                            },
-                            "example47": {
-                                "value": 47
-                            },
-                            "example48": {
-                                "value": 48
-                            },
-                            "example49": {
-                                "value": 49
+                            "GENERATED_8": {
+                                "value": "1000"
                             }
                         }
                     },
@@ -605,7 +402,23 @@
                         "schema": {
                             "type": "string"
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "pageToken123"
+                            },
+                            "GENERATED_1": {
+                                "value": "pageToken456"
+                            },
+                            "GENERATED_2": {
+                                "value": "pageToken789"
+                            },
+                            "GENERATED_3": {
+                                "value": "pageTokenABC"
+                            },
+                            "GENERATED_4": {
+                                "value": "pageTokenXYZ"
+                            }
+                        }
                     },
                     {
                         "name": "part",
@@ -617,7 +430,10 @@
                             "enum": [
                                 "snippet"
                             ],
-                            "default": "snippet"
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1
                         }
                     },
                     {
@@ -629,56 +445,23 @@
                             "format": "date-time"
                         },
                         "examples": {
-                            "example0": {
-                                "value": "1970-01-01T00:00:00Z"
+                            "GENERATED_0": {
+                                "value": "2023-01-01T00:00:00Z"
                             },
-                            "example1": {
-                                "value": "2022-03-15T10:30:00Z"
+                            "GENERATED_1": {
+                                "value": "2022-12-31T23:59:59Z"
                             },
-                            "example2": {
-                                "value": "2019-07-20T15:45:00Z"
+                            "GENERATED_2": {
+                                "value": "2023-10-15T14:30:00Z"
                             },
-                            "example3": {
-                                "value": "2020-11-05T08:20:00Z"
+                            "GENERATED_3": {
+                                "value": "2023-05-20T09:00:00Z"
                             },
-                            "example4": {
-                                "value": "2021-06-10T18:55:00Z"
+                            "GENERATED_4": {
+                                "value": "2023-07-04T12:00:00Z"
                             },
-                            "example5": {
-                                "value": "2018-09-25T12:10:00Z"
-                            },
-                            "example6": {
-                                "value": "2023-12-31T23:59:59Z"
-                            },
-                            "example7": {
-                                "value": "2024-02-29T07:30:00Z"
-                            },
-                            "example8": {
-                                "value": "2025-08-15T16:45:00Z"
-                            },
-                            "example9": {
-                                "value": "2026-04-01T09:20:00Z"
-                            },
-                            "example10": {
-                                "value": "2027-11-11T21:55:00Z"
-                            },
-                            "example11": {
-                                "value": "2028-05-05T14:10:00Z"
-                            },
-                            "example12": {
-                                "value": "2029-09-30T03:30:00Z"
-                            },
-                            "example13": {
-                                "value": "2030-12-25T19:45:00Z"
-                            },
-                            "example14": {
-                                "value": "2031-07-04T11:20:00Z"
-                            },
-                            "example15": {
-                                "value": "2032-02-14T23:55:00Z"
-                            },
-                            "example16": {
-                                "value": "2033-10-20T17:"
+                            "GENERATED_5": {
+                                "value": "2022-11-11T18:45:00Z"
                             }
                         }
                     },
@@ -691,41 +474,23 @@
                             "format": "date-time"
                         },
                         "examples": {
-                            "example0": {
-                                "value": "1970-01-01T00:00:00Z"
+                            "GENERATED_0": {
+                                "value": "1965-12-31T23:59:59Z"
                             },
-                            "example1": {
-                                "value": "2022-12-31T23:59:59Z"
+                            "GENERATED_1": {
+                                "value": "1980-01-01T00:00:00Z"
                             },
-                            "example2": {
-                                "value": "2022-01-01T00:00:00Z"
+                            "GENERATED_2": {
+                                "value": "1995-06-15T12:30:00Z"
                             },
-                            "example3": {
-                                "value": "2022-06-15T12:30:00Z"
+                            "GENERATED_3": {
+                                "value": "2000-11-30T18:45:00Z"
                             },
-                            "example4": {
-                                "value": "2023-03-10T08:45:00Z"
+                            "GENERATED_4": {
+                                "value": "2010-05-20T15:00:00Z"
                             },
-                            "example5": {
-                                "value": "2023-11-20T18:00:00Z"
-                            },
-                            "example6": {
-                                "value": "2024-09-05T03:15:00Z"
-                            },
-                            "example7": {
-                                "value": "2024-04-30T21:20:00Z"
-                            },
-                            "example8": {
-                                "value": "2025-02-14T15:30:00Z"
-                            },
-                            "example9": {
-                                "value": "2025-10-25T09:45:00Z"
-                            },
-                            "example10": {
-                                "value": "2026-07-01T06:00:00Z"
-                            },
-                            "example11": {
-                                "value": "2026-12-31T23:59:59Z"
+                            "GENERATED_5": {
+                                "value": "2022-02-28T09:15:00Z"
                             }
                         }
                     },
@@ -737,35 +502,56 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
+                            "GENERATED_0": {
                                 "value": "boating"
                             },
-                            "example1": {
+                            "GENERATED_1": {
                                 "value": "sailing"
                             },
-                            "example2": {
+                            "GENERATED_2": {
                                 "value": "fishing"
                             },
-                            "example3": {
-                                "value": "swimming"
-                            },
-                            "example4": {
+                            "GENERATED_3": {
                                 "value": "hiking"
                             },
-                            "example5": {
+                            "GENERATED_4": {
                                 "value": "camping"
                             },
-                            "example6": {
-                                "value": "biking"
+                            "GENERATED_5": {
+                                "value": "cooking"
                             },
-                            "example7": {
-                                "value": "skiing"
+                            "GENERATED_6": {
+                                "value": "travel"
                             },
-                            "example8": {
-                                "value": "surfing"
+                            "GENERATED_7": {
+                                "value": "photography"
                             },
-                            "example9": {
-                                "value": "kayaking"
+                            "GENERATED_8": {
+                                "value": "gaming"
+                            },
+                            "GENERATED_9": {
+                                "value": "music"
+                            },
+                            "GENERATED_10": {
+                                "value": "education"
+                            },
+                            "GENERATED_11": {
+                                "value": "technology"
+                            },
+                            "GENERATED_12": {
+                                "value": "health"
+                            },
+                            "GENERATED_13": {
+                                "value": "fitness"
+                            },
+                            "GENERATED_14": {
+                                "value": "art"
+                            },
+                            "GENERATED_15": {
+                                "value": "science"
+                            },
+                            "GENERATED_16": {
+                                "value": "nature"
                             }
                         }
                     },
@@ -779,272 +565,65 @@
                             "maxLength": 2
                         },
                         "examples": {
-                            "example0": {
-                                "value": "AFG"
+                            "GENERATED_0": {
+                                "value": "US"
                             },
-                            "example1": {
-                                "value": "ALA"
+                            "GENERATED_1": {
+                                "value": "CA"
                             },
-                            "example2": {
-                                "value": "ALB"
+                            "GENERATED_2": {
+                                "value": "GB"
                             },
-                            "example3": {
-                                "value": "DZA"
+                            "GENERATED_3": {
+                                "value": "FR"
                             },
-                            "example4": {
-                                "value": "ASM"
+                            "GENERATED_4": {
+                                "value": "DE"
                             },
-                            "example5": {
-                                "value": "AND"
+                            "GENERATED_5": {
+                                "value": "AU"
                             },
-                            "example6": {
-                                "value": "AGO"
+                            "GENERATED_6": {
+                                "value": "IN"
                             },
-                            "example7": {
-                                "value": "AIA"
+                            "GENERATED_7": {
+                                "value": "JP"
                             },
-                            "example8": {
-                                "value": "ATA"
+                            "GENERATED_8": {
+                                "value": "BR"
                             },
-                            "example9": {
-                                "value": "ATG"
+                            "GENERATED_9": {
+                                "value": "MX"
                             },
-                            "example10": {
-                                "value": "ARG"
+                            "GENERATED_10": {
+                                "value": "IT"
                             },
-                            "example11": {
-                                "value": "ARM"
+                            "GENERATED_11": {
+                                "value": "ES"
                             },
-                            "example12": {
-                                "value": "ABW"
+                            "GENERATED_12": {
+                                "value": "RU"
                             },
-                            "example13": {
-                                "value": "AUS"
+                            "GENERATED_13": {
+                                "value": "CN"
                             },
-                            "example14": {
-                                "value": "AUT"
+                            "GENERATED_14": {
+                                "value": "ZA"
                             },
-                            "example15": {
-                                "value": "AZE"
+                            "GENERATED_15": {
+                                "value": "NG"
                             },
-                            "example16": {
-                                "value": "BHS"
+                            "GENERATED_16": {
+                                "value": "KR"
                             },
-                            "example17": {
-                                "value": "BHR"
+                            "GENERATED_17": {
+                                "value": "SE"
                             },
-                            "example18": {
-                                "value": "BGD"
+                            "GENERATED_18": {
+                                "value": "NO"
                             },
-                            "example19": {
-                                "value": "BRB"
-                            },
-                            "example20": {
-                                "value": "BLR"
-                            },
-                            "example21": {
-                                "value": "BEL"
-                            },
-                            "example22": {
-                                "value": " BLZ"
-                            },
-                            "example23": {
-                                "value": "BEN"
-                            },
-                            "example24": {
-                                "value": "BMU"
-                            },
-                            "example25": {
-                                "value": "BTN"
-                            },
-                            "example26": {
-                                "value": "BOL"
-                            },
-                            "example27": {
-                                "value": "BES"
-                            },
-                            "example28": {
-                                "value": "BIH"
-                            },
-                            "example29": {
-                                "value": "BWA"
-                            },
-                            "example30": {
-                                "value": "BVT"
-                            },
-                            "example31": {
-                                "value": "BRA"
-                            },
-                            "example32": {
-                                "value": "IOT"
-                            },
-                            "example33": {
-                                "value": "BRN"
-                            },
-                            "example34": {
-                                "value": "BGR"
-                            },
-                            "example35": {
-                                "value": "BFA"
-                            },
-                            "example36": {
-                                "value": "BDI"
-                            },
-                            "example37": {
-                                "value": "CPV"
-                            },
-                            "example38": {
-                                "value": "KHM"
-                            },
-                            "example39": {
-                                "value": "CMR"
-                            },
-                            "example40": {
-                                "value": "CAN"
-                            },
-                            "example41": {
-                                "value": "CYM"
-                            },
-                            "example42": {
-                                "value": "CAF"
-                            },
-                            "example43": {
-                                "value": "TCD"
-                            },
-                            "example44": {
-                                "value": " CHL"
-                            },
-                            "example45": {
-                                "value": "CHN"
-                            },
-                            "example46": {
-                                "value": "CXR"
-                            },
-                            "example47": {
-                                "value": "CCK"
-                            },
-                            "example48": {
-                                "value": "COL"
-                            },
-                            "example49": {
-                                "value": "COM"
-                            },
-                            "example50": {
-                                "value": "COG"
-                            },
-                            "example51": {
-                                "value": "COD"
-                            },
-                            "example52": {
-                                "value": "COK"
-                            },
-                            "example53": {
-                                "value": "CRI"
-                            },
-                            "example54": {
-                                "value": "CIV"
-                            },
-                            "example55": {
-                                "value": "HRV"
-                            },
-                            "example56": {
-                                "value": "CUB"
-                            },
-                            "example57": {
-                                "value": "CUW"
-                            },
-                            "example58": {
-                                "value": "CYP"
-                            },
-                            "example59": {
-                                "value": "CZE"
-                            },
-                            "example60": {
-                                "value": "DNK"
-                            },
-                            "example61": {
-                                "value": "DJI"
-                            },
-                            "example62": {
-                                "value": "DMA"
-                            },
-                            "example63": {
-                                "value": "DOM"
-                            },
-                            "example64": {
-                                "value": "ECU"
-                            },
-                            "example65": {
-                                "value": "EGY"
-                            },
-                            "example66": {
-                                "value": " SLV"
-                            },
-                            "example67": {
-                                "value": "GNQ"
-                            },
-                            "example68": {
-                                "value": "ERI"
-                            },
-                            "example69": {
-                                "value": "EST"
-                            },
-                            "example70": {
-                                "value": "SWZ"
-                            },
-                            "example71": {
-                                "value": "ETH"
-                            },
-                            "example72": {
-                                "value": "FLK"
-                            },
-                            "example73": {
-                                "value": "FRO"
-                            },
-                            "example74": {
-                                "value": "FJI"
-                            },
-                            "example75": {
-                                "value": "FIN"
-                            },
-                            "example76": {
-                                "value": "FRA"
-                            },
-                            "example77": {
-                                "value": "GUF"
-                            },
-                            "example78": {
-                                "value": "PYF"
-                            },
-                            "example79": {
-                                "value": "ATF"
-                            },
-                            "example80": {
-                                "value": "GAB"
-                            },
-                            "example81": {
-                                "value": "GMB"
-                            },
-                            "example82": {
-                                "value": "GEO"
-                            },
-                            "example83": {
-                                "value": "DEU"
-                            },
-                            "example84": {
-                                "value": "GHA"
-                            },
-                            "example85": {
-                                "value": "GIB"
-                            },
-                            "example86": {
-                                "value": "GRC"
-                            },
-                            "example87": {
-                                "value": "GRL"
-                            },
-                            "example88": {
-                                "value": " GR"
+                            "GENERATED_19": {
+                                "value": "NL"
                             }
                         }
                     },
@@ -1053,9 +632,9 @@
                         "in": "query",
                         "description": "The relatedToVideoId parameter retrieves a list of videos that are related to the video that the parameter value identifies. The parameter value must be set to a YouTube video ID and, if you are using this parameter, the type parameter must be set to video.",
                         "schema": {
-                            "type": "string"
-                        },
-                        "examples": {}
+                            "type": "string",
+                            "format": "uuid"
+                        }
                     },
                     {
                         "name": "relevanceLanguage",
@@ -1063,332 +642,78 @@
                         "description": "The relevanceLanguage parameter instructs the API to return search results that are most relevant to the specified language. The parameter value is typically an ISO 639-1 two-letter language code. However, you should use the values zh-Hans for simplified Chinese and zh-Hant for traditional Chinese. Please note that results in other languages will still be returned if they are highly relevant to the search query term.",
                         "schema": {
                             "type": "string",
-                            "minLength": 2
+                            "minLength": 2,
+                            "maxLength": 5
                         },
                         "examples": {
-                            "example0": {
+                            "PROVIDED_0": {
                                 "value": "zh-Hans"
                             },
-                            "example1": {
+                            "PROVIDED_1": {
                                 "value": "zh-Hant"
                             },
-                            "example2": {
-                                "value": "af"
-                            },
-                            "example3": {
-                                "value": "sq"
-                            },
-                            "example4": {
-                                "value": "am"
-                            },
-                            "example5": {
-                                "value": "ar"
-                            },
-                            "example6": {
-                                "value": "hy"
-                            },
-                            "example7": {
-                                "value": "az"
-                            },
-                            "example8": {
-                                "value": "eu"
-                            },
-                            "example9": {
-                                "value": "be"
-                            },
-                            "example10": {
-                                "value": "bn"
-                            },
-                            "example11": {
-                                "value": "bs"
-                            },
-                            "example12": {
-                                "value": "bg"
-                            },
-                            "example13": {
-                                "value": "ca"
-                            },
-                            "example14": {
-                                "value": "ceb"
-                            },
-                            "example15": {
-                                "value": "ny"
-                            },
-                            "example16": {
-                                "value": "zh-CN"
-                            },
-                            "example17": {
-                                "value": "zh-TW"
-                            },
-                            "example18": {
-                                "value": "co"
-                            },
-                            "example19": {
-                                "value": "hr"
-                            },
-                            "example20": {
-                                "value": "cs"
-                            },
-                            "example21": {
-                                "value": "da"
-                            },
-                            "example22": {
-                                "value": "nl"
-                            },
-                            "example23": {
+                            "GENERATED_0": {
                                 "value": "en"
                             },
-                            "example24": {
-                                "value": "eo"
-                            },
-                            "example25": {
-                                "value": "et"
-                            },
-                            "example26": {
-                                "value": "tl"
-                            },
-                            "example27": {
-                                "value": "fi"
-                            },
-                            "example28": {
-                                "value": " fr"
-                            },
-                            "example29": {
-                                "value": "fy"
-                            },
-                            "example30": {
-                                "value": "gl"
-                            },
-                            "example31": {
-                                "value": "ka"
-                            },
-                            "example32": {
-                                "value": "de"
-                            },
-                            "example33": {
-                                "value": "el"
-                            },
-                            "example34": {
-                                "value": "gu"
-                            },
-                            "example35": {
-                                "value": "ht"
-                            },
-                            "example36": {
-                                "value": "ha"
-                            },
-                            "example37": {
-                                "value": "haw"
-                            },
-                            "example38": {
-                                "value": "iw"
-                            },
-                            "example39": {
-                                "value": "hi"
-                            },
-                            "example40": {
-                                "value": "hmn"
-                            },
-                            "example41": {
-                                "value": "hu"
-                            },
-                            "example42": {
-                                "value": "is"
-                            },
-                            "example43": {
-                                "value": "ig"
-                            },
-                            "example44": {
-                                "value": "id"
-                            },
-                            "example45": {
-                                "value": "ga"
-                            },
-                            "example46": {
-                                "value": "it"
-                            },
-                            "example47": {
-                                "value": "ja"
-                            },
-                            "example48": {
-                                "value": "jv"
-                            },
-                            "example49": {
-                                "value": "kn"
-                            },
-                            "example50": {
-                                "value": "kk"
-                            },
-                            "example51": {
-                                "value": "km"
-                            },
-                            "example52": {
-                                "value": "ko"
-                            },
-                            "example53": {
-                                "value": "ku"
-                            },
-                            "example54": {
-                                "value": "ky"
-                            },
-                            "example55": {
-                                "value": "lo"
-                            },
-                            "example56": {
-                                "value": " la"
-                            },
-                            "example57": {
-                                "value": "lv"
-                            },
-                            "example58": {
-                                "value": "lt"
-                            },
-                            "example59": {
-                                "value": "lb"
-                            },
-                            "example60": {
-                                "value": "mk"
-                            },
-                            "example61": {
-                                "value": "mg"
-                            },
-                            "example62": {
-                                "value": "ms"
-                            },
-                            "example63": {
-                                "value": "ml"
-                            },
-                            "example64": {
-                                "value": "mt"
-                            },
-                            "example65": {
-                                "value": "mi"
-                            },
-                            "example66": {
-                                "value": "mr"
-                            },
-                            "example67": {
-                                "value": "mn"
-                            },
-                            "example68": {
-                                "value": "my"
-                            },
-                            "example69": {
-                                "value": "ne"
-                            },
-                            "example70": {
-                                "value": "no"
-                            },
-                            "example71": {
-                                "value": "or"
-                            },
-                            "example72": {
-                                "value": "ps"
-                            },
-                            "example73": {
-                                "value": "fa"
-                            },
-                            "example74": {
-                                "value": "pl"
-                            },
-                            "example75": {
-                                "value": "pt"
-                            },
-                            "example76": {
-                                "value": "pa"
-                            },
-                            "example77": {
-                                "value": "ro"
-                            },
-                            "example78": {
-                                "value": "ru"
-                            },
-                            "example79": {
-                                "value": "sm"
-                            },
-                            "example80": {
-                                "value": "gd"
-                            },
-                            "example81": {
-                                "value": "sr"
-                            },
-                            "example82": {
-                                "value": "st"
-                            },
-                            "example83": {
-                                "value": "sn"
-                            },
-                            "example84": {
-                                "value": "sd"
-                            },
-                            "example85": {
-                                "value": " si"
-                            },
-                            "example86": {
-                                "value": "sk"
-                            },
-                            "example87": {
-                                "value": "sl"
-                            },
-                            "example88": {
-                                "value": "so"
-                            },
-                            "example89": {
+                            "GENERATED_1": {
                                 "value": "es"
                             },
-                            "example90": {
-                                "value": "su"
+                            "GENERATED_2": {
+                                "value": "fr"
                             },
-                            "example91": {
-                                "value": "sw"
+                            "GENERATED_3": {
+                                "value": "de"
                             },
-                            "example92": {
+                            "GENERATED_4": {
+                                "value": "it"
+                            },
+                            "GENERATED_5": {
+                                "value": "ja"
+                            },
+                            "GENERATED_6": {
+                                "value": "ko"
+                            },
+                            "GENERATED_7": {
+                                "value": "ru"
+                            },
+                            "GENERATED_8": {
+                                "value": "pt"
+                            },
+                            "GENERATED_9": {
+                                "value": "ar"
+                            },
+                            "GENERATED_10": {
+                                "value": "hi"
+                            },
+                            "GENERATED_11": {
+                                "value": "pl"
+                            },
+                            "GENERATED_12": {
+                                "value": "nl"
+                            },
+                            "GENERATED_13": {
                                 "value": "sv"
                             },
-                            "example93": {
-                                "value": "tg"
+                            "GENERATED_14": {
+                                "value": "da"
                             },
-                            "example94": {
-                                "value": "ta"
+                            "GENERATED_15": {
+                                "value": "fi"
                             },
-                            "example95": {
-                                "value": "te"
+                            "GENERATED_16": {
+                                "value": "no"
                             },
-                            "example96": {
-                                "value": "th"
-                            },
-                            "example97": {
+                            "GENERATED_17": {
                                 "value": "tr"
                             },
-                            "example98": {
-                                "value": "uk"
+                            "GENERATED_18": {
+                                "value": "cs"
                             },
-                            "example99": {
-                                "value": "ur"
+                            "GENERATED_19": {
+                                "value": "ro"
                             },
-                            "example100": {
-                                "value": "ug"
-                            },
-                            "example101": {
-                                "value": "uz"
-                            },
-                            "example102": {
-                                "value": "vi"
-                            },
-                            "example103": {
-                                "value": "cy"
-                            },
-                            "example104": {
-                                "value": "xh"
-                            },
-                            "example105": {
-                                "value": "yi"
-                            },
-                            "example106": {
-                                "value": "yo"
-                            },
-                            "example107": {
-                                "value": "zu"
+                            "GENERATED_20": {
+                                "value": "hu"
                             }
                         }
                     },
@@ -1412,7 +737,53 @@
                         "schema": {
                             "type": "string"
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "/m/02mjmr"
+                            },
+                            "GENERATED_1": {
+                                "value": "/m/04rky"
+                            },
+                            "GENERATED_2": {
+                                "value": "/m/0c6w"
+                            },
+                            "GENERATED_3": {
+                                "value": "/m/0h8j"
+                            },
+                            "GENERATED_4": {
+                                "value": "/m/0t7g"
+                            },
+                            "GENERATED_5": {
+                                "value": "/m/02h8"
+                            },
+                            "GENERATED_6": {
+                                "value": "/m/0c6g"
+                            },
+                            "GENERATED_7": {
+                                "value": "/m/0d8"
+                            },
+                            "GENERATED_8": {
+                                "value": "/m/0d8z"
+                            },
+                            "GENERATED_9": {
+                                "value": "/m/0g0"
+                            },
+                            "GENERATED_10": {
+                                "value": "/m/0g0q"
+                            },
+                            "GENERATED_11": {
+                                "value": "/m/0g0r"
+                            },
+                            "GENERATED_12": {
+                                "value": "/m/0g0s"
+                            },
+                            "GENERATED_13": {
+                                "value": "/m/0g0t"
+                            },
+                            "GENERATED_14": {
+                                "value": "/m/0g0u"
+                            }
+                        }
                     },
                     {
                         "name": "type",
@@ -1420,38 +791,42 @@
                         "description": "The type parameter restricts a search query to only retrieve a particular type of resource. The value is a comma-separated list of resource types.",
                         "schema": {
                             "type": "string",
-                            "default": "video,channel,playlist"
+                            "default": "video,channel,playlist",
+                            "items": {
+                                "type": "string"
+                            },
+                            "minItems": 1
                         },
                         "examples": {
-                            "example0": {
+                            "GENERATED_0": {
+                                "value": "book"
+                            },
+                            "GENERATED_1": {
+                                "value": "article"
+                            },
+                            "GENERATED_2": {
                                 "value": "video"
                             },
-                            "example1": {
-                                "value": "playlist"
+                            "GENERATED_3": {
+                                "value": "image"
                             },
-                            "example2": {
-                                "value": "channel"
+                            "GENERATED_4": {
+                                "value": "audio"
                             },
-                            "example3": {
-                                "value": "user"
+                            "GENERATED_5": {
+                                "value": "dataset"
                             },
-                            "example4": {
-                                "value": "comment"
+                            "GENERATED_6": {
+                                "value": "presentation"
                             },
-                            "example5": {
-                                "value": "liveBroadcast"
+                            "GENERATED_7": {
+                                "value": "report"
                             },
-                            "example6": {
-                                "value": "guideCategory"
+                            "GENERATED_8": {
+                                "value": "blog"
                             },
-                            "example7": {
-                                "value": "videoCategory"
-                            },
-                            "example8": {
-                                "value": "subscription"
-                            },
-                            "example9": {
-                                "value": "activity"
+                            "GENERATED_9": {
+                                "value": "podcast"
                             }
                         }
                     },
@@ -1475,7 +850,38 @@
                         "schema": {
                             "type": "string"
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "1"
+                            },
+                            "GENERATED_1": {
+                                "value": "2"
+                            },
+                            "GENERATED_2": {
+                                "value": "10"
+                            },
+                            "GENERATED_3": {
+                                "value": "20"
+                            },
+                            "GENERATED_4": {
+                                "value": "22"
+                            },
+                            "GENERATED_5": {
+                                "value": "23"
+                            },
+                            "GENERATED_6": {
+                                "value": "24"
+                            },
+                            "GENERATED_7": {
+                                "value": "25"
+                            },
+                            "GENERATED_8": {
+                                "value": "26"
+                            },
+                            "GENERATED_9": {
+                                "value": "27"
+                            }
+                        }
                     },
                     {
                         "name": "videoDefinition",
@@ -1868,16 +1274,18 @@
                     }
                 ],
                 "x-dependencies": [
-                    "IF eventType=='broadcast' THEN type=='video';",
-                    "IF forMine THEN type=='video'",
-                    "REQUIRED: location, locationRadius",
-                    "IF type=='video' THEN videoCaption;",
-                    "IF type=='video' THEN videoCategoryId;",
-                    "IF type=='video' THEN OnlyOne(videoDimension=='2D' AND videoDimension=='3D');",
-                    "IF type=='video' THEN videoDuration;",
-                    "IF videoEmbeddable THEN type=='video'",
-                    "IF type=='video' THEN videoSyndicated;",
-                    "IF videoType THEN type=='video'"
+                    "IF eventType THEN type;",
+                    "IF forMine==true THEN type;",
+                    "IF location THEN locationRadius;",
+                    "IF videoCaption THEN type;",
+                    "IF videoCategoryId THEN type;",
+                    "IF videoDefinition THEN type;",
+                    "IF videoDimension THEN type;",
+                    "IF videoDuration THEN type;",
+                    "IF videoEmbeddable THEN type;",
+                    "IF videoLicense THEN type;",
+                    "IF videoSyndicated THEN type;",
+                    "IF videoType THEN type;"
                 ]
             }
         }

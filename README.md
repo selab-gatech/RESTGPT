@@ -1,6 +1,6 @@
 # RESTGPT
 
-RESTGPT is an approach to automated API testing that leverages Large Language Models (LLMs) to maximize relevant test cases. The program intakes OpenAPI Specifications and, using GPT-3.5 Turbo's pre-trained LLM to create machine-readable rules from human-readable fields, produces enhanced OpenAPI Specification outputs for automated API testing software.
+RESTGPT is an approach to automated API testing that leverages Large Language Models (LLMs) to maximize relevant test cases. The program intakes OpenAPI Specifications and, using gpt-4o-mini pre-trained LLM to create machine-readable rules from human-readable fields, produces enhanced OpenAPI Specification outputs for automated API testing software.
 
 ## Use of Software
 
@@ -53,9 +53,9 @@ To provide further context for the results of RESTGPT, the repository contains a
 
 ## Customization
 
-**Changing LLMs:** RESTGPT uses GPT-3.5 Turbo as its Large Language Model, however the program can support any of OpenAI's available LLMs. To switch the LLM, navigate to `src/restgpt.py` and find the following line:
+**Changing LLMs:** RESTGPT uses gpt-4o-mini as its Large Language Model, however the program can support any of OpenAI's available LLMs. To switch the LLM, navigate to `src/restgpt.py` and find the following line:
 ```
-llm = ChatOpenAI(model_name="gpt-3.5-turbo-16k", max_tokens=256, openai_api_key = API_KEY, temperature=0.2, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
+llm = ChatOpenAI(model_name="gpt-4o-mini", max_tokens=256, openai_api_key = API_KEY, temperature=0.2, streaming=True, callbacks=[StreamingStdOutCallbackHandler()])
 ```
 Swap the "model_name" string for any of the OpenAI model codes.
 

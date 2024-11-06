@@ -44,7 +44,71 @@
                         "schema": {
                             "type": "string"
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "The Shawshank Redemption"
+                            },
+                            "GENERATED_1": {
+                                "value": "The Godfather"
+                            },
+                            "GENERATED_2": {
+                                "value": "Inception"
+                            },
+                            "GENERATED_3": {
+                                "value": "Pulp Fiction"
+                            },
+                            "GENERATED_4": {
+                                "value": "The Dark Knight"
+                            },
+                            "GENERATED_5": {
+                                "value": "Forrest Gump"
+                            },
+                            "GENERATED_6": {
+                                "value": "The Lord of the Rings: The Return of the King"
+                            },
+                            "GENERATED_7": {
+                                "value": "Fight Club"
+                            },
+                            "GENERATED_8": {
+                                "value": "The Matrix"
+                            },
+                            "GENERATED_9": {
+                                "value": "Schindler's List"
+                            },
+                            "GENERATED_10": {
+                                "value": "The Silence of the Lambs"
+                            },
+                            "GENERATED_11": {
+                                "value": "Gladiator"
+                            },
+                            "GENERATED_12": {
+                                "value": "Avatar"
+                            },
+                            "GENERATED_13": {
+                                "value": "Titanic"
+                            },
+                            "GENERATED_14": {
+                                "value": "The Avengers"
+                            },
+                            "GENERATED_15": {
+                                "value": "The Social Network"
+                            },
+                            "GENERATED_16": {
+                                "value": "Interstellar"
+                            },
+                            "GENERATED_17": {
+                                "value": "The Lion King"
+                            },
+                            "GENERATED_18": {
+                                "value": "The Wizard of Oz"
+                            },
+                            "GENERATED_19": {
+                                "value": "Star Wars: Episode IV - A New Hope"
+                            },
+                            "GENERATED_20": {
+                                "value": "Jurassic Park"
+                            }
+                        }
                     },
                     {
                         "name": "i",
@@ -56,155 +120,62 @@
                             "maxLength": 9
                         },
                         "examples": {
-                            "example0": {
-                                "value": "tt0000001"
-                            },
-                            "example1": {
+                            "GENERATED_0": {
                                 "value": "tt0000002"
                             },
-                            "example2": {
+                            "GENERATED_1": {
                                 "value": "tt0000003"
                             },
-                            "example3": {
+                            "GENERATED_2": {
                                 "value": "tt0000004"
                             },
-                            "example4": {
+                            "GENERATED_3": {
                                 "value": "tt0000005"
                             },
-                            "example5": {
+                            "GENERATED_4": {
                                 "value": "tt0000006"
                             },
-                            "example6": {
+                            "GENERATED_5": {
                                 "value": "tt0000007"
                             },
-                            "example7": {
+                            "GENERATED_6": {
                                 "value": "tt0000008"
                             },
-                            "example8": {
+                            "GENERATED_7": {
                                 "value": "tt0000009"
                             },
-                            "example9": {
+                            "GENERATED_8": {
                                 "value": "tt0000010"
                             },
-                            "example10": {
+                            "GENERATED_9": {
                                 "value": "tt0000011"
                             },
-                            "example11": {
+                            "GENERATED_10": {
                                 "value": "tt0000012"
                             },
-                            "example12": {
+                            "GENERATED_11": {
                                 "value": "tt0000013"
                             },
-                            "example13": {
+                            "GENERATED_12": {
                                 "value": "tt0000014"
                             },
-                            "example14": {
+                            "GENERATED_13": {
                                 "value": "tt0000015"
                             },
-                            "example15": {
+                            "GENERATED_14": {
                                 "value": "tt0000016"
                             },
-                            "example16": {
+                            "GENERATED_15": {
                                 "value": "tt0000017"
                             },
-                            "example17": {
+                            "GENERATED_16": {
                                 "value": "tt0000018"
                             },
-                            "example18": {
+                            "GENERATED_17": {
                                 "value": "tt0000019"
                             },
-                            "example19": {
+                            "GENERATED_18": {
                                 "value": "tt0000020"
-                            },
-                            "example20": {
-                                "value": "tt0000021"
-                            },
-                            "example21": {
-                                "value": "tt0000022"
-                            },
-                            "example22": {
-                                "value": "tt0000023"
-                            },
-                            "example23": {
-                                "value": "tt0000024"
-                            },
-                            "example24": {
-                                "value": "tt0000025"
-                            },
-                            "example25": {
-                                "value": "tt0000026"
-                            },
-                            "example26": {
-                                "value": "tt0000027"
-                            },
-                            "example27": {
-                                "value": "tt0000028"
-                            },
-                            "example28": {
-                                "value": "tt0000029"
-                            },
-                            "example29": {
-                                "value": "tt0000030"
-                            },
-                            "example30": {
-                                "value": "tt0000031"
-                            },
-                            "example31": {
-                                "value": "tt0000032"
-                            },
-                            "example32": {
-                                "value": "tt0000033"
-                            },
-                            "example33": {
-                                "value": "tt0000034"
-                            },
-                            "example34": {
-                                "value": "tt0000035"
-                            },
-                            "example35": {
-                                "value": "tt0000036"
-                            },
-                            "example36": {
-                                "value": "tt0000037"
-                            },
-                            "example37": {
-                                "value": "tt0000038"
-                            },
-                            "example38": {
-                                "value": "tt0000039"
-                            },
-                            "example39": {
-                                "value": "tt0000040"
-                            },
-                            "example40": {
-                                "value": "tt0000041"
-                            },
-                            "example41": {
-                                "value": "tt0000042"
-                            },
-                            "example42": {
-                                "value": "tt0000043"
-                            },
-                            "example43": {
-                                "value": "tt0000044"
-                            },
-                            "example44": {
-                                "value": "tt0000045"
-                            },
-                            "example45": {
-                                "value": "tt0000046"
-                            },
-                            "example46": {
-                                "value": "tt0000047"
-                            },
-                            "example47": {
-                                "value": "tt0000048"
-                            },
-                            "example48": {
-                                "value": "tt0000049"
-                            },
-                            "example49": {
-                                "value": "tt0000050"
                             }
                         }
                     },
@@ -215,7 +186,71 @@
                         "schema": {
                             "type": "string"
                         },
-                        "examples": {}
+                        "examples": {
+                            "GENERATED_0": {
+                                "value": "The Shawshank Redemption"
+                            },
+                            "GENERATED_1": {
+                                "value": "The Godfather"
+                            },
+                            "GENERATED_2": {
+                                "value": "Inception"
+                            },
+                            "GENERATED_3": {
+                                "value": "Pulp Fiction"
+                            },
+                            "GENERATED_4": {
+                                "value": "The Dark Knight"
+                            },
+                            "GENERATED_5": {
+                                "value": "Forrest Gump"
+                            },
+                            "GENERATED_6": {
+                                "value": "The Lord of the Rings: The Return of the King"
+                            },
+                            "GENERATED_7": {
+                                "value": "Fight Club"
+                            },
+                            "GENERATED_8": {
+                                "value": "The Matrix"
+                            },
+                            "GENERATED_9": {
+                                "value": "Schindler's List"
+                            },
+                            "GENERATED_10": {
+                                "value": "The Silence of the Lambs"
+                            },
+                            "GENERATED_11": {
+                                "value": "Gladiator"
+                            },
+                            "GENERATED_12": {
+                                "value": "Avatar"
+                            },
+                            "GENERATED_13": {
+                                "value": "Titanic"
+                            },
+                            "GENERATED_14": {
+                                "value": "The Avengers"
+                            },
+                            "GENERATED_15": {
+                                "value": "The Social Network"
+                            },
+                            "GENERATED_16": {
+                                "value": "Interstellar"
+                            },
+                            "GENERATED_17": {
+                                "value": "The Lion King"
+                            },
+                            "GENERATED_18": {
+                                "value": "The Wizard of Oz"
+                            },
+                            "GENERATED_19": {
+                                "value": "Star Wars: Episode IV - A New Hope"
+                            },
+                            "GENERATED_20": {
+                                "value": "Jurassic Park"
+                            }
+                        }
                     },
                     {
                         "name": "page",
@@ -225,155 +260,65 @@
                             "type": "integer"
                         },
                         "examples": {
-                            "example0": {
-                                "value": 1
+                            "GENERATED_0": {
+                                "value": "1"
                             },
-                            "example1": {
-                                "value": 2
+                            "GENERATED_1": {
+                                "value": "2"
                             },
-                            "example2": {
-                                "value": 3
+                            "GENERATED_2": {
+                                "value": "3"
                             },
-                            "example3": {
-                                "value": 4
+                            "GENERATED_3": {
+                                "value": "4"
                             },
-                            "example4": {
-                                "value": 5
+                            "GENERATED_4": {
+                                "value": "5"
                             },
-                            "example5": {
-                                "value": 6
+                            "GENERATED_5": {
+                                "value": "6"
                             },
-                            "example6": {
-                                "value": 7
+                            "GENERATED_6": {
+                                "value": "7"
                             },
-                            "example7": {
-                                "value": 8
+                            "GENERATED_7": {
+                                "value": "8"
                             },
-                            "example8": {
-                                "value": 9
+                            "GENERATED_8": {
+                                "value": "9"
                             },
-                            "example9": {
-                                "value": 10
+                            "GENERATED_9": {
+                                "value": "10"
                             },
-                            "example10": {
-                                "value": 11
+                            "GENERATED_10": {
+                                "value": "11"
                             },
-                            "example11": {
-                                "value": 12
+                            "GENERATED_11": {
+                                "value": "12"
                             },
-                            "example12": {
-                                "value": 13
+                            "GENERATED_12": {
+                                "value": "13"
                             },
-                            "example13": {
-                                "value": 14
+                            "GENERATED_13": {
+                                "value": "14"
                             },
-                            "example14": {
-                                "value": 15
+                            "GENERATED_14": {
+                                "value": "15"
                             },
-                            "example15": {
-                                "value": 16
+                            "GENERATED_15": {
+                                "value": "16"
                             },
-                            "example16": {
-                                "value": 17
+                            "GENERATED_16": {
+                                "value": "17"
                             },
-                            "example17": {
-                                "value": 18
+                            "GENERATED_17": {
+                                "value": "18"
                             },
-                            "example18": {
-                                "value": 19
+                            "GENERATED_18": {
+                                "value": "19"
                             },
-                            "example19": {
-                                "value": 20
-                            },
-                            "example20": {
-                                "value": 21
-                            },
-                            "example21": {
-                                "value": 22
-                            },
-                            "example22": {
-                                "value": 23
-                            },
-                            "example23": {
-                                "value": 24
-                            },
-                            "example24": {
-                                "value": 25
-                            },
-                            "example25": {
-                                "value": 26
-                            },
-                            "example26": {
-                                "value": 27
-                            },
-                            "example27": {
-                                "value": 28
-                            },
-                            "example28": {
-                                "value": 29
-                            },
-                            "example29": {
-                                "value": 30
-                            },
-                            "example30": {
-                                "value": 31
-                            },
-                            "example31": {
-                                "value": 32
-                            },
-                            "example32": {
-                                "value": 33
-                            },
-                            "example33": {
-                                "value": 34
-                            },
-                            "example34": {
-                                "value": 35
-                            },
-                            "example35": {
-                                "value": 36
-                            },
-                            "example36": {
-                                "value": 37
-                            },
-                            "example37": {
-                                "value": 38
-                            },
-                            "example38": {
-                                "value": 39
-                            },
-                            "example39": {
-                                "value": 40
-                            },
-                            "example40": {
-                                "value": 41
-                            },
-                            "example41": {
-                                "value": 42
-                            },
-                            "example42": {
-                                "value": 43
-                            },
-                            "example43": {
-                                "value": 44
-                            },
-                            "example44": {
-                                "value": 45
-                            },
-                            "example45": {
-                                "value": 46
-                            },
-                            "example46": {
-                                "value": 47
-                            },
-                            "example47": {
-                                "value": 48
-                            },
-                            "example48": {
-                                "value": 49
-                            },
-                            "example49": {
-                                "value": 50
+                            "GENERATED_19": {
+                                "value": "20"
                             }
                         }
                     },
@@ -385,98 +330,26 @@
                             "type": "integer"
                         },
                         "examples": {
-                            "example0": {
-                                "value": 2000
+                            "GENERATED_0": {
+                                "value": "1990"
                             },
-                            "example1": {
-                                "value": 2001
+                            "GENERATED_1": {
+                                "value": "2000"
                             },
-                            "example2": {
-                                "value": 2002
+                            "GENERATED_2": {
+                                "value": "2010"
                             },
-                            "example3": {
-                                "value": 2003
+                            "GENERATED_3": {
+                                "value": "2020"
                             },
-                            "example4": {
-                                "value": 2004
+                            "GENERATED_4": {
+                                "value": "2021"
                             },
-                            "example5": {
-                                "value": 2005
+                            "GENERATED_5": {
+                                "value": "2022"
                             },
-                            "example6": {
-                                "value": 2006
-                            },
-                            "example7": {
-                                "value": 2007
-                            },
-                            "example8": {
-                                "value": 2008
-                            },
-                            "example9": {
-                                "value": 2009
-                            },
-                            "example10": {
-                                "value": 2010
-                            },
-                            "example11": {
-                                "value": 2011
-                            },
-                            "example12": {
-                                "value": 2012
-                            },
-                            "example13": {
-                                "value": 2013
-                            },
-                            "example14": {
-                                "value": 2014
-                            },
-                            "example15": {
-                                "value": 2015
-                            },
-                            "example16": {
-                                "value": 2016
-                            },
-                            "example17": {
-                                "value": 2017
-                            },
-                            "example18": {
-                                "value": 2018
-                            },
-                            "example19": {
-                                "value": 2019
-                            },
-                            "example20": {
-                                "value": 2020
-                            },
-                            "example21": {
-                                "value": 2021
-                            },
-                            "example22": {
-                                "value": 2022
-                            },
-                            "example23": {
-                                "value": 2023
-                            },
-                            "example24": {
-                                "value": 2024
-                            },
-                            "example25": {
-                                "value": 2025
-                            },
-                            "example26": {
-                                "value": 2026
-                            },
-                            "example27": {
-                                "value": 2027
-                            },
-                            "example28": {
-                                "value": 2028
-                            },
-                            "example29": {
-                                "value": 2029
-                            },
-                            "example30": {
-                                "value": 2030
+                            "GENERATED_6": {
+                                "value": "2023"
                             }
                         }
                     },
@@ -525,155 +398,35 @@
                             "type": "string"
                         },
                         "examples": {
-                            "example0": {
-                                "value": "callback1"
+                            "GENERATED_0": {
+                                "value": "callbackFunction"
                             },
-                            "example1": {
-                                "value": "callback2"
+                            "GENERATED_1": {
+                                "value": "myCallback"
                             },
-                            "example2": {
-                                "value": "callback3"
+                            "GENERATED_2": {
+                                "value": "jsonpHandler"
                             },
-                            "example3": {
-                                "value": "callback4"
+                            "GENERATED_3": {
+                                "value": "handleResponse"
                             },
-                            "example4": {
-                                "value": "callback5"
+                            "GENERATED_4": {
+                                "value": "onDataReceived"
                             },
-                            "example5": {
-                                "value": "callback6"
+                            "GENERATED_5": {
+                                "value": "processResults"
                             },
-                            "example6": {
-                                "value": "callback7"
+                            "GENERATED_6": {
+                                "value": "fetchData"
                             },
-                            "example7": {
-                                "value": "callback8"
+                            "GENERATED_7": {
+                                "value": "responseCallback"
                             },
-                            "example8": {
-                                "value": "callback9"
+                            "GENERATED_8": {
+                                "value": "updateUI"
                             },
-                            "example9": {
-                                "value": "callback10"
-                            },
-                            "example10": {
-                                "value": "callback11"
-                            },
-                            "example11": {
-                                "value": "callback12"
-                            },
-                            "example12": {
-                                "value": "callback13"
-                            },
-                            "example13": {
-                                "value": "callback14"
-                            },
-                            "example14": {
-                                "value": "callback15"
-                            },
-                            "example15": {
-                                "value": "callback16"
-                            },
-                            "example16": {
-                                "value": "callback17"
-                            },
-                            "example17": {
-                                "value": "callback18"
-                            },
-                            "example18": {
-                                "value": "callback19"
-                            },
-                            "example19": {
-                                "value": "callback20"
-                            },
-                            "example20": {
-                                "value": "callback21"
-                            },
-                            "example21": {
-                                "value": "callback22"
-                            },
-                            "example22": {
-                                "value": "callback23"
-                            },
-                            "example23": {
-                                "value": "callback24"
-                            },
-                            "example24": {
-                                "value": "callback25"
-                            },
-                            "example25": {
-                                "value": "callback26"
-                            },
-                            "example26": {
-                                "value": "callback27"
-                            },
-                            "example27": {
-                                "value": "callback28"
-                            },
-                            "example28": {
-                                "value": "callback29"
-                            },
-                            "example29": {
-                                "value": "callback30"
-                            },
-                            "example30": {
-                                "value": "callback31"
-                            },
-                            "example31": {
-                                "value": "callback32"
-                            },
-                            "example32": {
-                                "value": "callback33"
-                            },
-                            "example33": {
-                                "value": "callback34"
-                            },
-                            "example34": {
-                                "value": "callback35"
-                            },
-                            "example35": {
-                                "value": "callback36"
-                            },
-                            "example36": {
-                                "value": "callback37"
-                            },
-                            "example37": {
-                                "value": "callback38"
-                            },
-                            "example38": {
-                                "value": "callback39"
-                            },
-                            "example39": {
-                                "value": "callback40"
-                            },
-                            "example40": {
-                                "value": "callback41"
-                            },
-                            "example41": {
-                                "value": "callback42"
-                            },
-                            "example42": {
-                                "value": "callback43"
-                            },
-                            "example43": {
-                                "value": "callback44"
-                            },
-                            "example44": {
-                                "value": "callback45"
-                            },
-                            "example45": {
-                                "value": "callback46"
-                            },
-                            "example46": {
-                                "value": "callback47"
-                            },
-                            "example47": {
-                                "value": "callback48"
-                            },
-                            "example48": {
-                                "value": "callback49"
-                            },
-                            "example49": {
-                                "value": "callback50"
+                            "GENERATED_9": {
+                                "value": "dataCallback"
                             }
                         }
                     }
@@ -815,7 +568,7 @@
                                         },
                                         "imdbVotes": {
                                             "type": "string",
-                                            "example": 370080
+                                            "example": "370,080"
                                         },
                                         "imdbID": {
                                             "type": "string",
@@ -1030,7 +783,7 @@
                     },
                     "imdbVotes": {
                         "type": "string",
-                        "example": 370080
+                        "example": "370,080"
                     },
                     "imdbID": {
                         "type": "string",
